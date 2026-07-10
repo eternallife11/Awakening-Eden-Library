@@ -1,62 +1,33 @@
-# Awakening Eden Living Library — SEO-ready v8
-
-A Netlify-ready static website for Awakening Eden: a Living Library for regeneration, awakening, empowerment, peace, purpose and practical hope.
-
-Recommended GitHub repo name: `awakening-eden-living-library`
-Recommended Netlify site name: `awakening-eden-living-library`
-
-Deploy settings on Netlify:
-
-- Build command: leave empty
-- Publish directory: `.`
-
-SEO files included: `sitemap.xml`, `robots.txt`, canonical meta tags, Open Graph tags, Twitter card tags, JSON-LD, and a web manifest.
-
----
-
 # Awakening Eden Living Library
 
-A calm, mobile-first static website for Awakening Eden: a Living Library for Positive Change, Regeneration & Remembering.
+Final GitHub + Netlify ready package.
 
-This package is ready for GitHub and Netlify. It uses plain HTML, CSS, images, PDFs and SVG illustrations. No build step is required.
+## Main pages
 
-## Main files
+- `index.html` — homepage / Living Library doorway
+- `Awakening-Regeneration.html` — Guide 1: Awakening Regeneration
+- `Awakening-Regeneration-Guide.pdf` — downloadable Guide 1 PDF
+- `Thriving-in-These-Times.html` — Guide 2: Thriving in These Times
+- `Thriving-in-These-Times-Guide.pdf` — downloadable Guide 2 PDF
+- `7-First-Steps-Regenerate-Your-Land.html` — Guide 3: Seven First Steps
+- `awakening_eden_regenerative_film_resource_library_updated.html` — films, books, teachers and resource library
+- `work-with-benjy.html` — regenerative garden / land design offering
+- `journey.html` — Benjy and Sofia journey page
+- `journal.html#water-is-love` — Water Is Love field note and journal updates
+- `heart.html` — heart / mission page
 
-- `index.html` — homepage / living library front door
-- `Regeneration-101-Field-Guide.html` — Living Companion 01
-- `Thriving-in-These-Times.html` — Living Companion 02
-- `7-First-Steps-Regenerate-Your-Land.html` — practical land regeneration guide
-- `awakening_eden_regenerative_film_resource_library_updated.html` — living resource library
-- `heart.html` — heart / manifesto
-- `journey.html` — Benjy & Sofia story
-- `work-with-benjy.html` — regenerative garden and food forest offer
+## Deploy on Netlify
 
-## Netlify settings
-
-Build command: leave empty
+Build command: leave empty.
 Publish directory: `.`
 
-The `netlify.toml` file already declares the publish directory as the project root.
+Upload the contents of this folder to the GitHub repository root. Do not upload this folder as a folder inside the repo.
 
-## Recommended GitHub workflow
+## v10 update
 
-1. Create a new GitHub repository, for example `awakening-eden-living-library`.
-2. Upload the contents of this folder, not the ZIP itself. `index.html` must stay at the repository root.
-3. Commit with a clear message, for example `Publish Awakening Eden Living Library v7`.
-4. In Netlify, create a new site from Git and connect the GitHub repository.
-5. Use empty build command and publish directory `.`.
-6. Deploy. Every future push to GitHub can create a new Netlify deploy.
+Added the Water Is Love field note, top 10 regenerative hope film list, Films For Action portal link, clearer community buttons, and another internal link check.
 
-## Human approval gate
 
-Before publishing publicly, check:
+## v11 Share + Support Final
 
-- all buttons work
-- WhatsApp link is correct
-- Telegram link is added when ready
-- PayPal link is correct
-- spelling of Benjy / Sofia is correct
-- PDFs open on phone
-- homepage feels calm, readable and hopeful
-
-Leave every page a little more alive than you found it.
+Adds share invitations, clearer gift-back flow, support buttons in all core guides, and a stronger community/support pathway.

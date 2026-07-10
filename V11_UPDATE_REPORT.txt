@@ -1,0 +1,11 @@
+Awakening Eden Living Library v11 · Share + Support Final
+
+Changes from v10:
+- Added a homepage “Share the Living Library” section with WhatsApp, Telegram, Gift Back and copyable invitation text.
+- Confirmed homepage Start Here, community channels and support flow.
+- Added clearer share/gift-back support blocks to Awakening Regeneration and Thriving in These Times.
+- Added missing Gift Back / Support our journey and mission section to 7 First Steps.
+- Cleaned a couple of duplicated lines/sections from previous generated builds.
+- Internal links checked after update: see deployment notes in chat.
+
+Deploy root: upload the CONTENTS of this folder to GitHub, not the ZIP itself.

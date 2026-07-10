@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://awakening-eden-living-library.netlify.app/sitemap.xml
