@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Thriving in These Times · Calm Resilience Guide · Awakening Eden</title>
+<meta content="A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope." name="description"/>
+<style>
+:root{
+  --deep:#102819; --forest:#173822; --leaf:#365c3b; --moss:#6d8b5b; --sage:#b9c8a7;
+  --sand:#f6f2ea; --cream:#fffdf7; --paper:#fffaf0; --gold:#d8b45e; --clay:#d8b9a3;
+  --terra:#b56a42; --earth:#6f4c35; --ink:#263326; --muted:#6f675c; --line:rgba(38,51,38,.16);
+  --shadow:0 24px 60px rgba(23,56,34,.13); --soft:0 10px 30px rgba(23,56,34,.09);
+  --serif: Georgia, "Times New Roman", serif; --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(circle at 10% 2%, rgba(216,180,94,.18), transparent 28%),
+  radial-gradient(circle at 85% 12%, rgba(185,200,167,.28), transparent 28%),
+  linear-gradient(180deg,var(--cream),var(--sand)); color:var(--ink); font-family:var(--sans); line-height:1.72; font-size:17px;}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:linear-gradient(90deg,rgba(111,76,53,.06) 1px,transparent 1px),linear-gradient(rgba(111,76,53,.045) 1px,transparent 1px);background-size:44px 44px}
+a{color:var(--forest);text-decoration:none;font-weight:800}
+img{max-width:100%;height:auto}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.narrow{width:min(820px,92vw);margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(15px);background:rgba(255,250,240,.87);border-bottom:1px solid var(--line)}
+.navinner{height:60px;display:flex;align-items:center;gap:14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.navinner::-webkit-scrollbar{display:none}
+.brand{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--serif);font-size:1.05rem;color:var(--deep);margin-right:4px}
+.logo{width:28px;height:28px;border-radius:999px;background:var(--deep);display:inline-grid;place-items:center;color:var(--cream);font-size:15px}
+.navinner a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.56);border:1px solid rgba(54,92,59,.16);font-size:.84rem;color:var(--deep)}
+.hero{position:relative;overflow:hidden;padding:88px 0 62px;background:linear-gradient(135deg,rgba(16,40,25,.96),rgba(54,92,59,.86)),url('vision-ecovillage-hero.jpg') center/cover; color:var(--cream)}
+.hero .wrap{position:relative;z-index:2}
+.hand{font-family:var(--hand);font-size:clamp(2.2rem,7vw,4.7rem);line-height:.95;color:#f5d899;font-weight:500;margin:0 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.18)}
+.kicker{letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--gold);font-size:.78rem}
+h1,h2,h3{font-family:var(--serif);line-height:1.05;color:var(--deep);margin:0 0 18px}
+.hero h1{font-size:clamp(3.1rem,10vw,7.2rem);color:#fff9e9;letter-spacing:.03em}
+.hero p{font-size:clamp(1.08rem,2.8vw,1.42rem);max-width:850px;color:#fff4d8}
+.subtitle{font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem)!important;line-height:1.25!important}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;padding:13px 18px;border-radius:22px;border:1px solid rgba(54,92,59,.18);box-shadow:var(--soft);font-weight:900;line-height:1.2}
+.btn small{font-weight:600;color:rgba(38,51,38,.78)}
+.btn.primary{background:linear-gradient(135deg,var(--forest),var(--leaf));color:white}
+.btn.primary small{color:#f7efd7}
+.btn.paper{background:rgba(255,253,247,.9);color:var(--deep)}
+.btn.gold{background:linear-gradient(135deg,#efd99a,var(--gold));color:#3e2b13}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.card,.callout,.chapter,.promise,.note,.practice,.recap{background:rgba(255,253,247,.86);border:1px solid var(--line);border-radius:30px;padding:clamp(22px,4vw,42px);box-shadow:var(--soft)}
+.grid{display:grid;gap:22px}
+.two{grid-template-columns:1.2fr .8fr}
+.three{grid-template-columns:repeat(3,1fr)}
+h2{font-size:clamp(2.05rem,5vw,4rem)}
+h3{font-size:clamp(1.45rem,3vw,2.3rem)}
+.lead{font-size:1.22rem;color:#43382e}
+.note{border-style:dashed;background:rgba(246,242,234,.76)}
+.note:before{content:"Come walk with us";font-family:var(--hand);display:block;color:var(--terra);font-size:1.9rem;margin-bottom:8px}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:36px auto;color:var(--earth);opacity:.95}
+.divider:before,.divider:after{content:"";height:1px;width:min(180px,28vw);background:linear-gradient(90deg,transparent,var(--earth),transparent)}
+.divider span{font-family:var(--hand);font-size:2rem;color:var(--terra)}
+.chapter-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+.chapter-list a{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 8px 18px rgba(23,56,34,.06)}
+.toc{position:sticky;top:75px;align-self:start}
+.layout{display:grid;grid-template-columns:270px 1fr;gap:28px}
+.toc .card{padding:18px;border-radius:22px}
+.toc a{display:block;padding:9px 10px;border-radius:12px;font-size:.92rem;color:var(--deep)}
+.toc a:hover{background:var(--sage)}
+ul.clean{padding-left:1.1rem}
+ul.clean li{margin:.4rem 0}
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:start;padding:16px;border-radius:22px;background:rgba(246,242,234,.66);border:1px solid var(--line)}
+.num{width:48px;height:48px;border-radius:999px;background:var(--forest);color:white;display:grid;place-items:center;font-weight:900}
+.warning{border-left:6px solid var(--terra)}
+.footer{padding:70px 0;background:var(--deep);color:#f8f0d8;text-align:center}
+.footer h2{color:#fff2c5}
+.footer p{color:#f6ead2}
+.refs{font-size:.92rem;color:#51483f}
+@media(max-width:860px){
+  body{font-size:16px}
+  .hero{padding:68px 0 48px}
+  .two,.three,.layout{grid-template-columns:1fr}
+  .toc{position:static}
+  .chapter-list{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .navinner{height:54px}
+  .brand span{display:none}
+  .btn{width:100%;align-items:flex-start}
+}
+</style>
+<style>
+.solution{border-left:5px solid var(--gold)}
+.practice h3:before{content:"✦ ";color:var(--terra)}
+</style>
+<meta content="index, follow" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-living-library.netlify.app/Thriving-in-These-Times.html" rel="canonical"/><meta content="Thriving in These Times · Calm Resilience Guide · Awakening Eden" property="og:title"/><meta content="A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope." property="og:description"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-living-library.netlify.app/Thriving-in-These-Times.html" property="og:url"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Thriving in These Times · Calm Resilience Guide · Awakening Eden" name="twitter:title"/><meta content="A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope." name="twitter:description"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" name="twitter:image"/><link href="assets/illustrations/ae-logo-tree-heart.svg" rel="icon"/><link href="manifest.webmanifest" rel="manifest"/><script data-seo="awakening-eden" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Thriving in These Times · Calm Resilience Guide · Awakening Eden",
+  "description": "A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope.",
+  "url": "https://awakening-eden-living-library.netlify.app/Thriving-in-These-Times.html",
+  "image": "https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awakening Eden",
+    "url": "https://awakening-eden-living-library.netlify.app",
+    "logo": "https://awakening-eden-living-library.netlify.app/assets/illustrations/ae-logo-tree-heart.svg"
+  }
+}</script></head>
+<body>
+<header class="topbar">
+<div class="wrap navinner">
+<a class="brand" href="index.html"><span class="logo">🌱</span><span>Awakening Eden</span></a>
+<a href="#quickstart">Quick Start</a><a href="#interbeing">Interbeing</a><a href="#nervous">Nervous System</a><a href="#breath">Breath</a><a href="#food">Food</a><a href="#prepared">Preparedness</a><a href="#community">Community</a><a href="#support">Gift Back</a>
+</div>
+</header>
+<header class="hero">
+<div class="wrap">
+<p class="hand">A calm companion for changing times</p>
+<div class="kicker">Living Companion No. 02</div>
+<h1>Thriving in These Times</h1>
+<p class="subtitle">Practical hope, nervous-system care, conscious preparedness and regenerative action.</p>
+<p>Not a fear manual. A living companion for becoming rooted, clear, kind and capable while the world changes around us.</p>
+<div class="btns">
+<a class="btn primary" href="#quickstart">Begin with the Quick Start <small>What to do first</small></a>
+<a class="btn paper" href="Regenerative-Eden-Thrive-in-These-Times.pdf">Take this Living Companion with you <small>Download the printable version</small></a>
+<a class="btn gold" href="#support">Gift Back <small>Help this library grow</small></a>
+</div>
+</div>
+</header>
+<main>
+<section id="quickstart">
+<div class="wrap layout">
+<aside class="toc">
+<div class="card">
+<strong>Contents</strong>
+<a href="#quickstart">Quick Start</a>
+<a href="#interbeing">Regenerative interbeing</a>
+<a href="#nervous">Nervous system</a>
+<a href="#breath">Breathwork</a>
+<a href="#nature">Nature &amp; rest</a>
+<a href="#food">Food &amp; nutrients</a>
+<a href="#prepared">Preparedness</a>
+<a href="#tech">Living well with technology</a>
+<a href="#community">Community</a>
+<a href="#daily">Daily rhythm</a>
+<a href="#support">Support</a>
+</div>
+</aside>
+<article class="chapter">
+<div class="kicker">If you only read one page</div>
+<h2>What to do first</h2>
+<p class="lead">When life feels uncertain, do not try to fix everything. Root yourself. Then take one clear step.</p>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><strong>Calm your body.</strong><br/>Three minutes of slow breathing can change the quality of your next decision.</div></div>
+<div class="step"><div class="num">2</div><div><strong>Know your place.</strong><br/>Learn your bioregion, seasons, rainfall, fire risks, water sources, local growers and neighbours.</div></div>
+<div class="step"><div class="num">3</div><div><strong>Grow something.</strong><br/>Start with herbs, greens, potatoes, beans, fruit trees, compost and one protected growing bed.</div></div>
+<div class="step"><div class="num">4</div><div><strong>Build a simple home buffer.</strong><br/>Food you already eat, water, first aid, light, warmth, basic tools, important documents.</div></div>
+<div class="step"><div class="num">5</div><div><strong>Find your people.</strong><br/>Community is resilience. Share meals, seeds, tools, skills and honest conversations.</div></div>
+</div>
+<p class="note">Hope is not passive. Hope becomes real when it turns into one small act of care.</p>
+</article>
+</div>
+</section>
+<section id="interbeing">
+<div class="wrap grid two">
+<article class="chapter">
+<h2>Regenerative interbeing</h2>
+<p class="lead">Thriving begins when we remember that we are not separate from the web of life.</p>
+<p>We are shaped by soil, water, food, breath, sunlight, relationships, culture and place. When we care for ourselves, we become more capable of caring for others. When we care for land, the land nourishes us in return.</p>
+<p>This is what we call <strong>regenerative interbeing</strong>: living in ways that help ourselves, our communities and the living world flourish together.</p>
+<p>For Benjy, this understanding arrived through documentaries that opened the heart, meditation in nature, yoga, tree planting, ocean experiences, community and the growing willingness to say: <em>Yes. I am ready to do the work.</em></p>
+</article>
+<aside class="callout">
+<h3>The balance</h3>
+<p>Feeling the oneness of life can awaken deep care. It can also open us to grief. The path is not to shut down — and not to burn out.</p>
+<p><strong>Feel deeply. Act wisely. Rest often. Walk together.</strong></p>
+</aside>
+</div>
+</section>
+<section id="nervous">
+<div class="narrow">
+<h2>Begin with your nervous system</h2>
+<p class="lead">A regulated body is one of the greatest forms of preparedness.</p>
+<p>When the nervous system is constantly activated, everything feels urgent. When the body softens, we can listen, plan, repair, collaborate and respond more wisely.</p>
+<div class="grid two">
+<div class="practice"><h3>Grounding practice</h3><p>Stand barefoot if possible. Feel your feet. Look around slowly. Name five things you can see, four things you can feel, three things you can hear, two things you can smell, and one thing you appreciate.</p></div>
+<div class="practice"><h3>Shake and release</h3><p>Shake your hands, arms, shoulders and legs for 60–90 seconds. Then pause. Feel the body. Let the breath settle. Animals naturally discharge stress through movement; we can remember this too.</p></div>
+</div>
+</div>
+</section>
+<section id="breath">
+<div class="wrap">
+<div class="kicker">Breath is a doorway</div>
+<h2>Breathwork for calm, energy and presence</h2>
+<p class="lead">Start gently. Strong breath practices can be powerful, but they are not suitable for everyone.</p>
+<div class="card warning">
+<strong>Safety note:</strong> If you are pregnant, have cardiovascular concerns, epilepsy, panic disorder, serious mental health concerns, high blood pressure, or you feel dizzy, practise gently and seek qualified guidance. Do not practise intense breathing while driving, in water, or anywhere fainting would be dangerous.
+    </div>
+<div class="grid two">
+<article class="practice"><h3>1. Heart-coherent breathing</h3><p>Place a hand on your heart. Inhale gently for about 5–6 seconds. Exhale for about 5–6 seconds. Bring to mind gratitude, appreciation or love. Continue for 3–5 minutes.</p><p>This slow rhythm is commonly used to support heart-rate variability and a calmer state. Keep it soft. No forcing.</p></article>
+<article class="practice"><h3>2. Longer exhale breathing</h3><p>Inhale for 4 seconds. Exhale for 6–8 seconds. Repeat for 2–5 minutes. A longer exhale can gently invite the body toward relaxation.</p></article>
+<article class="practice"><h3>3. Belly breathing</h3><p>Lie down or sit comfortably. Let the belly expand on the inhale and soften on the exhale. Imagine the breath massaging the nervous system from inside.</p></article>
+<article class="practice"><h3>4. Alternate nostril breathing</h3><p>A gentle yogic practice for balance. Close one nostril, inhale. Switch sides, exhale. Continue slowly. Keep the breath smooth and easy.</p></article>
+<article class="practice"><h3>5. Kapalabhati / fire breath</h3><p>Short, active exhales through the nose with passive inhales. Traditionally used as an energising yogic breath. Start with 15–30 gentle pumps, then rest and breathe normally. Learn from an experienced teacher if new.</p></article>
+<article class="practice"><h3>6. Energise, hold, release</h3><p>For experienced practitioners only: a short round of energising breath, a comfortable pause, gently drawing awareness upward through the body, then full relaxation and release. Keep it safe, short and respectful of your body.</p></article>
+</div>
+<div class="note"><p>More intensive connected or holotropic-style breathwork can be deeply powerful, but is best practised with trained facilitators and proper support.</p></div>
+</div>
+</section>
+<section id="nature">
+<div class="wrap grid two">
+<article class="chapter">
+<h2>Nature is medicine</h2>
+<p>Walk. Sit under trees. Touch soil. Watch birds. Put your phone away for a while. Nature reminds the body of rhythms older than stress.</p>
+<ul class="clean">
+<li>Morning sunlight when possible.</li>
+<li>Daily walks without headphones sometimes.</li>
+<li>Gardening, even for ten minutes.</li>
+<li>Water, ocean, rivers, rain, mist.</li>
+<li>Quiet time with trees.</li>
+</ul>
+</article>
+<aside class="callout">
+<h3>Regeneration includes rest</h3>
+<p>Forests have seasons. Fields lie fallow. Humans need recovery too. Rest is not laziness. Rest allows care to continue.</p>
+</aside>
+</div>
+</section>
+<section id="food">
+<div class="wrap">
+<h2>Food, nutrients and living resilience</h2>
+<p class="lead">Foundations first: sleep, sunlight, movement, whole foods, clean water, community and nervous-system care.</p>
+<div class="grid three">
+<div class="card"><h3>Grow staples</h3><p>Potatoes, sweet potatoes, beans, pumpkins, onions, garlic, greens, herbs, fruit trees, nuts where suitable, and climate-appropriate perennials.</p></div>
+<div class="card"><h3>Build soil</h3><p>Compost, mulch, manure where safe, worm castings, leaves, wood chips, biochar when charged, chop-and-drop and living roots.</p></div>
+<div class="card"><h3>Preserve abundance</h3><p>Ferment, dry, pickle, freeze, store seeds, share surplus and learn simple seasonal cooking.</p></div>
+</div>
+<div aria-hidden="true" class="divider"><span>🌳♡🌳</span></div>
+<h3>Nutrients many people explore</h3>
+<p class="refs">This is educational, not medical advice. Needs differ. Speak with a qualified health professional if pregnant, on medication, managing thyroid/heart/kidney conditions, or unsure.</p>
+<div class="grid two">
+<div class="card"><h3>Vitamin D3 + K2</h3><p>Often discussed where sunlight exposure is low. Testing can help guide whether supplementation is appropriate.</p></div>
+<div class="card"><h3>Magnesium bisglycinate</h3><p>Commonly used for relaxation and muscle support. Food sources include nuts, seeds, legumes, cacao and leafy greens.</p></div>
+<div class="card"><h3>Omega-3 / algae oil</h3><p>Algae oil can provide DHA/EPA for people avoiding fish. Food foundations still matter.</p></div>
+<div class="card"><h3>Iodine</h3><p>Essential for thyroid hormone production, but too much can be harmful. Be especially careful with kelp or high-dose products.</p></div>
+<div class="card"><h3>Minerals and sea salt</h3><p>Mineral balance matters, especially with sweating, heat and physical work. Avoid excessive salt if medically advised.</p></div>
+<div class="card"><h3>Lion's mane mushroom</h3><p>Many people explore fruiting-body and mycelium extracts. Research is still developing; choose quality and listen to your body.</p></div>
+</div>
+</div>
+</section>
+<section id="prepared">
+<div class="wrap grid two">
+<article class="chapter">
+<h2>Conscious preparedness</h2>
+<p class="lead">Preparedness is not fear. It is love made practical.</p>
+<ul class="clean">
+<li>Keep a sensible buffer of foods you already eat.</li>
+<li>Store water appropriate to your situation.</li>
+<li>Have first aid basics and know how to use them.</li>
+<li>Keep light, batteries, blankets, basic tools and important documents accessible.</li>
+<li>Learn simple natural remedies and when professional care is needed.</li>
+<li>Know neighbours, local growers, local risks and community support networks.</li>
+</ul>
+</article>
+<aside class="callout">
+<h3>Know your bioregion</h3>
+<p>Learn your rainfall, fire season, winds, soils, local trees, edible plants, water flows, community gardens, farmers' markets and elders who know the place.</p>
+</aside>
+</div>
+</section>
+<section id="tech">
+<div class="narrow">
+<h2>Living well with technology</h2>
+<p class="lead">Technology can serve life when we use it consciously.</p>
+<p>For EMF concerns, we recommend simple low-risk habits first: distance, airplane mode when practical, not sleeping with the phone next to your head, wired connections when convenient, screen-free time, outdoor time and fewer unnecessary notifications.</p>
+<p>Some people explore EMF shielding products. Choose carefully, look for independent testing, and avoid products that make extreme health promises. Current mainstream health agencies generally do not find consistent evidence of harm from radiofrequency exposure below established limits, while practical exposure-reduction habits can still be part of a calm digital lifestyle.</p>
+<div class="recap"><h3>One action today</h3><p>Tonight, charge your phone away from your bed or use airplane mode if appropriate.</p></div>
+</div>
+</section>
+<section id="community">
+<div class="wrap grid two">
+<article class="chapter">
+<h2>Community is resilience</h2>
+<p>No one thrives alone. Know your neighbours. Share meals. Exchange seeds. Learn skills together. Start small circles of trust, laughter, honesty and practical care.</p>
+<p>In changing times, the most important infrastructure may be human relationship.</p>
+</article>
+<aside class="note"><p>Authentic connection is preparedness. A shared meal can be as important as a stocked shelf.</p></aside>
+</div>
+</section>
+<section id="daily">
+<div class="wrap">
+<h2>A seven-day reset</h2>
+<div class="grid three">
+<div class="card"><h3>Day 1</h3><p>Breathe for five minutes and write what matters most.</p></div>
+<div class="card"><h3>Day 2</h3><p>Walk your neighbourhood and notice water, food, trees and people.</p></div>
+<div class="card"><h3>Day 3</h3><p>Plant one herb or prepare one bed.</p></div>
+<div class="card"><h3>Day 4</h3><p>Create a simple food and water buffer.</p></div>
+<div class="card"><h3>Day 5</h3><p>Call someone. Build relationship before crisis.</p></div>
+<div class="card"><h3>Day 6</h3><p>Choose one skill to learn this month.</p></div>
+<div class="card"><h3>Day 7</h3><p>Rest, reflect and celebrate one small victory.</p></div>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="narrow promise">
+<h2>Before you go...</h2>
+<p>May this companion help you feel more hopeful, more connected and more capable of caring for yourself, others and the living world.</p>
+<p>Take one action today. Then rest. Then continue.</p>
+<div class="btns">
+<a class="btn paper" href="Regenerative-Eden-Thrive-in-These-Times.pdf">Take this Living Companion with you <small>Download the printable version</small></a>
+<a class="btn primary" href="Regeneration-101-Field-Guide.html">Return to Step One <small>Awakening Regeneration</small></a>
+<a class="btn gold" href="https://www.paypal.me/BSauber">Gift Back <small>Support free guides, videos and workshops</small></a>
+</div>
+</div>
+</section>
+<section id="references">
+<div class="narrow refs">
+<h2>Sources to explore</h2>
+<p>For supplements, see the NIH Office of Dietary Supplements fact sheets. For iodine safety, see NIH and thyroid-health guidance. For breathing and HRV, search resonance/coherent breathing research around approximately six breaths per minute. For radiofrequency exposure, see WHO and national public-health summaries. This guide is educational and not a substitute for personal medical advice.</p>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="narrow">
+<h2>Hope in action.</h2>
+<p>One breath. One seed. One neighbour. One act of care. This is how resilience grows.</p>
+<p><strong>With love, Benjy &amp; Sofia · Awakening Eden</strong></p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,16 @@
+{
+  "name": "Awakening Eden Living Library",
+  "short_name": "Awakening Eden",
+  "description": "A living library for regeneration, awakening, empowerment, peace, purpose and practical hope.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#102819",
+  "theme_color": "#102819",
+  "icons": [
+    {
+      "src": "assets/illustrations/ae-logo-tree-heart.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

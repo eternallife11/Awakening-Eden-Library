@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Small-Scale Regenerative Farm Playbook · Mediterranean Climates</title>
+<style>
+:root {
+  --soil:#3b2f24; --earth:#7b4f32; --terracotta:#b96442; --sun:#e2aa4b; --leaf:#5f7a45; --sage:#d8dfc8; --cream:#fbf4e7; --paper:#fffaf0; --ink:#24211e; --muted:#665c50;
+}
+* { box-sizing: border-box; }
+body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbf4e7 0%,#f4e6ce 100%); line-height:1.55; }
+header { background: radial-gradient(circle at 20% 20%, rgba(226,170,75,.35), transparent 35%), linear-gradient(135deg, var(--soil), var(--earth)); color:white; padding:58px 24px 48px; text-align:center; }
+header .eyebrow { text-transform:uppercase; letter-spacing:.16em; color:#f1d49c; font-weight:700; font-size:.8rem; }
+h1 { font-size:clamp(2.2rem, 5vw, 4.7rem); margin:.25em auto .18em; max-width:1100px; line-height:1.02; }
+.subtitle { max-width:900px; margin:0 auto; font-size:1.15rem; color:#f8ead2; }
+.meta { margin-top:20px; color:#e8d5b7; font-size:.95rem; }
+nav { position: sticky; top:0; z-index:10; background:rgba(255,250,240,.95); backdrop-filter: blur(8px); border-bottom:1px solid rgba(59,47,36,.12); padding:10px 16px; overflow-x:auto; white-space:nowrap; }
+nav a { color:var(--earth); text-decoration:none; font-weight:700; margin:0 10px; font-size:.92rem; }
+main { max-width:1100px; margin:0 auto; padding:30px 20px 70px; }
+.card { background:var(--paper); border:1px solid rgba(59,47,36,.12); border-radius:22px; padding:24px; margin:22px 0; box-shadow:0 12px 35px rgba(59,47,36,.08); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; }
+.mini { background:#fffdf6; border:1px solid rgba(95,122,69,.18); border-radius:18px; padding:18px; }
+h2 { color:var(--soil); margin:0 0 12px; font-size:1.8rem; }
+h3 { color:var(--earth); margin:18px 0 8px; font-size:1.16rem; }
+p { margin:.55em 0; }
+ul,ol { padding-left:1.25em; }
+li { margin:.35em 0; }
+.tag { display:inline-block; background:var(--sage); color:#354528; padding:3px 9px; border-radius:999px; font-weight:800; font-size:.8rem; margin:3px 4px 3px 0; }
+.callout { border-left:5px solid var(--sun); padding:14px 18px; background:#fff7e4; border-radius:14px; }
+.warning { border-left:5px solid var(--terracotta); background:#fff1e8; }
+.success { border-left:5px solid var(--leaf); background:#eff6e8; }
+table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:14px; margin:14px 0; background:white; }
+th,td { padding:11px 12px; border-bottom:1px solid #eadfcd; vertical-align:top; text-align:left; }
+th { background:#eadbc1; color:#3b2f24; }
+tr:last-child td { border-bottom:none; }
+.checklist li { list-style:none; margin:.48em 0; }
+.checklist input { transform:scale(1.15); margin-right:.6em; accent-color:var(--leaf); }
+.kpi { font-size:1.65rem; font-weight:900; color:var(--terracotta); }
+.source-list li { word-break:break-word; margin:.5em 0; }
+a { color:#7b4f32; }
+.printbar { position:fixed; right:18px; bottom:18px; z-index:20; }
+button { background:var(--leaf); color:white; border:0; padding:12px 16px; border-radius:999px; font-weight:800; box-shadow:0 8px 20px rgba(0,0,0,.18); cursor:pointer; }
+footer { text-align:center; color:var(--muted); padding:30px; font-size:.9rem; }
+@media print {
+ body { background:white; } header { padding:34px 20px; } nav,.printbar { display:none; } .card { box-shadow:none; break-inside:avoid; } a { color:black; }
+}
+
+/* Awakening Eden growing seed companion */
+.ae-growth-companion{
+  position:fixed; right:14px; bottom:16px; width:min(184px,42vw); z-index:70;
+  pointer-events:none; display:grid; gap:8px; justify-items:end;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.ae-growth-orb{
+  width:74px; height:74px; border-radius:50%;
+  background:radial-gradient(circle at 35% 25%,#fff9e8 0 12%,#f7e8be 13% 30%,#bdd09d 31% 56%,#597a45 57% 100%);
+  box-shadow:0 15px 38px rgba(19,41,22,.22), inset 0 0 0 1px rgba(255,255,255,.48);
+  display:grid; place-items:center; position:relative; overflow:hidden;
+}
+.ae-growth-symbol{font-size:34px; transform:translateY(1px); transition:transform .4s ease, opacity .4s ease}
+.ae-growth-ring{
+  position:absolute; inset:6px; border-radius:50%;
+  background:conic-gradient(#577445 calc(var(--ae-growth,0)*1turn), rgba(255,255,255,.34) 0);
+  mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+}
+.ae-growth-message{
+  max-width:184px; padding:10px 12px; border-radius:18px 18px 4px 18px;
+  background:rgba(255,253,247,.94); color:#251b14; border:1px solid rgba(35,69,42,.16);
+  box-shadow:0 12px 32px rgba(14,32,18,.12); font-size:12px; line-height:1.35;
+  opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease;
+}
+body.ae-growth-final .ae-growth-message{opacity:1; transform:none}
+.ae-tree-blessing{
+  margin:34px auto 12px; max-width:820px; padding:28px 22px; border-radius:28px;
+  background:linear-gradient(135deg,rgba(255,253,247,.94),rgba(240,232,205,.88));
+  border:1px solid rgba(35,69,42,.16); box-shadow:0 16px 45px rgba(14,32,18,.08);
+  text-align:center;
+}
+.ae-tree-blessing .tree{font-size:42px; line-height:1; margin-bottom:10px}
+.ae-tree-blessing h3{margin:.2rem 0 .55rem; color:#132916; font-family:Georgia,serif; font-size:clamp(1.45rem,4vw,2.2rem)}
+.ae-tree-blessing p{margin:.25rem auto; max-width:680px}
+@media(max-width:720px){
+  .ae-growth-companion{right:9px; bottom:10px; width:120px}
+  .ae-growth-orb{width:54px;height:54px}
+  .ae-growth-symbol{font-size:26px}
+  .ae-growth-message{display:none}
+}
+@media(prefers-reduced-motion:reduce){.ae-growth-companion{display:none}}
+
+</style>
+<meta content="A small-scale regenerative farm playbook for Mediterranean climates: soil, water, biomass, syntropic thinking, nursery systems and abundant edge design." name="description"/><meta content="index, follow" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-living-library.netlify.app/Small-Scale-Regenerative-Farm-Playbook.html" rel="canonical"/><meta content="Small-Scale Regenerative Farm Playbook · Mediterranean Climates" property="og:title"/><meta content="A small-scale regenerative farm playbook for Mediterranean climates: soil, water, biomass, syntropic thinking, nursery systems and abundant edge design." property="og:description"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-living-library.netlify.app/Small-Scale-Regenerative-Farm-Playbook.html" property="og:url"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Small-Scale Regenerative Farm Playbook · Mediterranean Climates" name="twitter:title"/><meta content="A small-scale regenerative farm playbook for Mediterranean climates: soil, water, biomass, syntropic thinking, nursery systems and abundant edge design." name="twitter:description"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" name="twitter:image"/><link href="assets/illustrations/ae-logo-tree-heart.svg" rel="icon"/><link href="manifest.webmanifest" rel="manifest"/><script data-seo="awakening-eden" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Small-Scale Regenerative Farm Playbook · Mediterranean Climates",
+  "description": "A small-scale regenerative farm playbook for Mediterranean climates: soil, water, biomass, syntropic thinking, nursery systems and abundant edge design.",
+  "url": "https://awakening-eden-living-library.netlify.app/Small-Scale-Regenerative-Farm-Playbook.html",
+  "image": "https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awakening Eden",
+    "url": "https://awakening-eden-living-library.netlify.app",
+    "logo": "https://awakening-eden-living-library.netlify.app/assets/illustrations/ae-logo-tree-heart.svg"
+  }
+}</script></head>
+<body>
+<div aria-hidden="true" class="ae-growth-companion">
+<div class="ae-growth-message"><strong>This is you.</strong><br/>The seed becoming the Tree of Life — with the butterfly of transformation arriving at the end.</div>
+<div class="ae-growth-orb"><div class="ae-growth-ring"></div><div class="ae-growth-symbol">🌰</div></div>
+</div>
+<header id="top">
+<div class="eyebrow">Regenerative Eden field guide</div>
+<h1>Small-Scale Regenerative Farm Playbook for Mediterranean Climates</h1>
+<p class="subtitle">Practical tips from French-intensive market gardens, no-dig organic farms, biointensive growers, and modern small-farm business models. Built for abundant food, nutrient density, community income, and water-wise Mediterranean resilience.</p>
+<div class="meta">Prepared for sharing · Updated 14 June 2026 · Inspired by the 1/4-acre “infinite income” farming idea <sup><a href="#source-1">1</a></sup></div>
+</header>
+<nav>
+<a href="#essence">Essence</a><a href="#models">Farm models</a><a href="#layout">Layout</a><a href="#crops">Crops</a><a href="#beds">Garden how-to</a><a href="#water">Water</a><a href="#business">Business</a><a href="#calendar">Calendar</a><a href="#launch">Launch plan</a><a href="#sources">Sources</a>
+</nav>
+<div class="printbar"><button onclick="window.print()">Print / Save PDF</button></div>
+<main>
+<section class="card" id="essence">
+<h2>1. The essence: grow better, cycle faster, sell closer</h2>
+<p>The revolutionary small farm is not a giant field. It is a living engine: permanent beds, compost-rich soil, rapid succession, beautiful harvesting, loyal local customers, and multiple income streams buzzing together like a garden hive.</p>
+<div class="grid">
+<div class="mini"><div class="kpi">Small</div><strong>Keep the farm human-scale.</strong><br/>Permanent beds, hand tools, broadforks, seedling trays, drip lines, carts, and smart crop planning can outperform “big machinery thinking” on tiny acreage.</div>
+<div class="mini"><div class="kpi">Fast</div><strong>Choose crops with quick turns.</strong><br/>Salad mix, herbs, radish, microgreens, spring onions, flowers, and seedlings can create weekly cash flow instead of one annual harvest.</div>
+<div class="mini"><div class="kpi">Direct</div><strong>Sell relationship, freshness, and story.</strong><br/>CSA boxes, restaurants, retreats, farm stands, WhatsApp preorders, and workshops keep value on the farm instead of leaking it into long supply chains.</div>
+<div class="mini"><div class="kpi">Alive</div><strong>Make soil the main worker.</strong><br/>Compost, mulch, cover crops, living roots, fungi, worms, and minimum disturbance reduce irrigation stress and increase resilience.</div>
+</div>
+<div class="callout warning"><strong>Important income note:</strong> High-revenue examples are inspiring, not guaranteed. Profit depends on local demand, price, skill, labor, irrigation, soil, access, marketing, and consistency. Treat “infinite income” as a catchy lantern, not a financial promise.</div>
+</section>
+<section class="card" id="models">
+<h2>2. Models worth studying</h2>
+<div class="grid">
+<div class="mini">
+<h3>French-intensive / biointensive market gardening</h3>
+<p>Parisian market gardeners used intensive soil fertility, hotbeds, glass protection, close spacing, and succession planting to produce high yields on small urban plots. Modern biointensive farms update this with compost, tunnels, drip irrigation, better tools, and crop planning. <sup><a href="#source-2">2</a></sup> <sup><a href="#source-3">3</a></sup></p>
+<span class="tag">Permanent beds</span><span class="tag">Close spacing</span><span class="tag">Succession</span><span class="tag">Protected crops</span>
+</div>
+<div class="mini">
+<h3>Fortier-style market garden</h3>
+<p>Jean-Martin Fortier’s work popularized the “grow better, not bigger” microfarm: low-tech tools, biointensive beds, direct sales, CSA, restaurants, and high efficiency on about 1.5 acres of cultivated production. McGill News reported the farm making about $100,000 per acre with strong margins; treat this as a mature-farm benchmark, not a beginner target. <sup><a href="#source-4">4</a></sup> <sup><a href="#source-5">5</a></sup></p>
+<span class="tag">CSA</span><span class="tag">Restaurants</span><span class="tag">Low-tech</span><span class="tag">Crop planning</span>
+</div>
+<div class="mini">
+<h3>No-dig / no-till compost market garden</h3>
+<p>No-dig systems protect soil structure by avoiding routine cultivation, using compost and mulch on the surface. RHS frames no-dig as a way to care for soil health, and Charles Dowding’s market-garden teachings emphasize less weeding, strong harvests, and compost-fed soil biology. <sup><a href="#source-6">6</a></sup> <sup><a href="#source-7">7</a></sup></p>
+<span class="tag">Compost mulch</span><span class="tag">Less weeds</span><span class="tag">Soil life</span><span class="tag">Lower disturbance</span>
+</div>
+<div class="mini">
+<h3>Singing Frogs-style “soil first” no-till farm</h3>
+<p>Singing Frogs Farm presents a no-kill/no-till approach built around high-biology soil, biodiversity, crop rotation, and continuous living systems. Their own principles page reports dramatically reduced water use and roughly $170,000 in vegetable sales per crop acre per year, with much of revenue paying year-round staff. <sup><a href="#source-6">6</a></sup></p>
+<span class="tag">Biodiversity</span><span class="tag">Compost</span><span class="tag">Water resilience</span><span class="tag">Staff-centered</span>
+</div>
+</div>
+</section>
+<section class="card" id="layout">
+<h2>3. A practical 1/4-acre Mediterranean layout</h2>
+<p>A quarter acre is roughly 1,000 m². Do not fill all of it with vegetables. A profitable microfarm needs growing space, but also nursery, wash/pack, compost, paths, water, shade, storage, and beauty. The invisible infrastructure is where the money and sanity often hide.</p>
+<table>
+<thead><tr><th>Zone</th><th>Suggested space</th><th>Purpose</th><th>Mediterranean notes</th></tr></thead>
+<tbody>
+<tr><td>Permanent annual beds</td><td>400-600 m²</td><td>High-value vegetables, herbs, flowers</td><td>Use 75-100 cm beds, 35-50 cm paths, drip lines, mulch, shade cloth in summer.</td></tr>
+<tr><td>Propagation nursery</td><td>50-120 m²</td><td>Seedlings for your own farm plus sales</td><td>Shade net, insect net, reliable watering, wind protection. This is the farm’s seedling heart.</td></tr>
+<tr><td>Protected tunnel / greenhouse</td><td>80-200 m²</td><td>Tomatoes, cucumbers, basil, winter greens, seedlings</td><td>Ventilation is critical. Mediterranean protected cultivation must reduce water, fertilizer, and pest-control pressure. <sup><a href="#source-10">10</a></sup> <sup><a href="#source-11">11</a></sup></td></tr>
+<tr><td>Wash/pack/cool area</td><td>20-60 m²</td><td>Clean harvests, packing, quality control</td><td>Shade, washable surfaces, crates, scale, labels, fast cooling. Quality equals trust.</td></tr>
+<tr><td>Compost + biomass</td><td>80-150 m²</td><td>Compost, worm system, leaf mould, mulch storage</td><td>Place uphill from beds only if runoff cannot contaminate crops. Keep manure aged and safe.</td></tr>
+<tr><td>Perennial edges</td><td>100-250 m²</td><td>Fruit, herbs, flowers, pollinators, windbreaks</td><td>Use rosemary, lavender, thyme, sage, fig, pomegranate, olive, almond, carob, grape, artichoke, caper.</td></tr>
+</tbody>
+</table>
+<div class="callout success"><strong>Simple starter:</strong> Begin with 10 beds of 10 m x 0.75 m, one nursery bench, a wash table, one compost bay, and a weekly sales channel. Then expand only when the system is smooth.</div>
+</section>
+<section class="card" id="crops">
+<h2>4. Crop choices for high nutrition, high value, and Mediterranean resilience</h2>
+<p>Organic and regenerative systems can improve soil health and may influence nutrient profiles. A major British Journal of Nutrition meta-analysis found organic crops, on average, had higher antioxidant concentrations, lower cadmium, and fewer pesticide residues than conventional comparators; regenerative nutrient-density research is promising but still emerging and should be presented humbly. <sup><a href="#source-14">14</a></sup> <sup><a href="#source-15">15</a></sup></p>
+<table>
+<thead><tr><th>Crop group</th><th>Best crops</th><th>Why it works</th><th>How to sell</th></tr></thead>
+<tbody>
+<tr><td>Quick-turn greens</td><td>Rocket, lettuce mix, mizuna, mustard, baby kale, spinach in cool season</td><td>Fast cash flow, repeat harvests, restaurant demand</td><td>Premium salad bags, chef mixes, CSA greens add-on</td></tr>
+<tr><td>Herbs</td><td>Basil, coriander, parsley, dill, mint, oregano, thyme, rosemary, sage</td><td>High value per square meter, fragrant, small harvest volume</td><td>Bunches, living pots, dried herbs, tea blends, infused salts</td></tr>
+<tr><td>Microgreens</td><td>Sunflower, pea shoots, radish, broccoli, basil, coriander</td><td>Very fast cycles, indoor/shade production, premium chefs</td><td>Restaurants, retreats, health cafés, subscription trays</td></tr>
+<tr><td>Summer fruiting crops</td><td>Cherry tomato, cucumber, pepper, eggplant, zucchini, okra</td><td>Strong summer demand, good with trellising and shade</td><td>Chef boxes, tomato tasting boxes, sauce days, farm stand</td></tr>
+<tr><td>Roots + bunching</td><td>Radish, baby beet, carrot, turnip, spring onion</td><td>Beautiful bunches, quick bed turns, CSA color</td><td>Farmers market bundles, salad box upgrades</td></tr>
+<tr><td>Flowers + edible flowers</td><td>Calendula, nasturtium, borage, cosmos, zinnia, marigold, chamomile</td><td>Pollinator support and high perceived value</td><td>Wedding bunches, edible flower boxes, herbal products</td></tr>
+<tr><td>Perennial Mediterranean value crops</td><td>Olive, fig, pomegranate, grape, almond, carob, citrus where irrigated, caper, artichoke</td><td>Lower annual planting, resilience, story-rich products</td><td>Olive oil, dried figs, pomegranate syrup, herb-fruit baskets, tours</td></tr>
+<tr><td>Biomass + soil builders</td><td>Fava bean, vetch, clover, cowpea, sunn hemp, Mexican sunflower, comfrey, grasses</td><td>Mulch, nitrogen, roots, fungi, chop-and-drop</td><td>Mostly internal value: fertility, water retention, weed control</td></tr>
+</tbody>
+</table>
+<div class="callout"><strong>Best Mediterranean farm stack:</strong> cool-season salad and herbs + warm-season trellised fruiting crops + perennial herbs and fruit edges + seedlings + workshops. This gives weekly income, long-term abundance, and a farm that smells like a herb wizard moved into a citrus grove.</div>
+</section>
+<section class="card" id="beds">
+<h2>5. How to build productive beds</h2>
+<div class="grid">
+<div class="mini">
+<h3>No-dig bed build</h3>
+<ol>
+<li>Mow or cut weeds low.</li>
+<li>Water the soil deeply if dry.</li>
+<li>Lay plain cardboard over weedy ground, overlapping edges.</li>
+<li>Add 10-15 cm finished compost or aged compost/manure blend.</li>
+<li>Shape beds 75-100 cm wide so nobody steps on them.</li>
+<li>Install drip lines immediately.</li>
+<li>Plant transplants into compost; sow larger seeds directly.</li>
+<li>Keep paths mulched with woodchip, straw, leaves, or living cover.</li>
+</ol>
+</div>
+<div class="mini">
+<h3>Compacted soil rescue</h3>
+<ol>
+<li>Broadfork once, without turning soil.</li>
+<li>Add compost, worm castings, and a light mineral blend if soil tests justify it.</li>
+<li>Grow deep-rooted daikon, fava, chicory, or clover in the off-season.</li>
+<li>Keep soil covered all year.</li>
+<li>Avoid rotavating repeatedly. It creates a fluffy sugar-rush, then soil structure crashes.</li>
+</ol>
+</div>
+<div class="mini">
+<h3>Fertility rhythm</h3>
+<ul>
+<li>Compost: thin layer between crop turns.</li>
+<li>Worm castings: seedling holes, high-value greens, stressed beds.</li>
+<li>Aged manure: composted first, used carefully.</li>
+<li>Basalt/rock dust: small annual doses only where minerals are useful.</li>
+<li>Seaweed extract: stress tonic, trace elements.</li>
+<li>Cover crops: fava/vetch/clover in cool season; cowpea/sunn hemp in warm season.</li>
+</ul>
+</div>
+</div>
+<div class="callout warning"><strong>Food safety:</strong> Fresh manure near harvest crops is risky. Compost fully, keep animals out of harvest zones, wash hands/tools/crates, and follow local food hygiene rules.</div>
+</section>
+<section class="card" id="water">
+<h2>6. Mediterranean water strategy: every drop gets a job</h2>
+<p>FiBL identifies Mediterranean systems as strongly linked with olives, grapes, citrus, nuts, legumes, vegetables, wheat, and livestock, but water pressure is a central challenge. In Mediterranean organic protected systems, reducing water, fertilizer, and plant-protection inputs is a major priority. <sup><a href="#source-9">9</a></sup> <sup><a href="#source-10">10</a></sup></p>
+<div class="grid">
+<div class="mini"><h3>Drip first</h3><p>Use pressure-compensating drip where possible, filter the water, flush lines, and irrigate early morning. Drip puts water at roots instead of baptizing the weeds.</p></div>
+<div class="mini"><h3>Mulch wisely</h3><p>Organic mulch and drip together can reduce water footprint in dry regions; one catchment-scale study found the combination reduced blue water footprint by about 5%, while noting results are very local. <sup><a href="#source-12">12</a></sup></p></div>
+<div class="mini"><h3>Shade cloth</h3><p>Use 30-50% shade on leafy greens and nursery crops in hot months. Shade protects photosynthesis from becoming crispy toast.</p></div>
+<div class="mini"><h3>Perennial water harvesting</h3><p>Use contour lines, swales, basins, mulch rings, fungi-rich woodchip, windbreaks, and deep-rooted support plants around trees.</p></div>
+<div class="mini"><h3>Living soil cover</h3><p>Cover crops protect soil, add organic matter, support soil life, fix nitrogen when legumes are used, conserve nutrients, suppress weeds, and support biological pest control. <sup><a href="#source-13">13</a></sup></p></div>
+<div class="mini"><h3>Separate crop groups</h3><p>Group thirsty crops together. Keep Mediterranean herbs and drought-hardy perennials away from wet vegetable zones.</p></div>
+</div>
+</section>
+<section class="card" id="business">
+<h2>7. Business models: stack income like layers in a forest</h2>
+<p>CSA is a direct-marketing model where a community pledges support to a farm and shares risks and benefits of production. USDA describes CSA as a community of individuals pledging support to a farm operation, while EU CAP notes CSA members often cover a farm’s annual operating budget by buying a share of the harvest. <sup><a href="#source-16">16</a></sup> <sup><a href="#source-17">17</a></sup></p>
+<table>
+<thead><tr><th>Model</th><th>Why it fits small farms</th><th>First offer idea</th></tr></thead>
+<tbody>
+<tr><td>CSA / weekly veg box</td><td>Predictable cash flow, customer loyalty, less market uncertainty</td><td>20 founder boxes for 8 weeks: salad, herbs, seasonal veg, edible flowers</td></tr>
+<tr><td>Restaurant / retreat chef supply</td><td>Premium demand for freshness, flavor, herbs, flowers, microgreens</td><td>Chef list every Monday: 10 special items harvested Wednesday/Friday</td></tr>
+<tr><td>Farmers market + preorder</td><td>Visibility, storytelling, quick testing of new crops</td><td>WhatsApp preorder form before market day to reduce waste</td></tr>
+<tr><td>Seedlings and nursery</td><td>Spring cash flow before field harvests peak</td><td>Mediterranean edible garden starter trays: basil, tomato, calendula, herbs</td></tr>
+<tr><td>Value-added herbs</td><td>Uses surplus, shelf-stable, strong brand story</td><td>Dried herb salts, tea blends, herbal bundles, calendula oil</td></tr>
+<tr><td>Workshops and farm tours</td><td>Turns knowledge into income and customers into allies</td><td>“Build a no-dig Mediterranean bed” half-day workshop</td></tr>
+<tr><td>Design/consulting</td><td>High value, low land requirement, scales your expertise</td><td>90-minute online garden plan + crop list + water strategy</td></tr>
+<tr><td>Farm-to-table events</td><td>Combines food, story, community, and beauty</td><td>Seasonal garden dinner with herb walk and harvest ritual</td></tr>
+</tbody>
+</table>
+<div class="callout success"><strong>Simple pricing logic:</strong> Track every crop by bed: seed cost, compost, labor minutes, harvest weight/bunches, sales, and waste. Within one season the farm tells you which crops are treasure and which are leafy little divas.</div>
+</section>
+<section class="card" id="calendar">
+<h2>8. Mediterranean crop calendar, adapted for Portugal</h2>
+<p>Adjust by altitude, frost pocket, wind, and irrigation. Central Portugal hills behave differently from the Algarve coast. Use this as a starting map, then let your local microclimate scribble notes in the margins.</p>
+<table>
+<thead><tr><th>Season</th><th>Main focus</th><th>Plant / sow</th><th>Sell</th></tr></thead>
+<tbody>
+<tr><td>Jan-Feb</td><td>Planning, compost, tunnel crops</td><td>Onion, leek, early lettuce, parsley, coriander, fava, peas, brassica starts</td><td>Winter greens, herbs, seedlings preorders, workshops</td></tr>
+<tr><td>Mar-Apr</td><td>Big spring acceleration</td><td>Salads, radish, carrots, beet, chard, basil starts, tomatoes, flowers</td><td>Salad bags, spring herbs, early bunches, plant starts</td></tr>
+<tr><td>May-Jun</td><td>Transplant summer crops</td><td>Tomato, cucumber, pepper, eggplant, basil, beans, squash, flowers</td><td>CSA boxes, seedlings, herbs, edible flowers</td></tr>
+<tr><td>Jul-Aug</td><td>Heat management</td><td>Okra, sweet potato, cowpea, basil, amaranth; sow autumn brassicas in shade</td><td>Tomatoes, basil, cucumbers, peppers, herb salts, tours</td></tr>
+<tr><td>Sep-Oct</td><td>Autumn reboot</td><td>Rocket, lettuce, spinach, coriander, parsley, radish, turnip, fava, vetch, clover</td><td>Greens return, herb bundles, workshop season</td></tr>
+<tr><td>Nov-Dec</td><td>Soil cover and winter abundance</td><td>Garlic, onions, fava, peas, winter lettuce, kale, cover crops</td><td>Winter boxes, dried herbs, gift baskets, planning consults</td></tr>
+</tbody>
+</table>
+</section>
+<section class="card" id="launch">
+<h2>9. 12-week launch plan</h2>
+<div class="grid">
+<div class="mini"><h3>Weeks 1-2: Map and market</h3><ul><li>Draw site map: sun, shade, water, wind, access, frost.</li><li>Interview 10 possible buyers: chefs, retreat owners, cafés, neighbours.</li><li>Choose 6 starter crops, not 60.</li></ul></div>
+<div class="mini"><h3>Weeks 3-4: Build the first system</h3><ul><li>Create 6-10 permanent beds.</li><li>Install drip irrigation and mulch paths.</li><li>Start nursery trays every week.</li></ul></div>
+<div class="mini"><h3>Weeks 5-6: Brand and pre-sell</h3><ul><li>Create a simple weekly harvest list.</li><li>Launch 10-20 founder boxes.</li><li>Make one farm story post per week.</li></ul></div>
+<div class="mini"><h3>Weeks 7-8: Harvest quality</h3><ul><li>Harvest early morning.</li><li>Wash, cool, pack beautifully.</li><li>Ask customers what they loved and what they did not use.</li></ul></div>
+<div class="mini"><h3>Weeks 9-10: Improve crop mix</h3><ul><li>Drop low-profit headaches.</li><li>Double down on the crops people reorder.</li><li>Add herbs, edible flowers, or microgreens.</li></ul></div>
+<div class="mini"><h3>Weeks 11-12: Add one income layer</h3><ul><li>Run a workshop or farm tour.</li><li>Offer seedlings or a consult.</li><li>Create a subscription renewal.</li></ul></div>
+</div>
+</section>
+<section class="card">
+<h2>10. Copy-paste checklist for a small regenerative market farm</h2>
+<ul class="checklist">
+<li><input type="checkbox"/> I know my first 10 customers before scaling production.</li>
+<li><input type="checkbox"/> Beds are permanent, reachable, and never walked on.</li>
+<li><input type="checkbox"/> Water is filtered, drip-irrigated, timed, and measured.</li>
+<li><input type="checkbox"/> Every bed has a crop plan, a next crop, and a fertility plan.</li>
+<li><input type="checkbox"/> Soil stays covered with plants, compost, mulch, or cover crops.</li>
+<li><input type="checkbox"/> I track sales per crop and per bed, not just total farm sales.</li>
+<li><input type="checkbox"/> I have a harvest/wash/pack routine that protects freshness.</li>
+<li><input type="checkbox"/> I sell directly through at least two channels.</li>
+<li><input type="checkbox"/> I keep beauty in the system: flowers, edges, shade, signs, story.</li>
+<li><input type="checkbox"/> I expand only after the first rhythm works.</li>
+</ul>
+</section>
+<section class="card" id="sources">
+<h2>Sources and further learning</h2>
+<p>This page blends practical grower wisdom, published examples, and research. Some income figures are self-reported or media-reported, so use them as inspiration and benchmarks, not guarantees.</p>
+<ol class="source-list"><li id="source-1"><a href="https://www.youtube.com/watch?v=iMFICmAJcAU" rel="noopener" target="_blank">YouTube video: The “Infinite Income” System (On Only 1/4 Acre)</a></li>
+<li id="source-2"><a href="https://en.lesjardinsdelamarmotte.com/la-production-biointensive" rel="noopener" target="_blank">Biointensive growing and the 19th-century Parisian market-garden lineage</a></li>
+<li id="source-3"><a href="https://lacuisineus.com/food-for-thought-market-gardens/" rel="noopener" target="_blank">Paris market gardens: manure-heated beds, glass protection, winter salads and early crops</a></li>
+<li id="source-4"><a href="https://mcgillnews.mcgill.ca/microfarming-pioneer-sees-big-future-for-little-farms/" rel="noopener" target="_blank">Jean-Martin Fortier / Les Jardins de la Grelinette microfarm profile</a></li>
+<li id="source-5"><a href="https://themarketgardener.com/" rel="noopener" target="_blank">The Market Gardener Institute: organic market gardening resources</a></li>
+<li id="source-6"><a href="https://www.singingfrogsfarm.com/principles" rel="noopener" target="_blank">Singing Frogs Farm basic principles and self-reported sales model</a></li>
+<li id="source-7"><a href="https://www.rhs.org.uk/soil-composts-mulches/no-dig-gardening" rel="noopener" target="_blank">RHS: No-dig gardening advice</a></li>
+<li id="source-8"><a href="https://courses.charlesdowding.co.uk/no-dig-the-reasons-for-and-charles-history/" rel="noopener" target="_blank">Charles Dowding: no-dig / no-till reasons and method notes</a></li>
+<li id="source-9"><a href="https://www.fibl.org/en/themes/mediterranean-farming-systems-info" rel="noopener" target="_blank">FiBL: Mediterranean farming systems overview</a></li>
+<li id="source-10"><a href="https://organic-farmknowledge.org/themes/theme/336" rel="noopener" target="_blank">Organic Farm Knowledge: protected cultivation challenges in Mediterranean systems</a></li>
+<li id="source-11"><a href="https://www.fao.org/4/i3284e/i3284e.pdf" rel="noopener" target="_blank">FAO: Good agricultural practices for greenhouse vegetable crops</a></li>
+<li id="source-12"><a href="https://ris.utwente.nl/ws/files/70061104/waterscarcity.pdf" rel="noopener" target="_blank">Nouri et al. 2019: mulching and drip irrigation water-saving assessment</a></li>
+<li id="source-13"><a href="https://ofrf.org/download/cover-cropping-summary/?refresh=65bbebb92b4c51706814393&amp;wpdmdl=12640" rel="noopener" target="_blank">Organic Farming Research Foundation: cover cropping summary</a></li>
+<li id="source-14"><a href="https://www.cambridge.org/core/journals/british-journal-of-nutrition/article/higher-antioxidant-and-lower-cadmium-concentrations-and-lower-incidence-of-pesticide-residues-in-organically-grown-crops-a-systematic-literature-review-and-metaanalyses/33F09637EAE6C4ED119E0C4BFFE2D5B1" rel="noopener" target="_blank">British Journal of Nutrition meta-analysis: organic crops, antioxidants, cadmium, pesticide residues</a></li>
+<li id="source-15"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8801175/" rel="noopener" target="_blank">Montgomery et al. 2022: soil health and nutrient density preliminary comparison</a></li>
+<li id="source-16"><a href="https://www.nal.usda.gov/farms-and-agricultural-production-systems/community-supported-agriculture" rel="noopener" target="_blank">USDA National Agricultural Library: Community Supported Agriculture overview</a></li>
+<li id="source-17"><a href="https://eu-cap-network.ec.europa.eu/projects/practice-abstracts/community-supported-agriculture-csa-germany-solidarische-landwirtschaft_en" rel="noopener" target="_blank">EU CAP Network: CSA model in Germany</a></li>
+<li id="source-18"><a href="https://www.ncat.org/publication/market-gardening-a-start-up-guide-2/" rel="noopener" target="_blank">NCAT/ATTRA: Market Gardening, a start-up guide</a></li>
+<li id="source-19"><a href="https://content.ces.ncsu.edu/pdf/market-gardens-for-small-farms-i/2021-07-13/AG_sible_071221.pdf" rel="noopener" target="_blank">NC State Extension: Market gardens for small farms</a></li></ol>
+</section>
+</main>
+<footer>Created as a living field note for Regenerative Eden / Tierra Mágica style sharing. May it become soil, skill, food, and community.</footer>
+<section style="max-width:840px;margin:48px auto;padding:34px 26px;background:linear-gradient(135deg,#2d3b27,#432719);border-radius:24px;color:#fff8ec;text-align:center;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 18px 40px rgba(40,30,20,.25);">
+<div style="font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;color:#e5b65c;font-weight:600;margin-bottom:8px;">Walk with us</div>
+<h2 style="margin:.15em 0;color:#fff4d8;font-size:1.55rem;line-height:1.2;">Connect &amp; co-create the new Earth</h2>
+<p style="max-width:580px;margin:12px auto;line-height:1.65;color:#f6ead7;font-size:1rem;">We are the activists and the architects of the future — the ones who plant the new Earth with our own hands. Follow our journey of regeneration, healing, workshops and events, and come say hello.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0 6px;">
+<a href="https://instagram.com/benji_inspirit" rel="noopener" style="display:inline-block;padding:11px 17px;border-radius:999px;background:#e5b65c;color:#251c16;text-decoration:none;font-weight:600;font-size:.92rem;" target="_blank">📸 Follow Benji · @benji_inspirit</a>
+<a href="https://instagram.com/sofiawildflower" rel="noopener" style="display:inline-block;padding:11px 17px;border-radius:999px;background:#d58a57;color:#251c16;text-decoration:none;font-weight:600;font-size:.92rem;" target="_blank">🌸 Sofia Wildflower · @sofiawildflower</a>
+<a href="https://wa.me/351920067347" rel="noopener" style="display:inline-block;padding:11px 17px;border-radius:999px;background:#3fae6b;color:#04220f;text-decoration:none;font-weight:600;font-size:.92rem;" target="_blank">📱 WhatsApp us</a>
+<a href="https://t.me/awakening_Eden" rel="noopener" style="display:inline-block;padding:11px 17px;border-radius:999px;background:rgba(255,248,236,.12);color:#fff8ec;text-decoration:none;font-weight:600;font-size:.92rem;border:1px solid rgba(255,248,236,.25);" target="_blank">💬 Telegram tribe</a>
+<a href="https://regenerative-eden.com" rel="noopener" style="display:inline-block;padding:11px 17px;border-radius:999px;background:#566b3f;color:#fff8ec;text-decoration:none;font-weight:600;font-size:.92rem;" target="_blank">🌱 regenerative-eden.com</a>
+</div>
+<div style="font-style:italic;color:#e5b65c;margin-top:14px;font-size:.98rem;">Earth under our fingernails, hearts connected, our compass set for the stars Earth under our fingernails, hearts connected, our compass set for the stars — grounded in the soils. Regeneration on 🌿</div>
+</section>
+<script>
+(function(){
+  const symbol = document.querySelector('.ae-growth-symbol');
+  const root = document.documentElement;
+  if(!symbol) return;
+  const stages = [
+    {p:0.00, icon:'🌰'},
+    {p:0.16, icon:'🌱'},
+    {p:0.34, icon:'🌿'},
+    {p:0.54, icon:'🌳'},
+    {p:0.78, icon:'🌳🦋'},
+    {p:0.94, icon:'🦋'}
+  ];
+  function updateGrowth(){
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const p = Math.min(1, Math.max(0, window.scrollY / max));
+    root.style.setProperty('--ae-growth', p.toFixed(3));
+    let icon = stages[0].icon;
+    for(const stage of stages){ if(p >= stage.p) icon = stage.icon; }
+    if(symbol.textContent !== icon){ symbol.style.opacity = '0'; setTimeout(()=>{symbol.textContent = icon; symbol.style.opacity='1';},120); }
+    document.body.classList.toggle('ae-growth-final', p > .90);
+  }
+  updateGrowth();
+  window.addEventListener('scroll', updateGrowth, {passive:true});
+  window.addEventListener('resize', updateGrowth);
+})();
+</script>
+</body>
+</html>

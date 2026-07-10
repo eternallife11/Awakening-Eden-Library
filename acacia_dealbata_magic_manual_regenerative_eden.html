@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Acacia Dealbata Magic Manual · Regenerative Eden</title>
+<meta content="A regenerative field guide for transforming Acacia dealbata into biomass, mulch, biochar, fertility, craft, flowers, firewood and food forest support." name="description"/>
+<meta content="Acacia Dealbata Magic Manual · Regenerative Eden" property="og:title"/>
+<meta content="A regenerative field guide for transforming Acacia dealbata into biomass, mulch, biochar, fertility, craft, flowers, firewood and food forest support." property="og:description"/>
+<meta content="website" property="og:type"/>
+<style>
+  :root {
+    --soil:#352719;
+    --earth:#7b4f32;
+    --clay:#b96442;
+    --gold:#e5b65c;
+    --sun:#f6d36e;
+    --leaf:#566b3f;
+    --leaf-deep:#243a28;
+    --moss:#7d8b5e;
+    --sage:#d8dfc8;
+    --cream:#fbf4e7;
+    --paper:#fffaf0;
+    --ink:#24211e;
+    --muted:#665c50;
+    --line:rgba(59,47,36,.14);
+    --shadow:0 18px 55px rgba(59,47,36,.13);
+    --soft-shadow:0 10px 30px rgba(59,47,36,.09);
+    --radius:24px;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0;
+    font-family:ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 8% 5%, rgba(229,182,92,.34), transparent 26rem),
+      radial-gradient(circle at 94% 4%, rgba(86,107,63,.22), transparent 30rem),
+      linear-gradient(180deg,#fff9ef 0%, #f6ead7 44%, #ead6b9 100%);
+    line-height:1.6;
+  }
+  body::before {
+    content:""; position:fixed; inset:0; pointer-events:none; opacity:.18;
+    background-image:linear-gradient(rgba(59,47,36,.05) 1px, transparent 1px),linear-gradient(90deg,rgba(59,47,36,.05) 1px, transparent 1px);
+    background-size:42px 42px; mask-image:linear-gradient(to bottom, black, transparent 75%);
+  }
+  a { color:var(--leaf-deep); text-underline-offset:4px; }
+  .wrap { width:min(1160px, calc(100% - 32px)); margin-inline:auto; }
+  .topbar {
+    position:sticky; top:0; z-index:50; background:rgba(36,58,40,.95); color:var(--cream);
+    backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .topbar .inner { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 0; }
+  .brand { text-transform:uppercase; letter-spacing:.13em; font-size:.78rem; font-weight:850; }
+  .top-actions { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px;
+    padding:10px 15px; border-radius:999px; text-decoration:none; font-weight:850;
+    border:1px solid rgba(59,47,36,.15); box-shadow:0 8px 18px rgba(59,47,36,.10);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover { transform:translateY(-2px); box-shadow:0 12px 24px rgba(59,47,36,.16); }
+  .btn.gold { background:var(--gold); color:var(--soil); }
+  .btn.leaf { background:var(--leaf); color:white; }
+  .btn.earth { background:var(--earth); color:white; }
+  .btn.cream { background:#fff7e4; color:var(--soil); }
+  .btn.clay { background:var(--clay); color:white; }
+  header.hero {
+    min-height:86vh; display:grid; place-items:center; position:relative; color:white; overflow:hidden;
+    padding:76px 0 52px;
+    background-image:linear-gradient(90deg, rgba(19,28,18,.88), rgba(19,28,18,.64) 47%, rgba(19,28,18,.25)), url('acacia_hero_compact.jpg');
+    background-size:cover; background-position:center;
+  }
+  .hero-card { position:relative; z-index:1; max-width:1020px; }
+  .eyebrow {
+    display:inline-flex; gap:8px; align-items:center; padding:8px 14px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.30); background:rgba(255,255,255,.12);
+    text-transform:uppercase; letter-spacing:.13em; font-size:.78rem; font-weight:850; color:#fff0bf;
+  }
+  h1,h2,h3 { line-height:1.08; margin:0; color:var(--soil); }
+  h1 {
+    margin:20px 0 16px; font-size:clamp(3.0rem, 8vw, 7.4rem); letter-spacing:-.075em;
+    color:#fff9ef; max-width:980px;
+  }
+  .subtitle {
+    max-width:875px; font-size:clamp(1.12rem, 2.2vw, 1.48rem); color:#fff2cd; margin:0 0 18px;
+  }
+  .byline { color:#ffe48b; font-weight:850; margin:14px 0 0; }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+  .hero-actions .btn { font-size:.96rem; }
+  .micro-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:30px; }
+  .micro {
+    padding:14px; border-radius:18px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.20);
+  }
+  .micro b { display:block; color:#ffe48b; font-size:1.05rem; margin-bottom:4px; }
+  nav { position:sticky; top:64px; z-index:40; background:rgba(255,248,236,.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .nav-row { display:flex; gap:9px; overflow-x:auto; padding:11px 0; }
+  .nav-row a { white-space:nowrap; text-decoration:none; font-weight:800; font-size:.88rem; color:var(--soil); background:rgba(255,255,255,.55); border:1px solid rgba(59,47,36,.11); border-radius:999px; padding:8px 12px; }
+  main { padding:42px 0 82px; }
+  section { margin:64px 0; scroll-margin-top:130px; }
+  .card {
+    background:rgba(255,250,240,.92); border:1px solid var(--line); border-radius:var(--radius);
+    padding:clamp(20px,3.2vw,34px); box-shadow:var(--soft-shadow); position:relative; overflow:visible;
+  }
+  .card::after { content:""; position:absolute; right:-46px; bottom:-60px; width:150px; height:150px; border-radius:50%; background:rgba(229,182,92,.12); pointer-events:none; }
+  .section-kicker { text-transform:uppercase; letter-spacing:.13em; color:var(--clay); font-size:.78rem; font-weight:900; margin-bottom:10px; padding-left:12px; display:block; }
+  h2 { font-size:clamp(2rem,4.6vw,4.2rem); letter-spacing:-.055em; }
+  h3 { color:var(--earth); font-size:clamp(1.2rem,2vw,1.65rem); letter-spacing:-.02em; }
+  .lead { max-width:930px; font-size:1.12rem; color:#4e4135; }
+  .signature { font-family:Georgia, 'Times New Roman', serif; font-size:1.36rem; color:var(--earth); line-height:1.34; }
+  .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; margin-top:20px; }
+  .span-3 { grid-column:span 3; } .span-4 { grid-column:span 4; } .span-6 { grid-column:span 6; } .span-8 { grid-column:span 8; } .span-12 { grid-column:span 12; }
+  .mini { background:#fffdf6; border:1px solid rgba(86,107,63,.18); border-radius:18px; padding:18px; }
+  .mini h3 { margin-bottom:8px; }
+  .pill { display:inline-flex; align-items:center; gap:6px; padding:5px 9px; border-radius:999px; background:rgba(86,107,63,.12); color:var(--leaf-deep); font-size:.76rem; font-weight:900; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px; }
+  .callout { border-left:6px solid var(--gold); background:linear-gradient(135deg,#fff7e4,#fbf4e7); border-radius:16px; padding:16px 18px; margin:20px 0; }
+  .callout.leaf { border-left-color:var(--leaf); background:linear-gradient(135deg,#eff6e8,#fffaf0); }
+  .callout.clay { border-left-color:var(--clay); background:linear-gradient(135deg,#fff1e8,#fffaf0); }
+  .manifesto { background:linear-gradient(135deg,var(--leaf-deep),#3f5a33); color:#fff8ec; border-radius:30px; padding:30px; box-shadow:var(--shadow); }
+  .manifesto h2, .manifesto h3 { color:#fff0bf; } .manifesto p { color:#fff8ec; } .manifesto a { color:#ffe48b; }
+  table { width:100%; border-collapse:separate; border-spacing:0 10px; margin:16px 0; }
+  th { text-align:left; padding:4px 12px; color:var(--soil); font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
+  td { background:#fffdf6; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:13px 12px; vertical-align:top; }
+  td:first-child { border-left:1px solid var(--line); border-radius:15px 0 0 15px; font-weight:900; color:var(--leaf-deep); min-width:125px; }
+  td:last-child { border-right:1px solid var(--line); border-radius:0 15px 15px 0; }
+  .steps { counter-reset:step; display:grid; gap:13px; margin-top:18px; }
+  .step { counter-increment:step; display:grid; grid-template-columns:54px 1fr; gap:14px; align-items:start; background:#fffdf6; border:1px solid var(--line); border-radius:20px; padding:16px; }
+  .step::before { content:counter(step); width:46px; height:46px; display:grid; place-items:center; border-radius:50%; background:var(--leaf-deep); color:var(--sun); font-weight:950; font-size:1.25rem; }
+  .step h3 { margin:0 0 6px; color:var(--soil); }
+  ul,ol { padding-left:1.25rem; } li { margin:.35em 0; }
+  .checklist li { list-style:none; margin:.55em 0; } .checklist li::before { content:"✓"; color:var(--leaf); font-weight:950; margin-right:.55em; }
+  .source-list li { word-break:break-word; margin:.62em 0; }
+  .share-box textarea { width:100%; min-height:250px; border:1px solid var(--line); border-radius:18px; background:#fffdf6; padding:16px; font:inherit; line-height:1.55; color:var(--ink); resize:vertical; }
+  .footer { background:var(--leaf-deep); color:var(--cream); margin-top:50px; padding:46px 0; } .footer a { color:#fff0bf; }
+  .footer-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:start; }
+  .printbar { position:fixed; right:18px; bottom:18px; z-index:80; } button { border:0; cursor:pointer; }
+  .small { font-size:.92rem; color:var(--muted); }
+  .toplink { position:fixed; left:18px; bottom:18px; z-index:80; text-decoration:none; width:44px; height:44px; border-radius:999px; display:grid; place-items:center; background:var(--earth); color:white; font-weight:900; }
+  @media(max-width:900px) {
+    .micro-grid,.footer-grid { grid-template-columns:1fr; }
+    .span-3,.span-4,.span-6,.span-8,.span-12 { grid-column:span 12; }
+    nav { top:0; } .topbar { position:static; }
+  }
+  @media(max-width:560px) { .topbar .inner { display:grid; } .hero-actions,.top-actions { justify-content:flex-start; } }
+  @media print {
+    @page { size:A4; margin:13mm 11mm; }
+    body { background:white; font-size:10.5pt; line-height:1.44; }
+    body::before,.topbar,nav,.printbar,.toplink,.share-box button { display:none !important; }
+    header.hero { min-height:245mm; padding:26mm 0; page-break-after:always; }
+    h1 { font-size:58pt; } .subtitle { font-size:15pt; }
+    main { padding:0; } section { margin:0 0 10mm; page-break-before:auto; scroll-margin-top:0; }
+    section:first-child { page-break-before:auto; }
+    .card,.mini,.step,.callout,table,.manifesto { break-inside:avoid; page-break-inside:avoid; box-shadow:none; }
+    .grid { gap:8px; } .micro-grid { grid-template-columns:repeat(2,1fr); }
+    tr { break-inside:avoid; page-break-inside:avoid; }
+    .btn { box-shadow:none; }
+    a { color:#1b5036; }
+    .footer { page-break-before:always; }
+  }
+
+/* Awakening Eden growing seed companion */
+.ae-growth-companion{
+  position:fixed; right:14px; bottom:16px; width:min(184px,42vw); z-index:70;
+  pointer-events:none; display:grid; gap:8px; justify-items:end;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.ae-growth-orb{
+  width:74px; height:74px; border-radius:50%;
+  background:radial-gradient(circle at 35% 25%,#fff9e8 0 12%,#f7e8be 13% 30%,#bdd09d 31% 56%,#597a45 57% 100%);
+  box-shadow:0 15px 38px rgba(19,41,22,.22), inset 0 0 0 1px rgba(255,255,255,.48);
+  display:grid; place-items:center; position:relative; overflow:hidden;
+}
+.ae-growth-symbol{font-size:34px; transform:translateY(1px); transition:transform .4s ease, opacity .4s ease}
+.ae-growth-ring{
+  position:absolute; inset:6px; border-radius:50%;
+  background:conic-gradient(#577445 calc(var(--ae-growth,0)*1turn), rgba(255,255,255,.34) 0);
+  mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+}
+.ae-growth-message{
+  max-width:184px; padding:10px 12px; border-radius:18px 18px 4px 18px;
+  background:rgba(255,253,247,.94); color:#251b14; border:1px solid rgba(35,69,42,.16);
+  box-shadow:0 12px 32px rgba(14,32,18,.12); font-size:12px; line-height:1.35;
+  opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease;
+}
+body.ae-growth-final .ae-growth-message{opacity:1; transform:none}
+.ae-tree-blessing{
+  margin:34px auto 12px; max-width:820px; padding:28px 22px; border-radius:28px;
+  background:linear-gradient(135deg,rgba(255,253,247,.94),rgba(240,232,205,.88));
+  border:1px solid rgba(35,69,42,.16); box-shadow:0 16px 45px rgba(14,32,18,.08);
+  text-align:center;
+}
+.ae-tree-blessing .tree{font-size:42px; line-height:1; margin-bottom:10px}
+.ae-tree-blessing h3{margin:.2rem 0 .55rem; color:#132916; font-family:Georgia,serif; font-size:clamp(1.45rem,4vw,2.2rem)}
+.ae-tree-blessing p{margin:.25rem auto; max-width:680px}
+@media(max-width:720px){
+  .ae-growth-companion{right:9px; bottom:10px; width:120px}
+  .ae-growth-orb{width:54px;height:54px}
+  .ae-growth-symbol{font-size:26px}
+  .ae-growth-message{display:none}
+}
+@media(prefers-reduced-motion:reduce){.ae-growth-companion{display:none}}
+
+</style>
+<meta content="index, follow" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-living-library.netlify.app/acacia_dealbata_magic_manual_regenerative_eden.html" rel="canonical"/><meta content="https://awakening-eden-living-library.netlify.app/acacia_dealbata_magic_manual_regenerative_eden.html" property="og:url"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Acacia Dealbata Magic Manual · Regenerative Eden" name="twitter:title"/><meta content="A regenerative field guide for transforming Acacia dealbata into biomass, mulch, biochar, fertility, craft, flowers, firewood and food forest support." name="twitter:description"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" name="twitter:image"/><link href="assets/illustrations/ae-logo-tree-heart.svg" rel="icon"/><link href="manifest.webmanifest" rel="manifest"/><script data-seo="awakening-eden" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Acacia Dealbata Magic Manual · Regenerative Eden",
+  "description": "A regenerative field guide for transforming Acacia dealbata into biomass, mulch, biochar, fertility, craft, flowers, firewood and food forest support.",
+  "url": "https://awakening-eden-living-library.netlify.app/acacia_dealbata_magic_manual_regenerative_eden.html",
+  "image": "https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awakening Eden",
+    "url": "https://awakening-eden-living-library.netlify.app",
+    "logo": "https://awakening-eden-living-library.netlify.app/assets/illustrations/ae-logo-tree-heart.svg"
+  }
+}</script></head>
+<body>
+<div aria-hidden="true" class="ae-growth-companion">
+<div class="ae-growth-message"><strong>This is you.</strong><br/>The seed becoming the Tree of Life — with the butterfly of transformation arriving at the end.</div>
+<div class="ae-growth-orb"><div class="ae-growth-ring"></div><div class="ae-growth-symbol">🌰</div></div>
+</div>
+<div class="topbar">
+<div class="wrap inner">
+<div class="brand">Regenerative Eden x Tierra Magica - Acacia Alchemy</div>
+<div class="top-actions">
+<a class="btn gold" download="" href="acacia_dealbata_magic_manual_regenerative_eden.pdf">Take the Acacia Companion with you</a>
+<a class="btn cream" href="https://regenerativeedenlibrary.netlify.app/" rel="noopener" target="_blank">Free Regeneration 101</a>
+<a class="btn leaf" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20WhatsApp%20Regeneration%20group%20invite%20and%20the%20free%20Regeneration%20101%20guide." rel="noopener" target="_blank">WhatsApp Circle</a>
+<a class="btn clay" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20Telegram%20Regeneration%20circle%20invite." rel="noopener" target="_blank">Telegram Circle</a>
+</div>
+</div>
+</div>
+<header class="hero" id="top">
+<div class="wrap hero-card">
+<span class="eyebrow">Benji Bananas &amp; Green Thumbs field manual</span>
+<h1>Acacia Dealbata Magic Manual</h1>
+<p class="subtitle">From invasive mimosa to mulch, medicine stories, gum, flowers, timber, biochar, soil food, syntropic succession and a living invitation to regenerate the Earth while regenerating ourselves.</p>
+<p class="byline">Created by Benji &amp; Sofia - Regenerative Eden / Tierra Magica Tribe - Central Portugal</p>
+<div class="hero-actions">
+<a class="btn gold" download="" href="acacia_dealbata_magic_manual_regenerative_eden.pdf">Take the Acacia Companion with you</a>
+<a class="btn cream" href="https://regenerativeedenlibrary.netlify.app/" rel="noopener" target="_blank">Take the Awakening Regeneration Companion</a>
+<a class="btn leaf" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20WhatsApp%20Regeneration%20group%20invite%20and%20the%20free%20Regeneration%20101%20guide." rel="noopener" target="_blank">Join / request WhatsApp group</a>
+<a class="btn clay" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20Telegram%20Regeneration%20circle%20invite." rel="noopener" target="_blank">Join / request Telegram group</a>
+</div>
+<div class="micro-grid">
+<div class="micro"><b>Not waste</b>Biomass, mulch, compost, logs, carbon and craft.</div>
+<div class="micro"><b>Not only control</b>Thin, shade, plant, follow up, replace with living diversity.</div>
+<div class="micro"><b>Not monoculture</b>Use disturbance to birth food forests and native succession.</div>
+<div class="micro"><b>Not separate</b>Soil, body, water, forest, nervous system - one living weave.</div>
+</div>
+</div>
+</header>
+<nav>
+<div class="wrap nav-row">
+<a href="#start">Start here</a><a href="#vision">The reframe</a><a href="#truth">Honest truth</a><a href="#parts">Uses by part</a><a href="#soil">Feed the soil</a><a href="#syntropic">Syntropic thinning</a><a href="#recipes">Field recipes</a><a href="#medicine">Medicine &amp; magic</a><a href="#cta">Join the movement</a><a href="#sources">Sources</a>
+</div>
+</nav>
+<div class="printbar"><button class="btn leaf" onclick="window.print()">Print / Save PDF</button></div>
+<a aria-label="Back to top" class="toplink" href="#top">↑</a>
+<main class="wrap">
+<section class="card" id="start">
+<div class="section-kicker">Start here - two free doorways</div>
+<h2>Download, learn, act, share.</h2>
+<p class="lead">This page is a love letter to the misunderstood yellow forest. Download the <strong>Acacia Uses PDF</strong>, then download your free <strong>Regeneration 101 Guide</strong> on how to regenerate your land, create food forests, apply the principles of regeneration, permaculture and syntropic agroforestry, build living systems instead of monocultures, and regenerate the Earth while regenerating ourselves. <strong>It is all one.</strong></p>
+<div class="hero-actions" style="margin-top:18px;">
+<a class="btn gold" download="" href="acacia_dealbata_magic_manual_regenerative_eden.pdf">Download Acacia Uses PDF</a>
+<a class="btn cream" href="https://regenerativeedenlibrary.netlify.app/" rel="noopener" target="_blank">Download Free Regeneration 101</a>
+<a class="btn leaf" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20WhatsApp%20Regeneration%20group%20invite%20and%20the%20free%20Regeneration%20101%20guide." rel="noopener" target="_blank">Join WhatsApp regeneration circle</a>
+<a class="btn clay" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20Telegram%20Regeneration%20circle%20invite." rel="noopener" target="_blank">Join Telegram regeneration circle</a>
+</div>
+<div class="callout leaf">
+<strong>Share freely with care.</strong> This is not a license to spread acacia. It is a call to transform a difficult invasive abundance into fertility, craft, fuel, soil cover, education, and a bridge toward more diverse forests.
+      </div>
+</section>
+<section class="manifesto" id="vision">
+<div class="section-kicker" style="color:#ffe48b;">Regenerative activist reframe</div>
+<h2>The plant everyone curses may still be teaching.</h2>
+<p class="signature" style="color:#fff8ec;">Acacia dealbata is not here for us to romanticize blindly, and not here for us to burn in frustration. It is here as a loud yellow alarm bell: disturbed land, open soil, broken forest cycles, fire scars, erosion, and human management that forgot succession.</p>
+<p>So we listen. We thin. We use the biomass. We cover soil. We plant diversity. We keep returning. We move from reaction to relationship. We turn the invasive forest into a nurse-phase, a carbon bank, a mulch factory, a soil school, a fuel source, a craft tree, a dye plant, a gum plant, and a reminder that nature always tries to cover wounds.</p>
+<p><strong>Our task is not to wage war on life.</strong> Our task is to guide succession toward more life: oaks, chestnuts, fruit trees, nitrogen shrubs in balance, native hedges, medicinal edges, water-holding soil, fungi, birds, shade, food, beauty, and community.</p>
+</section>
+<section class="card" id="truth">
+<div class="section-kicker">The honest truth</div>
+<h2>Acacia dealbata is invasive in Portugal. That is exactly why we need intelligent use.</h2>
+<p class="lead">In Portugal, <em>Acacia dealbata</em>, commonly called mimosa or silver wattle, is listed as invasive. Dense stands can form quickly, especially on disturbed land, and simple cutting can trigger vigorous resprouting. Burning slash without follow-up can also stimulate seed germination. A one-day cut is not a management plan. It is only the first drumbeat.</p>
+<div class="grid">
+<div class="mini span-4"><span class="pill">Problem</span><h3>It spreads</h3><p>Seeds persist, disturbed soil invites germination, and cut stumps often resprout. That means every action needs follow-up and replanting.</p></div>
+<div class="mini span-4"><span class="pill">Gift</span><h3>It creates biomass</h3><p>Branches, trunks, leaves, bark and chips can become mulch, compost, carbon, contour logs, erosion control and garden fertility.</p></div>
+<div class="mini span-4"><span class="pill">Path</span><h3>Use and replace</h3><p>Thin it, use it, suppress resprouts, plant diversity, return often, and turn monoculture pressure into food forest succession.</p></div>
+</div>
+<div class="callout clay"><strong>Regenerative principle:</strong> Do not simply remove the problem and leave a vacuum. A bare vacuum becomes another invasion. Fill the wound with living roots, mulch, shade, fungi and intentional succession.</div>
+</section>
+<section class="card" id="parts">
+<div class="section-kicker">Plant part by plant part</div>
+<h2>Flowers, gum, bark, leaves, trunks - the yellow forest is full of functions.</h2>
+<p class="lead">These uses are for education, land care, craft and respectful experimentation. Correct identification matters. For medicinal use, treat traditional records and lab studies as inspiration, not as medical dosage advice.</p>
+<table>
+<thead><tr><th>Part</th><th>Traditional / practical uses</th><th>Regenerative use on land</th><th>Caution</th></tr></thead>
+<tbody>
+<tr><td>Flowers</td><td>Fragrant flowers have been used ornamentally, in perfumery, for yellow dye, and in some edible preparations such as cooked fritters.</td><td>Harvest before seed formation for small local use, beauty, education and dye experiments. They are also a doorway for people to fall in love with plant observation.</td><td>Eat only if correctly identified and clean. Avoid if allergic or sensitive. Do not confuse floral enthusiasm with medical proof.</td></tr>
+<tr><td>Gum / resin</td><td>The amber gum exuding from wounds is water-soluble and has been recorded as edible, chewable when warmed, and used as a substitute for gum arabic or as natural adhesive.</td><td>Use clean, dry gum as a natural glue experiment, craft binder, curiosity for workshops, or small ethnobotanical teaching moment.</td><td>Do not eat dark, dirty gum from chainsaw wounds, sawdust, soil, fungus or insects. Clean gum only, small amounts, and no medical claims.</td></tr>
+<tr><td>Bark</td><td>Bark is rich in tannins and has been used for tanning, dye and historical astringent preparations.</td><td>Use bark for dye experiments, tannin-rich compost fractions, paths, fungal woody piles and craft. It can also help slow decomposition in woody mulch mixes.</td><td>High tannins can irritate and can inhibit some seedlings if used fresh and concentrated. Avoid strong internal use unless guided by a qualified practitioner.</td></tr>
+<tr><td>Leaves</td><td>Leaves can provide dye material and are nitrogen-rich green biomass from a leguminous tree.</td><td>Chip, compost, hot-compost, use in small amounts as green mulch, add to paths, or mix with carbon-rich browns. Let them become soil food.</td><td>Fresh leaves may have allelopathic effects and can mat. Do not bury thick fresh layers against young sensitive plants. Compost or mix well.</td></tr>
+<tr><td>Branches</td><td>Poles, stakes, kindling, craft, pea sticks, brush bundles and erosion barriers.</td><td>Lay on contour, make brush check-dams, create wildlife piles, edge beds, feed hugelkultur, or chip for mulch after managing seeds.</td><td>Do not move seed pods around the land. Keep seed-bearing material contained and controlled.</td></tr>
+<tr><td>Trunks</td><td>Fuelwood, poles, turning, small craft timber, rustic rails, handles and structural garden material.</td><td>Use as terrace edges, contour logs, fungal logs, retaining ribs, step edges, raised bed frames, biochar feedstock or long-term carbon in hugel beds.</td><td>Wood in soil can temporarily bind nitrogen while decomposing. Balance with compost, manure, urine, green biomass or nitrogen-fixing living plants.</td></tr>
+<tr><td>Stumps</td><td>A biomass factory if coppiced intentionally, but also the regrowth engine of invasion.</td><td>Where needed, coppice for repeated chop-and-drop away from seed formation. Where removing, monitor resprouts and shade them out with succession planting.</td><td>Cutting alone often stimulates resprouting. Return repeatedly. No follow-up means the acacia laughs in yellow.</td></tr>
+<tr><td>Seeds / pods</td><td>Some Acacia species have edible seeds, but species and processing matter.</td><td>For invasive management, treat seeds as a spread risk. Contain, hot-compost only if you can guarantee heat, or dispose according to local guidance.</td><td>Do not spread pods. Do not assume all Acacia seeds are safe foods. This manual does not recommend eating <em>A. dealbata</em> seeds.</td></tr>
+</tbody>
+</table>
+</section>
+<section class="card" id="soil">
+<div class="section-kicker">Feeding gardens and living soil</div>
+<h2>How to turn acacia forest into fertility without feeding the invasion.</h2>
+<p class="lead">The key is to use acacia as a transition material, not as the final ecosystem. Let it feed the next forest, not become the whole forest.</p>
+<div class="grid">
+<div class="mini span-6"><span class="pill">Leaves and twigs</span><h3>Green-brown compost mix</h3><p>Mix chopped leaves and thin twigs with dry grass, straw, cardboard, manure, kitchen scraps and soil. Keep moist, turn when hot, and age before using around sensitive seedlings.</p></div>
+<div class="mini span-6"><span class="pill">Chips</span><h3>Pathways and fungal mulch</h3><p>Use woodchips first on paths, around established trees and in fungal zones. After ageing, move the darker, softer material into beds and tree circles.</p></div>
+<div class="mini span-6"><span class="pill">Logs</span><h3>Contour ribs and hugel bones</h3><p>Lay logs on contour to slow water and sediment. In hugel beds, bury with compost, manure and greens so the wood becomes a sponge instead of a nitrogen thief.</p></div>
+<div class="mini span-6"><span class="pill">Char</span><h3>Biochar, not bonfire waste</h3><p>Char clean wood in a controlled low-oxygen burn or kiln, quench, then charge it with compost tea, urine, manure water or compost before adding to soil.</p></div>
+</div>
+<div class="callout leaf"><strong>Soil spell for practical people:</strong> no bare soil, no wasted biomass, no seed spreading, no one-time hero cut. Cover, compost, plant, monitor, repeat.</div>
+</section>
+<section class="card" id="syntropic">
+<div class="section-kicker">Syntropic thinning plan</div>
+<h2>From acacia monoculture to food forest succession.</h2>
+<p class="lead">The goal is not a scorched battlefield. The goal is a guided succession where acacia becomes the temporary nurse and biomass donor while your desired forest rises underneath.</p>
+<div class="steps">
+<div class="step"><div><h3>Read the stand first</h3><p>Map the densest patches, water flow, erosion lines, access paths, native regeneration, old stumps, seed pods, and where you want future food forest islands.</p></div></div>
+<div class="step"><div><h3>Thin in patches, not panic</h3><p>Open light windows around existing oaks, chestnuts, fruit trees, terraces and planting zones. Keep some shade where summer heat would roast young plants.</p></div></div>
+<div class="step"><div><h3>Process biomass immediately</h3><p>Separate seed material, chip branches, stack logs on contour, create brush bundles, make compost piles, and move usable poles into garden construction.</p></div></div>
+<div class="step"><div><h3>Plant the replacement community</h3><p>Use natives, edible trees, Mediterranean support species, aromatic shrubs, groundcovers, fungi, flowers and cover crops. Every gap needs living roots.</p></div></div>
+<div class="step"><div><h3>Return for resprouts</h3><p>Come back every few weeks in the growing season. Chop resprouts before they gain strength. Use them as chop-and-drop only where no seeds are present.</p></div></div>
+<div class="step"><div><h3>Shift from control to relationship</h3><p>As shade, mulch, fungi and desired species establish, acacia pressure reduces. The land starts choosing diversity again because conditions have changed.</p></div></div>
+</div>
+<div class="callout clay"><strong>Legal and safety note:</strong> Check local fire rules, invasive species guidance and land management rules before moving plant material, burning, chipping or disposing of seed-bearing branches.</div>
+</section>
+<section class="card" id="recipes">
+<div class="section-kicker">Field recipes</div>
+<h2>Simple ways to use what you cut this week.</h2>
+<div class="grid">
+<div class="mini span-6"><span class="pill">Recipe 1</span><h3>Acacia contour mulch rib</h3><ol><li>Cut trunks and thicker branches into manageable lengths.</li><li>Lay them along contour, slightly tucked into the slope.</li><li>Backfill uphill side with chips, leaves, compost and soil.</li><li>Plant behind the rib with deep-rooted shrubs, comfrey, clover, aromatics or tree seedlings.</li><li>Return after rain and add more biomass where water collects.</li></ol></div>
+<div class="mini span-6"><span class="pill">Recipe 2</span><h3>Hot compost with acacia greens</h3><ol><li>Chop leaves and small twigs.</li><li>Mix with carbon: straw, dry leaves, cardboard, old chips.</li><li>Add nitrogen: manure, urine, fresh greens, kitchen scraps.</li><li>Keep moist like a wrung sponge.</li><li>Turn and monitor heat. Mature before using around seedlings.</li></ol></div>
+<div class="mini span-6"><span class="pill">Recipe 3</span><h3>Biochar charging bucket</h3><ol><li>Make clean char from dry acacia wood in a safe controlled system.</li><li>Crush lightly.</li><li>Soak with compost tea, worm juice, urine diluted with water, or manure water.</li><li>Let it charge for at least 1 to 2 weeks.</li><li>Add to compost, tree planting holes, nursery mixes or fungal beds in small percentages.</li></ol></div>
+<div class="mini span-6"><span class="pill">Recipe 4</span><h3>Yellow flower dye day</h3><ol><li>Harvest clean flowers before seed formation.</li><li>Simmer gently with water for a dye bath.</li><li>Test on natural fibres.</li><li>Use the session to teach invasive species, beauty, responsibility and land repair.</li><li>Compost the spent flowers hot or safely.</li></ol></div>
+</div>
+</section>
+<section class="card" id="medicine">
+<div class="section-kicker">Medicine, myth and magic</div>
+<h2>Respect the stories, but keep both feet in the soil.</h2>
+<p class="lead">Acacia species have long histories in different cultures, but the genus is huge and chemistry varies wildly by species, place, season and plant part. For <em>Acacia dealbata</em>, the grounded uses are mainly gum, flowers, tannin-rich bark, dye, timber, fuel, craft, soil stabilization, biomass and restoration work.</p>
+<div class="grid">
+<div class="mini span-4"><span class="pill">Gum</span><h3>Soothing, sticky, useful</h3><p>Clean gum has been eaten or dissolved historically, and used as a binder. In our work, it is best treated as a craft and ethnobotany curiosity.</p></div>
+<div class="mini span-4"><span class="pill">Bark</span><h3>Tannins and astringency</h3><p>Tannins explain tanning, dye and historical astringent uses. Strong internal use needs caution and qualified guidance.</p></div>
+<div class="mini span-4"><span class="pill">Flowers</span><h3>Beauty and bioactivity research</h3><p>Portuguese lab research has studied flower phenolics and bioactivities. Lab extracts are not the same as home medicine.</p></div>
+</div>
+<div class="callout clay"><strong>Important:</strong> This is not a psychoactive extraction guide and not medical advice. Do not self-medicate with concentrated bark, unknown gums, seeds or extracts. The deepest medicine here is restoration: hands in soil, intelligent thinning, food forests, community, breath, beauty and follow-through.</div>
+</section>
+<section class="card" id="fieldcheck">
+<div class="section-kicker">Quick field checklist</div>
+<h2>What to do with a cut acacia today.</h2>
+<div class="grid">
+<div class="mini span-6"><h3>Use this checklist</h3><ul class="checklist"><li>Identify the tree correctly before using anything.</li><li>Cut before seed pods mature whenever possible.</li><li>Keep seed-bearing material contained.</li><li>Use trunks for contour logs, terraces, hugel beds or firewood.</li><li>Use branches for chips, brush barriers, kindling or wildlife piles.</li><li>Use leaves in compost, paths, aged mulch or chop-and-drop away from seedlings.</li><li>Use bark/gum/flowers only cleanly and respectfully, with caution.</li><li>Replant immediately with diversity.</li><li>Return to cut resprouts before they harden.</li></ul></div>
+<div class="mini span-6"><h3>Do not do this</h3><ul class="checklist"><li>Do not cut and walk away.</li><li>Do not move seed pods across the land.</li><li>Do not leave bare soil after clearing.</li><li>Do not burn slash and think the problem is solved.</li><li>Do not pile fresh leaves thickly against young seedlings.</li><li>Do not turn every acacia use into medicine claims.</li><li>Do not replace one monoculture with another monoculture.</li></ul></div>
+</div>
+</section>
+<section class="manifesto" id="cta">
+<div class="section-kicker" style="color:#ffe48b;">Call to action</div>
+<h2>Join the Regenerative Eden circle.</h2>
+<p class="lead" style="color:#fff8ec;">If this guide sparked something in you, do not let it stay as an idea. Send it to a friend, walk your land, choose one acacia patch, make one compost pile, build one contour rib, plant one guild, or start one conversation with a neighbour.</p>
+<p>We are creating guides, workshops, food forest designs, syntropic learning spaces, detox and regeneration resources, and practical pathways for landowners, retreats, families and Earth guardians who want to move from extraction to Eden.</p>
+<div class="hero-actions">
+<a class="btn gold" download="" href="acacia_dealbata_magic_manual_regenerative_eden.pdf">Take the Acacia Companion with you</a>
+<a class="btn cream" href="https://regenerativeedenlibrary.netlify.app/" rel="noopener" target="_blank">Free Regeneration 101 Guide</a>
+<a class="btn leaf" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20WhatsApp%20Regeneration%20group%20invite%20and%20the%20free%20Regeneration%20101%20guide." rel="noopener" target="_blank">Join WhatsApp / request invite</a>
+<a class="btn clay" href="https://wa.me/351920067347?text=Hey%20Benji%20%26%20Sofia%20%F0%9F%8C%B1%20please%20send%20me%20the%20Telegram%20Regeneration%20circle%20invite." rel="noopener" target="_blank">Join Telegram / request invite</a>
+</div>
+<p class="small" style="color:#fff0bf; margin-top:18px;">Contact: WhatsApp +351 920 067 347 - holisticmission8@gmail.com - Instagram @regenerativeeden_benji and @tierramagicatribe</p>
+</section>
+<section class="card share-box" id="share">
+<div class="section-kicker">Copy-paste invitation</div>
+<h2>Share this with warmth.</h2>
+<p>Use this little message for friends, landowners, volunteers, community groups or anyone who has acacia on their land and a green fire in their belly.</p>
+<textarea aria-label="Share message" id="shareText">Hey wonderful humans,
+
+We made a free Acacia Dealbata Magic Manual for everyone living with mimosa / silver wattle forests in Portugal and Mediterranean lands.
+
+Instead of only cutting and burning, we can thin intelligently, use the trunks, leaves, bark, gum, flowers and branches, feed gardens, build soil, create contour mulch ribs, make compost and biochar, and guide the land from invasive monoculture into food forest succession.
+
+Take the Acacia Companion with you and the free Regeneration 101 guide here:
+https://regenerativeedenlibrary.netlify.app/
+
+This is not about being perfect. It is about remembering that regeneration is practical, local, joyful and alive. Soil, body, water, food, community and consciousness are one living system.
+
+Big love from Portugal,
+Benji &amp; Sofia
+Regenerative Eden x Tierra Magica Tribe</textarea>
+<button class="btn leaf" id="copyBtn" type="button">Copy message</button>
+</section>
+<section class="card" id="sources">
+<div class="section-kicker">Sources and grounding</div>
+<h2>Use inspiration with discernment.</h2>
+<p class="lead">This guide blends practical land work, regenerative design, traditional-use records and current invasive-species caution. The strongest path is direct observation plus good sources, repeated follow-up and local ecological humility.</p>
+<ol class="source-list">
+<li><strong>Invasoras.pt - Acacia dealbata.</strong> Portuguese invasive plant database. Lists <em>A. dealbata</em> as invasive in Portugal under Decreto-Lei no. 92/2019. https://invasoras.pt/en/invasive-plant/acacia-dealbata</li>
+<li><strong>EPPO Global Database - Management of Acacia dealbata in Portugal.</strong> Summarizes central Portugal management research: resprouting after cutting, germination after burning, and need for follow-up. https://gd.eppo.int/reporting/article-8150</li>
+<li><strong>Nunes et al. 2020, Environments.</strong> “Control of Invasive Forest Species through the Creation of a Value Chain: Acacia dealbata Biomass Recovery.” Explores acacia biomass recovery and value chains. https://www.mdpi.com/2076-3298/7/5/39</li>
+<li><strong>Plants For A Future - Acacia dealbata.</strong> Notes on flowers, gum, gum-arabic substitute, bark tannin, dye and soil stabilization uses. https://pfaf.org/user/Plant.aspx?LatinName=Acacia+dealbata</li>
+<li><strong>Charles Sturt University Virtual Herbarium - Acacia dealbata.</strong> Notes on timber, gum, traditional uses, dye, erosion control, nitrogen fixing, seed persistence and resprouting. https://science-health.csu.edu.au/herbarium/south-west-slopes-revegetation-guide/database/acacia/acacia-dealbata</li>
+<li><strong>Paula et al. 2022, Applied Sciences.</strong> “Special Bioactivities of Phenolics from Acacia dealbata L. with Potential for Dementia, Diabetes and Antimicrobial Treatments.” Research on phenolics and screened flower extract bioactivities. https://www.mdpi.com/2076-3417/12/3/1022</li>
+</ol>
+</section>
+</main>
+<footer class="footer">
+<div class="wrap footer-grid">
+<div>
+<h2 style="color:#fff0bf;">Cut. Cover. Compost. Plant. Return.</h2>
+<p>The yellow forest does not become Eden by accident. It becomes Eden when we add observation, humility, good tools, living roots, community and love with muddy boots.</p>
+</div>
+<div>
+<p><strong>Created by Benji &amp; Sofia</strong><br/>Regenerative Eden x Tierra Magica Tribe</p>
+<p>For regenerative land design, syntropic food forests, workshops, holistic living resources and Earth-hearted collaboration.</p>
+<p><a href="https://wa.me/351920067347" rel="noopener" target="_blank">WhatsApp +351 920 067 347</a><br/><a href="mailto:holisticmission8@gmail.com">holisticmission8@gmail.com</a></p>
+</div>
+</div>
+</footer>
+<script>
+    const copyBtn = document.getElementById('copyBtn');
+    const shareText = document.getElementById('shareText');
+    if (copyBtn && shareText) {
+      copyBtn.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(shareText.value); }
+        catch (err) { shareText.select(); document.execCommand('copy'); }
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => { copyBtn.textContent = 'Copy message'; }, 1600);
+      });
+    }
+  </script>
+<script>
+(function(){
+  const symbol = document.querySelector('.ae-growth-symbol');
+  const root = document.documentElement;
+  if(!symbol) return;
+  const stages = [
+    {p:0.00, icon:'🌰'},
+    {p:0.16, icon:'🌱'},
+    {p:0.34, icon:'🌿'},
+    {p:0.54, icon:'🌳'},
+    {p:0.78, icon:'🌳🦋'},
+    {p:0.94, icon:'🦋'}
+  ];
+  function updateGrowth(){
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const p = Math.min(1, Math.max(0, window.scrollY / max));
+    root.style.setProperty('--ae-growth', p.toFixed(3));
+    let icon = stages[0].icon;
+    for(const stage of stages){ if(p >= stage.p) icon = stage.icon; }
+    if(symbol.textContent !== icon){ symbol.style.opacity = '0'; setTimeout(()=>{symbol.textContent = icon; symbol.style.opacity='1';},120); }
+    document.body.classList.toggle('ae-growth-final', p > .90);
+  }
+  updateGrowth();
+  window.addEventListener('scroll', updateGrowth, {passive:true});
+  window.addEventListener('resize', updateGrowth);
+})();
+</script>
+</body>
+</html>

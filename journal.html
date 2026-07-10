@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Awakening Eden Journal · Updates from the Land</title>
+<meta content="Seasonal journal updates from Awakening Eden, Zero Point Village and the living work of regeneration, community, water, soil, food forests and hopeful action in Portugal." name="description"/>
+<style>
+:root{--forest:#132916;--forest2:#23452a;--gold:#c89a4b;--cream:#fff8ec;--paper:#fffdf7;--ink:#251b14;--muted:#6b5a4d;--line:rgba(35,69,42,.16);--max:960px}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7} .wrap{max-width:var(--max);margin:auto;padding:0 20px}
+nav{position:sticky;top:0;background:rgba(255,248,236,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:2} .nav-inner{display:flex;justify-content:space-between;gap:14px;align-items:center;min-height:70px;flex-wrap:wrap}
+a{color:var(--forest)} .brand{font-family:Georgia,serif;font-weight:800;text-decoration:none;font-size:1.18rem} .menu a{font-weight:800;text-decoration:none;margin:0 8px}
+header{padding:76px 0 42px;text-align:center;background:linear-gradient(135deg,var(--forest),var(--forest2));color:white} h1,h2,h3{font-family:Georgia,serif;line-height:1.12} h1{font-size:clamp(2.4rem,6vw,4.6rem);margin:0 0 12px} h2{font-size:clamp(1.8rem,4vw,3rem);color:var(--forest)} h3{font-size:1.5rem;color:var(--forest)} .lead{font-size:1.2rem;max-width:760px;margin:0 auto}
+main{padding:48px 0} article{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:28px;margin:0 0 24px;box-shadow:0 12px 32px rgba(37,27,20,.06)} .date{font-weight:850;color:#b95d3f;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+.btn{display:inline-flex;text-decoration:none;font-weight:850;border-radius:999px;padding:12px 18px;background:var(--forest2);color:white;margin:8px 8px 0 0} .ghost{background:white;color:var(--forest);border:1px solid var(--line)} footer{background:var(--forest);color:white;text-align:center;padding:36px 0} footer a{color:white}
+@media(max-width:700px){.menu a{display:inline-block;margin:4px 6px} header{padding:50px 0 32px} article{padding:22px;border-radius:22px}}
+
+/* Awakening Eden growing seed companion */
+.ae-growth-companion{
+  position:fixed; right:14px; bottom:16px; width:min(184px,42vw); z-index:70;
+  pointer-events:none; display:grid; gap:8px; justify-items:end;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+}
+.ae-growth-orb{
+  width:74px; height:74px; border-radius:50%;
+  background:radial-gradient(circle at 35% 25%,#fff9e8 0 12%,#f7e8be 13% 30%,#bdd09d 31% 56%,#597a45 57% 100%);
+  box-shadow:0 15px 38px rgba(19,41,22,.22), inset 0 0 0 1px rgba(255,255,255,.48);
+  display:grid; place-items:center; position:relative; overflow:hidden;
+}
+.ae-growth-symbol{font-size:34px; transform:translateY(1px); transition:transform .4s ease, opacity .4s ease}
+.ae-growth-ring{
+  position:absolute; inset:6px; border-radius:50%;
+  background:conic-gradient(#577445 calc(var(--ae-growth,0)*1turn), rgba(255,255,255,.34) 0);
+  mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+}
+.ae-growth-message{
+  max-width:184px; padding:10px 12px; border-radius:18px 18px 4px 18px;
+  background:rgba(255,253,247,.94); color:#251b14; border:1px solid rgba(35,69,42,.16);
+  box-shadow:0 12px 32px rgba(14,32,18,.12); font-size:12px; line-height:1.35;
+  opacity:0; transform:translateY(8px); transition:opacity .45s ease, transform .45s ease;
+}
+body.ae-growth-final .ae-growth-message{opacity:1; transform:none}
+.ae-tree-blessing{
+  margin:34px auto 12px; max-width:820px; padding:28px 22px; border-radius:28px;
+  background:linear-gradient(135deg,rgba(255,253,247,.94),rgba(240,232,205,.88));
+  border:1px solid rgba(35,69,42,.16); box-shadow:0 16px 45px rgba(14,32,18,.08);
+  text-align:center;
+}
+.ae-tree-blessing .tree{font-size:42px; line-height:1; margin-bottom:10px}
+.ae-tree-blessing h3{margin:.2rem 0 .55rem; color:#132916; font-family:Georgia,serif; font-size:clamp(1.45rem,4vw,2.2rem)}
+.ae-tree-blessing p{margin:.25rem auto; max-width:680px}
+@media(max-width:720px){
+  .ae-growth-companion{right:9px; bottom:10px; width:120px}
+  .ae-growth-orb{width:54px;height:54px}
+  .ae-growth-symbol{font-size:26px}
+  .ae-growth-message{display:none}
+}
+@media(prefers-reduced-motion:reduce){.ae-growth-companion{display:none}}
+
+</style>
+<meta content="index, follow" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-living-library.netlify.app/journal.html" rel="canonical"/><meta content="Awakening Eden Journal · Updates from the Land" property="og:title"/><meta content="Seasonal journal updates from Awakening Eden, Zero Point Village and the living work of regeneration, community, water, soil, food forests and hopeful action in Portugal." property="og:description"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-living-library.netlify.app/journal.html" property="og:url"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Awakening Eden Journal · Updates from the Land" name="twitter:title"/><meta content="Seasonal journal updates from Awakening Eden, Zero Point Village and the living work of regeneration, community, water, soil, food forests and hopeful action in Portugal." name="twitter:description"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" name="twitter:image"/><link href="assets/illustrations/ae-logo-tree-heart.svg" rel="icon"/><link href="manifest.webmanifest" rel="manifest"/><script data-seo="awakening-eden" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Awakening Eden Journal · Updates from the Land",
+  "description": "Seasonal journal updates from Awakening Eden, Zero Point Village and the living work of regeneration, community, water, soil, food forests and hopeful action in Portugal.",
+  "url": "https://awakening-eden-living-library.netlify.app/journal.html",
+  "image": "https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awakening Eden",
+    "url": "https://awakening-eden-living-library.netlify.app",
+    "logo": "https://awakening-eden-living-library.netlify.app/assets/illustrations/ae-logo-tree-heart.svg"
+  }
+}</script></head>
+<body>
+<div aria-hidden="true" class="ae-growth-companion">
+<div class="ae-growth-message"><strong>This is you.</strong><br/>The seed becoming the Tree of Life — with the butterfly of transformation arriving at the end.</div>
+<div class="ae-growth-orb"><div class="ae-growth-ring"></div><div class="ae-growth-symbol">🌰</div></div>
+</div>
+<nav><div class="wrap nav-inner"><a class="brand" href="index.html">Awakening Eden</a><div class="menu"><a href="journal.html">This Month</a><a href="index.html#community">Community</a><a href="index.html#support">Support</a></div></div></nav>
+<header><div class="wrap"><h1>Seasons of Awakening Eden</h1><p class="lead">A living seasonal journal from the land, the garden, the workshops and our unfolding journey at Zero Point / Casa Oasis in the Serra da Estrela mountains.</p></div></header>
+<main><div class="wrap">
+<article>
+<div class="date">Our new chapter</div>
+<h2>After two years in Portugal, we found Zero Point</h2>
+<p>After two deeply transformative and challenging years in Portugal, we found Zero Point — literally and on the land. Here at Casa Oasis, connected with the Zero Point village vision, we are slowly creating ourselves, learning from the land, and bringing Awakening Eden into form.</p>
+<p>We will share more of this unfolding vision as it grows. Follow our journey, join our channels, reach out if you have questions, share the page with friends, and leave us feedback as this living library for positive change continues to grow.</p>
+<a class="btn ghost" href="https://www.nature.house/cottage/87824" rel="noopener noreferrer" target="_blank">📍 See Casa Oasis / Zero Point</a>
+</article>
+<article>
+<div class="date">This Month · Serra da Estrela</div>
+<h2>Building the Javali Fence</h2>
+<p><em>Javali</em> means wild boar in Portuguese. This month we are building a protective fence around our garden area to keep the local wild boar from entering the growing space.</p>
+<p>It is a practical and important step: caring for what we are planting while respecting the wild forest around us. Regeneration often looks like small, grounded actions — posts in the earth, wire held with care, gates that protect young life, and hands working together under the mountain sky.</p>
+<p><strong>Photos coming soon.</strong></p>
+</article>
+<article>
+<div class="date">In creation</div>
+<h2>Regeneration 101 Workshop</h2>
+<p>We are planning an online Regeneration 101 workshop for anyone who wants to begin regenerating soil, water, plants, food systems and community from wherever they are.</p>
+<p>The intention is simple: practical knowledge, loving guidance, and clear first steps that help people move from inspiration into action.</p>
+</article>
+<article>
+<div class="date">In creation</div>
+<h2>Syntropic Regeneration Course</h2>
+<p>We are creating a course on syntropy, regeneration, food forests and restoring Mediterranean landscapes. This will gather Benji's years of learning into something clear, useful and accessible.</p>
+<p>Our vision is to help more people understand how to design living systems that build soil, grow food, increase biodiversity and bring beauty back to the land.</p>
+</article>
+<article>
+<div class="date">Coming soon</div>
+<h2>Hands-in-the-Soil Workshops</h2>
+<p>We are preparing land-based workshops and presentations where learning happens directly through experience — hands in the soil, hearts connected, community gathered, and the land as teacher.</p>
+</article>
+<article>
+<div class="date">How updates will work</div>
+<h2>How we will keep this easy to update</h2>
+<p>This Journal is designed to be the easy-to-update part of the website. New stories, photos, videos, workshop announcements and project updates can be added here, then shared into the WhatsApp and Telegram groups. Over time, this page can become the living story archive of Awakening Eden.</p>
+<a class="btn" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank">Join WhatsApp</a><a class="btn" href="https://t.me/awakening_Eden" rel="noopener noreferrer" target="_blank">Join Telegram</a><a class="btn ghost" href="index.html">Back Home</a>
+</article>
+</div></main>
+<footer><div class="wrap"><p>With love, Benji &amp; Sofia · Awakening Eden</p><p><a href="index.html">Return to homepage</a></p></div></footer>
+<script>
+(function(){
+  const symbol = document.querySelector('.ae-growth-symbol');
+  const root = document.documentElement;
+  if(!symbol) return;
+  const stages = [
+    {p:0.00, icon:'🌰'},
+    {p:0.16, icon:'🌱'},
+    {p:0.34, icon:'🌿'},
+    {p:0.54, icon:'🌳'},
+    {p:0.78, icon:'🌳🦋'},
+    {p:0.94, icon:'🦋'}
+  ];
+  function updateGrowth(){
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const p = Math.min(1, Math.max(0, window.scrollY / max));
+    root.style.setProperty('--ae-growth', p.toFixed(3));
+    let icon = stages[0].icon;
+    for(const stage of stages){ if(p >= stage.p) icon = stage.icon; }
+    if(symbol.textContent !== icon){ symbol.style.opacity = '0'; setTimeout(()=>{symbol.textContent = icon; symbol.style.opacity='1';},120); }
+    document.body.classList.toggle('ae-growth-final', p > .90);
+  }
+  updateGrowth();
+  window.addEventListener('scroll', updateGrowth, {passive:true});
+  window.addEventListener('resize', updateGrowth);
+})();
+</script>
+</body>
+</html>

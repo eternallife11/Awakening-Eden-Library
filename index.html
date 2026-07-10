@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Awakening Eden Living Library · Regeneration, Awakening &amp; Practical Hope</title>
+<meta content="A living library for regeneration, awakening, empowerment, peace, purpose and practical hope. Begin with guides, films, books and earth-based practices for positive change." name="description"/>
+<meta content="Awakening Eden Living Library · Regeneration, Awakening &amp; Practical Hope" property="og:title"/>
+<meta content="A living library for regeneration, awakening, empowerment, peace, purpose and practical hope. Begin with guides, films, books and earth-based practices for positive change." property="og:description"/>
+<meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" property="og:image"/>
+<meta content="#102819" name="theme-color"/>
+<style>
+:root{
+  --deep:#102819;
+  --forest:#173822;
+  --leaf:#365c3b;
+  --moss:#6d8b5b;
+  --sage:#b9c8a7;
+  --sand:#f6f2ea;
+  --cream:#fffdf7;
+  --paper:#fffaf0;
+  --gold:#d8b45e;
+  --clay:#d8b9a3;
+  --terra:#b56a42;
+  --ink:#263326;
+  --muted:#6f675c;
+  --line:rgba(38,51,38,.16);
+  --shadow:0 24px 60px rgba(28,48,30,.16);
+  --radius:32px;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 9% 8%, rgba(216,180,94,.20), transparent 26rem),
+    radial-gradient(circle at 92% 18%, rgba(181,106,66,.18), transparent 24rem),
+    radial-gradient(circle at 52% 88%, rgba(109,139,91,.14), transparent 30rem),
+    linear-gradient(180deg,#fffaf0,#f3e5cf 48%,#fff8ec);
+  color:var(--ink);
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height:1.68;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.36;
+  background-image:
+    linear-gradient(rgba(255,255,255,.26),rgba(255,255,255,.26)),
+    radial-gradient(rgba(54,92,59,.12) 1px, transparent 1px);
+  background-size:100% 100%, 18px 18px;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:.7rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+.hand{
+  font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;
+  letter-spacing:.01em;
+}
+.serif{
+  font-family:Georgia, "Times New Roman", serif;
+}
+.topbar{
+  position:sticky;top:0;z-index:80;
+  background:rgba(24,48,29,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.nav{
+  min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
+.brand-mark{
+  width:38px;height:54px;border:2px solid rgba(246,242,234,.78);border-radius:23px;position:relative;flex:0 0 auto
+}
+.brand-mark:before{content:"";position:absolute;left:17px;top:10px;width:2px;height:32px;background:rgba(246,242,234,.8)}
+.brand-mark:after{content:"";position:absolute;left:15px;top:14px;width:17px;height:17px;border:2px solid rgba(246,242,234,.8);border-left:0;border-bottom:0;border-radius:0 17px 0 0;transform:rotate(-36deg)}
+.brand strong{font-family:Georgia,serif;font-size:clamp(1.35rem,3.2vw,1.95rem);line-height:1;display:block}
+.brand span{display:block;margin-top:.25rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:#f5df9f;font-weight:800}
+.nav-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  color:#fff;text-decoration:none;padding:.62rem .82rem;border-radius:999px;font-weight:750;font-size:.92rem;
+  border:1px solid rgba(255,255,255,.09);
+}
+.nav-links a:hover{background:rgba(255,255,255,.1)}
+.nav-links a.cta{background:#f6df9f;color:#102819;border-color:#f6df9f}
+.botanical-left{
+  position:fixed;left:10px;top:110px;width:92px;height:72vh;opacity:.24;pointer-events:none;z-index:0;
+}
+.botanical-left svg{width:100%;height:100%}
+main{position:relative;z-index:1}
+section{padding:clamp(56px,8vw,104px) 0}
+.hero{
+  min-height:calc(100vh - 78px);
+  display:grid;place-items:center;
+  padding:clamp(54px,8vw,100px) 0 62px;
+  background:
+    linear-gradient(180deg,rgba(16,40,25,.52),rgba(16,40,25,.42)),
+    url("vision-ecovillage-hero.jpg") center/cover no-repeat;
+  color:#fff;
+}
+.hero-card{
+  width:min(1050px,calc(100% - 32px));
+  margin:auto;
+  text-align:center;
+  background:linear-gradient(180deg,rgba(18,43,27,.80),rgba(24,48,29,.58));
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:clamp(28px,5vw,58px);
+  padding:clamp(28px,6vw,72px);
+  box-shadow:0 30px 90px rgba(0,0,0,.34);
+}
+.kicker{
+  display:inline-block;font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;color:#f5df9f;
+}
+.hero .hand{font-size:clamp(1.75rem,6vw,3.6rem);color:#f6df9f;margin:0 0 .2rem;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+h1{
+  margin:.2rem 0 0;
+  font-family:Georgia, "Times New Roman", serif;
+  line-height:.96;
+  font-size:clamp(3.25rem,11vw,8rem);
+  letter-spacing:-.07em;
+}
+.hero h2{
+  margin:1rem auto 0;
+  max-width:880px;
+  font-family:Georgia,serif;
+  font-size:clamp(1.45rem,3.8vw,2.85rem);
+  line-height:1.08;
+  color:#fff8df;
+}
+.hero-quote{
+  max-width:850px;margin:2rem auto 0;font-size:clamp(1.08rem,2.3vw,1.38rem);color:#fffbe9;
+}
+.hero-actions,.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:2rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:50px;padding:.82rem 1.16rem;border-radius:999px;
+  text-decoration:none;font-weight:900;line-height:1.15;
+  border:2px solid transparent;box-shadow:0 12px 28px rgba(0,0,0,.12);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.18)}
+.btn-primary{background:var(--gold);color:#102819;border-color:rgba(255,255,255,.2)}
+.btn-cream{background:#fff8ea;color:#102819;border-color:rgba(255,255,255,.5)}
+.btn-green{background:var(--forest);color:#fff;border-color:rgba(255,255,255,.14)}
+.btn-outline{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.32)}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-soft{background:#fffaf1;color:var(--ink);border-color:var(--line)}
+.btn small{display:block;font-weight:700;opacity:.78}
+.arrow{margin-top:2rem;font-size:1.8rem;opacity:.9}
+.card,.letter,.feature{
+  background:rgba(255,253,247,.88);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+}
+.intro-grid{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,56px);align-items:center;
+}
+.photo-frame{
+  position:relative;border-radius:42px;overflow:hidden;box-shadow:var(--shadow);border:10px solid rgba(255,253,247,.8);
+}
+.photo-frame::after{
+  content:"Come walk with us";
+  position:absolute;left:18px;bottom:18px;
+  background:rgba(255,253,247,.86);color:var(--forest);
+  border-radius:999px;padding:.55rem .9rem;
+  font-family:"Bradley Hand","Segoe Print",cursive;font-size:1.25rem;
+  box-shadow:0 10px 24px rgba(0,0,0,.14);
+}
+.note{
+  display:inline-block;
+  transform:rotate(-1.5deg);
+  color:var(--terra);
+  font-size:clamp(1.55rem,4.3vw,2.35rem);
+  margin-bottom:.55rem;
+}
+.big-hand{
+  font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;
+  font-size:clamp(1.85rem,6vw,3.25rem);
+  line-height:1.12;
+  color:var(--terra);
+  margin:0 0 1rem;
+}
+.earth-note{
+  position:relative;
+  background:linear-gradient(180deg,rgba(255,253,247,.92),rgba(246,242,234,.9));
+  border:1px solid rgba(109,75,50,.18);
+  box-shadow:0 20px 50px rgba(54,92,59,.12);
+}
+.early-actions{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.early-actions a{
+  text-decoration:none;
+  padding:18px 16px;
+  border-radius:24px;
+  background:#fffaf1;
+  border:1px solid rgba(109,75,50,.18);
+  box-shadow:0 10px 28px rgba(28,48,30,.08);
+}
+.early-actions strong{display:block;color:var(--forest)}
+.early-actions span{display:block;color:var(--muted);font-size:.9rem;margin-top:.2rem;line-height:1.35}
+@media(max-width:900px){.early-actions{grid-template-columns:1fr}}
+h2.section-title{
+  margin:0;
+  font-family:Georgia,serif;
+  font-size:clamp(2.1rem,6vw,4.35rem);
+  line-height:1.03;
+  letter-spacing:-.04em;
+  color:var(--deep);
+}
+h3{font-family:Georgia,serif;font-size:clamp(1.4rem,3vw,2rem);line-height:1.15;margin:.2rem 0 .7rem}
+.lead{font-size:clamp(1.05rem,2.3vw,1.26rem);color:#3a4738;margin-top:1rem}
+.muted{color:var(--muted)}
+.letter{padding:clamp(24px,5vw,54px)}
+.letter p{font-size:clamp(1.03rem,2.1vw,1.22rem)}
+.flourish{display:flex;align-items:center;justify-content:center;gap:18px;margin:2rem auto;color:var(--moss);opacity:.85}
+.flourish:before,.flourish:after{content:"";height:1px;width:min(180px,26vw);background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.flourish svg{width:54px;height:22px}
+.start-card{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;
+  padding:clamp(24px,5vw,46px);
+  background:linear-gradient(135deg,#fffdf7,#f5ead5);
+}
+.badge{
+  display:inline-block;background:rgba(54,92,59,.12);border:1px solid rgba(54,92,59,.25);
+  color:var(--forest);font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;padding:.35rem .68rem;border-radius:999px
+}
+.action-stack{display:grid;gap:12px;align-content:center}
+.action-card{
+  display:block;text-decoration:none;padding:1rem 1.05rem;border-radius:22px;background:#fffdf7;border:1px solid var(--line);
+}
+.action-card strong{display:block}
+.action-card span{display:block;color:var(--muted);font-size:.92rem;margin-top:.15rem}
+.resource-grid,.journey-grid,.values-grid,.work-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px
+}
+.resource-card,.journey-card,.value-card,.work-card{
+  padding:24px;border-radius:26px;background:rgba(255,253,247,.9);border:1px solid var(--line);
+  box-shadow:0 12px 34px rgba(28,48,30,.09);
+}
+.resource-card img{width:100%;aspect-ratio:1.5/1;object-fit:cover;border-radius:20px;margin-bottom:14px}
+.icon-draw{width:48px;height:48px;margin-bottom:10px;color:var(--moss)}
+.resource-card a,.journey-card a,.work-card a{font-weight:900;color:var(--forest)}
+.journey-grid{grid-template-columns:repeat(3,1fr)}
+.journey-card .step{color:var(--terra);font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem}
+.work-grid{grid-template-columns:repeat(3,1fr)}
+.values-grid{grid-template-columns:repeat(3,1fr)}
+.value-card h3{font-size:1.35rem}
+.dark-band{
+  background:linear-gradient(135deg,var(--deep),var(--forest));
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.dark-band .section-title,.dark-band h3{color:#fff}
+.dark-band .lead,.dark-band .muted{color:#f4ead3}
+.dark-band:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 18% 20%,rgba(216,180,94,.18),transparent 28%),radial-gradient(circle at 86% 70%,rgba(185,200,167,.12),transparent 32%);pointer-events:none}
+.dark-band .wrap{position:relative;z-index:1}
+.community-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.community-cards a{padding:20px;border-radius:24px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);text-decoration:none;color:#fff;font-weight:900}
+.community-cards span{display:block;color:#f4ead3;font-weight:650;margin-top:.25rem}
+.footer{
+  background:#0c2014;color:#fff;text-align:center;padding:62px 0;
+}
+.footer p{max-width:760px;margin:0 auto 1rem;color:#f5ead3}
+.seed-companion{
+  position:fixed;right:18px;bottom:18px;z-index:70;
+  width:70px;height:70px;border-radius:50%;
+  background:rgba(255,253,247,.88);border:1px solid var(--line);
+  box-shadow:0 12px 36px rgba(0,0,0,.16);
+  display:grid;place-items:center;
+}
+.seed-companion svg{width:48px;height:48px}
+.seed-message{
+  position:fixed;right:14px;bottom:96px;z-index:70;max-width:230px;
+  background:rgba(255,253,247,.93);border:1px solid var(--line);border-radius:20px;padding:.75rem .9rem;
+  font-size:.9rem;color:var(--forest);box-shadow:0 12px 32px rgba(0,0,0,.12);display:none
+}
+.seed-message.show{display:block}
+.mobile-quick{display:none}
+@media(max-width:900px){
+  .nav{min-height:auto;padding:12px 0;display:block}
+  .brand{justify-content:center;margin-bottom:10px}
+  .nav-links{justify-content:center;gap:6px}
+  .nav-links a{font-size:.82rem;padding:.52rem .64rem}
+  .intro-grid,.start-card{grid-template-columns:1fr}
+  .resource-grid,.journey-grid,.values-grid,.work-grid,.community-cards{grid-template-columns:1fr}
+  .hero{min-height:auto;padding:52px 0}
+  .hero-card{padding:28px 20px}
+  h1{font-size:clamp(3.1rem,18vw,5.2rem)}
+  .wrap{width:min(100% - 26px,var(--max))}
+  .botanical-left{display:none}
+  .seed-companion{width:58px;height:58px;right:10px;bottom:10px}
+  .seed-message{right:10px;bottom:76px}
+  section{padding:52px 0}
+  .photo-frame::after{font-size:1.02rem}
+  .mobile-quick{
+    display:flex;position:sticky;bottom:0;z-index:79;background:rgba(16,40,25,.97);padding:8px;gap:8px;justify-content:center;
+    border-top:1px solid rgba(255,255,255,.12)
+  }
+  .mobile-quick a{color:#102819;background:#f6df9f;text-decoration:none;font-weight:900;border-radius:999px;padding:.65rem .72rem;font-size:.82rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}
+}
+
+/* Awakening Eden v2 Pareto polish: earthier, more journal-like, more legible */
+.hero-card h1{font-size:clamp(3rem,9vw,7.4rem);letter-spacing:-.055em}
+.hero-card h2{max-width:880px;margin:.6rem auto 1rem}
+.hero-quote{font-size:clamp(1.12rem,2.6vw,1.55rem)}
+.earth-note{background:
+  radial-gradient(circle at 92% 0%, rgba(181,106,66,.10), transparent 16rem),
+  linear-gradient(180deg,rgba(255,253,247,.96),rgba(245,233,211,.94));
+}
+.action-card strong,.early-actions strong{letter-spacing:-.01em}
+.values-intro{font-size:1.08rem;color:#465142;background:rgba(255,253,247,.58);padding:1rem 1.2rem;border-left:4px solid var(--terra);border-radius:18px}
+.resource-card img{aspect-ratio:4/3;object-fit:cover}
+@media(max-width:700px){
+  .hero{min-height:88vh}
+  .hero-card{padding:2rem 1.15rem}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .photo-frame{border-radius:26px}
+  .early-actions{grid-template-columns:1fr}
+}
+
+
+/* Premium botanical welcome additions */
+.hero-illustration{
+  width:min(430px,82vw);
+  margin:0 auto 1.1rem;
+  color:#f4dca5;
+  opacity:.96;
+  filter:drop-shadow(0 12px 22px rgba(0,0,0,.18));
+}
+.hero-illustration svg{width:100%;height:auto;display:block}
+.promise-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:1.6rem;
+}
+.promise-card{
+  background:rgba(255,253,247,.78);
+  border:1px solid rgba(54,92,59,.14);
+  border-radius:24px;
+  padding:1.15rem;
+  box-shadow:0 14px 34px rgba(42,61,35,.08);
+}
+.promise-card h3{
+  margin:.2rem 0 .45rem;
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-size:1.35rem;
+  color:var(--forest);
+}
+.promise-card p{margin:0;color:var(--muted);font-size:.98rem}
+.core-note{
+  margin-top:1.6rem;
+  padding:1.25rem 1.35rem;
+  border-left:4px solid var(--terra);
+  background:linear-gradient(90deg,rgba(216,185,163,.22),rgba(255,250,240,.6));
+  border-radius:20px;
+}
+@media(max-width:760px){
+  .promise-grid{grid-template-columns:1fr 1fr}
+  .hero-illustration{width:min(320px,88vw)}
+}
+@media(max-width:520px){
+  .promise-grid{grid-template-columns:1fr}
+}
+
+
+/* v3 mobile-first premium refinement: compact sticky swipe nav, channel buttons, Spotify */
+@media(max-width:900px){
+  .topbar{position:sticky;top:0}
+  .nav{
+    min-height:auto;
+    padding:8px 0 10px;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+  }
+  .brand{
+    justify-content:flex-start;
+    margin:0;
+    gap:9px;
+    padding-inline:2px;
+  }
+  .brand-mark{width:30px;height:42px;border-radius:18px}
+  .brand-mark:before{left:13px;top:8px;height:25px}
+  .brand-mark:after{left:11px;top:11px;width:13px;height:13px}
+  .brand strong{font-size:1.1rem;letter-spacing:.01em}
+  .brand span span{font-size:.58rem;letter-spacing:.16em;margin-top:.16rem}
+  .nav-links{
+    width:100%;
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    gap:7px;
+    overflow-x:auto;
+    padding:2px 2px 4px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{
+    flex:0 0 auto;
+    font-size:.76rem;
+    padding:.45rem .6rem;
+    border-radius:999px;
+    white-space:nowrap;
+    min-height:34px;
+  }
+  .nav-links a.cta{background:#f6df9f;color:#102819}
+  .hero{padding-top:34px;min-height:auto}
+  .hero-card{border-radius:32px}
+}
+.channel-strip{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.channel-strip a,.spotify-card{
+  text-decoration:none;
+  background:#fffaf1;
+  border:1px solid rgba(109,75,50,.18);
+  border-radius:22px;
+  padding:14px 14px;
+  box-shadow:0 10px 26px rgba(28,48,30,.08);
+}
+.channel-strip strong{display:block;color:var(--forest);font-weight:950;line-height:1.15}
+.channel-strip span{display:block;color:var(--muted);font-size:.86rem;line-height:1.28;margin-top:.18rem}
+.spotify-card{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  background:linear-gradient(135deg,rgba(255,250,241,.96),rgba(246,223,159,.45));
+}
+.spotify-card .music-dot{
+  width:46px;height:46px;border-radius:999px;background:var(--forest);color:#fff;display:grid;place-items:center;font-weight:950;flex:0 0 auto
+}
+.spotify-card strong{display:block;color:var(--forest);font-weight:950}
+.spotify-card span{display:block;color:var(--muted);line-height:1.35;font-size:.92rem}
+@media(max-width:760px){
+  .channel-strip{grid-template-columns:1fr 1fr}
+}
+@media(max-width:460px){
+  .channel-strip{grid-template-columns:1fr}
+  .spotify-card{align-items:flex-start}
+}
+
+
+/* v4 premium botanical asset system */
+.brand-logo{
+  width:46px;
+  height:46px;
+  flex:0 0 auto;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,.12));
+}
+.botanical-divider{
+  width:min(520px,86vw);
+  margin:1.1rem auto 1.45rem;
+  opacity:.92;
+}
+.botanical-divider.bee{width:min(610px,88vw)}
+.corner-botanical{
+  position:absolute;
+  width:min(180px,28vw);
+  opacity:.72;
+  pointer-events:none;
+  filter: drop-shadow(0 8px 18px rgba(30,54,34,.08));
+}
+.corner-botanical.left{left:-28px;bottom:-32px}
+.corner-botanical.right{right:-28px;top:-28px;transform:rotate(90deg)}
+.asset-icon{
+  width:54px;
+  height:54px;
+  margin:0 auto .65rem;
+}
+.resource-card, .journey-card, .work-card, .action-card, .promise-card{
+  position:relative;
+  overflow:hidden;
+}
+.resource-card::after, .journey-card::after, .work-card::after, .action-card::after{
+  content:"";
+  position:absolute;
+  right:12px;
+  bottom:10px;
+  width:70px;
+  height:70px;
+  background:url("assets/illustrations/botanical-corner.svg") center/contain no-repeat;
+  opacity:.10;
+  transform:rotate(180deg);
+  pointer-events:none;
+}
+.tree-footer-art{
+  width:min(880px,94vw);
+  margin:1.4rem auto .6rem;
+  opacity:.92;
+}
+.section-kicker-art{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.big-hand,.hand{
+  color:#8f563a;
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+}
+.earth-note{
+  position:relative;
+}
+.earth-note::before{
+  content:"";
+  position:absolute;
+  left:-20px;
+  top:-30px;
+  width:160px;
+  height:160px;
+  background:url("assets/illustrations/botanical-corner.svg") center/contain no-repeat;
+  opacity:.20;
+  pointer-events:none;
+}
+.actions.after-photo{
+  margin-top:1.1rem;
+  justify-content:flex-start;
+}
+@media(max-width:900px){
+  .brand-logo{width:34px;height:34px}
+  .botanical-divider{margin:.8rem auto 1.1rem}
+  .corner-botanical{display:none}
+  .asset-icon{width:44px;height:44px}
+}
+@media(max-width:520px){
+  .resource-card::after, .journey-card::after, .work-card::after, .action-card::after{width:52px;height:52px;opacity:.08}
+  .tree-footer-art{margin-top:.8rem}
+}
+
+</style>
+<meta content="index, follow" name="robots"/><link href="https://awakening-eden-living-library.netlify.app/" rel="canonical"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-living-library.netlify.app/" property="og:url"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Awakening Eden Living Library · Regeneration, Awakening &amp; Practical Hope" name="twitter:title"/><meta content="A living library for regeneration, awakening, empowerment, peace, purpose and practical hope. Begin with guides, films, books and earth-based practices for positive change." name="twitter:description"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" name="twitter:image"/><link href="assets/illustrations/ae-logo-tree-heart.svg" rel="icon"/><link href="manifest.webmanifest" rel="manifest"/><script data-seo="awakening-eden" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Awakening Eden Living Library · Regeneration, Awakening & Practical Hope",
+  "description": "A living library for regeneration, awakening, empowerment, peace, purpose and practical hope. Begin with guides, films, books and earth-based practices for positive change.",
+  "url": "https://awakening-eden-living-library.netlify.app/",
+  "image": "https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awakening Eden",
+    "url": "https://awakening-eden-living-library.netlify.app",
+    "logo": "https://awakening-eden-living-library.netlify.app/assets/illustrations/ae-logo-tree-heart.svg"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://awakening-eden-living-library.netlify.app/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}</script></head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div aria-hidden="true" class="botanical-left">
+<svg fill="none" viewbox="0 0 120 800" xmlns="http://www.w3.org/2000/svg">
+<path d="M68 760C48 638 86 545 58 430C38 344 54 261 70 178C78 135 72 86 51 42" stroke="#6d4b32" stroke-linecap="round" stroke-width="3"></path>
+<path d="M62 668C39 662 24 642 20 620C45 620 60 638 62 668Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
+<path d="M72 560C98 548 111 526 110 502C84 507 70 531 72 560Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
+<path d="M55 450C30 438 18 416 20 392C46 397 58 422 55 450Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
+<path d="M66 328C92 316 105 294 104 270C78 275 64 299 66 328Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
+<path d="M66 210C42 201 28 181 28 158C52 160 68 185 66 210Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
+</svg>
+</div>
+<header class="topbar">
+<nav aria-label="Main navigation" class="wrap nav">
+<a aria-label="Awakening Eden home" class="brand" href="index.html">
+<img alt="" aria-hidden="true" class="brand-logo" src="assets/illustrations/ae-logo-tree-heart.svg"/>
+<span><strong>Awakening Eden</strong><span>The Living Library</span></span>
+</a>
+<div class="nav-links">
+<a href="#begin">Begin Here</a>
+<a href="#library">Living Library</a>
+<a href="#journey">Journey</a>
+<a href="work-with-benjy.html">Work With Benjy</a>
+<a href="journey.html">Our Journey</a>
+<a href="heart.html">Heart</a>
+<a class="cta" href="#support">Gift Back</a>
+</div>
+</nav>
+</header>
+<main id="main">
+<section aria-labelledby="home-title" class="hero">
+<div class="hero-card">
+<img alt="" aria-hidden="true" class="corner-botanical left" src="assets/illustrations/botanical-corner.svg"/>
+<img alt="" aria-hidden="true" class="corner-botanical right" src="assets/illustrations/botanical-corner.svg"/>
+<div aria-hidden="true" class="hero-illustration">
+<svg viewbox="0 0 560 170" xmlns="http://www.w3.org/2000/svg">
+<path d="M41 116C111 58 184 52 266 84C347 115 421 83 519 40" fill="none" opacity=".75" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<path d="M78 94C56 74 50 50 54 33C78 45 91 67 78 94Z" fill="#d8e2c5" opacity=".9" stroke="#f4dca5" stroke-width="2"></path>
+<path d="M139 66C122 42 124 20 132 8C152 28 158 51 139 66Z" fill="#e5c097" opacity=".9" stroke="#f4dca5" stroke-width="2"></path>
+<path d="M236 73C229 48 239 28 252 18C263 45 258 64 236 73Z" fill="#d8e2c5" opacity=".9" stroke="#f4dca5" stroke-width="2"></path>
+<path d="M366 88C388 64 412 61 431 67C412 91 390 101 366 88Z" fill="#d8e2c5" opacity=".9" stroke="#f4dca5" stroke-width="2"></path>
+<path d="M461 57C475 31 497 22 516 23C507 52 488 66 461 57Z" fill="#e5c097" opacity=".9" stroke="#f4dca5" stroke-width="2"></path>
+<path d="M266 112C266 92 275 80 286 75C295 91 288 108 266 112Z" fill="#d8e2c5" stroke="#f4dca5" stroke-width="2"></path>
+<path d="M272 113C280 132 294 142 309 146M272 113C265 131 252 141 238 147M272 113C274 133 271 149 269 160" fill="none" opacity=".75" stroke="#f4dca5" stroke-linecap="round" stroke-width="2"></path>
+<ellipse cx="274" cy="118" fill="#b56a42" opacity=".85" rx="9" ry="13" transform="rotate(-10 274 118)"></ellipse>
+<path d="M324 42C338 21 356 20 366 34C352 42 338 45 324 42Z" fill="#f4dca5" opacity=".8"></path>
+<path d="M324 42C307 24 289 27 281 42C296 49 310 50 324 42Z" fill="#f4dca5" opacity=".65"></path>
+<path d="M324 42C336 62 354 67 367 55C353 45 338 40 324 42Z" fill="#f4dca5" opacity=".55"></path>
+<path d="M324 42C308 61 290 63 278 52C292 43 306 39 324 42Z" fill="#f4dca5" opacity=".7"></path>
+<circle cx="324" cy="42" fill="#fff6db" r="3.5"></circle>
+</svg>
+</div>
+<p class="hand">Welcome home to</p>
+<h1 id="home-title">Awakening Eden</h1>
+<h2>The Living Library — a calm home for regeneration, awakening, empowerment, peace, purpose &amp; practical hope.</h2>
+<p class="hero-quote">A more beautiful world is not something we wait for. It is something we grow — within ourselves, with one another, and together with the living Earth, one small hopeful action at a time.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#welcome">Meet Benjy &amp; Sofia</a>
+<a class="btn btn-cream" href="#begin">Begin Here</a>
+<a class="btn btn-outline" href="#library">Open the Living Library</a>
+</div>
+<p class="hand" style="font-size:1.45rem;margin-top:1.4rem;color:#f6df9f">Come walk with us.</p>
+<div aria-hidden="true" class="arrow">⌄</div>
+</div>
+</section>
+<section id="welcome">
+<div class="wrap intro-grid">
+<div class="photo-frame">
+<img alt="Benjy and Sofia smiling together in nature" src="benjy-and-sofia.jpg"/>
+</div>
+<div>
+<p class="hand note">Dear fellow gardener, lover, guardian...</p>
+<h2 class="section-title">We are Benjy &amp; Sofia.</h2>
+<p class="lead">Earth lovers. Regenerative educators. Permies. Yogis. Ocean lovers. Guardians and stewards of life. Community builders. Lifelong students of nature. Dreamers. Doers. Always learning. Always evolving. Perfectly imperfect.</p>
+<p>United by a shared love for life, and a belief that together we can leave the world a little more alive than we found it — with every step we take, every hug we share, every seed we plant, every tree we nurture, every authentic gathering we hold, and every act of care offered to each other and all life.</p>
+<p>Benjy’s heart mission has long been to gather the sparks that helped us wake up — little changes of thought, behaviour, emotion, hope and faith — and turn them into a Living Library for positive change. A place where inspiration becomes practice, practice becomes confidence, and confidence becomes care in action.</p>
+<div class="actions" style="justify-content:flex-start">
+<a class="btn btn-primary" href="#begin">Begin Your Journey</a>
+<a class="btn btn-green" href="#library">Explore the Living Library</a>
+<a class="btn btn-soft" href="journey.html">Read Our Journey</a>
+<a class="btn btn-terra" href="work-with-benjy.html">Work With Benjy</a>
+</div>
+<div aria-label="Community and journey links" class="channel-strip">
+<a href="#community"><strong>WhatsApp</strong><span>Join our community circle.</span></a>
+<a href="#community"><strong>Telegram</strong><span>Follow updates and new guides.</span></a>
+<a href="#support"><strong>Gift Back</strong><span>Support Living Companions, videos and workshops.</span></a>
+<a href="work-with-benjy.html"><img alt="" aria-hidden="true" class="asset-icon" src="assets/illustrations/icon-hands-tree.svg"/><strong>Work With Benjy</strong><span>Gardens, food forests and land design.</span></a>
+</div>
+<a class="spotify-card" href="#community">
+<span aria-hidden="true" class="music-dot">♪</span>
+<span><strong>Play and enjoy this journey with us.</strong><span>“The waves of regenerative, joyful hope in action!”</span></span>
+</a>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap letter earth-note">
+<p class="big-hand">Welcome. We are so glad you found your way here.</p>
+<p>Whether you are here to plant your first herb, learn about regeneration, watch a living library of films and documentaries for action and remembering, discover books and inspiring teachers, build a thriving food forest, deepen your yoga or holistic practice, reconnect with nature, or simply remember that another way of living is not only possible — but already growing — you are warmly welcome.</p>
+<p>Many of us feel that another way of living is both possible and deeply needed. Our hope is that this library helps people discover practical, beautiful ways to contribute to that future — one seed, one breath, one guide, one film, one gathering, one act of care at a time.</p>
+<p>This Living Library is our first gift to the world: a home for regeneration, awakening, empowerment, calm, peace, purpose, love, belonging, remembering and joyful movement.</p>
+<p>For many years, Benjy dreamed of creating a library for positive change: one place to gather the films, books, teachers, practices, regenerative wisdom and lived experiences that changed our lives, helped us find direction, and inspired us to serve life more deeply.</p>
+<p>Now, together with Sofia, this dream is becoming a living home — a place to begin, return, learn, share, laugh, reflect and grow together.</p>
+<div aria-label="Quick starting points" class="early-actions">
+<a href="#begin"><strong>Begin Here</strong><span>Start with Awakening Regeneration, our first guide.</span></a>
+<a href="#library"><strong>Open the Living Library</strong><span>Films, books, teachers, channels and inspiration.</span></a>
+<a href="work-with-benjy.html"><strong>Work With Benjy</strong><span>Regenerative gardens, food forests and land design.</span></a>
+<a href="#community"><strong>Walk Beside Us</strong><span>Join WhatsApp, Telegram and our updates.</span></a>
+<a href="#support"><strong>Gift Back</strong><span>Support more guides, videos, courses and workshops.</span></a>
+</div>
+<div aria-hidden="true" class="flourish">
+<svg viewbox="0 0 100 42"><path d="M8 31C28 7 52 6 90 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M43 13C35 8 31 2 31 2C30 14 35 20 43 13Z" fill="currentColor" opacity=".42"></path><path d="M64 10C73 3 82 3 82 3C79 16 70 18 64 10Z" fill="currentColor" opacity=".42"></path></svg>
+</div>
+<p class="hand" style="text-align:center;font-size:1.65rem;color:var(--terra);margin:0">Come walk with us. Come as you are. Take what nourishes you. Leave something beautiful behind.</p>
+</div>
+</section>
+<section class="soft-section" id="promise">
+<div class="wrap">
+<p class="hand note">The Awakening Eden promise</p>
+<h2 class="section-title">Leave Life More Alive</h2>
+<p class="lead">Everything we create is guided by one simple question: will this help someone feel more hopeful, more connected, and more capable of caring for themselves, others and the living world?</p>
+<div class="promise-grid">
+<div class="promise-card"><h3>Calm</h3><p>A slower, kinder space where people can breathe, rest, learn and return to themselves.</p></div>
+<div class="promise-card"><h3>Hope</h3><p>Practical inspiration that turns overwhelm into one meaningful next step.</p></div>
+<div class="promise-card"><h3>Belonging</h3><p>A home for fellow gardeners, guardians, lovers of life and perfectly imperfect humans.</p></div>
+<div class="promise-card"><h3>Action</h3><p>Seeds planted, soil covered, neighbours helped, forests restored and communities strengthened.</p></div>
+</div>
+<div class="core-note">
+<p><strong>Our heart mission:</strong> to inspire little changes — in thought, behaviour, emotion, hope and care — and to remind each other that every action, every kind word and every hopeful activation can become part of a greater plan of regeneration.</p>
+<p><strong>Our compass:</strong> nourish the mind, inspire the heart, empower the hands, strengthen community and help life flourish.</p>
+</div>
+</div>
+</section>
+<section id="begin">
+<div class="wrap">
+<p class="hand note">Start where you are.</p>
+<h2 class="section-title">Begin Your Journey</h2>
+<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider" src="assets/illustrations/divider-tree-heart.svg"/></div>
+<p class="lead">We created Living Companions you can follow step by step, or explore in whatever order calls you. If you are new here, we recommend beginning with Step One, then moving into Thriving in These Times, and slowly growing into living soil, syntropy, food forests and regenerative living.</p>
+<div class="card start-card">
+<div>
+<span class="badge">Step One · Start Here</span>
+<h3 style="font-size:clamp(2rem,5vw,3.4rem)">Awakening Regeneration</h3>
+<p class="lead"><strong>The guide we wish someone had given us before we planted our first garden.</strong></p>
+<p>A gentle introduction to regeneration, healthy soil, syntropic thinking, food forests, holistic living and practical ways to help life flourish. This is the doorway into the whole Awakening Eden journey.</p>
+</div>
+<div class="action-stack">
+<a class="action-card" href="Regeneration-101-Field-Guide.html"><strong>Start Reading</strong><span>Read online with calm, practical steps.</span></a>
+<a class="action-card" href="Regeneration-101-Regenerate-Your-Land.pdf"><strong>Take this Living Companion with you</strong><span>Download the beautiful companion for offline reading, printing or garden days.</span></a>
+<a class="action-card" href="#support"><strong>Gift Back</strong><span>Support more Living Companions, videos, workshops and courses.</span></a>
+</div>
+</div>
+</div>
+</section>
+<section id="library">
+<div class="wrap">
+<p class="hand note">Films, books, teachers, voices &amp; inspiration.</p>
+<h2 class="section-title">Explore the Living Resource Library</h2>
+<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider bee" src="assets/illustrations/divider-bee.svg"/></div>
+<p class="lead">A carefully curated collection of films, documentaries, books, teachers, channels, spiritual evolution resources and practical wisdom that have inspired millions of people — and deeply shaped our own journey.</p>
+<p>Choose whatever calls you today. One film. One chapter. One conversation. One new idea. Sometimes that is all it takes to begin seeing the world differently.</p>
+<div class="resource-grid">
+<article class="resource-card">
+<img alt="Films and documentaries inspiration card" src="library-films.jpg"/>
+<h3>Films &amp; Documentaries</h3>
+<p>Stories that awaken hope and show what becomes possible when people choose regeneration.</p>
+<a href="awakening_eden_regenerative_film_resource_library_updated.html#films">Jump to films</a>
+</article>
+<article class="resource-card">
+<img alt="Books and reading inspiration card" src="library-books.jpg"/>
+<h3>Books &amp; Reading</h3>
+<p>Timeless wisdom, practical knowledge and books that continue to shape how we live and serve.</p>
+<a href="awakening_eden_regenerative_film_resource_library_updated.html#books">Explore books</a>
+</article>
+<article class="resource-card">
+<img alt="Teachers and inspiring voices card" src="library-guide.jpg"/>
+<h3>Teachers &amp; Voices</h3>
+<p>Regeneration, consciousness, ecology, systems thinking, spiritual evolution and positive change.</p>
+<a href="awakening_eden_regenerative_film_resource_library_updated.html#voices">Meet the voices</a>
+</article>
+<article class="resource-card">
+<svg class="icon-draw" fill="none" viewbox="0 0 64 64"><path d="M8 48c14-26 33-34 50-32" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path><path d="M24 31c-11-2-16-10-16-10 12-5 21 1 16 10Z" fill="currentColor" opacity=".25" stroke="currentColor"></path><path d="M42 22c5-11 16-12 16-12 1 14-7 19-16 12Z" fill="currentColor" opacity=".25" stroke="currentColor"></path></svg>
+<h3>Projects &amp; Communities</h3>
+<p>Farmers, educators, communities and everyday people quietly helping life flourish.</p>
+<a href="awakening_eden_regenerative_film_resource_library_updated.html#networks">Discover projects</a>
+</article>
+</div>
+<div class="actions">
+<a class="btn btn-green" href="awakening_eden_regenerative_film_resource_library_updated.html">Open the Full Living Library</a>
+</div>
+</div>
+</section>
+<section class="dark-band" id="journey">
+<div class="wrap">
+<p class="hand note" style="color:#f6df9f">One seed at a time.</p>
+<h2 class="section-title">Your Awakening &amp; Syntropy Journey</h2>
+<p class="lead">A simple path from inspiration to grounded action. Follow it step by step, or jump to what your life is asking for now.</p>
+<div class="journey-grid">
+<article class="journey-card">
+<p class="step">Step One · Available</p><h3>Awakening Regeneration</h3>
+<p>The foundational guide for regeneration, soil, syntropy, food forests and holistic living.</p>
+<a href="Regeneration-101-Field-Guide.html">Start reading</a>
+</article>
+<article class="journey-card">
+<p class="step">Step Two · Available</p><h3>Thriving in These Times</h3>
+<p>Inner resilience, calm, practical hope, conscious preparedness and regenerative living.</p>
+<a href="Thriving-in-These-Times.html">Read Step Two</a>
+</article>
+<article class="journey-card">
+<p class="step">Step Three · Available</p><h3>7 First Steps to Regenerate Your Land</h3>
+<p>A practical Mediterranean doorway for tired land, soil cover, water, life, observation and first actions.</p>
+<a href="7-First-Steps-Regenerate-Your-Land.html">Read Step Three</a>
+</article>
+<article class="journey-card">
+<p class="step">Step Four</p><h3>Living Soil</h3>
+<p>Soil food web, compost, mulch, biochar, microbes, fungi and fertility. Coming soon.</p>
+</article>
+<article class="journey-card">
+<p class="step">Step Five</p><h3>Food Forests &amp; Syntropy</h3>
+<p>Succession, strata, biomass, pruning, diversity and abundant edible ecosystems. Coming soon.</p>
+</article>
+<article class="journey-card">
+<p class="step">Step Six</p><h3>Water, Biodiversity &amp; Regenerative Life</h3>
+<p>Slowing water, growing shade, supporting community, yoga, service, gift economy and everyday acts of care. Coming soon.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="work">
+<div class="wrap">
+<p class="hand note">Regenerative landscape transformation.</p>
+<h2 class="section-title">Work With Benjy</h2>
+<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider" src="assets/illustrations/divider-tree-heart.svg"/></div>
+<p class="lead">Regenerative gardens, food forests and Mediterranean land design for homes, farms, retreat centres, boutique hotels and communities.</p>
+<div class="work-grid">
+<article class="work-card"><h3>Home Gardens</h3><p>Start with what you have and grow towards abundance, beauty and confidence.</p></article>
+<article class="work-card"><h3>Food Forests</h3><p>Design layered, diverse, edible landscapes that build soil and resilience over time.</p></article>
+<article class="work-card"><h3>Retreats &amp; Hotels</h3><p>Create living landscapes, guest experiences, herbal gardens, shade and biodiversity.</p></article>
+</div>
+<div class="actions">
+<a class="btn btn-green" href="work-with-benjy.html">Explore Work With Benjy</a>
+<a class="btn btn-soft" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener" target="_blank">Ask a Question on WhatsApp</a>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<p class="hand note">Regenerative interbeing.</p>
+<h2 class="section-title">Our Philosophy</h2>
+<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider bee" src="assets/illustrations/divider-bee.svg"/></div>
+<p class="lead">Many traditions and disciplines that inspired us point toward a similar understanding: life flourishes through relationship.</p>
+<p>Yoga invites us to cultivate awareness and compassion. Ecology reveals living relationships. Regenerative agriculture restores the health of whole systems. Permaculture encourages us to observe, care and design with nature. Syntropic farming demonstrates how diversity, succession and cooperation can create increasing abundance over time.</p>
+<p>Together, these perspectives inspire what we call <strong>regenerative interbeing</strong>: living in ways that help ourselves, our communities and the living world flourish together.</p>
+<p class="values-intro">These values are not rules. They are intentions we return to again and again: care for all life, question our actions, reflect together, improve what we can without burning out, nourish ourselves while nourishing the world, and choose kindness, compassion, peace and aligned action when needed.</p>
+<div class="values-grid">
+<article class="value-card"><h3>Care for Life</h3><p>People, soil, water, plants, animals, communities and future generations are all part of the whole.</p></article>
+<article class="value-card"><h3>Leave Places More Alive</h3><p>Every page, project, garden and gathering is an opportunity to add care, beauty and life.</p></article>
+<article class="value-card"><h3>Learn from Nature</h3><p>Observation, humility and curiosity are some of our greatest teachers.</p></article>
+<article class="value-card"><h3>Nourish Ourselves</h3><p>We care for our bodies, nervous systems, joy and rest so we can care for the world without burning out.</p></article>
+<article class="value-card"><h3>Courage with Compassion</h3><p>We speak up for life, reflect together, and take aligned action when needed.</p></article>
+<article class="value-card"><h3>Sacred &amp; Silly</h3><p>Depth and play belong together. We welcome authentic, raw, joyful, perfectly imperfect humanity.</p></article>
+</div>
+</div>
+</section>
+<section class="soft-section" id="our-hope">
+<div class="wrap letter">
+<p class="hand note">One quiet ripple at a time.</p>
+<h2 class="section-title">Our Hope</h2>
+<p>We do not believe one guide will change the world by itself.</p>
+<p>But perhaps one idea, one conversation, one seed, one restored patch of soil, one act of kindness, one shared meal, one brave decision, and one moment of remembering can begin a quiet ripple that reaches farther than we can see.</p>
+<p>Our hope is that Awakening Eden helps create more of those ripples — helping people feel more hopeful, more connected, and more capable of caring for themselves, for each other, and for the living Earth.</p>
+</div>
+</section>
+<section class="dark-band" id="community">
+<div class="wrap">
+<p class="hand note" style="color:#f6df9f">Walk beside us.</p>
+<h2 class="section-title">Community, updates &amp; gift economy</h2>
+<p class="lead">Join our channels, follow the journey, share your questions, and help this Living Library grow into more guides, videos, courses, workshops and regenerative projects.</p>
+<div class="community-cards">
+<a aria-label="Join WhatsApp community" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener" target="_blank">WhatsApp Community<span>Share questions, wins and updates.</span></a>
+<a aria-label="Telegram community coming soon" href="#support">Telegram Channel<span>Coming soon. For now, the Living Library grows through WhatsApp, gifts and shared care.</span></a>
+<a href="#support">Gift Back<span>Support the Living Library and future creations.</span></a>
+</div>
+</div>
+</section>
+<section id="support">
+<div class="wrap letter">
+<p class="hand note">Help this library grow.</p>
+<h2 class="section-title">Gift Back if this nourishes you</h2>
+<p>Everything here is shared with love. If these guides, resources or stories have supported your journey, your gift helps us create more free Living Companions, videos, workshops, courses and regenerative education.</p>
+<p>Your support also helps us move toward our long-term dream: a regenerative learning and healing centre where people can gather, restore landscapes, share meals, practise yoga, grow food, learn together and celebrate life.</p>
+<div class="actions">
+<a class="btn btn-terra" href="https://www.paypal.me/BSauber/3" rel="noopener" target="_blank">Gift €3</a>
+<a class="btn btn-terra" href="https://www.paypal.me/BSauber/11" rel="noopener" target="_blank">Gift €11</a>
+<a class="btn btn-terra" href="https://www.paypal.me/BSauber/33" rel="noopener" target="_blank">Gift €33</a>
+<a class="btn btn-green" href="https://www.paypal.me/BSauber" rel="noopener" target="_blank">Choose Your Own Gift</a>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap letter">
+<p class="hand note">Our hope for your journey here</p>
+<p>We hope you leave feeling calmer, more hopeful, more connected, and inspired to take one small step.</p>
+<p>You do not need to know everything. You do not need to have all the answers. You do not need to be perfect.</p>
+<p>Begin with one seed. One breath. One kind conversation. One walk in nature. One guide. One film. One act of care.</p>
+<p>Forests grow that way. Communities grow that way. People grow that way.</p>
+<p class="hand" style="font-size:1.6rem;color:var(--terra);text-align:center">May your unique gifts find beautiful ways to serve life.</p>
+</div>
+</section>
+</main>
+<div aria-hidden="true" class="seed-companion">
+<svg fill="none" id="seedSvg" viewbox="0 0 64 64">
+<path d="M32 42 C30 48 26 52 20 56 M32 42 C35 49 39 53 45 58" id="root" opacity=".25" stroke="#6d4b32" stroke-linecap="round" stroke-width="2"></path>
+<path d="M32 44 C32 34 32 25 32 16" id="stem" stroke="#365c3b" stroke-linecap="round" stroke-width="3"></path>
+<path d="M32 28 C20 23 18 13 18 13 C32 12 39 18 32 28Z" fill="#b9c8a7" id="leaf1" stroke="#365c3b" stroke-width="2"></path>
+<path d="M33 23 C45 17 52 22 52 22 C47 34 37 32 33 23Z" fill="#d8b45e" fill-opacity=".58" id="leaf2" stroke="#365c3b" stroke-width="2"></path>
+<circle cx="32" cy="45" fill="#b56a42" id="seed" r="6"></circle>
+<path d="M18 14C10 5 4 10 8 20C13 19 17 17 18 14ZM46 14C54 5 60 10 56 20C51 19 47 17 46 14Z" fill="#d8b45e" id="butterfly" opacity="0"></path>
+</svg>
+</div>
+<div class="seed-message hand" id="seedMessage">This is you. A seed, becoming a tree of life.</div>
+<div aria-label="Quick mobile actions" class="mobile-quick">
+<a href="#begin">Begin</a>
+<a href="#library">Library</a>
+<a href="#support">Gift</a>
+</div>
+<img alt="" aria-hidden="true" class="tree-footer-art" src="assets/illustrations/footer-seed-to-tree.svg"/>
+<footer class="footer">
+<div class="wrap">
+<p class="hand" style="font-size:1.8rem;color:#f6df9f">Every forest began as one small seed.</p>
+<p>May your inner garden flourish. May the gardens you create nourish others. May the seeds you plant today become forests for future generations.</p>
+<p><strong>Let’s grow together.</strong></p>
+<p>With love, <strong>Benjy &amp; Sofia</strong> · Awakening Eden</p>
+</div>
+</footer>
+<script>
+(function(){
+  const msg=document.getElementById('seedMessage');
+  const butterfly=document.getElementById('butterfly');
+  const seed=document.getElementById('seed');
+  const root=document.getElementById('root');
+  const stem=document.getElementById('stem');
+  const leaf1=document.getElementById('leaf1');
+  const leaf2=document.getElementById('leaf2');
+  function update(){
+    const h=document.documentElement;
+    const progress=Math.max(0,Math.min(1,(h.scrollTop)/(h.scrollHeight-h.clientHeight || 1)));
+    seed.style.opacity = String(Math.max(.15,1-progress*1.4));
+    root.style.opacity = String(.18 + progress*.82);
+    stem.style.strokeWidth = String(2 + progress*3);
+    leaf1.style.opacity = String(.25 + progress*.75);
+    leaf2.style.opacity = String(.15 + progress*.85);
+    butterfly.style.opacity = String(progress > .82 ? (progress-.82)/.18 : 0);
+    msg.classList.toggle('show', progress > .86);
+  }
+  document.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+</body>
+</html>

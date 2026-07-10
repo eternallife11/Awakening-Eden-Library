@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Awakening Regeneration · Field Guide · Awakening Eden</title>
+<meta content="A gentle field guide for awakening regeneration: soil, water, food forests, mindset, community, practical action and remembering that life can heal through our hands." name="description"/>
+<style>
+:root{
+  --deep:#102819; --forest:#173822; --leaf:#365c3b; --moss:#6d8b5b; --sage:#b9c8a7;
+  --sand:#f6f2ea; --cream:#fffdf7; --paper:#fffaf0; --gold:#d8b45e; --clay:#d8b9a3;
+  --terra:#b56a42; --earth:#6f4c35; --ink:#263326; --muted:#6f675c; --line:rgba(38,51,38,.16);
+  --shadow:0 24px 60px rgba(23,56,34,.13); --soft:0 10px 30px rgba(23,56,34,.09);
+  --serif: Georgia, "Times New Roman", serif; --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(circle at 10% 2%, rgba(216,180,94,.18), transparent 28%),
+  radial-gradient(circle at 85% 12%, rgba(185,200,167,.28), transparent 28%),
+  linear-gradient(180deg,var(--cream),var(--sand)); color:var(--ink); font-family:var(--sans); line-height:1.72; font-size:17px;}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:linear-gradient(90deg,rgba(111,76,53,.06) 1px,transparent 1px),linear-gradient(rgba(111,76,53,.045) 1px,transparent 1px);background-size:44px 44px}
+a{color:var(--forest);text-decoration:none;font-weight:800}
+img{max-width:100%;height:auto}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.narrow{width:min(820px,92vw);margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(15px);background:rgba(255,250,240,.87);border-bottom:1px solid var(--line)}
+.navinner{height:60px;display:flex;align-items:center;gap:14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.navinner::-webkit-scrollbar{display:none}
+.brand{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--serif);font-size:1.05rem;color:var(--deep);margin-right:4px}
+.logo{width:28px;height:28px;border-radius:999px;background:var(--deep);display:inline-grid;place-items:center;color:var(--cream);font-size:15px}
+.navinner a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.56);border:1px solid rgba(54,92,59,.16);font-size:.84rem;color:var(--deep)}
+.hero{position:relative;overflow:hidden;padding:88px 0 62px;background:linear-gradient(135deg,rgba(16,40,25,.96),rgba(54,92,59,.86)),url('vision-ecovillage-hero.jpg') center/cover; color:var(--cream)}
+.hero .wrap{position:relative;z-index:2}
+.hand{font-family:var(--hand);font-size:clamp(2.2rem,7vw,4.7rem);line-height:.95;color:#f5d899;font-weight:500;margin:0 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.18)}
+.kicker{letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--gold);font-size:.78rem}
+h1,h2,h3{font-family:var(--serif);line-height:1.05;color:var(--deep);margin:0 0 18px}
+.hero h1{font-size:clamp(3.1rem,10vw,7.2rem);color:#fff9e9;letter-spacing:.03em}
+.hero p{font-size:clamp(1.08rem,2.8vw,1.42rem);max-width:850px;color:#fff4d8}
+.subtitle{font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem)!important;line-height:1.25!important}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;padding:13px 18px;border-radius:22px;border:1px solid rgba(54,92,59,.18);box-shadow:var(--soft);font-weight:900;line-height:1.2}
+.btn small{font-weight:600;color:rgba(38,51,38,.78)}
+.btn.primary{background:linear-gradient(135deg,var(--forest),var(--leaf));color:white}
+.btn.primary small{color:#f7efd7}
+.btn.paper{background:rgba(255,253,247,.9);color:var(--deep)}
+.btn.gold{background:linear-gradient(135deg,#efd99a,var(--gold));color:#3e2b13}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.card,.callout,.chapter,.promise,.note,.practice,.recap{background:rgba(255,253,247,.86);border:1px solid var(--line);border-radius:30px;padding:clamp(22px,4vw,42px);box-shadow:var(--soft)}
+.grid{display:grid;gap:22px}
+.two{grid-template-columns:1.2fr .8fr}
+.three{grid-template-columns:repeat(3,1fr)}
+h2{font-size:clamp(2.05rem,5vw,4rem)}
+h3{font-size:clamp(1.45rem,3vw,2.3rem)}
+.lead{font-size:1.22rem;color:#43382e}
+.note{border-style:dashed;background:rgba(246,242,234,.76)}
+.note:before{content:"Come walk with us";font-family:var(--hand);display:block;color:var(--terra);font-size:1.9rem;margin-bottom:8px}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:36px auto;color:var(--earth);opacity:.95}
+.divider:before,.divider:after{content:"";height:1px;width:min(180px,28vw);background:linear-gradient(90deg,transparent,var(--earth),transparent)}
+.divider span{font-family:var(--hand);font-size:2rem;color:var(--terra)}
+.chapter-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+.chapter-list a{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 8px 18px rgba(23,56,34,.06)}
+.toc{position:sticky;top:75px;align-self:start}
+.layout{display:grid;grid-template-columns:270px 1fr;gap:28px}
+.toc .card{padding:18px;border-radius:22px}
+.toc a{display:block;padding:9px 10px;border-radius:12px;font-size:.92rem;color:var(--deep)}
+.toc a:hover{background:var(--sage)}
+ul.clean{padding-left:1.1rem}
+ul.clean li{margin:.4rem 0}
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:start;padding:16px;border-radius:22px;background:rgba(246,242,234,.66);border:1px solid var(--line)}
+.num{width:48px;height:48px;border-radius:999px;background:var(--forest);color:white;display:grid;place-items:center;font-weight:900}
+.warning{border-left:6px solid var(--terra)}
+.footer{padding:70px 0;background:var(--deep);color:#f8f0d8;text-align:center}
+.footer h2{color:#fff2c5}
+.footer p{color:#f6ead2}
+.refs{font-size:.92rem;color:#51483f}
+@media(max-width:860px){
+  body{font-size:16px}
+  .hero{padding:68px 0 48px}
+  .two,.three,.layout{grid-template-columns:1fr}
+  .toc{position:static}
+  .chapter-list{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .navinner{height:54px}
+  .brand span{display:none}
+  .btn{width:100%;align-items:flex-start}
+}
+</style>
+<meta content="index, follow" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-living-library.netlify.app/Regeneration-101-Field-Guide.html" rel="canonical"/><meta content="Awakening Regeneration · Field Guide · Awakening Eden" property="og:title"/><meta content="A gentle field guide for awakening regeneration: soil, water, food forests, mindset, community, practical action and remembering that life can heal through our hands." property="og:description"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-living-library.netlify.app/Regeneration-101-Field-Guide.html" property="og:url"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Awakening Regeneration · Field Guide · Awakening Eden" name="twitter:title"/><meta content="A gentle field guide for awakening regeneration: soil, water, food forests, mindset, community, practical action and remembering that life can heal through our hands." name="twitter:description"/><meta content="https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg" name="twitter:image"/><link href="assets/illustrations/ae-logo-tree-heart.svg" rel="icon"/><link href="manifest.webmanifest" rel="manifest"/><script data-seo="awakening-eden" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Awakening Regeneration · Field Guide · Awakening Eden",
+  "description": "A gentle field guide for awakening regeneration: soil, water, food forests, mindset, community, practical action and remembering that life can heal through our hands.",
+  "url": "https://awakening-eden-living-library.netlify.app/Regeneration-101-Field-Guide.html",
+  "image": "https://awakening-eden-living-library.netlify.app/benjy-and-sofia.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Awakening Eden",
+    "url": "https://awakening-eden-living-library.netlify.app",
+    "logo": "https://awakening-eden-living-library.netlify.app/assets/illustrations/ae-logo-tree-heart.svg"
+  }
+}</script></head>
+<body>
+<header class="topbar">
+<div class="wrap navinner">
+<a class="brand" href="index.html"><span class="logo">🌱</span><span>Awakening Eden</span></a>
+<a href="#begin">Begin</a><a href="#interbeing">Interbeing</a><a href="#principles">Principles</a><a href="#soil">Soil</a><a href="#abundant-edge">Abundant Edge</a><a href="#syntropy">Syntropy</a><a href="#support">Gift Back</a>
+</div>
+</header>
+<header class="hero" id="top">
+<div class="wrap">
+<p class="hand">Welcome home, fellow gardener</p>
+<div class="kicker">Living Companion No. 01</div>
+<h1>Awakening Regeneration</h1>
+<p class="subtitle">The guide we wish someone had given us before we planted our first garden.</p>
+<p>A heart-centred beginning into living soil, syntropic thinking, food forests, regenerative interbeing and practical ways to help life flourish.</p>
+<div class="btns">
+<a class="btn primary" href="#begin">Start reading <small>Open the first doorway</small></a>
+<a class="btn paper" href="Regeneration-101-Regenerate-Your-Land.pdf">Take this Living Companion with you <small>Download the printable version</small></a>
+<a class="btn gold" href="#support">Gift Back <small>Support future guides and videos</small></a>
+</div>
+</div>
+</header>
+<main>
+<section id="begin">
+<div class="wrap layout">
+<aside class="toc">
+<div class="card">
+<strong>Contents</strong>
+<a href="#begin">How to use this companion</a>
+<a href="#why">Find your why</a>
+<a href="#interbeing">Regenerative interbeing</a>
+<a href="#principles">Living principles</a>
+<a href="#soil">Living soil</a>
+<a href="#quickstart">Quick start</a>
+<a href="#abundant-edge">Abundant Edge</a>
+<a href="#syntropy">Syntropy</a>
+<a href="#mediterranean">Mediterranean land</a>
+<a href="#support">Continue the journey</a>
+</div>
+</aside>
+<article class="chapter">
+<div class="kicker">Begin gently</div>
+<h2>How to use this Living Companion</h2>
+<p class="lead">Do not rush. This is not a test. This is an invitation to begin a relationship with life.</p>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><strong>Read one chapter.</strong><br/>Let one idea land before gathering more information.</div></div>
+<div class="step"><div class="num">2</div><div><strong>Try one action.</strong><br/>Cover a patch of soil, observe the sun, plant one herb, start one compost bowl.</div></div>
+<div class="step"><div class="num">3</div><div><strong>Notice what changes.</strong><br/>Regeneration begins when attention becomes relationship.</div></div>
+</div>
+<p class="note">Nature never hurries. Yet everything grows.</p>
+</article>
+</div>
+</section>
+<section id="why">
+<div class="narrow">
+<h2>Find your why</h2>
+<p class="lead">Before asking what to plant, ask why you want to regenerate.</p>
+<p>Perhaps you are worried about the future. Perhaps your heart hurts when you see degraded land, lonely communities or food systems that no longer nourish life. Perhaps you simply know that another way of living is possible.</p>
+<p>Purpose grows deeper roots than motivation. When your why is clear, small actions become part of something much larger.</p>
+<div aria-hidden="true" class="divider"><span>🌳♡🌳</span></div>
+<div class="recap"><h3>One action today</h3><p>Sit outside for ten minutes. Ask: <strong>What kind of world do I want my daily actions to feed?</strong></p></div>
+</div>
+</section>
+<section id="interbeing">
+<div class="wrap grid two">
+<article class="chapter">
+<div class="kicker">The deeper thread</div>
+<h2>Regenerative interbeing</h2>
+<p class="lead">Regenerative interbeing is our way of describing the lived experience that our wellbeing is inseparable from the wellbeing of the living world.</p>
+<p>Healthy soil supports healthy plants. Healthy plants support insects, birds, animals and people. Communities flourish through trust, generosity and shared care. In the same way, our inner lives and our outer actions continuously shape one another.</p>
+<p>For Benjy, this became real through meditation, time in forests, documentaries that opened the heart, tree planting, ocean encounters, yoga, community and the felt sense that life is one great web of relationships.</p>
+<p>Regeneration is not only restoring landscapes. It is restoring relationship: with ourselves, each other, food, water, soil, community and future generations.</p>
+</article>
+<aside class="callout">
+<h3>Feeling the oneness without burning out</h3>
+<p>Many regenerators feel deeply. We may feel the cries of forests, oceans, animals and communities. That sensitivity is a gift — but only when held with boundaries, rest, joy and support.</p>
+<p><strong>Regeneration includes the regenerators.</strong> Rest is not leaving the work. Rest is how the work becomes sustainable.</p>
+</aside>
+</div>
+</section>
+<section id="principles">
+<div class="wrap">
+<div class="kicker">The Living Principles</div>
+<h2>What nature keeps teaching</h2>
+<div class="grid three">
+<div class="card"><h3>Diversity creates resilience</h3><p>Companion planting, beneficial species, flowers, herbs, fungi, insects and trees all strengthen the living system.</p></div>
+<div class="card"><h3>Cover the soil</h3><p>Mulch is the soil's blanket, armour and food source. Bare soil is vulnerable soil.</p></div>
+<div class="card"><h3>Disturb less, feed more</h3><p>Instead of constant tilling, feed life from above with compost, leaves, wood chips, manure and chop-and-drop biomass.</p></div>
+<div class="card"><h3>Design with sun and water</h3><p>Observe morning sun, afternoon heat, slope, contour, runoff, shade and wind before planting.</p></div>
+<div class="card"><h3>Think in layers</h3><p>Food forests grow in strata: canopy, understory, shrubs, herbs, roots, groundcovers, climbers and fungi.</p></div>
+<div class="card"><h3>Work with succession</h3><p>Pioneers prepare the way. Fast species create shade and biomass. Long-lived trees inherit the future.</p></div>
+</div>
+</div>
+</section>
+<section id="soil">
+<div class="narrow">
+<h2>Living soil is the foundation</h2>
+<p class="lead">Soil is not dirt. Soil is a living community.</p>
+<p>Healthy soil holds water, cycles nutrients, stores carbon, supports roots, feeds microorganisms and becomes the quiet foundation for resilient landscapes. The fastest way to begin is not by buying many products, but by protecting the soil and feeding biology.</p>
+<ul class="clean">
+<li>Keep soil covered with mulch, leaves, straw, wood chips or living plants.</li>
+<li>Add compost and organic matter regularly.</li>
+<li>Plant living roots as much of the year as possible.</li>
+<li>Reduce unnecessary disturbance.</li>
+<li>Invite fungi with wood, perennial plants and patience.</li>
+</ul>
+<div class="recap"><h3>One action today</h3><p>Find one patch of bare soil and cover it with organic matter.</p></div>
+</div>
+</section>
+<section id="quickstart">
+<div class="wrap">
+<h2>Quick start: regenerate one corner</h2>
+<div class="grid three">
+<div class="card"><h3>Observe</h3><p>Where does water flow? Where is the shade? Which plants already thrive? What does the land show you after rain?</p></div>
+<div class="card"><h3>Feed</h3><p>Layer leaves, compost, woody material, manure where appropriate, green cuttings and mulch to build a living sponge.</p></div>
+<div class="card"><h3>Plant</h3><p>Start with diversity: support species, herbs, flowers, groundcovers, shrubs and trees that suit your climate.</p></div>
+</div>
+</div>
+</section>
+<section id="abundant-edge">
+<div class="wrap grid two">
+<article class="chapter">
+<h2>Benjy's Abundant Edge Method</h2>
+<p class="lead">Edges are where life gathers. Water slows. Roots meet. Biomass collects. Fungi spread. Diversity increases.</p>
+<p>The Abundant Edge method is Benjy's evolving way of building fertile planting lines and tree connections using locally available materials: wood, charcoal or charged biochar where available, compost, manure, green cuttings, mulch and water-holding trenches or raised edges.</p>
+<p>The purpose is simple: create a moist, biologically active sponge around plants so young systems can establish in challenging climates.</p>
+</article>
+<aside class="callout">
+<h3>Basic pattern</h3>
+<ol>
+<li>Observe contour and water movement.</li>
+<li>Create a shallow trench or edge where appropriate.</li>
+<li>Add woody material and organic matter.</li>
+<li>Use charged biochar thoughtfully if available.</li>
+<li>Plant diversity into and around the edge.</li>
+<li>Mulch heavily and keep feeding with chop-and-drop.</li>
+</ol>
+</aside>
+</div>
+</section>
+<section id="syntropy">
+<div class="narrow">
+<h2>Syntropic thinking</h2>
+<p class="lead">Syntropy invites us to design with life's tendency to build increasing complexity, cooperation and abundance over time.</p>
+<p>In syntropic farming, plants are arranged through time and space. Fast-growing species create biomass, shade and protection. Pruning stimulates growth. Chop-and-drop feeds the soil. Succession guides the system from pioneers toward abundance.</p>
+<p>The lesson is bigger than farming: life flourishes when each part supports the greater whole.</p>
+<div class="recap"><h3>One action today</h3><p>Plant one fast-growing support species near a slower long-term plant, and plan how future pruning can feed the soil.</p></div>
+</div>
+</section>
+<section id="mediterranean">
+<div class="wrap grid two">
+<article class="chapter">
+<h2>Mediterranean regeneration</h2>
+<p>Mediterranean climates ask for special care: wet winters, dry summers, strong sun, fire risk and fragile water cycles. Regeneration here begins with shade, mulch, organic matter, water harvesting, wind protection and species that can handle seasonal stress.</p>
+<ul class="clean">
+<li>Plant in the cooler, wetter season where possible.</li>
+<li>Mulch deeply before summer heat.</li>
+<li>Use support species for shade and biomass.</li>
+<li>Create fire-aware zones and reduce dry fuel near homes.</li>
+<li>Prioritise water infiltration over runoff.</li>
+</ul>
+</article>
+<aside class="note"><p><strong>Remember:</strong> the goal is not to force a rainforest into every place. The goal is to help each landscape become more alive in its own way.</p></aside>
+</div>
+</section>
+<section id="support">
+<div class="narrow promise">
+<h2>Before you go...</h2>
+<p>Take one slow breath. Step outside if you can. Notice one living being. Plant one seed. Smile at someone. Drink some water. Rest when you need to.</p>
+<p><strong>Life grows through small acts of care.</strong></p>
+<div class="btns">
+<a class="btn paper" href="Regeneration-101-Regenerate-Your-Land.pdf">Take this Living Companion with you <small>Download the printable version</small></a>
+<a class="btn primary" href="Thriving-in-These-Times.html">Continue to Step Two <small>Thriving in These Times</small></a>
+<a class="btn gold" href="https://www.paypal.me/BSauber">Gift Back <small>Support future companions, videos and workshops</small></a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="narrow">
+<h2>Every forest began as one small seed.</h2>
+<p>May your inner garden flourish. May the gardens you create nourish others. May we leave this Earth, together, a little more alive than we found it.</p>
+<p><strong>With love, Benjy &amp; Sofia · Awakening Eden</strong></p>
+</div>
+</footer>
+</body></html>
