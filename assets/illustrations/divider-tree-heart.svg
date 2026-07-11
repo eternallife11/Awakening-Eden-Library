@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title">
+<title>Tree of Life botanical divider</title>
+<defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.f{fill:#b9c8a7;stroke:#365c3b;stroke-width:2}.h{fill:none;stroke:#b56a42;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style></defs>
+<path class="l" d="M36 70 C155 40 285 40 382 67"/>
+<path class="l" d="M518 67 C615 40 745 40 864 70"/>
+<g opacity=".95">
+<path class="h" d="M450 64 C441 48 421 48 421 32 c0-11 13-18 29 1 c16-19 29-12 29-1 c0 16-20 16-29 32Z"/>
+<path class="l" d="M450 64 V86 M450 70 C434 69 423 78 410 96 M450 70 C466 69 477 78 490 96 M450 53 V23 M450 34 C437 30 429 23 424 14 M450 34 C463 30 471 23 476 14"/>
+<ellipse class="f" cx="425" cy="17" rx="5" ry="10" transform="rotate(-42 425 17)"/>
+<ellipse class="f" cx="475" cy="17" rx="5" ry="10" transform="rotate(42 475 17)"/>
+<ellipse class="f" cx="450" cy="24" rx="5" ry="10"/>
+</g>
+<g>
+<ellipse class="f" cx="120" cy="52" rx="7" ry="14" transform="rotate(-73 120 52)"/><ellipse class="f" cx="184" cy="45" rx="7" ry="14" transform="rotate(-53 184 45)"/><ellipse class="f" cx="246" cy="47" rx="7" ry="14" transform="rotate(-35 246 47)"/><ellipse class="f" cx="314" cy="58" rx="7" ry="14" transform="rotate(-18 314 58)"/>
+<ellipse class="f" cx="780" cy="52" rx="7" ry="14" transform="rotate(73 780 52)"/><ellipse class="f" cx="716" cy="45" rx="7" ry="14" transform="rotate(53 716 45)"/><ellipse class="f" cx="654" cy="47" rx="7" ry="14" transform="rotate(35 654 47)"/><ellipse class="f" cx="586" cy="58" rx="7" ry="14" transform="rotate(18 586 58)"/>
+</g>
+</svg>

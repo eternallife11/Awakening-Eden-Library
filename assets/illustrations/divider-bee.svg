@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title">
+<title>Botanical divider with bee</title>
+<defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.leaf{fill:#b9c8a7;stroke:#365c3b;stroke-width:1.8}.bee{fill:#d8b45e;stroke:#2e2e2b;stroke-width:2}.wing{fill:#fffdf7;stroke:#365c3b;stroke-width:1.5;opacity:.82}</style></defs>
+<path class="l" d="M54 52 C185 24 314 24 420 50"/>
+<path class="l" d="M480 50 C586 24 715 24 846 52"/>
+<ellipse class="wing" cx="438" cy="36" rx="18" ry="9" transform="rotate(-28 438 36)"/>
+<ellipse class="wing" cx="462" cy="36" rx="18" ry="9" transform="rotate(28 462 36)"/>
+<ellipse class="bee" cx="450" cy="52" rx="17" ry="11"/>
+<path d="M440 43v18M450 41v22M460 43v18" stroke="#2e2e2b" stroke-width="2"/>
+<path class="l" d="M433 52 h-12M467 52 h12"/>
+<circle cx="431" cy="51" r="2.5" fill="#2e2e2b"/><circle cx="469" cy="51" r="2.5" fill="#2e2e2b"/>
+<ellipse class="leaf" cx="133" cy="43" rx="6" ry="13" transform="rotate(-64 133 43)"/><ellipse class="leaf" cx="208" cy="35" rx="6" ry="13" transform="rotate(-48 208 35)"/><ellipse class="leaf" cx="280" cy="38" rx="6" ry="13" transform="rotate(-32 280 38)"/><ellipse class="leaf" cx="352" cy="45" rx="6" ry="13" transform="rotate(-16 352 45)"/>
+<ellipse class="leaf" cx="767" cy="43" rx="6" ry="13" transform="rotate(64 767 43)"/><ellipse class="leaf" cx="692" cy="35" rx="6" ry="13" transform="rotate(48 692 35)"/><ellipse class="leaf" cx="620" cy="38" rx="6" ry="13" transform="rotate(32 620 38)"/><ellipse class="leaf" cx="548" cy="45" rx="6" ry="13" transform="rotate(16 548 45)"/>
+</svg>

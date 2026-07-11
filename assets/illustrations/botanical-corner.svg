@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+<title>Olive and wildflower corner flourish</title>
+<defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.leaf{fill:#b9c8a7;stroke:#365c3b;stroke-width:2}.flower{fill:#fffaf0;stroke:#b56a42;stroke-width:2}.dot{fill:#d8b45e}</style></defs>
+<path class="l" d="M30 235 C65 154 120 87 220 30"/>
+<path class="l" d="M60 218 C88 181 125 165 176 155"/>
+<path class="l" d="M91 184 C116 147 152 124 210 110"/>
+<ellipse class="leaf" cx="66" cy="198" rx="11" ry="22" transform="rotate(-54 66 198)"/>
+<ellipse class="leaf" cx="102" cy="160" rx="10" ry="22" transform="rotate(-47 102 160)"/>
+<ellipse class="leaf" cx="137" cy="128" rx="10" ry="21" transform="rotate(-39 137 128)"/>
+<ellipse class="leaf" cx="174" cy="94" rx="9" ry="20" transform="rotate(-31 174 94)"/>
+<ellipse class="leaf" cx="207" cy="65" rx="9" ry="20" transform="rotate(-23 207 65)"/>
+<g transform="translate(182 132)"><circle class="flower" r="9"/><circle class="flower" cx="12" cy="-1" r="8"/><circle class="flower" cx="-7" cy="10" r="8"/><circle class="dot" r="4"/></g>
+<g transform="translate(130 178)"><circle class="flower" r="7"/><circle class="flower" cx="10" cy="-2" r="6"/><circle class="flower" cx="-6" cy="8" r="6"/><circle class="dot" r="3"/></g>
+</svg>
