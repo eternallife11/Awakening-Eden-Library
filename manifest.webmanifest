@@ -1,16 +1,63 @@
 {
+  "id": "/",
   "name": "Awakening Eden Living Library",
   "short_name": "Awakening Eden",
   "description": "A living library for regeneration, awakening, empowerment, peace, purpose and practical hope.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#102819",
+  "orientation": "any",
+  "background_color": "#fff8ea",
   "theme_color": "#102819",
+  "categories": [
+    "education",
+    "lifestyle",
+    "books"
+  ],
   "icons": [
     {
-      "src": "assets/illustrations/ae-logo-tree-heart.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "eden-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "eden-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Here",
+      "url": "/Awakening-Regeneration.html",
+      "icons": [
+        {
+          "src": "eden-icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Living Library",
+      "url": "/awakening_eden_regenerative_film_resource_library_updated.html",
+      "icons": [
+        {
+          "src": "eden-icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Journal",
+      "url": "/journal.html",
+      "icons": [
+        {
+          "src": "eden-icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

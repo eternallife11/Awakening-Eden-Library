@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+<title>Awakening Eden Tree of Life Logo</title>
+<defs><style>
+.line{fill:none;stroke:#365c3b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.leaf{fill:#b9c8a7;stroke:#365c3b;stroke-width:2}
+</style></defs>
+<circle cx="80" cy="80" r="70" class="line" opacity=".92"/>
+<path class="line" d="M80 86 C72 72 54 73 54 57 c0-10 12-17 26 1 c14-18 26-11 26-1 c0 16-18 15-26 29Z"/>
+<path class="line" d="M80 83 V40 M80 54 C64 48 55 38 49 27 M80 54 C96 48 105 38 111 27 M80 68 C65 68 54 63 41 53 M80 68 C95 68 106 63 119 53"/>
+<path class="line" d="M80 92 V123 M80 105 C66 103 54 111 43 130 M80 105 C94 103 106 111 117 130 M80 115 C72 117 67 124 60 137 M80 115 C88 117 93 124 100 137"/>
+<ellipse class="leaf" cx="59" cy="39" rx="6" ry="12" transform="rotate(-42 59 39)"/>
+<ellipse class="leaf" cx="101" cy="39" rx="6" ry="12" transform="rotate(42 101 39)"/>
+<ellipse class="leaf" cx="48" cy="58" rx="6" ry="11" transform="rotate(-72 48 58)"/>
+<ellipse class="leaf" cx="112" cy="58" rx="6" ry="11" transform="rotate(72 112 58)"/>
+<ellipse class="leaf" cx="80" cy="41" rx="6" ry="12"/>
+</svg>
