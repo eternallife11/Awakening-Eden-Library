@@ -1,0 +1,135 @@
+{
+  "version": "v19",
+  "date": "2026-07-11",
+  "html_pages": 17,
+  "issues": [],
+  "stats": [
+    {
+      "file": "404.html",
+      "size_kb": 1.4,
+      "title_chars": 31,
+      "description_chars": 94,
+      "images": 1
+    },
+    {
+      "file": "7-First-Steps-Regenerate-Your-Land.html",
+      "size_kb": 34.7,
+      "title_chars": 53,
+      "description_chars": 136,
+      "images": 10
+    },
+    {
+      "file": "Abundant-Edge-Index.html",
+      "size_kb": 58.5,
+      "title_chars": 60,
+      "description_chars": 165,
+      "images": 21
+    },
+    {
+      "file": "Awakening-Regeneration.html",
+      "size_kb": 23.8,
+      "title_chars": 60,
+      "description_chars": 165,
+      "images": 10
+    },
+    {
+      "file": "Awakening_Eden_Regenerative_Film_Resource_Library_updated.html",
+      "size_kb": 41.1,
+      "title_chars": 53,
+      "description_chars": 144,
+      "images": 10
+    },
+    {
+      "file": "Regeneration-101-Field-Guide.html",
+      "size_kb": 22.5,
+      "title_chars": 53,
+      "description_chars": 165,
+      "images": 10
+    },
+    {
+      "file": "Small-Scale-Regenerative-Farm-Playbook.html",
+      "size_kb": 40.0,
+      "title_chars": 63,
+      "description_chars": 152,
+      "images": 11
+    },
+    {
+      "file": "Thriving-in-These-Times.html",
+      "size_kb": 27.9,
+      "title_chars": 64,
+      "description_chars": 146,
+      "images": 12
+    },
+    {
+      "file": "acacia_dealbata_magic_manual_regenerative_eden.html",
+      "size_kb": 45.5,
+      "title_chars": 48,
+      "description_chars": 150,
+      "images": 12
+    },
+    {
+      "file": "awakening_eden_regenerative_film_resource_library_updated.html",
+      "size_kb": 41.2,
+      "title_chars": 53,
+      "description_chars": 144,
+      "images": 10
+    },
+    {
+      "file": "heart.html",
+      "size_kb": 27.9,
+      "title_chars": 46,
+      "description_chars": 163,
+      "images": 13
+    },
+    {
+      "file": "index.html",
+      "size_kb": 57.4,
+      "title_chars": 53,
+      "description_chars": 155,
+      "images": 26
+    },
+    {
+      "file": "journal.html",
+      "size_kb": 16.9,
+      "title_chars": 56,
+      "description_chars": 123,
+      "images": 7
+    },
+    {
+      "file": "journey.html",
+      "size_kb": 29.7,
+      "title_chars": 44,
+      "description_chars": 158,
+      "images": 1
+    },
+    {
+      "file": "offline.html",
+      "size_kb": 1.4,
+      "title_chars": 24,
+      "description_chars": 94,
+      "images": 1
+    },
+    {
+      "file": "thank-you.html",
+      "size_kb": 9.8,
+      "title_chars": 33,
+      "description_chars": 141,
+      "images": 1
+    },
+    {
+      "file": "work-with-benjy.html",
+      "size_kb": 22.6,
+      "title_chars": 62,
+      "description_chars": 157,
+      "images": 11
+    }
+  ],
+  "checks": {
+    "broken_local_references": 0,
+    "duplicate_ids": 0,
+    "pages_without_exactly_one_h1": 0,
+    "pages_without_exactly_one_main": 0,
+    "valid_manifest_json": true,
+    "valid_json_ld": true
+  }
+}
