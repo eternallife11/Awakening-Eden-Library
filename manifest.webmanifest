@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Awakening Eden Living Library",
   "short_name": "Awakening Eden",
-  "description": "Regenerative films, guides, inspiring people and practical hope for restoring life.",
+  "description": "A living library of regenerative films, guides, books, teachers, projects and practical hope.",
   "lang": "en",
   "dir": "ltr",
   "start_url": "/?source=pwa",
@@ -44,7 +44,7 @@
     {
       "name": "Start Here",
       "short_name": "Start",
-      "url": "/Awakening-Regeneration.html",
+      "url": "/start-here",
       "icons": [
         {
           "src": "/eden-icon-192.png",
@@ -56,7 +56,7 @@
     {
       "name": "Living Library",
       "short_name": "Library",
-      "url": "/awakening_eden_regenerative_film_resource_library_updated.html",
+      "url": "/living-library",
       "icons": [
         {
           "src": "/eden-icon-192.png",
@@ -66,9 +66,9 @@
       ]
     },
     {
-      "name": "Journal",
-      "short_name": "Journal",
-      "url": "/journal.html",
+      "name": "Follow & Connect",
+      "short_name": "Connect",
+      "url": "/links",
       "icons": [
         {
           "src": "/eden-icon-192.png",

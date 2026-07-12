@@ -2,77 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://awakening-eden-library.netlify.app/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://awakening-eden-library.netlify.app/Awakening-Regeneration.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.90</priority>
+    <loc>https://awakening-eden-library.netlify.app/start-here</loc>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://awakening-eden-library.netlify.app/living-library</loc>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://awakening-eden-library.netlify.app/about</loc>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.78</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/Thriving-in-These-Times.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.90</priority>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/7-First-Steps-Regenerate-Your-Land.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.85</priority>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.84</priority>
   </url>
   <url>
-    <loc>https://awakening-eden-library.netlify.app/awakening_eden_regenerative_film_resource_library_updated.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://awakening-eden-library.netlify.app/journal.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <loc>https://awakening-eden-library.netlify.app/journal</loc>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://awakening-eden-library.netlify.app/journey.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.75</priority>
+    <loc>https://awakening-eden-library.netlify.app/journey</loc>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.78</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/heart.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://awakening-eden-library.netlify.app/work-with-benjy.html</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.75</priority>
+    <loc>https://awakening-eden-library.netlify.app/work-with-benjy</loc>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/Abundant-Edge-Index.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/Small-Scale-Regenerative-Farm-Playbook.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/acacia_dealbata_magic_manual_regenerative_eden.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.65</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/Awakening-Regeneration-Guide.pdf</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.55</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/Thriving-in-These-Times-Guide.pdf</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <priority>0.55</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/Awakening_Eden_Regenerative_Film_Resource_Library.pdf</loc>
-    <lastmod>2026-07-11</lastmod>
-    <priority>0.55</priority>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.60</priority>
   </url>
 </urlset>

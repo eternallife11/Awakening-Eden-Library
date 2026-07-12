@@ -1,0 +1,26 @@
+# Awakening Eden v21.3 clean public pathways
+/living-library  /awakening_eden_regenerative_film_resource_library_updated.html  200
+/start-here      /Awakening-Regeneration.html                                      200
+/about           /about.html                                                       200
+/links           /links.html                                                       200
+/journal         /journal.html                                                     200
+/journey         /journey.html                                                     200
+/work-with-benjy /work-with-benjy.html                                             200
+
+/library         /living-library 301!
+/resources       /living-library 301!
+/films           /living-library 301!
+/documentaries   /living-library 301!
+/start           /start-here 301!
+/begin           /start-here 301!
+/guides          /start-here 301!
+/awakening-regeneration /start-here 301!
+/bio             /links 301!
+/instagram       /links 301!
+/home            / 301!
+/welcome         / 301!
+
+/Awakening_Eden_Regenerative_Film_Resource_Library_updated.html /living-library 301!
+/awakening_eden_regenerative_film_resource_library_updated.html /living-library 301!
+/Regeneration-101-Field-Guide.html /start-here 301!
+/Regeneration-101-Regenerate-Your-Land.pdf /Awakening-Regeneration-Guide.pdf 301!

@@ -8,6 +8,7 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
 
 [[headers]]
   for = "/*.html"
@@ -20,17 +21,17 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "/eden-brand-v19.css"
+  for = "/eden-brand-v21.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/eden-v19.js"
+  for = "/eden-v21.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/sw-v19.js"
+  for = "/sw-v21.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
     Service-Worker-Allowed = "/"
@@ -50,76 +51,3 @@
   for = "/*.webp"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/eden-*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
-[[redirects]]
-  from = "/welcome"
-  to = "/"
-  status = 302
-[[redirects]]
-  from = "/library"
-  to = "/awakening_eden_regenerative_film_resource_library_updated.html"
-  status = 301
-[[redirects]]
-  from = "/films"
-  to = "/awakening_eden_regenerative_film_resource_library_updated.html"
-  status = 301
-[[redirects]]
-  from = "/resources"
-  to = "/awakening_eden_regenerative_film_resource_library_updated.html"
-  status = 301
-[[redirects]]
-  from = "/start"
-  to = "/Awakening-Regeneration.html"
-  status = 301
-[[redirects]]
-  from = "/guides"
-  to = "/Awakening-Regeneration.html"
-  status = 301
-[[redirects]]
-  from = "/awakening-regeneration"
-  to = "/Awakening-Regeneration.html"
-  status = 301
-[[redirects]]
-  from = "/thriving"
-  to = "/Thriving-in-These-Times.html"
-  status = 301
-[[redirects]]
-  from = "/journal"
-  to = "/journal.html"
-  status = 301
-[[redirects]]
-  from = "/journey"
-  to = "/journey.html"
-  status = 301
-[[redirects]]
-  from = "/work-with-benjy"
-  to = "/work-with-benjy.html"
-  status = 301
-[[redirects]]
-  from = "/water"
-  to = "/journal.html#water-is-love"
-  status = 301
-[[redirects]]
-  from = "/Awakening_Eden_Regenerative_Film_Resource_Library_updated.html"
-  to = "/awakening_eden_regenerative_film_resource_library_updated.html"
-  status = 301
-  force = true
-[[redirects]]
-  from = "/Regeneration-101-Field-Guide.html"
-  to = "/Awakening-Regeneration.html"
-  status = 301
-  force = true
-[[redirects]]
-  from = "/Regeneration-101-Regenerate-Your-Land.pdf"
-  to = "/Awakening-Regeneration-Guide.pdf"
-  status = 301
-  force = true

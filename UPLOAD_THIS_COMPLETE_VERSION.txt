@@ -1,0 +1,33 @@
+AWAKENING EDEN v21.3 COMPLETE LIVE ROOT UPLOAD
+
+THIS IS THE ONLY PACKAGE YOU NEED TO UPLOAD.
+
+It includes:
+- v21.1 botanical Living Library upgrade
+- final homepage and Start Here wording
+- clean /living-library, /start-here, /links and /about addresses
+- Instagram link-in-bio page
+- complete assets folder
+- guides, PDFs, images and botanical illustrations
+- current v21 CSS, JavaScript and service worker
+- Netlify redirects, security headers, sitemap, manifest and robots.txt
+
+UPLOAD:
+1. Extract this ZIP on your laptop.
+2. Open the Awakening-Eden-Library repository on GitHub.
+3. Confirm the branch is main.
+4. Choose Add file -> Upload files.
+5. Open the extracted folder and select EVERYTHING INSIDE it, including assets.
+6. Upload the CONTENTS, not the outer folder.
+7. Commit directly to main with:
+   Publish Awakening Eden v21.3 complete master
+8. Wait for Netlify to show Published.
+9. Test these links in a private browser window:
+   /
+   /living-library
+   /start-here
+   /links
+   /about
+
+The existing GitHub assets folder will be merged and updated automatically.
+Do not create assets/assets.
