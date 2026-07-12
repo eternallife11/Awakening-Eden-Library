@@ -1,7 +1,7 @@
-const CACHE = "awakening-eden-v21-3";
+const CACHE = "awakening-eden-v21-5";
 const CORE = [
   "/", "/index.html", "/offline.html", "/eden-brand-v21.css", "/eden-v21.js",
-  "/manifest.webmanifest", "/eden-logo-tree-heart.svg", "/eden-icon-192.png", "/eden-icon-512.png",
+  "/manifest.webmanifest", "/eden-hero-v21-4.css", "/eden-botanicals-v21-5.css", "/eden-hero-community-v21-4.webp", "/eden-logo-tree-heart.svg", "/eden-icon-192.png", "/eden-icon-512.png",
   "/Awakening-Regeneration.html", "/awakening_eden_regenerative_film_resource_library_updated.html",
   "/links.html"
 ];

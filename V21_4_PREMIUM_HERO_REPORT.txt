@@ -1,0 +1,16 @@
+AWAKENING EDEN v21.4 · PREMIUM CENTERED HERO
+
+What was corrected:
+- The large Awakening Eden artwork is now optically centered, not merely mathematically centered.
+- The logo plaque is smaller and more refined so the first screen breathes.
+- The hero card is narrower, calmer and precisely centered.
+- The community/ecovillage photograph is brighter and stronger around the outer edges.
+- Contrast is concentrated behind the central reading area rather than darkening the whole image.
+- Hero buttons use a clearer two-column desktop layout and a single mobile column.
+- A new versioned CSS filename prevents the old immutable stylesheet from hiding the update.
+- The service-worker cache was bumped from v21.3 to v21.4.
+- The new hero photograph remains a lightweight WebP file.
+
+Upload all patch files directly to the GitHub repository root.
+Commit directly to main with:
+Polish centered premium hero v21.4

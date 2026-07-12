@@ -51,3 +51,15 @@
   for = "/*.webp"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+
+[[headers]]
+  for = "/eden-hero-v21-4.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+
+[[headers]]
+  for = "/eden-botanicals-v21-5.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

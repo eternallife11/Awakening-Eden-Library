@@ -1,0 +1,16 @@
+AWAKENING EDEN v21.5 · BOTANICAL DIVIDERS & GIFT ECONOMY
+
+Corrected:
+- Replaced all generic badge-and-line section dividers with full-width botanical SVG artwork.
+- Alternates Tree of Life, seedling, bee, butterfly and heart-vine dividers.
+- Restored botanical dividers on mobile instead of hiding them.
+- Added subtle botanical corner whispers to calm paper sections.
+- Rebuilt the Gift Back section as an olive, cream and soft-gold gift-economy card.
+- Changed support language to Keep This Library Growing.
+- Restyled Gift €3, €11, €33 and Choose Your Own Gift buttons.
+- Harmonised hero, menu, community and share-section support buttons.
+- Updated service-worker cache to v21.5.
+
+Upload the patch files directly to the GitHub repository root.
+Commit directly to main with:
+Add botanical dividers and gift economy v21.5

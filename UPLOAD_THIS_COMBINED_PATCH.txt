@@ -1,0 +1,12 @@
+AWAKENING EDEN v21.5 COMBINED PATCH
+
+This combines:
+- v21.4 premium centered hero
+- v21.5 botanical dividers
+- v21.5 olive gift economy styling
+
+Upload every file in this folder directly to the GitHub repository root.
+Do not place them inside assets.
+
+Commit directly to main with:
+Apply premium hero and botanical gift design v21.5
