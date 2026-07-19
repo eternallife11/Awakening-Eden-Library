@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awakening Eden — The Living Library (v23 preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS — mirror of the Figma variable library ============ */
+:root{
+  /* primitives */
+  --forest-deep:#102819; --forest-base:#173822; --forest-leaf:#365c3b;
+  --olive-deep:#294733; --olive-base:#52704f;
+  --green-moss:#718264; --green-eucalyptus:#7d9682; --green-sage:#b9c8a7; --green-sage-soft:#dfe6d5;
+  --neutral-cream:#fff8ea; --neutral-paper:#fffdf7; --neutral-sand:#f1e4c7;
+  --neutral-charcoal:#26312a; --neutral-muted:#625f55;
+  --warm-ochre:#c88a3d; --warm-terracotta:#b56a42; --warm-earth:#8d6846;
+  --warm-gold:#d8b45e; --warm-honey:#f2d98f; --warm-focus:#ffd978;
+  --water-butterfly-blue:#5e8994;
+  /* semantic */
+  --surface-paper:var(--neutral-paper); --surface-cream:var(--neutral-cream);
+  --surface-sand:var(--neutral-sand); --surface-sage-soft:var(--green-sage-soft);
+  --surface-band-forest:var(--forest-deep);
+  --text-primary:var(--neutral-charcoal); --text-secondary:var(--neutral-muted);
+  --text-on-forest:var(--neutral-cream); --text-on-forest-muted:var(--green-sage);
+  --text-link:var(--olive-deep);
+  --action-primary-fill:var(--olive-deep); --action-primary-edge:var(--warm-gold);
+  --action-primary-fill-hover:var(--forest-leaf);
+  --border-hairline:rgba(125,150,130,.45);
+  --focus-ring:var(--warm-focus);
+  /* scale */
+  --space-4:16px; --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:144px;
+  --radius-small:12px; --radius-medium:20px; --radius-large:28px; --radius-pill:999px;
+  --max-read:720px; --max-wrap:1180px;
+  --font-display:"Cormorant Garamond",Georgia,serif;
+  --font-body:"Source Sans 3",system-ui,sans-serif;
+  --font-hand:"Caveat",cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);font-size:17px;line-height:1.7;color:var(--text-primary);background:var(--surface-paper)}
+img{max-width:100%;display:block}
+a{color:var(--text-link)}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--max-wrap);margin:0 auto;padding:0 var(--space-5)}
+.script{font-family:var(--font-hand);color:var(--warm-earth)}
+.kicker{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--warm-terracotta)}
+
+/* ============ NAV — four items + Support ============ */
+.nav{position:sticky;top:0;z-index:50;background:var(--surface-paper);border-bottom:1px solid var(--border-hairline)}
+.nav-inner{max-width:var(--max-wrap);margin:0 auto;padding:12px var(--space-5);display:flex;align-items:center;gap:var(--space-6)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:52px;height:52px}
+.brand-name{font-family:var(--font-display);font-size:26px;font-weight:600;letter-spacing:.04em;color:var(--forest-base);line-height:1.1}
+.brand-tag{font-size:11px;font-weight:600;letter-spacing:.22em;color:var(--text-secondary)}
+.nav-links{display:flex;align-items:center;gap:6px;margin-left:auto}
+.nav-links a{font-weight:600;font-size:16px;color:var(--text-primary);text-decoration:none;padding:10px 14px;border-radius:var(--radius-pill)}
+.nav-links a:hover{background:var(--surface-sage-soft)}
+.nav-support{background:var(--action-primary-fill);color:var(--text-on-forest)!important;border:1px solid var(--action-primary-edge);padding:10px 22px!important;margin-left:8px}
+.nav-support:hover{background:var(--action-primary-fill-hover)!important}
+.nav-toggle{display:none}
+
+/* ============ HERO — paper panel + photograph ============ */
+.hero{display:grid;grid-template-columns:minmax(420px,46%) 1fr;min-height:560px;background:var(--surface-cream)}
+.hero-panel{position:relative;display:flex;flex-direction:column;justify-content:center;padding:var(--space-8) var(--space-8);overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(185,200,167,.18), transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(241,228,199,.5), transparent 60%),
+    var(--surface-cream)}
+.hero-corner{position:absolute;width:150px;opacity:.55;pointer-events:none}
+.hero-corner.tl{top:-28px;left:-34px}
+.hero-corner.br{bottom:-28px;right:-34px;transform:rotate(180deg)}
+.hero-welcome{font-family:var(--font-hand);font-size:clamp(44px,5vw,64px);line-height:1.05;color:var(--warm-earth)}
+.hero-title{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,3.2vw,44px);letter-spacing:.05em;color:var(--forest-base);margin-top:10px}
+.hero-sub{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.28em;color:var(--text-secondary);margin-top:6px}
+.hero-sub::before,.hero-sub::after{content:"— "}
+.hero-sub::after{content:" —"}
+.hero-promise{font-family:var(--font-display);font-size:clamp(19px,1.6vw,23px);line-height:1.5;color:var(--text-primary);max-width:34ch;margin-top:var(--space-5)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:var(--space-6)}
+.hero-photo{position:relative;min-height:420px}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo figcaption{position:absolute;right:0;bottom:0;left:0;padding:var(--space-7) var(--space-6) var(--space-5);
+  background:linear-gradient(transparent,rgba(16,40,25,.72));color:var(--neutral-cream);text-align:right}
+.hero-photo .script{font-size:34px;color:var(--neutral-cream)}
+.hero-photo p{font-size:15.5px;line-height:1.55;max-width:36ch;margin-left:auto;color:var(--green-sage)}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 30px;
+  border-radius:var(--radius-pill);font-family:var(--font-body);font-weight:600;font-size:17px;text-decoration:none;border:1px solid transparent}
+.btn-primary{background:var(--action-primary-fill);color:var(--text-on-forest);border-color:var(--action-primary-edge)}
+.btn-primary:hover{background:var(--action-primary-fill-hover)}
+.btn-secondary{background:var(--surface-paper);color:var(--text-link);border-color:var(--olive-base)}
+.btn-secondary:hover{background:var(--surface-sage-soft)}
+
+/* ============ PATH PILLS — the four ways in ============ */
+.paths{background:var(--surface-paper);padding:var(--space-7) 0}
+.paths-row{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);max-width:var(--max-wrap);margin:0 auto;padding:0 var(--space-5)}
+.path{display:flex;align-items:center;gap:14px;background:var(--surface-paper);border:1.5px solid var(--border-hairline);
+  border-radius:var(--radius-pill);padding:14px 22px;text-decoration:none;transition:background .2s}
+.path:hover{background:var(--surface-sage-soft)}
+.path img{width:34px;height:34px;flex:none}
+.path strong{display:block;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-primary)}
+.path span{display:block;font-size:14px;line-height:1.35;color:var(--text-secondary)}
+
+/* ============ FOREST BAND ============ */
+.band{position:relative;background:var(--surface-band-forest);color:var(--text-on-forest);text-align:center;
+  padding:var(--space-8) var(--space-5);overflow:hidden}
+.band-leaf{position:absolute;top:50%;width:340px;opacity:.14;pointer-events:none;filter:invert(92%) sepia(12%) saturate(400%) hue-rotate(60deg)}
+.band-leaf.l{left:-40px;transform:translateY(-50%)}
+.band-leaf.r{right:-40px;transform:translateY(-50%) scaleX(-1)}
+.band p{font-family:var(--font-display);font-size:clamp(22px,2.2vw,28px);line-height:1.55;max-width:44ch;margin:0 auto}
+.band .divider-mini{width:220px;margin:var(--space-5) auto 0;opacity:.8}
+
+/* ============ SECTIONS ============ */
+section.block{padding:var(--space-9) 0}
+.section-head{max-width:var(--max-read);margin:0 auto var(--space-7);text-align:center;padding:0 var(--space-5)}
+.section-head h2{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,3vw,36px);color:var(--forest-base)}
+.section-head p{color:var(--text-secondary);margin-top:10px}
+.eden-divider{width:min(680px,86%);margin:0 auto;display:block}
+
+/* Begin Here */
+.begin{background:var(--surface-cream)}
+.begin-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-7);align-items:center;max-width:var(--max-wrap);margin:0 auto;padding:0 var(--space-5)}
+.begin-card{background:var(--surface-paper);border:1px solid var(--border-hairline);border-radius:var(--radius-large);padding:var(--space-7)}
+.begin-card h3{font-family:var(--font-display);font-weight:500;font-size:30px;color:var(--forest-base);margin:8px 0 12px}
+.begin-card p{color:var(--text-secondary);max-width:46ch}
+.begin-card .btn{margin-top:var(--space-5)}
+.begin-photo{border-radius:var(--radius-large);overflow:hidden;border:1px solid var(--border-hairline)}
+.begin-photo img{aspect-ratio:4/3;object-fit:cover;width:100%}
+
+/* Library cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);max-width:var(--max-wrap);margin:0 auto;padding:0 var(--space-5)}
+.card{background:var(--surface-paper);border:1px solid var(--border-hairline);border-radius:var(--radius-large);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:16/10;object-fit:cover}
+.card-body{padding:var(--space-6);display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body .kicker{color:var(--warm-ochre)}
+.card-body h3{font-family:var(--font-display);font-weight:500;font-size:26px;color:var(--forest-base)}
+.card-body p{color:var(--text-secondary);flex:1}
+.card-cta{font-weight:600;text-decoration:none}
+.card-cta::after{content:"  →"}
+
+/* Field wisdom notes */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);max-width:960px;margin:0 auto;padding:0 var(--space-5)}
+.note{border-radius:var(--radius-medium);padding:var(--space-6);border:1px solid var(--border-hairline);border-left-width:4px}
+.note.sand{background:var(--surface-sand);border-left-color:var(--warm-terracotta)}
+.note.sage{background:var(--surface-sage-soft);border-left-color:var(--olive-base)}
+.note .kicker{display:block;margin-bottom:8px}
+.note.sage .kicker{color:var(--olive-deep)}
+.note .script{font-size:22px}
+
+/* Gift band */
+.gift{background:var(--surface-band-forest);text-align:center;padding:var(--space-9) var(--space-5)}
+.gift h2{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,2.6vw,34px);color:var(--text-on-forest)}
+.gift p{color:var(--text-on-forest-muted);max-width:52ch;margin:12px auto var(--space-6)}
+.gift .btn-primary{background:linear-gradient(100deg,var(--olive-base),var(--green-moss));border-color:transparent}
+.gift .btn-primary:hover{background:linear-gradient(100deg,var(--olive-deep),var(--olive-base))}
+
+/* Footer */
+footer{background:var(--forest-deep);color:var(--text-on-forest);text-align:center;padding:var(--space-8) var(--space-5) var(--space-6)}
+.footer-art{width:min(560px,80%);margin:0 auto var(--space-5);opacity:.9}
+.footer-bless{font-family:var(--font-hand);font-size:26px;color:var(--text-on-forest-muted)}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-5);margin:var(--space-5) 0}
+.footer-links a{color:var(--text-on-forest);text-decoration:none;font-size:15px}
+.footer-links a:hover{text-decoration:underline}
+.footer-legal{font-size:14px;color:var(--text-on-forest-muted)}
+
+/* ============ MOBILE ============ */
+@media (max-width:900px){
+  .nav-links{display:none}
+  .nav-toggle{display:block;margin-left:auto;background:none;border:none;font-size:26px;color:var(--text-primary);cursor:pointer;padding:8px}
+  .nav.open .nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;
+    background:var(--surface-paper);border-bottom:1px solid var(--border-hairline);padding:var(--space-5);gap:4px}
+  .nav.open .nav-links a{padding:14px}
+  .hero{grid-template-columns:1fr}
+  .hero-panel{padding:var(--space-7) var(--space-5);text-align:center;align-items:center}
+  .hero-promise{margin-inline:auto}
+  .hero-corner{width:180px}
+  .hero-actions{justify-content:center}
+  .paths-row{grid-template-columns:1fr 1fr;gap:14px}
+  .begin-grid,.cards,.notes{grid-template-columns:1fr}
+  section.block{padding:var(--space-8) 0}
+  .band-leaf{display:none}
+}
+@media (max-width:480px){
+  .paths-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <img src="eden-logo-tree-heart.svg" alt="Awakening Eden tree-heart emblem">
+      <span>
+        <span class="brand-name">Awakening Eden</span><br>
+        <span class="brand-tag">THE LIVING LIBRARY</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="/start-here">Begin Here</a>
+      <a href="/living-library">Living Library</a>
+      <a href="journey.html">Our Story</a>
+      <a href="work-with-benjy.html">Work With Benjy</a>
+      <a class="nav-support" href="#support">Support ♡</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-panel">
+    <img class="hero-corner tl" src="eden-botanical-corner.svg" alt="" aria-hidden="true">
+    <img class="hero-corner br" src="eden-botanical-corner.svg" alt="" aria-hidden="true">
+    <p class="hero-welcome">Welcome home</p>
+    <h1 class="hero-title">AWAKENING EDEN</h1>
+    <p class="hero-sub">THE LIVING LIBRARY</p>
+    <p class="hero-promise">Together with the living Earth, to thrive as one family of life.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/start-here">Begin Your Journey</a>
+      <a class="btn btn-secondary" href="/living-library">Open the Living Library</a>
+    </div>
+  </div>
+  <figure class="hero-photo">
+    <img src="benjy-and-sofia-v19.webp" alt="Benjy and Sofia laughing together among flowering plants on their land">
+    <figcaption>
+      <p class="script">We are Benjy &amp; Sofia ♡</p>
+      <p>Gardeners. Teachers. Learners. Dreamers. Walking together, and inviting you to come walk with us.</p>
+    </figcaption>
+  </figure>
+</header>
+
+<div class="paths">
+  <div class="paths-row">
+    <a class="path" href="/start-here">
+      <img src="eden-icon-seed.svg" alt="">
+      <span><strong>Begin Here</strong><span>Start your journey</span></span>
+    </a>
+    <a class="path" href="/living-library">
+      <img src="eden-icon-book-leaf.svg" alt="">
+      <span><strong>Living Library</strong><span>Guides, books &amp; films</span></span>
+    </a>
+    <a class="path" href="journey.html">
+      <img src="eden-icon-heart-star.svg" alt="">
+      <span><strong>Our Story</strong><span>The land, and us</span></span>
+    </a>
+    <a class="path" href="work-with-benjy.html">
+      <img src="eden-icon-hands-tree.svg" alt="">
+      <span><strong>Work With Benjy</strong><span>Gardens &amp; consultations</span></span>
+    </a>
+  </div>
+</div>
+
+<div class="band">
+  <img class="band-leaf l" src="eden-divider-heart-vine.svg" alt="" aria-hidden="true">
+  <img class="band-leaf r" src="eden-divider-heart-vine.svg" alt="" aria-hidden="true">
+  <p>We share what we've learnt through years of regeneration, so you can create a life and a world that is beautiful, resilient and alive.</p>
+  <img class="divider-mini" src="eden-divider-heart-vine.svg" alt="">
+</div>
+
+<section class="block begin" id="begin">
+  <div class="begin-grid">
+    <div class="begin-card">
+      <span class="kicker">Begin Here · Living Guide 01</span>
+      <h3>Awakening Regeneration</h3>
+      <p>The guide we wish someone had given us before we planted our first garden. A gentle, practical introduction to regeneration, living soil, food forests and simple ways to help life flourish.</p>
+      <a class="btn btn-primary" href="/start-here">Start Reading</a>
+    </div>
+    <div class="begin-photo">
+      <img src="first-steps-abundance-garden-v19.webp" alt="An abundant young food garden in morning light">
+    </div>
+  </div>
+</section>
+
+<section class="block" id="library">
+  <div class="section-head">
+    <h2>The Living Library</h2>
+    <p>Films, books and guides that changed how we see soil, water and community — kept open and free.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <img src="library-guide-v19.webp" alt="Hand-bound field guides on a wooden table">
+      <div class="card-body">
+        <span class="kicker">Guides</span>
+        <h3>Field Guides</h3>
+        <p>Practical, gentle introductions — from reading your land to planting your first food forest.</p>
+        <a class="card-cta" href="/start-here">Read Online</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="library-books-v19.webp" alt="A shelf of well-loved books on regeneration">
+      <div class="card-body">
+        <span class="kicker">Books</span>
+        <h3>The Bookshelf</h3>
+        <p>The books that shaped our thinking, with honest notes on where each one earns its place.</p>
+        <a class="card-cta" href="/living-library">Browse Books</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="library-films-v19.webp" alt="A projector lighting a screen at an outdoor film night">
+      <div class="card-body">
+        <span class="kicker">Films</span>
+        <h3>The Film Library</h3>
+        <p>Documentaries and talks worth an evening — hope with evidence, not wishful thinking.</p>
+        <a class="card-cta" href="/living-library">Watch Together</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<img class="eden-divider" src="eden-divider-seedling.svg" alt="">
+
+<section class="block" id="wisdom">
+  <div class="notes">
+    <div class="note sand">
+      <span class="kicker">Benjy — Field Wisdom</span>
+      <p>Don't fight the weeds in year one. Read them. They are telling you exactly what your soil is missing.</p>
+    </div>
+    <div class="note sage">
+      <span class="kicker">One Action Today</span>
+      <p>Walk your land — or your street — for ten minutes without a task. Notice what is already growing without your help.</p>
+      <p class="script">start where you are ♡</p>
+    </div>
+  </div>
+</section>
+
+<div class="gift" id="support">
+  <h2>Help This Library Grow</h2>
+  <p>Everything here is free, and stays free. If it has helped you, a gift back keeps the library alive for the next person walking this path.</p>
+  <a class="btn btn-primary" href="#support">Keep This Library Growing</a>
+</div>
+
+<footer>
+  <img class="footer-art" src="eden-footer-seed-to-tree.svg" alt="Seed to tree growth sequence">
+  <p class="footer-bless script">May your hands find soil, and your soil find life.</p>
+  <div class="footer-links">
+    <a href="/start-here">Begin Here</a>
+    <a href="/living-library">Living Library</a>
+    <a href="journey.html">Our Story</a>
+    <a href="work-with-benjy.html">Work With Benjy</a>
+    <a href="heart.html">Heart</a>
+  </div>
+  <p class="footer-legal">© Awakening Eden — a Living Library for Positive Change</p>
+</footer>
+
+</body>
+</html>

@@ -1,972 +1,445 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Awakening Eden Living Library | Regeneration, Guides &amp; Practical Hope</title>
-<meta content="Enter a living library of regenerative films, documentaries, permaculture books, practical guides, teachers, projects and grounded hope by Benjy and Sofia." name="description"/>
-<meta content="Awakening Eden Living Library | Hope with Roots" property="og:title"/>
-<meta content="Enter a living library of regenerative films, documentaries, permaculture books, practical guides, teachers, projects and grounded hope by Benjy and Sofia." property="og:description"/>
-<meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image"/>
-<meta content="#102819" name="theme-color"/>
-<style>
-:root{
-  --deep:#102819;
-  --forest:#173822;
-  --leaf:#365c3b;
-  --moss:#6d8b5b;
-  --sage:#b9c8a7;
-  --sand:#f6f2ea;
-  --cream:#fffdf7;
-  --paper:#fffaf0;
-  --gold:#d8b45e;
-  --clay:#d8b9a3;
-  --terra:#b56a42;
-  --ink:#263326;
-  --muted:#6f675c;
-  --line:rgba(38,51,38,.16);
-  --shadow:0 24px 60px rgba(28,48,30,.16);
-  --radius:32px;
-  --max:1160px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  overflow-x:hidden;
-  background:
-    radial-gradient(circle at 9% 8%, rgba(216,180,94,.20), transparent 26rem),
-    radial-gradient(circle at 92% 18%, rgba(181,106,66,.18), transparent 24rem),
-    radial-gradient(circle at 52% 88%, rgba(109,139,91,.14), transparent 30rem),
-    linear-gradient(180deg,#fffaf0,#f3e5cf 48%,#fff8ec);
-  color:var(--ink);
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height:1.68;
-}
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
-  opacity:.36;
-  background-image:
-    linear-gradient(rgba(255,255,255,.26),rgba(255,255,255,.26)),
-    radial-gradient(rgba(54,92,59,.12) 1px, transparent 1px);
-  background-size:100% 100%, 18px 18px;
-}
-a{color:inherit}
-img{max-width:100%;display:block}
-.wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
-.skip{position:absolute;left:-999px;top:0;background:#fff;padding:.7rem 1rem;z-index:100}
-.skip:focus{left:1rem;top:1rem}
-.hand{
-  font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;
-  letter-spacing:.01em;
-}
-.serif{
-  font-family:Georgia, "Times New Roman", serif;
-}
-.topbar{
-  position:sticky;top:0;z-index:80;
-  background:rgba(24,48,29,.96);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-.nav{
-  min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;
-}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
-.brand-mark{
-  width:38px;height:54px;border:2px solid rgba(246,242,234,.78);border-radius:23px;position:relative;flex:0 0 auto
-}
-.brand-mark:before{content:"";position:absolute;left:17px;top:10px;width:2px;height:32px;background:rgba(246,242,234,.8)}
-.brand-mark:after{content:"";position:absolute;left:15px;top:14px;width:17px;height:17px;border:2px solid rgba(246,242,234,.8);border-left:0;border-bottom:0;border-radius:0 17px 0 0;transform:rotate(-36deg)}
-.brand strong{font-family:Georgia,serif;font-size:clamp(1.35rem,3.2vw,1.95rem);line-height:1;display:block}
-.brand span{display:block;margin-top:.25rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:#f5df9f;font-weight:800}
-.nav-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{
-  color:#fff;text-decoration:none;padding:.62rem .82rem;border-radius:999px;font-weight:750;font-size:.92rem;
-  border:1px solid rgba(255,255,255,.09);
-}
-.nav-links a:hover{background:rgba(255,255,255,.1)}
-.nav-links a.cta{background:#f6df9f;color:#102819;border-color:#f6df9f}
-.botanical-left{
-  position:fixed;left:10px;top:110px;width:92px;height:72vh;opacity:.24;pointer-events:none;z-index:0;
-}
-.botanical-left svg{width:100%;height:100%}
-main{position:relative;z-index:1}
-section{padding:clamp(56px,8vw,104px) 0}
-.hero{
-  min-height:calc(100vh - 78px);
-  display:grid;place-items:center;
-  padding:clamp(54px,8vw,100px) 0 62px;
-  background:
-    linear-gradient(180deg,rgba(16,40,25,.52),rgba(16,40,25,.42)),
-    url("vision-ecovillage-hero.jpg") center/cover no-repeat;
-  color:#fff;
-}
-.hero-card{
-  width:min(1050px,calc(100% - 32px));
-  margin:auto;
-  text-align:center;
-  background:linear-gradient(180deg,rgba(18,43,27,.80),rgba(24,48,29,.58));
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:clamp(28px,5vw,58px);
-  padding:clamp(28px,6vw,72px);
-  box-shadow:0 30px 90px rgba(0,0,0,.34);
-}
-.kicker{
-  display:inline-block;font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;color:#f5df9f;
-}
-.hero .hand{font-size:clamp(1.75rem,6vw,3.6rem);color:#f6df9f;margin:0 0 .2rem;text-shadow:0 2px 18px rgba(0,0,0,.25)}
-h1{
-  margin:.2rem 0 0;
-  font-family:Georgia, "Times New Roman", serif;
-  line-height:.96;
-  font-size:clamp(3.25rem,11vw,8rem);
-  letter-spacing:-.07em;
-}
-.hero h2{
-  margin:1rem auto 0;
-  max-width:880px;
-  font-family:Georgia,serif;
-  font-size:clamp(1.45rem,3.8vw,2.85rem);
-  line-height:1.08;
-  color:#fff8df;
-}
-.hero-quote{
-  max-width:850px;margin:2rem auto 0;font-size:clamp(1.08rem,2.3vw,1.38rem);color:#fffbe9;
-}
-.hero-actions,.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:2rem}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  min-height:50px;padding:.82rem 1.16rem;border-radius:999px;
-  text-decoration:none;font-weight:900;line-height:1.15;
-  border:2px solid transparent;box-shadow:0 12px 28px rgba(0,0,0,.12);
-  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-}
-.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.18)}
-.btn-primary{background:var(--gold);color:#102819;border-color:rgba(255,255,255,.2)}
-.btn-cream{background:#fff8ea;color:#102819;border-color:rgba(255,255,255,.5)}
-.btn-green{background:var(--forest);color:#fff;border-color:rgba(255,255,255,.14)}
-.btn-outline{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.32)}
-.btn-terra{background:var(--terra);color:#fff}
-.btn-soft{background:#fffaf1;color:var(--ink);border-color:var(--line)}
-.btn small{display:block;font-weight:700;opacity:.78}
-.arrow{margin-top:2rem;font-size:1.8rem;opacity:.9}
-.card,.letter,.feature{
-  background:rgba(255,253,247,.88);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  border-radius:var(--radius);
-}
-.intro-grid{
-  display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,56px);align-items:center;
-}
-.photo-frame{
-  position:relative;border-radius:42px;overflow:hidden;box-shadow:var(--shadow);border:10px solid rgba(255,253,247,.8);
-}
-.photo-frame::after{
-  content:"Come walk with us";
-  position:absolute;left:18px;bottom:18px;
-  background:rgba(255,253,247,.86);color:var(--forest);
-  border-radius:999px;padding:.55rem .9rem;
-  font-family:"Bradley Hand","Segoe Print",cursive;font-size:1.25rem;
-  box-shadow:0 10px 24px rgba(0,0,0,.14);
-}
-.note{
-  display:inline-block;
-  transform:rotate(-1.5deg);
-  color:var(--terra);
-  font-size:clamp(1.55rem,4.3vw,2.35rem);
-  margin-bottom:.55rem;
-}
-.big-hand{
-  font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;
-  font-size:clamp(1.85rem,6vw,3.25rem);
-  line-height:1.12;
-  color:var(--terra);
-  margin:0 0 1rem;
-}
-.earth-note{
-  position:relative;
-  background:linear-gradient(180deg,rgba(255,253,247,.92),rgba(246,242,234,.9));
-  border:1px solid rgba(109,75,50,.18);
-  box-shadow:0 20px 50px rgba(54,92,59,.12);
-}
-.early-actions{
-  margin-top:24px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.early-actions a{
-  text-decoration:none;
-  padding:18px 16px;
-  border-radius:24px;
-  background:#fffaf1;
-  border:1px solid rgba(109,75,50,.18);
-  box-shadow:0 10px 28px rgba(28,48,30,.08);
-}
-.early-actions strong{display:block;color:var(--forest)}
-.early-actions span{display:block;color:var(--muted);font-size:.9rem;margin-top:.2rem;line-height:1.35}
-@media(max-width:900px){.early-actions{grid-template-columns:1fr}}
-h2.section-title{
-  margin:0;
-  font-family:Georgia,serif;
-  font-size:clamp(2.1rem,6vw,4.35rem);
-  line-height:1.03;
-  letter-spacing:-.04em;
-  color:var(--deep);
-}
-h3{font-family:Georgia,serif;font-size:clamp(1.4rem,3vw,2rem);line-height:1.15;margin:.2rem 0 .7rem}
-.lead{font-size:clamp(1.05rem,2.3vw,1.26rem);color:#3a4738;margin-top:1rem}
-.muted{color:var(--muted)}
-.letter{padding:clamp(24px,5vw,54px)}
-.letter p{font-size:clamp(1.03rem,2.1vw,1.22rem)}
-.flourish{display:flex;align-items:center;justify-content:center;gap:18px;margin:2rem auto;color:var(--moss);opacity:.85}
-.flourish:before,.flourish:after{content:"";height:1px;width:min(180px,26vw);background:linear-gradient(90deg,transparent,var(--line),transparent)}
-.flourish svg{width:54px;height:22px}
-.start-card{
-  display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;
-  padding:clamp(24px,5vw,46px);
-  background:linear-gradient(135deg,#fffdf7,#f5ead5);
-}
-.badge{
-  display:inline-block;background:rgba(54,92,59,.12);border:1px solid rgba(54,92,59,.25);
-  color:var(--forest);font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;padding:.35rem .68rem;border-radius:999px
-}
-.action-stack{display:grid;gap:12px;align-content:center}
-.action-card{
-  display:block;text-decoration:none;padding:1rem 1.05rem;border-radius:22px;background:#fffdf7;border:1px solid var(--line);
-}
-.action-card strong{display:block}
-.action-card span{display:block;color:var(--muted);font-size:.92rem;margin-top:.15rem}
-.resource-grid,.journey-grid,.values-grid,.work-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px
-}
-.resource-card,.journey-card,.value-card,.work-card{
-  padding:24px;border-radius:26px;background:rgba(255,253,247,.9);border:1px solid var(--line);
-  box-shadow:0 12px 34px rgba(28,48,30,.09);
-}
-.resource-card img{width:100%;aspect-ratio:1.5/1;object-fit:cover;border-radius:20px;margin-bottom:14px}
-.icon-draw{width:48px;height:48px;margin-bottom:10px;color:var(--moss)}
-.resource-card a,.journey-card a,.work-card a{font-weight:900;color:var(--forest)}
-.journey-grid{grid-template-columns:repeat(3,1fr)}
-.journey-card .step{color:var(--terra);font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem}
-.work-grid{grid-template-columns:repeat(3,1fr)}
-.values-grid{grid-template-columns:repeat(3,1fr)}
-.value-card h3{font-size:1.35rem}
-.dark-band{
-  background:linear-gradient(135deg,var(--deep),var(--forest));
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-}
-.dark-band .section-title,.dark-band h3{color:#fff}
-.dark-band .lead,.dark-band .muted{color:#f4ead3}
-.dark-band:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 18% 20%,rgba(216,180,94,.18),transparent 28%),radial-gradient(circle at 86% 70%,rgba(185,200,167,.12),transparent 32%);pointer-events:none}
-.dark-band .wrap{position:relative;z-index:1}
-.community-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-.community-cards a{padding:20px;border-radius:24px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);text-decoration:none;color:#fff;font-weight:900}
-.community-cards span{display:block;color:#f4ead3;font-weight:650;margin-top:.25rem}
-.footer{
-  background:#0c2014;color:#fff;text-align:center;padding:62px 0;
-}
-.footer p{max-width:760px;margin:0 auto 1rem;color:#f5ead3}
-.seed-companion{
-  position:fixed;right:18px;bottom:18px;z-index:70;
-  width:70px;height:70px;border-radius:50%;
-  background:rgba(255,253,247,.88);border:1px solid var(--line);
-  box-shadow:0 12px 36px rgba(0,0,0,.16);
-  display:grid;place-items:center;
-}
-.seed-companion svg{width:48px;height:48px}
-.seed-message{
-  position:fixed;right:14px;bottom:96px;z-index:70;max-width:230px;
-  background:rgba(255,253,247,.93);border:1px solid var(--line);border-radius:20px;padding:.75rem .9rem;
-  font-size:.9rem;color:var(--forest);box-shadow:0 12px 32px rgba(0,0,0,.12);display:none
-}
-.seed-message.show{display:block}
-.mobile-quick{display:none}
-@media(max-width:900px){
-  .nav{min-height:auto;padding:12px 0;display:block}
-  .brand{justify-content:center;margin-bottom:10px}
-  .nav-links{justify-content:center;gap:6px}
-  .nav-links a{font-size:.82rem;padding:.52rem .64rem}
-  .intro-grid,.start-card{grid-template-columns:1fr}
-  .resource-grid,.journey-grid,.values-grid,.work-grid,.community-cards{grid-template-columns:1fr}
-  .hero{min-height:auto;padding:52px 0}
-  .hero-card{padding:28px 20px}
-  h1{font-size:clamp(3.1rem,18vw,5.2rem)}
-  .wrap{width:min(100% - 26px,var(--max))}
-  .botanical-left{display:none}
-  .seed-companion{width:58px;height:58px;right:10px;bottom:10px}
-  .seed-message{right:10px;bottom:76px}
-  section{padding:52px 0}
-  .photo-frame::after{font-size:1.02rem}
-  .mobile-quick{
-    display:flex;position:sticky;bottom:0;z-index:79;background:rgba(16,40,25,.97);padding:8px;gap:8px;justify-content:center;
-    border-top:1px solid rgba(255,255,255,.12)
-  }
-  .mobile-quick a{color:#102819;background:#f6df9f;text-decoration:none;font-weight:900;border-radius:999px;padding:.65rem .72rem;font-size:.82rem}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awakening Eden Living Library | Regeneration &amp; Practical Hope</title>
+  <meta name="description" content="A welcoming living library of regenerative guides, food forests, permaculture, holistic living, inspiring teachers and practical hope by Benjy and Sofia.">
+  <meta name="author" content="Benjy &amp; Sofia · Awakening Eden">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#344734">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://awakening-eden-library.netlify.app/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="eden-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="eden-favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="eden-apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="application-name" content="Awakening Eden">
+  <meta name="apple-mobile-web-app-title" content="Awakening Eden">
+  <meta name="format-detection" content="telephone=no">
 
-/* Awakening Eden v2 Pareto polish: earthier, more journal-like, more legible */
-.hero-card h1{font-size:clamp(3rem,9vw,7.4rem);letter-spacing:-.055em}
-.hero-card h2{max-width:880px;margin:.6rem auto 1rem}
-.hero-quote{font-size:clamp(1.12rem,2.6vw,1.55rem)}
-.earth-note{background:
-  radial-gradient(circle at 92% 0%, rgba(181,106,66,.10), transparent 16rem),
-  linear-gradient(180deg,rgba(255,253,247,.96),rgba(245,233,211,.94));
-}
-.action-card strong,.early-actions strong{letter-spacing:-.01em}
-.values-intro{font-size:1.08rem;color:#465142;background:rgba(255,253,247,.58);padding:1rem 1.2rem;border-left:4px solid var(--terra);border-radius:18px}
-.resource-card img{aspect-ratio:4/3;object-fit:cover}
-@media(max-width:700px){
-  .hero{min-height:88vh}
-  .hero-card{padding:2rem 1.15rem}
-  .hero-actions .btn{width:100%;justify-content:center}
-  .photo-frame{border-radius:26px}
-  .early-actions{grid-template-columns:1fr}
-}
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Awakening Eden Living Library">
+  <meta property="og:title" content="Awakening Eden Living Library | A Home for Practical Hope">
+  <meta property="og:description" content="A welcoming living library of regenerative guides, food forests, permaculture, holistic living, inspiring teachers and practical hope by Benjy and Sofia.">
+  <meta property="og:url" content="https://awakening-eden-library.netlify.app/">
+  <meta property="og:image" content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg">
+  <meta property="og:image:secure_url" content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Awakening Eden hand-drawn Tree of Life with a heart-shaped portal and botanical roots">
 
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Awakening Eden Living Library | A Home for Practical Hope">
+  <meta name="twitter:description" content="A welcoming living library of regenerative guides, food forests, permaculture, holistic living, inspiring teachers and practical hope by Benjy and Sofia.">
+  <meta name="twitter:image" content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg">
+  <meta name="twitter:image:alt" content="Awakening Eden hand-drawn Tree of Life with a heart-shaped portal and botanical roots">
 
-/* Premium botanical welcome additions */
-.hero-illustration{
-  width:min(430px,82vw);
-  margin:0 auto 1.1rem;
-  color:#f4dca5;
-  opacity:.96;
-  filter:drop-shadow(0 12px 22px rgba(0,0,0,.18));
-}
-.hero-illustration svg{width:100%;height:auto;display:block}
-.promise-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1rem;
-  margin-top:1.6rem;
-}
-.promise-card{
-  background:rgba(255,253,247,.78);
-  border:1px solid rgba(54,92,59,.14);
-  border-radius:24px;
-  padding:1.15rem;
-  box-shadow:0 14px 34px rgba(42,61,35,.08);
-}
-.promise-card h3{
-  margin:.2rem 0 .45rem;
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:1.35rem;
-  color:var(--forest);
-}
-.promise-card p{margin:0;color:var(--muted);font-size:.98rem}
-.core-note{
-  margin-top:1.6rem;
-  padding:1.25rem 1.35rem;
-  border-left:4px solid var(--terra);
-  background:linear-gradient(90deg,rgba(216,185,163,.22),rgba(255,250,240,.6));
-  border-radius:20px;
-}
-@media(max-width:760px){
-  .promise-grid{grid-template-columns:1fr 1fr}
-  .hero-illustration{width:min(320px,88vw)}
-}
-@media(max-width:520px){
-  .promise-grid{grid-template-columns:1fr}
-}
-
-
-/* v3 mobile-first premium refinement: compact sticky swipe nav, channel buttons, Spotify */
-@media(max-width:900px){
-  .topbar{position:sticky;top:0}
-  .nav{
-    min-height:auto;
-    padding:8px 0 10px;
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    gap:6px;
-  }
-  .brand{
-    justify-content:flex-start;
-    margin:0;
-    gap:9px;
-    padding-inline:2px;
-  }
-  .brand-mark{width:30px;height:42px;border-radius:18px}
-  .brand-mark:before{left:13px;top:8px;height:25px}
-  .brand-mark:after{left:11px;top:11px;width:13px;height:13px}
-  .brand strong{font-size:1.1rem;letter-spacing:.01em}
-  .brand span span{font-size:.58rem;letter-spacing:.16em;margin-top:.16rem}
-  .nav-links{
-    width:100%;
-    display:flex;
-    flex-wrap:nowrap;
-    justify-content:flex-start;
-    gap:7px;
-    overflow-x:auto;
-    padding:2px 2px 4px;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-  .nav-links::-webkit-scrollbar{display:none}
-  .nav-links a{
-    flex:0 0 auto;
-    font-size:.76rem;
-    padding:.45rem .6rem;
-    border-radius:999px;
-    white-space:nowrap;
-    min-height:34px;
-  }
-  .nav-links a.cta{background:#f6df9f;color:#102819}
-  .hero{padding-top:34px;min-height:auto}
-  .hero-card{border-radius:32px}
-}
-.channel-strip{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-.channel-strip a,.spotify-card{
-  text-decoration:none;
-  background:#fffaf1;
-  border:1px solid rgba(109,75,50,.18);
-  border-radius:22px;
-  padding:14px 14px;
-  box-shadow:0 10px 26px rgba(28,48,30,.08);
-}
-.channel-strip strong{display:block;color:var(--forest);font-weight:950;line-height:1.15}
-.channel-strip span{display:block;color:var(--muted);font-size:.86rem;line-height:1.28;margin-top:.18rem}
-.spotify-card{
-  margin-top:12px;
-  display:flex;
-  gap:12px;
-  align-items:center;
-  background:linear-gradient(135deg,rgba(255,250,241,.96),rgba(246,223,159,.45));
-}
-.spotify-card .music-dot{
-  width:46px;height:46px;border-radius:999px;background:var(--forest);color:#fff;display:grid;place-items:center;font-weight:950;flex:0 0 auto
-}
-.spotify-card strong{display:block;color:var(--forest);font-weight:950}
-.spotify-card span{display:block;color:var(--muted);line-height:1.35;font-size:.92rem}
-@media(max-width:760px){
-  .channel-strip{grid-template-columns:1fr 1fr}
-}
-@media(max-width:460px){
-  .channel-strip{grid-template-columns:1fr}
-  .spotify-card{align-items:flex-start}
-}
-
-
-/* v4 premium botanical asset system */
-.brand-logo{
-  width:46px;
-  height:46px;
-  flex:0 0 auto;
-  filter: drop-shadow(0 3px 10px rgba(0,0,0,.12));
-}
-.botanical-divider{
-  width:min(520px,86vw);
-  margin:1.1rem auto 1.45rem;
-  opacity:.92;
-}
-.botanical-divider.bee{width:min(610px,88vw)}
-.corner-botanical{
-  position:absolute;
-  width:min(180px,28vw);
-  opacity:.72;
-  pointer-events:none;
-  filter: drop-shadow(0 8px 18px rgba(30,54,34,.08));
-}
-.corner-botanical.left{left:-28px;bottom:-32px}
-.corner-botanical.right{right:-28px;top:-28px;transform:rotate(90deg)}
-.asset-icon{
-  width:54px;
-  height:54px;
-  margin:0 auto .65rem;
-}
-.resource-card, .journey-card, .work-card, .action-card, .promise-card{
-  position:relative;
-  overflow:hidden;
-}
-.resource-card::after, .journey-card::after, .work-card::after, .action-card::after{
-  content:"";
-  position:absolute;
-  right:12px;
-  bottom:10px;
-  width:70px;
-  height:70px;
-  background:url("eden-botanical-corner.svg") center/contain no-repeat;
-  opacity:.10;
-  transform:rotate(180deg);
-  pointer-events:none;
-}
-.tree-footer-art{
-  width:min(880px,94vw);
-  margin:1.4rem auto .6rem;
-  opacity:.92;
-}
-.section-kicker-art{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.big-hand,.hand{
-  color:#8f563a;
-  text-shadow:0 1px 0 rgba(255,255,255,.6);
-}
-.earth-note{
-  position:relative;
-}
-.earth-note::before{
-  content:"";
-  position:absolute;
-  left:-20px;
-  top:-30px;
-  width:160px;
-  height:160px;
-  background:url("eden-botanical-corner.svg") center/contain no-repeat;
-  opacity:.20;
-  pointer-events:none;
-}
-.actions.after-photo{
-  margin-top:1.1rem;
-  justify-content:flex-start;
-}
-@media(max-width:900px){
-  .brand-logo{width:34px;height:34px}
-  .botanical-divider{margin:.8rem auto 1.1rem}
-  .corner-botanical{display:none}
-  .asset-icon{width:44px;height:44px}
-}
-@media(max-width:520px){
-  .resource-card::after, .journey-card::after, .work-card::after, .action-card::after{width:52px;height:52px;opacity:.08}
-  .tree-footer-art{margin-top:.8rem}
-}
-
-</style>
-<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><link href="https://awakening-eden-library.netlify.app/" rel="canonical"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-library.netlify.app/" property="og:url"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Awakening Eden Living Library | Hope with Roots" name="twitter:title"/><meta content="Enter a living library of regenerative films, documentaries, permaculture books, practical guides, teachers, projects and grounded hope by Benjy and Sofia." name="twitter:description"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" name="twitter:image"/><link href="manifest.webmanifest" rel="manifest"/><meta content="Awakening Eden" name="application-name"/><meta content="Awakening Eden" name="apple-mobile-web-app-title"/><meta content="yes" name="mobile-web-app-capable"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="light" name="color-scheme"/><meta content="Benjy &amp; Sofia · Awakening Eden" name="author"/><meta content="en_GB" property="og:locale"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image:secure_url"/><meta content="image/jpeg" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Awakening Eden hand-drawn Tree of Life heart logo and Living Library identity" property="og:image:alt"/><meta content="Awakening Eden hand-drawn Tree of Life heart logo and Living Library identity" name="twitter:image:alt"/><link href="favicon.ico" rel="icon" sizes="any"/><link href="eden-favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="eden-apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image:url"/><link href="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" rel="image_src"/><meta content="telephone=no" name="format-detection"/><link as="image" href="awakening-eden-logo-480.webp" rel="preload" type="image/webp"/><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://awakening-eden-library.netlify.app/#website",
-      "url": "https://awakening-eden-library.netlify.app/",
-      "name": "Awakening Eden Living Library",
-      "description": "Enter a living library of regenerative films, documentaries, permaculture books, practical guides, teachers, projects and grounded hope by Benjy and Sofia.",
-      "inLanguage": "en"
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://awakening-eden-library.netlify.app/#organization",
-      "name": "Awakening Eden",
-      "url": "https://awakening-eden-library.netlify.app/",
-      "founder": [
-        {
-          "@type": "Person",
-          "name": "Benjy Sauber"
-        },
-        {
-          "@type": "Person",
-          "name": "Sofia Bonnet"
-        }
-      ],
-      "sameAs": [
-        "https://www.instagram.com/tierramagicatribe/",
-        "https://t.me/awakening_Eden"
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://awakening-eden-library.netlify.app/#webpage",
-      "url": "https://awakening-eden-library.netlify.app/",
-      "name": "Awakening Eden Living Library",
-      "isPartOf": {
-        "@id": "https://awakening-eden-library.netlify.app/#website"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://awakening-eden-library.netlify.app/#website",
+        "url": "https://awakening-eden-library.netlify.app/",
+        "name": "Awakening Eden Living Library",
+        "description": "A welcoming living library of regenerative guides, food forests, permaculture, holistic living, inspiring teachers and practical hope by Benjy and Sofia.",
+        "inLanguage": "en"
       },
-      "about": {
-        "@id": "https://awakening-eden-library.netlify.app/#organization"
+      {
+        "@type": "Organization",
+        "@id": "https://awakening-eden-library.netlify.app/#organization",
+        "name": "Awakening Eden",
+        "url": "https://awakening-eden-library.netlify.app/",
+        "founder": [
+          { "@type": "Person", "name": "Benjy" },
+          { "@type": "Person", "name": "Sofia" }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/tierramagicatribe/",
+          "https://t.me/awakening_Eden"
+        ]
       },
-      "description": "Enter a living library of regenerative films, documentaries, permaculture books, practical guides, teachers, projects and grounded hope by Benjy and Sofia.",
-      "inLanguage": "en"
-    }
-  ]
-}</script><link as="image" fetchpriority="high" href="eden-hero-community-v21-4.webp" rel="preload" type="image/webp"/>  <link rel="stylesheet" href="eden-v22.css?v=22.0">
+      {
+        "@type": "WebPage",
+        "@id": "https://awakening-eden-library.netlify.app/#webpage",
+        "url": "https://awakening-eden-library.netlify.app/",
+        "name": "Awakening Eden Living Library | Regeneration & Practical Hope",
+        "description": "A welcoming living library of regenerative guides, food forests, permaculture, holistic living, inspiring teachers and practical hope by Benjy and Sofia.",
+        "isPartOf": { "@id": "https://awakening-eden-library.netlify.app/#website" },
+        "about": { "@id": "https://awakening-eden-library.netlify.app/#organization" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700;800&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="benjy-and-sofia-v19.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="eden-v23.css?v=23.0">
 </head>
-<body id="top" class="page-home">
-<a class="skip" href="#main">Skip to content</a>
-<div aria-hidden="true" class="botanical-left">
-<svg fill="none" viewbox="0 0 120 800" xmlns="http://www.w3.org/2000/svg">
-<path d="M68 760C48 638 86 545 58 430C38 344 54 261 70 178C78 135 72 86 51 42" stroke="#6d4b32" stroke-linecap="round" stroke-width="3"></path>
-<path d="M62 668C39 662 24 642 20 620C45 620 60 638 62 668Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
-<path d="M72 560C98 548 111 526 110 502C84 507 70 531 72 560Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
-<path d="M55 450C30 438 18 416 20 392C46 397 58 422 55 450Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
-<path d="M66 328C92 316 105 294 104 270C78 275 64 299 66 328Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
-<path d="M66 210C42 201 28 181 28 158C52 160 68 185 66 210Z" fill="#b9c8a7" fill-opacity=".25" stroke="#365c3b" stroke-width="2"></path>
-</svg>
-</div>
-<header class="topbar">
-<nav aria-label="Main navigation" class="wrap nav eden-nav">
-<a aria-label="Awakening Eden home" class="brand eden-header-brand" href="/">
-<img alt="" class="eden-nav-emblem" decoding="async" height="48" src="eden-logo-tree-heart.svg" width="48"/>
-<span class="eden-brand-text">
-<strong>Awakening Eden</strong>
-<small>The Living Library</small>
-</span>
-</a>
-<div class="nav-links eden-desktop-links">
-<a href="/living-library">Living Library</a>
-<a href="/start-here">Start Here</a>
-<a href="#journey">Journey</a>
-<a href="journal.html">Journal</a>
-<a href="work-with-benjy.html">Work With Benjy</a>
-<a class="cta eden-gift-link eden-support-olive" href="#support">Keep This Library Growing</a>
-</div>
-<details class="eden-mobile-menu">
-<summary aria-label="Open navigation menu">Menu</summary>
-<div class="eden-mobile-panel">
-<a class="primary" href="/living-library">Explore the Living Library</a>
-<a href="/start-here">Start Here</a>
-<a href="/start-here">Guided Journey</a>
-<a href="journal.html">Journal</a>
-<a href="journey.html">Our Journey</a>
-<a href="work-with-benjy.html">Work With Benjy</a>
-<a href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank">Join our WhatsApp community</a>
-<a href="https://t.me/awakening_Eden" rel="noopener noreferrer" target="_blank">Join our Telegram community</a>
-<a class="support eden-gift-link eden-support-olive" href="#support">Keep This Library Growing</a>
-</div>
-</details>
-</nav>
-</header>
-<main id="main">
-<section aria-labelledby="home-title" class="hero eden-hero">
-<div class="hero-card">
-<img alt="" aria-hidden="true" class="corner-botanical left" decoding="async" height="64" loading="lazy" src="eden-botanical-corner.svg" width="64"/>
-<img alt="" aria-hidden="true" class="corner-botanical right" decoding="async" height="64" loading="lazy" src="eden-botanical-corner.svg" width="64"/>
-<div class="eden-logo-plaque">
-<picture>
-<source sizes="(max-width: 600px) 88vw, 500px" srcset="awakening-eden-logo-320.webp 320w, awakening-eden-logo-480.webp 480w, awakening-eden-logo-700.webp 700w" type="image/webp"/>
-<img alt="Awakening Eden, rooted in love, awakened by nature, guided by soul" class="eden-hero-logo" decoding="async" fetchpriority="high" height="695" loading="eager" src="awakening-eden-logo-700.webp" width="700"/>
-</picture>
-</div>
-<p class="eden-hero-welcome">Welcome home</p>
-<h1 id="home-title">The Living Library</h1>
-<h2>A calm home for regeneration, awakening, empowerment, peace, purpose and practical hope.</h2>
-<p class="hero-quote">Discover inspiring films and documentaries, regenerative projects, permaculture books, practical guides, channels, teachers and tools for inner and outer regeneration.</p>
-<div class="hero-actions eden-hero-actions"><a class="btn btn-primary eden-library-main" href="/living-library"><strong>Enter the Living Library</strong><small>Films, books, channels, projects and practical hope.</small></a><a class="btn btn-cream" href="/start-here"><strong>Begin with Guide 01</strong><small>Awakening Regeneration</small></a><a class="btn btn-whatsapp" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank"><strong>Join Our WhatsApp Community</strong><small>Conversation, questions and shared learning.</small></a><a class="btn btn-support eden-support-olive" href="#support"><strong>Keep This Library Growing</strong><small>Gift back to support free resources.</small></a></div>
-<p aria-label="Living Library principles" class="hero-trustline">
-<span>Free to explore</span><span>Gift-supported</span><span>Grounded in practical action</span>
-</p><p class="hand" style="font-size:1.3rem;margin-top:1.2rem;color:#f6df9f">Come walk with us.</p>
-</div>
-</section>
-<section aria-label="What you will find here" class="eden-compass">
-<div class="wrap eden-compass-grid">
-<div class="eden-compass-item"><strong>Hope you can trust</strong><span>Films and stories showing regeneration already happening.</span></div>
-<div class="eden-compass-item"><strong>Guidance you can use</strong><span>Clear companions for soil, resilience, land and everyday life.</span></div>
-<div class="eden-compass-item"><strong>One next step</strong><span>Leave with a practice, idea or action that helps life flourish.</span></div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-tree"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-tree-heart.svg" width="900"/></div>
-<section id="founders">
-<div class="wrap intro-grid">
-<div class="founder-photo-column"><div class="photo-frame">
-<img alt="Benjy and Sofia smiling together in nature" decoding="async" fetchpriority="high" height="1200" loading="eager" src="benjy-and-sofia-v19.webp" width="900"/>
-</div>
-<div class="founder-start-card"><p class="founder-start-kicker">Begin Here · Living Guide 01</p><h3>Awakening Regeneration</h3><p>The guide we wish someone had given us before we planted our first garden.</p><p>A gentle, practical introduction to regeneration, living soil, syntropic thinking, food forests, holistic living and simple ways to help life flourish.</p><a class="btn btn-primary founder-start-button" href="/start-here">Start Reading</a></div>
-</div>
-<div>
-<p class="hand note">Dear fellow gardener, lover, guardian...</p>
-<h2 class="section-title">We are Benjy &amp; Sofia.</h2>
-<p class="lead">Earth lovers. Regenerative educators. Permies. Yogis. Ocean lovers. Guardians and stewards of life. Community builders. Lifelong students of nature. Dreamers. Doers. Always learning. Always evolving. Perfectly imperfect.</p>
-<p>United by a shared love for life, and a belief that together we can leave the world a little more alive than we found it — with every step we take, every hug we share, every seed we plant, every tree we nurture, every authentic gathering we hold, and every act of care offered to each other and all life.</p>
-<details class="founder-story-details"><summary>Read why this became our life’s work</summary><div class="founder-story-more"><p>Benjy’s heart mission has long been to gather the sparks that helped us wake up — little changes of thought, behaviour, emotion, hope and faith — and turn them into a Living Library for positive change. A place where inspiration becomes practice, practice becomes confidence, and confidence becomes care in action.</p><p>Over time, it became one huge regenerative, spiritual hero’s journey — grounded in soil, service, healing, learning, humility and love. Awakening Eden is our antidote to despair and hopelessness: a living invitation to remember that solutions exist, beauty is still here, and every caring action can become part of the regeneration of life.</p></div></details>
-<p>This is part of our mission and our life’s work. All our journeys, all our questions, all our story became our offering because we wanted to see solutions. We asked for guidance. We asked: what is our place, what are we meant to do, why is all this happening, and what are the life-giving ways forward?</p>
-<div class="actions founder-secondary-actions">
-<a class="btn btn-green" href="#library">Explore Hope in Action</a>
-<a class="btn btn-soft" href="journey.html">Read Our Journey</a>
-<a class="btn btn-terra" href="work-with-benjy.html">Work With Benjy</a>
-</div>
-<div aria-label="Community and support links" class="channel-strip founder-community-links">
-<a class="community-whatsapp" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank">
-<strong>Join our WhatsApp community</strong>
-<span>Conversation, questions, connection and shared learning.</span>
-</a>
-<a class="community-telegram" href="https://t.me/awakening_Eden" rel="noopener noreferrer" target="_blank">
-<strong>Join our Telegram community</strong>
-<span>New guides, field notes, films and regenerative updates.</span>
-</a>
-<a class="community-support eden-support-olive" href="#support">
-<strong>Support Our Work · Give Back</strong>
-<span>Help us create more free guides, videos and hopeful resources.</span>
-</a>
-</div>
-<div class="spotify-card eden-playlist-note" role="note">
-<span aria-hidden="true" class="music-dot">♪</span>
-<span><strong>Songs for soil, soul and regenerative hope</strong><span>A soundtrack for tending courage, joy and connection.</span></span>
-</div>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-seedling"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-seedling.svg" width="900"/></div>
-<section>
-<div class="wrap letter earth-note">
-<p class="big-hand">Welcome. We are so glad you found your way here.</p>
-<p>Whether you are here to plant your first herb, learn about regeneration, watch a living library of films and documentaries for action and remembering, discover books and inspiring teachers, build a thriving food forest, deepen your yoga or holistic practice, reconnect with nature, or simply remember that another way of living is not only possible — but already growing — you are warmly welcome.</p>
-<p>Many of us feel that another way of living is both possible and deeply needed. Our hope is that this library helps people discover practical, beautiful ways to contribute to that future — one seed, one breath, one guide, one film, one gathering, one act of care at a time.</p>
-<p>This Living Library is our first gift to the world: a home for regeneration, awakening, empowerment, calm, peace, purpose, love, belonging, remembering and joyful movement.</p>
-<p>It is also our response to the ache so many people feel when they look at the world. Instead of collapsing into despair, we chose to gather hope, practices, teachers, land-based wisdom, stories and solutions into one place people can return to when they need courage and direction.</p>
-<p>For many years, Benjy dreamed of creating a library for positive change: one place to gather the films, books, teachers, practices, regenerative wisdom and lived experiences that changed our lives, helped us find direction, and inspired us to serve life more deeply.</p>
-<p>Now, together with Sofia, this dream is becoming a living home — a place to begin, return, learn, share, laugh, reflect and grow together.</p>
-<div aria-label="Quick starting points" class="early-actions">
-<a href="/start-here"><strong>Begin Here</strong><span>Start with Awakening Regeneration, our first guide.</span></a>
-<a href="/living-library"><strong>Enter the Living Library</strong><span>Films, documentaries, books, channels, teachers, projects and pathways for practical hope.</span></a>
-<a href="work-with-benjy.html"><strong>Work With Benjy</strong><span>Regenerative gardens, food forests and land design.</span></a>
-<a href="#community"><strong>Walk Beside Us</strong><span>Join WhatsApp, Telegram and our updates.</span></a>
-<a class="eden-support-olive" href="#support"><strong>Gift Back</strong><span>Support more guides, videos, courses and workshops.</span></a>
-</div>
-<div aria-hidden="true" class="flourish">
-<svg viewbox="0 0 100 42"><path d="M8 31C28 7 52 6 90 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M43 13C35 8 31 2 31 2C30 14 35 20 43 13Z" fill="currentColor" opacity=".42"></path><path d="M64 10C73 3 82 3 82 3C79 16 70 18 64 10Z" fill="currentColor" opacity=".42"></path></svg>
-</div>
-<p class="hand" style="text-align:center;font-size:1.65rem;color:var(--terra);margin:0">Come walk with us. Come as you are. Take what nourishes you. Leave something beautiful behind.</p>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-bee"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-bee.svg" width="900"/></div>
-<section class="soft-section" id="promise">
-<div class="wrap">
-<p class="hand note">The Awakening Eden promise</p>
-<h2 class="section-title">Leave Life More Alive</h2>
-<p class="lead">Everything we create is guided by one simple question: will this help someone feel more hopeful, more connected, and more capable of caring for themselves, others and the living world?</p>
-<div class="promise-grid">
-<div class="promise-card"><h3>Calm</h3><p>A slower, kinder space where people can breathe, rest, learn and return to themselves.</p></div>
-<div class="promise-card"><h3>Hope</h3><p>Practical inspiration that turns overwhelm into one meaningful next step.</p></div>
-<div class="promise-card"><h3>Belonging</h3><p>A home for fellow gardeners, guardians, lovers of life and perfectly imperfect humans.</p></div>
-<div class="promise-card"><h3>Action</h3><p>Seeds planted, soil covered, neighbours helped, forests restored and communities strengthened.</p></div>
-</div>
-<div class="core-note">
-<p><strong>Our heart mission:</strong> to inspire little changes — in thought, behaviour, emotion, hope and care — and to remind each other that every action, every kind word and every hopeful activation can become part of a greater plan of regeneration.</p>
-<p><strong>Our compass:</strong> nourish the mind, inspire the heart, empower the hands, strengthen community and help life flourish.</p>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-butterfly"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-butterfly.svg" width="900"/></div>
-<section id="begin">
-<div class="wrap">
-<p class="hand note">Start where you are.</p>
-<h2 class="section-title">Begin Your Journey</h2>
-<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider" decoding="async" height="64" loading="lazy" src="eden-divider-tree-heart.svg" width="64"/></div>
-<p class="lead">Our Living Guides are gentle companions for inner and outer regeneration. Start with Guide 01, then continue at your own pace into resilience, living soil, syntropy, food forests and regenerative living.</p>
-<div class="card start-card">
-<div>
-<span class="badge">Begin Here · Living Guide 01</span>
-<h3 style="font-size:clamp(2rem,5vw,3.4rem)">Awakening Regeneration</h3>
-<p class="lead"><strong>The guide we wish someone had given us before we planted our first garden.</strong></p>
-<p>A gentle, practical introduction to regeneration, living soil, syntropic thinking, food forests, holistic living and simple ways to help life flourish, one step at a time.</p>
-</div>
-<div class="action-stack">
-<a class="action-card" href="/start-here"><strong>Start Reading</strong><span>Open Living Guide 01 and begin with one grounded step.</span></a>
-<a class="action-card" href="Awakening-Regeneration-Guide.pdf"><strong>Take the Guide With You</strong><span>Download it for quiet reading, printing or garden days.</span></a>
-<a class="action-card eden-support-olive" href="#support"><strong>Gift Back</strong><span>Support more Living Companions, videos, workshops and courses.</span></a>
-</div>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-heart"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-heart-vine.svg" width="900"/></div>
-<section id="library">
-<div class="wrap">
-<p class="hand note">Stories that keep hope alive.</p>
-<h2 class="section-title">Enter the Living Resource Library</h2>
-<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider bee" decoding="async" height="64" loading="lazy" src="eden-divider-bee.svg" width="64"/></div>
-<p class="lead">Discover inspiring films and documentaries, regenerative projects, permaculture books and garden bibles, practical guides, channels, teachers, action networks and tools for inner and outer regeneration.</p><p class="library-promise">Come here when you need hope with roots, a new idea, or one practical step toward helping life flourish.</p>
-<p>Come here whenever you need your faith in possibility renewed. Follow the stories that move you, meet people turning care into action, and leave with one idea you can carry into your own life, land or community. One film, one project or one brave new perspective can reopen the future.</p>
-<div class="resource-grid">
-<article class="resource-card">
-<img alt="Films and documentaries inspiration card" decoding="async" height="448" loading="lazy" src="library-films-v19.webp" width="720"/>
-<h3>Films &amp; Documentaries</h3>
-<p>Hope-giving films about water, soil, permaculture, food forests, community and people restoring landscapes across the world.</p>
-<a href="/living-library#films">Explore films &amp; documentaries</a>
-</article>
-<article class="resource-card">
-<img alt="Books and reading inspiration card" decoding="async" height="448" loading="lazy" src="library-books-v19.webp" width="720"/>
-<h3>Books &amp; Reading</h3>
-<p>Permaculture classics, regenerative agriculture, soil health, food forests, ecology, interbeing and garden bibles worth returning to.</p>
-<a href="/living-library#books">Explore books &amp; garden bibles</a>
-</article>
-<article class="resource-card">
-<img alt="Teachers and inspiring voices card" decoding="async" height="448" loading="lazy" src="library-guide-v19.webp" width="720"/>
-<h3>Teachers &amp; Voices</h3>
-<p>Channels and teachers exploring regeneration, ecology, consciousness, systems thinking, spiritual evolution and practical change.</p>
-<a href="/living-library#voices">Meet teachers &amp; channels</a>
-</article>
-<article class="resource-card">
-<svg class="icon-draw" fill="none" viewbox="0 0 64 64"><path d="M8 48c14-26 33-34 50-32" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path><path d="M24 31c-11-2-16-10-16-10 12-5 21 1 16 10Z" fill="currentColor" opacity=".25" stroke="currentColor"></path><path d="M42 22c5-11 16-12 16-12 1 14-7 19-16 12Z" fill="currentColor" opacity=".25" stroke="currentColor"></path></svg>
-<h3>Projects &amp; Communities</h3>
-<p>Farms, educators, networks and communities proving that restoration, cooperation and positive change are already underway.</p>
-<a href="/living-library#networks">Discover regenerative projects</a>
-</article>
-</div>
-<div class="actions"><a class="btn btn-green library-portal-button" href="/living-library"><strong>Explore the Living Library</strong><small>Watch one film. Read one page. Try one action.</small></a></div>
-<aside aria-label="Living Library invitation" class="living-library-portal">
-<img alt="" aria-hidden="true" height="86" src="eden-logo-tree-heart.svg" width="86"/>
-<div>
-<p class="portal-kicker">A living collection for positive change</p>
-<h3>Films, books, channels, teachers, projects and pathways for hope.</h3>
-<p>Explore a carefully curated ecosystem for regeneration, empowerment and remembering. Every resource is here to help you move from inspiration into one life-serving next step.</p>
-<div class="portal-actions">
-<a class="btn btn-primary" href="/living-library">Enter the Living Library</a>
-<a class="btn btn-soft" href="/start-here">Begin with Awakening Regeneration</a>
-</div>
-<p class="portal-mantra">Watch one film. Read one page. Try one action.</p>
-</div>
-</aside></div>
-</section><div aria-hidden="true" class="eden-section-divider divider-tree"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-tree-heart.svg" width="900"/></div>
-<section class="dark-band" id="journey">
-<div class="wrap">
-<p class="hand note" style="color:#f6df9f">One seed at a time.</p>
-<h2 class="section-title">Your Awakening &amp; Syntropy Journey</h2>
-<p class="lead">A simple path from inspiration to grounded action. Follow it step by step, or jump to what your life is asking for now.</p>
-<div class="journey-grid">
-<article class="journey-card">
-<p class="step">Step One · Available</p><h3>Awakening Regeneration</h3>
-<p>The foundational guide for regeneration, soil, syntropy, food forests and holistic living.</p>
-<a href="/start-here">Start reading</a>
-</article>
-<article class="journey-card">
-<p class="step">Step Two · Available</p><h3>Thriving in These Times</h3>
-<p>Inner resilience, calm, practical hope, conscious preparedness and regenerative living.</p>
-<a href="Thriving-in-These-Times.html">Read Step Two</a>
-</article>
-<article class="journey-card">
-<p class="step">Step Three · Available</p><h3>7 First Steps to Regenerate Your Land</h3>
-<p>A practical Mediterranean doorway for tired land, soil cover, water, life, observation and first actions.</p>
-<a href="7-First-Steps-Regenerate-Your-Land.html">Read Step Three</a>
-</article>
-<article class="journey-card">
-<p class="step">Step Four</p><h3>Living Soil</h3>
-<p>Soil food web, compost, mulch, biochar, microbes, fungi and fertility. Coming soon.</p>
-</article>
-<article class="journey-card">
-<p class="step">Step Five</p><h3>Food Forests &amp; Syntropy</h3>
-<p>Succession, strata, biomass, pruning, diversity and abundant edible ecosystems. Coming soon.</p>
-</article>
-<article class="journey-card">
-<p class="step">Step Six</p><h3>Water, Biodiversity &amp; Regenerative Life</h3>
-<p>Slowing water, growing shade, supporting community, yoga, service, gift economy and everyday acts of care. Coming soon.</p>
-</article>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-seedling"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-seedling.svg" width="900"/></div>
-<section id="work">
-<div class="wrap">
-<p class="hand note">Regenerative landscape transformation.</p>
-<h2 class="section-title">Work With Benjy</h2>
-<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider" decoding="async" height="64" loading="lazy" src="eden-divider-tree-heart.svg" width="64"/></div>
-<p class="lead">Regenerative gardens, food forests and Mediterranean land design for homes, farms, retreat centres, boutique hotels and communities.</p>
-<div class="work-grid">
-<article class="work-card"><h3>Home Gardens</h3><p>Start with what you have and grow towards abundance, beauty and confidence.</p></article>
-<article class="work-card"><h3>Food Forests</h3><p>Design layered, diverse, edible landscapes that build soil and resilience over time.</p></article>
-<article class="work-card"><h3>Retreats &amp; Hotels</h3><p>Create living landscapes, guest experiences, herbal gardens, shade and biodiversity.</p></article>
-</div>
-<div class="actions">
-<a class="btn btn-green" href="work-with-benjy.html">Explore Work With Benjy</a>
-<a class="btn btn-soft" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank">Ask a Question on WhatsApp</a>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-bee"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-bee.svg" width="900"/></div>
-<section>
-<div class="wrap">
-<p class="hand note">Regenerative interbeing.</p>
-<h2 class="section-title">Our Philosophy</h2>
-<div class="section-kicker-art"><img alt="" aria-hidden="true" class="botanical-divider bee" decoding="async" height="64" loading="lazy" src="eden-divider-bee.svg" width="64"/></div>
-<p class="lead">Many traditions and disciplines that inspired us point toward a similar understanding: life flourishes through relationship.</p>
-<p>Yoga invites us to cultivate awareness and compassion. Ecology reveals living relationships. Regenerative agriculture restores the health of whole systems. Permaculture encourages us to observe, care and design with nature. Syntropic farming demonstrates how diversity, succession and cooperation can create increasing abundance over time.</p>
-<p>Together, these perspectives inspire what we call <strong>regenerative interbeing</strong>: living in ways that help ourselves, our communities and the living world flourish together.</p>
-<p class="values-intro">These values are not rules. They are intentions we return to again and again: care for all life, question our actions, reflect together, improve what we can without burning out, nourish ourselves while nourishing the world, and choose kindness, compassion, peace and aligned action when needed.</p>
-<div class="values-grid">
-<article class="value-card"><h3>Care for Life</h3><p>People, soil, water, plants, animals, communities and future generations are all part of the whole.</p></article>
-<article class="value-card"><h3>Leave Places More Alive</h3><p>Every page, project, garden and gathering is an opportunity to add care, beauty and life.</p></article>
-<article class="value-card"><h3>Learn from Nature</h3><p>Observation, humility and curiosity are some of our greatest teachers.</p></article>
-<article class="value-card"><h3>Nourish Ourselves</h3><p>We care for our bodies, nervous systems, joy and rest so we can care for the world without burning out.</p></article>
-<article class="value-card"><h3>Courage with Compassion</h3><p>We speak up for life, reflect together, and take aligned action when needed.</p></article>
-<article class="value-card"><h3>Sacred &amp; Silly</h3><p>Depth and play belong together. We welcome authentic, raw, joyful, perfectly imperfect humanity.</p></article>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-butterfly"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-butterfly.svg" width="900"/></div>
-<section class="soft-section" id="our-hope">
-<div class="wrap letter">
-<p class="hand note">One quiet ripple at a time.</p>
-<h2 class="section-title">Our Hope</h2>
-<p>We do not believe one guide will change the world by itself.</p>
-<p>But perhaps one idea, one conversation, one seed, one restored patch of soil, one act of kindness, one shared meal, one brave decision, and one moment of remembering can begin a quiet ripple that reaches farther than we can see.</p>
-<p>Our hope is that Awakening Eden helps create more of those ripples — helping people feel more hopeful, more connected, and more capable of caring for themselves, for each other, and for the living Earth.</p>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-heart"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-heart-vine.svg" width="900"/></div>
-<section class="dark-band" id="community">
-<div class="wrap">
-<p class="hand note" style="color:#f6df9f">Walk beside us.</p>
-<h2 class="section-title">Community, updates &amp; gift economy</h2>
-<p class="lead">Join our channels, follow the journey, share your questions, and help this Living Library grow into more guides, videos, courses, workshops and regenerative projects.</p>
-<div class="community-cards"><a href="https://www.instagram.com/tierramagicatribe/" rel="noopener noreferrer" target="_blank">Follow @tierramagicatribe<span>Land life, regenerative learning and new resources as Awakening Eden grows.</span></a>
-<a aria-label="Join WhatsApp community" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank">WhatsApp Community<span>Share questions, wins and updates.</span></a>
-<a aria-label="Join Telegram channel" href="https://t.me/awakening_Eden" rel="noopener noreferrer" target="_blank">Telegram Channel<span>Follow new guides, field notes and gentle updates.</span></a>
-<a class="eden-community-gift eden-support-olive" href="#support">Gift Back<span>Support the Living Library and future creations.</span></a>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-tree"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-tree-heart.svg" width="900"/></div>
-<section class="eden-gift-section" id="support">
-<div class="wrap letter eden-gift-card">
-<p class="hand note">A gentle gift economy.</p>
-<h2 class="section-title">Keep this Living Library growing</h2>
-<p>Everything here is shared freely. If these guides, films, stories and resources have nourished you, and you are able to, your gift helps us create more free Living Companions, document regenerative projects and continue sharing practical hope.</p>
-<p>This is our gift economy. Every contribution plants another seed, supports more life-serving work and helps the future Awakening Eden learning and healing sanctuary grow at a human pace.</p>
-<div class="actions eden-gift-actions">
-<a class="btn eden-gift-amount" href="https://www.paypal.me/BSauber/3" rel="noopener noreferrer" target="_blank">Gift €3</a>
-<a class="btn eden-gift-amount" href="https://www.paypal.me/BSauber/11" rel="noopener noreferrer" target="_blank">Gift €11</a>
-<a class="btn eden-gift-amount" href="https://www.paypal.me/BSauber/33" rel="noopener noreferrer" target="_blank">Gift €33</a>
-<a class="btn eden-gift-custom" href="https://www.paypal.me/BSauber" rel="noopener noreferrer" target="_blank">Choose Your Own Gift</a>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-seedling"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-seedling.svg" width="900"/></div>
-<section id="share-this-seed">
-<div class="wrap letter" style="background:linear-gradient(135deg,rgba(255,250,241,.98),rgba(246,223,159,.34));border:1px solid rgba(109,75,50,.18);box-shadow:0 20px 52px rgba(23,56,34,.11)">
-<p class="hand note">Help this seed travel.</p>
-<h2 class="section-title">Share the Living Library with someone who needs inspiring hope and practical guidance</h2>
-<p>Some people need facts. Some people need beauty. Some people simply need one doorway that says: you are not alone, and there are life-giving things we can do.</p>
-<p>If this library nourishes you, send it to one friend, one family member, one group, one gardener, one dreamer, one person who has been feeling the world too deeply.</p>
-<p>This is part of our mission and our life’s work: all our journeys, all our questions and all our story becoming an offering for people who are asking, “What are the solutions, and how can I help life?”</p>
-<div class="actions">
-<a class="btn btn-green" href="https://wa.me/?text=I%20found%20this%20beautiful%20free%20Living%20Library%20for%20regeneration%2C%20awakening%2C%20inspiring%20hope%20and%20practical%20guidance.%20It%20is%20part%20of%20Benjy%20%26%20Sofia%27s%20mission%20and%20life%27s%20work%3A%20their%20journey%20becoming%20an%20offering%20and%20an%20antidote%20to%20despair%20and%20hopelessness.%20Come%20walk%20with%20us%3A%20https%3A%2F%2Fawakening-eden-library.netlify.app%2F" rel="noopener noreferrer" target="_blank">Share on WhatsApp</a>
-<a class="btn btn-soft" href="https://t.me/share/url?url=https%3A%2F%2Fawakening-eden-library.netlify.app%2F&amp;text=Awakening%20Eden%20Living%20Library%20%C2%B7%20inspiring%20hope%2C%20practical%20guidance%2C%20and%20an%20antidote%20to%20despair%20and%20hopelessness" rel="noopener noreferrer" target="_blank">Share on Telegram</a>
-<a class="btn btn-terra eden-gift-link eden-support-olive" href="#support">Keep This Library Growing</a>
-</div>
-<div class="core-note" style="margin-top:18px">
-<p><strong>Copyable invitation:</strong> I found a beautiful free Living Library for regeneration, awakening, inspiring hope, practical guidance, films, guides and community. It is part of Benjy &amp; Sofia’s mission and life’s work: their journeys and questions becoming an offering, an antidote to despair and hopelessness, and a sanctuary of solutions for people who want to care for life. Come walk with us: https://awakening-eden-library.netlify.app/</p>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider divider-bee"><img alt="" aria-hidden="true" decoding="async" height="110" loading="lazy" src="eden-divider-bee.svg" width="900"/></div>
-<section>
-<div class="wrap letter">
-<p class="hand note">Our hope for your journey here</p>
-<p>We hope you leave feeling calmer, more hopeful, more connected, and inspired to take one small step.</p>
-<p>You do not need to know everything. You do not need to have all the answers. You do not need to be perfect.</p>
-<p>Begin with one seed. One breath. One kind conversation. One walk in nature. One guide. One film. One act of care.</p>
-<p>Forests grow that way. Communities grow that way. People grow that way.</p>
-<p class="hand" style="font-size:1.6rem;color:var(--terra);text-align:center">May your unique gifts find beautiful ways to serve life.</p>
-</div>
-</section>
-</main>
-<img alt="" aria-hidden="true" class="tree-footer-art" decoding="async" height="64" loading="lazy" src="eden-footer-seed-to-tree.svg" width="64"/>
-<footer class="footer">
-<div class="wrap">
-<p class="hand" style="font-size:1.8rem;color:#f6df9f">Every forest began as one small seed.</p>
-<p>May your inner garden flourish. May the gardens you create nourish others. May the seeds you plant today become forests for future generations.</p>
-<p><strong>Let’s grow together.</strong></p>
-<p>With love, <strong>Benjy &amp; Sofia</strong> · Awakening Eden</p>
-<nav aria-label="Footer navigation" class="footer-nav">
-<a href="#library">Living Library</a><a href="#begin">Start Here</a><a href="journal.html">Journal</a>
-<a href="journey.html">Our Journey</a><a href="work-with-benjy.html">Work With Benjy</a><a class="eden-gift-link eden-support-olive" href="#support">Keep This Library Growing</a>
-</nav><p class="footer-meta">Curated with care, humility and evidence-awareness. Mystical language opens imagination; practical guidance stays grounded in responsibility, relationship and life-serving action. Last updated July 2026.</p></div>
-</footer>
-<script src="eden-v22.js?v=22.0" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body>
+<body>
+  <a class="skip-link" href="#main">Skip to the living story</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Awakening Eden home">
+        <img src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="" decoding="async">
+        <span class="brand-words">
+          <strong>Awakening Eden</strong>
+          <small>The Living Library</small>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
+        <span class="menu-button__lines" aria-hidden="true"></span>
+        <span class="menu-button__label">Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+        <a href="/start-here">Begin here</a>
+        <a href="/living-library">Living Library</a>
+        <a href="/journey">Our journey</a>
+        <a href="/work-with-benjy">Work with Benjy</a>
+        <a class="nav-gift" href="#gift-back">Gift back <span aria-hidden="true">♡</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <img class="edge-art edge-art--left" src="assets/frames/seed-to-tree-frame-01.webp" width="245" height="1731" alt="" aria-hidden="true" decoding="async">
+      <img class="corner-art corner-art--hero" src="assets/corners/botanical-corner-02.webp" width="301" height="298" alt="" aria-hidden="true" decoding="async">
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="handwritten hero-welcome">Welcome home to</p>
+          <h1 id="hero-title">Awakening Eden</h1>
+          <p class="hero-library">The Living Library</p>
+          <p class="hero-promise">Together with the living Earth,<br>to thrive as one family of life.</p>
+          <p class="hero-intro">A welcoming home for regenerative guides, living landscapes, inner renewal and practical hope. Come exactly as you are. Take what nourishes you. Share what you love. Return whenever you need.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="/start-here">Begin your journey <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="/living-library">Open the Living Library</a>
+          </div>
+          <a class="community-whisper" href="#community">
+            <span aria-hidden="true">✦</span>
+            Join our community updates
+          </a>
+        </div>
+
+        <figure class="hero-photo reveal reveal--late">
+          <div class="photo-frame">
+            <img src="benjy-and-sofia-v19.webp" width="900" height="1200" alt="Benjy and Sofia laughing together among flowering plants" fetchpriority="high" decoding="async">
+            <img class="photo-sprig" src="assets/corners/botanical-corner-05.webp" width="271" height="283" alt="" aria-hidden="true" decoding="async">
+          </div>
+          <figcaption>
+            <span class="handwritten">We are Benjy &amp; Sofia</span>
+            <small>Earth lovers, learners and companions on the path.</small>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="doorways" aria-label="Ways to begin">
+      <div class="container doorway-grid">
+        <a class="doorway" href="#begin"><span class="doorway-icon" aria-hidden="true"><img src="eden-icon-seed.svg" alt="" width="24" height="24"></span><strong>Begin here</strong><small>Start your journey</small></a>
+        <a class="doorway" href="#library"><span class="doorway-icon" aria-hidden="true"><img src="eden-icon-book-leaf.svg" alt="" width="24" height="24"></span><strong>Living Library</strong><small>Guides, films &amp; wisdom</small></a>
+        <a class="doorway" href="#journey"><span class="doorway-icon" aria-hidden="true"><img src="eden-icon-map-seed.svg" alt="" width="24" height="24"></span><strong>Our journey</strong><small>Gardens, teachers &amp; paths</small></a>
+        <a class="doorway" href="#work"><span class="doorway-icon" aria-hidden="true"><img src="eden-icon-hands-tree.svg" alt="" width="24" height="24"></span><strong>Work with Benjy</strong><small>Land &amp; living systems</small></a>
+        <a class="doorway" href="#heart"><span class="doorway-icon" aria-hidden="true"><img src="eden-icon-heart-star.svg" alt="" width="24" height="24"></span><strong>Our heart</strong><small>Community &amp; connection</small></a>
+      </div>
+    </section>
+
+    <section class="welcome-band section--compact" aria-label="Our welcome">
+      <div class="container welcome-band__inner">
+        <p>We share what we have learnt through years of regeneration, so you can create a life and a world that is beautiful, resilient and alive.</p>
+        <img src="assets/dividers/botanical-divider-01.webp" width="739" height="120" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="section homecoming-section" aria-labelledby="homecoming-title">
+      <img class="corner-art corner-art--homecoming" src="assets/corners/botanical-corner-04.webp" width="311" height="294" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container homecoming-grid">
+        <div class="homecoming-heading">
+          <p class="handwritten">A place to return to</p>
+          <h2 id="homecoming-title">A home for practical hope.</h2>
+        </div>
+        <div class="homecoming-copy">
+          <p class="lead">Awakening Eden is a living library, a gathering place and an invitation to remember what becomes possible when knowledge meets love—and love becomes action.</p>
+          <p>We are not waiting for a more beautiful world to arrive. We are learning to become its gardeners, listeners, builders and joyful protectors.</p>
+          <p>Here, regeneration is both inner and outer: healthy soil and steadier nervous systems; water held in the land and wisdom carried through community; food forests, holistic living and the courage to begin where we are.</p>
+          <p>Come for a guide, a garden plan, an inspiring film or a quiet breath. Leave with one living next step—and return whenever you need.</p>
+          <p class="homecoming-declaration">The future is something we practise together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section healing-question" id="heart" aria-labelledby="healing-title">
+      <div class="container narrow center">
+        <img class="portal-emblem" src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="Awakening Eden Tree of Life with roots and a heart-shaped opening in its trunk" loading="lazy" decoding="async">
+        <p class="eyebrow">The question beneath everything</p>
+        <h2 id="healing-title">How can we become a force of healing?</h2>
+        <p class="question-tail">For ourselves, for each other, and for this beautiful living Earth?</p>
+        <p class="handwritten">One breath. One seed. One loving action at a time.</p>
+      </div>
+    </section>
+
+    <section class="section guides-section" id="begin" aria-labelledby="guides-title">
+      <img class="edge-art edge-art--right" src="assets/frames/seed-to-tree-frame-04.webp" width="90" height="1650" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container">
+        <div class="section-heading center narrow">
+          <p class="handwritten">Your first beautiful step</p>
+          <h2 id="guides-title">Begin your living journey</h2>
+          <p>You do not need to fix the whole world today. Begin with one relationship: one breath, one patch of soil, one meal, one conversation.</p>
+        </div>
+
+        <article class="featured-guide">
+          <div class="featured-guide__art">
+            <span class="guide-number">Living Guide 01</span>
+            <img src="assets/growth/growth-stage-03.webp" width="375" height="303" alt="A seed opening into its first green sprout" loading="lazy" decoding="async">
+          </div>
+          <div class="featured-guide__copy">
+            <p class="eyebrow">Begin here</p>
+            <h3>Awakening Regeneration</h3>
+            <p class="guide-quote">The guide we wish someone had given us before we planted our first garden.</p>
+            <p>A practical, hopeful companion for remembering that change begins with relationship.</p>
+            <ul class="outcome-list">
+              <li>See the whole</li>
+              <li>Begin where you are</li>
+              <li>Choose one living action</li>
+            </ul>
+            <div class="button-row">
+              <a class="button button--primary" href="/start-here">Read online</a>
+              <a class="button button--secondary" href="Awakening-Regeneration-Guide.pdf">Take the guide with you</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="guide-path">
+          <article class="guide-card guide-card--lantern">
+            <span class="guide-card__step">Doorway two</span>
+            <div class="lantern-glow" aria-hidden="true"><span>✦</span></div>
+            <h3>Thriving in These Times</h3>
+            <p class="guide-card__subtitle">A Calm Companion for a Changing World</p>
+            <p>Breath, steadiness, food, community, wise preparedness and practical hope—without fear.</p>
+            <a class="text-link" href="Thriving-in-These-Times.html">Continue gently <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="guide-card guide-card--tree">
+            <span class="guide-card__step">Doorway three</span>
+            <img src="assets/growth/growth-stage-06.webp" width="378" height="404" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <h3>Regeneration 101</h3>
+            <p class="guide-card__subtitle">The practical pathway</p>
+            <p>Living soil, food forests and syntropy, water and biodiversity, and a regenerative life.</p>
+            <a class="text-link" href="#regeneration-modules">Explore the pathway <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+
+        <div class="module-row" id="regeneration-modules" aria-label="Regeneration 101 modules">
+          <span>Living Soil</span>
+          <span>Food Forests &amp; Syntropy</span>
+          <span>Water &amp; Biodiversity</span>
+          <span>Living the Regenerative Life</span>
+        </div>
+
+        <img class="chapter-divider" src="assets/dividers/botanical-divider-03.webp" width="749" height="121" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="section library-section" id="library" aria-labelledby="library-title">
+      <div class="container">
+        <div class="library-intro">
+          <div>
+            <p class="handwritten">Wander into what calls you</p>
+            <h2 id="library-title">The Living Library</h2>
+          </div>
+          <p>An evolving library of guides, films, books, teachers, practices and tools for people who want to leave life more alive.</p>
+        </div>
+
+        <div class="library-grid">
+          <a class="library-room library-room--featured" href="/start-here">
+            <span class="room-icon room-icon--sprout" aria-hidden="true"><span></span></span>
+            <span><strong>Start Here</strong><small>The first two living companions</small></span>
+          </a>
+          <a class="library-room" href="/living-library"><span class="room-icon" aria-hidden="true">▶</span><span><strong>Films &amp; Documentaries</strong><small>Stories that awaken possibility</small></span></a>
+          <a class="library-room" href="Abundant-Edge-Index.html"><span class="room-icon" aria-hidden="true">◉</span><span><strong>Living Soil</strong><small>Roots, fungi and living ground</small></span></a>
+          <a class="library-room" href="Small-Scale-Regenerative-Farm-Playbook.html"><span class="room-icon" aria-hidden="true">♧</span><span><strong>Farm &amp; Food Forests</strong><small>Layers, succession and abundance</small></span></a>
+          <a class="library-room" href="7-First-Steps-Regenerate-Your-Land.html"><span class="room-icon" aria-hidden="true">≈</span><span><strong>First Steps on Land</strong><small>Seven ways to begin regenerating</small></span></a>
+          <a class="library-room" href="acacia_dealbata_magic_manual_regenerative_eden.html"><span class="room-icon" aria-hidden="true">✦</span><span><strong>Tree Wisdom</strong><small>The acacia magic manual</small></span></a>
+          <a class="library-room" href="heart.html"><span class="room-icon" aria-hidden="true">⌁</span><span><strong>Inner Regeneration</strong><small>Breath, rest and remembering</small></span></a>
+          <a class="library-room" href="/journal"><span class="room-icon" aria-hidden="true">▤</span><span><strong>Field Journal</strong><small>Notes from the living path</small></span></a>
+          <a class="library-room" href="#community"><span class="room-icon" aria-hidden="true">♡</span><span><strong>Community</strong><small>Walk, learn and grow together</small></span></a>
+        </div>
+
+        <div class="center library-action">
+          <a class="button button--primary" href="/living-library">Enter the Living Library</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story-section" id="journey" aria-labelledby="story-title">
+      <img class="corner-art corner-art--story" src="assets/corners/botanical-corner-01.webp" width="287" height="309" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="chapter-divider" src="assets/dividers/botanical-divider-05.webp" width="747" height="130" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container story-grid">
+        <figure class="story-art story-art--photo">
+          <img src="benjy-sofia-food-forest.webp" width="1600" height="1200" alt="Benjy and Sofia kneeling beside a young sapling in their food forest, Benjy holding a planting bar" loading="lazy" decoding="async">
+          <figcaption class="handwritten">planting the future, together</figcaption>
+        </figure>
+        <div class="story-copy">
+          <p class="handwritten">The gardens that grew us</p>
+          <h2 id="story-title">We are Benjy &amp; Sofia</h2>
+          <p class="lead">Yogis, Earth lovers, regenerative educators and lifelong students of life.</p>
+          <p>Across seven formative years in Australia, gardens, teachers, circles and communities changed the way we listened—to the land, to one another and to the deeper relationships that sustain life.</p>
+          <p>Through more than twenty-five retreats and circles, we have learnt that healing the Earth and healing ourselves are not separate journeys. Awakening Eden is our imperfectly perfect answer to the question: <em>What is ours to do?</em></p>
+          <a class="text-link" href="/journey">Read our living journey <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section australia-section" id="australia" aria-labelledby="australia-title">
+      <img class="edge-art edge-art--left edge-art--australia" src="assets/frames/seed-to-tree-frame-02.webp" width="256" height="1717" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container narrow">
+        <p class="eyebrow">Australia - learning to listen</p>
+        <h2 id="australia-title">Gratitude carried forward</h2>
+        <p>For seven formative years, Australia changed the way we listened—to the land, to one another and to the deeper relationships that sustain life. We carry gratitude for the Country and communities that held this chapter of our journey.</p>
+        <p>Awakening Eden does not claim First Nations stories or symbols as its own. We honour living cultures with humility and believe true relationship begins with listening, respect, reciprocity and care.</p>
+        <p class="field-note"><span class="handwritten">With gratitude</span> Benjy remembers Gabu Damien, a Warungu man from Far North Queensland, and the gardens and lessons in listening they created together. We thank Adam Collins, and Kate and Stu, our biodynamic teachers and wisdom keepers. And we hold special gratitude for Dan, Grace and Mark of the Sacred Earth Foundation family, whose vision and ours grew into a joined mission.</p>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="container work-grid">
+        <div class="work-photos">
+          <figure class="work-photo">
+            <img src="benjy-teaching-hugelkultur.webp" width="1200" height="1600" alt="Benjy teaching a hugelkultur workshop beside a diagram screen, a cat resting in his arms" loading="lazy" decoding="async">
+            <figcaption class="handwritten">Grounded knowledge, shared with heart.</figcaption>
+          </figure>
+          <figure class="work-photo work-photo--detail">
+            <img src="first-steps-hugelkultur-v19.webp" width="1100" height="618" alt="A hugelkultur bed under construction: logs and branches layered into the soil" loading="lazy" decoding="async">
+            <figcaption>Wood in the soil — a hügelkultur bed taking shape.</figcaption>
+          </figure>
+        </div>
+        <div class="work-copy">
+          <p class="eyebrow">Professional land support</p>
+          <h2 id="work-title">Work with Benjy</h2>
+          <p class="lead">Grow a landscape that stores water, builds soil and becomes more alive with time.</p>
+          <ul class="service-list">
+            <li><strong>Observe the whole place</strong><span>Climate, contours, water, soil, access and your real needs.</span></li>
+            <li><strong>Design a living plan</strong><span>Food forests, syntropic rows, habitat, phased planting and resilient systems.</span></li>
+            <li><strong>Move from plan to practice</strong><span>Project support, implementation guidance, mentoring and adaptive next steps.</span></li>
+          </ul>
+          <div class="button-row">
+            <a class="button button--primary" href="https://wa.me/351920067347" target="_blank" rel="noopener noreferrer">Talk to Benjy about your project or needs</a>
+            <a class="button button--secondary" href="/work-with-benjy">Explore services</a>
+          </div>
+          <p class="small-print">Services stay within confirmed professional scope and do not imply licensed engineering, hydrology or guaranteed outcomes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section casa-section" aria-labelledby="casa-title">
+      <div class="container casa-card">
+        <img src="assets/corners/botanical-corner-06.webp" width="281" height="282" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div>
+          <p class="handwritten">Where we are now</p>
+          <h2 id="casa-title">Co-creating at Casa Oasis</h2>
+          <p>We are grateful to be part of this living vision in Portugal—a place where community, inner wisdom, practical creation and care for the Earth can meet.</p>
+        </div>
+        <a class="button button--secondary" href="https://www.oasisportugal.com/" target="_blank" rel="noopener noreferrer">Meet Casa Oasis <span class="visually-hidden">(opens in a new tab)</span></a>
+      </div>
+    </section>
+
+    <section class="section community-section" id="community" aria-labelledby="community-title">
+      <div class="container">
+        <figure class="community-photo">
+          <img src="community-workshop-circle.webp" width="1253" height="1229" alt="A big joyful group of workshop friends standing around freshly planted syntropic beds among eucalyptus trees" loading="lazy" decoding="async">
+          <figcaption>Syntropic agroforestry workshop in Far North Queensland — many hands, one living system.</figcaption>
+        </figure>
+      </div>
+      <div class="container community-grid">
+        <div class="community-copy">
+          <p class="handwritten">Come walk with us</p>
+          <h2 id="community-title">One circle. Many ways to belong.</h2>
+          <p>Receive gentle updates when a new guide, gathering, garden story or living resource is ready. No pressure. No noise. Just seeds worth sharing.</p>
+        </div>
+        <div class="community-actions">
+          <div class="community-link-grid">
+            <a class="button button--whatsapp" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" target="_blank" rel="noopener noreferrer">
+              <svg class="community-mark whatsapp-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 4.25A11.4 11.4 0 0 0 6.1 21.3L4.6 27.7l6.35-1.65A11.4 11.4 0 1 0 16 4.25Z"/>
+                <path d="M12.1 10.1c.25-.55.5-.57.85-.58h.72c.22 0 .45.08.58.43l1.1 2.68c.12.3.06.55-.12.8l-.73.92c-.2.22-.18.43-.04.66.67 1.18 1.6 2.17 2.72 2.94.25.18.48.16.67-.06l.96-1.17c.22-.27.48-.3.78-.18l2.55 1.2c.32.15.5.3.52.54.03.28-.1 1.62-.78 2.33-.68.72-1.78 1.08-2.92 1.08-.88 0-2.02-.2-3.42-.8-1.2-.52-5.22-1.95-7.2-6.82-.57-1.4-.56-2.65-.2-3.45Z"/>
+              </svg>
+              Join our WhatsApp community
+            </a>
+            <a class="button button--telegram" href="https://t.me/awakening_Eden" target="_blank" rel="noopener noreferrer">
+              <svg class="community-mark telegram-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M27.1 5.3 4.9 13.9c-1.5.6-1.5 1.4-.3 1.8l5.7 1.8 2.2 6.8c.3.8.1 1.1 1 1.1.7 0 1-.3 1.4-.7l3.3-3.2 6.8 5c1.3.7 2.2.3 2.5-1.2l4.2-19.7c.4-1.8-.7-2.7-1.8-2.2Z"/>
+                <path d="m11.2 17.2 11.2-7.1c.5-.3 1-.1.6.3l-9.2 8.3-.4 4.3Z"/>
+              </svg>
+              Join our Telegram channel
+            </a>
+          </div>
+          <small>Conversation, new guides, field notes and gentle updates.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gift-section" id="gift-back" aria-labelledby="gift-title">
+      <img class="corner-art corner-art--gift" src="assets/corners/botanical-corner-03.webp" width="284" height="290" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container narrow center">
+        <p class="eyebrow">Keep the library growing</p>
+        <h2 id="gift-title">Gift back, if it feels right</h2>
+        <p>Everything here is shared freely. If this served you, your gift helps us create more free guides, videos, workshops, community events and land-regeneration projects.</p>
+        <p>Give what you feel. If now is not the time, you are still warmly welcome here.</p>
+        <div class="gift-options" aria-label="Choose a PayPal gift amount">
+          <a class="button button--secondary" href="https://www.paypal.me/BSauber/3" target="_blank" rel="noopener noreferrer">Gift €3</a>
+          <a class="button button--secondary" href="https://www.paypal.me/BSauber/6" target="_blank" rel="noopener noreferrer">Gift €6</a>
+          <a class="button button--secondary" href="https://www.paypal.me/BSauber/11" target="_blank" rel="noopener noreferrer">Gift €11</a>
+          <a class="button button--secondary" href="https://www.paypal.me/BSauber/33" target="_blank" rel="noopener noreferrer">Gift €33</a>
+          <a class="button button--primary gift-options__custom" href="https://www.paypal.me/BSauber" target="_blank" rel="noopener noreferrer">Choose your own gift <span aria-hidden="true">♡</span></a>
+        </div>
+        <small class="block-note">Securely opens PayPal.Me in a new tab. Receiving freely is always welcome too.</small>
+      </div>
+    </section>
+
+    <section class="section final-blessing" aria-labelledby="blessing-title">
+      <div class="container narrow center">
+        <img src="assets/growth/growth-stage-08.webp" width="398" height="454" alt="A mature Tree of Life with a heart opening and butterfly" loading="lazy" decoding="async">
+        <h2 id="blessing-title">Choose one thing today.</h2>
+        <p>Plant one seed. Call one friend. Touch the soil. Share one act of kindness.</p>
+        <p>Beautiful worlds are created one small action at a time.</p>
+        <p class="handwritten">Come walk with us.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo/tree-heart-portal-02.webp" width="410" height="629" alt="" loading="lazy" decoding="async">
+        <div><strong>Awakening Eden</strong><small>The Living Library</small></div>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/start-here">Begin here</a>
+        <a href="/living-library">Living Library</a>
+        <a href="/journey">Our journey</a>
+        <a href="/work-with-benjy">Work with Benjy</a>
+        <a href="heart.html">Our heart</a>
+        <a href="/about">About</a>
+        <a href="/links">Links</a>
+        <a href="#gift-back">Gift back</a>
+      </nav>
+      <p class="footer-blessing">Leave Life More Alive.</p>
+    </div>
+  </footer>
+
+  <script src="eden-v23.js?v=23.0" defer></script>
+</body>
 </html>
