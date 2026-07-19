@@ -1,0 +1,12 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/eden-v22.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/eden-v22.js
+  Cache-Control: public, max-age=31536000, immutable

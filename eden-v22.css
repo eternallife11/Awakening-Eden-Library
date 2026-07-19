@@ -843,3 +843,895 @@ body.eden-menu-open{overflow:hidden;}
    ================================================================ */
 .hero-actions .btn strong,.library-portal-button strong{display:block;font-size:1rem}.hero-actions .btn small,.library-portal-button small{display:block;margin-top:.22rem;font-size:.78rem;font-weight:700;opacity:.8}.living-library-portal{margin-top:34px;display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:center;padding:clamp(22px,4vw,36px);border-radius:32px;background:linear-gradient(135deg,rgba(255,253,247,.98),rgba(246,239,221,.98));border:1px solid rgba(216,180,94,.58);box-shadow:0 20px 54px rgba(28,48,30,.12)}.living-library-portal img{width:86px;height:86px}.living-library-portal h3{font-size:clamp(1.65rem,4vw,2.65rem);margin:.15rem 0 .6rem;color:var(--forest)}.living-library-portal p{margin:.45rem 0}.portal-kicker{text-transform:uppercase;letter-spacing:.12em;color:var(--terra);font-weight:900;font-size:.78rem}.portal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem}.portal-mantra{font-family:Georgia,serif;font-style:italic;color:var(--terra)}.botanical-wide-divider{width:min(900px,calc(100% - 32px));margin:18px auto;opacity:.9}.botanical-wide-divider img{width:100%;height:auto}.about-hero{padding:clamp(54px,8vw,92px) 0;background:linear-gradient(180deg,rgba(255,253,247,.95),rgba(246,239,221,.88))}.about-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,58px);align-items:center}.about-hero h1{font-size:clamp(3rem,8vw,6.4rem);color:var(--forest)}
 @media(max-width:820px){.living-library-portal{grid-template-columns:1fr;text-align:center}.living-library-portal img{margin:auto}.portal-actions{display:grid;grid-template-columns:1fr}.about-hero-grid{grid-template-columns:1fr}.hero-actions .btn{white-space:normal}}
+
+
+
+/* Awakening Eden v21.4
+   Premium optical centering, clearer sanctuary background, calm hero rhythm */
+
+.eden-hero {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  min-height: calc(100svh - 78px) !important;
+  padding: clamp(34px, 5vw, 66px) 0 clamp(52px, 7vw, 78px) !important;
+  background: #102819 !important;
+}
+
+/* The photograph is separate from the contrast layer.
+   This lets the community remain visible around the central reading area. */
+.eden-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("eden-hero-community-v21-4.webp");
+  background-size: cover;
+  background-position: center 48%;
+  background-repeat: no-repeat;
+}
+
+/* Strongest contrast only behind the central content.
+   The outer edges remain brighter and more alive. */
+.eden-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 24, 15, .08) 0%,
+      rgba(6, 24, 15, .14) 52%,
+      rgba(6, 24, 15, .22) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(6, 24, 15, .50) 0%,
+      rgba(6, 24, 15, .38) 31%,
+      rgba(6, 24, 15, .20) 55%,
+      rgba(6, 24, 15, .04) 82%
+    );
+}
+
+.eden-hero .hero-card {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  justify-items: center !important;
+  width: min(900px, calc(100% - 36px)) !important;
+  max-width: 900px !important;
+  margin-inline: auto !important;
+  padding: clamp(28px, 4.2vw, 48px) !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  border-radius: clamp(30px, 4vw, 46px) !important;
+  border: 1px solid rgba(255, 248, 234, .27) !important;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(216, 180, 94, .11),
+      transparent 31%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(13, 48, 29, .91),
+      rgba(11, 39, 24, .86)
+    ) !important;
+  box-shadow:
+    0 30px 86px rgba(0, 0, 0, .34),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
+
+/* Optical centering:
+   The calligraphic logo carries more visual weight on its right side.
+   A small leftward optical shift makes it look centered to the eye. */
+.eden-logo-plaque {
+  display: grid !important;
+  place-items: center !important;
+  width: min(390px, 82vw) !important;
+  max-width: 390px !important;
+  margin: 0 auto 16px !important;
+  padding: 10px 18px 12px !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  border: 1px solid rgba(216, 180, 94, .64) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 247, .985),
+      rgba(250, 242, 223, .965)
+    ) !important;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, .22),
+    inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+}
+
+.eden-logo-plaque picture {
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.eden-logo-plaque .eden-hero-logo {
+  display: block !important;
+  width: 92% !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  transform: translateX(-4%) !important;
+  transform-origin: center center !important;
+  border-radius: 22px !important;
+}
+
+.eden-hero-welcome {
+  margin-top: 4px !important;
+  font-size: clamp(1.55rem, 3.4vw, 2.35rem) !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .34) !important;
+}
+
+.eden-hero h1 {
+  max-width: 100% !important;
+  font-size: clamp(3rem, 7vw, 5.55rem) !important;
+  line-height: .96 !important;
+  letter-spacing: -.048em !important;
+  text-wrap: balance;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, .30) !important;
+}
+
+.eden-hero h2 {
+  max-width: 760px !important;
+  font-size: clamp(1.3rem, 2.65vw, 2.05rem) !important;
+  line-height: 1.15 !important;
+  text-wrap: balance;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .28) !important;
+}
+
+.eden-hero .hero-quote {
+  width: min(100%, 720px) !important;
+  max-width: 720px !important;
+  margin-top: 1.05rem !important;
+  color: rgba(255, 251, 233, .96) !important;
+  text-wrap: pretty;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .28) !important;
+}
+
+.eden-hero-actions {
+  width: min(100%, 760px) !important;
+  max-width: 760px !important;
+  margin-top: 1.35rem !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.eden-hero-actions .btn {
+  min-height: 60px !important;
+  padding: .82rem 1rem !important;
+}
+
+.hero-trustline {
+  margin-top: 1.05rem !important;
+}
+
+@media (min-width: 1500px) {
+  .eden-hero::before {
+    background-position: center 46%;
+  }
+}
+
+@media (max-width: 820px) {
+  .eden-hero {
+    min-height: auto !important;
+    padding: 20px 0 48px !important;
+  }
+
+  .eden-hero::before {
+    background-position: center center;
+  }
+
+  .eden-hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(6, 24, 15, .14),
+        rgba(6, 24, 15, .28)
+      ),
+      radial-gradient(
+        ellipse at center,
+        rgba(6, 24, 15, .42),
+        rgba(6, 24, 15, .18) 68%,
+        rgba(6, 24, 15, .08)
+      );
+  }
+
+  .eden-hero .hero-card {
+    width: calc(100% - 18px) !important;
+    padding: 20px 14px 25px !important;
+    border-radius: 28px !important;
+  }
+
+  .eden-logo-plaque {
+    width: min(318px, 88vw) !important;
+    padding: 8px 14px 10px !important;
+    border-radius: 25px !important;
+  }
+
+  .eden-logo-plaque .eden-hero-logo {
+    width: 92% !important;
+    transform: translateX(-4%) !important;
+    border-radius: 18px !important;
+  }
+
+  .eden-hero h1 {
+    font-size: clamp(2.72rem, 13vw, 3.75rem) !important;
+  }
+
+  .eden-hero h2 {
+    font-size: clamp(1.16rem, 5vw, 1.42rem) !important;
+  }
+
+  .eden-hero .hero-quote {
+    font-size: 1rem !important;
+    line-height: 1.52 !important;
+  }
+
+  .eden-hero-actions {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 480px) !important;
+  }
+
+  .eden-hero-actions .btn {
+    min-height: 54px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .eden-logo-plaque {
+    width: min(294px, 90vw) !important;
+  }
+
+  .eden-hero h1 {
+    font-size: clamp(2.52rem, 13.2vw, 3.2rem) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eden-logo-plaque .eden-hero-logo {
+    transform: translateX(-4%) !important;
+  }
+}
+
+
+
+/* ================================================================
+   Awakening Eden v21.5
+   Real botanical section transitions + olive gift economy
+   ================================================================ */
+
+:root {
+  --eden-olive-deep: #294733;
+  --eden-olive: #52704f;
+  --eden-moss: #718264;
+  --eden-sage-soft: #dfe6d5;
+  --eden-cream-soft: #fffaf0;
+  --eden-sand: #f1e4c7;
+  --eden-gold-soft: #d9ba68;
+}
+
+/* Replace the old badge-and-line component with the full botanical artwork. */
+.eden-section-divider {
+  display: grid !important;
+  place-items: center !important;
+  width: min(820px, calc(100% - 34px)) !important;
+  height: auto !important;
+  min-height: 72px !important;
+  margin: -22px auto -24px !important;
+  padding: 8px 18px !important;
+  position: relative !important;
+  z-index: 9 !important;
+  pointer-events: none !important;
+  background: none !important;
+  opacity: 1 !important;
+}
+
+.eden-section-divider::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 17% 8% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 250, 240, .96),
+      rgba(255, 250, 240, .70) 58%,
+      transparent 78%
+    ) !important;
+  box-shadow: none !important;
+  z-index: -1 !important;
+}
+
+.eden-section-divider img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 780px !important;
+  height: auto !important;
+  max-height: 82px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  filter: drop-shadow(0 7px 12px rgba(41, 71, 51, .10));
+  opacity: .96 !important;
+}
+
+.eden-section-divider.divider-seedling img,
+.eden-section-divider.divider-butterfly img {
+  max-width: 740px !important;
+}
+
+.eden-section-divider.divider-heart img {
+  max-width: 760px !important;
+}
+
+/* Add a faint botanical whisper to calm paper sections without crowding them. */
+section:not(.eden-hero):not(.dark-band):not(.eden-gift-section)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    url("eden-botanical-corner.svg"),
+    url("eden-botanical-corner.svg");
+  background-repeat: no-repeat;
+  background-size: clamp(90px, 13vw, 180px), clamp(80px, 11vw, 150px);
+  background-position: left -42px top 22%, right -40px bottom 18%;
+  opacity: .055;
+}
+
+/* Gift section becomes a warm botanical garden card. */
+.eden-gift-section {
+  position: relative !important;
+  overflow: hidden !important;
+  padding-block: clamp(58px, 8vw, 96px) !important;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(113, 130, 100, .16), transparent 24rem),
+    radial-gradient(circle at 94% 84%, rgba(217, 186, 104, .16), transparent 24rem),
+    linear-gradient(180deg, #f7efdd, #fffaf0) !important;
+}
+
+.eden-gift-section::before,
+.eden-gift-section::after {
+  content: "";
+  position: absolute;
+  width: clamp(170px, 24vw, 330px);
+  aspect-ratio: 1;
+  background: url("eden-botanical-corner.svg") center / contain no-repeat;
+  opacity: .22;
+  pointer-events: none;
+}
+
+.eden-gift-section::before {
+  left: -60px;
+  bottom: -72px;
+}
+
+.eden-gift-section::after {
+  right: -60px;
+  top: -72px;
+  transform: rotate(180deg);
+}
+
+.eden-gift-card {
+  position: relative !important;
+  overflow: hidden !important;
+  max-width: 920px !important;
+  padding: clamp(28px, 5vw, 58px) !important;
+  text-align: center !important;
+  border-radius: 36px !important;
+  border: 1px solid rgba(82, 112, 79, .26) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 247, .97),
+      rgba(241, 228, 199, .88)
+    ) !important;
+  box-shadow:
+    0 24px 64px rgba(41, 71, 51, .14),
+    inset 0 1px 0 rgba(255, 255, 255, .92) !important;
+}
+
+.eden-gift-card::before {
+  content: "";
+  display: block;
+  width: min(650px, 100%);
+  height: 74px;
+  margin: -12px auto 4px;
+  background: url("eden-divider-heart-vine.svg") center / contain no-repeat;
+  opacity: .92;
+}
+
+.eden-gift-card .section-title {
+  color: var(--eden-olive-deep) !important;
+}
+
+.eden-gift-card .note {
+  color: var(--eden-olive) !important;
+}
+
+.eden-gift-card > p:not(.note) {
+  max-width: 760px;
+  margin-inline: auto;
+  color: #415346;
+}
+
+.eden-gift-actions {
+  justify-content: center !important;
+  gap: 10px !important;
+  margin-top: 26px !important;
+}
+
+.eden-gift-amount,
+.eden-gift-custom {
+  min-width: 124px !important;
+  min-height: 52px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 24px rgba(41, 71, 51, .10) !important;
+}
+
+.eden-gift-amount {
+  color: var(--eden-olive-deep) !important;
+  background: linear-gradient(180deg, #fffdf7, #efe3c8) !important;
+  border: 1px solid rgba(82, 112, 79, .34) !important;
+}
+
+.eden-gift-amount:hover,
+.eden-gift-amount:focus-visible {
+  color: #fffaf0 !important;
+  background: var(--eden-olive) !important;
+  border-color: var(--eden-olive) !important;
+}
+
+.eden-gift-custom {
+  color: #fffaf0 !important;
+  background:
+    linear-gradient(135deg, var(--eden-olive-deep), var(--eden-olive)) !important;
+  border: 1px solid rgba(217, 186, 104, .52) !important;
+}
+
+.eden-gift-custom:hover,
+.eden-gift-custom:focus-visible {
+  background:
+    linear-gradient(135deg, #203b2b, #466342) !important;
+}
+
+/* All gift pathways use the same calm olive language. */
+.eden-support-olive,
+.eden-gift-link,
+.eden-community-gift,
+.btn-support,
+.community-support,
+.eden-mobile-panel a.support {
+  color: #fffaf0 !important;
+  background:
+    linear-gradient(135deg, var(--eden-olive-deep), var(--eden-olive)) !important;
+  border-color: rgba(217, 186, 104, .48) !important;
+}
+
+.eden-support-olive:hover,
+.eden-support-olive:focus-visible,
+.eden-gift-link:hover,
+.eden-gift-link:focus-visible,
+.eden-community-gift:hover,
+.eden-community-gift:focus-visible {
+  color: #fffaf0 !important;
+  background:
+    linear-gradient(135deg, #203b2b, #466342) !important;
+}
+
+/* Keep the dark-band gift card visually distinct but harmonised. */
+.dark-band .eden-community-gift {
+  box-shadow:
+    inset 0 0 0 1px rgba(217, 186, 104, .30),
+    0 12px 28px rgba(0, 0, 0, .12) !important;
+}
+
+/* Restore beautiful botanical dividers on phone rather than hiding them. */
+@media (max-width: 820px) {
+  .eden-section-divider {
+    display: grid !important;
+    width: calc(100% - 18px) !important;
+    min-height: 52px !important;
+    margin: -14px auto -16px !important;
+    padding: 4px 8px !important;
+  }
+
+  .eden-section-divider::before {
+    inset: 13% 2% !important;
+  }
+
+  .eden-section-divider img {
+    width: 100% !important;
+    max-height: 56px !important;
+  }
+
+  .eden-gift-section {
+    padding-block: 48px !important;
+  }
+
+  .eden-gift-card {
+    width: calc(100% - 18px) !important;
+    padding: 24px 16px 28px !important;
+    border-radius: 28px !important;
+  }
+
+  .eden-gift-card::before {
+    height: 54px;
+    margin-top: -6px;
+  }
+
+  .eden-gift-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .eden-gift-custom {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 430px) {
+  .eden-section-divider {
+    min-height: 46px !important;
+  }
+
+  .eden-section-divider img {
+    max-height: 48px !important;
+  }
+
+  .eden-gift-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .eden-gift-custom {
+    grid-column: auto;
+  }
+
+  .eden-gift-amount,
+  .eden-gift-custom {
+    width: 100% !important;
+  }
+}
+
+@media print {
+  .eden-section-divider {
+    display: none !important;
+  }
+}
+
+
+
+/* =========================================================
+   AWAKENING EDEN v22 — LIVING EDITION REBUILD
+   One shared visual system for every page.
+   ========================================================= */
+:root{
+  --ae-forest:#173d2b;
+  --ae-forest-2:#254f39;
+  --ae-moss:#6f7d54;
+  --ae-sage:#aab89b;
+  --ae-terracotta:#b66b47;
+  --ae-clay:#d7b99d;
+  --ae-honey:#e0bd62;
+  --ae-cream:#fbf6ea;
+  --ae-paper:#f4ead7;
+  --ae-ink:#243126;
+  --ae-muted:#6f6a5f;
+  --ae-line:rgba(37,79,57,.18);
+  --ae-shadow:0 18px 48px rgba(37,50,38,.12);
+  --ae-radius:24px;
+  --ae-max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ae-cream)}
+body{
+  margin:0!important;
+  color:var(--ae-ink)!important;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(224,189,98,.08),transparent 26rem),
+    linear-gradient(180deg,#fcf8ef 0%,#f7eddc 100%)!important;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-size:17px!important;
+  line-height:1.72!important;
+  overflow-x:hidden;
+}
+body::before{display:none!important}
+img,svg,video{max-width:100%;height:auto}
+main{overflow:hidden}
+h1,h2,h3,h4,.display,.serif{
+  font-family:"Cormorant Garamond","EB Garamond",Georgia,serif!important;
+  color:var(--ae-forest)!important;
+  letter-spacing:-.02em;
+}
+h1{font-size:clamp(2.75rem,7vw,5.8rem)!important;line-height:.96!important}
+h2{font-size:clamp(2.1rem,4.5vw,3.8rem)!important;line-height:1.05!important}
+h3{font-size:clamp(1.45rem,2.5vw,2.1rem)!important;line-height:1.18!important}
+p{max-width:72ch}
+a{text-underline-offset:3px}
+.wrap,.container,.shell{
+  width:min(var(--ae-max),calc(100% - 32px))!important;
+  margin-inline:auto!important;
+}
+section{
+  position:relative;
+  padding-block:clamp(58px,8vw,104px)!important;
+}
+section.dark-band,
+.dark-band{
+  background:linear-gradient(135deg,var(--ae-forest),#0d2f20)!important;
+  color:#f8f1df!important;
+}
+.dark-band h2,.dark-band h3,.dark-band p{color:#fff8e8!important}
+.soft-section{background:rgba(255,251,242,.72)!important}
+
+/* One universal top bar */
+.eden-header,.site-header,header[role="banner"]{
+  position:sticky!important;
+  top:0!important;
+  z-index:999!important;
+  min-height:64px!important;
+  background:rgba(20,57,40,.96)!important;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:0 8px 28px rgba(10,30,20,.12)!important;
+}
+.eden-header-inner,.header-inner{
+  width:min(var(--ae-max),calc(100% - 24px))!important;
+  margin:auto!important;
+  min-height:64px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:14px!important;
+}
+.eden-brand-lockup img,.site-logo img{width:44px!important;height:44px!important;object-fit:contain!important}
+.eden-brand-lockup strong,.site-title{
+  color:#fff5db!important;
+  font-family:"Cormorant Garamond",Georgia,serif!important;
+  font-size:1.35rem!important;
+  letter-spacing:.03em!important;
+}
+.eden-nav a,.site-nav a,.eden-mobile-menu summary{
+  min-height:42px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  color:#fff7e9!important;
+  border-radius:999px!important;
+  padding:8px 13px!important;
+  font-weight:750!important;
+  font-size:.92rem!important;
+}
+.eden-nav a:hover,.site-nav a:hover{background:rgba(255,255,255,.1)!important}
+
+/* Universal buttons */
+.btn,.button,.cta,a.btn,button{
+  min-height:48px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  border-radius:999px!important;
+  padding:12px 20px!important;
+  border:1px solid rgba(23,61,43,.16)!important;
+  background:var(--ae-cream)!important;
+  color:var(--ae-forest)!important;
+  font-weight:800!important;
+  text-decoration:none!important;
+  box-shadow:0 10px 26px rgba(34,52,38,.1)!important;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease!important;
+}
+.btn:hover,.button:hover,.cta:hover,a.btn:hover,button:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 16px 34px rgba(34,52,38,.15)!important;
+}
+.btn.gold,.btn.primary,.button.primary,.gold{
+  background:var(--ae-honey)!important;
+  color:#163424!important;
+}
+.btn.outline,.outline{
+  background:transparent!important;
+  color:inherit!important;
+  border-color:currentColor!important;
+  box-shadow:none!important;
+}
+.actions{display:flex!important;flex-wrap:wrap!important;gap:12px!important}
+
+/* Universal cards */
+.card,.panel,.resource-card,.path-card,.guide-card,.service-card,.journey-card{
+  background:rgba(255,253,247,.93)!important;
+  border:1px solid var(--ae-line)!important;
+  border-radius:var(--ae-radius)!important;
+  box-shadow:var(--ae-shadow)!important;
+  padding:clamp(20px,3vw,32px)!important;
+}
+.card:hover,.resource-card:hover,.path-card:hover,.guide-card:hover{
+  transform:translateY(-3px)!important;
+}
+.cards,.grid,.resource-grid,.path-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+}
+
+/* Botanical system: clear, premium, never crowding content */
+.eden-section-divider,.botanical-wide-divider{
+  display:block!important;
+  width:min(700px,88vw)!important;
+  height:72px!important;
+  margin:6px auto!important;
+  padding:0!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-size:contain!important;
+  opacity:.9!important;
+}
+.botanical-wide-divider img,.eden-section-divider img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+}
+section:not(.eden-hero):not(.dark-band):not(.eden-gift-section)::before{
+  opacity:.055!important;
+  background-size:120px auto!important;
+}
+.handwritten,.script,.note-script{
+  font-family:"Caveat","Shantell Sans",cursive!important;
+  color:var(--ae-terracotta)!important;
+  font-weight:500!important;
+}
+
+/* Homepage hero — calm focal hierarchy */
+.eden-hero{
+  min-height:clamp(580px,78vh,840px)!important;
+  padding:clamp(70px,10vw,120px) 0!important;
+  display:grid!important;
+  place-items:center!important;
+  background:
+    linear-gradient(110deg,rgba(7,31,20,.76),rgba(7,31,20,.52)),
+    url("eden-hero-community-v21-4.webp") center/cover no-repeat!important;
+}
+.eden-hero .hero-card{
+  width:min(760px,calc(100% - 28px))!important;
+  margin:auto!important;
+  padding:clamp(28px,5vw,54px)!important;
+  text-align:center!important;
+  border-radius:32px!important;
+  background:rgba(17,54,37,.9)!important;
+  box-shadow:0 30px 90px rgba(0,0,0,.28)!important;
+  border:1px solid rgba(255,255,255,.15)!important;
+}
+.eden-hero .hero-card h1,.eden-hero .hero-card h2,.eden-hero .hero-card p{color:#fff8e8!important}
+.eden-hero .hero-card img{
+  width:132px!important;
+  height:132px!important;
+  object-fit:contain!important;
+  border-radius:24px!important;
+  background:#fff9ec!important;
+  padding:8px!important;
+  margin-bottom:18px!important;
+}
+.eden-hero .hero-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+
+/* Living Resource Library — remove empty voids and expose all cards */
+body.page-library .hero{
+  min-height:auto!important;
+  padding:72px 0 54px!important;
+}
+body.page-library .library-section{
+  padding:clamp(50px,7vw,88px) 0!important;
+  min-height:0!important;
+}
+body.page-library .section-heading{
+  grid-template-columns:56px 1fr!important;
+  gap:16px!important;
+  margin-bottom:22px!important;
+}
+body.page-library .cards{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  align-items:stretch!important;
+}
+body.page-library .resource-card{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:250px!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+}
+body.page-library .resource-card .open{
+  margin-top:auto!important;
+}
+body.page-library .reveal{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+}
+body.page-library .botanical-wide-divider{
+  margin:0 auto!important;
+  height:64px!important;
+}
+body.page-library .cta-band{
+  margin-top:40px!important;
+}
+
+/* Living Companions / guides */
+body.page-guide article,
+body.page-guide main > .wrap,
+body.page-guide .guide-shell{
+  width:min(960px,calc(100% - 28px))!important;
+  margin:auto!important;
+}
+body.page-guide section{
+  padding-block:clamp(48px,6vw,78px)!important;
+}
+body.page-guide nav.toc,
+body.page-guide .toc,
+body.page-guide .chapter-nav{
+  background:#fffaf0!important;
+  border:1px solid var(--ae-line)!important;
+  border-radius:22px!important;
+  box-shadow:var(--ae-shadow)!important;
+}
+body.page-guide blockquote,
+body.page-guide .reflection,
+body.page-guide .action-box,
+body.page-guide .practice{
+  border-left:4px solid var(--ae-terracotta)!important;
+  background:#fff9ee!important;
+  border-radius:0 18px 18px 0!important;
+  padding:20px 24px!important;
+}
+
+/* Footer */
+footer{
+  background:#0d2f20!important;
+  color:#f8f1df!important;
+  padding:54px 16px!important;
+}
+footer a,footer p,footer small{color:#f8f1df!important}
+
+/* Accessibility + motion */
+:focus-visible{outline:3px solid var(--ae-honey)!important;outline-offset:3px!important}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .cards,.grid,.resource-grid,.path-grid,
+  body.page-library .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .eden-nav{overflow-x:auto!important;white-space:nowrap!important;scrollbar-width:none!important}
+}
+@media(max-width:640px){
+  body{font-size:16.5px!important}
+  section{padding-block:52px!important}
+  .cards,.grid,.resource-grid,.path-grid,
+  body.page-library .cards{grid-template-columns:1fr!important}
+  .eden-hero{min-height:auto!important;padding:58px 0 68px!important}
+  .eden-hero .hero-card{padding:28px 18px!important}
+  .eden-hero .hero-actions{grid-template-columns:1fr!important}
+  .eden-section-divider,.botanical-wide-divider{height:54px!important;width:90vw!important}
+  .btn,.button,.cta,a.btn,button{width:100%!important}
+  .actions{display:grid!important;grid-template-columns:1fr!important}
+  .eden-header,.site-header,header[role="banner"]{min-height:58px!important}
+  .eden-header-inner,.header-inner{min-height:58px!important}
+  .eden-brand-lockup img,.site-logo img{width:38px!important;height:38px!important}
+  .eden-brand-lockup strong,.site-title{font-size:1.08rem!important}
+}

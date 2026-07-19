@@ -1,6 +1,0 @@
-Awakening Eden v13 update
-- Added founder mission/life's work text to the homepage welcome.
-- Added the 'journey became our offering' and 'antidote to despair and hopelessness' framing.
-- Updated share section and copyable invitation to include mission/life's work.
-- Updated WhatsApp and Telegram share text.
-- Preserved guide body content and existing site structure.

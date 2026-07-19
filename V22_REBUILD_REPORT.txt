@@ -1,0 +1,17 @@
+AWAKENING EDEN v22 — LIVING EDITION REBUILD
+
+This release replaces the patch stack with one shared visual system:
+- one stylesheet: eden-v22.css
+- one script: eden-v22.js
+- stale service workers are unregistered
+- all reveal cards are visible even if animation JS fails
+- Living Resource Library empty gaps removed
+- all resource cards use the same premium card system
+- one universal button, spacing, typography and botanical system
+- homepage hero simplified and centered
+- guide pages receive the shared Living Companion styling
+- mobile grids collapse correctly
+- Netlify cache headers prevent stale HTML
+
+Deploy the CONTENTS of this folder to the repository root.
+Do not place the folder itself one level above index.html.

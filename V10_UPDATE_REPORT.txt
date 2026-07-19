@@ -1,7 +1,0 @@
-Awakening Eden v10 update
-
-Added Water Is Love field note in journal.html#water-is-love.
-Updated resource library films section to Top 10 regenerative hope films + Films For Action portal.
-Updated homepage community buttons and Journal navigation.
-Internal link check errors: 0
-All checked internal links and anchors are present.
