@@ -337,3 +337,19 @@ h3 { margin-bottom: 0.85rem; font-size: clamp(2rem, 3.5vw, 3.4rem); line-height:
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .button:hover, .doorway:hover, .library-room:hover { transform: none; }
 }
+
+/* v23.1 — real photography additions */
+.story-art--photo { margin: 0; }
+.story-art--photo img { width: min(100%, 30rem); margin-inline: auto; border: 0.55rem solid var(--paper-light); border-radius: 48% 48% 1.5rem 1.5rem; box-shadow: var(--shadow); aspect-ratio: 5 / 6; object-fit: cover; object-position: 42% center; }
+.story-art--photo figcaption { margin-top: 0.9rem; text-align: center; font-size: 1.6rem; }
+.community-photo { margin: 0 0 clamp(2rem, 5vw, 3.5rem); }
+.community-photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 72%; border: 0.55rem solid var(--paper-light); border-radius: 1.5rem; box-shadow: var(--shadow); }
+.community-photo figcaption { margin-top: 0.8rem; text-align: center; color: rgb(255 253 247 / 0.85); font-size: 0.88rem; }
+.work-photos { display: grid; gap: 1.25rem; }
+.work-photo img { aspect-ratio: 4 / 5; border-radius: 48% 48% 1.5rem 1.5rem; object-position: center 30%; }
+.work-photo--detail img { aspect-ratio: 16 / 9; border-radius: 1.2rem; object-position: center; }
+.work-photo--detail figcaption { margin-top: 0.6rem; text-align: center; color: var(--umber); font-size: 0.85rem; }
+@media (max-width: 58rem) {
+  .community-photo img { aspect-ratio: 4 / 3; }
+  .work-photo img { aspect-ratio: 4 / 4.4; }
+}
