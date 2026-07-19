@@ -1,1 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet"><defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:3.5;stroke-linecap:round}.w{fill:#d8b9a3;stroke:#365c3b;stroke-width:2}.b{fill:#365c3b}</style></defs><path class="l" d="M55 55C190 31 315 31 410 52M490 52C585 31 710 31 845 55"/><ellipse class="w" cx="435" cy="43" rx="21" ry="13" transform="rotate(28 435 43)"/><ellipse class="w" cx="465" cy="43" rx="21" ry="13" transform="rotate(-28 465 43)"/><ellipse class="w" cx="438" cy="64" rx="15" ry="10" transform="rotate(-22 438 64)"/><ellipse class="w" cx="462" cy="64" rx="15" ry="10" transform="rotate(22 462 64)"/><path class="b" d="M447 35h6v38h-6z"/><path class="l" d="M449 36c-10-10-15-11-20-10M451 36c10-10 15-11 20-10"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="dbfTitle">
+<title id="dbfTitle">Botanical divider with butterfly</title>
+<defs>
+<linearGradient id="bfLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdcbd"/><stop offset="1" stop-color="#9db482"/></linearGradient>
+<linearGradient id="bfWingT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9b98f"/><stop offset="1" stop-color="#cf8a5c"/></linearGradient>
+<linearGradient id="bfWingB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c46e"/><stop offset="1" stop-color="#cf9a45"/></linearGradient>
+<g id="bfLeaf1">
+<path d="M0 0 C6 -4.5 6 -15 0 -23 C-6 -15 -6 -4.5 0 0 Z" fill="url(#bfLeaf)" stroke="#365c3b" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M0 -1 L0 -20" fill="none" stroke="#3f6544" stroke-width="0.9"/>
+<path d="M0 -7 C1.9 -8.3 2.9 -10 3.6 -12.5 M0 -12 C1.9 -13.3 2.9 -15 3.6 -17.5 M0 -7 C-1.9 -8.3 -2.9 -10 -3.6 -12.5 M0 -12 C-1.9 -13.3 -2.9 -15 -3.6 -17.5" fill="none" stroke="#5b7a4c" stroke-width="0.8"/>
+</g>
+</defs>
+<path d="M52 55 C190 31 315 31 412 53" fill="none" stroke="#6d8b5b" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M488 53 C585 31 710 31 848 55" fill="none" stroke="#6d8b5b" stroke-width="3.4" stroke-linecap="round"/>
+<use href="#bfLeaf1" transform="translate(150 46) rotate(-52) scale(0.86)"/>
+<use href="#bfLeaf1" transform="translate(228 36) rotate(-36) scale(0.78)"/>
+<use href="#bfLeaf1" transform="translate(750 46) rotate(52) scale(0.86)"/>
+<use href="#bfLeaf1" transform="translate(672 36) rotate(36) scale(0.78)"/>
+<circle cx="118" cy="51" r="3" fill="#d8b45e"/><circle cx="782" cy="51" r="3" fill="#d8b45e"/>
+<g>
+<path d="M449 50 C438 32 420 30 418 40 C416 50 430 54 448 53 Z" fill="url(#bfWingT)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M451 50 C462 32 480 30 482 40 C484 50 470 54 452 53 Z" fill="url(#bfWingT)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M449 53 C440 62 426 66 424 72 C422 79 436 76 448 66 Z" fill="url(#bfWingB)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M451 53 C460 62 474 66 476 72 C478 79 464 76 452 66 Z" fill="url(#bfWingB)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M450 44 C447 52 447 62 450 72 C453 62 453 52 450 44 Z" fill="#365c3b"/>
+<circle cx="431" cy="40" r="2.4" fill="#fffaf0" opacity="0.8"/><circle cx="469" cy="40" r="2.4" fill="#fffaf0" opacity="0.8"/>
+<path d="M449 44 C441 34 436 32 431 33 M451 44 C459 34 464 32 469 33" fill="none" stroke="#3a2f1b" stroke-width="1.4" stroke-linecap="round"/>
+</g>
+</svg>

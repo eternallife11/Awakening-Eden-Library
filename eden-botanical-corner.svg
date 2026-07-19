@@ -1,14 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
-<title>Olive and wildflower corner flourish</title>
-<defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.leaf{fill:#b9c8a7;stroke:#365c3b;stroke-width:2}.flower{fill:#fffaf0;stroke:#b56a42;stroke-width:2}.dot{fill:#d8b45e}</style></defs>
-<path class="l" d="M30 235 C65 154 120 87 220 30"/>
-<path class="l" d="M60 218 C88 181 125 165 176 155"/>
-<path class="l" d="M91 184 C116 147 152 124 210 110"/>
-<ellipse class="leaf" cx="66" cy="198" rx="11" ry="22" transform="rotate(-54 66 198)"/>
-<ellipse class="leaf" cx="102" cy="160" rx="10" ry="22" transform="rotate(-47 102 160)"/>
-<ellipse class="leaf" cx="137" cy="128" rx="10" ry="21" transform="rotate(-39 137 128)"/>
-<ellipse class="leaf" cx="174" cy="94" rx="9" ry="20" transform="rotate(-31 174 94)"/>
-<ellipse class="leaf" cx="207" cy="65" rx="9" ry="20" transform="rotate(-23 207 65)"/>
-<g transform="translate(182 132)"><circle class="flower" r="9"/><circle class="flower" cx="12" cy="-1" r="8"/><circle class="flower" cx="-7" cy="10" r="8"/><circle class="dot" r="4"/></g>
-<g transform="translate(130 178)"><circle class="flower" r="7"/><circle class="flower" cx="10" cy="-2" r="6"/><circle class="flower" cx="-6" cy="8" r="6"/><circle class="dot" r="3"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="bcTitle">
+<title id="bcTitle">Olive and wildflower corner flourish</title>
+<defs>
+<linearGradient id="bcLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdcbd"/><stop offset="1" stop-color="#9db482"/></linearGradient>
+<radialGradient id="bcPetal" cx="50%" cy="42%" r="60%"><stop offset="0" stop-color="#fffdf6"/><stop offset="1" stop-color="#f4e7cf"/></radialGradient>
+<g id="bcLeafShape">
+<path d="M0 0 C9 -6 9 -22 0 -34 C-9 -22 -9 -6 0 0 Z" fill="url(#bcLeaf)" stroke="#365c3b" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M0 -2 L0 -30" fill="none" stroke="#3f6544" stroke-width="1.1"/>
+<path d="M0 -10 C3 -12 4.5 -14.5 5.5 -18.5 M0 -17 C3 -19 4.5 -21.5 5.5 -25.5 M0 -10 C-3 -12 -4.5 -14.5 -5.5 -18.5 M0 -17 C-3 -19 -4.5 -21.5 -5.5 -25.5" fill="none" stroke="#5b7a4c" stroke-width="0.9"/>
+</g>
+<g id="bcFlower">
+<g fill="url(#bcPetal)" stroke="#b56a42" stroke-width="1.6">
+<ellipse rx="4.6" ry="8" transform="rotate(0)"/><ellipse rx="4.6" ry="8" transform="rotate(72)"/><ellipse rx="4.6" ry="8" transform="rotate(144)"/><ellipse rx="4.6" ry="8" transform="rotate(216)"/><ellipse rx="4.6" ry="8" transform="rotate(288)"/>
+</g>
+<circle r="3.4" fill="#d8b45e" stroke="#c98a3c" stroke-width="1"/>
+</g>
+</defs>
+<path d="M28 236 C64 154 120 86 224 28" fill="none" stroke="#6d8b5b" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M58 220 C86 182 126 164 180 154" fill="none" stroke="#6d8b5b" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M92 186 C118 148 154 124 214 108" fill="none" stroke="#6d8b5b" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M224 28 C230 22 236 22 240 26" fill="none" stroke="#6d8b5b" stroke-width="2.2" stroke-linecap="round"/>
+<use href="#bcLeafShape" transform="translate(64 200) rotate(36) scale(1)"/>
+<use href="#bcLeafShape" transform="translate(100 162) rotate(43) scale(0.96)"/>
+<use href="#bcLeafShape" transform="translate(136 128) rotate(51) scale(0.92)"/>
+<use href="#bcLeafShape" transform="translate(174 94) rotate(59) scale(0.88)"/>
+<use href="#bcLeafShape" transform="translate(206 64) rotate(67) scale(0.82)"/>
+<use href="#bcLeafShape" transform="translate(120 176) rotate(-140) scale(0.7)"/>
+<use href="#bcLeafShape" transform="translate(160 138) rotate(-132) scale(0.66)"/>
+<use href="#bcFlower" transform="translate(184 130) scale(1.15)"/>
+<use href="#bcFlower" transform="translate(128 180) scale(0.9)"/>
+<use href="#bcFlower" transform="translate(214 96) scale(0.72)"/>
+<circle cx="150" cy="150" r="2.4" fill="#d8b45e"/><circle cx="96" cy="202" r="2.2" fill="#d8b45e"/>
 </svg>

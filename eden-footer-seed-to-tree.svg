@@ -1,10 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 180" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title">
-<title>Seed to Tree of Life growth sequence</title>
-<defs><style>.l{fill:none;stroke:#365c3b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.leaf{fill:#b9c8a7;stroke:#365c3b;stroke-width:1.8}.seed{fill:#b56a42;stroke:#2e2e2b;stroke-width:1.5}</style></defs>
-<path class="l" d="M40 145 H1060" opacity=".25"/>
-<g transform="translate(100 130)"><ellipse class="seed" rx="12" ry="8" transform="rotate(-18)"/><path class="l" d="M0 8 C-8 20 -18 24 -28 32 M0 8 C9 19 20 22 32 29" opacity=".5"/></g>
-<g transform="translate(280 126)"><ellipse class="seed" rx="10" ry="7" transform="rotate(-18)"/><path class="l" d="M0 0 C0 -22 12 -34 26 -42"/><ellipse class="leaf" cx="27" cy="-43" rx="8" ry="15" transform="rotate(38 27 -43)"/><path class="l" d="M0 8 C-16 16 -29 27 -44 43 M0 8 C16 17 31 26 47 43"/></g>
-<g transform="translate(480 130)"><path class="l" d="M0 0 V-80 M0 -50 C-28 -58 -48 -75 -58 -98 M0 -50 C28 -58 48 -75 58 -98 M0 -22 C-28 -28 -51 -38 -76 -55 M0 -22 C28 -28 51 -38 76 -55"/><ellipse class="leaf" cx="-58" cy="-96" rx="8" ry="16" transform="rotate(-45 -58 -96)"/><ellipse class="leaf" cx="58" cy="-96" rx="8" ry="16" transform="rotate(45 58 -96)"/><ellipse class="leaf" cx="-73" cy="-55" rx="8" ry="16" transform="rotate(-72 -73 -55)"/><ellipse class="leaf" cx="73" cy="-55" rx="8" ry="16" transform="rotate(72 73 -55)"/></g>
-<g transform="translate(760 126)"><path class="l" d="M0 4 V-104 M0 -70 C-38 -76 -72 -98 -92 -126 M0 -70 C38 -76 72 -98 92 -126 M0 -42 C-44 -44 -81 -60 -119 -84 M0 -42 C44 -44 81 -60 119 -84 M0 4 C-38 8 -72 26 -106 54 M0 4 C38 8 72 26 106 54"/><ellipse class="leaf" cx="-92" cy="-124" rx="9" ry="18" transform="rotate(-45 -92 -124)"/><ellipse class="leaf" cx="92" cy="-124" rx="9" ry="18" transform="rotate(45 92 -124)"/><ellipse class="leaf" cx="-116" cy="-84" rx="9" ry="18" transform="rotate(-72 -116 -84)"/><ellipse class="leaf" cx="116" cy="-84" rx="9" ry="18" transform="rotate(72 116 -84)"/><path class="l" d="M0 4 C-25 17 -42 32 -60 58 M0 4 C25 17 42 32 60 58" opacity=".75"/></g>
-<g transform="translate(995 75)" opacity=".85"><path class="l" d="M0 0 c18 -18 42 -14 54 4 c-22 2 -39 0 -54 -4Z"/><path class="l" d="M0 0 c-18 -18 -42 -14 -54 4 c22 2 39 0 54 -4Z"/><path class="l" d="M0 0 c18 18 42 14 54 -4 c-22 -2 -39 0 -54 4Z"/><path class="l" d="M0 0 c-18 18 -42 14 -54 -4 c22 -2 39 0 54 4Z"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 180" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ftTitle">
+<title id="ftTitle">Seed to Tree of Life growth sequence</title>
+<defs>
+<linearGradient id="ftLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdcbd"/><stop offset="1" stop-color="#9db482"/></linearGradient>
+<radialGradient id="ftSeed" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#cf8a5c"/><stop offset="1" stop-color="#a95f38"/></radialGradient>
+<g id="ftLeaf1">
+<path d="M0 0 C7 -5 7 -17 0 -26 C-7 -17 -7 -5 0 0 Z" fill="url(#ftLeaf)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M0 -1 L0 -23" fill="none" stroke="#3f6544" stroke-width="1"/>
+<path d="M0 -8 C2.2 -9.6 3.3 -11.4 4.1 -14.4 M0 -14 C2.2 -15.6 3.3 -17.4 4.1 -20.4 M0 -8 C-2.2 -9.6 -3.3 -11.4 -4.1 -14.4 M0 -14 C-2.2 -15.6 -3.3 -17.4 -4.1 -20.4" fill="none" stroke="#5b7a4c" stroke-width="0.85"/>
+</g>
+</defs>
+<path d="M40 148 H1060" fill="none" stroke="#6d8b5b" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+<g transform="translate(100 132)">
+<ellipse rx="12" ry="8" transform="rotate(-18)" fill="url(#ftSeed)" stroke="#7d4a2c" stroke-width="1.5"/>
+<path d="M0 8 C-8 20 -18 24 -28 32 M0 8 C9 19 20 22 32 29" fill="none" stroke="#6d8b5b" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+</g>
+<g transform="translate(280 128)">
+<path d="M0 6 V-30" fill="none" stroke="#6d8b5b" stroke-width="2.4" stroke-linecap="round"/>
+<ellipse rx="9" ry="6" cy="8" transform="rotate(-14)" fill="url(#ftSeed)" stroke="#7d4a2c" stroke-width="1.4"/>
+<use href="#ftLeaf1" transform="translate(0 -30) scale(0.72)"/>
+<use href="#ftLeaf1" transform="translate(-2 -22) rotate(-42) scale(0.6)"/>
+<use href="#ftLeaf1" transform="translate(2 -22) rotate(42) scale(0.6)"/>
+</g>
+<g transform="translate(480 130)">
+<path d="M0 4 V-72 M0 -46 C-24 -52 -42 -66 -52 -86 M0 -46 C24 -52 42 -66 52 -86 M0 -22 C-26 -26 -47 -38 -70 -54 M0 -22 C26 -26 47 -38 70 -54" fill="none" stroke="#6d8b5b" stroke-width="2.8" stroke-linecap="round"/>
+<use href="#ftLeaf1" transform="translate(-52 -86) rotate(-46) scale(0.78)"/>
+<use href="#ftLeaf1" transform="translate(52 -86) rotate(46) scale(0.78)"/>
+<use href="#ftLeaf1" transform="translate(-70 -54) rotate(-72) scale(0.74)"/>
+<use href="#ftLeaf1" transform="translate(70 -54) rotate(72) scale(0.74)"/>
+<use href="#ftLeaf1" transform="translate(0 -72) scale(0.72)"/>
+<circle cx="0" cy="-40" r="2.6" fill="#d8b45e"/>
+</g>
+<g transform="translate(760 126)">
+<path d="M0 6 V-102 M0 -70 C-36 -76 -70 -96 -90 -122 M0 -70 C36 -76 70 -96 90 -122 M0 -44 C-42 -46 -79 -60 -116 -82 M0 -44 C42 -46 79 -60 116 -82 M0 6 C-36 10 -70 26 -102 52 M0 6 C36 10 70 26 102 52" fill="none" stroke="#365c3b" stroke-width="3" stroke-linecap="round"/>
+<use href="#ftLeaf1" transform="translate(-90 -122) rotate(-46) scale(0.9)"/>
+<use href="#ftLeaf1" transform="translate(90 -122) rotate(46) scale(0.9)"/>
+<use href="#ftLeaf1" transform="translate(-116 -82) rotate(-72) scale(0.86)"/>
+<use href="#ftLeaf1" transform="translate(116 -82) rotate(72) scale(0.86)"/>
+<use href="#ftLeaf1" transform="translate(-102 52) rotate(-116) scale(0.78)"/>
+<use href="#ftLeaf1" transform="translate(102 52) rotate(116) scale(0.78)"/>
+<use href="#ftLeaf1" transform="translate(0 -104) scale(0.82)"/>
+<circle cx="-40" cy="-96" r="3" fill="#d8b45e"/><circle cx="40" cy="-96" r="3" fill="#d8b45e"/><circle cx="0" cy="-60" r="3" fill="#c98a3c"/>
+</g>
+<g transform="translate(1000 78)" opacity="0.9">
+<path d="M0 0 C18 -18 42 -14 54 4 C32 6 15 4 0 0 Z" fill="url(#ftLeaf)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M0 0 C-18 -18 -42 -14 -54 4 C-32 6 -15 4 0 0 Z" fill="url(#ftLeaf)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M0 0 C18 18 42 14 54 -4 C32 -6 15 -4 0 0 Z" fill="url(#ftLeaf)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M0 0 C-18 18 -42 14 -54 -4 C-32 -6 -15 -4 0 0 Z" fill="url(#ftLeaf)" stroke="#365c3b" stroke-width="1.6" stroke-linejoin="round"/>
+<circle r="4.5" fill="#d8b45e" stroke="#c98a3c" stroke-width="1.2"/>
+</g>
 </svg>

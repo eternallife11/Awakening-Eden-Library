@@ -1,17 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title">
-<title>Tree of Life botanical divider</title>
-<defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.f{fill:#b9c8a7;stroke:#365c3b;stroke-width:2}.h{fill:none;stroke:#b56a42;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style></defs>
-<path class="l" d="M36 70 C155 40 285 40 382 67"/>
-<path class="l" d="M518 67 C615 40 745 40 864 70"/>
-<g opacity=".95">
-<path class="h" d="M450 64 C441 48 421 48 421 32 c0-11 13-18 29 1 c16-19 29-12 29-1 c0 16-20 16-29 32Z"/>
-<path class="l" d="M450 64 V86 M450 70 C434 69 423 78 410 96 M450 70 C466 69 477 78 490 96 M450 53 V23 M450 34 C437 30 429 23 424 14 M450 34 C463 30 471 23 476 14"/>
-<ellipse class="f" cx="425" cy="17" rx="5" ry="10" transform="rotate(-42 425 17)"/>
-<ellipse class="f" cx="475" cy="17" rx="5" ry="10" transform="rotate(42 475 17)"/>
-<ellipse class="f" cx="450" cy="24" rx="5" ry="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="dthTitle">
+<title id="dthTitle">Tree of Life botanical divider</title>
+<defs>
+<linearGradient id="thLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdcbd"/><stop offset="1" stop-color="#9db482"/></linearGradient>
+<radialGradient id="thHeart" cx="50%" cy="36%" r="70%"><stop offset="0" stop-color="#e7f0d9"/><stop offset="0.6" stop-color="#c3d5a9"/><stop offset="1" stop-color="#a0b884"/></radialGradient>
+<g id="thLeaf1">
+<path d="M0 0 C6 -4.5 6 -15 0 -23 C-6 -15 -6 -4.5 0 0 Z" fill="url(#thLeaf)" stroke="#365c3b" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M0 -1 L0 -20" fill="none" stroke="#3f6544" stroke-width="0.9"/>
+<path d="M0 -7 C1.9 -8.3 2.9 -10 3.6 -12.5 M0 -12 C1.9 -13.3 2.9 -15 3.6 -17.5 M0 -7 C-1.9 -8.3 -2.9 -10 -3.6 -12.5 M0 -12 C-1.9 -13.3 -2.9 -15 -3.6 -17.5" fill="none" stroke="#5b7a4c" stroke-width="0.8"/>
 </g>
+</defs>
+<path d="M32 72 C155 40 285 40 384 68" fill="none" stroke="#6d8b5b" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M516 68 C615 40 745 40 868 72" fill="none" stroke="#6d8b5b" stroke-width="3.6" stroke-linecap="round"/>
+<path d="M32 72 C25 64 25 57 30 52" fill="none" stroke="#6d8b5b" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M868 72 C875 64 875 57 870 52" fill="none" stroke="#6d8b5b" stroke-width="2.2" stroke-linecap="round"/>
+<use href="#thLeaf1" transform="translate(120 54) rotate(-64) scale(1)"/>
+<use href="#thLeaf1" transform="translate(186 44) rotate(-46) scale(0.95)"/>
+<use href="#thLeaf1" transform="translate(250 44) rotate(-30) scale(0.9)"/>
+<use href="#thLeaf1" transform="translate(318 56) rotate(-16) scale(0.82)"/>
+<use href="#thLeaf1" transform="translate(780 54) rotate(64) scale(1)"/>
+<use href="#thLeaf1" transform="translate(714 44) rotate(46) scale(0.95)"/>
+<use href="#thLeaf1" transform="translate(650 44) rotate(30) scale(0.9)"/>
+<use href="#thLeaf1" transform="translate(582 56) rotate(16) scale(0.82)"/>
+<circle cx="352" cy="60" r="3" fill="#d8b45e"/><circle cx="548" cy="60" r="3" fill="#d8b45e"/>
 <g>
-<ellipse class="f" cx="120" cy="52" rx="7" ry="14" transform="rotate(-73 120 52)"/><ellipse class="f" cx="184" cy="45" rx="7" ry="14" transform="rotate(-53 184 45)"/><ellipse class="f" cx="246" cy="47" rx="7" ry="14" transform="rotate(-35 246 47)"/><ellipse class="f" cx="314" cy="58" rx="7" ry="14" transform="rotate(-18 314 58)"/>
-<ellipse class="f" cx="780" cy="52" rx="7" ry="14" transform="rotate(73 780 52)"/><ellipse class="f" cx="716" cy="45" rx="7" ry="14" transform="rotate(53 716 45)"/><ellipse class="f" cx="654" cy="47" rx="7" ry="14" transform="rotate(35 654 47)"/><ellipse class="f" cx="586" cy="58" rx="7" ry="14" transform="rotate(18 586 58)"/>
+<path d="M450 66 C440 50 419 50 419 33 C419 21 435 15 450 33 C465 14 481 20 481 33 C481 50 460 50 450 66 Z" fill="url(#thHeart)" stroke="#b56a42" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M450 60 V90 M450 68 C438 67 429 74 418 90 M450 68 C462 67 471 74 482 90" fill="none" stroke="#5b7a4c" stroke-width="2.2" stroke-linecap="round"/>
+<use href="#thLeaf1" transform="translate(450 40) scale(0.7)"/>
+<use href="#thLeaf1" transform="translate(438 44) rotate(-34) scale(0.6)"/>
+<use href="#thLeaf1" transform="translate(462 44) rotate(34) scale(0.6)"/>
 </g>
 </svg>

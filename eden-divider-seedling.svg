@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet"><defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:3.5;stroke-linecap:round}.f{fill:#b9c8a7;stroke:#365c3b;stroke-width:1.8}.s{fill:#b56a42;stroke:#263326;stroke-width:2}</style></defs><path class="l" d="M55 54C190 30 315 30 420 52M480 52C585 30 710 30 845 54"/><ellipse class="s" cx="450" cy="67" rx="14" ry="8"/><path class="l" d="M450 60V34M450 44c-12-2-18-9-22-17M450 44c12-2 18-9 22-17"/><ellipse class="f" cx="429" cy="27" rx="6" ry="12" transform="rotate(-44 429 27)"/><ellipse class="f" cx="471" cy="27" rx="6" ry="12" transform="rotate(44 471 27)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="dsTitle">
+<title id="dsTitle">Sprouting seedling botanical divider</title>
+<defs>
+<linearGradient id="sdLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdcbd"/><stop offset="1" stop-color="#9db482"/></linearGradient>
+<radialGradient id="sdSeed" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#cf8a5c"/><stop offset="1" stop-color="#a95f38"/></radialGradient>
+<g id="sdLeaf1">
+<path d="M0 0 C6.5 -5 6.5 -16 0 -24 C-6.5 -16 -6.5 -5 0 0 Z" fill="url(#sdLeaf)" stroke="#365c3b" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M0 -1 L0 -21" fill="none" stroke="#3f6544" stroke-width="0.9"/>
+<path d="M0 -8 C2 -9.4 3 -11 3.8 -13.6 M0 -13 C2 -14.4 3 -16 3.8 -18.6 M0 -8 C-2 -9.4 -3 -11 -3.8 -13.6 M0 -13 C-2 -14.4 -3 -16 -3.8 -18.6" fill="none" stroke="#5b7a4c" stroke-width="0.8"/>
+</g>
+</defs>
+<path d="M52 55 C190 30 315 30 418 53" fill="none" stroke="#6d8b5b" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M482 53 C585 30 710 30 848 55" fill="none" stroke="#6d8b5b" stroke-width="3.4" stroke-linecap="round"/>
+<use href="#sdLeaf1" transform="translate(150 45) rotate(-52) scale(0.86)"/>
+<use href="#sdLeaf1" transform="translate(230 36) rotate(-36) scale(0.78)"/>
+<use href="#sdLeaf1" transform="translate(750 45) rotate(52) scale(0.86)"/>
+<use href="#sdLeaf1" transform="translate(670 36) rotate(36) scale(0.78)"/>
+<circle cx="120" cy="50" r="3" fill="#d8b45e"/><circle cx="780" cy="50" r="3" fill="#d8b45e"/>
+<path d="M450 62 V36" fill="none" stroke="#6d8b5b" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M450 46 C440 45 433 40 428 30 M450 46 C460 45 467 40 472 30" fill="none" stroke="#6d8b5b" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="450" cy="66" rx="15" ry="8.5" fill="url(#sdSeed)" stroke="#7d4a2c" stroke-width="1.6"/>
+<path d="M443 63 C446 65 454 65 457 63" fill="none" stroke="#7d4a2c" stroke-width="1" opacity="0.6"/>
+<use href="#sdLeaf1" transform="translate(450 34) scale(0.92)"/>
+<use href="#sdLeaf1" transform="translate(431 30) rotate(-40) scale(0.8)"/>
+<use href="#sdLeaf1" transform="translate(469 30) rotate(40) scale(0.8)"/>
+</svg>

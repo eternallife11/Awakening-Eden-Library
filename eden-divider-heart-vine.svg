@@ -1,1 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet"><defs><style>.l{fill:none;stroke:#6d8b5b;stroke-width:3.5;stroke-linecap:round}.f{fill:#b9c8a7;stroke:#365c3b;stroke-width:1.8}.h{fill:none;stroke:#b56a42;stroke-width:3}</style></defs><path class="l" d="M55 55C190 25 320 34 420 53M480 53C580 34 710 25 845 55"/><path class="h" d="M450 66c-22-16-31-26-31-38 0-12 16-18 31 1 15-19 31-13 31-1 0 12-9 22-31 38z"/><ellipse class="f" cx="170" cy="40" rx="6" ry="13" transform="rotate(-55 170 40)"/><ellipse class="f" cx="730" cy="40" rx="6" ry="13" transform="rotate(55 730 40)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="dhvTitle">
+<title id="dhvTitle">Heart and vine botanical divider</title>
+<defs>
+<linearGradient id="hvLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfdcbd"/><stop offset="1" stop-color="#9db482"/></linearGradient>
+<linearGradient id="hvHeart" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9c4a9"/><stop offset="1" stop-color="#c98a5f"/></linearGradient>
+<g id="hvLeaf1">
+<path d="M0 0 C7 -5 7 -16 0 -25 C-7 -16 -7 -5 0 0 Z" fill="url(#hvLeaf)" stroke="#365c3b" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M0 -1 L0 -22" fill="none" stroke="#3f6544" stroke-width="0.9"/>
+<path d="M0 -8 C2.2 -9.4 3.2 -11 4 -13.6 M0 -13 C2.2 -14.4 3.2 -16 4 -18.6 M0 -8 C-2.2 -9.4 -3.2 -11 -4 -13.6 M0 -13 C-2.2 -14.4 -3.2 -16 -4 -18.6" fill="none" stroke="#5b7a4c" stroke-width="0.8"/>
+</g>
+</defs>
+<path d="M50 55 C190 24 320 34 415 54" fill="none" stroke="#6d8b5b" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M485 54 C580 34 710 24 850 55" fill="none" stroke="#6d8b5b" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M50 55 C44 48 44 42 48 38" fill="none" stroke="#6d8b5b" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M850 55 C856 48 856 42 852 38" fill="none" stroke="#6d8b5b" stroke-width="2.2" stroke-linecap="round"/>
+<use href="#hvLeaf1" transform="translate(150 44) rotate(-52) scale(1)"/>
+<use href="#hvLeaf1" transform="translate(230 34) rotate(-38) scale(0.9)"/>
+<use href="#hvLeaf1" transform="translate(315 34) rotate(-24) scale(0.82)"/>
+<use href="#hvLeaf1" transform="translate(750 44) rotate(52) scale(1)"/>
+<use href="#hvLeaf1" transform="translate(670 34) rotate(38) scale(0.9)"/>
+<use href="#hvLeaf1" transform="translate(585 34) rotate(24) scale(0.82)"/>
+<circle cx="120" cy="49" r="3" fill="#d8b45e"/><circle cx="780" cy="49" r="3" fill="#d8b45e"/>
+<path d="M450 68 C426 51 416 40 416 27 C416 15 432 9 447 27 C462 8 478 14 478 27 C478 40 468 51 450 68 Z" fill="url(#hvHeart)" stroke="#b56a42" stroke-width="2" stroke-linejoin="round"/>
+<path d="M450 60 C446 50 442 44 440 38 M450 60 C454 50 458 44 460 38" fill="none" stroke="#a9603a" stroke-width="1" opacity="0.55"/>
+</svg>
