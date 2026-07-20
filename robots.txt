@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
+Disallow: /project-enquiry-thank-you.html
 Disallow: /links.html
 Sitemap: https://awakening-eden-library.netlify.app/sitemap.xml

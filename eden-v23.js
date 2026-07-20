@@ -4,6 +4,14 @@
     ? document.addEventListener("DOMContentLoaded", fn, { once: true }) : fn();
 
   ready(() => {
+    // Keep campaign attribution while a visitor moves from the welcome page to the enquiry page.
+    const campaignParams = new URLSearchParams(window.location.search);
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach((key) => {
+      const value = campaignParams.get(key);
+      if (!value) return;
+      try { sessionStorage.setItem(`awakening_eden_${key}`, value); } catch (_) { /* storage is optional */ }
+    });
+
     // Accessible mobile navigation
     const button = document.querySelector("[data-menu-button]");
     const nav = document.querySelector("[data-navigation]");

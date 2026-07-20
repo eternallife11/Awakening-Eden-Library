@@ -1,345 +1,469 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Thriving in These Times · Calm Resilience Guide · Awakening Eden</title>
-<meta content="A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope." name="description"/>
-<style>
-:root{
-  --deep:#102819; --forest:#173822; --leaf:#365c3b; --moss:#6d8b5b; --sage:#b9c8a7;
-  --sand:#f6f2ea; --cream:#fffdf7; --paper:#fffaf0; --gold:#d8b45e; --clay:#d8b9a3;
-  --terra:#b56a42; --earth:#6f4c35; --ink:#263326; --muted:#6f675c; --line:rgba(38,51,38,.16);
-  --shadow:0 24px 60px rgba(23,56,34,.13); --soft:0 10px 30px rgba(23,56,34,.09);
-  --serif: Georgia, "Times New Roman", serif; --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:
-  radial-gradient(circle at 10% 2%, rgba(216,180,94,.18), transparent 28%),
-  radial-gradient(circle at 85% 12%, rgba(185,200,167,.28), transparent 28%),
-  linear-gradient(180deg,var(--cream),var(--sand)); color:var(--ink); font-family:var(--sans); line-height:1.72; font-size:17px;}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:linear-gradient(90deg,rgba(111,76,53,.06) 1px,transparent 1px),linear-gradient(rgba(111,76,53,.045) 1px,transparent 1px);background-size:44px 44px}
-a{color:var(--forest);text-decoration:none;font-weight:800}
-img{max-width:100%;height:auto}
-.wrap{width:min(1120px,92vw);margin:0 auto}
-.narrow{width:min(820px,92vw);margin:0 auto}
-.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(15px);background:rgba(255,250,240,.87);border-bottom:1px solid var(--line)}
-.navinner{height:60px;display:flex;align-items:center;gap:14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
-.navinner::-webkit-scrollbar{display:none}
-.brand{display:flex;align-items:center;gap:8px;flex:0 0 auto;font-family:var(--serif);font-size:1.05rem;color:var(--deep);margin-right:4px}
-.logo{width:28px;height:28px;border-radius:999px;background:var(--deep);display:inline-grid;place-items:center;color:var(--cream);font-size:15px}
-.navinner a{display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.56);border:1px solid rgba(54,92,59,.16);font-size:.84rem;color:var(--deep)}
-.hero{position:relative;overflow:hidden;padding:88px 0 62px;background:linear-gradient(135deg,rgba(16,40,25,.96),rgba(54,92,59,.86)),url('eden-hero-sanctuary-v19.webp') center/cover; color:var(--cream)}
-.hero .wrap{position:relative;z-index:2}
-.hand{font-family:var(--hand);font-size:clamp(2.2rem,7vw,4.7rem);line-height:.95;color:#f5d899;font-weight:500;margin:0 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.18)}
-.kicker{letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--gold);font-size:.78rem}
-h1,h2,h3{font-family:var(--serif);line-height:1.05;color:var(--deep);margin:0 0 18px}
-.hero h1{font-size:clamp(3.1rem,10vw,7.2rem);color:#fff9e9;letter-spacing:.03em}
-.hero p{font-size:clamp(1.08rem,2.8vw,1.42rem);max-width:850px;color:#fff4d8}
-.subtitle{font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem)!important;line-height:1.25!important}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;padding:13px 18px;border-radius:22px;border:1px solid rgba(54,92,59,.18);box-shadow:var(--soft);font-weight:900;line-height:1.2}
-.btn small{font-weight:600;color:rgba(38,51,38,.78)}
-.btn.primary{background:linear-gradient(135deg,var(--forest),var(--leaf));color:white}
-.btn.primary small{color:#f7efd7}
-.btn.paper{background:rgba(255,253,247,.9);color:var(--deep)}
-.btn.gold{background:linear-gradient(135deg,#efd99a,var(--gold));color:#3e2b13}
-section{padding:72px 0;border-top:1px solid var(--line)}
-.card,.callout,.chapter,.promise,.note,.practice,.recap{background:rgba(255,253,247,.86);border:1px solid var(--line);border-radius:30px;padding:clamp(22px,4vw,42px);box-shadow:var(--soft)}
-.grid{display:grid;gap:22px}
-.two{grid-template-columns:1.2fr .8fr}
-.three{grid-template-columns:repeat(3,1fr)}
-h2{font-size:clamp(2.05rem,5vw,4rem)}
-h3{font-size:clamp(1.45rem,3vw,2.3rem)}
-.lead{font-size:1.22rem;color:#43382e}
-.note{border-style:dashed;background:rgba(246,242,234,.76)}
-.note:before{content:"Come walk with us";font-family:var(--hand);display:block;color:var(--terra);font-size:1.9rem;margin-bottom:8px}
-.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:36px auto;color:var(--earth);opacity:.95}
-.divider:before,.divider:after{content:"";height:1px;width:min(180px,28vw);background:linear-gradient(90deg,transparent,var(--earth),transparent)}
-.divider span{font-family:var(--hand);font-size:2rem;color:var(--terra)}
-.chapter-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
-.chapter-list a{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 8px 18px rgba(23,56,34,.06)}
-.toc{position:sticky;top:75px;align-self:start}
-.layout{display:grid;grid-template-columns:270px 1fr;gap:28px}
-.toc .card{padding:18px;border-radius:22px}
-.toc a{display:block;padding:9px 10px;border-radius:12px;font-size:.92rem;color:var(--deep)}
-.toc a:hover{background:var(--sage)}
-ul.clean{padding-left:1.1rem}
-ul.clean li{margin:.4rem 0}
-.steps{display:grid;gap:16px}
-.step{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:start;padding:16px;border-radius:22px;background:rgba(246,242,234,.66);border:1px solid var(--line)}
-.num{width:48px;height:48px;border-radius:999px;background:var(--forest);color:white;display:grid;place-items:center;font-weight:900}
-.warning{border-left:6px solid var(--terra)}
-.footer{padding:70px 0;background:var(--deep);color:#f8f0d8;text-align:center}
-.footer h2{color:#fff2c5}
-.footer p{color:#f6ead2}
-.refs{font-size:.92rem;color:#51483f}
-@media(max-width:860px){
-  body{font-size:16px}
-  .hero{padding:68px 0 48px}
-  .two,.three,.layout{grid-template-columns:1fr}
-  .toc{position:static}
-  .chapter-list{grid-template-columns:1fr}
-  section{padding:48px 0}
-  .navinner{height:54px}
-  .brand span{display:none}
-  .btn{width:100%;align-items:flex-start}
-}
-</style>
-<style>
-.solution{border-left:5px solid var(--gold)}
-.practice h3:before{content:"✦ ";color:var(--terra)}
-</style>
-<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-library.netlify.app/Thriving-in-These-Times.html" rel="canonical"/><meta content="Thriving in These Times · Calm Resilience Guide · Awakening Eden" property="og:title"/><meta content="A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope." property="og:description"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-library.netlify.app/Thriving-in-These-Times.html" property="og:url"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Thriving in These Times · Calm Resilience Guide · Awakening Eden" name="twitter:title"/><meta content="A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope." name="twitter:description"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" name="twitter:image"/><link href="manifest.webmanifest" rel="manifest"/><meta content="Awakening Eden" name="application-name"/><meta content="Awakening Eden" name="apple-mobile-web-app-title"/><meta content="yes" name="mobile-web-app-capable"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="light" name="color-scheme"/><meta content="Benjy &amp; Sofia · Awakening Eden" name="author"/><meta content="en_GB" property="og:locale"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image:secure_url"/><meta content="image/jpeg" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Awakening Eden hand-drawn Tree of Life heart logo and Living Library identity" property="og:image:alt"/><meta content="Awakening Eden hand-drawn Tree of Life heart logo and Living Library identity" name="twitter:image:alt"/><link href="favicon.ico" rel="icon" sizes="any"/><link href="eden-favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="eden-apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><meta content="telephone=no" name="format-detection"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image:url"/><link href="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" rel="image_src"/><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Thriving in These Times · Calm Resilience Guide · Awakening Eden",
-  "description": "A practical guide for calm resilience in uncertain times: nervous-system care, breathwork, food security, community, simplicity and grounded hope.",
-  "url": "https://awakening-eden-library.netlify.app/Thriving-in-These-Times.html",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Awakening Eden Living Library",
-    "url": "https://awakening-eden-library.netlify.app/"
-  },
-  "inLanguage": "en",
-  "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "url": "https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg",
-    "width": 1200,
-    "height": 630
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thriving in These Times | A Calm Resilience Guide | Awakening Eden</title>
+  <meta name="description" content="A free, heart-centred guide to calm resilience, nervous-system care, breath, sleep, food, water, community, conscious preparedness and grounded hope.">
+  <meta name="author" content="Benjy &amp; Sofia · Awakening Eden">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#414936">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://awakening-eden-library.netlify.app/thriving-in-these-times">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="eden-favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="eden-apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Awakening Eden Living Library">
+  <meta property="og:title" content="Thriving in These Times | A Calm Companion for a Changing World">
+  <meta property="og:description" content="Not a fear manual. A living companion for becoming rooted, clear, kind and capable while the world changes around us.">
+  <meta property="og:url" content="https://awakening-eden-library.netlify.app/thriving-in-these-times">
+  <meta property="og:image" content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Awakening Eden Tree of Life heart portal surrounded by hand-drawn botanicals">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thriving in These Times | A Calm Resilience Guide">
+  <meta name="twitter:description" content="Practical hope, nervous-system care, conscious preparedness and regenerative action.">
+  <meta name="twitter:image" content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Thriving in These Times",
+    "alternativeHeadline": "A Calm Companion for a Changing World",
+    "description": "A free guide to calm resilience, nervous-system care, conscious preparedness, community and grounded hope.",
+    "url": "https://awakening-eden-library.netlify.app/thriving-in-these-times",
+    "mainEntityOfPage": "https://awakening-eden-library.netlify.app/thriving-in-these-times",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "author": [
+      {"@type": "Person", "name": "Benjy"},
+      {"@type": "Person", "name": "Sofia"}
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Awakening Eden",
+      "url": "https://awakening-eden-library.netlify.app/"
+    },
+    "image": "https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg",
+    "keywords": ["resilience", "nervous system care", "preparedness", "regenerative living", "community resilience", "grounded hope"]
   }
-}</script>  <link rel="stylesheet" href="eden-v22.css?v=22.0">
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Source+Sans+3:wght@400;600;700;800&amp;family=Caveat:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/guides/thriving-lantern-botanical-v1.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="eden-v23.css?v=23.2.1">
+  <link rel="stylesheet" href="eden-guide-v23.css?v=23.2.1">
+  <link rel="stylesheet" href="eden-thriving-v23.css?v=23.2.1">
 </head>
-<body class="page-guide"><a class="skip" href="#main">Skip to content</a>
-<header class="topbar">
-<div class="wrap navinner">
-<a class="brand" href="/"><img alt="" aria-hidden="true" class="eden-nav-emblem" decoding="async" height="46" loading="eager" src="eden-logo-tree-heart.svg" width="46"/><span>Awakening Eden</span></a>
-<a href="#quickstart">Quick Start</a><a href="#interbeing">Interbeing</a><a href="#nervous">Nervous System</a><a href="#breath">Breath</a><a href="#food">Food</a><a href="#prepared">Preparedness</a><a href="#community">Community</a><a href="#support">Gift Back</a>
-</div>
-</header>
-<header class="hero">
-<div class="wrap">
-<p class="hand">A calm companion for changing times</p>
-<div class="kicker">Living Companion No. 02</div>
-<h1>Thriving in These Times</h1>
-<p class="subtitle">Practical hope, nervous-system care, conscious preparedness and regenerative action.</p>
-<p>Not a fear manual. A living companion for becoming rooted, clear, kind and capable while the world changes around us.</p>
-<div class="btns">
-<a class="btn primary" href="#quickstart">Begin with the Quick Start <small>What to do first</small></a>
-<a class="btn paper" href="Thriving-in-These-Times-Guide.pdf">Take this Living Companion with you <small>Download the printable version</small></a>
-<a class="btn gold" href="#support">Gift Back <small>Help this library grow</small></a>
-</div>
-</div>
-</header>
-<main id="main">
-<section id="quickstart">
-<div class="wrap layout">
-<aside class="toc">
-<div class="card">
-<strong>Contents</strong>
-<a href="#quickstart">Quick Start</a>
-<a href="#interbeing">Regenerative interbeing</a>
-<a href="#nervous">Nervous system</a>
-<a href="#breath">Breathwork</a>
-<a href="#nature">Nature &amp; rest</a>
-<a href="#food">Food &amp; nutrients</a>
-<a href="#prepared">Preparedness</a>
-<a href="#tech">Living well with technology</a>
-<a href="#community">Community</a>
-<a href="#daily">Daily rhythm</a>
-<a href="#support">Support</a>
-</div>
-</aside>
-<article class="chapter">
-<div class="kicker">If you only read one page</div>
-<h2>What to do first</h2>
-<p class="lead">When life feels uncertain, do not try to fix everything. Root yourself. Then take one clear step.</p>
-<div class="steps">
-<div class="step"><div class="num">1</div><div><strong>Calm your body.</strong><br/>Three minutes of slow breathing can change the quality of your next decision.</div></div>
-<div class="step"><div class="num">2</div><div><strong>Know your place.</strong><br/>Learn your bioregion, seasons, rainfall, fire risks, water sources, local growers and neighbours.</div></div>
-<div class="step"><div class="num">3</div><div><strong>Grow something.</strong><br/>Start with herbs, greens, potatoes, beans, fruit trees, compost and one protected growing bed.</div></div>
-<div class="step"><div class="num">4</div><div><strong>Build a simple home buffer.</strong><br/>Food you already eat, water, first aid, light, warmth, basic tools, important documents.</div></div>
-<div class="step"><div class="num">5</div><div><strong>Find your people.</strong><br/>Community is resilience. Share meals, seeds, tools, skills and honest conversations.</div></div>
-</div>
-<p class="note">Hope is not passive. Hope becomes real when it turns into one small act of care.</p>
-</article>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="interbeing">
-<div class="wrap grid two">
-<article class="chapter">
-<h2>Regenerative interbeing</h2>
-<p class="lead">Thriving begins when we remember that we are not separate from the web of life.</p>
-<p>We are shaped by soil, water, food, breath, sunlight, relationships, culture and place. When we care for ourselves, we become more capable of caring for others. When we care for land, the land nourishes us in return.</p>
-<p>This is what we call <strong>regenerative interbeing</strong>: living in ways that help ourselves, our communities and the living world flourish together.</p>
-<p>For Benjy, this understanding arrived through documentaries that opened the heart, meditation in nature, yoga, tree planting, ocean experiences, community and the growing willingness to say: <em>Yes. I am ready to do the work.</em></p>
-</article>
-<aside class="callout">
-<h3>The balance</h3>
-<p>Feeling the oneness of life can awaken deep care. It can also open us to grief. The path is not to shut down — and not to burn out.</p>
-<p><strong>Feel deeply. Act wisely. Rest often. Walk together.</strong></p>
-</aside>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="nervous">
-<div class="narrow">
-<h2>Begin with your nervous system</h2>
-<p class="lead">A regulated body is one of the greatest forms of preparedness.</p>
-<p>When the nervous system is constantly activated, everything feels urgent. When the body softens, we can listen, plan, repair, collaborate and respond more wisely.</p>
-<div class="grid two">
-<div class="practice"><h3>Grounding practice</h3><p>Stand barefoot if possible. Feel your feet. Look around slowly. Name five things you can see, four things you can feel, three things you can hear, two things you can smell, and one thing you appreciate.</p></div>
-<div class="practice"><h3>Shake and release</h3><p>Shake your hands, arms, shoulders and legs for 60–90 seconds. Then pause. Feel the body. Let the breath settle. Animals naturally discharge stress through movement; we can remember this too.</p></div>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="breath">
-<div class="wrap">
-<div class="kicker">Breath is a doorway</div>
-<h2>Breathwork for calm, energy and presence</h2>
-<p class="lead">Start gently. Strong breath practices can be powerful, but they are not suitable for everyone.</p>
-<div class="card warning">
-<strong>Safety note:</strong> If you are pregnant, have cardiovascular concerns, epilepsy, panic disorder, serious mental health concerns, high blood pressure, or you feel dizzy, practise gently and seek qualified guidance. Do not practise intense breathing while driving, in water, or anywhere fainting would be dangerous.
+<body class="guide-one guide-two">
+  <a class="skip-link" href="#guide-content">Skip to the guide</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Awakening Eden home">
+        <img src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="" decoding="async">
+        <span class="brand-words"><strong>Awakening Eden</strong><small>The Living Library</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
+        <span class="menu-button__lines" aria-hidden="true"></span><span class="menu-button__label">Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+        <a href="/start-here" aria-current="page">Begin here</a>
+        <a href="/living-library">Living Library</a>
+        <a href="/journey">Our journey</a>
+        <a href="/work-with-benjy">Work with Benjy</a>
+        <a class="nav-gift" href="#gift-back">Gift back <span aria-hidden="true">♡</span></a>
+      </nav>
     </div>
-<div class="grid two">
-<article class="practice"><h3>1. Heart-coherent breathing</h3><p>Place a hand on your heart. Inhale gently for about 5–6 seconds. Exhale for about 5–6 seconds. Bring to mind gratitude, appreciation or love. Continue for 3–5 minutes.</p><p>This slow rhythm is commonly used to support heart-rate variability and a calmer state. Keep it soft. No forcing.</p></article>
-<article class="practice"><h3>2. Longer exhale breathing</h3><p>Inhale for 4 seconds. Exhale for 6–8 seconds. Repeat for 2–5 minutes. A longer exhale can gently invite the body toward relaxation.</p></article>
-<article class="practice"><h3>3. Belly breathing</h3><p>Lie down or sit comfortably. Let the belly expand on the inhale and soften on the exhale. Imagine the breath massaging the nervous system from inside.</p></article>
-<article class="practice"><h3>4. Alternate nostril breathing</h3><p>A gentle yogic practice for balance. Close one nostril, inhale. Switch sides, exhale. Continue slowly. Keep the breath smooth and easy.</p></article>
-<article class="practice"><h3>5. Kapalabhati / fire breath</h3><p>Short, active exhales through the nose with passive inhales. Traditionally used as an energising yogic breath. Start with 15–30 gentle pumps, then rest and breathe normally. Learn from an experienced teacher if new.</p></article>
-<article class="practice"><h3>6. Energise, hold, release</h3><p>For experienced practitioners only: a short round of energising breath, a comfortable pause, gently drawing awareness upward through the body, then full relaxation and release. Keep it safe, short and respectful of your body.</p></article>
-</div>
-<div class="note"><p>More intensive connected or holotropic-style breathwork can be deeply powerful, but is best practised with trained facilitators and proper support.</p></div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="nature">
-<div class="wrap grid two">
-<article class="chapter">
-<h2>Nature is medicine</h2>
-<p>Walk. Sit under trees. Touch soil. Watch birds. Put your phone away for a while. Nature reminds the body of rhythms older than stress.</p>
-<ul class="clean">
-<li>Morning sunlight when possible.</li>
-<li>Daily walks without headphones sometimes.</li>
-<li>Gardening, even for ten minutes.</li>
-<li>Water, ocean, rivers, rain, mist.</li>
-<li>Quiet time with trees.</li>
-</ul>
-</article>
-<aside class="callout">
-<h3>Regeneration includes rest</h3>
-<p>Forests have seasons. Fields lie fallow. Humans need recovery too. Rest is not laziness. Rest allows care to continue.</p>
-</aside>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="food">
-<div class="wrap">
-<h2>Food, nutrients and living resilience</h2>
-<p class="lead">Foundations first: sleep, sunlight, movement, whole foods, clean water, community and nervous-system care.</p>
-<div class="grid three">
-<div class="card"><h3>Grow staples</h3><p>Potatoes, sweet potatoes, beans, pumpkins, onions, garlic, greens, herbs, fruit trees, nuts where suitable, and climate-appropriate perennials.</p></div>
-<div class="card"><h3>Build soil</h3><p>Compost, mulch, manure where safe, worm castings, leaves, wood chips, biochar when charged, chop-and-drop and living roots.</p></div>
-<div class="card"><h3>Preserve abundance</h3><p>Ferment, dry, pickle, freeze, store seeds, share surplus and learn simple seasonal cooking.</p></div>
-</div>
-<h3>Nutrients many people explore</h3>
-<p class="refs">This is educational, not medical advice. Needs differ. Speak with a qualified health professional if pregnant, on medication, managing thyroid/heart/kidney conditions, or unsure.</p>
-<div class="grid two">
-<div class="card"><h3>Vitamin D3 + K2</h3><p>Often discussed where sunlight exposure is low. Testing can help guide whether supplementation is appropriate.</p></div>
-<div class="card"><h3>Magnesium bisglycinate</h3><p>Commonly used for relaxation and muscle support. Food sources include nuts, seeds, legumes, cacao and leafy greens.</p></div>
-<div class="card"><h3>Omega-3 / algae oil</h3><p>Algae oil can provide DHA/EPA for people avoiding fish. Food foundations still matter.</p></div>
-<div class="card"><h3>Iodine</h3><p>Essential for thyroid hormone production, but too much can be harmful. Be especially careful with kelp or high-dose products.</p></div>
-<div class="card"><h3>Minerals and sea salt</h3><p>Mineral balance matters, especially with sweating, heat and physical work. Avoid excessive salt if medically advised.</p></div>
-<div class="card"><h3>Lion's mane mushroom</h3><p>Many people explore fruiting-body and mycelium extracts. Research is still developing; choose quality and listen to your body.</p></div>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="prepared">
-<div class="wrap grid two">
-<article class="chapter">
-<h2>Conscious preparedness</h2>
-<p class="lead">Preparedness is not fear. It is love made practical.</p>
-<ul class="clean">
-<li>Keep a sensible buffer of foods you already eat.</li>
-<li>Store water appropriate to your situation.</li>
-<li>Have first aid basics and know how to use them.</li>
-<li>Keep light, batteries, blankets, basic tools and important documents accessible.</li>
-<li>Learn simple natural remedies and when professional care is needed.</li>
-<li>Know neighbours, local growers, local risks and community support networks.</li>
-</ul>
-</article>
-<aside class="callout">
-<h3>Know your bioregion</h3>
-<p>Learn your rainfall, fire season, winds, soils, local trees, edible plants, water flows, community gardens, farmers' markets and elders who know the place.</p>
-</aside>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="tech">
-<div class="narrow">
-<h2>Living well with technology</h2>
-<p class="lead">Technology can serve life when we use it consciously.</p>
-<p>For EMF concerns, we recommend simple low-risk habits first: distance, airplane mode when practical, not sleeping with the phone next to your head, wired connections when convenient, screen-free time, outdoor time and fewer unnecessary notifications.</p>
-<p>Some people explore EMF shielding products. Choose carefully, look for independent testing, and avoid products that make extreme health promises. Current mainstream health agencies generally do not find consistent evidence of harm from radiofrequency exposure below established limits, while practical exposure-reduction habits can still be part of a calm digital lifestyle.</p>
-<div class="recap"><h3>One action today</h3><p>Tonight, charge your phone away from your bed or use airplane mode if appropriate.</p></div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="community">
-<div class="wrap grid two">
-<article class="chapter">
-<h2>Community is resilience</h2>
-<p>No one thrives alone. Know your neighbours. Share meals. Exchange seeds. Learn skills together. Start small circles of trust, laughter, honesty and practical care.</p>
-<p>In changing times, the most important infrastructure may be human relationship.</p>
-</article>
-<aside class="note"><p>Authentic connection is preparedness. A shared meal can be as important as a stocked shelf.</p></aside>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="daily">
-<div class="wrap">
-<h2>A seven-day reset</h2>
-<div class="grid three">
-<div class="card"><h3>Day 1</h3><p>Breathe for five minutes and write what matters most.</p></div>
-<div class="card"><h3>Day 2</h3><p>Walk your neighbourhood and notice water, food, trees and people.</p></div>
-<div class="card"><h3>Day 3</h3><p>Plant one herb or prepare one bed.</p></div>
-<div class="card"><h3>Day 4</h3><p>Create a simple food and water buffer.</p></div>
-<div class="card"><h3>Day 5</h3><p>Call someone. Build relationship before crisis.</p></div>
-<div class="card"><h3>Day 6</h3><p>Choose one skill to learn this month.</p></div>
-<div class="card"><h3>Day 7</h3><p>Rest, reflect and celebrate one small victory.</p></div>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="support">
-<div class="narrow promise">
-<h2>Before you go...</h2>
-<p>May this companion help you feel more hopeful, more connected and more capable of caring for yourself, others and the living world.</p>
-<p>Take one action today. Then rest. Then continue.</p>
-<div class="btns">
-<a class="btn paper" href="Thriving-in-These-Times-Guide.pdf">Take this Living Companion with you <small>Download the printable version</small></a>
-<a class="btn primary" href="/start-here">Return to Step One <small>Awakening Regeneration</small></a>
-<a class="btn gold" href="https://www.paypal.me/BSauber">Gift Back <small>Support free guides, videos and workshops</small></a>
-</div>
-</div>
-<div class="card" style="margin-top:24px;background:linear-gradient(135deg,rgba(255,253,247,.96),rgba(216,180,94,.22));">
-<h3>Help this seed travel</h3>
-<p>If this companion brings you inspiring hope and practical guidance, share it with one person who might need a softer doorway into regeneration. Small ripples are how the forest begins.</p>
-<div class="btns">
-<a class="btn paper" href="https://wa.me/?text=I%20found%20this%20beautiful%20free%20Living%20Library%20for%20regeneration%2C%20awakening%2C%20practical%20hope%2C%20films%2C%20guides%20and%20community.%20Come%20walk%20with%20us%3A%20https%3A//awakening-eden-library.netlify.app/" rel="noopener noreferrer" target="_blank">Share on WhatsApp <small>Send the Living Library to a friend</small></a>
-<a class="btn paper" href="https://t.me/share/url?url=https%3A%2F%2Fawakening-eden-library.netlify.app%2F&amp;text=Awakening%20Eden%20Living%20Library%20%C2%B7%20inspiring%20hope%20and%20practical%20guidance" rel="noopener noreferrer" target="_blank">Share on Telegram <small>Let the ripple travel</small></a>
-<a class="btn gold" href="https://www.paypal.me/BSauber" rel="noopener noreferrer" target="_blank">Gift Back <small>Support our journey and mission</small></a>
-</div>
-</div>
-</section><div aria-hidden="true" class="eden-section-divider"><img alt="" decoding="async" height="64" loading="lazy" src="eden-logo-tree-heart.svg" width="64"/></div>
-<section id="references">
-<div class="narrow refs">
-<h2>Sources to explore</h2>
-<p>For supplements, see the NIH Office of Dietary Supplements fact sheets. For iodine safety, see NIH and thyroid-health guidance. For breathing and HRV, search resonance/coherent breathing research around approximately six breaths per minute. For radiofrequency exposure, see WHO and national public-health summaries. This guide is educational and not a substitute for personal medical advice.</p>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="narrow">
-<h2>Hope in action.</h2>
-<p>One breath. One seed. One neighbour. One act of care. This is how resilience grows.</p>
-<p><strong>With love, Benjy &amp; Sofia · Awakening Eden</strong></p>
-</div>
-</footer>
-<script src="eden-v22.js?v=22.0" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body></html>
+  </header>
+
+  <main id="guide-content">
+    <header class="guide-masthead" id="top">
+      <img class="guide-edge" src="assets/frames/seed-to-tree-frame-clean-04.webp" width="360" height="1080" alt="" aria-hidden="true" decoding="async">
+      <img class="guide-edge guide-edge--right" src="assets/frames/seed-to-tree-frame-clean-04.webp" width="360" height="1080" alt="" aria-hidden="true" decoding="async">
+      <div class="container guide-masthead__grid">
+        <div>
+          <p class="handwritten">A small lantern for changing times</p>
+          <p class="guide-number">Doorway Two · Living Guide 02</p>
+          <h1>Thriving in These Times</h1>
+          <p class="guide-promise">A calm companion for becoming rooted, clear, kind and capable while the world changes around us.</p>
+          <p class="guide-intro">Not a fear manual. A gentle, practical path through nervous-system care, breath, sleep, food, water, community, conscious preparedness and hope that has hands.</p>
+          <ul class="guide-meta" aria-label="Guide details">
+            <li>About 24 minutes</li><li>Practice-led</li><li>Free forever</li>
+          </ul>
+          <div class="guide-controls">
+            <a class="button button--primary" href="#welcome">Read online <span aria-hidden="true">↓</span></a>
+            <a class="button button--secondary" href="Thriving-in-These-Times-Guide.pdf?v=23.2.1" download>Take the guide with you</a>
+            <a class="button button--gift" href="#gift-back">Gift back <span aria-hidden="true">♡</span></a>
+          </div>
+        </div>
+        <figure class="guide-hero-art">
+          <img class="guide-hero-art__lantern" src="assets/guides/thriving-lantern-botanical-v1.webp" width="900" height="1350" alt="A glowing hand-drawn lantern held within olive leaves, eucalyptus, fern and wildflowers" decoding="async" fetchpriority="high">
+          <img class="guide-hero-art__corner" src="assets/corners/botanical-corner-04.webp" width="287" height="309" alt="" aria-hidden="true" decoding="async">
+          <figcaption>Find the next kind, capable step.</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <div class="companion-ribbon" aria-label="Guide qualities">
+      <div class="container companion-ribbon__inner">
+        <span>Calm before urgency</span><span>Care before perfection</span><span>Relationship before isolation</span><span>One step at a time</span>
+      </div>
+    </div>
+
+    <section class="section guide-shell" id="welcome">
+      <img class="guide-edge" src="assets/frames/seed-to-tree-frame-clean-04.webp" width="360" height="1080" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container guide-content">
+        <div class="opening-grid">
+          <article class="opening-letter">
+            <p class="handwritten">A little breath before we begin</p>
+            <h2>You do not have to carry the whole world at once.</h2>
+            <p class="lead">When the future feels uncertain, our first task is not to know everything. It is to become present enough to meet what is here.</p>
+            <p>We made this companion for the moments when the news is loud, the heart is tender and the list of what might need changing feels impossibly long. It begins close to home: one breath, one nourishing meal, one honest conversation, one useful skill, one patch of living soil.</p>
+            <p>Preparedness can be loving rather than fearful. Resilience can be soft as well as strong. Thriving does not mean never struggling; it means growing the inner and outer relationships that help us respond, recover and keep caring.</p>
+            <p>Read slowly. Skip freely. Let one page become one living action, then close the screen and return to your life.</p>
+          </article>
+          <aside class="walk-card" aria-labelledby="walk-title">
+            <p class="handwritten">Come walk with us</p>
+            <h2 id="walk-title">How to use this companion</h2>
+            <ol>
+              <li><span><strong>Arrive first.</strong><br>Notice the chair, your feet and one full exhale.</span></li>
+              <li><span><strong>Choose what is useful.</strong><br>You do not need to complete every chapter.</span></li>
+              <li><span><strong>Practise gently.</strong><br>Stop if something does not feel right for your body.</span></li>
+              <li><span><strong>Share the light.</strong><br>Resilience grows through relationship.</span></li>
+            </ol>
+          </aside>
+        </div>
+
+        <nav class="chapter-nav" aria-label="Guide chapters">
+          <p class="chapter-nav__title">Choose the doorway you need today...</p>
+          <ol>
+            <li><a href="#begin">Begin with yourself</a></li>
+            <li><a href="#interbeing">Regenerative interbeing</a></li>
+            <li><a href="#nervous-system">Nervous system</a></li>
+            <li><a href="#breath">Breath</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#sleep">Sleep</a></li>
+            <li><a href="#water">Water</a></li>
+            <li><a href="#movement">Movement</a></li>
+            <li><a href="#nature">Nature and rest</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#preparedness">Preparedness</a></li>
+            <li><a href="#rhythm">Daily rhythm</a></li>
+            <li><a href="#hope">Hope in action</a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <div class="guide-reading-layout">
+      <nav class="guide-toc" aria-label="On this page">
+        <p class="guide-toc__title">Keep this lantern nearby</p>
+        <ol>
+          <li><a href="#begin">Begin with yourself</a></li>
+          <li><a href="#interbeing">Interbeing</a></li>
+          <li><a href="#nervous-system">Nervous system</a></li>
+          <li><a href="#breath">Breath</a></li>
+          <li><a href="#food">Food</a></li>
+          <li><a href="#sleep">Sleep</a></li>
+          <li><a href="#water">Water</a></li>
+          <li><a href="#movement">Movement</a></li>
+          <li><a href="#nature">Nature and rest</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#preparedness">Preparedness</a></li>
+          <li><a href="#rhythm">Daily rhythm</a></li>
+          <li><a href="#hope">Hope in action</a></li>
+        </ol>
+      </nav>
+
+      <div class="guide-story">
+        <section class="guide-chapter" id="begin">
+          <article class="chapter-copy">
+            <img class="chapter-botanical" src="assets/growth/growth-stage-02.webp" width="375" height="303" alt="A hand-drawn seed beginning to root" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter one · Come home</p>
+            <h2>Begin with yourself</h2>
+            <p>Before solving the future, meet the person who is here now.</p>
+            <p>Uncertainty can pull attention into imagined tomorrows. The body tightens, the mind races, and everything begins to feel equally urgent. A pause is not denial. It is how we recover enough choice to respond wisely.</p>
+            <p>Start with what is directly true: the support beneath you, the temperature of the air, the sound furthest away, the next breath leaving your body. Let your horizon become this hour. Ask what would make the next hour kinder and more workable.</p>
+            <aside class="field-note"><h3>A gentle understanding</h3><p>Resilience is not armour. It is the capacity to bend, receive support, recover and return to relationship.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Put both feet on the ground. Exhale slowly three times. Name one thing that needs care today and one thing that can wait.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> What helps you feel most like yourself again?</p>
+          </article>
+        </section>
+
+        <div class="botanical-divider" aria-hidden="true"><img src="assets/dividers/botanical-divider-04.webp" width="739" height="120" alt="" loading="lazy" decoding="async"></div>
+
+        <section class="guide-chapter guide-chapter--light" id="interbeing">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/growth/growth-stage-03.webp?v=23.2.1" width="375" height="303" alt="A rooted hand-drawn seedling" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter two · Remember the web</p>
+            <h2>Regenerative interbeing</h2>
+            <p>Your wellbeing has never been yours alone.</p>
+            <p>We are shaped by soil, water, food, sunlight, breath, culture, place and relationship. When we care for ourselves, we become more capable of caring for others. When we protect land and water, the living world nourishes us in return.</p>
+            <p>Regenerative interbeing is the practice of living as a participant in this web. It replaces the lonely question “How do I survive?” with the more fertile question “How can we help life flourish together?” The answer might be a garden, a shared meal, a repaired friendship, a protected spring or the courage to ask for help.</p>
+            <aside class="voice-note"><h3>From Benjy</h3><p>The deepest lessons I have received were not separate subjects. Water led to soil; soil led to food; food led to community; community led back to the heart. Everything kept showing me relationship.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Choose one ordinary thing - a glass of water, a meal or a shirt - and trace five relationships that brought it to you.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Where are you already held by life?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter" id="nervous-system">
+          <article class="chapter-copy">
+            <img class="chapter-botanical" src="assets/growth/growth-stage-04.webp" width="375" height="303" alt="A hand-drawn young plant with strengthening roots" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter three · Find the ground</p>
+            <h2>Begin with your nervous system</h2>
+            <p>A steadier body gives wise action somewhere to begin.</p>
+            <p>Stress responses are not personal failures. They are protective patterns. When activation stays high, the mind may scan for danger, sleep may become difficult and small decisions may feel enormous. We can offer the body signals of present safety without pretending that every circumstance is safe or simple.</p>
+            <ul class="practice-steps">
+              <li><span><strong>Orient.</strong> Slowly look around and let your eyes rest on colours, shapes and signs of life.</span></li>
+              <li><span><strong>Feel support.</strong> Notice where the chair, ground or wall is holding your weight.</span></li>
+              <li><span><strong>Release.</strong> Unclench your jaw, lower your shoulders and lengthen one exhale.</span></li>
+              <li><span><strong>Connect.</strong> If it feels supportive, hear a trusted voice or sit near someone calm.</span></li>
+            </ul>
+            <p class="gentle-warning"><strong>Please be gentle:</strong> These practices are educational and cannot replace trauma-informed or medical care. If grounding increases distress, stop, choose a familiar support and seek qualified help when needed.</p>
+            <div class="living-action"><h3>One living action</h3><p>Try the 5-4-3-2-1 practice: notice five things you see, four you feel, three you hear, two you smell and one you appreciate.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Which simple signal tells your body, “I am here now”?</p>
+          </article>
+        </section>
+
+        <div class="botanical-divider" aria-hidden="true"><img src="assets/dividers/botanical-divider-06.webp" width="739" height="120" alt="" loading="lazy" decoding="async"></div>
+
+        <section class="guide-chapter guide-chapter--light" id="breath">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/growth/growth-stage-05.webp" width="375" height="303" alt="A hand-drawn growing plant" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter four · Make room</p>
+            <h2>Breath as a doorway</h2>
+            <p>You do not need a heroic breathing practice. Begin with a comfortable breath.</p>
+            <p>Let the inhale arrive without pulling. Allow the exhale to become slightly slower, as if softly fogging a mirror with your mouth closed. If counting feels pleasant, try inhaling for four and exhaling for five or six. Continue for one to three minutes and remain within ease.</p>
+            <p>A humming exhale, a sigh or quietly singing can also help breath become less mechanical and more human. The aim is not to force calm. It is to offer the body a little more space.</p>
+            <p class="gentle-warning"><strong>Breath safety:</strong> Stop if you feel dizzy, numb, panicked or unwell. Avoid intense breath holds or rapid breathing when pregnant, driving, in water, at height, or if you have relevant heart, blood-pressure, seizure, respiratory or mental-health concerns. Seek qualified individual guidance.</p>
+            <aside class="voice-note"><h3>From Sofia</h3><p>Sometimes the sacred practice is not to transcend what we feel, but to breathe beside it with tenderness until we remember we are not alone.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Place a hand on your heart or belly. Take six easy breaths with an exhale just a little longer than the inhale.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> What changes when breath becomes companionship rather than performance?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter" id="food">
+          <article class="chapter-copy">
+            <img class="chapter-botanical" src="assets/corners/botanical-corner-03.webp" width="287" height="309" alt="Hand-drawn herbs and wildflowers framing the chapter" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter five · Nourish the roots</p>
+            <h2>Food and living resilience</h2>
+            <p>Food security begins before a crisis and closer than a warehouse.</p>
+            <p>Start with foundations: regular meals you digest well, varied whole foods, enough protein and fibre for your needs, and a small buffer of staples you already know how to cook. Then grow relationship around the food: know a farmer, join a seed exchange, learn what grows in your climate, preserve a seasonal surplus, or plant one perennial.</p>
+            <p>Gardens become more resilient when soil stays covered, roots remain living, water is welcomed into the ground and diversity replaces rows of vulnerability. Potatoes, beans, pumpkins, greens, herbs, climate-suited fruit and nut trees, and perennial vegetables can all play a part - but the right design begins with place.</p>
+            <aside class="field-note"><h3>Supplements are not the foundation</h3><p>Needs vary. More is not always better, and supplements can interact with medicines or health conditions. Use evidence-based guidance and qualified care, especially for iodine, high-dose nutrients and long-term use.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Choose one staple you already eat. Add enough for a few extra meals, label the date and begin a calm, rotating pantry rather than an emergency hoard.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Which food skill would make your household more capable and more connected?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter guide-chapter--light" id="sleep">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/corners/botanical-corner-05.webp" width="287" height="309" alt="Hand-drawn olive leaves and quiet wildflowers" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter six · Let night restore you</p>
+            <h2>Sleep is preparation</h2>
+            <p>Rest is not time stolen from the work. It is part of the work.</p>
+            <p>Support sleep with regularity before perfection: a broadly consistent waking time, daylight in the morning, movement during the day, a darker and cooler sleeping space, and a gentle transition away from work and stimulating media. Keep the phone a little farther away if you can. Let the last moments of the day belong to your body again.</p>
+            <p>If sleep problems persist, become severe or arrive with breathing pauses, major mood changes or dangerous fatigue, seek professional support. A beautiful bedtime ritual is helpful; it is not a substitute for needed care.</p>
+            <div class="living-action"><h3>One living action</h3><p>Choose a “lights softer” time tonight. Dim one room, put the phone out of reach and do one quiet thing for ten minutes.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> What would make your evenings feel more like a landing than a collapse?</p>
+          </article>
+        </section>
+
+        <div class="botanical-divider" aria-hidden="true"><img src="assets/dividers/botanical-divider-04.webp" width="739" height="120" alt="" loading="lazy" decoding="async"></div>
+
+        <section class="guide-chapter" id="water">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/illustrations/botanical-corner.svg" width="640" height="640" alt="Hand-drawn leaves unfurling beside the chapter" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter seven · Follow the flow</p>
+            <h2>Water is life and relationship</h2>
+            <p>Resilience grows when we know where our water comes from, how it moves and what happens when the usual system pauses.</p>
+            <p>At home, keep a sensible amount of safe drinking water suited to your household, climate and local guidance. Know how to shut off the mains, where leaks are likely and which filtration or treatment methods are appropriate for your actual water source.</p>
+            <p>On land, water design begins with observation and responsibility. Read contours, soils, catchments, overflow paths, fire risk and legal requirements before moving earth. Thoughtfully placed earthworks, plants, mulch and protected soil can slow, spread and sink rain, recharge the landscape and support aquifer resilience - but poor placement can cause damage. Seek site-specific design where stakes are high.</p>
+            <div class="living-action"><h3>One living action</h3><p>Trace your household water from source to tap to drain. Write down one backup and one place where water could be conserved.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> How would your choices change if water were treated as a guest rather than a product?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter guide-chapter--light" id="movement">
+          <article class="chapter-copy">
+            <img class="chapter-botanical" src="assets/growth/growth-stage-07.webp?v=23.2.1" width="375" height="303" alt="A hand-drawn young tree becoming strong" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter eight · Let energy move</p>
+            <h2>Movement for aliveness</h2>
+            <p>The body does not need punishment. It needs circulation, strength, mobility, play and enough challenge to remember what it can do.</p>
+            <p>Walking, carrying, gardening, dancing, stretching, swimming, climbing stairs and practising balance are all valid forms of movement. Begin from your actual capacity. Small, frequent movement often belongs more easily to life than an ideal routine that never happens.</p>
+            <p>Let movement reconnect you to place: walk the edge of your neighbourhood, learn the slope of the land, visit someone on foot or work in a garden beside others.</p>
+            <div class="living-action"><h3>One living action</h3><p>Move for five minutes in a way that feels friendly: walk, shake, stretch, dance or tend one small garden task.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Which movement leaves you feeling more alive, not merely more accomplished?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter" id="nature">
+          <article class="chapter-copy">
+            <img class="chapter-botanical" src="assets/growth/growth-stage-08.webp" width="375" height="303" alt="A mature hand-drawn Tree of Life" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter nine · Return to the older rhythm</p>
+            <h2>Nature and rest</h2>
+            <p>There are rhythms older than urgency.</p>
+            <p>Sit beneath a tree. Watch birds. Touch soil. Listen to rain without turning it into information. Garden for ten minutes. Walk sometimes without headphones. Let attention widen beyond the small bright rectangle.</p>
+            <p>Nature connection is not a luxury reserved for wild landscapes. It can begin with sky through a window, a street tree, a balcony herb, the movement of clouds or the honest life of compost. Rest belongs here too. Forests have seasons; fields lie fallow; bodies require recovery.</p>
+            <aside class="field-note"><h3>Sacred and silly</h3><p>Lie on the ground. Name the clouds badly. Make tea for a tree. Serious times still need laughter - especially serious times.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Spend ten screen-free minutes with one living being or natural element. Do not improve it. Simply notice.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Where does your attention soften without asking permission?</p>
+          </article>
+        </section>
+
+        <div class="botanical-divider" aria-hidden="true"><img src="assets/dividers/botanical-divider-06.webp" width="739" height="120" alt="" loading="lazy" decoding="async"></div>
+
+        <section class="guide-chapter guide-chapter--light" id="community">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/illustrations/icon-hands-tree.svg" width="256" height="256" alt="Hand-drawn hands holding a living tree" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter ten · We are not alone</p>
+            <h2>Community is resilience</h2>
+            <p>The most important infrastructure may be relationship.</p>
+            <p>Know a neighbour. Share a meal. Exchange seeds. Learn who has tools, transport, medical knowledge, growing experience or simply the gift of staying calm. Offer what you can without trying to become indispensable.</p>
+            <p>Healthy community is not forced closeness. It includes consent, boundaries, repair, listening and room for difference. Begin with small circles of trust and practical care. A message before crisis can become a bridge during it.</p>
+            <aside class="voice-note"><h3>From Benjy &amp; Sofia</h3><p>Across gardens, retreats and circles, we keep returning to this: transformation becomes real when people feel seen enough to participate. We need skills, yes - and we need belonging.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Send one message: “I am strengthening our local circle. Is there a skill, seed, tool or cup of tea you would like to share?”</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> What can you offer easily, and what support is difficult for you to receive?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter" id="preparedness">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/corners/botanical-corner-06.webp" width="287" height="309" alt="Hand-drawn leaves surrounding a small heart" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter eleven · Love made practical</p>
+            <h2>Conscious preparedness</h2>
+            <p>Preparedness is not a performance of fear. It is care that has remembered tomorrow.</p>
+            <p>Begin with the disruptions most realistic for your place: heat, cold, fire, storm, power loss, water interruption, illness, transport delays or temporary isolation. Follow local emergency guidance and adapt for children, elders, animals, disabilities, medicines and climate.</p>
+            <div class="prepared-grid">
+              <article class="prepared-card"><h3>Home basics</h3><p>Water, foods you already eat, first-aid basics, lighting, batteries or safe power, warmth or cooling, hygiene supplies, essential medicines and copies of key information.</p></article>
+              <article class="prepared-card"><h3>Local knowledge</h3><p>Evacuation routes, local hazards, emergency contacts, water sources, neighbours who may need help, and the plans of your household.</p></article>
+              <article class="prepared-card"><h3>Useful skills</h3><p>First aid, cooking from staples, safe water treatment, simple repair, growing food, fire awareness, navigation, communication and emotional steadiness.</p></article>
+              <article class="prepared-card"><h3>Gentler technology</h3><p>Back up key data, keep devices charged when risk is high, use airplane mode or distance when practical, and create screen-free spaces for sleep and attention.</p></article>
+            </div>
+            <p>For EMF concerns, begin with low-cost choices: distance, fewer unnecessary wireless devices, wired connections when convenient and not sleeping with a phone beside your head. Evidence and guidance continue to evolve; avoid alarming claims and products promising guaranteed protection. Shielding can sometimes change exposure patterns, so specialist measurement is wiser than guesswork.</p>
+            <div class="living-action"><h3>One living action</h3><p>Choose one likely local disruption. Write a one-page plan with people, supplies, communication and a calm first step.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Which preparation would give your household the most genuine ease?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter guide-chapter--light" id="rhythm">
+          <article class="chapter-copy">
+            <img class="chapter-botanical chapter-botanical--small" src="assets/guides/thriving-lantern-botanical-v1.webp" width="900" height="1350" alt="A small glowing lantern within botanicals" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter twelve · Make it liveable</p>
+            <h2>A rhythm for ordinary days</h2>
+            <p>A resilient life is built mostly when nothing dramatic is happening.</p>
+            <p>Create a rhythm simple enough to return to after disruption. This is not another schedule to perfect. It is a handful of anchors that remind body, home and community how to come back.</p>
+            <div class="rhythm-grid">
+              <div class="rhythm-card"><strong>Morning</strong>Light, water, one conscious breath and a clear next action.</div>
+              <div class="rhythm-card"><strong>Midday</strong>Real food, a little movement and contact with the living world.</div>
+              <div class="rhythm-card"><strong>Evening</strong>Soften light, reduce input, notice what is complete and prepare one thing for tomorrow.</div>
+              <div class="rhythm-card"><strong>Weekly</strong>Tend supplies, soil, relationships, finances, rest and one useful skill.</div>
+            </div>
+            <div class="living-action"><h3>One living action</h3><p>Choose one morning anchor and one evening anchor. Practise them for seven days with more kindness than ambition.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> Which tiny rhythm keeps the lantern lit?</p>
+          </article>
+        </section>
+
+        <section class="guide-chapter" id="hope">
+          <article class="chapter-copy">
+            <img class="chapter-botanical" src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="Awakening Eden Tree of Life with a heart-shaped portal in its trunk" loading="lazy" decoding="async">
+            <p class="chapter-kicker">Chapter thirteen · Keep becoming</p>
+            <h2>Hope in action</h2>
+            <p>Hope becomes trustworthy when it participates.</p>
+            <p>It is not certainty that everything will unfold as we wish. It is the decision to keep feeding life without needing a guarantee. Hope is a covered patch of soil, a repaired roof, a shared meal, a boundary spoken with love, a child learning where water comes from, a tired person choosing rest.</p>
+            <p>We are the architects of the future, and we are the ones we have been waiting for - not as isolated heroes, but as one circle of life, learning to lead and listen together. New Earth is not somewhere else. It is embodied imperfectly, through passionate devotion, practical care, joyful creation, faith, discernment and rest when rest is needed.</p>
+            <aside class="field-note"><h3>You are allowed to begin small</h3><p>One kind and capable action is not too little. It is how a life changes direction.</p></aside>
+            <div class="living-action"><h3>One living action</h3><p>Complete this sentence: <strong>“In the next seven days, I will help life flourish by...”</strong> Choose something visible, possible and shared if you can.</p></div>
+            <p class="reflection-question"><strong>Reflect:</strong> What is yours to do - and what becomes possible when you do it with others?</p>
+          </article>
+        </section>
+      </div>
+    </div>
+
+    <aside class="hope-band" aria-labelledby="hope-band-title">
+      <div class="hope-band__inner">
+        <p class="handwritten">Before the next thing...</p>
+        <h2 id="hope-band-title">Close the guide. Open the door.</h2>
+        <p>Drink water. Feel the sky. Message someone you love. Take one small action, then let that be enough for today.</p>
+      </div>
+    </aside>
+
+    <section class="section author-note" id="note-from-us">
+      <div class="author-grid">
+        <figure class="author-photo">
+          <img src="benjy-sofia-food-forest.webp" width="1600" height="1200" alt="Benjy and Sofia together in a flourishing food forest" loading="lazy" decoding="async">
+          <figcaption>Benjy &amp; Sofia · learning, growing and sharing in service to life</figcaption>
+        </figure>
+        <article class="author-copy">
+          <p class="handwritten">A note from us</p>
+          <h2>We are learning beside you.</h2>
+          <p>These pages grew from years of gardens, retreats, circles, teachers, tears, laughter, mistakes, deep remembering and practical work across continents. They do not contain every answer. They carry some of the questions and practices that helped us return to life.</p>
+          <p>May you use them with discernment. May your version be beautifully your own. May what steadies you become care for the people, places and beings around you.</p>
+          <p class="signature">With so much love, Benjy &amp; Sofia ♡</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="lineage">
+        <p class="handwritten">Learn gently, verify carefully</p>
+        <h2>Health and safety notes</h2>
+        <p>This companion offers general education, not personalised medical, mental-health, nutrition, emergency or land-engineering advice. Bodies, climates and risks differ. Use qualified care and local guidance whenever the stakes are significant.</p>
+        <details>
+          <summary>Trusted starting places</summary>
+          <ul>
+            <li><a href="https://ods.od.nih.gov/factsheets/list-all/" rel="external noopener">NIH Office of Dietary Supplements fact sheets</a></li>
+            <li><a href="https://www.cdc.gov/sleep/about/index.html" rel="external noopener">CDC sleep information</a></li>
+            <li><a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" rel="external noopener">World Health Organization physical activity guidance</a></li>
+            <li><a href="https://www.who.int/health-topics/electromagnetic-fields" rel="external noopener">World Health Organization electromagnetic fields overview</a></li>
+            <li>Local public-health, emergency-management, water, fire and land-use authorities for place-specific advice.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing" id="gift-back">
+      <div class="closing-inner">
+        <img class="closing-tree" src="assets/guides/thriving-lantern-botanical-v1.webp" width="900" height="1350" alt="A glowing lantern held within hand-drawn botanicals" loading="lazy" decoding="async">
+        <p class="handwritten">Keep the lantern travelling</p>
+        <h2>Take what nourishes you. Pass it on.</h2>
+        <p class="closing-blessing">This guide is free so it can reach whoever needs a softer doorway into resilience. If it supports you, share it, join the circle or gift back so more living resources can grow.</p>
+        <div class="guide-controls">
+          <a class="button button--primary" href="Thriving-in-These-Times-Guide.pdf?v=23.2.1" download>Download the guide</a>
+          <a class="button button--secondary" href="Awakening-Regeneration.html">Return to Guide One</a>
+          <a class="button button--gift" href="https://www.paypal.me/BSauber" rel="external noopener">Gift back with PayPal <span aria-hidden="true">♡</span></a>
+        </div>
+        <div class="community-row" aria-label="Community links">
+          <a href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="external noopener">Join the WhatsApp circle</a>
+          <a href="https://t.me/awakening_Eden" rel="external noopener">Join us on Telegram</a>
+          <a href="/living-library">Explore the Living Library</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer guide-footer">
+    <div class="container footer-grid">
+      <a class="footer-brand" href="/" aria-label="Awakening Eden home">
+        <img src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="" loading="lazy" decoding="async">
+        <div><strong>Awakening Eden</strong><small>The Living Library</small></div>
+      </a>
+      <nav aria-label="Footer navigation">
+        <a href="/start-here">Begin here</a><a href="/living-library">Living Library</a><a href="/journey">Our journey</a><a href="/work-with-benjy">Work with Benjy</a>
+      </nav>
+      <p class="footer-blessing">Evolution on ♡</p>
+    </div>
+  </footer>
+
+  <script src="eden-v23.js?v=23.0" defer></script>
+</body>
+</html>

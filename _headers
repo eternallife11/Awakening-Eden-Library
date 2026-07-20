@@ -10,3 +10,21 @@
 
 /eden-v22.js
   Cache-Control: public, max-age=31536000, immutable
+
+/eden-v23.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/eden-guide-v23.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/eden-work-v23.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/eden-v23.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/eden-work-v23.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.pdf
+  Cache-Control: public, max-age=86400

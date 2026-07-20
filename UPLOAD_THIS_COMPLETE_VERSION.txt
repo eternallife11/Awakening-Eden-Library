@@ -1,33 +1,41 @@
-AWAKENING EDEN v21.3 COMPLETE LIVE ROOT UPLOAD
+AWAKENING EDEN v23.4 BUSINESS-READY COMPLETE WEBSITE
 
-THIS IS THE ONLY PACKAGE YOU NEED TO UPLOAD.
+UPLOAD EVERYTHING INSIDE THIS PACKAGE TO THE REPOSITORY ROOT.
+Do not upload the outer ZIP folder itself.
 
-It includes:
-- v21.1 botanical Living Library upgrade
-- final homepage and Start Here wording
-- clean /living-library, /start-here, /links and /about addresses
-- Instagram link-in-bio page
-- complete assets folder
-- guides, PDFs, images and botanical illustrations
-- current v21 CSS, JavaScript and service worker
-- Netlify redirects, security headers, sitemap, manifest and robots.txt
+This package includes the full v23.3 website and the v23.4 business-ready upgrade:
 
-UPLOAD:
-1. Extract this ZIP on your laptop.
-2. Open the Awakening-Eden-Library repository on GitHub.
-3. Confirm the branch is main.
-4. Choose Add file -> Upload files.
-5. Open the extracted folder and select EVERYTHING INSIDE it, including assets.
-6. Upload the CONTENTS, not the outer folder.
-7. Commit directly to main with:
-   Publish Awakening Eden v21.3 complete master
-8. Wait for Netlify to show Published.
-9. Test these links in a private browser window:
-   /
-   /living-library
-   /start-here
-   /links
-   /about
+- clearer homepage pathway into professional land support
+- three simple starting offers instead of an overwhelming service menu
+- tired-orchard revival and seasonal stewardship
+- regenerative property, water, soil, biomass, food-forest and syntropic capabilities
+- ongoing design-to-implementation partnership
+- honest professional-scope notes for engineering, agronomy and health topics
+- search-focused title, description, visible FAQs and matching structured data
+- accessible Netlify project-enquiry form with honeypot protection
+- campaign attribution for Facebook and other tracked links
+- custom enquiry thank-you page
+- launch post and 60–75 second presentation-video script
+- exact form, notification and lead-tracking instructions
 
-The existing GitHub assets folder will be merged and updated automatically.
-Do not create assets/assets.
+DEPLOY:
+
+1. Give Claude the ZIP plus CLAUDE-MASTER-PROMPT-v23.4.txt, then read CLAUDE-V23.4-DEPLOY.md.
+2. Extract the ZIP.
+3. Confirm the Awakening-Eden-Library production branch connected to Netlify.
+4. Merge or replace the repository-root files with EVERYTHING INSIDE the extracted folder.
+5. Preserve the folder structure exactly; do not create assets/assets or an extra outer directory.
+6. Commit with: Publish Awakening Eden v23.4 business-ready services
+7. Push the production branch and wait for the Netlify deploy to finish.
+8. Enable Netlify Forms detection if it is not already enabled, then redeploy once.
+9. Submit one real test through /work-with-benjy and confirm the form appears as land-project-enquiry.
+10. Add Benjy's chosen email notification in Netlify and reply to the test.
+11. Verify desktop and mobile using the checklist in CLAUDE-V23.4-DEPLOY.md.
+
+IMPORTANT:
+
+- The current public Work with Benjy page is older until this package is deployed.
+- Do not rewrite the approved copy, swap authentic project images for stock images, or remove the clean botanical frames.
+- The presentation-video area is intentionally a polished placeholder until the final optimized video arrives.
+- Keep professional enquiries in the form; WhatsApp and Telegram remain community spaces.
+- Do not claim engineering, medical, electrical, agronomic or arboricultural qualifications that have not been confirmed.

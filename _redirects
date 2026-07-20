@@ -1,6 +1,7 @@
 # Awakening Eden v21.3 clean public pathways
 /living-library  /awakening_eden_regenerative_film_resource_library_updated.html  200
 /start-here      /Awakening-Regeneration.html                                      200
+/thriving-in-these-times /Thriving-in-These-Times.html                             200
 /about           /about.html                                                       200
 /links           /links.html                                                       200
 /journal         /journal.html                                                     200
@@ -15,6 +16,7 @@
 /begin           /start-here 301!
 /guides          /start-here 301!
 /awakening-regeneration /start-here 301!
+/thrive          /thriving-in-these-times 301!
 /bio             /links 301!
 /instagram       /links 301!
 /home            / 301!

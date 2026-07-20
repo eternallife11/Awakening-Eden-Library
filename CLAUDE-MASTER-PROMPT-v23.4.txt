@@ -1,0 +1,28 @@
+I am attaching Awakening-Eden-v23.4-Business-Ready-Complete-Website.zip.
+
+Treat it as the complete, current Awakening Eden production website source. Read UPLOAD_THIS_COMPLETE_VERSION.txt and CLAUDE-V23.4-DEPLOY.md before changing the repository.
+
+Please:
+
+1. Inspect the Awakening-Eden-Library repository and identify the production branch connected to Netlify.
+2. Compare it with the attached v23.4 package and preserve only genuinely newer, user-approved repository changes.
+3. Merge or replace the repository-root files with the complete contents of v23.4. Do not nest the site in another folder.
+4. Preserve all authentic photographs, updated guides and PDFs, clean botanical frames, logo assets, public routes, WhatsApp, Telegram and PayPal links.
+5. Do not rewrite the approved poetic/professional copy, invent qualifications or results, remove safety-scope notes, or replace authentic photographs with stock images.
+6. Commit and push with: Publish Awakening Eden v23.4 business-ready services
+7. Confirm the Netlify production deploy uses that exact commit.
+8. Enable Netlify Forms detection if needed, redeploy, and test the `land-project-enquiry` form with a real test address.
+9. Configure an email notification for the form, confirm the custom thank-you page, and test reply-to.
+10. Verify every route, button, guide PDF, image and navigation menu on desktop and phone. Pay special attention to horizontal overflow and botanical edges or borders being cut.
+
+The main v23.4 conversion improvements must remain intact:
+
+- three clear starting offers;
+- tired-orchard revival and seasonal stewardship;
+- water, living soil, woody biomass, food forest and syntropic capabilities;
+- design-through-implementation partnership;
+- visible FAQs and accurate structured data;
+- tracked project enquiry form and homepage CTA;
+- community WhatsApp and Telegram kept separate from professional enquiries.
+
+When complete, report the branch, commit SHA, Netlify deployment timestamp, form detection result, test-notification result, pages checked and any unresolved issue. Do not silently discard content when resolving a conflict.
