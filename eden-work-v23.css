@@ -204,3 +204,8 @@
   .field-card, .field-card--wide { min-height: 27rem; }
   .video-placeholder { min-height: 24rem; }
 }
+
+/* v23.4.1 — direct contact alternatives */
+.enquiry-direct { margin-top: 1rem; }
+.enquiry-direct a { font-weight: 800; text-underline-offset: 0.25rem; }
+.enquiry-direct span { margin-inline: 0.4rem; opacity: 0.55; }
