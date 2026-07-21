@@ -6,133 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Living Resource Library | Films, Books, Permaculture &amp; Regeneration</title>
 <meta content="Explore regenerative films, documentaries, permaculture books, garden bibles, teachers, channels, projects, planning tools and action networks curated by Awakening Eden." name="description"/>
-<style>
-:root{
-  --forest:#12321f;--deep:#08180f;--leaf:#446b38;--moss:#71925a;--sage:#dbe5cd;
-  --cream:#fff8ec;--paper:#fffdf7;--gold:#c79542;--sun:#e2b75e;--clay:#b8643e;
-  --terracotta:#a95737;--ink:#231f18;--muted:#665b4c;--line:rgba(18,50,31,.16);
-  --shadow:0 22px 70px rgba(18,50,31,.12);--radius:28px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  background:
-    radial-gradient(circle at 18% 0%,rgba(226,183,94,.28),transparent 32rem),
-    radial-gradient(circle at 95% 6%,rgba(113,146,90,.22),transparent 30rem),
-    linear-gradient(180deg,#fff8ec 0%,#f6ead8 54%,#efe0c5 100%);
-  color:var(--ink);line-height:1.65;font-size:17px;
-}
-body:before{
-  content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;z-index:-1;
-  background-image:linear-gradient(rgba(18,50,31,.05) 1px, transparent 1px),linear-gradient(90deg,rgba(18,50,31,.05) 1px, transparent 1px);
-  background-size:38px 38px;
-}
-a{color:inherit}
-.wrap{width:min(1160px,calc(100% - 32px));margin:0 auto}
-.hero{
-  position:relative;overflow:hidden;min-height:78vh;display:grid;place-items:center;padding:72px 0 52px;color:#fff;
-  background:
-    linear-gradient(115deg,rgba(8,24,15,.92),rgba(8,24,15,.68),rgba(18,50,31,.42)),
-    url("eden-hero-sanctuary-v19.webp") center/cover no-repeat;
-}
-.hero:after{
-  content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(transparent,#fff8ec);
-}
-.hero-inner{position:relative;z-index:1;max-width:980px}
-.breadcrumb{display:inline-flex;gap:8px;align-items:center;padding:9px 13px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);font-weight:800;font-size:.82rem}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.04;margin:0;color:var(--forest)}
-.hero h1{color:#fff;font-size:clamp(2.7rem,9vw,6.6rem);letter-spacing:-.055em;margin:24px 0 18px;text-wrap:balance}
-.hero .subtitle{max-width:800px;font-size:clamp(1.08rem,2.5vw,1.45rem);color:#fff6df;font-weight:600;text-wrap:balance}
-.mantra{max-width:860px;margin:24px 0 0;padding:18px 20px;border-left:4px solid var(--sun);border-radius:0 20px 20px 0;background:rgba(8,24,15,.42);backdrop-filter:blur(10px);font-family:Georgia,serif;font-style:italic;font-size:1.1rem;color:#fff8ec}
-.hero-actions,.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 18px;border-radius:999px;
-  font-weight:900;text-decoration:none;border:1px solid rgba(255,255,255,.24);box-shadow:0 14px 34px rgba(8,24,15,.18);
-  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
-}
-.btn:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(8,24,15,.24)}
-.btn.gold{background:var(--sun);color:#1b160d}
-.btn.cream{background:#fff8ec;color:var(--forest)}
-.btn.leaf{background:var(--leaf);color:white}
-.btn.clay{background:var(--clay);color:white}
-.btn.outline{background:rgba(255,255,255,.1);color:white}
 
-.quicknav{
-  position:sticky;top:0;z-index:20;background:rgba(255,248,236,.92);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(18,50,31,.06);
-}
-.quicknav .wrap{display:flex;gap:9px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
-.quicknav .wrap::-webkit-scrollbar{display:none}
-.quicknav a{
-  flex:0 0 auto;display:inline-flex;gap:7px;align-items:center;text-decoration:none;color:var(--forest);
-  background:#fffdf7;border:1px solid var(--line);border-radius:999px;padding:10px 13px;font-weight:900;font-size:.88rem;
-}
-.intro{padding:42px 0 10px}
-.intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
-.panel{
-  background:rgba(255,253,247,.82);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(22px,4vw,34px);box-shadow:var(--shadow)
-}
-.panel h2{font-size:clamp(1.9rem,5vw,3.4rem);letter-spacing:-.035em}
-.panel p{color:#4c4438;font-size:1.05rem;margin:14px 0 0}
-.start-card{
-  background:linear-gradient(145deg,#12321f,#254d2e);color:#fff;border-color:rgba(255,255,255,.16);
-}
-.start-card h2,.start-card h3{color:#fff}
-.start-card p{color:#f4ead4}
-.start-card .small{font-size:.94rem;color:#eadbbf}
-.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-.path-card{background:#fffdf7;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 12px 32px rgba(18,50,31,.08)}
-.path-card b{display:block;color:var(--forest);font-family:Georgia,serif;font-size:1.12rem}
-.path-card span{display:block;margin-top:6px;color:var(--muted);font-size:.93rem}
-.library-section{padding:52px 0 18px}
-.section-heading{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-bottom:20px}
-.section-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:22px;background:#fffdf7;border:1px solid var(--line);box-shadow:0 12px 30px rgba(18,50,31,.08);font-size:1.7rem}
-.kicker{text-transform:uppercase;letter-spacing:.14em;color:var(--terracotta);font-weight:1000;font-size:.76rem;margin-bottom:8px}
-.section-heading h2{font-size:clamp(1.85rem,5vw,3.2rem);letter-spacing:-.035em}
-.section-heading p{max-width:760px;color:#5d5347;margin:12px 0 0;font-size:1.05rem}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.resource-card{
-  background:rgba(255,253,247,.88);border:1px solid var(--line);border-radius:24px;padding:18px;
-  box-shadow:0 14px 38px rgba(18,50,31,.08);display:flex;flex-direction:column;min-height:230px;
-}
-.resource-card .tag{align-self:flex-start;background:#f3e6ce;color:#84412c;border:1px solid rgba(132,65,44,.14);border-radius:999px;padding:5px 9px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:1000}
-.resource-card h3{font-size:1.24rem;margin:12px 0 8px}
-.resource-card p{font-size:.95rem;color:#544a3f;margin:0 0 16px;flex:1}
-.resource-card .open{
-  display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:var(--forest);color:white;border-radius:999px;padding:10px 13px;font-weight:900;margin-top:auto;
-}
-.resource-card .open.muted{background:#efe3cc;color:#6a5c4c}
-.cta-band{margin:56px auto 12px;background:linear-gradient(135deg,#12321f,#446b38);color:#fff;border-radius:32px;padding:clamp(24px,5vw,44px);box-shadow:var(--shadow)}
-.cta-band h2{color:#fff;font-size:clamp(1.9rem,6vw,3.7rem)}
-.cta-band p{max-width:760px;color:#f4ead4;font-size:1.06rem}
-footer{padding:44px 0 70px;text-align:center;color:#5e5245}
-footer a{color:var(--forest);font-weight:900}
-.growth{
-  position:fixed;right:14px;bottom:14px;z-index:30;background:rgba(255,253,247,.92);border:1px solid var(--line);
-  border-radius:999px;padding:8px 12px;box-shadow:0 12px 30px rgba(18,50,31,.16);font-weight:900;color:var(--forest);font-size:.9rem
-}
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease, transform .55s ease}
-.reveal.in{opacity:1;transform:none}
-@media(max-width:860px){
-  body{font-size:16.5px}
-  .hero{min-height:auto;padding:54px 0 44px}
-  .hero h1{font-size:clamp(2.25rem,12vw,4.3rem)}
-  .intro-grid{grid-template-columns:1fr}
-  .path-grid,.cards{grid-template-columns:1fr}
-  .resource-card{min-height:0}
-  .section-heading{grid-template-columns:1fr}
-  .section-icon{width:52px;height:52px}
-  .quicknav a{font-size:.92rem;font-weight:800;padding:11px 14px}
-  .growth{right:10px;bottom:10px;font-size:.8rem}
-}
-@media(min-width:861px) and (max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}}
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none;transition:none}
-}
-
-.botanical-wide-divider{width:min(900px,calc(100% - 28px));margin:18px auto}.botanical-wide-divider img{display:block;width:100%;height:auto}.section-icon{overflow:hidden;padding:4px}.section-icon img{width:100%;height:100%;object-fit:contain}.quicknav img{width:24px;height:24px}.library-trust-note{font-size:.88rem;color:rgba(255,248,236,.8);margin-top:18px}.hero-actions .btn{white-space:normal;text-align:center}.breadcrumb{letter-spacing:.02em}.growth{max-width:calc(100% - 24px)}body.page-library .hero h1{color:#fff8ec!important;text-shadow:0 2px 28px rgba(8,24,15,.6)!important}body.page-library .hero .subtitle{color:#fff8ec!important}body.page-library .hero-actions{display:flex;flex-wrap:wrap;gap:12px}body.page-library .hero-actions .btn{display:inline-flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:17px 30px;border-radius:26px}body.page-library .hero-actions .btn strong{display:block;font-size:1.18rem;font-weight:900;line-height:1.22}body.page-library .hero-actions .btn small{display:block;font-size:.89rem;font-weight:750;opacity:.96;line-height:1.4}</style>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="#102819" name="theme-color"/><link href="https://awakening-eden-library.netlify.app/living-library" rel="canonical"/><meta content="Awakening Eden Living Resource Library" property="og:title"/><meta content="Explore regenerative films, documentaries, permaculture books, garden bibles, teachers, channels, projects, planning tools and action networks curated by Awakening Eden." property="og:description"/><meta content="website" property="og:type"/><meta content="https://awakening-eden-library.netlify.app/living-library" property="og:url"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image"/><meta content="Awakening Eden Living Library" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Awakening Eden Living Resource Library" name="twitter:title"/><meta content="Explore regenerative films, documentaries, permaculture books, garden bibles, teachers, channels, projects, planning tools and action networks curated by Awakening Eden." name="twitter:description"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" name="twitter:image"/><link href="manifest.webmanifest" rel="manifest"/><meta content="Awakening Eden" name="application-name"/><meta content="Awakening Eden" name="apple-mobile-web-app-title"/><meta content="yes" name="mobile-web-app-capable"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="light" name="color-scheme"/><meta content="Benjy &amp; Sofia · Awakening Eden" name="author"/><meta content="en_GB" property="og:locale"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image:secure_url"/><meta content="image/jpeg" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Awakening Eden hand-drawn Tree of Life heart logo and Living Library identity" property="og:image:alt"/><meta content="Awakening Eden hand-drawn Tree of Life heart logo and Living Library identity" name="twitter:image:alt"/><link href="favicon.ico" rel="icon" sizes="any"/><link href="eden-favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="eden-apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><meta content="telephone=no" name="format-detection"/><meta content="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" property="og:image:url"/><link href="https://awakening-eden-library.netlify.app/awakening-eden-social-preview-v21.jpg" rel="image_src"/><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -164,9 +38,32 @@ footer a{color:var(--forest);font-weight:900}
       "name": "Sofia Bonnet"
     }
   ]
-}</script>  <link rel="stylesheet" href="eden-v22.css?v=22.0">
+}</script>  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700;800&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="eden-v23.css?v=23.4">
+<link rel="stylesheet" href="eden-library-v23.css?v=23.4">
 </head>
 <body class="page-library"><a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Awakening Eden home">
+      <img src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="" decoding="async">
+      <span class="brand-words"><strong>Awakening Eden</strong><small>The Living Library</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
+      <span class="menu-button__lines" aria-hidden="true"></span>
+      <span class="menu-button__label">Menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-navigation>
+      <a href="/start-here">Begin here</a>
+      <a href="/living-library" aria-current="page">Living Library</a>
+      <a href="/journey">Our journey</a>
+      <a href="/work-with-benjy">Work with Benjy</a>
+      <a class="nav-gift" href="/#gift-back">Gift back <span aria-hidden="true">&#9825;</span></a>
+    </nav>
+  </div>
+</header>
 <header class="hero">
 <div class="wrap hero-inner">
 <div class="breadcrumb">Awakening Eden · Living Resource Library</div>
@@ -698,12 +595,14 @@ footer a{color:var(--forest);font-weight:900}
 <p class="library-trust-note">Curated with care by Benjy &amp; Sofia. External resources belong to their creators. We review and refresh this collection as the Living Library grows.</p></section>
 </main>
 <div class="growth" id="growthBadge">Living Library · refreshed July 2026</div>
-<footer>
-<div class="wrap">
-<p><strong>Awakening Eden</strong> · A Living Library for Positive Change, Regeneration &amp; Remembering</p>
-<p>May you leave every place, every person, every project and every piece of land a little more alive than you found it.</p>
-<p><a href="/">Return home</a></p>
-</div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><img src="assets/logo/tree-heart-portal-02.webp" width="410" height="629" alt="" loading="lazy" decoding="async"><div><strong>Awakening Eden</strong><small>The Living Library</small></div></div>
+    <nav aria-label="Footer navigation">
+      <a href="/start-here">Begin here</a><a href="/living-library">Living Library</a><a href="/journey">Our journey</a><a href="/work-with-benjy">Work with Benjy</a><a href="heart.html">Our heart</a><a href="/about">About</a><a href="/links">Links</a><a href="/#gift-back">Gift back</a>
+    </nav>
+    <p class="footer-blessing">Leave Life More Alive.</p>
+  </div>
 </footer>
 <script>
 (function(){
@@ -720,5 +619,5 @@ footer a{color:var(--forest);font-weight:900}
   addEventListener('scroll',update,{passive:true});update();
 })();
 </script>
-<a aria-label="Return to Awakening Eden Living Library" class="eden-floating-brand" href="/"><img alt="" aria-hidden="true" decoding="async" height="64" loading="lazy" src="eden-emblem-64.png" width="64"/><span>Awakening Eden</span></a><script src="eden-v22.js?v=22.0" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body>
+<script src="eden-v23.js?v=23.4" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body>
 </html>

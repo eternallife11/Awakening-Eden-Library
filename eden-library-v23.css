@@ -1,0 +1,224 @@
+/* Awakening Eden — Living Library v23 restyle
+   Styles the library page's existing markup in the v23 design language.
+   Loads after eden-v23.css (tokens, header, footer, buttons). */
+
+body.page-library {
+  color: var(--forest-deep);
+}
+
+.wrap { width: min(calc(100% - 2 * var(--gutter)), var(--container)); margin-inline: auto; }
+.skip {
+  position: fixed; z-index: 1000; top: 0.75rem; left: 0.75rem;
+  padding: 0.75rem 1rem; color: var(--paper-light); background: var(--forest-deep);
+  border-radius: 0.5rem; transform: translateY(-160%);
+}
+.skip:focus { transform: translateY(0); }
+
+/* ---------- Hero ---------- */
+.page-library .hero {
+  position: relative; overflow: clip;
+  min-height: min(72vh, 46rem);
+  display: grid; place-items: center;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+  color: var(--paper-light);
+  background:
+    linear-gradient(115deg, rgb(24 38 27 / 0.93), rgb(24 38 27 / 0.72) 45%, rgb(35 49 38 / 0.5)),
+    url("eden-hero-sanctuary-v19.webp") center 40% / cover no-repeat;
+}
+.page-library .hero::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 9rem;
+  background: linear-gradient(transparent, var(--paper));
+}
+.hero-inner { position: relative; z-index: 1; max-width: 62rem; }
+.breadcrumb {
+  display: inline-flex; gap: 0.5rem; align-items: center;
+  padding: 0.55rem 0.9rem; border: 1px solid rgb(255 253 247 / 0.3);
+  border-radius: 999px; background: rgb(255 253 247 / 0.12);
+  backdrop-filter: blur(10px);
+  font-weight: 800; font-size: 0.8rem; letter-spacing: 0.04em;
+}
+.page-library .hero h1 {
+  margin: 1.4rem 0 1rem; color: var(--paper-light);
+  font-size: clamp(2.9rem, 8vw, 6.2rem);
+  text-shadow: 0 2px 28px rgb(8 24 15 / 0.55);
+  text-wrap: balance;
+}
+.page-library .hero .subtitle {
+  max-width: 46rem; color: rgb(255 253 247 / 0.94);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.65; font-weight: 600;
+}
+.mantra {
+  margin: 1.3rem 0 1.6rem; padding: 0.9rem 1.2rem;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: rgb(8 24 15 / 0.45);
+  font-family: var(--display); font-style: italic;
+  font-size: clamp(1.05rem, 1.9vw, 1.3rem); color: #f2e5c4;
+}
+
+/* Hero action pills — title over subtitle */
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.hero-actions .btn {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.3rem;
+  text-align: left; text-decoration: none;
+  padding: 1.05rem 1.8rem; border-radius: 1.6rem;
+  border: 1px solid transparent; line-height: 1;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.hero-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgb(8 24 15 / 0.35); }
+.hero-actions .btn strong { display: block; font-size: 1.18rem; font-weight: 900; line-height: 1.22; }
+.hero-actions .btn small { display: block; font-size: 0.89rem; font-weight: 750; opacity: 0.96; line-height: 1.4; }
+.btn.gold { color: var(--forest-deep); background: var(--gold); }
+.btn.cream { color: var(--forest); background: var(--paper-light); }
+.btn.outline { color: var(--paper-light); background: rgb(255 253 247 / 0.08); border-color: rgb(255 253 247 / 0.5); }
+.btn.clay { color: var(--paper-light); background: var(--terracotta); }
+
+/* ---------- Quick navigation ---------- */
+.quicknav {
+  position: sticky; top: 5.2rem; z-index: 40;
+  border-block: 1px solid rgb(105 112 82 / 0.18);
+  background: rgb(246 240 226 / 0.94); backdrop-filter: blur(12px);
+  padding-block: 0.55rem;
+}
+.quicknav .wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
+.quicknav a {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.6rem 0.95rem; border: 1px solid rgb(105 112 82 / 0.32);
+  border-radius: 999px; background: rgb(255 253 247 / 0.6);
+  color: var(--forest); font-size: 0.88rem; font-weight: 800; text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+.quicknav a:hover { background: var(--linen); transform: translateY(-1px); }
+.quicknav img { width: 1.35rem; height: 1.35rem; }
+
+/* ---------- Dividers ---------- */
+.botanical-wide-divider { width: min(46rem, calc(100% - 2rem)); margin: clamp(1.5rem, 4vw, 2.6rem) auto; }
+.botanical-wide-divider img { display: block; width: 100%; height: auto; }
+
+/* ---------- Intro panels ---------- */
+.intro { padding-block: clamp(1rem, 3vw, 2rem); }
+.intro-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: stretch; }
+.panel {
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  border: 1px solid rgb(105 112 82 / 0.3); border-radius: 2rem;
+  background: color-mix(in srgb, var(--linen) 55%, var(--paper-light));
+  box-shadow: var(--shadow);
+}
+.panel h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+.start-card { background: linear-gradient(135deg, var(--paper), rgb(232 222 200 / 0.75)); }
+.kicker {
+  margin-bottom: 0.6rem; color: var(--terracotta);
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.3rem; }
+.actions .btn { flex-direction: row; align-items: center; padding: 0.95rem 1.5rem; border-radius: 999px; font-size: 1.02rem; font-weight: 800; }
+.path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1.2rem; }
+.path-card {
+  display: grid; gap: 0.25rem; padding: 1rem 1.1rem;
+  border: 1px solid rgb(105 112 82 / 0.28); border-radius: 1.1rem;
+  background: rgb(255 253 247 / 0.72);
+}
+.path-card b { font-family: var(--display); font-size: 1.2rem; color: var(--forest); }
+.path-card span { color: var(--umber); font-size: 0.88rem; line-height: 1.45; }
+
+/* ---------- Library sections ---------- */
+.library-section { padding: clamp(2.2rem, 5vw, 3.6rem) 0; }
+.library-section .wrap > *:first-child { margin-top: 0; }
+.section-heading {
+  display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; align-items: center;
+  max-width: 56rem; margin-bottom: clamp(1.4rem, 3vw, 2.2rem);
+}
+.section-icon {
+  display: grid; place-items: center; width: 4.2rem; height: 4.2rem; padding: 0.55rem;
+  border: 1px solid rgb(105 112 82 / 0.35); border-radius: 50%;
+  background: var(--paper-light); box-shadow: 0 10px 24px rgb(35 49 38 / 0.08);
+}
+.section-icon img { width: 100%; height: 100%; object-fit: contain; }
+.section-heading h2 { margin-bottom: 0.4rem; font-size: clamp(1.9rem, 4vw, 3.1rem); }
+.section-heading p { margin: 0; color: var(--umber); max-width: 44rem; }
+
+/* ---------- Resource cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.resource-card {
+  position: relative; display: flex; flex-direction: column; gap: 0.55rem;
+  min-height: 13rem; padding: 1.5rem 1.5rem 1.3rem;
+  border: 1px solid rgb(105 112 82 / 0.3); border-radius: 1.4rem;
+  background: var(--paper-light);
+  box-shadow: 0 10px 28px rgb(35 49 38 / 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  overflow: clip;
+}
+.resource-card::after {
+  content: ""; position: absolute; right: -1.6rem; bottom: -1.6rem;
+  width: 5rem; height: 5rem;
+  border: 1px solid rgb(148 160 131 / 0.35);
+  border-radius: 50% 50% 0 50%; transform: rotate(25deg);
+}
+.resource-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgb(35 49 38 / 0.12); }
+.resource-card .tag {
+  align-self: flex-start; padding: 0.32rem 0.75rem;
+  border: 1px solid rgb(167 101 79 / 0.35); border-radius: 999px;
+  background: rgb(167 101 79 / 0.08);
+  color: var(--terracotta); font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.resource-card h3 { margin: 0; font-size: 1.45rem; line-height: 1.12; }
+.resource-card p { margin: 0; color: var(--umber); font-size: 0.94rem; line-height: 1.55; flex-grow: 1; }
+.resource-card .open {
+  align-self: flex-start; margin-top: 0.4rem;
+  color: var(--forest); font-weight: 800; font-size: 0.95rem;
+  text-underline-offset: 0.3rem;
+}
+.muted { color: var(--umber); opacity: 0.85; }
+.top-films .resource-card:first-child { grid-column: span 2; background: linear-gradient(135deg, var(--paper-light), rgb(232 222 200 / 0.6)); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  margin: clamp(2.5rem, 6vw, 4rem) auto 1rem;
+  padding: clamp(1.8rem, 5vw, 3rem);
+  border-radius: 2rem; color: var(--paper-light);
+  background:
+    radial-gradient(circle at 85% 15%, rgb(184 148 75 / 0.25), transparent 40%),
+    linear-gradient(135deg, var(--forest-deep), var(--forest));
+  box-shadow: var(--shadow);
+}
+.cta-band h2 { color: var(--paper-light); font-size: clamp(1.9rem, 5vw, 3.4rem); }
+.cta-band p { max-width: 48rem; color: rgb(255 253 247 / 0.88); }
+.library-trust-note { margin-top: 1.2rem; color: rgb(255 253 247 / 0.72); font-size: 0.85rem; }
+.cta-band .actions .btn.outline { border-color: rgb(255 253 247 / 0.55); color: var(--paper-light); }
+
+/* ---------- Growth badge ---------- */
+.growth {
+  position: fixed; right: 0.9rem; bottom: 0.9rem; z-index: 30;
+  max-width: calc(100% - 1.6rem);
+  padding: 0.5rem 0.85rem; border: 1px solid rgb(105 112 82 / 0.3);
+  border-radius: 999px; background: rgb(255 253 247 / 0.94);
+  box-shadow: 0 12px 30px rgb(35 49 38 / 0.16);
+  color: var(--forest); font-weight: 800; font-size: 0.82rem;
+}
+
+/* ---------- Reveal ----------
+   The library shows its 67 cards immediately: no entrance animation,
+   no JS dependency, nothing to fail. Calm beats clever here. */
+.page-library .reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 68rem) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 58rem) {
+  .quicknav { top: 4.6rem; }
+  .intro-grid { grid-template-columns: 1fr; }
+  .path-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 44rem) {
+  .cards { grid-template-columns: 1fr; }
+  .top-films .resource-card:first-child { grid-column: auto; }
+  .section-heading { grid-template-columns: 1fr; }
+  .section-icon { width: 3.4rem; height: 3.4rem; }
+  .hero-actions { display: grid; width: 100%; }
+  .growth { font-size: 0.74rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .resource-card:hover, .quicknav a:hover, .hero-actions .btn:hover { transform: none; }
+}

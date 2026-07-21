@@ -12,6 +12,9 @@
       try { sessionStorage.setItem(`awakening_eden_${key}`, value); } catch (_) { /* storage is optional */ }
     });
 
+    // Reveal-on-load for pages using the .reveal pattern (Living Library cards)
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+
     // Accessible mobile navigation
     const button = document.querySelector("[data-menu-button]");
     const nav = document.querySelector("[data-navigation]");
