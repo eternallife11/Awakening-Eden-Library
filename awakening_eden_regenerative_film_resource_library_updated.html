@@ -604,20 +604,6 @@
     <p class="footer-blessing">Leave Life More Alive.</p>
   </div>
 </footer>
-<script>
-(function(){
-  const els=[...document.querySelectorAll('.reveal')];
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
-  els.forEach(el=>io.observe(el));
-  const badge=document.getElementById('growthBadge');
-  function update(){
-    const max=document.documentElement.scrollHeight-innerHeight;
-    const p=max>0?scrollY/max:0;
-    const stages=['🌱 This is you','🌿 Growing','🌳 Tree of Life','🦋 Keep flying'];
-    badge.textContent=stages[Math.min(stages.length-1, Math.floor(p*stages.length))];
-  }
-  addEventListener('scroll',update,{passive:true});update();
-})();
-</script>
+<script src="eden-reveal.js?v=23.4"></script>
 <script src="eden-v23.js?v=23.4" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body>
 </html>

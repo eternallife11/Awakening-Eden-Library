@@ -69,31 +69,5 @@ body.ae-growth-final .ae-growth-message{opacity:1; transform:none}
 <div class="ae-growth-orb"><div class="ae-growth-ring"></div><div class="ae-growth-symbol">🌰</div></div>
 </div>
 <main class="wrap" id="main"><section class="card"><p style="letter-spacing:.18em;text-transform:uppercase;color:#bd5a3a;font-weight:900">Thank you, earth family</p><h1>Your guide gate is open 🌿</h1><p>Thank you for receiving the Awakening Eden resources. Take what nourishes you, share with someone kind, then let one paragraph become one living action.</p><div class="grid"><a class="btn" download="" href="Awakening-Regeneration-Guide.pdf">Regeneration 101</a><a class="btn" download="" href="Thriving-in-These-Times-Guide.pdf">The Thrive Guide</a><a class="btn" download="" href="Awakening_Eden_Regenerative_Film_Resource_Library.pdf">Regenerative Resource Library</a><a class="btn" download="" href="acacia_dealbata_magic_manual_regenerative_eden.pdf">Acacia Mimosa Uses</a><a class="btn clay" href="https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0" rel="noopener noreferrer" target="_blank">Join WhatsApp</a><a class="btn gold" href="https://www.paypal.me/BSauber" rel="noopener noreferrer" target="_blank">Support with PayPal</a></div><p><a href="/">← Back to the Awakening Eden Library</a></p></section></main>
-<script>
-(function(){
-  const symbol = document.querySelector('.ae-growth-symbol');
-  const root = document.documentElement;
-  if(!symbol) return;
-  const stages = [
-    {p:0.00, icon:'🌰'},
-    {p:0.16, icon:'🌱'},
-    {p:0.34, icon:'🌿'},
-    {p:0.54, icon:'🌳'},
-    {p:0.78, icon:'🌳🦋'},
-    {p:0.94, icon:'🦋'}
-  ];
-  function updateGrowth(){
-    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    const p = Math.min(1, Math.max(0, window.scrollY / max));
-    root.style.setProperty('--ae-growth', p.toFixed(3));
-    let icon = stages[0].icon;
-    for(const stage of stages){ if(p >= stage.p) icon = stage.icon; }
-    if(symbol.textContent !== icon){ symbol.style.opacity = '0'; setTimeout(()=>{symbol.textContent = icon; symbol.style.opacity='1';},120); }
-    document.body.classList.toggle('ae-growth-final', p > .90);
-  }
-  updateGrowth();
-  window.addEventListener('scroll', updateGrowth, {passive:true});
-  window.addEventListener('resize', updateGrowth);
-})();
-</script>
+<script src="eden-growth-symbol.js?v=23.4"></script>
 <a aria-label="Return to Awakening Eden Living Library" class="eden-floating-brand" href="/"><img alt="" aria-hidden="true" decoding="async" height="64" loading="lazy" src="eden-emblem-64.png" width="64"/><span>Awakening Eden</span></a><script src="eden-v22.js?v=22.0" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body></html>

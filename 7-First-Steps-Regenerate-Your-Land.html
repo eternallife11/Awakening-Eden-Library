@@ -436,16 +436,7 @@ If this nourished you, send it to one friend who needs inspiring hope, practical
     </p>
 </div>
 </footer>
-<script>
-  (function(){
-    var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
-    }, {threshold:.12});
-    els.forEach(function(e){ io.observe(e); });
-  })();
-</script>
+<script src="eden-reveal.js?v=23.4"></script>
 <section style="max-width:840px;margin:48px auto;padding:34px 26px;background:linear-gradient(135deg,#2d3b27,#432719);border-radius:24px;color:#fff8ec;text-align:center;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;box-shadow:0 18px 40px rgba(40,30,20,.25);">
 <div style="font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;color:#e5b65c;font-weight:600;margin-bottom:8px;">Walk with us</div>
 <h2 style="margin:.15em 0;color:#fff4d8;font-size:1.55rem;line-height:1.2;">Connect &amp; co-create the new Earth</h2>
@@ -459,32 +450,6 @@ If this nourished you, send it to one friend who needs inspiring hope, practical
 </div>
 <div style="font-style:italic;color:#e5b65c;margin-top:14px;font-size:.98rem;">Earth under our fingernails, hearts connected, our compass set for the stars — grounded in the soils. Regeneration on 🌿</div>
 </section>
-<script>
-(function(){
-  const symbol = document.querySelector('.ae-growth-symbol');
-  const root = document.documentElement;
-  if(!symbol) return;
-  const stages = [
-    {p:0.00, icon:'🌰'},
-    {p:0.16, icon:'🌱'},
-    {p:0.34, icon:'🌿'},
-    {p:0.54, icon:'🌳'},
-    {p:0.78, icon:'🌳🦋'},
-    {p:0.94, icon:'🦋'}
-  ];
-  function updateGrowth(){
-    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    const p = Math.min(1, Math.max(0, window.scrollY / max));
-    root.style.setProperty('--ae-growth', p.toFixed(3));
-    let icon = stages[0].icon;
-    for(const stage of stages){ if(p >= stage.p) icon = stage.icon; }
-    if(symbol.textContent !== icon){ symbol.style.opacity = '0'; setTimeout(()=>{symbol.textContent = icon; symbol.style.opacity='1';},120); }
-    document.body.classList.toggle('ae-growth-final', p > .90);
-  }
-  updateGrowth();
-  window.addEventListener('scroll', updateGrowth, {passive:true});
-  window.addEventListener('resize', updateGrowth);
-})();
-</script>
+<script src="eden-growth-symbol.js?v=23.4"></script>
 <a aria-label="Return to Awakening Eden Living Library" class="eden-floating-brand" href="/"><img alt="" aria-hidden="true" decoding="async" height="64" loading="lazy" src="eden-emblem-64.png" width="64"/><span>Awakening Eden</span></a><script src="eden-v22.js?v=22.0" defer></script><noscript>Awakening Eden works without JavaScript; the installable offline features require it.</noscript></body>
 </html>
