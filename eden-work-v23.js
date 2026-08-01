@@ -6,6 +6,37 @@
     : fn();
 
   ready(() => {
+    const boards = document.querySelectorAll(".board-figure > img, .become-card--board > img");
+    if (boards.length && typeof HTMLDialogElement === "function") {
+      const dialog = document.createElement("dialog");
+      dialog.className = "board-lightbox";
+      const full = document.createElement("img");
+      const close = document.createElement("button");
+      close.type = "button";
+      close.className = "board-lightbox__close";
+      close.textContent = "Close";
+      close.addEventListener("click", () => dialog.close());
+      dialog.append(close, full);
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      document.body.appendChild(dialog);
+
+      boards.forEach((board) => {
+        const trigger = document.createElement("button");
+        trigger.type = "button";
+        trigger.className = "board-zoom";
+        trigger.setAttribute("aria-label", `Expand board: ${board.alt}`);
+        board.parentNode.insertBefore(trigger, board);
+        trigger.appendChild(board);
+        trigger.addEventListener("click", () => {
+          full.src = board.currentSrc || board.src;
+          full.alt = board.alt;
+          dialog.showModal();
+        });
+      });
+    }
+
     const form = document.querySelector("[data-land-enquiry-form]");
     if (!form) return;
 
