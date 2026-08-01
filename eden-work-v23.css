@@ -258,9 +258,12 @@
 }
 .ae-earth-divider { box-sizing: border-box; clear: both; display: block; margin: clamp(2.5rem, 7vw, 6rem) auto; max-width: min(100%, 1120px); padding-inline: clamp(0.25rem, 2vw, 1.5rem); pointer-events: none; }
 .ae-earth-divider img { display: block; height: auto; margin-inline: auto; max-width: 100%; width: 100%; }
-.ae-earth-divider--tree { max-width: 1180px; }
-.ae-earth-divider--moon { margin-block: clamp(2rem, 5vw, 4.5rem); max-width: 1040px; }
-.ae-earth-divider--edge { margin-block: clamp(1.75rem, 4vw, 3.5rem); max-width: 980px; }
+/* The Celtic tree of life is the one ceremonial divider on the page. The two
+   painted garlands stay subordinate, and neither is upscaled past its 746px
+   native width. */
+.ae-earth-divider--tree { max-width: 1120px; }
+.ae-earth-divider--moon { margin-block: clamp(2rem, 5vw, 4.5rem); max-width: 747px; }
+.ae-earth-divider--edge { margin-block: clamp(1.75rem, 4vw, 3.5rem); max-width: 746px; }
 @media (max-width: 560px) {
   .ae-earth-divider { margin-block: 2.4rem; padding-inline: 0; }
   .ae-earth-divider--tree { margin-block: 3rem 2.25rem; }
