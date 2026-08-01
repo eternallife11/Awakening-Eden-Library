@@ -10,8 +10,9 @@
 .work-hero__copy .handwritten { margin-bottom: .15rem; font-size: clamp(2.4rem, 5vw, 4.5rem); }
 .work-hero__promise { max-width: 35rem; margin: 1.1rem 0; color: var(--forest); font-family: var(--display); font-size: clamp(1.45rem, 2.5vw, 2rem); font-weight: 500; line-height: 1.28; }
 .work-hero__copy > p:not(.handwritten,.eyebrow,.work-hero__promise) { max-width: 37rem; color: rgb(35 49 38 / .77); }
-.work-proof { display: flex; flex-wrap: wrap; gap: .55rem 1.3rem; margin: 1.4rem 0 0; padding: 0; color: var(--olive); font-size: .78rem; font-weight: 800; list-style: none; }
-.work-proof li::before { content: "✓"; margin-right: .35rem; color: var(--terracotta); }
+.work-proof { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+.work-proof li { padding: .45rem .9rem; border: 1px solid rgb(105 112 82 / .38); border-radius: 999px; color: var(--forest); background: rgb(255 253 247 / .72); font-size: .82rem; font-weight: 750; }
+.work-proof li::before { content: "✓"; margin-right: .38rem; color: var(--terracotta); font-weight: 800; }
 .work-hero__photo { margin: 0; text-align: center; }
 .work-portrait-frame { position: relative; width: min(100%, 31rem); margin-inline: auto; padding: .72rem; border: 1px solid rgb(105 112 82 / .38); border-radius: 48% 48% 1.5rem 1.5rem; background: var(--paper-light); box-shadow: var(--shadow); }
 .work-portrait-frame > img:first-child { width: 100%; aspect-ratio: 4 / 5; border-radius: 48% 48% 1rem 1rem; object-fit: cover; object-position: center 42%; }
@@ -35,10 +36,10 @@
 
 .work-outcome-strip { position: relative; z-index: 3; border-block: 1px solid rgb(105 112 82 / .18); background: var(--forest); color: var(--paper-light); }
 .work-outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.work-outcome-grid div { display: grid; min-height: 7.2rem; align-content: center; padding: 1rem clamp(.8rem, 2vw, 1.6rem); border-right: 1px solid rgb(255 253 247 / .13); text-align: center; }
+.work-outcome-grid div { display: grid; min-height: 8.4rem; gap: .4rem; align-content: center; padding: 1.2rem clamp(.8rem, 2vw, 1.6rem); border-right: 1px solid rgb(255 253 247 / .16); text-align: center; }
 .work-outcome-grid div:last-child { border-right: 0; }
-.work-outcome-grid strong { color: #f1cf87; font-family: var(--display); font-size: 1.6rem; font-weight: 500; }
-.work-outcome-grid span { color: rgb(255 253 247 / .72); font-size: .78rem; }
+.work-outcome-grid strong { color: #f1cf87; font-family: var(--display); font-size: clamp(1.85rem, 3.2vw, 2.5rem); font-weight: 600; letter-spacing: .01em; line-height: 1.1; }
+.work-outcome-grid span { color: rgb(255 253 247 / .88); font-size: .9rem; font-weight: 600; line-height: 1.4; }
 
 .work-intro { background: var(--paper-light); }
 .work-intro__grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(17rem, .72fr) minmax(0, 1.28fr); gap: clamp(2.5rem, 8vw, 8rem); align-items: start; }
@@ -235,9 +236,10 @@
 }
 
 /* v23.4.1 — direct contact alternatives */
-.enquiry-direct { margin-top: 1rem; }
-.enquiry-direct a { font-weight: 800; text-underline-offset: 0.25rem; }
-.enquiry-direct span { margin-inline: 0.4rem; opacity: 0.55; }
+.enquiry-direct { display: grid; gap: .7rem; margin-top: 1.4rem; }
+.enquiry-direct strong { color: var(--forest); font-family: var(--display); font-size: 1.28rem; font-weight: 600; }
+.enquiry-direct__actions { margin: 0; }
+.enquiry-direct small { color: var(--umber); font-size: .78rem; }
 
 /* ============================================================
    v23.9 — v9 deep layer: transformation pathways, real video,
@@ -266,6 +268,20 @@
 @media (prefers-reduced-motion: reduce) {
   .ae-earth-divider, .ae-earth-divider * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Hero: direct-contact CTA, reassurance line and capability badges */
+.button--whatsapp { border: 1px solid rgb(58 106 74 / .55); color: #f4fbf4; background: linear-gradient(145deg, #3f7a52, #2f5f40); }
+.button--whatsapp:hover, .button--whatsapp:focus-visible { background: linear-gradient(145deg, #47895c, #356a48); }
+.hero-reply { margin: .9rem 0 0; color: var(--olive); font-size: .82rem; font-weight: 600; }
+
+/* Four things every project grows */
+.outcome-lead { margin: 0 0 .1rem; padding-top: clamp(1.6rem, 3vw, 2.2rem); color: #f1cf87; font-family: var(--display); font-size: clamp(1.35rem, 2.6vw, 1.9rem); font-style: italic; font-weight: 500; text-align: center; }
+.work-outcome-strip .work-outcome-grid { padding-bottom: clamp(.6rem, 1.5vw, 1rem); }
+
+/* Keyword-rich capability ribbon under the services heading */
+.capability-ribbon { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin: 0 0 clamp(2rem, 4vw, 3rem); padding: 0; list-style: none; }
+.capability-ribbon li { padding: .5rem 1rem; border: 1px solid rgb(105 112 82 / .34); border-radius: 999px; color: var(--forest); background: rgb(255 253 247 / .8); font-size: .82rem; font-weight: 750; }
+.services-lead { max-width: 46rem; margin-inline: auto; color: var(--forest); font-family: var(--display); font-size: clamp(1.22rem, 2.1vw, 1.6rem); font-weight: 600; line-height: 1.45; }
 
 /* What could your land become? */
 .become-section { background: linear-gradient(180deg, var(--paper), rgb(232 222 200 / .55)); }

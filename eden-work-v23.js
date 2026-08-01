@@ -11,6 +11,7 @@
       const dialog = document.createElement("dialog");
       dialog.className = "board-lightbox";
       const full = document.createElement("img");
+      full.alt = "";
       const close = document.createElement("button");
       close.type = "button";
       close.className = "board-lightbox__close";
