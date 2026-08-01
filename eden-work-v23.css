@@ -25,6 +25,14 @@
 .work-corner { position: absolute; z-index: 1; width: clamp(10rem, 22vw, 22rem); pointer-events: none; opacity: .55; }
 .work-corner--hero { top: 0; right: .75rem; }
 
+.wow-strip { position: relative; z-index: 3; padding: 0 0 clamp(1.5rem, 3vw, 2.5rem); background: var(--paper-light); }
+.wow-strip__intro { margin-bottom: 1rem; text-align: center; }
+.wow-strip__intro .handwritten { margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.wow-strip__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.wow-strip__grid figure { position: relative; min-height: 15rem; margin: 0; border-radius: 1.1rem; overflow: hidden; box-shadow: 0 10px 26px rgb(35 49 38 / .12); }
+.wow-strip__grid img { width: 100%; height: 100%; object-fit: cover; }
+.wow-strip__grid figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2.2rem .9rem .8rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .82rem; font-weight: 750; }
+
 .work-outcome-strip { position: relative; z-index: 3; border-block: 1px solid rgb(105 112 82 / .18); background: var(--forest); color: var(--paper-light); }
 .work-outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .work-outcome-grid div { display: grid; min-height: 7.2rem; align-content: center; padding: 1rem clamp(.8rem, 2vw, 1.6rem); border-right: 1px solid rgb(255 253 247 / .13); text-align: center; }
@@ -35,6 +43,9 @@
 .work-intro { background: var(--paper-light); }
 .work-intro__grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(17rem, .72fr) minmax(0, 1.28fr); gap: clamp(2.5rem, 8vw, 8rem); align-items: start; }
 .work-intro__grid h2 { max-width: 9ch; }
+.work-intro__photo { position: relative; margin: 1.6rem 0 0; border: .5rem solid var(--paper); border-radius: 1.2rem; overflow: hidden; box-shadow: var(--shadow); }
+.work-intro__photo img { width: 100%; height: 14rem; object-fit: cover; display: block; }
+.work-intro__photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2rem .9rem .7rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .78rem; font-weight: 700; }
 .work-intro__copy { max-width: 52rem; }
 .work-intro__copy blockquote { margin: 2rem 0 0; padding: 1.3rem 1.5rem; border-left: 3px solid var(--gold); background: var(--paper); color: var(--forest); font-family: var(--display); font-size: clamp(1.25rem, 2.2vw, 1.75rem); font-style: italic; line-height: 1.4; }
 .work-corner--intro { right: 2rem; bottom: .75rem; transform: rotate(-8deg); }
@@ -58,6 +69,11 @@
 .service-card--water { background: linear-gradient(145deg, rgb(225 239 236 / .85), rgb(255 253 247 / .9)); }
 .service-card--earth { background: linear-gradient(145deg, rgb(239 224 193 / .9), rgb(255 253 247 / .9)); }
 .service-card--orchard { background: linear-gradient(145deg, rgb(235 229 199 / .92), rgb(255 253 247 / .9)); }
+.service-card--wide { grid-column: 1 / -1; min-height: auto; }
+.before-after { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; margin: 1.4rem 0; }
+.before-after figure { position: relative; margin: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 26px rgb(35 49 38 / .1); }
+.before-after img { width: 100%; height: 14rem; object-fit: cover; display: block; }
+.before-after figcaption { position: absolute; top: .7rem; left: .7rem; padding: .3rem .75rem; border-radius: 999px; color: var(--paper-light); background: rgb(35 49 38 / .72); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .service-card--home { grid-column: 1 / -1; min-height: auto; background: linear-gradient(145deg, rgb(232 222 200 / .84), rgb(255 253 247 / .9)); }
 .service-number { margin-bottom: 2rem; color: var(--terracotta); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .service-card h3 { max-width: 16ch; }
@@ -85,11 +101,21 @@
 .work-corner--partnership { right: 1.5rem; bottom: .5rem; opacity: .42; transform: rotate(-7deg); }
 
 .abundant-section { background: var(--paper-light); }
-.abundant-grid { display: grid; grid-template-columns: minmax(16rem, .75fr) minmax(0, 1.25fr); gap: clamp(2rem, 7vw, 7rem); align-items: center; }
-.abundant-art { display: grid; min-height: 31rem; place-items: center; border: 1px solid rgb(105 112 82 / .28); border-radius: 48% 48% 1.5rem 1.5rem; background: radial-gradient(circle, rgb(184 148 75 / .18), transparent 59%), var(--paper); box-shadow: var(--shadow); }
-.abundant-art img { width: min(74%, 22rem); filter: drop-shadow(0 18px 25px rgb(35 49 38 / .12)); }
+.abundant-grid { display: grid; grid-template-columns: minmax(18rem, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+.abundant-photos { display: grid; gap: .8rem; }
+.abundant-photos figure { position: relative; margin: 0; border: .5rem solid var(--paper); border-radius: 1.2rem; overflow: hidden; box-shadow: var(--shadow); }
+.abundant-photos img { width: 100%; height: 15.5rem; object-fit: cover; display: block; }
+.abundant-photos figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2rem .9rem .7rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .78rem; font-weight: 700; line-height: 1.35; }
+.layers-list { display: grid; gap: .7rem; margin: 1.4rem 0; padding: 0; list-style: none; counter-reset: layer; }
+.layers-list li { position: relative; padding: .1rem 0 .1rem 2.5rem; color: var(--umber); }
+.layers-list li::before { counter-increment: layer; content: counter(layer); position: absolute; left: 0; top: -.1rem; display: grid; width: 1.7rem; height: 1.7rem; place-items: center; border-radius: 50%; background: var(--olive); color: var(--paper-light); font-size: .78rem; font-weight: 800; }
+.layers-list strong { color: var(--forest); }
 .abundant-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
 .abundant-tags span { padding: .45rem .8rem; border: 1px solid rgb(105 112 82 / .32); border-radius: 999px; color: var(--forest); background: var(--paper); font-size: .78rem; font-weight: 750; }
+.abundant-outcomes { display: grid; gap: .5rem; margin-top: 1.6rem; padding: 1.1rem 1.3rem; border-left: 3px solid var(--terracotta); background: rgb(232 222 200 / .42); }
+.abundant-outcomes strong { color: var(--forest); font-family: var(--display); font-size: 1.05rem; font-weight: 600; }
+.abundant-outcomes ul { display: grid; gap: .4rem; margin: .5rem 0 0; padding-left: 1.15rem; color: var(--umber); font-size: .88rem; }
+.abundant-outcomes li::marker { color: var(--terracotta); }
 
 .field-section { background: linear-gradient(180deg, var(--paper), rgb(232 222 200 / .48)); }
 .field-gallery { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; }
@@ -174,6 +200,8 @@
 @media (max-width: 58rem) {
   .work-hero { min-height: auto; }
   .work-hero__grid, .work-intro__grid, .abundant-grid, .video-grid, .fit-grid, .faq-grid, .enquiry-grid, .partnership-grid { grid-template-columns: 1fr; }
+  .wow-strip__grid { grid-template-columns: repeat(2, 1fr); }
+  .abundant-photos { grid-template-columns: repeat(2, 1fr); }
   .work-hero__copy { text-align: center; }
   .work-hero__copy h1, .work-hero__copy > p { margin-inline: auto; }
   .work-hero__copy .button-row, .work-proof { justify-content: center; }
@@ -203,9 +231,171 @@
   .process-grid li, .process-grid li:nth-child(4), .process-grid li:nth-child(5) { min-height: auto; }
   .field-card, .field-card--wide { min-height: 27rem; }
   .video-placeholder { min-height: 24rem; }
+  .wow-strip__grid, .abundant-photos, .before-after { grid-template-columns: 1fr; }
 }
 
 /* v23.4.1 — direct contact alternatives */
 .enquiry-direct { margin-top: 1rem; }
 .enquiry-direct a { font-weight: 800; text-underline-offset: 0.25rem; }
 .enquiry-direct span { margin-inline: 0.4rem; opacity: 0.55; }
+
+/* ============================================================
+   v23.9 — v9 deep layer: transformation pathways, real video,
+   Regenerative Compass, educational boards, Moinhos journey,
+   Acacia craft, living-water biopool, path & invitation
+   ============================================================ */
+
+/* Earth-Mama sacred dividers (merged from earth-mama-divider.css) */
+:root {
+  --ae-earth-ink: #405631;
+  --ae-earth-olive: #718457;
+  --ae-earth-clay: #b86f55;
+  --ae-earth-water: #6e9da0;
+  --ae-earth-gold: #c59a53;
+  --ae-earth-paper: #f7f0df;
+}
+.ae-earth-divider { box-sizing: border-box; clear: both; display: block; margin: clamp(2.5rem, 7vw, 6rem) auto; max-width: min(100%, 1120px); padding-inline: clamp(0.25rem, 2vw, 1.5rem); pointer-events: none; }
+.ae-earth-divider img { display: block; height: auto; margin-inline: auto; max-width: 100%; width: 100%; }
+.ae-earth-divider--tree { max-width: 1180px; }
+.ae-earth-divider--moon { margin-block: clamp(2rem, 5vw, 4.5rem); max-width: 1040px; }
+.ae-earth-divider--edge { margin-block: clamp(1.75rem, 4vw, 3.5rem); max-width: 980px; }
+@media (max-width: 560px) {
+  .ae-earth-divider { margin-block: 2.4rem; padding-inline: 0; }
+  .ae-earth-divider--tree { margin-block: 3rem 2.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ae-earth-divider, .ae-earth-divider * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* What could your land become? */
+.become-section { background: var(--paper-light); }
+.become-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.become-card { display: flex; flex-direction: column; margin: 0; border: 1px solid rgb(105 112 82 / .28); border-radius: 1.2rem; overflow: hidden; background: rgb(255 253 247 / .88); box-shadow: 0 12px 30px rgb(35 49 38 / .07); }
+.become-card img { width: 100%; height: 13rem; object-fit: cover; display: block; }
+.become-card--board img { object-fit: contain; background: #fdfaf2; padding: .45rem; }
+.become-card figcaption { display: grid; gap: .35rem; padding: 1rem 1.1rem 1.2rem; }
+.become-card figcaption strong { color: var(--forest); font-family: var(--display); font-size: 1.22rem; font-weight: 600; line-height: 1.25; }
+.become-card figcaption strong span { color: var(--terracotta); }
+.become-card figcaption > span { color: var(--umber); font-size: .82rem; line-height: 1.45; }
+
+/* Real native video player */
+.video-frame { margin: 0; }
+.video-frame video { display: block; width: 100%; height: auto; border: .6rem solid var(--paper); border-radius: 1.5rem; background: var(--forest-deep); box-shadow: var(--shadow); }
+.video-frame figcaption { margin-top: .9rem; color: var(--umber); font-size: .82rem; text-align: center; }
+.video-frame figcaption a { font-weight: 800; text-underline-offset: .2rem; }
+.video-close { color: var(--forest); }
+
+/* Regenerative Compass */
+.compass-section { background: linear-gradient(180deg, var(--paper), rgb(232 222 200 / .5)); }
+.compass-name { margin: 2rem 0 0; font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+.compass-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.compass-card, .path-card { padding: 1.4rem 1.5rem; border: 1px solid rgb(105 112 82 / .26); border-radius: 1.3rem; background: rgb(255 253 247 / .82); box-shadow: 0 10px 26px rgb(35 49 38 / .05); }
+.compass-num, .path-num { display: grid; width: 2rem; height: 2rem; margin-bottom: 1rem; place-items: center; border: 1px solid rgb(184 148 75 / .55); border-radius: 50%; color: var(--terracotta); font-size: .88rem; font-weight: 800; }
+.compass-card h3, .path-card h3 { max-width: none; font-size: 1.32rem; }
+.compass-tag { margin: .4rem 0 .55rem; color: var(--forest); font-family: var(--display); font-size: 1.08rem; font-style: italic; font-weight: 600; line-height: 1.35; }
+.compass-card p:last-child, .path-card p:last-child { margin-bottom: 0; color: var(--umber); font-size: .86rem; }
+.compass-photo { position: relative; width: min(100%, 24rem); margin: clamp(2rem, 4vw, 3rem) auto; border: .55rem solid var(--paper-light); border-radius: 1.4rem; overflow: hidden; box-shadow: var(--shadow); }
+.compass-photo img { display: block; width: 100%; height: auto; }
+.compass-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2.2rem .9rem .8rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .8rem; font-weight: 700; }
+.compass-close { max-width: 46rem; margin: clamp(2.5rem, 5vw, 4rem) auto 0; text-align: center; }
+.compass-close .handwritten { margin-bottom: .3rem; }
+.compass-question { margin: 0 0 1rem; color: var(--forest); font-family: var(--display); font-size: clamp(1.7rem, 3.4vw, 2.6rem); font-weight: 600; line-height: 1.25; }
+.compass-close p:not(.handwritten,.compass-question) { color: var(--umber); }
+
+/* Educational board sections */
+.board-section { background: var(--paper-light); }
+.board-section--water { background: linear-gradient(150deg, rgb(225 239 236 / .55), var(--paper-light)); }
+.board-section--forest { background: linear-gradient(180deg, var(--paper), rgb(232 222 200 / .45)); }
+.board-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.board-grid--reverse > .board-copy { order: 2; }
+.board-copy h2 { max-width: 17ch; }
+.board-copy .lead { color: var(--forest); font-family: var(--display); font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 600; }
+.board-figure { margin: 0; }
+.board-figure img { display: block; width: 100%; height: auto; object-fit: contain; padding: .5rem; border: 1px solid rgb(105 112 82 / .3); border-radius: 1.2rem; background: #fdfaf2; box-shadow: var(--shadow); }
+.board-figure figcaption { margin-top: .9rem; color: var(--umber); font-size: .85rem; line-height: 1.55; }
+.board-figure figcaption strong { color: var(--forest); }
+.board-figure--center { width: min(100%, 54rem); margin: clamp(2rem, 4vw, 3rem) auto 0; }
+.board-figure--inset { margin-top: 1.4rem; }
+.board-note { margin-top: 1.2rem; color: var(--olive); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
+.board-note.center { margin-top: 1rem; text-align: center; }
+.board-details { margin-top: 1.5rem; padding: .2rem 1.15rem; border: 1px solid rgb(105 112 82 / .3); border-radius: 1.1rem; background: rgb(255 253 247 / .72); }
+.board-details summary { padding: .9rem 0; color: var(--forest); font-family: var(--display); font-size: 1.22rem; font-weight: 600; cursor: pointer; }
+.board-details[open] summary { margin-bottom: .9rem; border-bottom: 1px solid rgb(105 112 82 / .22); }
+.board-details > figure { margin-bottom: 1.1rem; }
+.board-details--center { width: min(100%, 54rem); margin: clamp(1.6rem, 3vw, 2.4rem) auto 0; }
+.board-photo { position: relative; margin: 1.6rem 0 0; border: .5rem solid var(--paper); border-radius: 1.1rem; overflow: hidden; box-shadow: var(--shadow); }
+.board-photo img { display: block; width: 100%; height: auto; }
+.board-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2rem .9rem .7rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .78rem; font-weight: 700; }
+
+/* Moinhos project journey */
+.moinhos-section { background: linear-gradient(180deg, rgb(232 222 200 / .5), var(--paper)); }
+.moinhos-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: .9rem; }
+.moinhos-gallery figure { position: relative; margin: 0; border-radius: 1.1rem; overflow: hidden; box-shadow: 0 10px 26px rgb(35 49 38 / .12); }
+.moinhos-gallery img { display: block; width: 100%; height: 15rem; object-fit: cover; }
+.moinhos-gallery figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2.2rem .85rem .75rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .9)); font-size: .78rem; font-weight: 700; line-height: 1.35; }
+.journey-frames-note { margin: .3rem 0 0; color: var(--umber); font-size: .74rem; }
+
+/* Abundant Edge sequence */
+.abundant-flow { margin: 1.5rem 0 .3rem; color: var(--forest); font-family: var(--display); font-size: clamp(1.18rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.5; }
+.abundant-flow span { color: var(--terracotta); }
+
+/* Natural Acacia craft */
+.acacia-section { background: var(--paper-light); }
+.acacia-gallery { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 1rem; align-items: stretch; }
+.acacia-figure { position: relative; margin: 0; border: .55rem solid var(--paper); border-radius: 1.3rem; overflow: hidden; box-shadow: var(--shadow); }
+.acacia-figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.acacia-figure:not(.acacia-figure--wide) img { max-height: 34rem; }
+.acacia-figure figcaption { position: absolute; right: 0; bottom: 0; left: 0; display: grid; padding: 2.6rem 1.2rem 1rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .9)); }
+.acacia-figure figcaption strong { font-family: var(--display); font-size: 1.35rem; font-weight: 500; }
+.acacia-figure figcaption span { color: rgb(255 253 247 / .74); font-size: .8rem; }
+.acacia-note { max-width: 46rem; margin: 1.3rem auto 0; text-align: center; }
+
+/* Living-water biopool possibility */
+.biopool-section { background: linear-gradient(160deg, rgb(225 239 236 / .6), var(--paper-light)); }
+.biopool-intro { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.biopool-photo { position: relative; margin: 0; border: .55rem solid var(--paper); border-radius: 1.3rem; overflow: hidden; box-shadow: var(--shadow); }
+.biopool-photo img { display: block; width: 100%; height: auto; }
+.biopool-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2.2rem .9rem .8rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .78rem; font-weight: 700; }
+.biopool-copy h2 { max-width: 15ch; }
+.biopool-copy .lead { color: var(--umber); font-size: clamp(1rem, 1.6vw, 1.12rem); }
+.biopool-reference figcaption { margin-top: 1rem; padding: .85rem 1.1rem; border-left: 3px solid var(--gold); background: rgb(232 222 200 / .5); color: var(--forest); font-size: .84rem; font-weight: 600; }
+.biopool-flowkey { width: min(100%, 56rem); margin: 1.5rem auto 0; }
+.biopool-flowkey img { display: block; width: 100%; height: auto; }
+.biopool-loop { width: min(100%, 56rem); margin: clamp(1.8rem, 4vw, 2.6rem) auto 0; padding: 1.5rem 1.7rem; border: 1px solid rgb(105 112 82 / .3); border-radius: 1.3rem; background: rgb(255 253 247 / .85); box-shadow: 0 10px 26px rgb(35 49 38 / .05); }
+.biopool-loop h3 { max-width: none; margin-bottom: .4rem; font-size: 1.5rem; }
+.biopool-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: .55rem 2.2rem; margin: .7rem 0 0; padding-left: 1.4rem; color: var(--umber); }
+.biopool-steps li::marker { color: var(--terracotta); font-weight: 800; }
+.biopool-cta { margin: 1.9rem 0 0; text-align: center; }
+
+/* The path behind the work */
+.path-section { background: var(--paper); }
+.path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.path-card--wide { grid-column: 1 / -1; }
+.path-principle { max-width: 50rem; margin: clamp(2.5rem, 5vw, 4rem) auto 0; padding: 1.6rem 1.9rem; border-left: 3px solid var(--gold); background: var(--paper-light); box-shadow: 0 10px 26px rgb(35 49 38 / .05); }
+.path-principle h3 { max-width: none; }
+.path-principle p { color: var(--umber); }
+.path-vow strong { color: var(--forest); font-family: var(--display); font-size: 1.15rem; line-height: 1.5; }
+
+/* Invitation */
+.invite-section { background: var(--paper-light); }
+.invite-section h2 { max-width: 20ch; margin-inline: auto; }
+.invite-section p { max-width: 44rem; margin-inline: auto; color: var(--umber); }
+.invite-steps { color: var(--forest) !important; font-family: var(--display); font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-style: italic; line-height: 1.5; }
+
+@media (max-width: 68rem) {
+  .become-grid, .compass-grid, .moinhos-gallery { grid-template-columns: repeat(2, 1fr); }
+  .path-grid { grid-template-columns: repeat(2, 1fr); }
+  .biopool-intro { grid-template-columns: 1fr; }
+}
+@media (max-width: 58rem) {
+  .board-grid { grid-template-columns: 1fr; align-items: start; }
+  .board-grid--reverse > .board-copy { order: 0; }
+  .acacia-gallery { grid-template-columns: 1fr; }
+  .biopool-flowkey { display: none; }
+  .biopool-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 42rem) {
+  .become-grid, .compass-grid, .moinhos-gallery, .path-grid { grid-template-columns: 1fr; }
+  .become-card img { height: 15rem; }
+  .moinhos-gallery img { height: 16rem; }
+}

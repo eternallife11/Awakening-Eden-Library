@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 430" role="img" aria-labelledby="title desc">
+  <title id="title">Simple closed-loop biopool flow</title>
+  <desc id="desc">Pool water moves through a pre-filter and one pump to an elevated upper pond, falls by gravity through a middle and lower pond, then returns from the lower pond to a fountain at the pool's right edge.</desc>
+  <defs>
+    <marker id="waterArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,4 L0,8Z" fill="#2F6971"/>
+    </marker>
+    <marker id="returnArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,4 L0,8Z" fill="#A96945"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="430" rx="28" fill="#F7F0DF"/>
+  <g font-family="Georgia, serif">
+    <text x="800" y="42" text-anchor="middle" fill="#405631" font-size="31" letter-spacing="1.2">THE SIMPLE CLOSED LOOP</text>
+    <text x="800" y="69" text-anchor="middle" fill="#6B4C34" font-size="17">One pump lifts water uphill. Three planted ponds work by gravity. The raised lower pond returns to the pool fountain.</text>
+  </g>
+
+  <!-- the pool sits below and beside the raised pond terrace -->
+  <g>
+    <rect x="58" y="245" width="900" height="112" rx="24" fill="#C9E0DD" stroke="#405631" stroke-width="3"/>
+    <path d="M85 285C147 269 207 299 270 282C342 263 403 298 468 281C541 262 611 298 678 281C751 262 821 294 907 278" fill="none" stroke="#2F6971" stroke-width="4"/>
+    <path d="M85 305C147 289 207 319 270 302C342 283 403 318 468 301C541 282 611 318 678 301C751 282 821 314 907 298" fill="none" stroke="#78AEB0" stroke-width="3"/>
+    <text x="100" y="331" fill="#405631" font-family="Georgia, serif" font-size="25">1 · Swimming pool</text>
+    <text x="100" y="352" fill="#6B4C34" font-family="Georgia, serif" font-size="16">skimmer / intake</text>
+  </g>
+
+  <!-- mechanical beginning: one pump only -->
+  <g>
+    <rect x="210" y="147" width="178" height="61" rx="18" fill="#EDE3C9" stroke="#405631" stroke-width="3"/>
+    <path d="M251 162V193M266 162V193M281 162V193M296 162V193" stroke="#6B4C34" stroke-width="3"/>
+    <circle cx="321" cy="177" r="12" fill="#B86F55"/>
+    <text x="299" y="132" text-anchor="middle" fill="#405631" font-family="Georgia, serif" font-size="22">2 · Pre-filter</text>
+    <text x="299" y="225" text-anchor="middle" fill="#6B4C34" font-family="Georgia, serif" font-size="16">leaf basket / simple mechanical filter</text>
+
+    <rect x="460" y="145" width="130" height="66" rx="18" fill="#718457" stroke="#405631" stroke-width="3"/>
+    <circle cx="500" cy="178" r="16" fill="#F7F0DF" stroke="#405631" stroke-width="3"/>
+    <path d="M528 178H568" stroke="#F7F0DF" stroke-width="5"/>
+    <text x="525" y="130" text-anchor="middle" fill="#405631" font-family="Georgia, serif" font-size="22">3 · One pump</text>
+    <text x="525" y="229" text-anchor="middle" fill="#6B4C34" font-family="Georgia, serif" font-size="16">the only uphill lift</text>
+  </g>
+
+  <!-- elevated planted pond terrace -->
+  <g>
+    <rect x="1092" y="88" width="320" height="58" rx="20" fill="#C9E0DD" stroke="#405631" stroke-width="3"/>
+    <path d="M1118 128C1166 115 1220 138 1275 125C1328 113 1367 125 1388 129" fill="none" stroke="#2F6971" stroke-width="4"/>
+    <text x="1118" y="112" fill="#405631" font-family="Georgia, serif" font-size="17">4 · Upper pond · settling</text>
+
+    <rect x="1092" y="158" width="320" height="58" rx="20" fill="#C9E0DD" stroke="#405631" stroke-width="3"/>
+    <path d="M1118 198C1166 185 1220 208 1275 195C1328 183 1367 195 1388 199" fill="none" stroke="#2F6971" stroke-width="4"/>
+    <text x="1118" y="182" fill="#405631" font-family="Georgia, serif" font-size="17">5 · Middle pond · biofilter</text>
+
+    <rect x="1092" y="228" width="320" height="58" rx="20" fill="#C9E0DD" stroke="#405631" stroke-width="3"/>
+    <path d="M1118 268C1166 255 1220 278 1275 265C1328 253 1367 265 1388 269" fill="none" stroke="#2F6971" stroke-width="4"/>
+    <text x="1118" y="252" fill="#405631" font-family="Georgia, serif" font-size="17">6 · Lower pond · polishing</text>
+  </g>
+
+  <!-- exact route: pool → filter → one pump → highest pond -->
+  <path d="M161 246C161 226 191 210 210 196" fill="none" stroke="#2F6971" stroke-width="6" marker-end="url(#waterArrow)"/>
+  <path d="M390 177H458" fill="none" stroke="#2F6971" stroke-width="6" marker-end="url(#waterArrow)"/>
+  <path d="M592 177C728 177 766 115 884 115H1090" fill="none" stroke="#2F6971" stroke-width="7" marker-end="url(#waterArrow)"/>
+  <path d="M1414 117C1449 117 1449 187 1414 187" fill="none" stroke="#2F6971" stroke-width="6" marker-end="url(#waterArrow)"/>
+  <path d="M1414 187C1449 187 1449 257 1414 257" fill="none" stroke="#2F6971" stroke-width="6" marker-end="url(#waterArrow)"/>
+
+  <!-- short, separate return from the raised lower pond into a fountain on the pool's right edge -->
+  <path d="M1090 257C1040 257 1024 283 984 283C975 283 968 284 958 285" fill="none" stroke="#A96945" stroke-width="7" marker-end="url(#returnArrow)"/>
+  <g>
+    <path d="M934 295V263C934 250 944 240 957 240H977C990 240 1000 250 1000 263V295Z" fill="#D1A46B" stroke="#6B4C34" stroke-width="3"/>
+    <path d="M967 241V213" stroke="#2F6971" stroke-width="5"/>
+    <path d="M967 213C953 223 944 232 940 243M967 213C981 223 990 232 994 243" fill="none" stroke="#6E9DA0" stroke-width="3"/>
+    <text x="968" y="319" text-anchor="middle" fill="#405631" font-family="Georgia, serif" font-size="20">7 · Right-edge fountain</text>
+    <text x="968" y="340" text-anchor="middle" fill="#6B4C34" font-family="Georgia, serif" font-size="15">lower pond → short gravity return → pool</text>
+  </g>
+
+  <g font-family="Georgia, serif" fill="#6B4C34">
+    <text x="800" y="395" text-anchor="middle" font-size="17">The lower pond sits above the fountain outlet for gravity return.</text>
+    <text x="800" y="418" text-anchor="middle" font-size="15">No second pump · no extra filter branch · no normal outlet into the landscape</text>
+  </g>
+</svg>

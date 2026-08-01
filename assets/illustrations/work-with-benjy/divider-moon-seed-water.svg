@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" fill="none">
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- low flowing line holds the divider together without becoming a garland -->
+    <path d="M56 282C182 260 286 298 404 280C518 262 612 254 723 278C809 296 879 307 966 285C1080 256 1192 274 1318 291C1414 304 1481 287 1548 272" stroke="#6E9DA0" stroke-width="3"/>
+    <path d="M58 294C188 272 293 309 414 292C533 275 617 267 724 290C818 309 883 318 976 298C1092 272 1205 287 1323 303C1418 315 1485 300 1546 287" stroke="#B9D0CA" stroke-width="1.5"/>
+
+    <!-- crescent: a calm, maternal night marker -->
+    <path d="M266 84C208 116 188 193 229 248C270 303 354 315 412 274C354 293 294 266 270 214C246 164 245 122 266 84Z" fill="#D79B72" opacity=".72"/>
+    <path d="M266 84C208 116 188 193 229 248C270 303 354 315 412 274" stroke="#B86F55" stroke-width="3"/>
+    <g fill="#C59A53">
+      <circle cx="311" cy="78" r="3"/>
+      <circle cx="335" cy="96" r="4"/>
+      <circle cx="351" cy="69" r="2.5"/>
+      <circle cx="379" cy="119" r="2"/>
+    </g>
+
+    <!-- hands and seed: relationship, care, protection -->
+    <g stroke="#405631" stroke-width="4">
+      <path d="M670 279C697 244 724 226 760 224C784 223 794 234 801 247C808 233 819 223 842 225C879 228 905 248 932 281"/>
+      <path d="M681 284C715 286 748 302 771 321C783 331 792 340 801 350"/>
+      <path d="M921 284C887 286 855 302 831 321C818 332 808 341 801 350"/>
+      <path d="M736 263C755 260 771 263 785 274"/>
+      <path d="M867 263C848 260 832 263 818 274"/>
+    </g>
+    <path d="M801 277C786 257 755 267 759 290C763 315 801 335 801 335C801 335 839 315 843 290C847 267 816 257 801 277Z" fill="#B86F55"/>
+    <path d="M801 292C800 267 807 249 824 231C837 217 839 195 823 180C806 164 779 173 776 196C774 218 792 229 801 246" stroke="#718457" stroke-width="4"/>
+    <path d="M801 246C792 230 778 222 763 217" stroke="#718457" stroke-width="3"/>
+    <path d="M809 238C827 229 840 218 852 204" stroke="#718457" stroke-width="3"/>
+    <g fill="#718457">
+      <ellipse cx="757" cy="214" rx="7" ry="15" transform="rotate(-43 757 214)"/>
+      <ellipse cx="850" cy="201" rx="7" ry="15" transform="rotate(39 850 201)"/>
+      <ellipse cx="779" cy="190" rx="7" ry="15" transform="rotate(-42 779 190)"/>
+      <ellipse cx="822" cy="188" rx="7" ry="15" transform="rotate(42 822 188)"/>
+    </g>
+
+    <!-- a loose fern and wildflower edge, deliberately not mirrored -->
+    <g stroke="#718457" stroke-width="2.5">
+      <path d="M80 282C122 255 161 224 191 187C217 156 237 136 264 117"/>
+      <path d="M122 255C110 232 104 211 109 188"/>
+      <path d="M159 219C146 198 144 177 151 158"/>
+      <path d="M197 181C190 162 193 143 202 127"/>
+      <path d="M1285 291C1328 259 1366 230 1404 194C1435 164 1461 148 1516 129"/>
+      <path d="M1340 246C1350 221 1352 199 1348 178"/>
+      <path d="M1381 211C1395 191 1401 172 1401 153"/>
+      <path d="M1422 179C1441 160 1451 142 1458 124"/>
+    </g>
+    <g fill="#718457">
+      <ellipse cx="104" cy="195" rx="7" ry="16" transform="rotate(-47 104 195)"/>
+      <ellipse cx="122" cy="224" rx="7" ry="16" transform="rotate(36 122 224)"/>
+      <ellipse cx="151" cy="161" rx="7" ry="16" transform="rotate(-26 151 161)"/>
+      <ellipse cx="164" cy="194" rx="7" ry="16" transform="rotate(43 164 194)"/>
+      <ellipse cx="205" cy="128" rx="7" ry="16" transform="rotate(-23 205 128)"/>
+      <ellipse cx="217" cy="157" rx="7" ry="16" transform="rotate(49 217 157)"/>
+      <ellipse cx="1350" cy="182" rx="7" ry="16" transform="rotate(-36 1350 182)"/>
+      <ellipse cx="1341" cy="218" rx="7" ry="16" transform="rotate(42 1341 218)"/>
+      <ellipse cx="1401" cy="155" rx="7" ry="16" transform="rotate(-38 1401 155)"/>
+      <ellipse cx="1400" cy="189" rx="7" ry="16" transform="rotate(42 1400 189)"/>
+      <ellipse cx="1456" cy="124" rx="7" ry="16" transform="rotate(-38 1456 124)"/>
+    </g>
+    <g fill="#B86F55">
+      <circle cx="244" cy="223" r="8"/>
+      <circle cx="244" cy="223" r="3" fill="#C59A53"/>
+      <circle cx="1290" cy="236" r="8"/>
+      <circle cx="1290" cy="236" r="3" fill="#C59A53"/>
+    </g>
+    <g stroke="#B86F55" stroke-width="2">
+      <path d="M244 215L244 203M236 220L224 215M252 220L264 215M236 227L225 233M252 227L263 233"/>
+      <path d="M1290 228L1290 216M1282 233L1270 228M1298 233L1310 228M1282 240L1271 246M1298 240L1309 246"/>
+    </g>
+
+    <!-- one dragonfly, a small pulse of motion -->
+    <g transform="translate(1093 207)" stroke="#6E9DA0" stroke-width="2.5">
+      <path d="M0 10C-17 -4 -33 -6 -42 1C-29 14 -14 17 0 14Z" fill="#B8D2CB" opacity=".78"/>
+      <path d="M0 10C17 -4 33 -6 42 1C29 14 14 17 0 14Z" fill="#B8D2CB" opacity=".78"/>
+      <path d="M0 10V40"/>
+      <path d="M-4 40L0 49L4 40"/>
+      <circle cx="0" cy="6" r="4" fill="#C59A53" stroke="none"/>
+    </g>
+    <g fill="#C59A53">
+      <circle cx="801" cy="110" r="4"/>
+      <circle cx="781" cy="119" r="2.5"/>
+      <circle cx="821" cy="119" r="2.5"/>
+      <circle cx="801" cy="132" r="2"/>
+    </g>
+  </g>
+</svg>

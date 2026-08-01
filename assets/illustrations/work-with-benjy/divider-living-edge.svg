@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 330" fill="none">
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- open ground line keeps the asset light and useful at a section transition -->
+    <path d="M42 219C150 204 248 231 351 217C493 197 563 200 680 218C809 237 891 235 1000 216C1121 195 1233 203 1350 220C1436 233 1503 224 1558 210" stroke="#6B4C34" stroke-width="3"/>
+    <path d="M43 229C149 217 245 242 356 229C493 212 564 215 682 231C813 249 892 247 1004 229C1124 209 1238 215 1354 231C1439 244 1506 237 1556 225" stroke="#A57B3D" stroke-width="1.5"/>
+
+    <!-- low woody edge -->
+    <path d="M342 218C374 184 435 173 497 184C541 192 585 216 627 220" fill="#A57B3D" opacity=".45"/>
+    <path d="M342 218C374 184 435 173 497 184C541 192 585 216 627 220" stroke="#6B4C34" stroke-width="4"/>
+    <path d="M404 201C418 184 444 177 468 181C493 185 512 198 526 211" stroke="#6B4C34" stroke-width="2.5"/>
+    <ellipse cx="402" cy="206" rx="15" ry="12" fill="#D1A46B" stroke="#6B4C34" stroke-width="2"/>
+    <ellipse cx="535" cy="212" rx="13" ry="10" fill="#D1A46B" stroke="#6B4C34" stroke-width="2"/>
+    <circle cx="402" cy="206" r="4" fill="#6B4C34"/>
+    <circle cx="535" cy="212" r="3.5" fill="#6B4C34"/>
+
+    <!-- root and mycelium threads -->
+    <g stroke="#718457" stroke-width="3">
+      <path d="M796 217C794 183 794 154 801 125C808 98 805 79 792 58"/>
+      <path d="M801 126C774 116 752 104 733 87"/>
+      <path d="M803 133C827 117 848 99 863 79"/>
+      <path d="M791 217C764 235 738 249 708 254C682 258 657 270 642 287"/>
+      <path d="M810 217C838 234 866 247 896 252C924 257 950 269 968 285"/>
+    </g>
+    <g fill="#718457">
+      <ellipse cx="733" cy="87" rx="8" ry="17" transform="rotate(-48 733 87)"/>
+      <ellipse cx="757" cy="102" rx="8" ry="17" transform="rotate(26 757 102)"/>
+      <ellipse cx="792" cy="58" rx="8" ry="17" transform="rotate(-17 792 58)"/>
+      <ellipse cx="829" cy="106" rx="8" ry="17" transform="rotate(-28 829 106)"/>
+      <ellipse cx="863" cy="79" rx="8" ry="17" transform="rotate(42 863 79)"/>
+    </g>
+    <path d="M801 154C784 133 751 142 756 169C762 198 801 221 801 221C801 221 840 198 846 169C851 142 817 133 801 154Z" fill="#B86F55"/>
+    <g stroke="#E9E0C8" stroke-width="2">
+      <path d="M784 239C767 250 754 266 741 289"/>
+      <path d="M796 238C785 255 781 274 779 301"/>
+      <path d="M807 238C822 255 830 274 834 301"/>
+      <path d="M819 238C836 251 850 267 863 289"/>
+    </g>
+    <g fill="#E9E0C8">
+      <circle cx="742" cy="289" r="3"/>
+      <circle cx="779" cy="301" r="3"/>
+      <circle cx="834" cy="301" r="3"/>
+      <circle cx="863" cy="289" r="3"/>
+    </g>
+
+    <!-- fungal and groundcover life -->
+    <g stroke="#6B4C34" stroke-width="2.5">
+      <path d="M660 220C652 199 654 180 666 167"/>
+      <path d="M946 219C952 199 950 178 940 164"/>
+      <path d="M1021 216C1014 196 1017 178 1027 162"/>
+      <path d="M586 218C578 199 580 182 591 166"/>
+    </g>
+    <g fill="#B86F55" stroke="#6B4C34" stroke-width="2">
+      <path d="M642 175C650 157 673 156 681 175Z"/>
+      <rect x="659" y="175" width="6" height="22" rx="3" fill="#E9E0C8"/>
+      <path d="M922 172C931 154 954 154 963 172Z"/>
+      <rect x="940" y="172" width="6" height="24" rx="3" fill="#E9E0C8"/>
+      <path d="M1007 171C1016 153 1039 153 1048 171Z"/>
+      <rect x="1025" y="171" width="6" height="24" rx="3" fill="#E9E0C8"/>
+      <path d="M572 175C580 157 603 157 612 175Z"/>
+      <rect x="590" y="175" width="6" height="22" rx="3" fill="#E9E0C8"/>
+    </g>
+    <g stroke="#718457" stroke-width="2.5">
+      <path d="M78 220C126 189 164 167 217 150C255 138 286 117 315 91"/>
+      <path d="M1280 220C1326 187 1372 169 1421 150C1456 136 1490 115 1521 88"/>
+      <path d="M1170 218C1185 194 1201 176 1224 160"/>
+    </g>
+    <g fill="#718457">
+      <ellipse cx="139" cy="182" rx="7" ry="16" transform="rotate(-55 139 182)"/>
+      <ellipse cx="176" cy="164" rx="7" ry="16" transform="rotate(31 176 164)"/>
+      <ellipse cx="221" cy="149" rx="7" ry="16" transform="rotate(-42 221 149)"/>
+      <ellipse cx="277" cy="121" rx="7" ry="16" transform="rotate(39 277 121)"/>
+      <ellipse cx="1329" cy="183" rx="7" ry="16" transform="rotate(52 1329 183)"/>
+      <ellipse cx="1370" cy="166" rx="7" ry="16" transform="rotate(-32 1370 166)"/>
+      <ellipse cx="1420" cy="151" rx="7" ry="16" transform="rotate(43 1420 151)"/>
+      <ellipse cx="1485" cy="119" rx="7" ry="16" transform="rotate(-38 1485 119)"/>
+      <ellipse cx="1201" cy="177" rx="7" ry="16" transform="rotate(-42 1201 177)"/>
+      <ellipse cx="1226" cy="160" rx="7" ry="16" transform="rotate(40 1226 160)"/>
+    </g>
+    <g fill="#C59A53">
+      <circle cx="316" cy="90" r="4"/>
+      <circle cx="1171" cy="218" r="3.5"/>
+      <circle cx="1522" cy="88" r="4"/>
+      <circle cx="535" cy="217" r="3"/>
+      <circle cx="1063" cy="220" r="3"/>
+    </g>
+  </g>
+</svg>
