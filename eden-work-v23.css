@@ -331,36 +331,10 @@
 .board-grid--reverse > .board-copy { order: 2; }
 .board-copy h2 { max-width: 17ch; }
 .board-copy .lead { color: var(--forest); font-family: var(--display); font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 600; }
-.board-figure { margin: 0; }
-.board-figure img { display: block; width: 100%; height: auto; object-fit: contain; padding: .5rem; border: 1px solid rgb(105 112 82 / .3); border-radius: 1.2rem; background: #fdfaf2; box-shadow: var(--shadow); }
-.board-figure figcaption { margin-top: .9rem; color: var(--umber); font-size: .85rem; line-height: 1.55; }
-.board-figure figcaption strong { color: var(--forest); }
-.board-figure--center { width: min(100%, 54rem); margin: clamp(2rem, 4vw, 3rem) auto 0; }
-.board-figure--inset { margin-top: 1.4rem; }
-.board-note { margin-top: 1.2rem; color: var(--olive); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
 
 /* Tap-to-expand for boards: their printed labels are too fine to read small */
-.board-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
-.board-zoom:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 4px; border-radius: 1.2rem; }
-.board-zoom::after { content: "Tap to enlarge"; display: block; margin-top: .5rem; color: var(--olive); font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
-@media (hover: hover) { .board-zoom::after { content: "Click to enlarge"; } }
-.board-lightbox { width: min(96vw, 1500px); max-width: none; max-height: 92vh; padding: 0; border: 0; border-radius: 1rem; background: transparent; overflow: auto; overscroll-behavior: contain; }
-.board-lightbox::backdrop { background: rgb(20 31 23 / .9); }
 /* Narrow screens: size the board by height and let the reader pan across it,
    so the printed labels stay legible instead of shrinking to fit. */
-.board-lightbox img { display: block; width: auto; max-width: none; height: 82vh; border-radius: .8rem; background: #fdfaf2; }
-.board-lightbox__close { position: fixed; z-index: 2; top: 1rem; right: 1rem; padding: .5rem 1.15rem; border: 1px solid rgb(255 253 247 / .5); border-radius: 999px; color: var(--paper-light); background: rgb(35 49 38 / .88); font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
-.board-lightbox__close:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-@media (min-width: 48rem) {
-  .board-lightbox img { width: 100%; height: auto; max-height: 88vh; object-fit: contain; }
-  .board-lightbox__close { position: absolute; top: .8rem; right: .8rem; }
-}
-.board-note.center { margin-top: 1rem; text-align: center; }
-.board-details { margin-top: 1.5rem; padding: .2rem 1.15rem; border: 1px solid rgb(105 112 82 / .3); border-radius: 1.1rem; background: rgb(255 253 247 / .72); }
-.board-details summary { padding: .9rem 0; color: var(--forest); font-family: var(--display); font-size: 1.22rem; font-weight: 600; cursor: pointer; }
-.board-details[open] summary { margin-bottom: .9rem; border-bottom: 1px solid rgb(105 112 82 / .22); }
-.board-details > figure { margin-bottom: 1.1rem; }
-.board-details--center { width: min(100%, 54rem); margin: clamp(1.6rem, 3vw, 2.4rem) auto 0; }
 .board-photo { position: relative; margin: 1.6rem 0 0; border: .5rem solid var(--paper); border-radius: 1.1rem; overflow: hidden; box-shadow: var(--shadow); }
 .board-photo img { display: block; width: 100%; height: auto; }
 .board-photo figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 2rem .9rem .7rem; color: var(--paper-light); background: linear-gradient(transparent, rgb(20 31 23 / .88)); font-size: .78rem; font-weight: 700; }

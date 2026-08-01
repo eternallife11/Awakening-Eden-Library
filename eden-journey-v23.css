@@ -1,0 +1,204 @@
+/* Awakening Eden — Our Journey v23.5
+   A warm, handmade family journal & field notebook.
+   Loads after eden-v23.css (tokens, header, footer, buttons). */
+
+/* ---------- Page rhythm ---------- */
+.page-journey .section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.page-journey .reveal { animation: none; }
+
+/* Handwritten margin notes stay short and decorative — body text never uses the hand font. */
+.margin-note {
+  display: block; margin: 0 0 0.9rem;
+  font-family: var(--hand); color: var(--terracotta);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.12;
+}
+
+/* ---------- Hero: the notebook cover ---------- */
+.journey-hero { position: relative; overflow: clip; padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2.5rem, 6vw, 4.5rem); }
+.journey-hero-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+  gap: clamp(2.5rem, 6vw, 6rem); align-items: center;
+}
+.journey-hero h1 { font-size: clamp(3.2rem, 8vw, 7rem); line-height: 0.9; }
+.journey-subtitle {
+  max-width: 36rem; margin: 1.1rem 0 0;
+  font-family: var(--display); font-size: clamp(1.35rem, 2.5vw, 1.95rem);
+  line-height: 1.38; color: var(--forest);
+}
+.journey-hero .button-row { margin-top: 2rem; }
+.journey-hero-note { margin-top: 1.4rem; color: var(--umber); font-size: 0.92rem; max-width: 30rem; }
+
+/* ---------- Journal photo system ----------
+   Variants: --portrait, --landscape, paired via .journal-pair.
+   Each figure = paper print + washi tape + handwritten place label,
+   optional year chip and a plain-text caption. */
+.journal-photo {
+  position: relative; margin: 0;
+  padding: clamp(0.6rem, 1.4vw, 0.95rem) clamp(0.6rem, 1.4vw, 0.95rem) 1.1rem;
+  background: var(--paper-light);
+  border: 1px solid rgb(105 112 82 / 0.35);
+  border-radius: 0.45rem;
+  box-shadow: 0 18px 42px rgb(35 49 38 / 0.14);
+  transform: rotate(-1.1deg);
+}
+.journal-photo--tilt-right { transform: rotate(1.2deg); }
+.journal-photo::before {
+  content: ""; position: absolute; z-index: 2; top: -0.8rem; left: 50%;
+  width: clamp(5.5rem, 9vw, 7.5rem); height: 1.65rem;
+  transform: translateX(-50%) rotate(-2.5deg);
+  background: rgb(184 148 75 / 0.34);
+  border-inline: 1px dashed rgb(255 253 247 / 0.65);
+  border-radius: 0.15rem;
+}
+.journal-photo img { width: 100%; height: auto; border-radius: 0.3rem; }
+.journal-photo--portrait img { aspect-ratio: 4 / 5; object-fit: cover; }
+.journal-photo--landscape img { aspect-ratio: 3 / 2; object-fit: cover; }
+.journal-photo figcaption { display: grid; gap: 0.2rem; justify-items: center; padding-top: 0.85rem; text-align: center; }
+.photo-label { font-family: var(--hand); color: var(--terracotta); font-size: clamp(1.4rem, 2.6vw, 1.85rem); line-height: 1.08; }
+.photo-year {
+  padding: 0.18rem 0.6rem; border: 1px solid rgb(105 112 82 / 0.35); border-radius: 999px;
+  color: var(--olive); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+}
+.photo-caption { max-width: 30rem; color: var(--umber); font-size: 0.9rem; line-height: 1.5; }
+
+.journal-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.4rem, 3.5vw, 2.4rem); align-items: start; }
+.journal-pair .journal-photo:nth-child(even) { transform: rotate(1.15deg); margin-top: clamp(0.8rem, 2.5vw, 1.8rem); }
+
+/* ---------- Field notes: small slips of paper ---------- */
+.journey-field-note {
+  position: relative; max-width: 32rem;
+  margin: 2rem 0 0; padding: 1.15rem 1.4rem 1.1rem;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 1.62rem, rgb(105 112 82 / 0.13) 1.62rem calc(1.62rem + 1px)),
+    linear-gradient(180deg, #fcf7e9, #f4ecd8);
+  border: 1px solid rgb(184 148 75 / 0.38);
+  border-radius: 0.35rem 1rem 0.4rem 0.9rem;
+  box-shadow: 0 12px 28px rgb(35 49 38 / 0.09);
+  transform: rotate(0.5deg);
+}
+.journey-field-note .margin-note { margin: 0; font-size: clamp(1.45rem, 2.5vw, 1.85rem); }
+.journey-field-note p { margin: 0.35rem 0 0; color: var(--umber); font-size: 0.94rem; line-height: 1.55; }
+.journey-field-note--center { margin-inline: auto; text-align: center; }
+
+/* ---------- Chapters ---------- */
+.chapter-head { max-width: var(--reading); }
+.chapter-head .eyebrow { margin-bottom: 0.45rem; }
+.chapter-head h2 { font-size: clamp(2.3rem, 5vw, 4.2rem); text-wrap: balance; }
+.chapter-grid {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  gap: clamp(2.5rem, 6vw, 6rem); align-items: center;
+}
+.chapter-grid--photo-first { grid-template-columns: minmax(18rem, 0.85fr) minmax(0, 1.15fr); }
+.chapter-copy p + p { margin-top: 1rem; }
+.chapter-copy .lead { color: var(--forest); margin-bottom: 1.1rem; }
+
+/* Question list in the opening chapter */
+.question-lines { margin: 1.4rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.55rem; }
+.question-lines li {
+  padding: 0.15rem 0 0.15rem 1.15rem; border-left: 3px solid rgb(184 148 75 / 0.55);
+  font-family: var(--display); font-style: italic;
+  font-size: clamp(1.25rem, 2.3vw, 1.7rem); line-height: 1.3; color: var(--forest);
+}
+
+/* ---------- Forest band (What the forest was trying to tell us) ---------- */
+.forest-band { color: var(--paper-light); background: linear-gradient(160deg, var(--forest-deep), var(--forest)); }
+.forest-band h2, .forest-band h3 { color: var(--paper-light); }
+.forest-band .eyebrow { color: var(--sage); }
+.forest-band .margin-note { color: #f1cf87; }
+.forest-band p { color: rgb(255 253 247 / 0.9); }
+.forest-band .forest-pull {
+  margin: 1.8rem 0 0; padding: 1.2rem 1.5rem; border-left: 3px solid var(--gold);
+  background: rgb(255 253 247 / 0.07); border-radius: 0 var(--radius) var(--radius) 0;
+  font-family: var(--display); font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.35; color: #f2e5c4;
+}
+.forest-band img.chapter-divider { filter: brightness(0) invert(1); opacity: 0.5; }
+
+/* ---------- Timeline: the shape of the road ---------- */
+.road-note { margin: 0.4rem 0 0; color: var(--umber); font-size: 0.92rem; }
+.journey-timeline {
+  position: relative; list-style: none;
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin: 2.8rem 0 0; padding: 0;
+}
+.journey-timeline::before {
+  content: ""; position: absolute; top: 0.55rem; left: 3%; right: 3%;
+  border-top: 2px dashed rgb(105 112 82 / 0.55);
+}
+.journey-timeline li { position: relative; flex: 1; min-width: 0; padding-top: 1.7rem; text-align: center; }
+.journey-timeline li::before {
+  content: ""; position: absolute; top: 0; left: 50%;
+  width: 1.1rem; height: 1.1rem;
+  transform: translateX(-50%) rotate(-45deg);
+  background: var(--olive);
+  border: 2px solid var(--paper-light);
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 0 0 1px rgb(105 112 82 / 0.55);
+}
+.tl-place { display: block; font-family: var(--hand); color: var(--forest); font-size: clamp(1.45rem, 2.6vw, 2rem); line-height: 1.05; }
+.tl-note { display: block; margin-top: 0.25rem; color: var(--umber); font-size: 0.8rem; line-height: 1.4; }
+
+/* ---------- Honest chapter ---------- */
+.honest-section { background: linear-gradient(180deg, rgb(232 222 200 / 0.55), var(--paper)); }
+.honest-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.2rem, 3vw, 2rem); margin-top: 2.4rem; align-items: start; }
+.honest-notes .journey-field-note { margin-top: 0; }
+.honest-notes .journey-field-note:nth-child(2) { transform: rotate(-0.8deg); margin-top: 1.1rem; }
+.honest-notes .journey-field-note:nth-child(3) { transform: rotate(0.9deg); }
+
+/* ---------- Origin section art ---------- */
+.origin-art { text-align: center; }
+.origin-art img { width: min(60vw, 21rem); margin-inline: auto; filter: drop-shadow(0 18px 26px rgb(35 49 38 / 0.13)); }
+
+/* ---------- Walk with us ---------- */
+.walk-section { background: linear-gradient(180deg, var(--paper), rgb(232 222 200 / 0.65)); }
+.walk-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; margin-top: 2.2rem; }
+.walk-card {
+  display: grid; align-content: start; gap: 0.35rem;
+  padding: 1.35rem 1.3rem 1.5rem;
+  border: 1px solid rgb(105 112 82 / 0.32); border-radius: 1.2rem;
+  background: var(--paper-light); text-decoration: none;
+  box-shadow: 0 10px 26px rgb(35 49 38 / 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.walk-card:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgb(35 49 38 / 0.13); }
+.walk-card strong { font-family: var(--display); font-weight: 600; font-size: 1.35rem; line-height: 1.1; color: var(--forest); }
+.walk-card span { color: var(--umber); font-size: 0.9rem; line-height: 1.5; }
+.walk-card em { margin-top: 0.5rem; font-style: normal; font-weight: 800; font-size: 0.92rem; color: var(--forest); }
+.walk-card--primary { background: var(--forest); border-color: var(--forest-deep); }
+.walk-card--primary strong, .walk-card--primary em { color: var(--paper-light); }
+.walk-card--primary span { color: rgb(255 253 247 / 0.78); }
+.walk-blessing { margin-top: 2.6rem; text-align: center; }
+.walk-blessing .margin-note { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+
+/* ---------- Scroll reveal (progressive enhancement) ----------
+   eden-journey-v23.js adds .journey-reveal to <html> only when
+   IntersectionObserver exists and motion is allowed; without it,
+   everything below stays fully visible. */
+.journey-reveal .jr-reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
+.journey-reveal .jr-reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 58rem) {
+  .journey-hero-grid, .chapter-grid, .chapter-grid--photo-first { grid-template-columns: 1fr; }
+  .journey-hero-grid .journal-photo { max-width: 26rem; margin-inline: auto; }
+  .chapter-grid--photo-first .journal-photo, .chapter-grid .journal-pair { order: 2; }
+  .walk-grid { grid-template-columns: repeat(2, 1fr); }
+  .honest-notes { grid-template-columns: 1fr; }
+  .honest-notes .journey-field-note { margin-inline: auto; }
+  .journey-timeline { flex-direction: column; gap: 1.5rem; margin-top: 2.2rem; }
+  .journey-timeline::before { top: 0.4rem; bottom: 0.4rem; left: 0.52rem; right: auto; border-top: 0; border-left: 2px dashed rgb(105 112 82 / 0.55); }
+  .journey-timeline li { padding: 0 0 0 2.1rem; text-align: left; }
+  .journey-timeline li::before { top: 0.2rem; left: 0; transform: rotate(-45deg); }
+}
+@media (max-width: 44rem) {
+  .journey-hero h1 { font-size: clamp(2.9rem, 14vw, 4.2rem); }
+  .journal-pair { grid-template-columns: 1fr; }
+  .journal-pair .journal-photo:nth-child(even) { margin-top: 0.6rem; }
+  .journal-photo, .journal-photo--tilt-right, .journal-pair .journal-photo:nth-child(even) { transform: rotate(-0.6deg); }
+  .walk-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .walk-card:hover { transform: none; }
+  .journey-reveal .jr-reveal { opacity: 1; transform: none; transition: none; }
+}

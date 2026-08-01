@@ -1,0 +1,103 @@
+/*
+ * Awakening Eden · Portable site chrome
+ *
+ * A self-contained header and footer for the older v22-era guide pages, which
+ * were built without site navigation and are dead ends for anyone arriving
+ * from search. Everything here is namespaced under .ec- so it cannot collide
+ * with eden-v22.css or eden-v23.css, and type is inherited from the host page
+ * so each guide keeps its own voice while carrying the same brand.
+ */
+
+.ec-header.ec-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  border-bottom: 1px solid rgb(105 112 82 / 0.22);
+  background: rgb(255 253 247 / 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.ec-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(100% - 2rem, 82rem);
+  margin-inline: auto;
+  padding-block: 0.6rem;
+}
+
+.ec-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: auto;
+  color: #233126;
+  text-decoration: none;
+}
+
+.ec-brand img { width: 2.5rem; height: auto; }
+.ec-brand strong { display: block; font-size: 1.02rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.1; }
+.ec-brand small { display: block; color: #6b7052; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.ec-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 1.1rem; }
+.ec-nav a { color: #344734; font-size: 0.86rem; font-weight: 600; text-decoration: none; }
+.ec-nav a:hover, .ec-nav a:focus-visible { text-decoration: underline; text-underline-offset: 0.28rem; }
+
+.ec-cta {
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  color: #fffdf7 !important;
+  background: #344734;
+  font-weight: 700;
+}
+.ec-cta:hover, .ec-cta:focus-visible { background: #3f5740; text-decoration: none !important; }
+
+/* Dark forest green, matching .site-footer on the v23 pages. eden-v22.css sets
+   `footer { background: ... !important }`, so the chrome deliberately adopts
+   the same dark treatment rather than fighting it — the two already agree. */
+.ec-footer.ec-footer {
+  margin-top: 4rem;
+  padding-block: 2.6rem;
+  border-top: 1px solid rgb(255 253 247 / 0.14);
+  background: #233126;
+  color: #fffdf7;
+}
+
+.ec-footer.ec-footer .ec-footer-inner {
+  display: grid;
+  gap: 1.2rem;
+  width: min(100% - 2rem, 82rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.ec-footer.ec-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.4rem; }
+.ec-footer.ec-footer nav a { color: rgb(255 253 247 / 0.86); font-size: 0.88rem; font-weight: 600; text-decoration: none; }
+.ec-footer.ec-footer nav a:hover, .ec-footer.ec-footer nav a:focus-visible { color: #fffdf7; text-decoration: underline; text-underline-offset: 0.28rem; }
+.ec-footer.ec-footer p { margin: 0; color: rgb(255 253 247 / 0.62); font-size: 0.82rem; }
+.ec-footer.ec-footer .ec-blessing { color: #f1cf87; font-size: 1.05rem; font-style: italic; }
+
+/*
+ * Dark hero contrast rescue.
+ *
+ * eden-v22.css sets `h1, h2, h3, h4, .display, .serif { color: var(--ae-forest)
+ * !important }`. On the guides whose hero is a dark photo or green gradient
+ * that painted the page's own title dark-green-on-dark-green — effectively
+ * invisible. Only heroes explicitly marked .hero--dark are corrected, so the
+ * guides with a light cream hero keep their dark headings.
+ */
+.hero--dark h1,
+.hero--dark h2,
+.hero--dark h3,
+.hero--dark .display,
+.hero--dark .serif {
+  color: #fff8e8 !important;
+  text-shadow: 0 2px 12px rgb(20 31 23 / 0.45);
+}
+
+@media (max-width: 46rem) {
+  .ec-inner { flex-wrap: wrap; padding-block: 0.55rem; }
+  .ec-brand { margin-right: 0; }
+  .ec-nav { width: 100%; justify-content: center; gap: 0.3rem 0.9rem; }
+  .ec-nav a { font-size: 0.8rem; }
+}

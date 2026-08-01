@@ -117,7 +117,10 @@ body.page-library {
   display: grid; gap: 0.25rem; padding: 1rem 1.1rem;
   border: 1px solid rgb(105 112 82 / 0.28); border-radius: 1.1rem;
   background: rgb(255 253 247 / 0.72);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
+.path-card:hover { background: var(--linen); transform: translateY(-2px); box-shadow: 0 10px 24px rgb(35 49 38 / 0.08); }
 .path-card b { font-family: var(--display); font-size: 1.2rem; color: var(--forest); }
 .path-card span { color: var(--umber); font-size: 0.88rem; line-height: 1.45; }
 
@@ -162,7 +165,10 @@ body.page-library {
   color: var(--terracotta); font-size: 0.72rem; font-weight: 800;
   letter-spacing: 0.08em; text-transform: uppercase;
 }
-.resource-card h3 { margin: 0; font-size: 1.45rem; line-height: 1.12; }
+/* Card titles must claim their own colour: eden-v23.css paints .library-section
+   headings cream for the homepage's dark band, which turns them invisible on
+   this page's cream cards. */
+.resource-card h3 { margin: 0; color: var(--forest); font-size: 1.45rem; line-height: 1.12; }
 .resource-card p { margin: 0; color: var(--umber); font-size: 0.94rem; line-height: 1.55; flex-grow: 1; }
 .resource-card .open {
   align-self: flex-start; margin-top: 0.4rem;
@@ -170,7 +176,6 @@ body.page-library {
   text-underline-offset: 0.3rem;
 }
 .muted { color: var(--umber); opacity: 0.85; }
-.top-films .resource-card:first-child { grid-column: span 2; background: linear-gradient(135deg, var(--paper-light), rgb(232 222 200 / 0.6)); }
 
 /* ---------- CTA band ---------- */
 .cta-band {
@@ -207,18 +212,112 @@ body.page-library {
   .cards { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 58rem) {
-  .quicknav { top: 4.6rem; }
+  /* Wrapped to seven rows, a pinned quicknav plus the sticky header claimed
+     over half the phone viewport. One swipeable row that scrolls away keeps
+     the shortcuts without stealing the screen. */
+  .quicknav { position: static; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .quicknav::-webkit-scrollbar { display: none; }
+  .quicknav .wrap { width: max-content; min-width: 100%; flex-wrap: nowrap; justify-content: flex-start; padding-inline: var(--gutter); }
+  .quicknav a { flex: 0 0 auto; }
   .intro-grid { grid-template-columns: 1fr; }
   .path-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 44rem) {
   .cards { grid-template-columns: 1fr; }
-  .top-films .resource-card:first-child { grid-column: auto; }
   .section-heading { grid-template-columns: 1fr; }
   .section-icon { width: 3.4rem; height: 3.4rem; }
   .hero-actions { display: grid; width: 100%; }
   .growth { font-size: 0.74rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .resource-card:hover, .quicknav a:hover, .hero-actions .btn:hover { transform: none; }
+  .resource-card:hover, .quicknav a:hover, .hero-actions .btn:hover, .path-card:hover { transform: none; }
+}
+
+/* ---------- v23.5 — Films: a curated cinema library ---------- */
+.cinema-section .section-heading { max-width: 60rem; }
+.cinema-hook {
+  margin: 0.4rem 0 0;
+  font-family: var(--display); font-style: italic;
+  color: var(--forest); font-size: clamp(1.15rem, 2.2vw, 1.55rem); line-height: 1.4;
+}
+.cinema-intro { max-width: 46rem; margin-bottom: 1.4rem; }
+.cinema-intro p { color: var(--umber); }
+.cinema-choose {
+  margin: 0.9rem 0 0;
+  font-family: var(--hand); color: var(--terracotta);
+  font-size: clamp(1.55rem, 3vw, 2.15rem); line-height: 1.1;
+}
+
+.film-doorways { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0.4rem; }
+.film-doorways a {
+  display: inline-flex; align-items: center; min-height: 2.75rem;
+  padding: 0.55rem 1.05rem;
+  border: 1px solid rgb(105 112 82 / 0.4);
+  border-radius: 1.2rem 0.9rem 1.15rem 0.95rem;
+  background: rgb(255 253 247 / 0.75);
+  color: var(--forest); font-size: 0.88rem; font-weight: 800; text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+.film-doorways a:hover { background: var(--linen); transform: translateY(-1px); }
+
+.film-category {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: clamp(1.4rem, 3vw, 2rem);
+  border-top: 1px dashed rgb(105 112 82 / 0.4);
+  scroll-margin-top: 10.5rem;
+}
+.film-category__head { max-width: 46rem; margin-bottom: 1.2rem; }
+.film-category__head h3 { margin-bottom: 0.3rem; font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+.film-category__head p { margin: 0; color: var(--umber); }
+.film-category__cross { max-width: 46rem; margin: 1.1rem 0 0; color: var(--umber); font-size: 0.9rem; }
+.film-category__cross a { color: var(--forest); font-weight: 800; text-underline-offset: 0.25rem; }
+
+.film-card { border-top: none; padding-top: 0; overflow: clip; }
+.film-card-photo { position: relative; margin: 0 -1.5rem 0; }
+.film-card-photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.film-card-photo-credit {
+  position: absolute; right: 0.5rem; bottom: 0.5rem;
+  padding: 0.15rem 0.55rem; border-radius: 999px;
+  background: rgb(35 49 38 / 0.55); backdrop-filter: blur(3px);
+  color: rgb(255 253 247 / 0.92); font-size: 0.65rem; line-height: 1.4;
+  text-decoration: none;
+}
+.film-card-photo-credit:hover { background: rgb(35 49 38 / 0.78); }
+.film-card-body { padding-top: 1.1rem; display: flex; flex-direction: column; gap: 0.55rem; flex-grow: 1; }
+.film-card h4 {
+  margin: 0;
+  font-family: var(--display); font-weight: 500;
+  color: var(--forest); font-size: 1.45rem; line-height: 1.12;
+}
+.film-card .film-hook {
+  margin: 0; flex-grow: 0;
+  font-family: var(--hand); color: var(--terracotta);
+  font-size: 1.32rem; line-height: 1.15;
+}
+.film-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+  align-self: flex-start; margin-top: 0.55rem;
+  min-height: 3rem; padding: 0.7rem 1.35rem;
+  border: 1px solid rgb(35 49 38 / 0.25);
+  border-radius: 1.15rem 0.85rem 1.2rem 0.9rem;
+  background: var(--olive); color: var(--paper-light);
+  font-size: 0.95rem; font-weight: 800; line-height: 1.1; text-decoration: none;
+  transition: background-color 170ms ease, transform 170ms ease, box-shadow 170ms ease;
+}
+.film-btn:hover { background: var(--forest); transform: translateY(-2px); box-shadow: 0 10px 22px rgb(35 49 38 / 0.18); }
+.film-btn:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
+.film-btn--secondary { background: rgb(255 253 247 / 0.85); color: var(--forest); border-color: rgb(105 112 82 / 0.55); }
+.film-btn--secondary:hover { background: var(--linen); }
+.film-card--featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--paper-light), rgb(110 142 136 / 0.18));
+}
+@media (max-width: 44rem) {
+  .film-card--featured { grid-column: auto; }
+  .film-doorways a { flex: 1 1 auto; justify-content: center; }
+  .film-btn { align-self: stretch; }
+  .film-category { scroll-margin-top: 9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-btn:hover, .film-doorways a:hover { transform: none; }
 }
