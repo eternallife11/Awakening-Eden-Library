@@ -77,6 +77,157 @@
 .ec-footer.ec-footer p { margin: 0; color: rgb(255 253 247 / 0.62); font-size: 0.82rem; }
 .ec-footer.ec-footer .ec-blessing { color: #f1cf87; font-size: 1.05rem; font-style: italic; }
 
+/* The Celtic tree of life, used once per guide as the turn into the closing
+   invitation. The older guides have no image dividers of their own, so this
+   is also the moment they pick up the site's illustrated voice. */
+.ec-divider.ec-divider {
+  display: block;
+  width: min(100% - 2rem, 56rem);
+  margin: clamp(2.5rem, 6vw, 4rem) auto clamp(-1rem, -1vw, 0rem);
+  pointer-events: none;
+}
+.ec-divider.ec-divider img { display: block; width: 100%; height: auto; }
+
+/*
+ * Living challenge
+ *
+ * The closing invitation on every guide: one small, doable act, then a warm
+ * door into the community to share what happened. Deliberately feels like a
+ * page torn from a field journal rather than a call-to-action block — the
+ * point is company, not conversion.
+ */
+.ec-challenge.ec-challenge {
+  width: min(100% - 2rem, 50rem);
+  margin: clamp(2.5rem, 6vw, 4.5rem) auto;
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  border: 1px solid rgb(184 148 75 / 0.42);
+  border-radius: 1.6rem;
+  background:
+    radial-gradient(circle at 88% 8%, rgb(184 148 75 / 0.1), rgba(0, 0, 0, 0) 42%),
+    linear-gradient(155deg, #fffdf7, #f4ecd9);
+  box-shadow: 0 16px 40px rgb(35 49 38 / 0.08);
+  color: #233126;
+  text-align: center;
+}
+
+.ec-challenge.ec-challenge .ec-challenge-eyebrow {
+  margin: 0 0 0.3rem;
+  color: #a7654f;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ec-challenge.ec-challenge h2 {
+  margin: 0 0 0.5rem;
+  color: #233126 !important;
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.ec-challenge.ec-challenge .ec-challenge-lead {
+  max-width: 34rem;
+  margin: 0 auto 1.6rem;
+  color: #344734;
+  font-size: clamp(1.06rem, 2vw, 1.28rem);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.ec-challenge.ec-challenge ol {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 34rem;
+  margin: 0 auto 1.7rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  text-align: left;
+}
+
+.ec-challenge.ec-challenge ol li {
+  position: relative;
+  padding-left: 2.6rem;
+  color: #55603f;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.ec-challenge.ec-challenge ol li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: -0.1rem;
+  left: 0;
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #718457;
+  color: #fffdf7;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.ec-challenge.ec-challenge ol li strong { color: #233126; }
+
+.ec-challenge.ec-challenge .ec-challenge-share {
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed rgb(105 112 82 / 0.34);
+}
+
+.ec-challenge.ec-challenge .ec-challenge-share p {
+  max-width: 32rem;
+  margin: 0 auto 1rem;
+  color: #55603f;
+  font-size: 0.95rem;
+}
+
+.ec-challenge-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.ec-challenge.ec-challenge .ec-challenge-actions a {
+  padding: 0.62rem 1.25rem;
+  border: 1px solid rgb(105 112 82 / 0.4);
+  border-radius: 999px;
+  background: #fffdf7;
+  color: #344734;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ec-challenge.ec-challenge .ec-challenge-actions a:hover,
+.ec-challenge.ec-challenge .ec-challenge-actions a:focus-visible {
+  border-color: rgb(105 112 82 / 0.7);
+  background: #f6f0e2;
+}
+
+.ec-challenge.ec-challenge .ec-challenge-actions .ec-wa {
+  border-color: rgb(58 106 74 / 0.5);
+  background: linear-gradient(145deg, #3f7a52, #2f5f40);
+  color: #f4fbf4;
+}
+.ec-challenge.ec-challenge .ec-challenge-actions .ec-wa:hover,
+.ec-challenge.ec-challenge .ec-challenge-actions .ec-wa:focus-visible {
+  background: linear-gradient(145deg, #47895c, #356a48);
+}
+
+.ec-challenge.ec-challenge .ec-challenge-note {
+  margin: 1.2rem auto 0;
+  max-width: 32rem;
+  color: #6b7052;
+  font-size: 0.84rem;
+  font-style: italic;
+}
+
 /*
  * Dark hero contrast rescue.
  *

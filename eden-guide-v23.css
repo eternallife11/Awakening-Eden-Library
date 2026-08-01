@@ -186,6 +186,9 @@ body.guide-one {
 
 .botanical-divider { width: min(calc(100% - 2 * var(--gutter)), 46rem); margin: -2.4rem auto; opacity: 0.78; pointer-events: none; }
 .botanical-divider img { width: 100%; }
+/* The Celtic tree of life is the ceremonial divider: taller, wider and given
+   real breathing room, so it reads as a chapter turn rather than a rule. */
+.botanical-divider--tree { width: min(calc(100% - 2 * var(--gutter)), 62rem); margin-block: clamp(0.5rem, 2vw, 1.5rem); opacity: 1; }
 
 .pause-outside { position: relative; padding-block: clamp(4.5rem, 9vw, 8rem); color: var(--paper-light); background: var(--forest); overflow: clip; }
 .pause-outside::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 100%, rgb(184 148 75 / 0.2), transparent 55%); }
