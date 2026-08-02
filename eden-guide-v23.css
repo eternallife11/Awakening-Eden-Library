@@ -107,18 +107,54 @@ body.guide-one {
 .guide-controls { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.8rem; }
 .button--gift { color: var(--paper-light); background: var(--terracotta); }
 
-.guide-path {
+/* The seed-to-tree journey: a full-width banner naming the six stages this
+   guide walks through, each with a one-line description so the arc is clear
+   before a reader commits to the whole thing. Wider than the page's normal
+   reading container so it reads as one continuous banner, not a centred
+   island inside it. */
+.guide-journey {
   position: relative;
   z-index: 4;
-  padding-block: 1rem;
+  padding-block: clamp(1.7rem, 3.5vw, 2.6rem);
   border-block: 1px solid var(--guide-line);
   background: rgb(255 253 247 / 0.64);
 }
 
-.growth-path { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; align-items: end; margin: 0; padding: 0; list-style: none; }
-.growth-path li { position: relative; display: grid; justify-items: center; gap: 0.3rem; color: var(--umber); text-align: center; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-.growth-path li:not(:last-child)::after { content: ""; position: absolute; top: 2.1rem; left: 64%; width: 72%; height: 1px; background: var(--guide-line); }
-.growth-path img { position: relative; z-index: 2; width: 4.5rem; height: 4.5rem; object-fit: contain; filter: drop-shadow(0 6px 8px rgb(35 49 38 / 0.12)); }
+.guide-journey__inner { width: min(calc(100% - 2 * var(--gutter)), 92rem); margin-inline: auto; }
+
+.guide-journey__eyebrow {
+  margin: 0 0 1.4rem;
+  color: var(--olive);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.growth-path { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; align-items: start; margin: 0; padding: 0; list-style: none; }
+
+/* One continuous ground line under the whole row, rather than six fragments
+   that have to line up with each column's math. */
+.growth-path::before {
+  content: "";
+  position: absolute;
+  top: 5.35rem;
+  left: 3%;
+  width: 94%;
+  height: 1px;
+  background: var(--guide-line);
+}
+
+.growth-path li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 0.55rem; text-align: center; }
+.growth-path__art { display: grid; align-items: end; justify-items: center; height: 5.6rem; }
+/* max-height must be an explicit unit, not a percentage: percentages on a
+   grid item don't reliably resolve against an auto-sized grid row, which let
+   the taller tree illustrations overflow this box and cover the text below. */
+.growth-path__art img { display: block; width: auto; height: auto; max-width: 100%; max-height: 5.6rem; object-fit: contain; filter: drop-shadow(0 6px 8px rgb(35 49 38 / 0.12)); }
+.growth-path__text { display: grid; justify-items: center; gap: 0.3rem; }
+.growth-path strong { color: var(--forest); font-family: var(--display); font-size: 1.08rem; font-weight: 700; }
+.growth-path__desc { max-width: 12.5rem; color: var(--umber); font-size: 0.78rem; line-height: 1.45; }
 
 .guide-shell { position: relative; }
 .guide-edge { position: absolute; z-index: 1; top: 3rem; left: max(-8.5rem, calc((100vw - 93rem) / 2)); width: clamp(8rem, 13vw, 13rem); height: auto; opacity: 0.62; pointer-events: none; }
@@ -244,15 +280,25 @@ body.guide-one {
   .chapter-nav ol, .principle-grid { grid-template-columns: repeat(2, 1fr); }
   .guide-edge { display: none; }
   .author-photo { max-width: 39rem; margin-inline: auto; }
+  /* Three stages per row, two rows: the ground line only ever matched a
+     single row of six, so it steps aside rather than cutting across both. */
+  .growth-path { grid-template-columns: repeat(3, 1fr); row-gap: 2.6rem; }
+  .growth-path::before { display: none; }
 }
 
 @media (max-width: 720px) {
   .guide-masthead { min-height: auto; padding-top: 3.2rem; }
   .guide-masthead h1 { font-size: clamp(3rem, 14.5vw, 5.4rem); overflow-wrap: break-word; }
   .guide-controls .button { width: 100%; }
-  .growth-path li:nth-child(even) { display: none; }
-  .growth-path { grid-template-columns: repeat(3, 1fr); }
-  .growth-path li:not(:last-child)::after { left: 65%; width: 70%; }
+  /* Six stages with real descriptions are too dense for a horizontal
+     squeeze; the journey becomes a vertical timeline instead, icon beside
+     text, reading top to bottom like the guide itself. */
+  .growth-path { grid-template-columns: 1fr; gap: 1.6rem; }
+  .growth-path::before { display: none; }
+  .growth-path li { grid-template-columns: 4.2rem 1fr; justify-items: start; align-items: center; gap: 0 1rem; text-align: left; }
+  .growth-path__art { height: auto; align-items: center; }
+  .growth-path__text { justify-items: start; text-align: left; }
+  .growth-path__desc { max-width: none; }
   .chapter-nav ol, .principle-grid, .quick-grid { grid-template-columns: 1fr; }
   .principle { min-height: auto; }
   .guide-hero-art { min-height: 27rem; padding-bottom: 3.4rem; }
@@ -266,7 +312,7 @@ body.guide-one {
 }
 
 @media print {
-  .site-header, .guide-controls, .guide-path, .chapter-nav, .guide-edge, .community-row { display: none !important; }
+  .site-header, .guide-controls, .guide-journey, .chapter-nav, .guide-edge, .community-row { display: none !important; }
   .guide-masthead { min-height: auto; }
   .guide-chapter, .author-note, .closing { break-inside: avoid; padding-block: 2rem; }
   body.guide-one { background: #fff; }
