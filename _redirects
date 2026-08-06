@@ -3,10 +3,18 @@
 /start-here      /Awakening-Regeneration.html                                      200
 /thriving-in-these-times /Thriving-in-These-Times.html                             200
 /about           /about.html                                                       200
+/heart           /heart.html                                                       200
 /links           /links.html                                                       200
 /journal         /journal.html                                                     200
 /journey         /journey.html                                                     200
 /work-with-benjy /work-with-benjy.html                                             200
+
+# Guide pages keep their historic mixed-case filenames. Netlify folds case on
+# its own, but these rules make the canonical lower-case URLs explicit so the
+# routes behave identically on Netlify and on any local dev server.
+/7-first-steps-regenerate-your-land      /7-First-Steps-Regenerate-Your-Land.html          200
+/abundant-edge-index                     /Abundant-Edge-Index.html                         200
+/small-scale-regenerative-farm-playbook  /Small-Scale-Regenerative-Farm-Playbook.html      200
 
 /library         /living-library 301!
 /resources       /living-library 301!

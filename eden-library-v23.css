@@ -175,6 +175,9 @@ body.page-library {
   color: var(--forest); font-weight: 800; font-size: 0.95rem;
   text-underline-offset: 0.3rem;
 }
+/* A card may offer a second route to the same resource (read online, then the
+   PDF). The follow-up link stays visibly secondary to the first. */
+.resource-card .open + .open { margin-top: 0; color: var(--olive); font-size: 0.88rem; font-weight: 700; }
 .muted { color: var(--umber); opacity: 0.85; }
 
 /* ---------- CTA band ---------- */

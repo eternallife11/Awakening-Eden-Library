@@ -20,6 +20,11 @@
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
       link.rel = "noopener noreferrer";
     });
+    // Print buttons used inline onclick, which the site's CSP (script-src 'self')
+    // blocks, so they silently did nothing. Bound here instead.
+    document.querySelectorAll("[data-print]").forEach(btn => {
+      btn.addEventListener("click", () => window.print());
+    });
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
     }

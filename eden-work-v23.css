@@ -56,6 +56,7 @@
 .pathway-card { display: flex; min-height: 30rem; flex-direction: column; padding: clamp(1.4rem, 3vw, 2.35rem); border: 1px solid rgb(105 112 82 / .28); border-radius: 1.5rem; background: rgb(255 253 247 / .86); box-shadow: 0 14px 36px rgb(35 49 38 / .055); }
 .pathway-card--featured { border-color: rgb(184 148 75 / .58); background: linear-gradient(145deg, #f5ead3, var(--paper-light)); box-shadow: 0 18px 42px rgb(35 49 38 / .09); }
 .pathway-kicker { margin-bottom: 1.6rem; color: var(--terracotta); font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.pathway-alias { margin: -.4rem 0 .7rem; color: var(--olive); font-size: .85rem; font-style: italic; }
 .pathway-card h3 { max-width: 14ch; }
 .pathway-card > p { color: var(--umber); }
 .pathway-card ul { display: grid; gap: .55rem; margin: auto 0 1.25rem; padding: 1.25rem 0 0 1.2rem; color: var(--umber); }
@@ -301,7 +302,9 @@
 
 /* Real native video player */
 .video-frame { margin: 0; }
-.video-frame video { display: block; width: 100%; height: auto; border: .6rem solid var(--paper); border-radius: 1.5rem; background: var(--forest-deep); box-shadow: var(--shadow); }
+.video-frame video,
+.video-frame--still img { display: block; width: 100%; height: auto; border: .6rem solid var(--paper); border-radius: 1.5rem; background: var(--forest-deep); box-shadow: var(--shadow); }
+.video-frame--still img { aspect-ratio: 4 / 3; object-fit: cover; }
 .video-frame figcaption { margin-top: .9rem; color: var(--umber); font-size: .82rem; text-align: center; }
 .video-frame figcaption a { font-weight: 800; text-underline-offset: .2rem; }
 .video-close { color: var(--forest); }
