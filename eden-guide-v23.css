@@ -317,3 +317,14 @@ body.guide-one {
   .guide-chapter, .author-note, .closing { break-inside: avoid; padding-block: 2rem; }
   body.guide-one { background: #fff; }
 }
+
+/* ==========================================================================
+   v23.3 — WCAG AA contrast repair
+   .walk-card sits on the deep forest ground, where the terracotta handwriting
+   measured 2.07–2.20:1 (large text needs 3:1). The gift button's cream on
+   terracotta measured 4.47:1 against a 4.5:1 requirement.
+   ========================================================================== */
+.walk-card .handwritten { color: #e3a68c; }
+.button--gift { background: #95513e; }
+/* Gold numerals read as body-size text on cream: 2.48–2.80:1. */
+.principle-number { color: #846628; }

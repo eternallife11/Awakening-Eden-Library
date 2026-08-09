@@ -324,3 +324,170 @@ body.page-library {
 @media (prefers-reduced-motion: reduce) {
   .film-btn:hover, .film-doorways a:hover { transform: none; }
 }
+
+/* ==========================================================================
+   v23.9 — the Garden Book identity, the overwhelm doorway, and the annotated
+   resource card the 2026-08-09 expansion asks for (lens, beginning, caution).
+   ========================================================================== */
+
+/* The Library's signature motif at the entrance to the room. */
+.garden-book-mark {
+  display: grid;
+  justify-items: center;
+  padding: clamp(1.2rem, 4vw, 2.6rem) var(--gutter) 0;
+  text-align: center;
+}
+.garden-book-mark img {
+  width: min(46rem, 100%);
+  height: auto;
+  aspect-ratio: 1440 / 450;
+}
+.garden-book-mark__line {
+  width: min(52rem, 100%);
+  margin: clamp(0.5rem, 2vw, 1.2rem) auto 0;
+  color: var(--umber);
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 2vw, 1.42rem);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* "What do you need today?" — one doorway each, for an overwhelmed arrival. */
+.need-today { padding-block: clamp(1.5rem, 4vw, 2.8rem); }
+.need-today__head { max-width: 46rem; margin-bottom: clamp(1.1rem, 3vw, 1.8rem); }
+.need-today__head h2 { margin: 0.2rem 0 0.4rem; font-size: clamp(1.8rem, 3.6vw, 2.8rem); }
+.need-today__head p { margin: 0; color: var(--umber); }
+.need-today__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+.need-card {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgb(105 112 82 / 0.32);
+  border-radius: 1.1rem;
+  background: var(--paper-light);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.need-card:hover { transform: translateY(-2px); background: var(--linen); box-shadow: 0 12px 26px rgb(35 49 38 / 0.1); }
+.need-card b { color: var(--forest); font-family: var(--display); font-size: 1.25rem; }
+.need-card span { color: var(--umber); font-size: 0.9rem; line-height: 1.5; }
+.need-today__note { max-width: 52rem; margin-top: 1rem; color: var(--umber); font-size: 0.85rem; }
+
+/* Annotated resource card ------------------------------------------------- */
+.resource-card--annotated { gap: 0.5rem; }
+.resource-card--annotated p { flex-grow: 0; }
+.resource-card--annotated .open { margin-top: auto; }
+.resource-card--annotated .open + .open { margin-top: 0.15rem; }
+
+.shelf-badge {
+  align-self: flex-start;
+  margin: 0;
+  color: var(--olive);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Truth lenses: what kind of knowledge this is. Never styled as a button. */
+.lenses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.lenses li {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgb(105 112 82 / 0.4);
+  border-radius: 999px;
+  color: var(--olive);
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.lenses__label {
+  border: 0;
+  padding-left: 0;
+  color: var(--umber);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.resource-card .begin { color: var(--forest); font-size: 0.9rem; }
+.resource-card .begin b { display: block; color: var(--olive); font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; }
+.resource-card .caution {
+  padding: 0.6rem 0.75rem;
+  border-left: 3px solid rgb(167 101 79 / 0.55);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: rgb(167 101 79 / 0.07);
+  color: var(--umber);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+/* Full-strength olive, not 85%: faded it measures under 4.5:1 on the card. */
+.resource-card .verified { margin: 0.35rem 0 0; color: var(--olive); font-size: 0.74rem; }
+.film-lens { margin: 0.5rem 0 0; color: rgb(255 253 247 / 0.72); font-size: 0.8rem; }
+
+/* Shared safety gate for follow-along breath practice, and the money lenses. */
+.safety-note,
+.lens-note {
+  max-width: 56rem;
+  margin: 0 0 clamp(1.2rem, 3vw, 1.8rem);
+  padding: clamp(1rem, 2.5vw, 1.4rem) clamp(1.1rem, 3vw, 1.6rem);
+  border: 1px solid rgb(184 148 75 / 0.5);
+  border-radius: 1.1rem;
+  background: rgb(255 253 247 / 0.94);
+  color: var(--forest-deep);
+}
+.safety-note h3 { margin: 0 0 0.5rem; color: var(--forest); font-size: 1.25rem; }
+.safety-note p,
+.lens-note p { margin: 0 0 0.6rem; color: var(--umber); font-size: 0.92rem; line-height: 1.6; }
+.safety-note p:last-child,
+.lens-note p:last-child { margin-bottom: 0; }
+
+@media (max-width: 62rem) {
+  .need-today__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 40rem) {
+  .need-today__grid { grid-template-columns: 1fr; }
+  .garden-book-mark__line { font-size: 1.08rem; }
+}
+
+/* Contrast repair: eden-v23.css paints .library-section on the deep forest
+   ground, but the section leads and kickers inherited the light-background
+   umber/terracotta. Umber on forest-deep measures 2.27:1 — well under WCAG AA
+   for body text — so the dark rooms get their own foreground colours. */
+.library-section .section-heading p { color: rgb(255 253 247 / 0.84); }
+.library-section > .section-heading .kicker { color: #e3b686; }
+
+/* ==========================================================================
+   v23.9 — WCAG AA contrast repair on the Library page.
+   Every value below was measured against the background actually painted
+   behind the text, and every one of them was failing:
+     .cinema-intro p / .cinema-choose / .film-category__cross
+                              umber on forest-deep          2.27
+     .film-category__cross a  forest on forest-deep         1.36  (near-invisible link)
+     .resource-card .tag      terracotta on card cream      4.06
+     .film-card .film-hook    terracotta on paper-light     4.47
+     .film-card-photo-credit  cream on a 55% dark scrim     3.10
+     .btn.clay                cream on terracotta           4.47
+   ========================================================================== */
+
+/* The Library's section bands are painted forest-deep by eden-v23.css, so any
+   prose inside them needs a light foreground rather than the light-ground umber. */
+.library-section .cinema-intro p,
+.library-section .film-category__head p,
+.library-section .film-category__cross { color: rgb(255 253 247 / 0.86); }
+.library-section .cinema-choose { color: #e3b686; }
+.library-section .film-category__cross a { color: #d4b878; }
+
+.resource-card .tag { border-color: rgb(154 86 66 / 0.45); background: rgb(154 86 66 / 0.09); color: #93503d; }
+.film-card .film-hook { color: #9a5642; }
+/* Deepen the scrim rather than the type: the credit sits over a photograph. */
+.film-card-photo-credit { background: rgb(35 49 38 / 0.82); color: rgb(255 253 247 / 0.98); }
+.film-card-photo-credit:hover { background: rgb(35 49 38 / 0.92); }
+.btn.clay { background: #95513e; }

@@ -85,8 +85,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700;800&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="benjy-and-sofia-v19.webp" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="eden-v23.css?v=23.7">
+  <!-- The Heartwood Future Gateway is the likely LCP element. It is plain, eager
+       HTML high in the document with fetchpriority="high", so the preload scanner
+       finds it before the stylesheet resolves. No <link rel=preload> is used:
+       a preload cannot express the <picture> media switch without risking a
+       second, wasted download of the wrong candidate. -->
+  <link rel="stylesheet" href="eden-v23.css?v=23.10">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the living story</a>
@@ -123,11 +127,13 @@
 
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="handwritten hero-welcome">Welcome home to</p>
-          <h1 id="hero-title">Awakening Eden</h1>
-          <p class="hero-library">The Living Library</p>
+          <div class="hero-copy__title">
+            <p class="handwritten hero-welcome">Welcome home to</p>
+            <h1 id="hero-title">Awakening Eden</h1>
+            <p class="hero-library">The Living Library</p>
+          </div>
+          <div class="hero-copy__body">
           <p class="hero-promise">A home and living library for regeneration,<br>remembering &amp; thriving as one family of life.</p>
-          <p class="hero-intro">Here you&rsquo;ll find our life&rsquo;s work, always evolving: practical and empowering ways to regenerate our lands and our lives, restore the outer and inner landscapes, grow resilient living systems, deepen connection and help all life flourish.</p>
           <ul class="hero-refrain">
             <li>Practical knowledge.</li>
             <li>Empowering hope.</li>
@@ -135,23 +141,33 @@
           </ul>
           <div class="button-row">
             <a class="button button--primary" href="#what-to-grow">Begin your journey <span aria-hidden="true">→</span></a>
-            <a class="button button--secondary" href="/living-library">Open the Living Library</a>
+            <a class="button button--secondary" href="/living-library">Enter the Living Library</a>
           </div>
           <a class="community-whisper" href="#community">
             <span aria-hidden="true">✦</span>
             Come grow with us
           </a>
+          </div>
         </div>
 
-        <figure class="hero-photo reveal reveal--late">
-          <div class="photo-frame">
-            <img src="benjy-and-sofia-v19.webp" width="900" height="1200" alt="Benjy and Sofia laughing together among flowering plants" fetchpriority="high" decoding="async">
-            <img class="photo-sprig" src="assets/corners/botanical-corner-05.webp" width="271" height="283" alt="" aria-hidden="true" decoding="async">
-          </div>
-          <figcaption>
-            <span class="handwritten">We are Benjy &amp; Sofia</span>
-            <small>Earth lovers, learners and companions on the path.</small>
-          </figcaption>
+        <figure class="hero-portal reveal reveal--late">
+          <picture>
+            <source
+              media="(max-width: 47.99rem)"
+              type="image/webp"
+              srcset="assets/portals/awakening-eden-heartwood-future-portal-mobile-480.webp 480w,
+                      assets/portals/awakening-eden-heartwood-future-portal-mobile-800.webp 800w"
+              sizes="88vw">
+            <img
+              src="assets/portals/awakening-eden-heartwood-future-portal-sidecar-800.webp"
+              srcset="assets/portals/awakening-eden-heartwood-future-portal-sidecar-480.webp 480w,
+                      assets/portals/awakening-eden-heartwood-future-portal-sidecar-800.webp 800w,
+                      assets/portals/awakening-eden-heartwood-future-portal-sidecar.webp 1003w"
+              sizes="(min-width: 75rem) 30rem, (min-width: 48rem) 40vw, 88vw"
+              width="1003" height="1568"
+              alt="An old tree whose trunk opens into a heart-shaped doorway, with a stone path leading through terraced gardens toward a village at sunrise"
+              fetchpriority="high" decoding="async">
+          </picture>
         </figure>
       </div>
     </section>
@@ -160,43 +176,20 @@
       <div class="container welcome-band__inner">
         <div class="welcome-band__lines">
           <p>Everyone is welcome exactly as you are.</p>
+          <p class="welcome-band__intro">Here you&rsquo;ll find our life&rsquo;s work, always evolving: practical and empowering ways to regenerate our lands and our lives, restore the outer and inner landscapes, grow resilient living systems, deepen connection and help all life flourish.</p>
           <p class="welcome-band__soft">Take what nourishes you, share what you love, and return whenever you need.</p>
         </div>
         <img src="assets/dividers/botanical-divider-01.webp" width="739" height="120" alt="" aria-hidden="true" loading="lazy" decoding="async">
       </div>
     </section>
 
-    <section class="section invitation-section" id="come-walk-with-us" aria-labelledby="invitation-title">
-      <img class="corner-art corner-art--story" src="assets/corners/botanical-corner-01.webp" width="287" height="309" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <div class="container invitation-grid">
-        <figure class="invitation-film">
-          <video controls playsinline preload="none" width="720" height="1280" poster="assets/video/awakening-eden-intro-poster.webp" aria-describedby="invitation-film-note">
-            <source src="assets/video/awakening-eden-intro.mp4" type="video/mp4">
-            <p>Your browser cannot play this film. <a href="assets/video/awakening-eden-intro.mp4">Download it instead</a>.</p>
-          </video>
-          <figcaption id="invitation-film-note">Filmed on the land in Central Portugal, 1 min 11 s. Captions are part of the film. Some scenes are illustrations of the future we are working toward, not finished projects.</figcaption>
-        </figure>
-        <div class="invitation-copy">
-          <p class="handwritten">Come walk with us</p>
-          <h2 id="invitation-title">Let&rsquo;s grow a regenerative future, as one earth tribe.</h2>
-          <p class="lead">Seventy seconds on the future we are choosing &mdash; and why it belongs to all of us.</p>
-          <p>We are living in the results of an industrial paradigm built on extraction, separation and quiet wars against life. But the tools already exist. The knowledge already exists. What the future is waiting for is action.</p>
-          <p>Every tree planted. Every ecosystem nurtured. Every negative thought changed. Our actions declare which future we choose.</p>
-          <p class="invitation-close">It is about community thriving, not lone heroes.</p>
-          <div class="button-row">
-            <a class="button button--primary" href="#what-to-grow">Find your next step <span aria-hidden="true">→</span></a>
-            <a class="button button--secondary" href="#community">Come grow with us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section grow-section" id="what-to-grow" aria-labelledby="grow-title">
       <div class="container">
         <div class="grow-heading center">
+          <img class="journey-seal" src="assets/portals/awakening-eden-heartwood-portal-seal-480.webp" width="480" height="480" alt="" aria-hidden="true" loading="lazy" decoding="async">
           <p class="handwritten">Four doors, one living system</p>
-          <h2 id="grow-title">What would you like to grow?</h2>
-          <p>Follow whichever door is calling you today. They all lead back to the same garden.</p>
+          <h2 id="grow-title">Begin your journey</h2>
+          <p class="grow-heading__lead">What would you like to grow? Follow whichever door is calling you today. They all lead back to the same garden.</p>
         </div>
 
         <div class="grow-grid">
@@ -230,6 +223,79 @@
             <p>Yoga, breath, movement, nervous-system regulation, women&rsquo;s wellbeing and gentle holistic journeys for reconnecting with the body, restoring balance and cultivating greater presence.</p>
             <span class="door-card__cta">Read Sofia&rsquo;s path <span aria-hidden="true">→</span></span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="library-threshold" aria-hidden="true">
+      <img
+        src="assets/dividers/04-living-library-garden-book-720.webp"
+        srcset="assets/dividers/04-living-library-garden-book-720.webp 720w,
+                assets/dividers/04-living-library-garden-book-1440.webp 1440w"
+        sizes="(min-width: 48rem) 46rem, 92vw"
+        width="1440" height="450" alt="" loading="lazy" decoding="async">
+    </div>
+
+    <section class="section library-section" id="library" aria-labelledby="library-title">
+      <div class="container">
+        <div class="library-intro">
+          <div>
+            <p class="handwritten">Wander into what calls you</p>
+            <h2 id="library-title">The Living Library</h2>
+          </div>
+          <div>
+            <p>Free guides, films, practices and regenerative wisdom for land, life and community &mdash; gathered for people who want to leave life more alive.</p>
+            <ul class="library-promise">
+              <li>Curated knowledge, not a wall of links</li>
+              <li>Practical guides written from real seasons</li>
+              <li>Books, films and teachers, with the lens each one carries</li>
+              <li>Inner and outer regeneration held together</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="library-grid">
+          <a class="library-room library-room--featured" href="/start-here">
+            <span class="room-icon room-icon--sprout" aria-hidden="true"><span></span></span>
+            <span><strong>Start Here</strong><small>The first two living companions</small></span>
+          </a>
+          <a class="library-room" href="/living-library"><span class="room-icon" aria-hidden="true">▶</span><span><strong>Films &amp; Documentaries</strong><small>Stories that awaken possibility</small></span></a>
+          <a class="library-room" href="Abundant-Edge-Index.html"><span class="room-icon" aria-hidden="true">◉</span><span><strong>Living Soil</strong><small>Roots, fungi and living ground</small></span></a>
+          <a class="library-room" href="Small-Scale-Regenerative-Farm-Playbook.html"><span class="room-icon" aria-hidden="true">♧</span><span><strong>Farm &amp; Food Forests</strong><small>Layers, succession and abundance</small></span></a>
+          <a class="library-room" href="7-First-Steps-Regenerate-Your-Land.html"><span class="room-icon" aria-hidden="true">≈</span><span><strong>First Steps on Land</strong><small>Seven ways to begin regenerating</small></span></a>
+          <a class="library-room" href="acacia_dealbata_magic_manual_regenerative_eden.html"><span class="room-icon" aria-hidden="true">✦</span><span><strong>Tree Wisdom</strong><small>The acacia magic manual</small></span></a>
+          <a class="library-room" href="/heart"><span class="room-icon" aria-hidden="true">⌁</span><span><strong>Inner Regeneration</strong><small>Breath, rest and remembering</small></span></a>
+          <a class="library-room" href="/journal"><span class="room-icon" aria-hidden="true">▤</span><span><strong>Field Journal</strong><small>Notes from the living path</small></span></a>
+          <a class="library-room" href="#community"><span class="room-icon" aria-hidden="true">♡</span><span><strong>Community</strong><small>Walk, learn and grow together</small></span></a>
+        </div>
+
+        <div class="center library-action">
+          <a class="button button--primary" href="/living-library">Enter the Living Library <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section invitation-section" id="come-walk-with-us" aria-labelledby="invitation-title">
+      <img class="corner-art corner-art--story" src="assets/corners/botanical-corner-01.webp" width="287" height="309" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="container invitation-grid">
+        <figure class="invitation-film">
+          <video controls playsinline preload="none" width="720" height="1280" poster="assets/video/awakening-eden-intro-poster.webp" aria-describedby="invitation-film-note">
+            <source src="assets/video/awakening-eden-intro.mp4" type="video/mp4">
+            <p>Your browser cannot play this film. <a href="assets/video/awakening-eden-intro.mp4">Download it instead</a>.</p>
+          </video>
+          <figcaption id="invitation-film-note">Filmed on the land in Central Portugal, 1 min 11 s. Captions are part of the film. Some scenes are illustrations of the future we are working toward, not finished projects.</figcaption>
+        </figure>
+        <div class="invitation-copy">
+          <p class="handwritten">Come walk with us</p>
+          <h2 id="invitation-title">Let&rsquo;s grow a regenerative future, as one earth tribe.</h2>
+          <p class="lead">Seventy seconds on the future we are choosing &mdash; and why it belongs to all of us.</p>
+          <p>We are living in the results of an industrial paradigm built on extraction, separation and quiet wars against life. But the tools already exist. The knowledge already exists. What the future is waiting for is action.</p>
+          <p>Every tree planted. Every ecosystem nurtured. Every negative thought changed. Our actions declare which future we choose.</p>
+          <p class="invitation-close">It is about community thriving, not lone heroes.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="#what-to-grow">Find your next step <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="#community">Come grow with us</a>
+          </div>
         </div>
       </div>
     </section>
@@ -323,37 +389,6 @@
       </div>
     </section>
 
-    <section class="section library-section" id="library" aria-labelledby="library-title">
-      <div class="container">
-        <div class="library-intro">
-          <div>
-            <p class="handwritten">Wander into what calls you</p>
-            <h2 id="library-title">The Living Library</h2>
-          </div>
-          <p>Free guides, films, practices and regenerative wisdom for land, life and community &mdash; gathered for people who want to leave life more alive.</p>
-        </div>
-
-        <div class="library-grid">
-          <a class="library-room library-room--featured" href="/start-here">
-            <span class="room-icon room-icon--sprout" aria-hidden="true"><span></span></span>
-            <span><strong>Start Here</strong><small>The first two living companions</small></span>
-          </a>
-          <a class="library-room" href="/living-library"><span class="room-icon" aria-hidden="true">▶</span><span><strong>Films &amp; Documentaries</strong><small>Stories that awaken possibility</small></span></a>
-          <a class="library-room" href="Abundant-Edge-Index.html"><span class="room-icon" aria-hidden="true">◉</span><span><strong>Living Soil</strong><small>Roots, fungi and living ground</small></span></a>
-          <a class="library-room" href="Small-Scale-Regenerative-Farm-Playbook.html"><span class="room-icon" aria-hidden="true">♧</span><span><strong>Farm &amp; Food Forests</strong><small>Layers, succession and abundance</small></span></a>
-          <a class="library-room" href="7-First-Steps-Regenerate-Your-Land.html"><span class="room-icon" aria-hidden="true">≈</span><span><strong>First Steps on Land</strong><small>Seven ways to begin regenerating</small></span></a>
-          <a class="library-room" href="acacia_dealbata_magic_manual_regenerative_eden.html"><span class="room-icon" aria-hidden="true">✦</span><span><strong>Tree Wisdom</strong><small>The acacia magic manual</small></span></a>
-          <a class="library-room" href="/heart"><span class="room-icon" aria-hidden="true">⌁</span><span><strong>Inner Regeneration</strong><small>Breath, rest and remembering</small></span></a>
-          <a class="library-room" href="/journal"><span class="room-icon" aria-hidden="true">▤</span><span><strong>Field Journal</strong><small>Notes from the living path</small></span></a>
-          <a class="library-room" href="#community"><span class="room-icon" aria-hidden="true">♡</span><span><strong>Community</strong><small>Walk, learn and grow together</small></span></a>
-        </div>
-
-        <div class="center library-action">
-          <a class="button button--primary" href="/living-library">Explore the Living Library <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
     <!-- ======================================================================
          SOUNDTRACK FOR THE JOURNEY · not yet published.
 
@@ -385,10 +420,22 @@
       <img class="corner-art corner-art--story" src="assets/corners/botanical-corner-01.webp" width="287" height="309" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img class="chapter-divider" src="assets/dividers/botanical-divider-05.webp" width="747" height="130" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <div class="container story-grid">
-        <figure class="story-art story-art--photo">
-          <img src="benjy-sofia-food-forest.webp" width="1600" height="1200" alt="Benjy and Sofia kneeling beside a young sapling in their food forest, Benjy holding a planting bar" loading="lazy" decoding="async">
-          <figcaption class="handwritten">planting the future, together</figcaption>
-        </figure>
+        <div class="story-photos">
+          <figure class="story-art story-art--portrait">
+            <div class="photo-frame">
+              <img src="benjy-and-sofia-v19.webp" width="900" height="1200" alt="Benjy and Sofia laughing together among flowering plants" loading="lazy" decoding="async">
+              <img class="photo-sprig" src="assets/corners/botanical-corner-05.webp" width="271" height="283" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <span class="handwritten">We are Benjy &amp; Sofia</span>
+              <small>Earth lovers, learners and companions on the path.</small>
+            </figcaption>
+          </figure>
+          <figure class="story-art story-art--photo">
+            <img src="benjy-sofia-food-forest.webp" width="1600" height="1200" alt="Benjy and Sofia kneeling beside a young sapling in their food forest, Benjy holding a planting bar" loading="lazy" decoding="async">
+            <figcaption class="handwritten">planting the future, together</figcaption>
+          </figure>
+        </div>
         <div class="story-copy">
           <p class="handwritten">The gardens that grew us</p>
           <h2 id="story-title">We are Benjy &amp; Sofia</h2>
@@ -512,6 +559,16 @@
           </div>
           <small>Conversation, new guides, field notes and gentle updates.</small>
         </div>
+      </div>
+    </section>
+
+    <section class="section growing-toward" aria-labelledby="growing-title">
+      <div class="container narrow">
+        <p class="eyebrow">What we are growing toward</p>
+        <h2 id="growing-title">From a Living Library to living landscapes.</h2>
+        <p>We are growing Awakening Eden online and on the ground: sharing practical tools, helping land and people regenerate, gathering community for useful action, and planting the seeds of future demonstration landscapes and regenerative learning places.</p>
+        <p class="small-print">The library, the guides and Benjy&rsquo;s land work exist today. The demonstration landscapes and learning places are a direction we are working toward, and would need partners, collaboration and funding.</p>
+        <a class="text-link" href="/heart">Read the fuller vision <span aria-hidden="true">→</span></a>
       </div>
     </section>
 

@@ -1735,3 +1735,58 @@ footer a,footer p,footer small{color:#f8f1df!important}
   .eden-brand-lockup img,.site-logo img{width:38px!important;height:38px!important}
   .eden-brand-lockup strong,.site-title{font-size:1.08rem!important}
 }
+
+/* ==========================================================================
+   v22.1 — teaching boards and motif dividers for the pages still styled by
+   this stylesheet (heart, about and the older guides).
+   ========================================================================== */
+
+/* A values or teaching board. The picture explains; the caption and the
+   surrounding markup carry the meaning as real text, so nothing important
+   lives only inside the image. */
+.eden-board{width:min(100% - 2rem,50rem);margin:clamp(1.6rem,4vw,2.6rem) auto}
+.eden-board img{display:block;width:100%;height:auto;aspect-ratio:8/5;border:1px solid rgba(105,112,82,.3);border-radius:1.1rem;background:#f7f1e3}
+.eden-board figcaption{margin-top:.8rem;color:#5b4a35;font-size:.95rem;line-height:1.6;text-align:center}
+.eden-board figcaption strong{color:#34412c}
+
+/* A coloured motif divider, used once per page as an identity moment. */
+.eden-motif-divider{display:block;width:min(100% - 2rem,42rem);margin:clamp(2rem,5vw,3.2rem) auto;pointer-events:none}
+.eden-motif-divider img{display:block;width:100%;height:auto;aspect-ratio:16/5}
+
+/* Real photographs of Benjy and Sofia, lower in the human story. */
+.eden-photo-pair{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,2.5vw,1.5rem);width:min(100% - 2rem,52rem);margin:clamp(1.6rem,4vw,2.6rem) auto}
+.eden-photo-pair figure{margin:0}
+.eden-photo-pair img{display:block;width:100%;height:auto;border-radius:1.1rem;box-shadow:0 14px 34px rgba(35,49,38,.14)}
+.eden-photo-pair figcaption{margin-top:.6rem;color:#5b4a35;font-size:.9rem;line-height:1.5;text-align:center}
+@media(max-width:640px){.eden-photo-pair{grid-template-columns:1fr}}
+.vision-note{padding:.9rem 1.1rem;border-left:3px solid rgba(184,148,75,.65);border-radius:0 .6rem .6rem 0;background:rgba(184,148,75,.08);font-size:.95rem;line-height:1.6}
+
+/* ==========================================================================
+   v22.1 — WCAG AA contrast repair for the pages this stylesheet still drives.
+   ========================================================================== */
+
+/* The /about and /acacia top bar sits on the cream page, but `.eden-nav a`
+   was written cream for a dark header — the links and the "Follow Our Journey"
+   pill were rendering cream-on-cream and were effectively invisible (1.01:1).
+   Give the bar its own light surface and dark ink. */
+.topbar{background:rgba(255,253,247,.94);border-bottom:1px solid rgba(105,112,82,.18)}
+.topbar .eden-nav a,
+.topbar .eden-mobile-menu summary{color:#2f4230!important}
+.topbar .eden-nav a.cta{color:#fffdf7!important;background:#2f4230!important;border-color:#2f4230!important}
+.topbar .eden-nav a.cta:hover{background:#22321f!important}
+
+/* The dark closing footer on the older guides inherited light-ground colours:
+   the wordmark measured 1.25:1 and the stamp 2.77:1 against #0d2f20. */
+.page-guide footer .brand,
+.page-standard footer .brand{color:#dfe6d8}
+.page-guide footer .stamp,
+.page-standard footer .stamp{color:#e6b48f}
+
+/* Gold numerals as body-size text: 2.51–2.80:1 on cream. */
+.principle-number{color:#846628}
+
+/* `h1,h2,h3,h4{color:var(--ae-forest)!important}` also wins against an inline
+   colour, so headings inside the dark closing footers were rendering forest
+   green on forest green (1.20:1). Restore a light heading ink there. */
+.footer h1,.footer h2,.footer h3,.footer h4,
+.ec-footer h1,.ec-footer h2,.ec-footer h3,.ec-footer h4{color:#f2e8cf!important}

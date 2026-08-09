@@ -19,7 +19,8 @@ body.guide-two {
 .guide-two .guide-masthead h1 { max-width: 9.4ch; font-size: clamp(4rem, 9.4vw, 8.4rem); }
 .guide-two .guide-promise { max-width: 38rem; }
 .guide-two .button--primary { color: var(--paper-light); background: var(--lantern-deep); }
-.guide-two .button--gift { background: var(--terracotta); }
+/* Contrast: cream on --terracotta measures 4.47:1, just under AA. */
+.guide-two .button--gift { background: #95513e; }
 
 .guide-two .guide-hero-art { min-height: 43rem; }
 .guide-two .guide-hero-art::before {
@@ -244,3 +245,7 @@ body.guide-two {
   .guide-reading-layout { display: block; padding: 0; }
   .guide-story .guide-chapter { break-inside: avoid; padding-block: 1.4rem; }
 }
+
+/* Contrast repair: the safety strongs measured 3.69–4.11:1 on the warm note
+   ground. Safety copy is exactly the text that must never be hard to read. */
+.gentle-warning strong { color: #93503d; }

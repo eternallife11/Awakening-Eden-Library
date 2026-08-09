@@ -429,3 +429,30 @@
   .become-card--board img { height: auto; }
   .moinhos-gallery img { height: 17rem; }
 }
+
+/* ==========================================================================
+   v23.10 — landkeeper identity moment + the campaign deep-link target
+   ========================================================================== */
+
+/* One quiet identity moment before the offer ladder. Real photography still
+   carries the proof on this page; this is a chapter mark, not a hero. */
+.landkeeper-mark {
+  width: min(42rem, calc(100% - 2rem));
+  height: auto;
+  margin: 0 auto clamp(1.2rem, 3vw, 2.2rem);
+  aspect-ratio: 1440 / 450;
+}
+
+/* /work-with-benjy#online-consulting — clear the sticky header when a campaign
+   link lands directly on the Regenerative Clarity Session. */
+#online-consulting { scroll-margin-top: 7rem; }
+
+/* Contrast repair on the olive "beautiful fit" band: the card overlay lightened
+   the olive to rgb(117,123,95), where the gold headings measured 2.94:1 and the
+   list text 3.33:1. Darkening the overlay fixes both without changing the hue. */
+.fit-cards article { background: rgb(35 49 38 / 0.18); }
+.fit-cards strong { color: #fff6e0; }
+.fit-cards ul { color: rgb(255 253 247 / 0.95); }
+.path-num { color: #9a5642; }
+/* The consent checkbox was a 19px target; 24px is the WCAG 2.2 AA minimum. */
+.form-consent input { width: 1.5rem; height: 1.5rem; }

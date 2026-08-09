@@ -599,3 +599,148 @@ h3 { margin-bottom: 0.85rem; font-size: clamp(2rem, 3.5vw, 3.4rem); line-height:
   .soundtrack-card { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .soundtrack-card .button { justify-self: stretch; width: 100%; }
 }
+
+/* ==========================================================================
+   v23.8 — the Heartwood Future Gateway threshold, and the journey it opens
+   ========================================================================== */
+
+/* Hero threshold ----------------------------------------------------------
+   The gateway painting replaces the portrait beside the hero copy. It is the
+   likely LCP element, so it stays eager and keeps a fixed aspect ratio at
+   every width: the <picture> swaps a 1003x1568 sidecar for a 1:1 mobile
+   composition, and the img width/height attributes only describe the former. */
+.hero { padding-top: clamp(2.25rem, 4.5vw, 4rem); }
+.hero-portal { position: relative; margin: 0; justify-self: center; }
+.hero-portal img {
+  /* Height-led, not width-led: the sidecar is a tall 1003x1568 painting, and
+     sizing it by width alone made it dictate the hero height and push the
+     first CTA off the first screen. */
+  width: auto;
+  max-width: min(100%, 27rem);
+  max-height: min(62svh, 34rem);
+  margin-inline: auto;
+  aspect-ratio: 1003 / 1568;
+  border-radius: 1.6rem;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+/* Journey seal — a quiet echo of the gateway above the first pathway choice.
+   The artwork is a circular wreath on parchment, so a round crop removes the
+   parchment corners instead of stamping a pale square on the section. */
+.journey-seal {
+  width: clamp(6rem, 11vw, 9rem);
+  margin: 0 auto 1.1rem;
+  border-radius: 50%;
+  opacity: 0.92;
+}
+.grow-heading__lead { width: min(100%, 44rem); margin-inline: auto; }
+
+/* Living Library threshold — the Garden Book motif on the light section above,
+   bleeding down into the dark Library band it opens. */
+.library-threshold {
+  display: grid;
+  padding-top: clamp(1rem, 3vw, 2.5rem);
+  background: var(--paper-light);
+  place-items: center;
+}
+.library-threshold img {
+  width: min(46rem, calc(100% - 2rem));
+  height: auto;
+  margin-bottom: clamp(-3.5rem, -5vw, -2rem);
+  aspect-ratio: 1440 / 450;
+}
+
+.library-promise {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  color: rgb(255 253 247 / 0.82);
+  font-size: 0.98rem;
+  list-style: none;
+}
+.library-promise li { position: relative; padding-left: 1.35rem; }
+.library-promise li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0.25rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* Human story — the hero portrait moved down to where a real photograph does
+   more work, kept beside the food-forest moment rather than replacing it. */
+.story-photos { display: grid; gap: clamp(1.25rem, 3vw, 2rem); align-content: start; }
+.story-art--portrait { margin: 0; }
+.story-art--portrait .photo-frame { max-width: 26rem; margin-inline: auto; }
+.story-art--portrait figcaption { display: grid; justify-items: center; margin-top: 1.1rem; text-align: center; }
+.story-art--portrait figcaption .handwritten { margin: 0; font-size: 1.9rem; }
+.story-art--portrait figcaption small { color: var(--olive); }
+
+/* Single column: title → gateway → promise + first CTA.
+   Of the two orders the handoff asks to compare, this is the one that keeps
+   the name, the promise and "Begin your journey" all reachable while the
+   gateway still opens the page. Putting the whole copy block after the art
+   pushed the H1 to roughly half a screen down. */
+@media (max-width: 58rem) {
+  .hero-grid { display: flex; flex-direction: column; align-items: center; gap: clamp(1.5rem, 4vw, 2.5rem); }
+  .hero-copy { display: contents; }
+  .hero-copy__title { order: 1; text-align: center; }
+  .hero-portal { order: 2; margin: 0; }
+  .hero-copy__body { order: 3; width: 100%; text-align: center; }
+  .hero-copy__body .button-row { justify-content: center; }
+  .hero-portal img { max-height: min(46svh, 26rem); }
+  .library-threshold img { margin-bottom: clamp(-2.25rem, -4vw, -1.25rem); }
+}
+
+@media (max-width: 47.99rem) {
+  /* the <picture> has switched to the square mobile gateway */
+  .hero-portal img { aspect-ratio: 1 / 1; max-width: min(74vw, 17rem); max-height: none; border-radius: 1.25rem; }
+  /* Promise and first CTA stay together above the fold; the three-beat refrain
+     becomes the closing grace note underneath instead of a 90px wedge. */
+  .hero-copy__body { display: flex; flex-direction: column; }
+  .hero-copy__body .hero-promise { order: 1; margin-bottom: 0.9rem; }
+  .hero-copy__body .button-row { order: 2; margin-top: 1rem; }
+  .hero-copy__body .hero-refrain { order: 3; margin-top: 1.4rem; justify-content: center; }
+  .hero-copy__body .community-whisper { order: 4; }
+}
+
+/* A small future-facing glimpse, deliberately not a mission essay. */
+.growing-toward { background: var(--paper-light); }
+.growing-toward h2 { margin-bottom: 0.8rem; }
+.growing-toward .small-print { margin-top: 1rem; }
+.growing-toward .text-link { display: inline-flex; margin-top: 1.2rem; }
+
+/* ==========================================================================
+   v23.8 — WCAG AA contrast repair
+   Measured against the actual rendered backgrounds, not against the token
+   swatches. Each value below was failing 4.5:1 for its text size:
+     .eyebrow            olive on linen            4.21
+     .guide-card__subtitle terracotta on paper     4.00
+     .community-photo figcaption  85% cream on olive  4.22
+     .community-actions small     68% cream on olive  3.33
+     .button--telegram   cream on water            3.51
+   The hues are kept; only their depth changes, so the palette still reads as
+   the same garden.
+   ========================================================================== */
+:root {
+  --olive-ink: #5b6146;      /* small olive text on paper, paper-light and linen */
+  --terracotta-ink: #9a5642; /* terracotta used as body-size text */
+  --telegram: #54706b;       /* the Telegram brand blue-green, deep enough for cream */
+}
+.eyebrow { color: var(--olive-ink); }
+.guide-card__subtitle { color: var(--terracotta-ink); }
+.community-photo figcaption { color: rgb(255 253 247 / 0.95); }
+.community-actions small { color: rgb(255 253 247 / 0.92); }
+.button--telegram { background: var(--telegram); }
+.community-whisper { color: var(--olive-ink); }
+.hero-photo figcaption small,
+.story-art--portrait figcaption small { color: var(--olive-ink); }
+
+/* WCAG 2.2 target size: the footer links measured 21px tall. A little vertical
+   padding clears the 24px minimum without changing how the footer looks. */
+.site-footer nav a { display: inline-block; padding-block: 0.3rem; }

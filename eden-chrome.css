@@ -252,3 +252,55 @@
   .ec-nav { width: 100%; justify-content: center; gap: 0.3rem 0.9rem; }
   .ec-nav a { font-size: 0.8rem; }
 }
+
+/* ==========================================================================
+   v23.14 — the Heartwood Gateway threshold, and shared educational boards
+   for the four older guides that load eden-v22.css.
+   ========================================================================== */
+
+/* One illustrated threshold per guide, directly under the hero. The wide
+   parchment banner is used at every width: a second square mobile file would
+   only add a hidden download and an aspect-ratio change to manage. */
+.ec-threshold.ec-threshold {
+  display: block;
+  width: min(100% - 2rem, 56rem);
+  margin: clamp(1.5rem, 4vw, 2.75rem) auto clamp(1rem, 3vw, 2rem);
+  pointer-events: none;
+}
+.ec-threshold.ec-threshold img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2160 / 810;
+  border-radius: 1.1rem;
+}
+
+/* A teaching board inside an older guide: the picture explains, the caption
+   carries the meaning as real text so it is never trapped in the pixels. */
+.ec-board.ec-board {
+  width: min(100% - 2rem, 52rem);
+  margin: clamp(2rem, 5vw, 3rem) auto;
+}
+.ec-board.ec-board img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  border: 1px solid rgb(105 112 82 / 0.3);
+  border-radius: 1.1rem;
+  background: #f7f1e3;
+}
+.ec-board.ec-board figcaption {
+  margin-top: 0.85rem;
+  color: #5b4a35;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+.ec-board.ec-board figcaption strong { color: #34412c; }
+.ec-board .ec-board__note { margin-top: 0.5rem; font-size: 0.86rem; opacity: 0.9; }
+
+/* A page-level `nav{background:...}` rule (written for an in-page nav) was also
+   painting the shared dark footer's nav a near-white pill, leaving its cream
+   links at 1.01:1. The shared footer supplies its own ground. */
+.ec-footer.ec-footer nav { background: transparent; }
+.ec-footer.ec-footer nav a { display: inline-block; padding-block: 0.3rem; }
