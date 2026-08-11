@@ -1,0 +1,161 @@
+/* Awakening Eden v33 — shared refinement layer, 11 August 2026.
+   Adds calm focus, tactile pathways and consistent human-photo treatment
+   without replacing the established page-specific systems. */
+
+:root {
+  --v33-shadow-soft: 0 18px 48px rgb(35 49 38 / 0.11);
+  --v33-border: rgb(105 112 82 / 0.3);
+}
+
+html { scroll-padding-top: 6rem; }
+
+/* A more confident identity presence across the mixed v22/v23 page families. */
+.site-header .header-inner { min-height: 6.15rem; }
+.site-header .brand img { width: 4.6rem; height: 4.6rem; }
+.site-header .brand-words strong { font-size: 1.5rem; }
+.topbar .eden-nav-emblem { width: 4rem !important; height: 4rem !important; flex-basis: 4rem !important; }
+.ec-header .ec-brand img { width: 4.25rem; height: 4.25rem; }
+
+.site-footer { padding-block: 4rem; }
+.site-footer .footer-brand img,
+footer .footer-mark,
+.ec-footer .ec-footer-mark { width: 5.25rem !important; height: 5.25rem !important; }
+
+/* The Welcome Home artwork uses generated atmosphere with the canonical,
+   deterministic Lotus layered into its reserved root cradle. */
+.hero .hero-grid { grid-template-columns: minmax(0, 0.88fr) minmax(25rem, 1.12fr); gap: clamp(2rem, 5vw, 5rem); }
+.hero-portal--welcome { width: min(100%, 46rem); }
+.hero-portal--welcome .welcome-home-art {
+  display: block;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid rgb(105 112 82 / 0.34);
+  border-radius: clamp(1.1rem, 2.3vw, 2rem);
+  box-shadow: 0 26px 65px rgb(35 49 38 / 0.18);
+}
+.hero-portal--welcome .welcome-home-lotus {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 2.2%;
+  width: 16.5%;
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+  filter: brightness(0.7) saturate(0.85) drop-shadow(0 2px 3px rgb(35 49 38 / 0.26));
+}
+
+.door-card__glyph { overflow: hidden; padding: 0.28rem; }
+.door-card__glyph img { width: 100%; height: 100%; object-fit: contain; }
+.heading-seed-icon { display: inline-block; width: 2.1rem; height: 2.1rem; vertical-align: -0.35rem; }
+.inline-illustration-icon,
+.growth-seed-icon {
+  display: inline-block;
+  width: 1.45rem;
+  height: 1.45rem;
+  margin-right: 0.35rem;
+  object-fit: contain;
+  vertical-align: -0.35rem;
+}
+.ae-growth-symbol .growth-seed-icon { width: 2.5rem; height: 2.5rem; margin: 0; }
+.growth-icon-row { display: flex; justify-content: center; align-items: center; gap: 0.65rem; }
+.growth-icon-row img { width: 3.4rem; height: 3.4rem; }
+.rung .ico img { display: block; width: 3rem; height: 3rem; object-fit: contain; }
+
+:where(a, button, summary):focus-visible {
+  outline: 3px solid #b8944b;
+  outline-offset: 4px;
+  border-radius: 0.35rem;
+}
+
+:where(.v33-human-photo, .v33-photo-card) {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--v33-border);
+  border-radius: clamp(1rem, 2.5vw, 1.7rem);
+  background: #fffdf7;
+  box-shadow: var(--v33-shadow-soft);
+}
+
+.v33-human-photo img,
+.v33-photo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+.v33-pathways {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.v33-pathway {
+  display: grid;
+  gap: 0.45rem;
+  min-height: 100%;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+  color: #233126;
+  text-decoration: none;
+  border: 1px solid var(--v33-border);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, #fffdf7, #f1e8d4);
+  box-shadow: 0 10px 28px rgb(35 49 38 / 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.v33-pathway:hover {
+  transform: translateY(-3px);
+  border-color: rgb(184 148 75 / 0.65);
+  box-shadow: var(--v33-shadow-soft);
+}
+
+.v33-pathway__eyebrow {
+  color: #7a5b25;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.v33-pathway strong {
+  color: #344734;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.v33-pathway span:last-child { color: #6b5539; line-height: 1.55; }
+
+.v33-guide-divider {
+  width: min(92%, 42rem);
+  margin: clamp(2rem, 6vw, 4rem) auto;
+  opacity: 0.82;
+}
+
+.v33-guide-divider img { width: 100%; height: auto; }
+
+/* The identity mark stays in the chrome; one botanical chapter breath is
+   enough inside long-form reading. */
+.v33-guide .eden-section-divider { display: none !important; }
+
+@media (max-width: 42rem) {
+  .site-header .header-inner { min-height: 5rem; }
+  .site-header .brand img { width: 3.5rem; height: 3.5rem; }
+  .site-header .brand-words strong { font-size: 1.08rem; }
+  .topbar .eden-nav-emblem { width: 3.25rem !important; height: 3.25rem !important; flex-basis: 3.25rem !important; }
+  .ec-header .ec-brand img { width: 3.5rem; height: 3.5rem; }
+  .site-footer .footer-brand img,
+  footer .footer-mark,
+  .ec-footer .ec-footer-mark { width: 4.5rem !important; height: 4.5rem !important; }
+  .hero .hero-grid { display: flex; }
+  .hero-portal--welcome { width: min(92vw, 42rem); }
+  .hero-portal--welcome .welcome-home-art { width: 100%; max-width: none; max-height: none; }
+  .hero-portal--welcome .welcome-home-lotus { width: 16.8%; }
+  .v33-pathways { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v33-pathway, .v33-pathway:hover { transform: none; transition: none; }
+}

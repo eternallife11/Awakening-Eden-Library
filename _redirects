@@ -7,6 +7,7 @@
 /links           /links.html                                                       200
 /journal         /journal.html                                                     200
 /journey         /journey.html                                                     200
+/sofia           /sofia.html                                                       200
 /work-with-benjy /work-with-benjy.html                                             200
 
 # Guide pages keep their historic mixed-case filenames. Netlify folds case on

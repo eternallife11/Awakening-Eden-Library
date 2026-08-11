@@ -66,6 +66,18 @@
       ]
     },
     {
+      "name": "Journey with Sofia",
+      "short_name": "With Sofia",
+      "url": "/sofia",
+      "icons": [
+        {
+          "src": "/eden-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
       "name": "Follow & Connect",
       "short_name": "Connect",
       "url": "/links",

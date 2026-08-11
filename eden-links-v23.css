@@ -130,6 +130,10 @@ main { width: min(100% - 1.75rem, 34rem); margin-inline: auto; padding: 1.1rem 0
 }
 
 .lk-footer { margin-top: 1.5rem; text-align: center; color: var(--umber); font-size: 0.85rem; }
+.lk-footer__mark {
+  width: 5.25rem; height: 5.25rem; margin: 0 auto 0.85rem; padding: 0.45rem;
+  border-radius: 50%; background: var(--forest-deep);
+}
 .lk-footer p { margin: 0 0 0.35rem; }
 .lk-footer a { color: var(--forest); font-weight: 700; text-underline-offset: 0.25rem; }
 
