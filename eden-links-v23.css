@@ -58,7 +58,10 @@ main { width: min(100% - 1.75rem, 34rem); margin-inline: auto; padding: 1.1rem 0
 
 /* --- compact hero: roughly 250px tall on a 390px phone ------------------- */
 .lk-hero { display: grid; justify-items: center; gap: 0.35rem; text-align: center; padding-bottom: 1.1rem; }
-.lk-mark { width: 3.6rem; height: 3.6rem; }
+/* The compact moonlit portal — a self-contained night arch that reads as a
+   small threshold even sitting on this page's parchment daytime hero, per
+   the design bible's "one small moonlit entrance" for /links. */
+.lk-mark { width: 9.5rem; height: auto; aspect-ratio: 640 / 520; }
 .lk-eyebrow {
   margin: 0.2rem 0 0; color: var(--olive-ink);
   font-size: 0.72rem; font-weight: 800; letter-spacing: 0.19em; text-transform: uppercase;
@@ -132,7 +135,7 @@ main { width: min(100% - 1.75rem, 34rem); margin-inline: auto; padding: 1.1rem 0
 
 @media (min-width: 34rem) {
   main { padding-top: 1.75rem; }
-  .lk-mark { width: 4.2rem; height: 4.2rem; }
+  .lk-mark { width: 11rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

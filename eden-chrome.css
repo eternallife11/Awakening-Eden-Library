@@ -304,3 +304,11 @@
    links at 1.01:1. The shared footer supplies its own ground. */
 .ec-footer.ec-footer nav { background: transparent; }
 .ec-footer.ec-footer nav a { display: inline-block; padding-block: 0.3rem; }
+
+/* One reversed vector mark in the footer, dark-ground contrast checked. */
+.ec-footer-mark {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.9rem;
+}

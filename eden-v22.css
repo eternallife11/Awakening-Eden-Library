@@ -226,7 +226,7 @@ h2.section-title::after{
   width:92px;
   height:18px;
   margin:.55rem auto 0;
-  background:url("eden-logo-tree-heart.svg") center/contain no-repeat;
+  background:url("assets/brand/awakening-eden-mark-primary.svg") center/contain no-repeat;
   opacity:.38;
 }
 
@@ -1805,3 +1805,15 @@ footer a,footer p,footer small{color:#f8f1df!important}
    compositing a near-opaque cream panel behind the footer's cream text and
    dropping "Begin here" to about 1.05:1. Reset it back to plain footer text. */
 footer .footer-nav{position:static!important;background:transparent!important;backdrop-filter:none!important;border-bottom:0!important}
+
+/* Fix: the shared topbar nav carries a bare .wrap class, and several pages'
+   own bespoke inline styles cap .wrap at 960-980px for their prose column.
+   That starved the nav of room and wrapped "Enter the Living Library" onto
+   a second line, overlapping the wordmark. Give the nav its own adequate
+   width regardless of the page's prose measure. */
+header.topbar nav.eden-nav.wrap {
+  max-width: 74rem !important;
+}
+@media (max-width: 900px) {
+  header.topbar nav.eden-nav.wrap { max-width: none !important; }
+}

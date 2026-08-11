@@ -340,7 +340,7 @@ body.page-library {
 .garden-book-mark img {
   width: min(46rem, 100%);
   height: auto;
-  aspect-ratio: 1440 / 450;
+  aspect-ratio: 1280 / 400;
 }
 .garden-book-mark__line {
   width: min(52rem, 100%);
