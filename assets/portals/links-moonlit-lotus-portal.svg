@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Moonlit Awakening Eden links portal</title>
+  <desc id="desc">A moonlit tree with a rose heart, roots, seeds, flowing water and the exact twelve-fold Lotus of Life.</desc>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#243D30"/>
+      <stop offset="1" stop-color="#315B5A"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#FFF7E5"/>
+      <stop offset="1" stop-color="#D5A64A"/>
+    </radialGradient>
+  </defs>
+  <path d="M110 470V246C110 115 203 38 320 38s210 77 210 208v224" fill="url(#night)" stroke="#D5A64A" stroke-width="4"/>
+  <circle cx="320" cy="122" r="55" fill="url(#moon)" opacity=".96"/>
+  <g fill="#F3E9D2" opacity=".72">
+    <circle cx="188" cy="130" r="3"/><circle cx="458" cy="154" r="3"/><circle cx="226" cy="82" r="2"/>
+    <circle cx="420" cy="94" r="2"/><circle cx="488" cy="224" r="2"/><circle cx="147" cy="215" r="2"/>
+  </g>
+  <g fill="none" stroke="#F3E9D2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M320 332c-4-68 1-116 0-171" stroke-width="10"/>
+    <path d="M320 209c-44-22-73-55-86-94M320 224c46-23 77-57 92-101M316 252c-58-12-99-39-128-78M324 263c57-9 100-35 131-76" stroke-width="8"/>
+    <path d="M320 331c-35 29-73 44-116 48M320 331c34 28 74 44 119 49M319 331c-9 32-8 63 4 94" stroke="#D5A64A" stroke-width="6"/>
+  </g>
+  <g fill="#68704B" stroke="#F3E9D2" stroke-width="2">
+    <ellipse cx="229" cy="119" rx="10" ry="22" transform="rotate(-40 229 119)"/>
+    <ellipse cx="414" cy="126" rx="10" ry="22" transform="rotate(42 414 126)"/>
+    <ellipse cx="187" cy="176" rx="9" ry="20" transform="rotate(-61 187 176)"/>
+    <ellipse cx="459" cy="190" rx="9" ry="20" transform="rotate(61 459 190)"/>
+  </g>
+  <path d="M320 252c-24-29-57 7 0 50 57-43 24-79 0-50z" fill="#C9878D" stroke="#F3E9D2" stroke-width="4"/>
+  <g transform="translate(320 390) scale(.29) translate(-256 -256)" fill="none" stroke="#D5A64A" stroke-width="9" opacity=".96">
+    <circle cx="256" cy="146" r="110"/><circle cx="311" cy="160.737" r="110"/><circle cx="351.263" cy="201" r="110"/>
+    <circle cx="366" cy="256" r="110"/><circle cx="351.263" cy="311" r="110"/><circle cx="311" cy="351.263" r="110"/>
+    <circle cx="256" cy="366" r="110"/><circle cx="201" cy="351.263" r="110"/><circle cx="160.737" cy="311" r="110"/>
+    <circle cx="146" cy="256" r="110"/><circle cx="160.737" cy="201" r="110"/><circle cx="201" cy="160.737" r="110"/>
+    <circle cx="256" cy="256" r="220"/>
+  </g>
+  <path d="M168 451c83-18 221-18 304 0M190 467c72-14 188-14 260 0" fill="none" stroke="#5E8C91" stroke-width="5" stroke-linecap="round"/>
+  <path d="M469 267c-19-7-31 2-37 17 17 5 30-1 37-17zm0 0c8-18 21-24 38-18-5 17-17 25-38 18z" fill="#D5A64A" stroke="#F3E9D2" stroke-width="2"/>
+</svg>

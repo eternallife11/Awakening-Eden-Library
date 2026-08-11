@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Living Library book garden portal</title>
+  <desc id="desc">An open book becomes soil, roots, water, Mediterranean plants, a small sun and a twelve-fold Lotus of Life.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M85 363c96-31 187-18 275 35 88-53 179-66 275-35v80c-95-28-187-17-275 30-88-47-180-58-275-30z" fill="#F3E9D2" stroke="#243D30" stroke-width="8"/>
+    <path d="M360 399v74M105 387c93-19 177-4 255 44M615 387c-93-19-177-4-255 44" stroke="#B76448" stroke-width="4"/>
+    <path d="M360 397c-8-78-4-148 2-213M360 252c-47-22-82-57-103-104M361 266c50-22 87-59 109-109" stroke="#243D30" stroke-width="10"/>
+    <path d="M360 398c-36 18-66 40-91 68M360 398c37 18 68 40 94 68" stroke="#243D30" stroke-width="7"/>
+  </g>
+  <circle cx="360" cy="92" r="42" fill="#D5A64A" opacity=".92"/>
+  <g fill="#68704B" stroke="#243D30" stroke-width="4">
+    <ellipse cx="252" cy="150" rx="13" ry="28" transform="rotate(-35 252 150)"/>
+    <ellipse cx="474" cy="160" rx="13" ry="28" transform="rotate(36 474 160)"/>
+    <ellipse cx="215" cy="212" rx="12" ry="25" transform="rotate(-58 215 212)"/>
+    <ellipse cx="508" cy="219" rx="12" ry="25" transform="rotate(58 508 219)"/>
+  </g>
+  <g transform="translate(360 326) scale(.22) translate(-256 -256)" fill="none" stroke="#D5A64A" stroke-width="10" opacity=".9">
+    <circle cx="256" cy="146" r="110"/><circle cx="311" cy="160.737" r="110"/><circle cx="351.263" cy="201" r="110"/>
+    <circle cx="366" cy="256" r="110"/><circle cx="351.263" cy="311" r="110"/><circle cx="311" cy="351.263" r="110"/>
+    <circle cx="256" cy="366" r="110"/><circle cx="201" cy="351.263" r="110"/><circle cx="160.737" cy="311" r="110"/>
+    <circle cx="146" cy="256" r="110"/><circle cx="160.737" cy="201" r="110"/><circle cx="201" cy="160.737" r="110"/>
+    <circle cx="256" cy="256" r="220"/>
+  </g>
+  <path d="M132 469c65-12 130-11 195 3M393 472c65-14 130-15 195-3" fill="none" stroke="#5E8C91" stroke-width="5"/>
+  <path d="M542 132c-18-5-30 4-35 19 18 3 29-4 35-19zm0 0c8-17 21-23 38-15-6 16-19 22-38 15z" fill="#C9878D" stroke="#243D30" stroke-width="3"/>
+</svg>

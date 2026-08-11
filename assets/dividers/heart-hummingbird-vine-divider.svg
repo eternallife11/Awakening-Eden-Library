@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" role="img" aria-labelledby="title">
+  <title id="title">Heart, hummingbird and living vine divider</title>
+  <path d="M66 130c177 11 339-10 486-62M1134 130c-177 11-339-10-486-62" fill="none" stroke="#243D30" stroke-width="6" stroke-linecap="round"/>
+  <path d="M600 76c-30-36-72 9 0 64 72-55 30-100 0-64z" fill="#C9878D" stroke="#243D30" stroke-width="4"/>
+  <g fill="#68704B" stroke="#243D30" stroke-width="2">
+    <ellipse cx="168" cy="116" rx="11" ry="25" transform="rotate(-73 168 116)"/><ellipse cx="253" cy="102" rx="10" ry="23" transform="rotate(-65 253 102)"/>
+    <ellipse cx="1032" cy="116" rx="11" ry="25" transform="rotate(73 1032 116)"/><ellipse cx="947" cy="102" rx="10" ry="23" transform="rotate(65 947 102)"/>
+  </g>
+  <g fill="#B76448"><circle cx="350" cy="89" r="7"/><circle cx="374" cy="82" r="5"/><circle cx="850" cy="89" r="7"/></g>
+  <path d="M779 62c-24-8-41 5-49 26 23 5 40-4 49-26zm0 0c11-24 29-32 52-22-9 23-26 31-52 22zM730 88l-43 7" fill="#D5A64A" stroke="#243D30" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M600 140c-8 20-7 38 3 55M600 140c-22 14-38 31-49 52M600 140c22 14 38 31 49 52" fill="none" stroke="#B76448" stroke-width="4" stroke-linecap="round"/>
+</svg>

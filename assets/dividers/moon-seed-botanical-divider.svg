@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" role="img" aria-labelledby="title">
+  <title id="title">Moon, seed and flowing botanical divider</title>
+  <path d="M70 125c220 48 402-53 530 0s310 48 530 0" fill="none" stroke="#5E8C91" stroke-width="5" stroke-linecap="round"/>
+  <path d="M83 111c178 33 312-35 438-24M1117 111c-178 33-312-35-438-24" fill="none" stroke="#243D30" stroke-width="4" stroke-linecap="round"/>
+  <path d="M600 39a55 55 0 1 0 47 84 48 48 0 1 1-47-84z" fill="#D5A64A" opacity=".9"/>
+  <path d="M600 117c-18 18-20 39 0 60 20-21 18-42 0-60z" fill="#B76448" stroke="#243D30" stroke-width="3"/>
+  <g fill="#68704B" stroke="#243D30" stroke-width="2">
+    <ellipse cx="210" cy="97" rx="10" ry="23" transform="rotate(-67 210 97)"/><ellipse cx="278" cy="79" rx="9" ry="21" transform="rotate(-58 278 79)"/>
+    <ellipse cx="990" cy="97" rx="10" ry="23" transform="rotate(67 990 97)"/><ellipse cx="922" cy="79" rx="9" ry="21" transform="rotate(58 922 79)"/>
+  </g>
+  <g fill="#8B7A9E"><circle cx="352" cy="72" r="6"/><circle cx="372" cy="68" r="4"/><circle cx="848" cy="72" r="6"/><circle cx="828" cy="68" r="4"/></g>
+  <g fill="#F3E9D2" stroke="#B76448" stroke-width="2"><circle cx="478" cy="94" r="4"/><circle cx="498" cy="102" r="3"/><circle cx="722" cy="94" r="4"/><circle cx="702" cy="102" r="3"/></g>
+</svg>
