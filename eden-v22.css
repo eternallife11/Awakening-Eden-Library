@@ -1790,3 +1790,18 @@ footer a,footer p,footer small{color:#f8f1df!important}
    green on forest green (1.20:1). Restore a light heading ink there. */
 .footer h1,.footer h2,.footer h3,.footer h4,
 .ec-footer h1,.ec-footer h2,.ec-footer h3,.ec-footer h4{color:#f2e8cf!important}
+
+/* The `.eden-brand-text` cream colours were tuned for a dark hero band, but on
+   /about, /heart and /journal the `.topbar` header sits on the light page
+   background, so the wordmark rendered at roughly 1.2:1 contrast — for all
+   practical purposes invisible. Scoped to `.topbar` only, so a genuine dark
+   usage of `.eden-brand-text` elsewhere is unaffected. */
+.topbar .eden-brand-text strong{color:#2f4230!important}
+.topbar .eden-brand-text small{color:#4d5f45!important}
+
+/* journal.html's own inline stylesheet defines a bare `nav{position:sticky;
+   background:rgba(255,248,236,.94);...}` rule for its original top bar. Being
+   unscoped, it also caught the shared footer's `<nav class="footer-nav">`,
+   compositing a near-opaque cream panel behind the footer's cream text and
+   dropping "Begin here" to about 1.05:1. Reset it back to plain footer text. */
+footer .footer-nav{position:static!important;background:transparent!important;backdrop-filter:none!important;border-bottom:0!important}

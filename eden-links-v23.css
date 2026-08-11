@@ -1,0 +1,140 @@
+/* Awakening Eden — /links, the social doorway.
+ *
+ * Deliberately standalone: the page used to define its own hero colours and
+ * then load eden-v22.css afterwards, whose `h1{color:…!important}` repainted
+ * the cream title forest green on a forest-green hero (about 1.5:1). Rather
+ * than answer that with more !important, this page no longer loads v22 at all.
+ * Tokens below match eden-v23.css so the doorway feels like the same house.
+ */
+
+:root {
+  --paper: #f6f0e2;
+  --paper-light: #fffdf7;
+  --linen: #e8dec8;
+  --forest: #344734;
+  --forest-deep: #233126;
+  --olive-ink: #5b6146;
+  --sage: #94a083;
+  --terracotta: #9a5642;
+  --gold: #b8944b;
+  --umber: #6b5539;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--forest-deep);
+  background:
+    radial-gradient(circle at 8% 2%, rgb(184 148 75 / 0.14), transparent 26rem),
+    radial-gradient(circle at 94% 96%, rgb(148 160 131 / 0.18), transparent 28rem),
+    var(--paper);
+  font: 400 1rem/1.55 var(--body);
+  text-rendering: optimizeLegibility;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.skip {
+  position: fixed; z-index: 20; top: 0.6rem; left: 0.6rem;
+  padding: 0.7rem 1rem; border-radius: 0.5rem;
+  color: var(--paper-light); background: var(--forest-deep);
+  transform: translateY(-160%);
+}
+.skip:focus { transform: translateY(0); }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+main { width: min(100% - 1.75rem, 34rem); margin-inline: auto; padding: 1.1rem 0 2.5rem; }
+
+/* --- compact hero: roughly 250px tall on a 390px phone ------------------- */
+.lk-hero { display: grid; justify-items: center; gap: 0.35rem; text-align: center; padding-bottom: 1.1rem; }
+.lk-mark { width: 3.6rem; height: 3.6rem; }
+.lk-eyebrow {
+  margin: 0.2rem 0 0; color: var(--olive-ink);
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.19em; text-transform: uppercase;
+}
+.lk-hero h1 {
+  margin: 0; color: var(--forest);
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(2.35rem, 10vw, 3.1rem); line-height: 1.02; letter-spacing: -0.02em;
+}
+.lk-promise { margin: 0.35rem 0 0; max-width: 24rem; color: var(--umber); font-size: 0.96rem; }
+
+/* --- the doors ----------------------------------------------------------- */
+.lk-paths { display: grid; gap: 0.7rem; }
+.lk-group { display: grid; gap: 0.55rem; }
+.lk-group__title {
+  margin: 0.9rem 0 0; color: var(--olive-ink);
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+}
+
+.lk-card {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  align-items: center;
+  min-height: 3.5rem;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid rgb(105 112 82 / 0.3);
+  border-radius: 1.1rem;
+  background: var(--paper-light);
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+.lk-card:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgb(35 49 38 / 0.12); }
+.lk-card__icon { display: grid; width: 2.6rem; height: 2.6rem; place-items: center; }
+.lk-card__icon img { width: 1.7rem; height: 1.7rem; }
+.lk-card__copy strong { display: block; font-family: var(--display); font-size: 1.28rem; font-weight: 600; line-height: 1.14; }
+.lk-card__copy small { display: block; margin-top: 0.2rem; color: var(--umber); font-size: 0.89rem; line-height: 1.4; }
+.lk-card__meta { display: block; margin-bottom: 0.15rem; color: var(--olive-ink); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
+.lk-card__arrow { color: var(--olive-ink); font-size: 1.15rem; }
+
+/* the two principal doors carry the weight */
+.lk-card--primary {
+  min-height: 6.5rem;
+  border-color: rgb(184 148 75 / 0.55);
+  background: linear-gradient(135deg, var(--forest), var(--forest-deep));
+  color: var(--paper-light);
+}
+.lk-card--primary .lk-card__copy strong { font-size: 1.45rem; }
+.lk-card--primary .lk-card__copy small { color: rgb(255 253 247 / 0.86); }
+.lk-card--primary .lk-card__meta { color: #e3c98f; }
+.lk-card--primary .lk-card__arrow { color: rgb(255 253 247 / 0.8); }
+/* Inverting the SVG flattened the tree and book glyphs into solid white
+   discs, so the icon keeps its own drawing and sits on a cream circle. */
+.lk-card--primary .lk-card__icon {
+  border-radius: 50%;
+  background: rgb(255 253 247 / 0.93);
+  box-shadow: inset 0 0 0 1px rgb(184 148 75 / 0.5);
+}
+
+.lk-card--guide { min-height: 4.6rem; background: linear-gradient(135deg, var(--linen), var(--paper-light)); }
+.lk-card--support { background: rgb(184 148 75 / 0.1); border-color: rgb(184 148 75 / 0.4); }
+
+.lk-whisper {
+  margin: 1.4rem 0 0; color: var(--umber);
+  font-family: var(--display); font-size: 1.15rem; font-style: italic; text-align: center;
+}
+
+.lk-footer { margin-top: 1.5rem; text-align: center; color: var(--umber); font-size: 0.85rem; }
+.lk-footer p { margin: 0 0 0.35rem; }
+.lk-footer a { color: var(--forest); font-weight: 700; text-underline-offset: 0.25rem; }
+
+@media (min-width: 34rem) {
+  main { padding-top: 1.75rem; }
+  .lk-mark { width: 4.2rem; height: 4.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lk-card, .lk-card:hover { transform: none; transition: none; }
+}

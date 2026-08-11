@@ -90,7 +90,7 @@
        finds it before the stylesheet resolves. No <link rel=preload> is used:
        a preload cannot express the <picture> media switch without risking a
        second, wasted download of the wrong candidate. -->
-  <link rel="stylesheet" href="eden-v23.css?v=23.10">
+  <link rel="stylesheet" href="eden-v23.css?v=23.11">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the living story</a>
@@ -98,7 +98,7 @@
   <header class="site-header" data-header>
     <div class="header-inner">
       <a class="brand" href="/" aria-label="Awakening Eden home">
-        <img src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="" decoding="async">
+        <img src="assets/logo/tree-heart-portal-01.webp" width="509" height="500" alt="" decoding="async">
         <span class="brand-words">
           <strong>Awakening Eden</strong>
           <small>The Living Library</small>
@@ -319,7 +319,7 @@
 
     <section class="section healing-question" id="heart" aria-labelledby="healing-title">
       <div class="container narrow center">
-        <img class="portal-emblem" src="assets/logo/tree-heart-portal-01.webp" width="509" height="609" alt="Awakening Eden Tree of Life with roots and a heart-shaped opening in its trunk" loading="lazy" decoding="async">
+        <img class="portal-emblem" src="assets/logo/tree-heart-portal-01.webp" width="509" height="500" alt="Awakening Eden Tree of Life with roots and a heart-shaped opening in its trunk" loading="lazy" decoding="async">
         <p class="eyebrow">The question beneath everything</p>
         <h2 id="healing-title">How can we become a force of healing?</h2>
         <p class="question-tail">For ourselves, for each other, and for this beautiful living Earth?</p>
@@ -389,32 +389,26 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         SOUNDTRACK FOR THE JOURNEY · not yet published.
-
-         The original Awakening Eden Spotify playlist URL could not be found
-         anywhere in this repository, in its git history, or in any of the
-         earlier v19/v21/v22 packages. The only trace is a v21 card that was
-         decorative text with no link attached. Rather than substitute a
-         different playlist, the section stays unpublished.
-
-         To publish: delete these comment markers and paste the real playlist
-         URL into the href below. Nothing else needs to change.
-
-    <section class="soundtrack-section" aria-labelledby="soundtrack-title">
+    <section class="section soundtrack-section" aria-labelledby="soundtrack-title">
       <div class="container">
         <div class="soundtrack-card">
           <span class="soundtrack-card__note" aria-hidden="true">&#9834;</span>
           <div class="soundtrack-card__copy">
-            <strong id="soundtrack-title">Listen while you wander</strong>
-            <small>Songs for soil, soul and regenerative hope.</small>
+            <strong id="soundtrack-title">Songs for the Soil, Soul &amp; Regenerative Hope</strong>
+            <small>Listen while you wander through the library.</small>
           </div>
-          <a class="button button--secondary" href="PASTE_THE_ORIGINAL_SPOTIFY_PLAYLIST_URL_HERE" target="_blank" rel="noopener noreferrer">Play the Awakening Eden Playlist <span aria-hidden="true">&#8594;</span></a>
+          <a class="button button--secondary" href="https://open.spotify.com/playlist/1EdXfG3DFGkjpBhiNAa4wi" target="_blank" rel="noopener noreferrer">Open in Spotify <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">&#8594;</span></a>
         </div>
+        <!-- Below the fold and lazy, so the player costs nothing until it is
+             scrolled to. open.spotify.com is allowed in the CSP frame-src. -->
+        <iframe class="soundtrack-embed"
+                title="Songs for the Soil, Soul &amp; Regenerative Hope — Awakening Eden playlist on Spotify"
+                src="https://open.spotify.com/embed/playlist/1EdXfG3DFGkjpBhiNAa4wi?utm_source=generator"
+                width="100%" height="352" loading="lazy"
+                allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </section>
-
-         ====================================================================== -->
 
     <section class="section story-section" id="journey" aria-labelledby="story-title">
       <img class="corner-art corner-art--story" src="assets/corners/botanical-corner-01.webp" width="287" height="309" alt="" aria-hidden="true" loading="lazy" decoding="async">
@@ -613,7 +607,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="assets/logo/tree-heart-portal-02.webp" width="410" height="629" alt="" loading="lazy" decoding="async">
+        <img src="assets/logo/tree-heart-portal-02.webp" width="410" height="492" alt="" loading="lazy" decoding="async">
         <div><strong>Awakening Eden</strong><small>The Living Library</small></div>
       </div>
       <nav aria-label="Footer navigation">

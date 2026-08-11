@@ -456,3 +456,194 @@
 .path-num { color: #9a5642; }
 /* The consent checkbox was a 19px target; 24px is the WCAG 2.2 AA minimum. */
 .form-consent input { width: 1.5rem; height: 1.5rem; }
+
+/* ==========================================================================
+   v23.17 — "Projects Benjy Created"
+   A restrained editorial preview of six photographs with all nine reachable
+   in a native <dialog>. Nothing rotates on its own.
+   ========================================================================== */
+
+.projects-section { background: var(--paper-light); }
+.projects-section .work-heading { margin-bottom: clamp(1.8rem, 4vw, 2.8rem); }
+
+.pg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: clamp(11rem, 17vw, 15rem);
+  gap: clamp(0.7rem, 1.6vw, 1.1rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pg-tile { margin: 0; }
+.pg-tile--lead { grid-row: span 2; }
+.pg-tile--wide { grid-column: span 2; }
+
+.pg-open {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: clip;
+  border: 1px solid rgb(105 112 82 / 0.28);
+  border-radius: 1.1rem;
+  background: var(--linen);
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgb(35 49 38 / 0.1);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.pg-open:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgb(35 49 38 / 0.16); }
+.pg-open img {
+  /* the preview is a consistent crop window; the viewer shows it uncropped */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pg-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 0.15rem;
+  padding: 2.4rem 0.95rem 0.85rem;
+  background: linear-gradient(transparent, rgb(20 31 23 / 0.9));
+  color: var(--paper-light);
+  text-align: left;
+}
+.pg-caption strong { font-family: var(--display); font-size: 1.12rem; font-weight: 600; line-height: 1.15; }
+.pg-caption span { font-size: 0.82rem; line-height: 1.4; opacity: 0.94; }
+
+.pg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.6rem;
+  align-items: center;
+  margin-top: clamp(1.1rem, 3vw, 1.8rem);
+}
+.pg-viewall { display: none; }          /* desktop opens straight from a tile */
+
+.pg-fallback { margin: 1.2rem 0 0; padding-left: 1.2rem; color: var(--umber); font-size: 0.92rem; }
+.pg-fallback li + li { margin-top: 0.35rem; }
+.pg-fallback[hidden] { display: none; }
+
+.pg-note {
+  width: min(100%, 46rem);
+  margin: clamp(1.2rem, 3vw, 1.9rem) 0 0;
+  color: var(--umber);
+  font-size: 0.92rem;
+}
+
+.pg-video { width: min(100%, 44rem); margin: clamp(1.6rem, 4vw, 2.6rem) 0 0; }
+.pg-video video { width: 100%; height: auto; border-radius: 1.1rem; background: var(--forest-deep); aspect-ratio: 16 / 9; }
+.pg-video figcaption { margin-top: 0.7rem; color: var(--umber); font-size: 0.88rem; }
+
+.pg-cta {
+  width: min(100%, 46rem);
+  margin: clamp(2rem, 5vw, 3rem) 0 0;
+  padding: clamp(1.4rem, 3.5vw, 2.2rem);
+  border: 1px solid rgb(184 148 75 / 0.45);
+  border-radius: 1.4rem;
+  background: rgb(184 148 75 / 0.08);
+}
+.pg-cta h3 { margin-bottom: 0.5rem; font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.pg-cta p { margin-bottom: 0; color: var(--umber); }
+
+/* --- the viewer ---------------------------------------------------------- */
+.pg-viewer {
+  width: min(96vw, 76rem);
+  max-width: none;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  border-radius: 1.2rem;
+  background: var(--forest-deep);
+  color: var(--paper-light);
+  overflow: visible;
+}
+.pg-viewer::backdrop { background: rgb(16 24 18 / 0.86); }
+.pg-viewer__frame {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: clamp(0.75rem, 2vw, 1.4rem);
+}
+.pg-viewer__figure { min-width: 0; margin: 0; text-align: center; }
+.pg-viewer__figure img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(72vh, 46rem);
+  margin-inline: auto;
+  border-radius: 0.6rem;
+  object-fit: contain;
+}
+.pg-viewer__figure figcaption { margin-top: 0.75rem; }
+.pg-viewer__count { margin: 0 0 0.2rem; color: #e3c98f; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.pg-viewer__caption { margin: 0; color: rgb(255 253 247 / 0.92); font-size: 0.95rem; }
+.pg-viewer__caption strong { font-family: var(--display); font-size: 1.2rem; font-weight: 600; }
+
+.pg-viewer__nav,
+.pg-viewer__close {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgb(255 253 247 / 0.4);
+  border-radius: 50%;
+  background: rgb(255 253 247 / 0.1);
+  color: var(--paper-light);
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: background-color 160ms ease;
+}
+.pg-viewer__nav:hover,
+.pg-viewer__close:hover { background: rgb(255 253 247 / 0.24); }
+.pg-viewer__close {
+  position: absolute;
+  z-index: 2;
+  top: -1.1rem;
+  right: -1.1rem;
+  border-color: rgb(255 253 247 / 0.55);
+  background: var(--forest-deep);
+  font-size: 1.5rem;
+}
+.pg-viewer :focus-visible { outline: 3px solid #e3c98f; outline-offset: 3px; }
+
+/* No background scrolling while the viewer is open. */
+.pg-open-lock, .pg-open-lock body { overflow: hidden; }
+
+@media (max-width: 62rem) {
+  .pg-grid { grid-auto-rows: clamp(9rem, 22vw, 13rem); }
+}
+
+@media (max-width: 46rem) {
+  /* One strong lead image, then a calm two-column grid — never a slider. */
+  .pg-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: clamp(8.5rem, 30vw, 11rem); }
+  /* Span two rows rather than setting a height: an explicit height taller
+     than the auto row made the lead overflow and the next tiles paint
+     across it. */
+  .pg-tile--lead { grid-column: span 2; grid-row: span 2; }
+  .pg-tile--wide { grid-column: span 2; }
+  /* the sixth tile would otherwise leave a half-empty cell */
+  .pg-tile:last-child { grid-column: span 2; }
+  .pg-caption strong { font-size: 1rem; }
+  .pg-viewall { display: inline-flex; }
+  .pg-actions { flex-direction: column; align-items: stretch; }
+  .pg-viewall { width: 100%; }
+  .pg-viewer__frame { grid-template-columns: 1fr; }
+  .pg-viewer__figure { order: -1; }
+  .pg-viewer__nav { justify-self: center; }
+  .pg-viewer__frame { grid-template-areas: "figure" "nav"; }
+  .pg-viewer__nav--prev, .pg-viewer__nav--next { display: inline-grid; }
+  .pg-viewer__frame { display: grid; grid-template-columns: 1fr 1fr; }
+  .pg-viewer__figure { grid-column: 1 / -1; }
+  .pg-viewer__close { top: -0.9rem; right: -0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-open, .pg-open:hover { transform: none; transition: none; }
+}
