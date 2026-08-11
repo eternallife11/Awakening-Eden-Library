@@ -3,4 +3,5 @@ Allow: /
 Disallow: /thank-you.html
 Disallow: /project-enquiry-thank-you.html
 Disallow: /links.html
+Disallow: /docs/
 Sitemap: https://awakening-eden-library.netlify.app/sitemap.xml

@@ -1,0 +1,29 @@
+path,role,production_status,notes
+geometry/lotus-of-life-12-exact.svg,Master sacred geometry,canonical,Only approved sacred geometry
+brand/awakening-eden-mark-primary.svg,Header and light-background mark,canonical,Use at small sizes
+brand/awakening-eden-mark-reversed.svg,Dark footer mark,canonical,Exactly one per footer
+web/solar-tree-heart-lotus-portal-*.avif,Flagship portal,production,AVIF first
+web/solar-tree-heart-lotus-portal-*.webp,Flagship portal fallback,production,WebP fallback
+web/rooted-human-living-earth-portal-*.avif,Human portal,production,1120 file repaired in v3.2
+web/rooted-human-living-earth-portal-*.webp,Human portal fallback,production,WebP fallback
+web/flowing-suns-living-codes-divider-*.avif,Major chapter divider,production,Maximum once per long page
+web/flowing-suns-living-codes-divider-*.webp,Major chapter divider fallback,production,WebP fallback
+portals-v3/links-moonlit-lotus-portal.svg,Links page portal,production,Compact dark-page portal
+portals-v3/living-library-garden-book-640.avif,Living Library portal,production,Small responsive source
+portals-v3/living-library-garden-book-1280.avif,Living Library portal,production,Large responsive source
+portals-v3/living-library-garden-book-*.webp,Living Library fallback,production,WebP fallback
+portals-v3/living-library-book-garden-portal.svg,Living Library compact fallback,production,Use on cards or low-weight contexts
+portals-v3/living-library-garden-book-painted-original.webp,Living Library source,source-only,Do not reference in production
+dividers-v3/lotus-roots-botanical-divider.svg,Guide and regeneration divider,production,Decorative empty alt
+dividers-v3/moon-seed-botanical-divider.svg,Reflective divider,production,Decorative empty alt
+dividers-v3/heart-hummingbird-vine-divider.svg,Human and invitation divider,production,Decorative empty alt
+photo-ornaments-v3/photo-sprig-olive-rosemary.svg,Land photo ornament,production,Decorative pseudo-element
+photo-ornaments-v3/photo-sprig-lavender-butterfly.svg,Human photo ornament,production,Decorative pseudo-element
+photo-ornaments-v3/photo-root-fungi-water.svg,Soil/water photo ornament,production,Decorative lower edge
+page-edges-v3/root-water-page-edge.svg,Long-guide page edge,production,Hide on narrow screens
+painted-botanicals-approved/corners/*.webp,Painted botanical corners,approved heritage,Retain selectively
+painted-botanicals-approved/dividers/botanical-divider-*.webp,Painted botanical dividers,approved heritage,Retain selectively
+painted-botanicals-approved/dividers/celtic-tree-of-life.webp,Heritage Tree divider,limited,Not the geometry master or small logo
+painted-botanicals-approved/frames/*.webp,Painted page-edge frames,limited,Desktop long pages only
+masters/*.png,High-resolution painted sources,source-only,Never reference in production
+

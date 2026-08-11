@@ -77,3 +77,7 @@
 
 /eden-links-v23.css
   Cache-Control: public, max-age=31536000, immutable
+
+/docs/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=604800

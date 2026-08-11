@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Awakening Eden solar tree-heart lotus emblem</title>
+  <desc id="desc">A sun above a flowering tree with a heart in its trunk, roots, the twelve-petal Lotus of Life and a botanical lotus.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#D5A64A" stroke-width="8">
+      <circle cx="256" cy="66" r="25" fill="#D5A64A" fill-opacity=".15"/>
+      <path d="M256 22v15M256 95v15M212 66h15M285 66h15M225 35l11 11M276 86l11 11M287 35l-11 11M236 86l-11 11"/>
+    </g>
+    <g stroke="#243D30" stroke-width="13">
+      <path d="M256 330c-9-56-7-112 0-182M256 202c-36-20-61-52-71-91M256 218c38-22 65-55 77-96M250 246c-50-10-88-32-116-67M262 258c54-9 94-34 121-73"/>
+      <path d="M256 330c-22 29-50 46-85 57M256 330c23 30 52 47 88 58M256 332c-7 26-5 51 6 76" stroke-width="10"/>
+    </g>
+    <g fill="#68704B" stroke="#243D30" stroke-width="5">
+      <ellipse cx="177" cy="118" rx="15" ry="29" transform="rotate(-36 177 118)"/>
+      <ellipse cx="337" cy="127" rx="15" ry="29" transform="rotate(39 337 127)"/>
+      <ellipse cx="137" cy="181" rx="14" ry="26" transform="rotate(-58 137 181)"/>
+      <ellipse cx="383" cy="188" rx="14" ry="26" transform="rotate(58 383 188)"/>
+      <ellipse cx="212" cy="145" rx="13" ry="24" transform="rotate(-20 212 145)"/>
+      <ellipse cx="300" cy="151" rx="13" ry="24" transform="rotate(20 300 151)"/>
+    </g>
+    <path d="M256 239c-28-33-67 8 0 58 67-50 28-91 0-58z" fill="#C9878D" stroke="#243D30" stroke-width="7"/>
+    <g fill="none" stroke="#D5A64A" stroke-width="4" opacity=".96">
+      <circle cx="256.000" cy="344.000" r="42" />
+<circle cx="277.000" cy="349.627" r="42" />
+<circle cx="292.373" cy="365.000" r="42" />
+<circle cx="298.000" cy="386.000" r="42" />
+<circle cx="292.373" cy="407.000" r="42" />
+<circle cx="277.000" cy="422.373" r="42" />
+<circle cx="256.000" cy="428.000" r="42" />
+<circle cx="235.000" cy="422.373" r="42" />
+<circle cx="219.627" cy="407.000" r="42" />
+<circle cx="214.000" cy="386.000" r="42" />
+<circle cx="219.627" cy="365.000" r="42" />
+<circle cx="235.000" cy="349.627" r="42" />
+      <circle cx="256" cy="386" r="84"/>
+    </g>
+    <g fill="#B76448" stroke="#243D30" stroke-width="5">
+      <path d="M256 468c-22-28-20-50 0-66 20 16 22 38 0 66z"/>
+      <path d="M252 470c-38-8-56-25-56-48 30-1 49 15 56 48z" fill-opacity=".72"/>
+      <path d="M260 470c38-8 56-25 56-48-30-1-49 15-56 48z" fill-opacity=".72"/>
+    </g>
+  </g>
+</svg>
