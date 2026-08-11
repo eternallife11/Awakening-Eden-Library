@@ -1,0 +1,100 @@
+/* Sofia — inner regeneration, movement and deep rest. */
+
+.page-sofia { background: #f6f0e2; }
+.page-sofia .section { position: relative; padding-block: clamp(3.7rem, 8vw, 7rem); overflow: clip; }
+
+.sofia-hero {
+  background:
+    radial-gradient(circle at 10% 15%, rgb(184 148 75 / 0.16), transparent 28rem),
+    linear-gradient(150deg, #fffdf7 0%, #f3ead8 72%, #e5ddcb 100%);
+}
+
+.sofia-hero__grid,
+.sofia-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  gap: clamp(2.3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.sofia-hero h1 {
+  max-width: 13ch;
+  margin: 0.45rem 0 1rem;
+  font-size: clamp(3.2rem, 7.4vw, 6.6rem);
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.sofia-hero__lead {
+  max-width: 34rem;
+  color: #344734;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  line-height: 1.35;
+}
+
+.sofia-portrait { margin: 0; padding: 0.75rem 0.75rem 1.2rem; transform: rotate(0.8deg); }
+.sofia-portrait img { aspect-ratio: 4 / 5; border-radius: 1.15rem; object-position: 50% 45%; }
+.sofia-portrait figcaption { padding: 0.9rem 0.4rem 0; color: #6b5539; text-align: center; }
+.sofia-portrait strong { display: block; color: #9a5642; font-family: var(--hand); font-size: 1.65rem; font-weight: 500; }
+
+.sofia-note {
+  max-width: 43rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sofia-note p:first-of-type {
+  color: #9a5642;
+  font-family: var(--hand);
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+}
+
+.sofia-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+
+.sofia-pillar {
+  padding: 1.45rem;
+  border: 1px solid var(--v33-border);
+  border-radius: 1.2rem;
+  background: rgb(255 253 247 / 0.8);
+}
+
+.sofia-pillar h3 { margin: 0 0 0.45rem; font-size: 1.55rem; }
+.sofia-pillar p { margin: 0; color: #6b5539; }
+
+.sofia-dark {
+  color: #fffdf7;
+  background: linear-gradient(145deg, #233126, #344734);
+}
+.sofia-dark h2, .sofia-dark h3 { color: #fffdf7; }
+.sofia-dark p { color: rgb(255 253 247 / 0.84); }
+.sofia-dark .eyebrow { color: #e2c98e; }
+
+.sofia-portal { margin: 0 auto; max-width: 32rem; text-align: center; }
+.sofia-portal img { width: 100%; height: auto; filter: drop-shadow(0 24px 38px rgb(13 25 18 / 0.3)); }
+.sofia-portal figcaption { max-width: 30rem; margin: 0.8rem auto 0; color: rgb(255 253 247 / 0.76); }
+
+.sofia-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: 2rem;
+}
+.sofia-proof div { padding-left: 1rem; border-left: 3px solid rgb(184 148 75 / 0.65); }
+.sofia-proof strong { display: block; color: #344734; font-family: var(--display); font-size: 1.5rem; }
+.sofia-proof span { color: #6b5539; }
+
+.sofia-invitation { text-align: center; }
+.sofia-invitation .button-row { justify-content: center; }
+.sofia-invitation .small-note { max-width: 42rem; margin: 1.2rem auto 0; color: #6b5539; font-size: 0.92rem; }
+
+@media (max-width: 58rem) {
+  .sofia-hero__grid, .sofia-split { grid-template-columns: 1fr; }
+  .sofia-portrait { width: min(100%, 28rem); margin-inline: auto; }
+  .sofia-pillars, .sofia-proof { grid-template-columns: 1fr; }
+}
