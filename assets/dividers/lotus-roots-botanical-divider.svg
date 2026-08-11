@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" role="img" aria-labelledby="title">
+  <title id="title">Lotus, roots and Mediterranean botanicals divider</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M72 145c158-5 263-25 376-48M1128 145c-158-5-263-25-376-48" stroke="#243D30" stroke-width="6"/>
+    <path d="M600 94c-54 25-90 56-111 94M600 94c54 25 90 56 111 94M600 95c-7 43-5 82 6 118" stroke="#B76448" stroke-width="5"/>
+    <path d="M87 165c138 5 266-10 384-45M1113 165c-138 5-266-10-384-45" stroke="#5E8C91" stroke-width="3" opacity=".8"/>
+  </g>
+  <g fill="#68704B" stroke="#243D30" stroke-width="2">
+    <ellipse cx="160" cy="126" rx="11" ry="25" transform="rotate(-67 160 126)"/><ellipse cx="225" cy="116" rx="10" ry="23" transform="rotate(-61 225 116)"/>
+    <ellipse cx="293" cy="105" rx="9" ry="21" transform="rotate(-55 293 105)"/><ellipse cx="1040" cy="126" rx="11" ry="25" transform="rotate(67 1040 126)"/>
+    <ellipse cx="975" cy="116" rx="10" ry="23" transform="rotate(61 975 116)"/><ellipse cx="907" cy="105" rx="9" ry="21" transform="rotate(55 907 105)"/>
+  </g>
+  <g fill="#8B7A9E">
+    <circle cx="355" cy="96" r="6"/><circle cx="373" cy="91" r="5"/><circle cx="389" cy="88" r="4"/>
+    <circle cx="845" cy="96" r="6"/><circle cx="827" cy="91" r="5"/><circle cx="811" cy="88" r="4"/>
+  </g>
+  <g transform="translate(600 95) scale(.2) translate(-256 -256)" fill="none" stroke="#D5A64A" stroke-width="10">
+    <circle cx="256" cy="146" r="110"/><circle cx="311" cy="160.737" r="110"/><circle cx="351.263" cy="201" r="110"/>
+    <circle cx="366" cy="256" r="110"/><circle cx="351.263" cy="311" r="110"/><circle cx="311" cy="351.263" r="110"/>
+    <circle cx="256" cy="366" r="110"/><circle cx="201" cy="351.263" r="110"/><circle cx="160.737" cy="311" r="110"/>
+    <circle cx="146" cy="256" r="110"/><circle cx="160.737" cy="201" r="110"/><circle cx="201" cy="160.737" r="110"/>
+    <circle cx="256" cy="256" r="220"/>
+  </g>
+  <path d="M600 205c-22-28-20-49 0-65 20 16 22 37 0 65zm-5 3c-34-7-51-23-52-44 28 0 46 15 52 44zm10 0c34-7 51-23 52-44-28 0-46 15-52 44z" fill="#C9878D" stroke="#243D30" stroke-width="3"/>
+  <path d="M944 69c-18-7-30 2-36 17 17 5 29-1 36-17zm0 0c8-17 21-23 37-17-5 17-17 25-37 17z" fill="#D5A64A" stroke="#243D30" stroke-width="2"/>
+</svg>

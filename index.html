@@ -85,12 +85,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700;800&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-  <!-- The Heartwood Future Gateway is the likely LCP element. It is plain, eager
-       HTML high in the document with fetchpriority="high", so the preload scanner
-       finds it before the stylesheet resolves. No <link rel=preload> is used:
-       a preload cannot express the <picture> media switch without risking a
-       second, wasted download of the wrong candidate. -->
-  <link rel="stylesheet" href="eden-v23.css?v=23.11">
+  <!-- The Solar Tree-Heart-Lotus portal is the likely LCP element. It is plain,
+       eager HTML high in the document with fetchpriority="high", so the preload
+       scanner finds it before the stylesheet resolves. -->
+  <link rel="stylesheet" href="eden-v23.css?v=23.13">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the living story</a>
@@ -153,19 +151,19 @@
         <figure class="hero-portal reveal reveal--late">
           <picture>
             <source
-              media="(max-width: 47.99rem)"
-              type="image/webp"
-              srcset="assets/portals/awakening-eden-heartwood-future-portal-mobile-480.webp 480w,
-                      assets/portals/awakening-eden-heartwood-future-portal-mobile-800.webp 800w"
-              sizes="88vw">
+              type="image/avif"
+              srcset="assets/portals/solar-tree-heart-lotus-portal-480.avif 480w,
+                      assets/portals/solar-tree-heart-lotus-portal-800.avif 800w,
+                      assets/portals/solar-tree-heart-lotus-portal-1120.avif 1120w"
+              sizes="(min-width: 75rem) 30rem, (min-width: 48rem) 40vw, 88vw">
             <img
-              src="assets/portals/awakening-eden-heartwood-future-portal-sidecar-800.webp"
-              srcset="assets/portals/awakening-eden-heartwood-future-portal-sidecar-480.webp 480w,
-                      assets/portals/awakening-eden-heartwood-future-portal-sidecar-800.webp 800w,
-                      assets/portals/awakening-eden-heartwood-future-portal-sidecar.webp 1003w"
+              src="assets/portals/solar-tree-heart-lotus-portal-800.webp"
+              srcset="assets/portals/solar-tree-heart-lotus-portal-480.webp 480w,
+                      assets/portals/solar-tree-heart-lotus-portal-800.webp 800w,
+                      assets/portals/solar-tree-heart-lotus-portal-1120.webp 1120w"
               sizes="(min-width: 75rem) 30rem, (min-width: 48rem) 40vw, 88vw"
-              width="1003" height="1568"
-              alt="An old tree whose trunk opens into a heart-shaped doorway, with a stone path leading through terraced gardens toward a village at sunrise"
+              width="1120" height="1400"
+              alt="A flowering Tree of Life beneath a flowing sun, with a heart in its trunk, roots woven through the twelve-fold Lotus of Life, seeds, a botanical lotus and water"
               fetchpriority="high" decoding="async">
           </picture>
         </figure>
@@ -228,12 +226,18 @@
     </section>
 
     <div class="library-threshold" aria-hidden="true">
-      <img
-        src="assets/dividers/04-living-library-garden-book-720.webp"
-        srcset="assets/dividers/04-living-library-garden-book-720.webp 720w,
-                assets/dividers/04-living-library-garden-book-1440.webp 1440w"
-        sizes="(min-width: 48rem) 46rem, 92vw"
-        width="1440" height="450" alt="" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/avif"
+                srcset="assets/portals/living-library-garden-book-640.avif 640w,
+                        assets/portals/living-library-garden-book-1280.avif 1280w"
+                sizes="(min-width: 48rem) 46rem, 92vw">
+        <img
+          src="assets/portals/living-library-garden-book-1280.webp"
+          srcset="assets/portals/living-library-garden-book-640.webp 640w,
+                  assets/portals/living-library-garden-book-1280.webp 1280w"
+          sizes="(min-width: 48rem) 46rem, 92vw"
+          width="1280" height="400" alt="" loading="lazy" decoding="async">
+      </picture>
     </div>
 
     <section class="section library-section" id="library" aria-labelledby="library-title">
@@ -555,6 +559,23 @@
         </div>
       </div>
     </section>
+
+    <!-- Flowing Suns / Living Codes — the one major painted divider on this
+         page, marking the turn from proof and community into the closing
+         invitation. Per the design bible: once at most on a long page. -->
+    <picture>
+      <source type="image/avif"
+              srcset="assets/dividers/flowing-suns-living-codes-divider-640.avif 640w,
+                      assets/dividers/flowing-suns-living-codes-divider-1280.avif 1280w,
+                      assets/dividers/flowing-suns-living-codes-divider-1600.avif 1600w"
+              sizes="(min-width: 76rem) 72rem, 94vw">
+      <img class="flowing-suns-divider" src="assets/dividers/flowing-suns-living-codes-divider-1280.webp"
+           srcset="assets/dividers/flowing-suns-living-codes-divider-640.webp 640w,
+                   assets/dividers/flowing-suns-living-codes-divider-1280.webp 1280w,
+                   assets/dividers/flowing-suns-living-codes-divider-1600.webp 1600w"
+           sizes="(min-width: 76rem) 72rem, 94vw"
+           width="1600" height="533" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    </picture>
 
     <section class="section growing-toward" aria-labelledby="growing-title">
       <div class="container narrow">
