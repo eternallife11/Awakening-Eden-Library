@@ -149,6 +149,26 @@
   width: 100%;
   height: auto;
 }
+.harmony-vision__lotus {
+  position: absolute;
+  z-index: 2;
+  top: 2.3%;
+  left: 50%;
+  display: grid;
+  width: clamp(5.5rem, 10vw, 9rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(184 138 56 / 0.54);
+  border-radius: 50%;
+  background: rgb(237 211 160 / 0.94);
+  box-shadow: 0 7px 25px rgb(35 49 38 / 0.19);
+  transform: translateX(-50%);
+}
+.harmony-vision__lotus img {
+  width: 82%;
+  height: 82%;
+  filter: sepia(0.48) saturate(1.15) brightness(0.72);
+}
 .harmony-vision figcaption {
   position: absolute;
   right: clamp(1rem, 4vw, 3.5rem);
@@ -261,6 +281,7 @@
     border-radius: 0;
     background: var(--revival-forest);
   }
+  .harmony-vision__lotus { top: 2%; width: 5.1rem; }
   .grow-heading__portal { width: min(84vw, 24rem); }
   .door-card__art img { height: 9.5rem; transform: scale(1.15); }
 }
