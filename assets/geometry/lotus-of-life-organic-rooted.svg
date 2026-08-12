@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Organic rooted Lotus of Life</title>
+  <desc id="desc">The exact twelve-fold Lotus of Life held inside a hand-drawn wreath of petals, roots and water.</desc>
+  <defs>
+    <radialGradient id="paper" cx="50%" cy="42%" r="62%">
+      <stop offset="0" stop-color="#fff8dd" stop-opacity=".96"/>
+      <stop offset=".74" stop-color="#ead39d" stop-opacity=".91"/>
+      <stop offset="1" stop-color="#bf8848" stop-opacity=".72"/>
+    </radialGradient>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#172c21" flood-opacity=".34"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#soft-shadow)">
+    <path fill="url(#paper)" stroke="#805c31" stroke-width="5" d="M320 35C414 38 512 102 546 194c35 96 6 210-70 274-55 47-112 67-156 84-44-17-101-37-156-84-76-64-105-178-70-274C128 102 226 38 320 35Z"/>
+    <path fill="none" stroke="#52714b" stroke-width="7" stroke-linecap="round" opacity=".88" d="M112 296C70 272 63 223 91 189M528 296c42-24 49-73 21-107M153 128c-26-36-12-75 18-91M487 128c26-36 12-75-18-91"/>
+    <g fill="#d79577" stroke="#7f5c35" stroke-width="4" opacity=".96">
+      <path d="M320 44c-28 38-27 72 0 99 27-27 28-61 0-99Z"/>
+      <path d="M236 60c-10 42 3 72 39 91 14-32 2-63-39-91Z"/>
+      <path d="M404 60c10 42-3 72-39 91-14-32-2-63 39-91Z"/>
+      <path d="M161 109c7 42 30 67 70 69 1-35-22-58-70-69Z"/>
+      <path d="M479 109c-7 42-30 67-70 69-1-35 22-58 70-69Z"/>
+      <path d="M115 184c23 36 53 49 90 34-13-32-44-44-90-34Z"/>
+      <path d="M525 184c-23 36-53 49-90 34 13-32 44-44 90-34Z"/>
+    </g>
+    <g fill="#d7a33e" stroke="#7f5c35" stroke-width="3" opacity=".9">
+      <path d="M92 267c34 26 67 28 98 2-22-27-55-28-98-2Z"/>
+      <path d="M548 267c-34 26-67 28-98 2 22-27 55-28 98-2Z"/>
+      <path d="M96 354c40 17 72 10 95-23-28-21-60-13-95 23Z"/>
+      <path d="M544 354c-40 17-72 10-95-23 28-21 60-13 95 23Z"/>
+    </g>
+
+    <!-- Canonical geometry: twelve equal circles plus the exact outer circle. -->
+    <g transform="translate(64 32)" fill="none" stroke="#9c7134" stroke-width="4" stroke-linecap="round" opacity=".98">
+      <circle cx="256.000" cy="146.000" r="110"/>
+      <circle cx="311.000" cy="160.737" r="110"/>
+      <circle cx="351.263" cy="201.000" r="110"/>
+      <circle cx="366.000" cy="256.000" r="110"/>
+      <circle cx="351.263" cy="311.000" r="110"/>
+      <circle cx="311.000" cy="351.263" r="110"/>
+      <circle cx="256.000" cy="366.000" r="110"/>
+      <circle cx="201.000" cy="351.263" r="110"/>
+      <circle cx="160.737" cy="311.000" r="110"/>
+      <circle cx="146.000" cy="256.000" r="110"/>
+      <circle cx="160.737" cy="201.000" r="110"/>
+      <circle cx="201.000" cy="160.737" r="110"/>
+      <circle cx="256" cy="256" r="220"/>
+    </g>
+    <circle cx="320" cy="288" r="7" fill="#9c7134"/>
+
+    <g fill="none" stroke="#79552e" stroke-width="6" stroke-linecap="round" opacity=".94">
+      <path d="M320 508c-8 38-32 64-75 82M320 508c8 38 32 64 75 82M298 503c-30 25-60 35-102 35M342 503c30 25 60 35 102 35M272 493c-35 8-65 2-97-18M368 493c35 8 65 2 97-18"/>
+    </g>
+    <g fill="none" stroke="#4d7c75" stroke-width="5" stroke-linecap="round" opacity=".88">
+      <path d="M174 598c55-18 105-14 146 1 41-15 91-19 146-1M213 619c39-10 75-7 107 5 32-12 68-15 107-5"/>
+    </g>
+  </g>
+</svg>
