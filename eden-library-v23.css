@@ -511,3 +511,100 @@ body.page-library {
 .film-card-photo-credit { background: rgb(35 49 38 / 0.82); color: rgb(255 253 247 / 0.98); }
 .film-card-photo-credit:hover { background: rgb(35 49 38 / 0.92); }
 .btn.clay { background: #95513e; }
+
+/* ---------- Begin Here and community bands ----------
+   The first thing a newcomer meets. The seal carries the painted identity, the
+   two panels answer "where do I start?" and "who can I ask?" before the
+   twelve-section index appears. */
+.lib-welcome {
+  padding: clamp(2rem, 5vw, 3.25rem) 0 clamp(1rem, 3vw, 1.75rem);
+  background: var(--paper, #fdf8ee);
+}
+.lib-welcome__grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 2.75rem);
+  /* The copy column is tall; centring left the seal stranded in white space. */
+  align-items: start;
+}
+.lib-welcome__seal {
+  display: block;
+  width: clamp(8rem, 16vw, 13rem);
+  height: auto;
+  margin-top: 0.4rem;
+  border-radius: 50%;
+}
+.lib-welcome__copy h2 {
+  margin: 0.35rem 0 0.6rem;
+  color: var(--forest);
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  line-height: 1.12;
+}
+.lib-welcome__copy { max-width: 46rem; }
+.lib-welcome__copy p { margin: 0 0 1rem; color: var(--umber); font-size: 1rem; line-height: 1.6; }
+.lib-welcome__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.9rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: libstep;
+}
+.lib-welcome__steps li {
+  position: relative;
+  padding-left: 2.4rem;
+  color: var(--umber);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.lib-welcome__steps li::before {
+  counter-increment: libstep;
+  content: counter(libstep);
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--paper-light, #fffdf7);
+  font-family: var(--display);
+  font-size: 0.95rem;
+}
+.lib-welcome__steps strong { display: block; color: var(--forest); font-size: 1rem; }
+
+.lib-community {
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+  border: 1px solid rgb(105 112 82 / 0.28);
+  border-radius: 1.1rem;
+  background: rgb(255 253 247 / 0.7);
+}
+.lib-community h3 { margin: 0 0 0.3rem; color: var(--forest); font-family: var(--display); font-size: 1.3rem; }
+.lib-community p { margin: 0 0 0.9rem; color: var(--umber); font-size: 0.92rem; }
+.lib-community__links { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.lib-community__links a {
+  display: inline-grid;
+  gap: 0.1rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--paper-light, #fffdf7);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.lib-community__links a small { font-weight: 400; font-size: 0.76rem; opacity: 0.82; }
+.lib-community__links a:hover { background: var(--forest-deep, #1d3125); }
+.lib-community__links a.is-quiet { background: transparent; color: var(--forest); box-shadow: inset 0 0 0 1px rgb(52 71 52 / 0.4); }
+.lib-community__links a.is-quiet:hover { background: rgb(52 71 52 / 0.07); }
+
+@media (max-width: 52rem) {
+  .lib-welcome__grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .lib-welcome__steps li { text-align: left; }
+  .lib-community__links { justify-content: center; }
+}

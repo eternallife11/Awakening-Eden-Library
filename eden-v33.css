@@ -159,3 +159,39 @@ footer .footer-mark,
 @media (prefers-reduced-motion: reduce) {
   .v33-pathway, .v33-pathway:hover { transform: none; transition: none; }
 }
+
+/* ---------- Painted vision portal ----------
+   One painted threshold per page, sized so it reads as artwork rather than a
+   banner. Shared by the About vision section and the homepage closing chapter. */
+.eden-vision-portal {
+  margin: clamp(2.5rem, 6vw, 4rem) auto;
+  max-width: 62rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+.eden-vision-portal > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.1rem;
+  box-shadow: var(--v33-shadow-soft, 0 18px 48px rgb(35 49 38 / 0.11));
+}
+.eden-vision-portal figcaption {
+  font-family: var(--display, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.45;
+  color: #2c4232;
+}
+.eden-vision-portal figcaption span {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5d6350;
+}
+@media (max-width: 52rem) {
+  .eden-vision-portal { grid-template-columns: 1fr; }
+}

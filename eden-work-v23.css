@@ -647,3 +647,7 @@
 @media (prefers-reduced-motion: reduce) {
   .pg-open, .pg-open:hover { transform: none; transition: none; }
 }
+
+/* Benjy's own land-and-water dividers: quieter and wider than the painted
+   botanicals, so they mark a change of ground without becoming a garland. */
+.ae-earth-divider--land { max-width: min(100%, 1180px); opacity: 0.9; }
