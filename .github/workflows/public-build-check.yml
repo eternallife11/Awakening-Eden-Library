@@ -1,0 +1,82 @@
+name: Public build safety check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - agent/awakening-eden-cloudflare-finish
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build Cloudflare public artifact
+        run: node scripts/build-cloudflare.mjs
+
+      - name: Verify required public files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f dist/index.html
+          test -f dist/404.html
+          test -f dist/_redirects
+          test -f dist/_headers
+          test -f dist/robots.txt
+
+      - name: Verify internal sources are not public
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e dist/docs
+          test ! -e dist/deliverables
+          test ! -e dist/scripts
+          test ! -e dist/netlify.toml
+          test ! -e dist/wrangler.toml
+          test ! -e dist/orchard-before-dry-monoculture.webp
+          test ! -e dist/orchard-after-abundant-green.webp
+          if find dist -type f \( -iname '*.zip' -o -iname '*.md' -o -iname '*.psd' -o -iname '*.xcf' \) -print -quit | grep -q .; then
+            echo 'Internal/source file type found in public artifact.' >&2
+            exit 1
+          fi
+
+      - name: Verify Cloudflare redirect compatibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -nE '[[:space:]](200|301|302|303|307|308|404)!([[:space:]]|$)' dist/_redirects; then
+            echo 'Netlify force marker remains in Cloudflare redirects.' >&2
+            exit 1
+          fi
+          if grep -nE '[[:space:]]404([[:space:]]|$)' dist/_redirects; then
+            echo 'Unsupported Cloudflare 404 rewrite remains in redirects.' >&2
+            exit 1
+          fi
+          grep -q '/living-library' dist/_redirects
+          grep -q '/work-with-benjy' dist/_redirects
+
+      - name: Verify Cloudflare static asset size ceiling
+        shell: bash
+        run: |
+          set -euo pipefail
+          oversized="$(find dist -type f -size +25M -print -quit)"
+          if [ -n "$oversized" ]; then
+            echo "Oversized public asset: $oversized" >&2
+            exit 1
+          fi
+
+      - name: Public build summary
+        shell: bash
+        run: |
+          echo "Files: $(find dist -type f | wc -l)"
+          du -sh dist
