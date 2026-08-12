@@ -88,6 +88,7 @@
   <link rel="preload" as="image" href="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.avif" type="image/avif" fetchpriority="high">
   <link rel="stylesheet" href="eden-v23.css?v=23.13">
   <link rel="stylesheet" href="eden-v33.css?v=33.4">
+  <link rel="stylesheet" href="eden-visual-revival.css?v=4.0">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the living story</a>
@@ -95,7 +96,6 @@
   <header class="site-header" data-header>
     <div class="header-inner">
       <a class="brand" href="/" aria-label="Awakening Eden home">
-        <img src="assets/brand/awakening-eden-mark-primary.svg" width="512" height="512" alt="" decoding="async">
         <span class="brand-words">
           <strong>Awakening Eden</strong>
           <small>The Living Library</small>
@@ -113,15 +113,35 @@
         <a href="/journey">Our journey</a>
         <a href="/sofia">With Sofia</a>
         <a href="/work-with-benjy">Work with Benjy</a>
-        <a class="nav-gift" href="#gift-back">Gift back <span aria-hidden="true">♡</span></a>
+        <a class="nav-gift" href="#gift-back">Gift back</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero section" id="home" aria-labelledby="hero-title">
-      <img class="edge-art edge-art--left" src="assets/frames/seed-to-tree-frame-clean-01.webp" width="360" height="835" alt="" aria-hidden="true" decoding="async">
-      <img class="corner-art corner-art--hero" src="assets/corners/botanical-corner-02.webp" width="301" height="298" alt="" aria-hidden="true" decoding="async">
+    <figure class="eden-threshold reveal" aria-labelledby="threshold-caption">
+      <picture>
+        <source
+          type="image/avif"
+          srcset="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-768.avif 768w,
+                  assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.avif 1536w"
+          sizes="100vw">
+        <img
+          src="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.webp"
+          srcset="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-768.webp 768w,
+                  assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.webp 1536w"
+          sizes="100vw"
+          width="1536" height="1024"
+          alt="Benjy and Sofia resting beneath a vast living Tree of Life, surrounded by hummingbirds, flowers, water, roots and a regenerative garden"
+          fetchpriority="high" decoding="async">
+      </picture>
+      <img class="eden-threshold__lotus" src="assets/geometry/lotus-of-life-12-exact.svg" width="512" height="512" alt="" aria-hidden="true" decoding="async">
+      <figcaption id="threshold-caption" class="eden-threshold__caption">A living future, rooted in relationship.</figcaption>
+    </figure>
+
+    <section class="hero section hero--welcome" id="home" aria-labelledby="hero-title">
+      <img class="corner-art corner-art--welcome-left" src="assets/corners/botanical-corner-01.webp" width="287" height="309" alt="" aria-hidden="true" decoding="async">
+      <img class="corner-art corner-art--welcome-right" src="assets/corners/botanical-corner-05.webp" width="271" height="283" alt="" aria-hidden="true" decoding="async">
 
       <div class="container hero-grid">
         <div class="hero-copy reveal">
@@ -139,35 +159,14 @@
             <li>Regeneration in action.</li>
           </ul>
           <div class="button-row">
-            <a class="button button--primary" href="/start-here">Begin Here <span aria-hidden="true">→</span></a>
+            <a class="button button--primary" href="/start-here">Begin Here</a>
             <a class="button button--secondary" href="/living-library">Explore the Living Library</a>
           </div>
           <a class="community-whisper" href="/work-with-benjy">
-            Work with Benjy <span aria-hidden="true">→</span>
+            Work with Benjy
           </a>
           </div>
         </div>
-
-        <figure class="hero-portal hero-portal--welcome reveal reveal--late">
-          <picture>
-            <source
-              type="image/avif"
-              srcset="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-768.avif 768w,
-                      assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.avif 1536w"
-              sizes="(min-width: 75rem) 43rem, (min-width: 48rem) 48vw, 92vw">
-            <img
-              class="welcome-home-art"
-              src="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.webp"
-              srcset="assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-768.webp 768w,
-                      assets/hero/welcome-home-benjy-sofia-tree-of-life-v33-1536.webp 1536w"
-              sizes="(min-width: 75rem) 43rem, (min-width: 48rem) 48vw, 92vw"
-              width="1536" height="1024"
-              alt="A painted portrait of Benjy and Sofia seated beneath a heart-centred Tree of Life, with hummingbirds, mushrooms, living water and roots meeting the exact Lotus of Life"
-              fetchpriority="high" decoding="async">
-          </picture>
-          <img class="welcome-home-lotus" src="assets/geometry/lotus-of-life-12-exact.svg" width="512" height="512" alt="" aria-hidden="true" decoding="async">
-          <figcaption class="visually-hidden">Benjy and Sofia rooted with the living Earth beneath the Awakening Eden Tree of Life.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -182,10 +181,41 @@
       </div>
     </section>
 
+    <section class="section founders-welcome" aria-labelledby="founders-welcome-title">
+      <div class="container founders-welcome__grid">
+        <figure class="founders-welcome__portrait">
+          <img src="benjy-and-sofia-v19.webp" width="900" height="1200" alt="Benjy and Sofia laughing together among flowering plants" loading="eager" decoding="async">
+          <img class="founders-welcome__sprig" src="assets/ornaments/photo-sprig-lavender-butterfly.svg" width="320" height="220" alt="" aria-hidden="true" decoding="async">
+        </figure>
+        <div class="founders-welcome__copy">
+          <p class="handwritten">Two humans, one living invitation</p>
+          <h2 id="founders-welcome-title">We are Benjy &amp; Sofia.</h2>
+          <p class="lead">Awakening Eden is our evolving home for practical regeneration, inner remembering and the brighter future we believe people can grow together.</p>
+          <p>Everything here comes from a real journey: learning with land, gardens, teachers and communities; planting, listening, making mistakes, beginning again and sharing what genuinely helps.</p>
+          <div class="story-links">
+            <a class="text-link" href="/about">Meet us</a>
+            <a class="text-link" href="/journey">Walk through our journey</a>
+          </div>
+        </div>
+      </div>
+      <img class="founders-welcome__divider" src="assets/dividers/heart-hummingbird-vine-divider.svg" width="1200" height="220" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    </section>
+
+    <figure class="harmony-vision" aria-labelledby="harmony-vision-caption">
+      <img src="assets/hero/garden-of-harmony-benjy-sofia-1672.webp" width="1672" height="941" alt="Benjy and Sofia seated beneath a radiant fruiting tree in a richly interconnected garden, with hummingbirds, community, water and roots joining the living landscape" loading="lazy" decoding="async">
+      <figcaption id="harmony-vision-caption">
+        <span class="handwritten">The future we are tending</span>
+        <span>Inner and outer ecosystems regenerating together.</span>
+      </figcaption>
+    </figure>
+
     <section class="section grow-section" id="what-to-grow" aria-labelledby="grow-title">
       <div class="container">
         <div class="grow-heading center">
-          <img class="journey-seal" src="assets/portals/awakening-eden-heartwood-portal-seal-480.webp" width="480" height="480" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <picture class="grow-heading__portal">
+            <source type="image/avif" srcset="assets/portals/solar-tree-heart-lotus-portal-800.avif 800w, assets/portals/solar-tree-heart-lotus-portal-1120.avif 1120w" sizes="(min-width: 48rem) 30rem, 78vw">
+            <img src="assets/portals/solar-tree-heart-lotus-portal-1120.webp" srcset="assets/portals/solar-tree-heart-lotus-portal-480.webp 480w, assets/portals/solar-tree-heart-lotus-portal-800.webp 800w, assets/portals/solar-tree-heart-lotus-portal-1120.webp 1120w" sizes="(min-width: 48rem) 30rem, 78vw" width="1120" height="1400" alt="A radiant botanical Tree of Life whose roots hold the exact twelve-fold Lotus of Life" loading="eager" decoding="async">
+          </picture>
           <p class="handwritten">Four doors, one living system</p>
           <h2 id="grow-title">Begin your journey</h2>
           <p class="grow-heading__lead">What would you like to grow? Follow whichever door is calling you today. They all lead back to the same garden.</p>
@@ -193,35 +223,39 @@
 
         <div class="grow-grid">
           <a class="door-card door-card--major" href="/start-here">
+            <span class="door-card__art" aria-hidden="true"><img src="assets/dividers/01-awakening-eden-universal-tree-of-life-720.webp" width="720" height="225" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="assets/illustrations/icon-seed.svg" width="96" height="96" alt=""></span>
             <h3>Begin Here</h3>
             <p class="door-card__lead">One guide, one idea and one practical next step.</p>
             <p>Start with Awakening Regeneration: a simple, grounded path into living soil, water, food forests, resilience, relationship and action.</p>
-            <span class="door-card__cta">Begin the Journey <span aria-hidden="true">→</span></span>
+            <span class="door-card__cta">Begin the Journey</span>
           </a>
 
           <a class="door-card door-card--major" href="/living-library">
+            <span class="door-card__art" aria-hidden="true"><img src="assets/dividers/04-living-library-garden-book-720.webp" width="720" height="225" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="assets/illustrations/icon-book-leaf.svg" width="96" height="96" alt=""></span>
             <h3>Living Library</h3>
             <p class="door-card__lead">Resources for positive change, regeneration, inspiration and thriving.</p>
             <p>Explore free guides, books, films, teachers, practices and practical tools&mdash;a garden of knowledge for inner and outer regeneration.</p>
-            <span class="door-card__cta">Explore the Library <span aria-hidden="true">→</span></span>
+            <span class="door-card__cta">Explore the Library</span>
           </a>
 
           <a class="door-card door-card--major" href="/work-with-benjy">
+            <span class="door-card__art" aria-hidden="true"><img src="assets/dividers/02-benji-celtic-living-land-hummingbird-720.webp" width="720" height="225" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="assets/illustrations/icon-hands-tree.svg" width="96" height="96" alt=""></span>
             <h3>Work with Benjy</h3>
             <p class="door-card__lead">From overwhelm to a living plan.</p>
             <p>Regenerative land guidance, property design, orchard revival, food forests, water resilience, abundance gardens and practical project support.</p>
-            <span class="door-card__cta">Explore Land Services <span aria-hidden="true">→</span></span>
+            <span class="door-card__cta">Explore Land Services</span>
           </a>
 
           <a class="door-card door-card--major" href="#community">
+            <span class="door-card__art" aria-hidden="true"><img src="assets/dividers/03-sofia-moon-garden-butterfly-720.webp" width="720" height="225" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="eden-icon-heart-star.svg" width="96" height="96" alt=""></span>
             <h3>Walk Beside Us</h3>
             <p class="door-card__lead">Belong, learn, share and grow together.</p>
             <p>Join our WhatsApp and Telegram spaces for new guides, field notes, upcoming workshops, events and little nuggets of regenerative inspiration.</p>
-            <span class="door-card__cta">Join the Community <span aria-hidden="true">→</span></span>
+            <span class="door-card__cta">Join the Community</span>
           </a>
         </div>
       </div>
@@ -276,7 +310,7 @@
         </div>
 
         <div class="center library-action">
-          <a class="button button--primary" href="/living-library">Enter the Living Library <span aria-hidden="true">→</span></a>
+          <a class="button button--primary" href="/living-library">Enter the Living Library</a>
         </div>
       </div>
     </section>
@@ -299,7 +333,7 @@
           <p>Every tree planted. Every ecosystem nurtured. Every negative thought changed. Our actions declare which future we choose.</p>
           <p class="invitation-close">It is about community thriving, not lone heroes.</p>
           <div class="button-row">
-            <a class="button button--primary" href="#what-to-grow">Find your next step <span aria-hidden="true">→</span></a>
+            <a class="button button--primary" href="#what-to-grow">Find your next step</a>
             <a class="button button--secondary" href="#community">Come grow with us</a>
           </div>
         </div>
@@ -371,7 +405,7 @@
             <h3>Thriving in These Times</h3>
             <p class="guide-card__subtitle">A Calm Companion for a Changing World</p>
             <p>Breath, steadiness, food, community, wise preparedness and practical hope—without fear.</p>
-            <a class="text-link" href="/thriving-in-these-times">Continue gently <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="/thriving-in-these-times">Continue gently</a>
           </article>
 
           <article class="guide-card guide-card--tree">
@@ -380,7 +414,7 @@
             <h3>Regeneration 101</h3>
             <p class="guide-card__subtitle">The practical pathway</p>
             <p>Living soil, food forests and syntropy, water and biodiversity, and a regenerative life.</p>
-            <a class="text-link" href="#regeneration-modules">Explore the pathway <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#regeneration-modules">Explore the pathway</a>
           </article>
         </div>
 
@@ -398,12 +432,12 @@
     <section class="section soundtrack-section" aria-labelledby="soundtrack-title">
       <div class="container">
         <div class="soundtrack-card">
-          <span class="soundtrack-card__note" aria-hidden="true">&#9834;</span>
+          <span class="soundtrack-card__note soundtrack-card__note--botanical" aria-hidden="true"><img src="assets/illustrations/icon-butterfly.svg" width="64" height="64" alt=""></span>
           <div class="soundtrack-card__copy">
             <strong id="soundtrack-title">Songs for the Soil, Soul &amp; Regenerative Hope</strong>
             <small>Listen while you wander through the library.</small>
           </div>
-          <a class="button button--secondary" href="https://open.spotify.com/playlist/1EdXfG3DFGkjpBhiNAa4wi" target="_blank" rel="noopener noreferrer">Open in Spotify <span class="visually-hidden">(opens in a new tab)</span><span aria-hidden="true">&#8594;</span></a>
+          <a class="button button--secondary" href="https://open.spotify.com/playlist/1EdXfG3DFGkjpBhiNAa4wi" target="_blank" rel="noopener noreferrer">Open in Spotify <span class="visually-hidden">(opens in a new tab)</span></a>
         </div>
         <!-- Below the fold and lazy, so the player costs nothing until it is
              scrolled to. open.spotify.com is allowed in the CSP frame-src. -->
@@ -444,9 +478,9 @@
           <p>Through more than twenty-five retreats and circles, we have learnt that healing the Earth and healing ourselves are not separate journeys. Awakening Eden is our imperfectly perfect answer to the question: <em>What is ours to do?</em></p>
           <p class="field-note field-note--sofia"><span class="handwritten">Sofia&rsquo;s reflection</span> Bogot&aacute; taught me speed. My body asked for slowness &mdash; and eventually I listened. Regeneration is not only about planting trees. It is also about softening the masks and remembering the quiet intelligence of the heart.</p>
           <div class="story-links">
-            <a class="text-link" href="/journey">Read our whole story <span aria-hidden="true">→</span></a>
-            <a class="text-link" href="/about">Meet Benjy &amp; Sofia <span aria-hidden="true">→</span></a>
-            <a class="text-link" href="/sofia">Journey with Sofia <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="/journey">Read our whole story</a>
+            <a class="text-link" href="/about">Meet Benjy &amp; Sofia</a>
+            <a class="text-link" href="/sofia">Journey with Sofia</a>
           </div>
         </div>
       </div>
@@ -508,7 +542,7 @@
           <p class="field-note"><span class="handwritten">Benjy&rsquo;s field note</span> The first thing I look for on a new property is not what is missing. It is what is already trying to grow. Read that first, and most of the plan writes itself.</p>
           <div class="button-row">
             <a class="button button--primary" href="/work-with-benjy#enquire">Tell Benjy about your land</a>
-            <a class="button button--secondary" href="/work-with-benjy">Explore Land Services <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="/work-with-benjy">Explore Land Services</a>
           </div>
           <p class="small-print">Services stay within confirmed professional scope and do not imply licensed engineering, hydrology or guaranteed outcomes.</p>
         </div>
@@ -607,7 +641,7 @@
         <h2 id="growing-title">From a Living Library to living landscapes.</h2>
         <p>We are growing Awakening Eden online and on the ground: sharing practical tools, helping land and people regenerate, gathering community for useful action, and planting the seeds of future demonstration landscapes and regenerative learning places.</p>
         <p class="small-print">The library, the guides and Benjy&rsquo;s land work exist today. The demonstration landscapes and learning places are a direction we are working toward, and would need partners, collaboration and funding.</p>
-        <a class="text-link" href="/heart">Read the fuller vision <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="/heart">Read the fuller vision</a>
       </div>
     </section>
 
@@ -631,7 +665,7 @@
           <a class="button button--secondary" href="https://www.paypal.me/BSauber/6" target="_blank" rel="noopener noreferrer">Gift €6</a>
           <a class="button button--secondary" href="https://www.paypal.me/BSauber/11" target="_blank" rel="noopener noreferrer">Gift €11</a>
           <a class="button button--secondary" href="https://www.paypal.me/BSauber/33" target="_blank" rel="noopener noreferrer">Gift €33</a>
-          <a class="button button--primary gift-options__custom" href="https://www.paypal.me/BSauber" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♡</span> Support Awakening Eden</a>
+          <a class="button button--primary gift-options__custom" href="https://www.paypal.me/BSauber" target="_blank" rel="noopener noreferrer">Support Awakening Eden</a>
         </div>
         <small class="block-note">Securely opens PayPal.Me in a new tab. Receiving freely is always welcome too.</small>
       </div>

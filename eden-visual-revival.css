@@ -1,0 +1,270 @@
+/* Awakening Eden visual revival v4 - 12 August 2026
+   A landscape threshold, human proof, exact Lotus portal and illustrated
+   pathways. This layer deliberately preserves the established site systems. */
+
+:root {
+  --revival-ink: #233126;
+  --revival-forest: #294334;
+  --revival-paper: #fffaf0;
+  --revival-linen: #f1e6d0;
+  --revival-gold: #b88a38;
+}
+
+/* The chrome should feel typographic and calm, not like a clip-art badge. */
+.site-header .brand { gap: 0; }
+.site-header .brand-words strong {
+  color: var(--revival-forest);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  letter-spacing: 0.055em;
+}
+.site-header .brand-words small { color: #6d684d; }
+
+/* Landscape threshold directly beneath the navigation. */
+.eden-threshold {
+  position: relative;
+  width: min(100%, 118rem);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--revival-forest);
+  box-shadow: 0 18px 60px rgb(35 49 38 / 0.17);
+}
+.eden-threshold picture,
+.eden-threshold picture > img { display: block; width: 100%; }
+.eden-threshold picture > img {
+  height: clamp(28rem, 68vw, 53rem);
+  object-fit: cover;
+  object-position: 50% 43%;
+}
+.eden-threshold::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 28%;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgb(16 37 27 / 0.48));
+}
+.eden-threshold__lotus {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 5.5%;
+  width: clamp(5.5rem, 12vw, 10.5rem);
+  height: auto;
+  transform: translateX(-50%);
+  filter: brightness(0.7) saturate(0.82) drop-shadow(0 3px 7px rgb(18 36 25 / 0.42));
+}
+.eden-threshold__caption {
+  position: absolute;
+  z-index: 3;
+  right: clamp(1.25rem, 4vw, 4rem);
+  bottom: clamp(1rem, 2.4vw, 2rem);
+  margin: 0;
+  color: #fff7e8;
+  font-family: var(--hand);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  text-shadow: 0 2px 10px rgb(18 36 25 / 0.8);
+}
+
+/* The welcome becomes a spacious editorial introduction after the art. */
+.hero--welcome {
+  position: relative;
+  min-height: 0;
+  padding-block: clamp(4.5rem, 9vw, 8.5rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 35%, rgb(255 255 255 / 0.7), transparent 46%),
+    linear-gradient(180deg, var(--revival-paper), #f6eddc);
+}
+.hero--welcome .hero-grid {
+  display: block;
+  width: min(100%, 58rem);
+  margin-inline: auto;
+}
+.hero--welcome .hero-copy { padding: 0; text-align: center; }
+.hero--welcome .hero-intro { margin-inline: auto; }
+.hero--welcome .hero-refrain,
+.hero--welcome .button-row { justify-content: center; }
+.hero--welcome .community-whisper { display: inline-flex; margin-top: 1.25rem; }
+.corner-art--welcome-left { left: -5rem; bottom: -5rem; transform: rotate(7deg); }
+.corner-art--welcome-right { top: -4rem; right: -4rem; transform: scaleX(-1) rotate(5deg); }
+
+/* Human proof: use an authentic photo and quiet hand-drawn framing. */
+.founders-welcome {
+  position: relative;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+  overflow: hidden;
+  background: var(--paper-light);
+}
+.founders-welcome__grid {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+.founders-welcome__portrait {
+  position: relative;
+  width: min(100%, 29rem);
+  margin: 0 auto;
+}
+.founders-welcome__portrait > img:first-child {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 38%;
+  border: 0.6rem solid var(--paper-light);
+  border-radius: 48% 48% 1.5rem 1.5rem;
+  box-shadow: 0 24px 55px rgb(35 49 38 / 0.16);
+}
+.founders-welcome__sprig {
+  position: absolute;
+  right: -4.2rem;
+  bottom: -2.2rem;
+  width: 58%;
+  height: auto;
+  pointer-events: none;
+}
+.founders-welcome__copy { max-width: 42rem; }
+.founders-welcome__copy h2 { max-width: 12ch; }
+.founders-welcome__divider {
+  display: block;
+  width: min(82vw, 56rem);
+  height: auto;
+  margin: clamp(3.5rem, 8vw, 6rem) auto 0;
+  opacity: 0.85;
+}
+
+.harmony-vision {
+  position: relative;
+  width: min(100% - clamp(1rem, 4vw, 4rem), 98rem);
+  margin: 0 auto clamp(1rem, 4vw, 3rem);
+  overflow: hidden;
+  border: 1px solid rgb(105 112 82 / 0.3);
+  border-radius: clamp(1rem, 2.6vw, 2.25rem);
+  background: #3d4d39;
+  box-shadow: 0 28px 70px rgb(35 49 38 / 0.17);
+}
+.harmony-vision > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.harmony-vision figcaption {
+  position: absolute;
+  right: clamp(1rem, 4vw, 3.5rem);
+  bottom: clamp(1rem, 3vw, 2.5rem);
+  display: grid;
+  max-width: 25rem;
+  padding: 0.85rem 1.1rem;
+  color: #fff8eb;
+  text-align: right;
+  border-radius: 0.8rem;
+  background: rgb(22 44 31 / 0.68);
+  backdrop-filter: blur(5px);
+}
+.harmony-vision .handwritten { color: #f2cb78; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.harmony-vision figcaption span:last-child { font-size: clamp(0.85rem, 1.5vw, 1rem); }
+
+/* One large portal opens the four pathways. */
+.grow-section {
+  position: relative;
+  padding-top: clamp(3rem, 7vw, 6rem);
+  background:
+    radial-gradient(circle at 50% 12%, rgb(184 138 56 / 0.09), transparent 28rem),
+    var(--paper-light);
+}
+.grow-heading__portal {
+  display: block;
+  width: min(78vw, 30rem);
+  margin: 0 auto clamp(1.8rem, 4vw, 3rem);
+}
+.grow-heading__portal img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 35px rgb(35 49 38 / 0.13));
+}
+.grow-heading .handwritten { font-size: clamp(1.7rem, 3.5vw, 2.45rem); }
+
+/* Illustrated cards: generous artwork with a small functional symbol. */
+.door-card {
+  overflow: hidden;
+  padding-top: 0;
+  background: linear-gradient(145deg, #fffdf7, #f2e7d2);
+}
+.door-card__art {
+  display: block;
+  width: calc(100% + (2 * clamp(1.6rem, 3.4vw, 2.6rem)));
+  margin: 0 calc(-1 * clamp(1.6rem, 3.4vw, 2.6rem)) clamp(0.4rem, 1.5vw, 1rem);
+  overflow: hidden;
+  border-bottom: 1px solid rgb(105 112 82 / 0.18);
+  background: #faf3e5;
+}
+.door-card__art img {
+  display: block;
+  width: 100%;
+  height: clamp(8.5rem, 17vw, 12.5rem);
+  object-fit: contain;
+  transform: scale(1.08);
+}
+.door-card__glyph {
+  width: 3.7rem;
+  height: 3.7rem;
+  margin-top: -2.15rem;
+  border: 1px solid rgb(184 138 56 / 0.48);
+  background: var(--paper-light);
+  box-shadow: 0 7px 18px rgb(35 49 38 / 0.11);
+}
+.door-card__glyph img { width: 2.65rem; height: 2.65rem; }
+
+/* Replace text arrows/hearts with restrained drawn cues. */
+.door-card__cta::after,
+.text-link::after,
+.community-whisper::after {
+  content: "";
+  display: inline-block;
+  width: 1.7rem;
+  height: 0.8rem;
+  margin-left: 0.45rem;
+  background: no-repeat center / contain url("assets/illustrations/icon-seed.svg");
+  vertical-align: -0.05rem;
+}
+.soundtrack-card__note--botanical { font-size: 0; }
+.soundtrack-card__note--botanical img { display: block; width: 2.8rem; height: 2.8rem; }
+
+@media (max-width: 58rem) {
+  .eden-threshold picture > img { height: clamp(25rem, 78vw, 38rem); }
+  .eden-threshold__caption { right: auto; left: 1.25rem; max-width: 15rem; }
+  .founders-welcome__grid { grid-template-columns: 1fr; text-align: center; }
+  .founders-welcome__copy { margin-inline: auto; }
+  .founders-welcome__copy h2 { margin-inline: auto; }
+  .founders-welcome__copy .story-links { justify-content: center; }
+}
+
+@media (max-width: 42rem) {
+  .site-header .brand-words strong { font-size: 1.18rem; }
+  .eden-threshold picture > img {
+    height: 30rem;
+    object-position: 50% 44%;
+  }
+  .eden-threshold__lotus { bottom: 6%; width: 6.25rem; }
+  .eden-threshold__caption { bottom: 1rem; font-size: 1.25rem; }
+  .hero--welcome { padding-block: 4rem; }
+  .corner-art--welcome-left,
+  .corner-art--welcome-right { opacity: 0.28; }
+  .founders-welcome__sprig { right: -1.25rem; }
+  .harmony-vision { width: calc(100% - 1rem); border-radius: 1rem; }
+  .harmony-vision figcaption {
+    position: static;
+    max-width: none;
+    text-align: center;
+    border-radius: 0;
+    background: var(--revival-forest);
+  }
+  .grow-heading__portal { width: min(84vw, 24rem); }
+  .door-card__art img { height: 9.5rem; transform: scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eden-threshold.reveal { animation: none; }
+}
