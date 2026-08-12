@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://awakening-eden-library.netlify.app/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
@@ -17,8 +17,13 @@
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/work-with-benjy</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://awakening-eden-library.netlify.app/events</loc>
+    <lastmod>2026-08-12</lastmod>
+    <priority>0.86</priority>
   </url>
   <url>
     <loc>https://awakening-eden-library.netlify.app/thriving-in-these-times</loc>

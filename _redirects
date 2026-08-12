@@ -9,6 +9,7 @@
 /journey         /journey.html                                                     200
 /sofia           /sofia.html                                                       200
 /work-with-benjy /work-with-benjy.html                                             200
+/events          /events.html                                                      200
 
 # Guide pages keep their historic mixed-case filenames. Netlify folds case on
 # its own, but these rules make the canonical lower-case URLs explicit so the
