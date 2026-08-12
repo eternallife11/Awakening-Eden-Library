@@ -8,6 +8,13 @@
 /deliverables/*  /404.html  404!
 /docs/*          /404.html  404!
 
+# Belt and braces for two reference photos whose rights were never confirmed.
+# They have been moved out of the served root, but _headers marks /*.webp
+# immutable for a year, so an explicit forced rule guarantees they cannot be
+# served from any cached copy either.
+/orchard-before-dry-monoculture.webp  /404.html  404!
+/orchard-after-abundant-green.webp    /404.html  404!
+
 /living-library  /awakening_eden_regenerative_film_resource_library_updated.html  200
 /start-here      /Awakening-Regeneration.html                                      200
 /thriving-in-these-times /Thriving-in-These-Times.html                             200
