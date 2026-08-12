@@ -237,18 +237,10 @@
 }
 .door-card__glyph img { width: 2.65rem; height: 2.65rem; }
 
-/* Replace text arrows/hearts with restrained drawn cues. */
-.door-card__cta::after,
-.text-link::after,
-.community-whisper::after {
-  content: "";
-  display: inline-block;
-  width: 1.7rem;
-  height: 0.8rem;
-  margin-left: 0.45rem;
-  background: no-repeat center / contain url("assets/illustrations/icon-seed.svg");
-  vertical-align: -0.05rem;
-}
+/* Clear text links are quieter than repeated arrow or emoji-like glyphs. */
+.door-card__cta,
+.text-link,
+.community-whisper { text-underline-offset: 0.28rem; }
 .soundtrack-card__note--botanical { font-size: 0; }
 .soundtrack-card__note--botanical img { display: block; width: 2.8rem; height: 2.8rem; }
 
