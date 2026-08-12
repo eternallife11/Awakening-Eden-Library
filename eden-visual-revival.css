@@ -11,7 +11,8 @@
 }
 
 /* The chrome should feel typographic and calm, not like a clip-art badge. */
-.site-header .brand { gap: 0; }
+.site-header .brand { gap: 0.85rem; }
+.site-header .brand img { object-fit: contain; }
 .site-header .brand-words strong {
   color: var(--revival-forest);
   font-size: clamp(1.35rem, 2vw, 1.75rem);
@@ -303,7 +304,8 @@
 }
 
 .casa-card { grid-template-columns: minmax(0, 1fr) auto; }
-.footer-brand { gap: 0; }
+.footer-brand { gap: 1rem; }
+.footer-brand img { object-fit: contain; }
 
 /* Clear text links are quieter than repeated arrow or emoji-like glyphs. */
 .door-card__cta,

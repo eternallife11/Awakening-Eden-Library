@@ -112,7 +112,9 @@ body.page-library {
 }
 .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.3rem; }
 .actions .btn { flex-direction: row; align-items: center; padding: 0.95rem 1.5rem; border-radius: 999px; font-size: 1.02rem; font-weight: 800; }
-.path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1.2rem; }
+/* This grid sits inside a narrow side panel, so a fixed three-up squeezed the
+   copy to roughly one word per line. Let the columns find their own count. */
+.path-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: 0.8rem; margin-top: 1.2rem; }
 .path-card {
   display: grid; gap: 0.25rem; padding: 1rem 1.1rem;
   border: 1px solid rgb(105 112 82 / 0.28); border-radius: 1.1rem;
@@ -174,6 +176,24 @@ body.page-library {
   align-self: flex-start; margin-top: 0.4rem;
   color: var(--forest); font-weight: 800; font-size: 0.95rem;
   text-underline-offset: 0.3rem;
+}
+/* A drawn hairline chevron rather than a literal arrow glyph: it keeps the
+   forward affordance without the clip-art weight, and stays out of the
+   accessibility tree. */
+.resource-card .open::after {
+  content: "";
+  display: inline-block;
+  width: 0.4em; height: 0.4em;
+  margin-left: 0.5em;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: translateY(-0.08em) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+.resource-card .open:hover::after,
+.resource-card .open:focus-visible::after { transform: translate(0.22em, -0.08em) rotate(45deg); }
+@media (prefers-reduced-motion: reduce) {
+  .resource-card .open::after { transition: none; }
 }
 /* A card may offer a second route to the same resource (read online, then the
    PDF). The follow-up link stays visibly secondary to the first. */
