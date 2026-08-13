@@ -2,6 +2,10 @@
 
 This repository is a living production site, not a greenfield redesign. Preserve what already works. Improve by small, reversible, tested steps.
 
+## Team workflow
+
+Read `docs/AI_AGENT_TEAM_WORKFLOW_2026-08-13.md` before substantial work. Codex is the lead technical implementer; Claude Code is the visual/second-review specialist by default; ChatGPT Work stewards strategy, content and design direction; Benjy and Sofia give final production approval. Do not let two agents edit the same files concurrently.
+
 ## Source-of-truth order
 
 When instructions conflict, use this order:
@@ -47,7 +51,8 @@ Do not revive an older visual generation simply because its asset still exists.
 - Use a branch/worktree per independent task. Do not let two agents edit the same file concurrently without coordination.
 - Never merge a visual change merely because tests pass. Require desktop + mobile preview review.
 - Do not move the public domain until Cloudflare staging passes the migration runbook.
-- Do not change hard-coded Netlify canonical/OG/schema origins for a temporary `pages.dev` preview. Replace them only once the final canonical domain is chosen.
+- Do not change hard-coded Netlify canonical/OG/schema origins for a temporary `workers.dev` preview. Replace them only once the final canonical domain is chosen.
+- Keep the old Netlify host until path-preserving permanent redirects to the final domain are tested.
 
 ## Public build
 
@@ -78,7 +83,9 @@ Minimum checks before merge:
 
 - GitHub remains canonical source of truth.
 - Netlify Deploy Previews may be used for free visual QA while production credits are constrained.
-- Cloudflare Pages is the preferred next hosting/staging path for the current static architecture.
+- **Cloudflare Workers with Static Assets** is the preferred next hosting/staging path for the current static architecture.
+- Use `workers.dev` only for staging/preview; select a final custom domain before changing canonical/OG/schema/sitemap origins.
+- Cloudflare `_headers` and `_redirects` must be present in the deploy-ready `dist/` artifact and verified against current Workers Static Assets behavior.
 - Lovable is a prototype/sketch environment only for this repository unless its product later supports importing the existing repo safely. Do not rebuild the canonical site there.
 
 ## Agent behavior
@@ -86,11 +93,13 @@ Minimum checks before merge:
 Before editing:
 
 1. Read the relevant locked decision/design source.
-2. Inspect the current page and assets actually in use.
-3. State the smallest coherent change.
-4. Make the change on an isolated branch.
-5. Run build/integrity checks.
-6. Provide visual evidence or a preview when the change is visual.
-7. Record any unresolved content/rights/pricing question instead of guessing.
+2. Read `docs/AI_AGENT_TEAM_WORKFLOW_2026-08-13.md` and the current next-session/runbook files when relevant.
+3. Inspect the current page and assets actually in use.
+4. State the smallest coherent change and expected files.
+5. Make the change on an isolated branch/worktree.
+6. Run build/integrity/browser checks.
+7. Provide visual evidence or a preview when the change is visual.
+8. Record unresolved content/rights/pricing questions instead of guessing.
+9. Ask for human approval before production-impacting actions.
 
 Prefer subtraction and coherence over adding another decorative layer. The site should feel calm enough to trust, alive enough to explore, practical enough to use, and beautiful enough to slow people down.
