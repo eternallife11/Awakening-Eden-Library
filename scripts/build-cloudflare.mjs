@@ -4,7 +4,9 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'dist');
 const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Workers Static Assets per-file limit: 25 MiB.
-const TURNSTILE_SITE_KEY = process.env.ENQUIRY_TURNSTILE_SITE_KEY;
+// CI supplies Cloudflare's official test key. Staging otherwise embeds the
+// public key of the isolated enquiry widget (the secret stays in Workers).
+const TURNSTILE_SITE_KEY = process.env.ENQUIRY_TURNSTILE_SITE_KEY || '0x4AAAAAAEPRpGQHyAWttNLs';
 
 if (!TURNSTILE_SITE_KEY) {
   throw new Error('ENQUIRY_TURNSTILE_SITE_KEY is required to build the Cloudflare enquiry preview.');
