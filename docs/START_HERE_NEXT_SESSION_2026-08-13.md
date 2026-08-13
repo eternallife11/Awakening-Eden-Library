@@ -25,14 +25,20 @@ Netlify Deploy Previews are still working for PR #7. Production is not the place
 
 ## Tomorrow's first action
 
-Connect / authorize Cloudflare in ChatGPT, then create a Pages staging project from the existing GitHub repository.
+Build the safe public artifact, then upload a Cloudflare Workers Static Assets version for preview without deploying it to production.
 
 Use:
 - Repository: `eternallife11/Awakening-Eden-Library`
-- Branch for first staging deployment: `agent/awakening-eden-cloudflare-finish`
+- Branch: `agent/awakening-eden-cloudflare-finish`
 - Build command: `node scripts/build-cloudflare.mjs`
-- Output directory: `dist`
+- Assets directory: `dist`
+- Wrangler config: `wrangler.jsonc`
+- Safe authenticated preview: `npx wrangler versions upload --preview-alias pr-7`
 - Do **not** attach the final public domain yet.
+
+The preview command creates a versioned `workers.dev` URL without deploying that version to production traffic. If Cloudflare credentials are not available, Wrangler 4.102.0 or later can create an expiring temporary preview with `npx wrangler deploy --temporary`; claim it within the printed window only if it should be retained.
+
+Run `pnpm test:browser` before uploading the preview. It performs the required desktop/mobile route and layout checks and writes review screenshots under `test-results/review/`. Cloudflare authentication or Terms acceptance must be completed by an owner; stop when Wrangler requests either.
 
 The current GitHub CI already proves the public artifact can be built safely and excludes internal docs, deliverables, source ZIPs, agent instructions, unconfirmed-rights masters and oversized assets.
 
@@ -64,7 +70,7 @@ Before any domain cutover:
 - verify `/docs/*` and `/deliverables/*` are not public;
 - verify the two rights-unconfirmed orchard masters are not reachable;
 - verify no public file exceeds 25 MiB;
-- verify canonical / OG / schema origins are not changed to a temporary `pages.dev` URL;
+- verify canonical / OG / schema origins are not changed to a temporary `workers.dev` URL;
 - only update canonical origins once the final production domain is chosen.
 
 ## Copy / content queue

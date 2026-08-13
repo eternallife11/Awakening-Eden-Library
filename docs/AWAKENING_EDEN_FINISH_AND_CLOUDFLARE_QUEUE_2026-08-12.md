@@ -101,25 +101,27 @@ Known current positioning to retain:
 
 Important limitation: any text, subtitle, proof comment or unpublished edit that exists only inside an unexported local Claude / browser / external tool session cannot be recovered from GitHub automatically. Export, commit or upload those fragments before final copy lock.
 
-## 7. Cloudflare Pages migration
+## 7. Cloudflare Workers Static Assets migration
 
 Preferred next hosting path:
 
-**GitHub remains the source of truth → Cloudflare Pages hosts production + previews.**
+**GitHub remains the source of truth → Workers Static Assets provides versioned previews now and may host production only after approval.**
 
 Why:
 - current project is primarily static HTML/CSS/JS/images/PDFs
-- existing repo can be connected directly
-- branch and PR preview deployments are supported
-- static asset requests are free on Cloudflare Pages
+- the existing public artifact can be uploaded directly
+- Worker versions have preview URLs without receiving production traffic
+- static asset requests do not require a runtime Worker invocation
 - this avoids rebuilding the entire site in another visual builder
 
-Initial setup target:
+Initial preview target:
 - Repository: `eternallife11/Awakening-Eden-Library`
-- Production branch: `main`
-- Build command: `exit 0` if no build step is required
-- Build output directory: repository root / current public root, subject to verification
-- Preview branch: `agent/awakening-eden-cloudflare-finish`
+- Branch: `agent/awakening-eden-cloudflare-finish`
+- Build command: `node scripts/build-cloudflare.mjs`
+- Assets directory: `dist`
+- Config: `wrangler.jsonc`
+- Preview-only upload: `npx wrangler versions upload --preview-alias pr-7`
+- No custom domain or production route
 
 Before switching the public domain:
 - verify `_redirects` behaviour on Cloudflare
@@ -161,4 +163,4 @@ Lovable can be used as a visual-prototyping playground for a new isolated concep
 
 ## 10. Next action
 
-Finish and verify the copy + visual queue on `agent/awakening-eden-cloudflare-finish`, then create a Cloudflare Pages preview from that branch. Only after review should the public domain move from Netlify.
+Finish and verify the copy + visual queue on `agent/awakening-eden-cloudflare-finish`, then create a Workers Static Assets version preview from that branch. Only after review should the public domain move from Netlify.

@@ -33,13 +33,13 @@ You are the **lead technical gardener / implementer** for this phase. Claude Cod
 
 Safely finish the migration staging path using **Cloudflare Workers with Static Assets**, following current Cloudflare guidance, while preserving the existing website and every existing route.
 
-The repo now has a Workers-oriented `wrangler.toml` and a `dist/` build script. Audit them rather than assuming they are correct.
+The repo now has a Workers-oriented `wrangler.jsonc` and a `dist/` build script. Audit them rather than assuming they are correct.
 
 ### Phase A — audit before edits
 
 - Inspect current branch, PR #7 and issue #8.
 - Compare the current implementation to `main` and the backup.
-- Audit `scripts/build-cloudflare.mjs`, `wrangler.toml`, `_redirects`, `_headers`, `404.html`, sitemap, robots and critical public files.
+- Audit `scripts/build-cloudflare.mjs`, `wrangler.jsonc`, `_redirects`, `_headers`, `404.html`, sitemap, robots and critical public files.
 - Identify any remaining Netlify-specific behavior that will not transfer cleanly to Workers Static Assets.
 - Confirm whether the site uses any Netlify Forms/Functions or other runtime feature; do not silently break it.
 - State the smallest coherent implementation plan and files you expect to touch before editing.

@@ -1,0 +1,13 @@
+{
+  "name": "awakening-eden-library",
+  "private": true,
+  "scripts": {
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "serve:preview": "node scripts/serve-cloudflare-preview.mjs",
+    "test:browser": "node scripts/build-cloudflare.mjs && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "wrangler": "4.122.0"
+  }
+}

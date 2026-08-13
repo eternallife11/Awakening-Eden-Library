@@ -42,8 +42,15 @@ jobs:
           test ! -e dist/docs
           test ! -e dist/deliverables
           test ! -e dist/scripts
+          test ! -e dist/tests
+          test ! -e dist/node_modules
           test ! -e dist/netlify.toml
           test ! -e dist/wrangler.toml
+          test ! -e dist/wrangler.jsonc
+          test ! -e dist/package.json
+          test ! -e dist/pnpm-lock.yaml
+          test ! -e dist/pnpm-workspace.yaml
+          test ! -e dist/playwright.config.mjs
           test ! -e dist/orchard-before-dry-monoculture.webp
           test ! -e dist/orchard-after-abundant-green.webp
           if find dist -type f \( -iname '*.zip' -o -iname '*.md' -o -iname '*.psd' -o -iname '*.xcf' \) -print -quit | grep -q .; then
@@ -63,8 +70,28 @@ jobs:
             echo 'Unsupported Cloudflare 404 rewrite remains in redirects.' >&2
             exit 1
           fi
-          grep -q '/living-library' dist/_redirects
-          grep -q '/work-with-benjy' dist/_redirects
+          if grep -nE '[[:space:]]200([[:space:]]|$)' dist/_redirects; then
+            echo 'Unsupported Cloudflare 200 rewrite remains in redirects.' >&2
+            exit 1
+          fi
+          test -f dist/living-library.html
+          test -f dist/start-here.html
+          test -f dist/thriving-in-these-times.html
+          test -f dist/7-first-steps-regenerate-your-land.html
+          test -f dist/abundant-edge-index.html
+          test -f dist/small-scale-regenerative-farm-playbook.html
+
+      - name: Verify Cloudflare preview safeguards
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'workers.dev/\*' dist/_headers
+          grep -q 'X-Robots-Tag: noindex, nofollow' dist/_headers
+          grep -q '^/living-library$' dist/_headers
+          grep -q '^/work-with-benjy$' dist/_headers
+
+      - name: Validate Workers Static Assets configuration
+        run: npx --yes wrangler@4.122.0 deploy --dry-run
 
       - name: Verify Cloudflare static asset size ceiling
         shell: bash
@@ -81,3 +108,40 @@ jobs:
         run: |
           echo "Files: $(find dist -type f | wc -l)"
           du -sh dist
+
+  browser-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install pinned QA dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run desktop and mobile browser QA
+        run: pnpm test:browser
+
+      - name: Upload browser report and review screenshots
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: awakening-eden-browser-qa-${{ github.run_attempt }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14

@@ -22,9 +22,9 @@ Date: 2026-08-12
 - Safe finishing branch: `agent/awakening-eden-cloudflare-finish`
 - Do not force-push or delete either branch during migration.
 
-## Why Cloudflare Pages first
+## Why Workers Static Assets first
 
-For the current static HTML/CSS/JS/image/PDF architecture, Cloudflare Pages is the lowest-risk migration because it natively understands `_redirects` and `_headers`, provides GitHub preview deployments, and keeps static asset requests free. It also lets us keep GitHub as the canonical source instead of rebuilding the site inside a visual builder.
+For the current static HTML/CSS/JS/image/PDF architecture, Cloudflare Workers Static Assets is the preferred current platform. It understands `_redirects` and `_headers`, supports versioned preview URLs without deploying a version to production traffic, and keeps the existing static site intact. GitHub remains canonical instead of rebuilding the site inside a visual builder.
 
 Lovable is useful as a prototype/sketch tool, but it cannot import this existing GitHub repository into a Lovable project. Rebuilding there would fork the source of truth and risk losing routes, galleries, accessibility, SEO, exact Lotus work, and the established content architecture.
 
@@ -40,22 +40,43 @@ The build script:
 - excludes internal markdown, Claude handoff prompts, ZIP/source-design files and repository/build tooling;
 - refuses any public candidate asset over Cloudflare's 25 MiB single-file limit;
 - copies the existing static site unchanged otherwise;
-- generates a Cloudflare-compatible `dist/_redirects` by removing Netlify-only force markers;
+- generates Cloudflare-compatible HTML aliases for clean routes because Workers Static Assets does not support Netlify-style `200` rewrites;
+- generates a Cloudflare-compatible `dist/_redirects` containing only supported redirect status codes and removing Netlify-only force markers;
+- adds a `workers.dev` `X-Robots-Tag: noindex, nofollow` safeguard to the deploy artifact while preserving production canonical/OG/schema origins;
 - drops the Netlify-only forced `404!` rules because protected source folders are absent from `dist` and therefore naturally return 404;
 - preserves `_headers`, `404.html`, public PDFs, images, CSS, JS, sitemap and robots.txt.
 
-## Cloudflare Pages setup
+## Cloudflare Workers Static Assets preview
 
-Initial staging setup, with **no domain cutover yet**:
+Initial preview setup, with **no domain cutover and no production deployment**:
 
 - Repository: `eternallife11/Awakening-Eden-Library`
-- Framework preset: none
-- Build command: `node scripts/build-cloudflare.mjs`
-- Build output directory: `dist`
-- Initial production branch for the Pages project: `agent/awakening-eden-cloudflare-finish`
-- Preview branches: enabled
+- Branch: `agent/awakening-eden-cloudflare-finish`
+- Build: `node scripts/build-cloudflare.mjs`
+- Config: `wrangler.jsonc`
+- Assets: `dist`
+- Authenticated preview-only upload: `npx wrangler versions upload --preview-alias pr-7`
+- Unauthenticated expiring preview when needed: `npx wrangler deploy --temporary`
 
-Using the finish branch as Cloudflare's first production branch gives us a stable `*.pages.dev` staging URL without touching Netlify or merging into GitHub `main`.
+`wrangler versions upload` creates a previewable Worker version but does not deploy it to production traffic. The staging Worker has its own explicit name, `awakening-eden-library-staging`, and no custom domain or production route. Temporary previews expire unless claimed. Neither path touches Netlify or merges GitHub `main`.
+
+The existing `land-project-enquiry` form is a Netlify Forms integration. Its submission path is a known pre-cutover blocker on Workers and must be migrated or deliberately proxied before any production cutover; do not send test leads during visual preview QA.
+
+## Deterministic browser QA
+
+Run:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm exec playwright install chromium
+pnpm test:browser
+```
+
+The Playwright suite runs one worker across desktop and mobile Chromium. It checks the critical routes, horizontal overflow, browser errors, requested local resources, key CTAs, public PDFs and protected 404 paths. It also captures full-page homepage and Work with Benjy screenshots under `test-results/review/`. CI uploads the report, traces/failure media and review screenshots as a 14-day artifact. Screenshot files are review evidence, not automatically accepted visual baselines.
+
+The browser suite uses `scripts/serve-cloudflare-preview.mjs` for stable delivery of the already-built `dist` artifact. Wrangler remains authoritative for configuration, `_headers`, `_redirects`, clean-route and custom-404 smoke checks.
+
+Creating an external preview still requires a human-controlled Cloudflare login or acceptance of Cloudflare's Terms of Service and Privacy Policy. Stop at that prompt; do not accept legal terms on an owner's behalf.
 
 ## Pre-cutover QA gate
 
@@ -66,8 +87,8 @@ Do not attach or move the public domain until all are checked:
 3. Exact twelve-fold Lotus remains visible and integrated, never Seed/Flower substitutions.
 4. Header/footer mark, page dividers and newest illustration generation are coherent.
 5. All internal links and canonical clean routes work without `.html` leakage.
-6. `docs/` and `deliverables/` return 404 on the Cloudflare staging URL.
-7. Old rights-unconfirmed photo URLs return 404 on staging.
+6. `docs/` and `deliverables/` return 404 on the Cloudflare preview URL.
+7. Old rights-unconfirmed photo URLs return 404 on preview.
 8. Public PDFs and guide downloads work.
 9. WhatsApp, Telegram, Spotify, PayPal and external links work.
 10. Enquiry/contact workflow is tested end-to-end.
@@ -80,7 +101,7 @@ Do not attach or move the public domain until all are checked:
 
 ## Canonical URL cutover
 
-The repository currently contains many hard-coded `awakening-eden-library.netlify.app` canonical, Open Graph and schema URLs. Do **not** change these merely for a temporary `pages.dev` preview.
+The repository currently contains many hard-coded `awakening-eden-library.netlify.app` canonical, Open Graph and schema URLs. Do **not** change these merely for a temporary `workers.dev` preview.
 
 Once the final public domain is chosen:
 
@@ -104,8 +125,8 @@ Once the final public domain is chosen:
 
 ## Next implementation steps
 
-- Connect Cloudflare Pages to the GitHub repo.
-- Deploy `agent/awakening-eden-cloudflare-finish` using the safe build.
+- Authenticate Wrangler to the intended Cloudflare account when available.
+- Upload `agent/awakening-eden-cloudflare-finish` as a preview-only Worker version using the safe build.
 - Inspect staging visually against the latest Design Bible / Illustration Bible.
 - Recover any still-local Claude comments/subtitles and add them to the finishing queue.
 - Finish the Work with Benjy property-buyer messaging and real-estate-agent handout without publishing draft prices.

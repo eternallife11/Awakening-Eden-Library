@@ -3,17 +3,19 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'dist');
-const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Pages/Workers static asset limit: 25 MiB.
+const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Workers Static Assets per-file limit: 25 MiB.
 
 const excludedDirs = new Set([
-  '.git', '.github', '.idea', '.vscode',
-  'node_modules', 'dist', 'docs', 'deliverables', 'scripts'
+  '.git', '.github', '.idea', '.vscode', '.wrangler',
+  'node_modules', 'dist', 'docs', 'deliverables', 'scripts', 'tests',
+  'playwright-report', 'test-results'
 ]);
 
 const excludedNames = new Set([
   '.gitignore', '.DS_Store',
-  'netlify.toml', 'wrangler.toml',
-  'package-lock.json', 'pnpm-lock.yaml', 'yarn.lock',
+  'netlify.toml', 'wrangler.toml', 'wrangler.jsonc',
+  'package.json', 'package-lock.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'yarn.lock',
+  'playwright.config.mjs',
   'AGENTS.md'
 ]);
 
@@ -30,6 +32,14 @@ function shouldExclude(rel, isDir) {
 
 let filesCopied = 0;
 let bytesCopied = 0;
+
+async function readRedirectRules() {
+  const source = await readFile(path.join(ROOT, '_redirects'), 'utf8');
+  return source
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith('#'));
+}
 
 async function copyTree(srcDir, dstDir, relBase = '') {
   await mkdir(dstDir, { recursive: true });
@@ -60,20 +70,21 @@ async function copyTree(srcDir, dstDir, relBase = '') {
 }
 
 async function writeCloudflareRedirects() {
-  const source = await readFile(path.join(ROOT, '_redirects'), 'utf8');
+  const sourceRules = await readRedirectRules();
   const rules = [];
 
-  for (const raw of source.split(/\r?\n/)) {
-    const line = raw.trim();
-    if (!line || line.startsWith('#')) continue;
-
+  for (const line of sourceRules) {
     // The protected source folders and rights-unconfirmed masters are not copied
-    // into dist at all, so they naturally 404. Cloudflare Pages does not support
-    // Netlify's forced 404! rewrite syntax.
+    // into dist at all, so they naturally 404. Workers Static Assets does not
+    // support Netlify's forced 404! rewrite syntax.
     if (/\s404!\s*$/.test(line)) continue;
 
+    // Workers Static Assets supports redirects but not Netlify-style 200
+    // rewrites. Canonical HTML aliases are generated below instead.
+    if (/\s200!?\s*$/.test(line)) continue;
+
     // Cloudflare uses numeric redirect codes without Netlify's trailing force '!'.
-    rules.push(line.replace(/\s(200|301|302|303|307|308)!\s*$/, ' $1'));
+    rules.push(line.replace(/\s(301|302|303|307|308)!\s*$/, ' $1'));
   }
 
   const header = [
@@ -86,9 +97,69 @@ async function writeCloudflareRedirects() {
   await writeFile(path.join(OUT, '_redirects'), `${header}${rules.join('\n')}\n`);
 }
 
+async function writeCloudflareRouteAliases() {
+  const sourceRules = await readRedirectRules();
+
+  for (const line of sourceRules) {
+    if (!/\s200!?\s*$/.test(line)) continue;
+
+    const [sourceRoute, destination] = line.split(/\s+/);
+    const isSimpleHtmlRewrite =
+      sourceRoute?.startsWith('/') &&
+      destination?.startsWith('/') &&
+      destination.toLowerCase().endsWith('.html') &&
+      !/[?*:#]/.test(sourceRoute) &&
+      !sourceRoute.includes('..') &&
+      !destination.includes('..');
+
+    if (!isSimpleHtmlRewrite) {
+      throw new Error(`Cannot convert Cloudflare 200 rewrite into a safe HTML alias: ${line}`);
+    }
+
+    const sourceFile = path.join(OUT, destination.slice(1));
+    const aliasFile = path.join(OUT, `${sourceRoute.slice(1)}.html`);
+    if (sourceFile === aliasFile) continue;
+
+    const info = await stat(sourceFile);
+    await cp(sourceFile, aliasFile);
+    filesCopied += 1;
+    bytesCopied += info.size;
+  }
+}
+
+async function writeCloudflareHeaders() {
+  const sourceHeaders = await readFile(path.join(ROOT, '_headers'), 'utf8');
+  const sourceRules = await readRedirectRules();
+  const cleanHtmlRoutes = sourceRules
+    .filter((line) => /\s200!?\s*$/.test(line))
+    .map((line) => line.split(/\s+/)[0]);
+
+  const additions = [
+    '',
+    '# Cloudflare Workers Static Assets preview safeguards.',
+    '# Keep temporary workers.dev and version-preview hosts out of search indexes.',
+    'https://:worker.:subdomain.workers.dev/*',
+    '  X-Robots-Tag: noindex, nofollow',
+    '',
+    '# Clean HTML routes need the same browser-cache policy as direct *.html URLs.',
+    '/',
+    '  Cache-Control: no-cache, no-store, must-revalidate',
+    ...cleanHtmlRoutes.flatMap((route) => [
+      '',
+      route,
+      '  Cache-Control: no-cache, no-store, must-revalidate'
+    ]),
+    ''
+  ].join('\n');
+
+  await writeFile(path.join(OUT, '_headers'), `${sourceHeaders.trimEnd()}\n${additions}`);
+}
+
 await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
+await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
+await writeCloudflareHeaders();
 
 const indexPath = path.join(OUT, 'index.html');
 const notFoundPath = path.join(OUT, '404.html');
