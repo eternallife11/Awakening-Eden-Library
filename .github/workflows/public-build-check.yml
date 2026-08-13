@@ -2,9 +2,6 @@ name: Public build safety check
 
 on:
   pull_request:
-  push:
-    branches:
-      - agent/awakening-eden-cloudflare-finish
 
 permissions:
   contents: read
