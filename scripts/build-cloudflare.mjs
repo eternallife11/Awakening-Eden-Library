@@ -4,10 +4,19 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'dist');
 const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Workers Static Assets per-file limit: 25 MiB.
+const TURNSTILE_SITE_KEY = process.env.ENQUIRY_TURNSTILE_SITE_KEY;
+
+if (!TURNSTILE_SITE_KEY) {
+  throw new Error('ENQUIRY_TURNSTILE_SITE_KEY is required to build the Cloudflare enquiry preview.');
+}
+
+if (!/^[A-Za-z0-9_-]{8,200}$/.test(TURNSTILE_SITE_KEY)) {
+  throw new Error('ENQUIRY_TURNSTILE_SITE_KEY has an unexpected format.');
+}
 
 const excludedDirs = new Set([
   '.git', '.github', '.idea', '.vscode', '.wrangler',
-  'node_modules', 'dist', 'docs', 'deliverables', 'scripts', 'tests',
+  'node_modules', 'dist', 'docs', 'deliverables', 'scripts', 'tests', 'workers',
   'playwright-report', 'test-results'
 ]);
 
@@ -134,6 +143,10 @@ async function writeCloudflareHeaders() {
     .filter((line) => /\s200!?\s*$/.test(line))
     .map((line) => line.split(/\s+/)[0]);
 
+  const headersWithTurnstile = sourceHeaders
+    .replace("script-src 'self';", "script-src 'self' https://challenges.cloudflare.com;")
+    .replace("frame-src https://open.spotify.com;", "frame-src https://open.spotify.com https://challenges.cloudflare.com;");
+
   const additions = [
     '',
     '# Cloudflare Workers Static Assets preview safeguards.',
@@ -149,14 +162,50 @@ async function writeCloudflareHeaders() {
       route,
       '  Cache-Control: no-cache, no-store, must-revalidate'
     ]),
+    '',
+    '/eden-enquiry.js',
+    '  Cache-Control: public, max-age=31536000, immutable',
     ''
   ].join('\n');
 
-  await writeFile(path.join(OUT, '_headers'), `${sourceHeaders.trimEnd()}\n${additions}`);
+  await writeFile(path.join(OUT, '_headers'), `${headersWithTurnstile.trimEnd()}\n${additions}`);
+}
+
+async function prepareCloudflareEnquiryForm() {
+  const formPath = path.join(OUT, 'work-with-benjy.html');
+  const source = await readFile(formPath, 'utf8');
+  const formNeedle = 'data-netlify="true" netlify-honeypot="bot-field" data-land-enquiry-form>';
+  const consentNeedle = '          <button class="button button--primary form-submit" type="submit">Send my land story <span aria-hidden="true">→</span></button>';
+  const bodyNeedle = '</body>';
+
+  if (!source.includes(formNeedle) || !source.includes(consentNeedle) || !source.includes(bodyNeedle)) {
+    throw new Error('Could not safely prepare the Cloudflare-only enquiry form.');
+  }
+
+  const turnstileMarkup = [
+    '          <div class="enquiry-turnstile cf-turnstile" data-enquiry-turnstile',
+    `               data-sitekey="${TURNSTILE_SITE_KEY}" data-action="enquiry" data-theme="light"`,
+    '               data-response-field-name="turnstile-token"></div>',
+    '          <p class="enquiry-status" data-enquiry-status role="status" aria-live="polite" hidden></p>'
+  ].join('\n');
+
+  const prepared = source
+    .replace(
+      formNeedle,
+      'data-netlify="true" netlify-honeypot="bot-field" data-land-enquiry-form data-cloudflare-enquiry-endpoint="/api/enquiry">'
+    )
+    .replace(consentNeedle, `${turnstileMarkup}\n${consentNeedle}`)
+    .replace(
+      bodyNeedle,
+      '  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>\n  <script src="eden-enquiry.js" defer></script>\n</body>'
+    );
+
+  await writeFile(formPath, prepared);
 }
 
 await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
+await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
 await writeCloudflareHeaders();

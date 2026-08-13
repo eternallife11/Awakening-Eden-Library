@@ -14,6 +14,7 @@ const criticalRoutes = [
 
 const protectedRoutes = [
   '/docs/awakening-eden/README.md',
+  '/workers/enquiry.mjs',
   '/deliverables/unserved-sources/orchard-before-dry-monoculture.webp',
   '/orchard-before-dry-monoculture.webp',
   '/orchard-after-abundant-green.webp'
@@ -23,6 +24,14 @@ const publicPdfs = [
   '/Awakening-Regeneration-Guide.pdf',
   '/Awakening_Eden_Regenerative_Film_Resource_Library.pdf'
 ];
+
+// Browser QA validates our page integration without making a live third-party challenge.
+// The separate enquiry tests assert the test sitekey and client-side submit behaviour.
+test.beforeEach(async ({ page }) => {
+  await page.route('https://challenges.cloudflare.com/turnstile/v0/api.js*', async (route) => {
+    await route.fulfill({ contentType: 'text/javascript', body: '' });
+  });
+});
 
 async function settleLazyImages(page) {
   await page.evaluate(async () => {

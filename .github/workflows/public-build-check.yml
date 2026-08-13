@@ -20,6 +20,8 @@ jobs:
           package-manager-cache: false
 
       - name: Build Cloudflare public artifact
+        env:
+          ENQUIRY_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
         run: node scripts/build-cloudflare.mjs
 
       - name: Verify required public files
@@ -40,6 +42,7 @@ jobs:
           test ! -e dist/deliverables
           test ! -e dist/scripts
           test ! -e dist/tests
+          test ! -e dist/workers
           test ! -e dist/node_modules
           test ! -e dist/netlify.toml
           test ! -e dist/wrangler.toml
@@ -131,6 +134,9 @@ jobs:
 
       - name: Run desktop and mobile browser QA
         run: pnpm test:browser
+
+      - name: Run enquiry Worker unit tests
+        run: pnpm test:worker
 
       - name: Upload browser report and review screenshots
         if: always()
