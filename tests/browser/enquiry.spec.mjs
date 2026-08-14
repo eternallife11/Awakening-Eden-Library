@@ -39,8 +39,8 @@ test('Cloudflare build adds the scoped Turnstile form path without changing the 
   await expect(form).toHaveAttribute('data-cloudflare-enquiry-endpoint', '/api/enquiry');
   await expect(page.locator('[data-enquiry-turnstile]')).toHaveAttribute('data-sitekey', '1x00000000000000000000AA');
   await expect(page.locator('[data-enquiry-turnstile]')).toHaveAttribute('data-action', 'enquiry');
-  await expect(page.getByRole('status')).toHaveAttribute('aria-live', 'polite');
-  await expect(page.getByRole('status')).toBeHidden();
+  await expect(page.locator('[data-enquiry-status]')).toHaveAttribute('aria-live', 'polite');
+  await expect(page.locator('[data-enquiry-status]')).toBeHidden();
   await expect(page.locator(`script[src^="${turnstileApi}"]`)).toHaveCount(1);
 });
 
