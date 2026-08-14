@@ -37,10 +37,11 @@ function requestFor(payload, options = {}) {
     'Content-Type': options.contentType ?? 'application/json',
     'CF-Connecting-IP': options.ip ?? '203.0.113.42'
   });
+  const method = options.method ?? 'POST';
   return new Request(`${ORIGIN}/api/enquiry`, {
-    method: options.method ?? 'POST',
+    method,
     headers,
-    body: options.body ?? JSON.stringify(payload)
+    ...(method === 'GET' || method === 'HEAD' ? {} : { body: options.body ?? JSON.stringify(payload) })
   });
 }
 
@@ -143,6 +144,26 @@ test('rejects a request from another origin before parsing or delivery', async (
   assert.equal((await responseBody(response)).code, 'invalid_origin');
   assert.equal(sent.length, 0);
   assert.equal(calls.ip.length, 0);
+});
+
+test('rejects non-POST, non-JSON, malformed, and oversized requests without delivery', async () => {
+  const { env, sent, calls, requestFetch } = createEnvironment();
+  const worker = createEnquiryWorker({ fetch: requestFetch });
+
+  const method = await worker.fetch(requestFor(validPayload(), { method: 'GET', body: undefined }), env);
+  assert.equal(method.status, 405);
+  assert.equal(method.headers.get('allow'), 'POST');
+
+  const type = await worker.fetch(requestFor(validPayload(), { contentType: 'text/plain' }), env);
+  assert.equal(type.status, 415);
+
+  const malformed = await worker.fetch(requestFor(validPayload(), { body: '{not-json' }), env);
+  assert.equal(malformed.status, 400);
+
+  const oversized = await worker.fetch(requestFor(validPayload(), { body: JSON.stringify({ value: 'x'.repeat(17 * 1024) }) }), env);
+  assert.equal(oversized.status, 413);
+  assert.equal(sent.length, 0);
+  assert.equal(calls.siteverify.length, 0);
 });
 
 test('returns 429 before parsing when the network safety brake is exhausted', async () => {

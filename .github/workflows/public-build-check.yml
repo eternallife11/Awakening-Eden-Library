@@ -51,6 +51,8 @@ jobs:
           test ! -e dist/pnpm-lock.yaml
           test ! -e dist/pnpm-workspace.yaml
           test ! -e dist/playwright.config.mjs
+          test ! -e dist/AGENTS.md
+          test ! -e dist/eden-enquiry.js.map
           test ! -e dist/orchard-before-dry-monoculture.webp
           test ! -e dist/orchard-after-abundant-green.webp
           if find dist -type f \( -iname '*.zip' -o -iname '*.md' -o -iname '*.psd' -o -iname '*.xcf' \) -print -quit | grep -q .; then
@@ -89,6 +91,7 @@ jobs:
           grep -q 'X-Robots-Tag: noindex, nofollow' dist/_headers
           grep -q '^/living-library$' dist/_headers
           grep -q '^/work-with-benjy$' dist/_headers
+          grep -q 'challenges.cloudflare.com' dist/_headers
 
       - name: Validate Workers Static Assets configuration
         run: npx --yes wrangler@4.122.0 deploy --dry-run
