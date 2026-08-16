@@ -35,14 +35,28 @@ test.beforeEach(async ({ page }) => {
 
 async function settleLazyImages(page) {
   await page.evaluate(async () => {
-    const step = Math.max(window.innerHeight, 700);
-    for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
-      window.scrollTo(0, y);
-      await new Promise((resolve) => setTimeout(resolve, 60));
+    const images = Array.from(document.images).filter((image) => !image.closest('[hidden]'));
+    images.forEach((image) => { image.loading = 'eager'; });
+    for (const image of images) {
+      image.scrollIntoView({ block: 'center' });
+      await new Promise((resolve) => setTimeout(resolve, 90));
+      if (!image.complete) {
+        await Promise.race([
+          new Promise((resolve) => image.addEventListener('load', resolve, { once: true })),
+          new Promise((resolve) => setTimeout(resolve, 3000))
+        ]);
+      }
     }
+    await Promise.all(images.map(async (image) => {
+      if (image.complete && image.naturalWidth > 0) return;
+      await Promise.race([
+        image.decode().catch(() => {}),
+        new Promise((resolve) => setTimeout(resolve, 5000))
+      ]);
+    }));
     window.scrollTo(0, 0);
   });
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(500);
 }
 
 for (const route of criticalRoutes) {
@@ -107,12 +121,14 @@ test('homepage exposes the primary journeys', async ({ page }) => {
 
 test('Work with Benjy keeps its enquiry path visible without submitting it', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { level: 1, name: 'From overwhelm to a living plan.' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Tell me about your land/ }).first()).toHaveAttribute('href', '#enquire');
+  await expect(page.getByRole('heading', { level: 1, name: 'Let’s help your land become more alive.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Tell me about your land/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
-  await expect(form).toBeVisible();
+  await expect(form).toBeHidden();
   await expect(form).toHaveAttribute('data-netlify', 'true');
   await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
+  await expect(page.getByRole('link', { name: 'Send by WhatsApp' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Send by Email' })).toBeVisible();
 });
 
 test('public PDFs remain reachable', async ({ request }) => {
@@ -145,5 +161,20 @@ for (const reviewPage of [
       path: path.join(reviewDirectory, `${reviewPage.name}.png`),
       fullPage: true
     });
+    if (reviewPage.name === 'work-with-benjy') {
+      await page.locator('.site-header, .skip-link').evaluateAll((elements) => {
+        elements.forEach((element) => { element.dataset.reviewVisibility = element.style.visibility; element.style.visibility = 'hidden'; });
+      });
+      for (const [name, selector] of [['hero', '.vnext-hero'], ['orchard-proof', '.vnext-proof']]) {
+        const section = page.locator(selector);
+        await section.scrollIntoViewIfNeeded();
+        await expect(section.locator('img').first()).toBeVisible();
+        await page.waitForTimeout(300);
+        await section.screenshot({ path: path.join(reviewDirectory, `work-with-benjy-${name}.png`) });
+      }
+      await page.locator('.site-header, .skip-link').evaluateAll((elements) => {
+        elements.forEach((element) => { element.style.visibility = element.dataset.reviewVisibility || ''; delete element.dataset.reviewVisibility; });
+      });
+    }
   });
 }

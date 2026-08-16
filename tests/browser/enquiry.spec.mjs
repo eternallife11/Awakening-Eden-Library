@@ -9,15 +9,28 @@ test.beforeEach(async ({ page }) => {
 });
 
 async function fillRequiredFields(page) {
-  await page.locator('#enquiry-name').fill('Ada Gardener');
-  await page.locator('#enquiry-email').fill('ada@example.test');
-  await page.locator('#enquiry-contact').selectOption({ label: 'Email' });
-  await page.locator('#enquiry-location').fill('Coimbra, Portugal');
-  await page.locator('#enquiry-type').selectOption({ label: 'Home garden' });
-  await page.locator('#enquiry-timeframe').selectOption({ label: 'Within 1–3 months' });
-  await page.locator('#enquiry-service').selectOption({ label: 'Regenerative clarity session' });
-  await page.locator('#enquiry-vision').fill('I would like to restore water, soil life and food abundance in our garden.');
-  await page.locator('#enquiry-consent').check();
+  await page.locator('form[data-land-enquiry-form]').evaluate((form) => {
+    const values = {
+      name: 'Ada Gardener',
+      email: 'ada@example.test',
+      'preferred-contact': 'Email',
+      location: 'Coimbra, Portugal',
+      'property-type': 'Home garden',
+      'start-timeframe': 'Within 1–3 months',
+      'service-interest': 'Regenerative clarity session',
+      'vision-and-challenge': 'I would like to restore water, soil life and food abundance in our garden.'
+    };
+    Object.entries(values).forEach(([name, value]) => {
+      const field = form.elements.namedItem(name);
+      field.value = value;
+      field.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+    form.elements.namedItem('contact-consent').checked = true;
+  });
+}
+
+async function submitPreservedForm(page) {
+  await page.locator('form[data-land-enquiry-form]').evaluate((form) => form.requestSubmit());
 }
 
 async function addTurnstileToken(page, value = 'test-turnstile-token') {
@@ -60,7 +73,7 @@ test('a verified client submission redirects only after an API success response'
 
   await Promise.all([
     page.waitForURL('**/project-enquiry-thank-you.html'),
-    page.getByRole('button', { name: /Send my land story/ }).click()
+    submitPreservedForm(page)
   ]);
 
   expect(payload.name).toBe('Ada Gardener');
@@ -84,10 +97,10 @@ test('a delivery failure keeps the entered enquiry and never shows success', asy
   await fillRequiredFields(page);
   await addTurnstileToken(page);
 
-  await page.getByRole('button', { name: /Send my land story/ }).click();
+  await submitPreservedForm(page);
 
-  await expect(page.getByRole('status')).toContainText('We could not send your enquiry just now.');
-  await expect(page.getByRole('status')).toHaveAttribute('data-status', 'error');
+  await expect(page.locator('[data-enquiry-status]')).toContainText('We could not send your enquiry just now.');
+  await expect(page.locator('[data-enquiry-status]')).toHaveAttribute('data-status', 'error');
   await expect(page.locator('#enquiry-name')).toHaveValue('Ada Gardener');
   await expect(page.locator('#enquiry-vision')).toHaveValue('I would like to restore water, soil life and food abundance in our garden.');
   await expect(page).toHaveURL(/\/work-with-benjy$/);
@@ -102,8 +115,8 @@ test('a missing Turnstile token stays on the form and does not call the API', as
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
   await fillRequiredFields(page);
 
-  await page.getByRole('button', { name: /Send my land story/ }).click();
+  await submitPreservedForm(page);
 
-  await expect(page.getByRole('status')).toContainText('Please complete the verification');
+  await expect(page.locator('[data-enquiry-status]')).toContainText('Please complete the verification');
   expect(apiCalls).toBe(0);
 });
