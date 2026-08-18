@@ -4,7 +4,9 @@
   "scripts": {
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
     "serve:preview": "node scripts/serve-cloudflare-preview.mjs",
-    "test:browser": "node scripts/build-cloudflare.mjs && playwright test"
+    "test:worker": "node --test tests/worker/enquiry.test.mjs",
+    "test:browser": "ENQUIRY_TURNSTILE_SITE_KEY=1x00000000000000000000AA node scripts/build-cloudflare.mjs && playwright test",
+    "test": "pnpm run test:worker && pnpm run test:browser"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

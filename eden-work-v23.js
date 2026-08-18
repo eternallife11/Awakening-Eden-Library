@@ -6,6 +6,17 @@
     : fn();
 
   ready(() => {
+    const revealHashTarget = () => {
+      if (window.location.hash !== "#implementation") return;
+      const implementation = document.getElementById("implementation");
+      if (!implementation) return;
+      implementation.open = true;
+      window.requestAnimationFrame(() => implementation.scrollIntoView({ block: "start" }));
+    };
+
+    revealHashTarget();
+    window.addEventListener("hashchange", revealHashTarget);
+
     const form = document.querySelector("[data-land-enquiry-form]");
     if (!form) return;
 

@@ -130,12 +130,31 @@
   box-shadow: 0 24px 55px rgb(35 49 38 / 0.16);
 }
 .founders-welcome__copy { max-width: 42rem; }
-.founders-welcome__copy h2 { max-width: 12ch; }
+.founders-welcome__copy h2 { max-width: 15ch; }
+.home-pathways {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.75rem;
+}
+.home-pathways a {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgb(105 112 82 / 0.28);
+  border-radius: 0.85rem;
+  color: var(--forest);
+  background: rgb(255 253 247 / 0.72);
+  text-decoration: none;
+}
+.home-pathways a:hover,
+.home-pathways a:focus-visible { border-color: rgb(105 112 82 / 0.56); box-shadow: 0 10px 22px rgb(35 49 38 / 0.08); }
+.home-pathways strong { font-family: var(--display); font-size: 1.25rem; }
+.home-pathways span { color: var(--umber); font-size: 0.93rem; line-height: 1.42; }
 .founders-welcome__divider {
   display: block;
-  width: min(94vw, 76rem);
+  width: min(98vw, 92rem);
   height: auto;
-  margin: clamp(2rem, 5vw, 4rem) auto clamp(-3.2rem, -2vw, -1.5rem);
+  margin: clamp(3rem, 7vw, 6rem) auto clamp(-3.2rem, -2vw, -1.5rem);
   opacity: 0.98;
 }
 
@@ -268,12 +287,17 @@
   z-index: 3;
   right: clamp(1rem, 3vw, 2.5rem);
   bottom: clamp(0.75rem, 2vw, 1.5rem);
-  max-width: 24rem;
+  max-width: 34rem;
   color: #fff8eb;
-  font-family: var(--hand);
-  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.7rem;
+  background: rgb(18 44 30 / 0.48);
+  font-family: var(--body);
+  font-size: clamp(1rem, 1.55vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.42;
   text-align: right;
-  text-shadow: 0 2px 9px rgb(20 38 28 / 0.85);
+  text-shadow: 0 2px 9px rgb(20 38 28 / 0.95);
 }
 .living-library-vision + .library-section { padding-top: clamp(4rem, 7vw, 6rem); }
 
@@ -326,7 +350,15 @@
   }
   .harmony-vision__lotus { top: 2%; width: 5.1rem; }
   .living-library-vision { width: calc(100% - 1rem); border-radius: 1rem 1rem 0 0; }
-  .living-library-vision figcaption { display: none; }
+  .living-library-vision figcaption {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    max-width: none;
+    padding: 0.6rem 0.7rem;
+    font-size: 0.88rem;
+    text-align: center;
+  }
   .welcome-band__tree-divider { margin-bottom: -2rem !important; }
   .founders-welcome__divider { margin-bottom: -1.5rem; }
   .casa-card { grid-template-columns: 1fr; }
@@ -358,6 +390,38 @@
     border-radius: 1rem;
     margin-bottom: 1.75rem;
   }
-  /* The caption is hidden at this width, so the plate must not look cropped. */
+  /* Keep the opening promise readable on the first mobile threshold. */
   .living-library-vision--gate::after { height: 24%; }
+}
+
+/* The future vision is a wide landscape, not a tall video or a second portal. */
+.invitation-film--vision { overflow: hidden; border-radius: 1.35rem; background: #8d7042; box-shadow: var(--shadow); }
+.invitation-film--vision picture,
+.invitation-film--vision img { display: block; width: 100%; }
+.invitation-film--vision img { aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+.invitation-film--vision figcaption { display: grid; gap: .3rem; margin: 0; padding: 0.8rem 1rem; color: var(--paper-light); background: var(--forest); font-size: 0.82rem; line-height: 1.45; }
+.invitation-film--vision figcaption strong { color: var(--revival-gold); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+
+/* The opening future vision is 4:3 by design. Keeping the whole painting
+   visible protects its community circle, seedling, tree and rooted Lotus. */
+.living-library-vision--gate picture > img { aspect-ratio: 4 / 3; object-fit: contain; background: #e7d1a0; }
+
+.library-section { position: relative; overflow: hidden; }
+.library-section::before,
+.library-section::after { content: ""; position: absolute; z-index: 0; width: clamp(8rem, 15vw, 14rem); aspect-ratio: 1; pointer-events: none; opacity: .15; background: center / contain no-repeat; }
+.library-section::before { top: 2rem; left: -3.5rem; background-image: url("assets/corners/botanical-corner-01.webp"); }
+.library-section::after { right: -3.5rem; bottom: 2rem; background-image: url("assets/corners/botanical-corner-06.webp"); transform: rotate(180deg); }
+.library-section > .container { position: relative; z-index: 1; }
+.library-doorway { position: relative; width: min(100%, 62rem); margin: clamp(2rem, 5vw, 4rem) auto; overflow: hidden; border: 1px solid rgb(105 112 82 / .28); border-radius: 1.35rem; background: var(--paper-light); box-shadow: var(--shadow); }
+.library-doorway picture, .library-doorway img { display: block; width: 100%; }
+.library-doorway figcaption { padding: .8rem 1rem 1rem; color: var(--umber); font-size: .9rem; text-align: center; }
+
+.begin-exploring { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem 2.5rem; align-items: center; max-width: 66rem; margin: clamp(2.5rem, 6vw, 5rem) auto 0; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid rgb(105 112 82 / .28); border-radius: 1.2rem; background: rgb(255 253 247 / .78); box-shadow: 0 12px 30px rgb(35 49 38 / .06); }
+.begin-exploring h3 { margin: .3rem 0 .65rem; }
+.begin-exploring p { max-width: 47rem; }
+.begin-exploring .button-row { justify-content: flex-start; }
+
+@media (max-width: 42rem) {
+  .library-section::before, .library-section::after { width: 8rem; opacity: .1; }
+  .begin-exploring { grid-template-columns: 1fr; }
 }

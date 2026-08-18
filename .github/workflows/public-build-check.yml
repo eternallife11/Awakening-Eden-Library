@@ -20,6 +20,8 @@ jobs:
           package-manager-cache: false
 
       - name: Build Cloudflare public artifact
+        env:
+          ENQUIRY_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
         run: node scripts/build-cloudflare.mjs
 
       - name: Verify required public files
@@ -40,6 +42,7 @@ jobs:
           test ! -e dist/deliverables
           test ! -e dist/scripts
           test ! -e dist/tests
+          test ! -e dist/workers
           test ! -e dist/node_modules
           test ! -e dist/netlify.toml
           test ! -e dist/wrangler.toml
@@ -48,6 +51,8 @@ jobs:
           test ! -e dist/pnpm-lock.yaml
           test ! -e dist/pnpm-workspace.yaml
           test ! -e dist/playwright.config.mjs
+          test ! -e dist/AGENTS.md
+          test ! -e dist/eden-enquiry.js.map
           test ! -e dist/orchard-before-dry-monoculture.webp
           test ! -e dist/orchard-after-abundant-green.webp
           if find dist -type f \( -iname '*.zip' -o -iname '*.md' -o -iname '*.psd' -o -iname '*.xcf' \) -print -quit | grep -q .; then
@@ -86,6 +91,7 @@ jobs:
           grep -q 'X-Robots-Tag: noindex, nofollow' dist/_headers
           grep -q '^/living-library$' dist/_headers
           grep -q '^/work-with-benjy$' dist/_headers
+          grep -q 'challenges.cloudflare.com' dist/_headers
 
       - name: Validate Workers Static Assets configuration
         run: npx --yes wrangler@4.122.0 deploy --dry-run
@@ -131,6 +137,9 @@ jobs:
 
       - name: Run desktop and mobile browser QA
         run: pnpm test:browser
+
+      - name: Run enquiry Worker unit tests
+        run: pnpm test:worker
 
       - name: Upload browser report and review screenshots
         if: always()
