@@ -1,12 +1,22 @@
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const ROOT = process.cwd();
+const ROOT = typeof process !== 'undefined'
+  ? process.cwd()
+  : globalThis.__AWAKENING_EDEN_BUILD_ROOT__;
+const BUILD_ENV = typeof process !== 'undefined'
+  ? process.env
+  : (globalThis.__AWAKENING_EDEN_BUILD_ENV__ || {});
+
+if (!ROOT) {
+  throw new Error('Could not determine the repository root for the public build.');
+}
+
 const OUT = path.join(ROOT, 'dist');
 const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Workers Static Assets per-file limit: 25 MiB.
 // CI supplies Cloudflare's official test key. Staging otherwise embeds the
 // public key of the isolated enquiry widget (the secret stays in Workers).
-const TURNSTILE_SITE_KEY = process.env.ENQUIRY_TURNSTILE_SITE_KEY || '0x4AAAAAAEPRpGQHyAWttNLs';
+const TURNSTILE_SITE_KEY = BUILD_ENV.ENQUIRY_TURNSTILE_SITE_KEY || '0x4AAAAAAEPRpGQHyAWttNLs';
 
 if (!TURNSTILE_SITE_KEY) {
   throw new Error('ENQUIRY_TURNSTILE_SITE_KEY is required to build the Cloudflare enquiry preview.');
@@ -30,9 +40,23 @@ const excludedNames = new Set([
   'AGENTS.md'
 ]);
 
+const excludedPublicAssets = new Set([
+  // Superseded generated geometry: keep the repository masters for provenance,
+  // but never copy them into a public Cloudflare artifact.
+  'assets/film-previews/inner-worlds-outer-worlds.webp',
+  'assets/hero/garden-of-harmony-benjy-sofia-1672.webp',
+  'assets/dividers/flowing-suns-living-codes-divider-640.avif',
+  'assets/dividers/flowing-suns-living-codes-divider-640.webp',
+  'assets/dividers/flowing-suns-living-codes-divider-1280.avif',
+  'assets/dividers/flowing-suns-living-codes-divider-1280.webp',
+  'assets/dividers/flowing-suns-living-codes-divider-1600.avif',
+  'assets/dividers/flowing-suns-living-codes-divider-1600.webp'
+]);
+
 function shouldExclude(rel, isDir) {
   const parts = rel.split(path.sep);
   if (parts.some((part) => excludedDirs.has(part))) return true;
+  if (!isDir && excludedPublicAssets.has(rel)) return true;
   const name = path.basename(rel);
   if (!isDir && excludedNames.has(name)) return true;
   if (!isDir && /^CLAUDE/i.test(name)) return true;

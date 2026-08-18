@@ -10,6 +10,10 @@
     {p:0.78, src:'assets/growth/growth-stage-07.webp'},
     {p:0.94, src:'assets/growth/growth-stage-08.webp'}
   ];
+  stages.forEach(({src}) => {
+    const preload = new Image();
+    preload.src = src;
+  });
   let image = symbol.querySelector('img');
   if(!image){
     image = document.createElement('img');
@@ -19,6 +23,7 @@
     image.alt = '';
     symbol.replaceChildren(image);
   }
+  let swapTimer;
   function updateGrowth(){
     const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     const p = Math.min(1, Math.max(0, window.scrollY / max));
@@ -27,7 +32,11 @@
     for(const stage of stages){ if(p >= stage.p) src = stage.src; }
     if(image.getAttribute('src') !== src){
       symbol.style.opacity = '0';
-      setTimeout(()=>{ image.src = src; symbol.style.opacity = '1'; },120);
+      clearTimeout(swapTimer);
+      swapTimer = setTimeout(()=>{
+        image.src = src;
+        symbol.style.opacity = '1';
+      },120);
     }
     document.body.classList.toggle('ae-growth-final', p > .90);
   }

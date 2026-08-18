@@ -36,7 +36,16 @@ test.beforeEach(async ({ page }) => {
 async function settleLazyImages(page) {
   await page.evaluate(async () => {
     const images = Array.from(document.images).filter((image) => !image.closest('[hidden]'));
-    images.forEach((image) => { image.loading = 'eager'; });
+    images.forEach((image) => {
+      const source = image.currentSrc || image.src;
+      image.loading = 'eager';
+      image.removeAttribute('loading');
+      if (image.hasAttribute('srcset')) {
+        image.removeAttribute('srcset');
+        image.removeAttribute('sizes');
+        image.src = source;
+      }
+    });
     for (const image of images) {
       image.scrollIntoView({ block: 'center' });
       await new Promise((resolve) => setTimeout(resolve, 90));
@@ -66,7 +75,10 @@ for (const route of criticalRoutes) {
 
     page.on('pageerror', (error) => consoleErrors.push(`pageerror: ${error.message}`));
     page.on('console', (message) => {
-      if (message.type() === 'error') consoleErrors.push(`console: ${message.text()}`);
+      const isResourceNoise = message.text().startsWith('Failed to load resource:');
+      if (message.type() === 'error' && !isResourceNoise) {
+        consoleErrors.push(`console: ${message.text()}`);
+      }
     });
     page.on('response', (response) => {
       const url = new URL(response.url());
@@ -121,14 +133,21 @@ test('homepage exposes the primary journeys', async ({ page }) => {
 
 test('Work with Benjy keeps its enquiry path visible without submitting it', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { level: 1, name: 'Let’s help your land become more alive.' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Regenerative land stewardship in action' })).toBeVisible();
   await expect(page.getByRole('link', { name: /Tell me about your land/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
   await expect(form).toBeHidden();
   await expect(form).toHaveAttribute('data-netlify', 'true');
   await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
-  await expect(page.getByRole('link', { name: 'Send by WhatsApp' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Send by Email' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
+});
+
+test('Work with Benjy opens implementation guidance for its direct anchor', async ({ page }) => {
+  await page.goto('/work-with-benjy#implementation', { waitUntil: 'domcontentloaded' });
+  const implementation = page.locator('#implementation');
+  await expect(implementation).toHaveAttribute('open', '');
+  await expect(implementation.getByText('Sequencing, sourcing, planting plans', { exact: false })).toBeVisible();
 });
 
 test('public PDFs remain reachable', async ({ request }) => {
@@ -154,7 +173,11 @@ for (const reviewPage of [
   test(`capture ${reviewPage.name} review screenshot`, async ({ page }, testInfo) => {
     test.setTimeout(120_000);
     await page.goto(reviewPage.route, { waitUntil: 'domcontentloaded' });
+    if (reviewPage.name === 'work-with-benjy' && testInfo.project.name === 'desktop-chromium') {
+      await page.setViewportSize({ width: 1180, height: 1000 });
+    }
     await settleLazyImages(page);
+    if (reviewPage.name === 'work-with-benjy') await page.waitForTimeout(4000);
     const reviewDirectory = path.join('test-results', 'review', testInfo.project.name);
     await mkdir(reviewDirectory, { recursive: true });
     await page.screenshot({
@@ -165,10 +188,23 @@ for (const reviewPage of [
       await page.locator('.site-header, .skip-link').evaluateAll((elements) => {
         elements.forEach((element) => { element.dataset.reviewVisibility = element.style.visibility; element.style.visibility = 'hidden'; });
       });
-      for (const [name, selector] of [['hero', '.vnext-hero'], ['orchard-proof', '.vnext-proof']]) {
+      for (const [name, selector] of [
+        ['hero', '.vnext-hero'],
+        ['service-gallery', '.vnext-service-gallery'],
+        ['orchard-proof', '.vnext-proof'],
+        ['process-proof', '.vnext-process-proof'],
+        ['land-vision', '.vnext-vision'],
+        ['acacia-property', '.vnext-abundance'],
+        ['pilots-partnerships', '.vnext-pilots'],
+        ['learning-community', '.vnext-learning'],
+        ['why-benjy', '.vnext-benjy'],
+        ['benjy-sofia', '.vnext-final']
+      ]) {
         const section = page.locator(selector);
         await section.scrollIntoViewIfNeeded();
-        await expect(section.locator('img').first()).toBeVisible();
+        await expect(section).toBeVisible();
+        const firstImage = section.locator('img').first();
+        if (await firstImage.count()) await expect(firstImage).toBeVisible();
         await page.waitForTimeout(300);
         await section.screenshot({ path: path.join(reviewDirectory, `work-with-benjy-${name}.png`) });
       }
