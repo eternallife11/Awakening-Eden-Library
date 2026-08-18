@@ -141,13 +141,30 @@ jobs:
       - name: Run enquiry Worker unit tests
         run: pnpm test:worker
 
-      - name: Upload browser report and review screenshots
-        if: always()
+      - name: Upload compact review screenshots
+        if: success()
         uses: actions/upload-artifact@v6
         with:
-          name: awakening-eden-browser-qa-${{ github.run_attempt }}
+          name: awakening-eden-browser-review-${{ github.run_attempt }}
+          path: |
+            test-results/review/desktop-chromium/
+            test-results/review/mobile-chromium/
+          if-no-files-found: warn
+          retention-days: 5
+          compression-level: 9
+
+      - name: Upload compact browser diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: awakening-eden-browser-failure-${{ github.run_attempt }}
           path: |
             playwright-report/
-            test-results/
+            test-results/**/trace.zip
+            test-results/**/test-failed-*.png
+            test-results/**/error-context.md
+            test-results/review/desktop-chromium/
+            test-results/review/mobile-chromium/
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 3
+          compression-level: 9
