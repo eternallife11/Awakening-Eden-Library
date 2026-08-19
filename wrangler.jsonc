@@ -1,14 +1,14 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  // Preview-only Worker. Production stays on Netlify until the migration QA gate passes.
+  // Temporary public Workers.dev launch. Custom domain cutover remains a separate approved step.
   "name": "awakening-eden-library-staging",
   "compatibility_date": "2026-08-13",
   "workers_dev": true,
   "preview_urls": true,
   "main": "./workers/enquiry.mjs",
   "vars": {
-    // This is the isolated enquiry review origin only. Do not add a production domain here.
-    "ENQUIRY_ALLOWED_ORIGIN": "https://enquiry-api-awakening-eden-library-staging.holisticmission8.workers.dev"
+    // Allow enquiry submissions only from the temporary public Workers.dev site.
+    "ENQUIRY_ALLOWED_ORIGIN": "https://awakening-eden-library-staging.holisticmission8.workers.dev"
   },
   "send_email": [
     {
