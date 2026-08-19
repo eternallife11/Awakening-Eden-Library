@@ -126,9 +126,9 @@ for (const route of criticalRoutes) {
 test('homepage exposes the primary journeys', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Begin Here', exact: true }).first()).toHaveAttribute('href', '/start-here');
-  await expect(page.getByRole('link', { name: 'Explore the Living Library', exact: true })).toHaveAttribute('href', '/living-library');
-  await expect(page.getByRole('link', { name: 'Work with Benjy', exact: true }).first()).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: /^Begin with Awakening Regeneration/ }).first()).toHaveAttribute('href', '/start-here');
+  await expect(page.getByRole('link', { name: /^Explore the Living Library/ }).first()).toHaveAttribute('href', '/living-library');
+  await expect(page.getByRole('link', { name: /^Regenerate Your Land/ }).first()).toHaveAttribute('href', '/work-with-benjy');
 });
 
 test('Work with Benjy keeps its enquiry path visible without submitting it', async ({ page }) => {
