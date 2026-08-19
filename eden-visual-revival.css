@@ -157,6 +157,9 @@
   margin: clamp(3rem, 7vw, 6rem) auto clamp(-3.2rem, -2vw, -1.5rem);
   opacity: 0.98;
 }
+.founders-welcome__landscape { width: min(92vw, 68rem); margin: clamp(2.5rem, 6vw, 5rem) auto 0; overflow: hidden; border: .45rem solid var(--paper-light); border-radius: 1.5rem; box-shadow: 0 22px 48px rgb(35 49 38 / 0.14); background: #d7c28d; }
+.founders-welcome__landscape img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
+.founders-welcome__landscape figcaption { padding: .7rem 1rem; color: var(--paper-light); background: var(--forest); font-size: .9rem; text-align: center; }
 
 .harmony-vision {
   position: relative;
@@ -361,6 +364,7 @@
   }
   .welcome-band__tree-divider { margin-bottom: -2rem !important; }
   .founders-welcome__divider { margin-bottom: -1.5rem; }
+  .founders-welcome__landscape { width: calc(100% - 1rem); border-width: .3rem; border-radius: 1rem; }
   .casa-card { grid-template-columns: 1fr; }
   .grow-heading__portal { width: min(84vw, 24rem); }
   .door-card__art img { height: 9.5rem; transform: scale(1.15); }
