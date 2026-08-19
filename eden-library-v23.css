@@ -449,7 +449,7 @@ body.page-library {
   line-height: 1.5;
 }
 /* Full-strength olive, not 85%: faded it measures under 4.5:1 on the card. */
-.resource-card .verified { margin: 0.35rem 0 0; color: var(--olive); font-size: 0.74rem; }
+.resource-card .verified { display: none; }
 .film-lens { margin: 0.5rem 0 0; color: rgb(255 253 247 / 0.72); font-size: 0.8rem; }
 
 /* Shared safety gate for follow-along breath practice, and the money lenses. */
