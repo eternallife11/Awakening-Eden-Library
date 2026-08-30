@@ -128,7 +128,10 @@ test('homepage exposes the primary journeys', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
   await expect(page.getByRole('link', { name: /^Begin with Awakening Regeneration/ }).first()).toHaveAttribute('href', '/start-here');
   await expect(page.getByRole('link', { name: /^Explore the Living Library/ }).first()).toHaveAttribute('href', '/living-library');
-  await expect(page.getByRole('link', { name: /^Regenerate Your Land/ }).first()).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: /^Work with Benjy/ }).first()).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toHaveAttribute('href', '#soundtrack');
+  await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toContainText('Go to the player');
+  await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
 
 test('Work with Benjy keeps its enquiry path visible without submitting it', async ({ page }) => {
@@ -136,6 +139,11 @@ test('Work with Benjy keeps its enquiry path visible without submitting it', asy
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
   await expect(page.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
   await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
+  await expect(page.getByRole('link', { name: 'Book the €111 clarity session' })).toHaveAttribute('href', /subject=Book%20my%20%E2%82%AC111/);
+  await expect(page.getByRole('link', { name: 'Ask about a focused roadmap' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Discuss a holistic masterplan' })).toBeVisible();
+  await expect(page.locator('.vnext-service-gallery img').first()).toHaveAttribute('loading', 'lazy');
+  await expect(page.locator('.vnext-proof__grid--stages img').first()).toHaveAttribute('loading', 'lazy');
   await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
   await expect(form).toBeHidden();

@@ -22,7 +22,6 @@
 .vnext-hero__actions { margin-top: .2rem; }
 .vnext-hero__actions .button--primary { box-shadow: 0 10px 22px rgb(102 76 27 / .2); }
 .vnext-hero__actions .button--secondary { padding-inline: .9rem; border-color: rgb(105 112 82 / .45); background: transparent; font-size: .88rem; }
-.vnext-direct-link { display: inline-block; margin-top: 1rem; color: var(--forest); font-weight: 800; text-underline-offset: .2rem; }
 .vnext-hero__photo { margin: 0; padding: .65rem; border: 1px solid rgb(105 112 82 / .28); border-radius: 48% 48% 1.6rem 1.6rem; background: var(--paper-light); box-shadow: var(--shadow); }
 .vnext-hero__photo img { display: block; width: 100%; aspect-ratio: 1 / 1; border-radius: 48% 48% 1.1rem 1.1rem; object-fit: cover; object-position: center 27%; }
 .vnext-hero__photo figcaption { padding: .9rem .65rem .35rem; color: var(--umber); font-size: .82rem; text-align: center; }
@@ -120,6 +119,11 @@
 .vnext-offer__outcome span { display: block; margin-bottom: .4rem; color: var(--olive); font-family: var(--body); font-size: .68rem; font-style: normal; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .vnext-offer__boundary { margin: 0; padding: 1rem clamp(1.4rem, 3vw, 2.25rem) 1.25rem; border-top: 1px solid rgb(105 112 82 / .18); color: var(--umber); font-size: .82rem; line-height: 1.5; }
 .vnext-offer__boundary strong { color: var(--forest); }
+.vnext-offer__action { display: flex; gap: .8rem 1.1rem; align-items: center; padding: 0 clamp(1.4rem, 3vw, 2.25rem) 1.6rem; }
+.vnext-offer__action .button { flex: 0 0 auto; }
+.vnext-offer__action small { max-width: 38rem; color: var(--umber); font-size: .76rem; line-height: 1.45; }
+.vnext-offer-divider { width: min(68rem, 96vw); margin: clamp(1.5rem, 4vw, 3rem) auto clamp(-1rem, -1vw, -.4rem); }
+.vnext-offer-divider img { display: block; width: 100%; height: auto; }
 .vnext-support-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2rem, 5vw, 4rem); }
 .vnext-support-panel { padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid rgb(105 112 82 / .28); border-radius: 1.3rem; background: var(--paper-light); scroll-margin-top: 7rem; }
 .vnext-support-panel h3 { margin: .7rem 0; color: var(--forest); }
@@ -240,6 +244,7 @@
   .vnext-offer__top, .vnext-offer__columns { grid-template-columns: 1fr; }
   .vnext-offer__price { text-align: left; }
   .vnext-offer__columns > div + div { border-top: 1px solid rgb(105 112 82 / .2); border-left: 0; }
+  .vnext-offer__action { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 42rem) {
   .work-vnext h1 { font-size: clamp(3rem, 12vw, 3.8rem); }
@@ -249,16 +254,24 @@
   .vnext-hero__copy .eyebrow { order: 1; }
   .vnext-hero__copy h1 { order: 2; }
   .vnext-hero__lead { order: 3; }
-  .vnext-hero__photo { order: 4; }
-  .vnext-hero__cta { order: 5; }
-  .vnext-hero__rhythm { order: 6; }
-  .vnext-hero__note { order: 7; }
+  .vnext-hero__rhythm { order: 4; }
+  .vnext-hero__note { order: 5; }
+  .vnext-hero__photo { order: 6; }
+  .vnext-hero__cta { order: 7; }
   .vnext-hero .eyebrow { margin-bottom: .6rem; font-size: .67rem; line-height: 1.45; }
   .vnext-hero__lead { margin-block: .8rem; font-size: 1.08rem; line-height: 1.35; }
   .vnext-hero__rhythm { margin-block: .6rem; font-size: .78rem; line-height: 1.4; }
   .vnext-hero__note { margin-block: .65rem; font-size: 1.35rem; line-height: 1.15; }
   .vnext-hero__actions { display: grid; margin-top: .8rem; }
   .vnext-hero__actions .button { width: 100%; }
+  .vnext-offer__action .button { width: 100%; }
+  .vnext-offer__scope,
+  .vnext-offer__price small,
+  .vnext-offer__outcome span { font-size: .78rem; }
+  .vnext-offer__price span,
+  .vnext-offer__boundary,
+  .vnext-offer__action small,
+  .vnext-support-panel__foot { font-size: .82rem; }
   .vnext-pathways__grid, .vnext-outcomes__grid, .vnext-proof__grid, .vnext-service-grid, .vnext-pilot-grid, .vnext-service-gallery__grid { grid-template-columns: 1fr; }
   .vnext-service-gallery__grid > a { min-height: 0; }
   .vnext-service-gallery__grid figure { height: min(62vw, 19rem); }
