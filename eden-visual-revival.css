@@ -138,6 +138,35 @@
 .hero-pathways__primary strong { color: var(--forest-deep); }
 .hero-pathways__primary span { color: rgb(35 49 38 / 0.72); }
 
+/* The opening now moves from the name and promise into the Tree, the people
+   behind it, their shared vision, and finally the four pathways. */
+.invitation-section--opening-vision { background: #f4ead8; }
+.door-card__points {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.9rem 0 1rem;
+  padding: 0;
+  color: var(--umber);
+  font-size: 0.87rem;
+  line-height: 1.38;
+  list-style: none;
+}
+.door-card__points li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+.door-card__points li::before {
+  position: absolute;
+  top: 0.28rem;
+  left: 0;
+  width: 0.48rem;
+  height: 0.48rem;
+  border: 1px solid rgb(105 112 82 / 0.6);
+  border-radius: 50%;
+  background: var(--revival-gold);
+  content: "";
+}
+
 /* A light invitation near the opening doors; the heavier Spotify player stays
    below the fold so it does not delay the welcome artwork or first choices. */
 .hero-soundtrack {

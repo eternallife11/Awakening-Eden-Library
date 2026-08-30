@@ -126,8 +126,10 @@ for (const route of criticalRoutes) {
 test('homepage exposes the primary journeys', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /^Begin with Awakening Regeneration/ }).first()).toHaveAttribute('href', '/start-here');
-  await expect(page.getByRole('link', { name: /^Explore the Living Library/ }).first()).toHaveAttribute('href', '/living-library');
+  await expect(page.getByRole('heading', { level: 2, name: 'We’re Benjy & Sofia — glad you’re here' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'A living place where people, land and possibility can flourish' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /^Begin Here/ }).first()).toHaveAttribute('href', '/start-here');
+  await expect(page.getByRole('link', { name: /^Living Library/ }).first()).toHaveAttribute('href', '/living-library');
   await expect(page.getByRole('link', { name: /^Work with Benjy/ }).first()).toHaveAttribute('href', '/work-with-benjy');
   await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toHaveAttribute('href', '#soundtrack');
   await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toContainText('Go to the player');
