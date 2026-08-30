@@ -23,18 +23,12 @@ const startTimeframes = new Set([
 ]);
 
 const serviceInterests = new Set([
-  'Regenerative clarity session',
-  'On-site property walk and 90-day action map',
-  'Living Land regeneration partnership',
-  'Property vision and concept design',
-  'Tired orchard revival and seasonal stewardship',
-  'Water and landscape resilience',
-  'Food forest or syntropic planting design',
-  'Abundant Edge soil and biomass systems',
-  'Implementation or project support',
+  'Land Clarity & Action Session — €111',
+  'Focused Regenerative Roadmap',
+  'Holistic Regenerative Concept Masterplan',
+  'Ongoing project or implementation guidance',
   'Workshop or team training',
-  'Whole-property wellbeing',
-  'I am not sure yet'
+  'I’m not sure yet'
 ]);
 
 const textEncoder = new TextEncoder();

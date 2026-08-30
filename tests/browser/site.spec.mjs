@@ -126,15 +126,27 @@ for (const route of criticalRoutes) {
 test('homepage exposes the primary journeys', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Begin Here', exact: true }).first()).toHaveAttribute('href', '/start-here');
-  await expect(page.getByRole('link', { name: 'Explore the Living Library', exact: true })).toHaveAttribute('href', '/living-library');
-  await expect(page.getByRole('link', { name: 'Work with Benjy', exact: true }).first()).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('heading', { level: 2, name: 'We’re Benjy & Sofia — glad you’re here' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'A living place where people, land and possibility can flourish' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /^Begin Here/ }).first()).toHaveAttribute('href', '/start-here');
+  await expect(page.getByRole('link', { name: /^Living Library/ }).first()).toHaveAttribute('href', '/living-library');
+  await expect(page.getByRole('link', { name: /^Work with Benjy/ }).first()).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toHaveAttribute('href', '#soundtrack');
+  await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toContainText('Go to the player');
+  await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
 
 test('Work with Benjy keeps its enquiry path visible without submitting it', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { level: 1, name: 'Regenerative land stewardship in action' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Tell me about your land/ }).first()).toHaveAttribute('href', '#land-vision');
+  await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
+  await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
+  await expect(page.getByRole('link', { name: 'Book the €111 clarity session' })).toHaveAttribute('href', /subject=Book%20my%20%E2%82%AC111/);
+  await expect(page.getByRole('link', { name: 'Ask about a focused roadmap' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Discuss a holistic masterplan' })).toBeVisible();
+  await expect(page.locator('.vnext-service-gallery img').first()).toHaveAttribute('loading', 'lazy');
+  await expect(page.locator('.vnext-proof__grid--stages img').first()).toHaveAttribute('loading', 'lazy');
+  await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
   await expect(form).toBeHidden();
   await expect(form).toHaveAttribute('data-netlify', 'true');
@@ -143,11 +155,11 @@ test('Work with Benjy keeps its enquiry path visible without submitting it', asy
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
 });
 
-test('Work with Benjy opens implementation guidance for its direct anchor', async ({ page }) => {
+test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
   await page.goto('/work-with-benjy#implementation', { waitUntil: 'domcontentloaded' });
   const implementation = page.locator('#implementation');
-  await expect(implementation).toHaveAttribute('open', '');
-  await expect(implementation.getByText('Sequencing, sourcing, planting plans', { exact: false })).toBeVisible();
+  await expect(implementation.getByRole('heading', { name: 'Bringing it to life' })).toBeVisible();
+  await expect(implementation.getByText('Monthly guidance as questions come up', { exact: true })).toBeVisible();
 });
 
 test('public PDFs remain reachable', async ({ request }) => {
@@ -194,6 +206,8 @@ for (const reviewPage of [
         ['orchard-proof', '.vnext-proof'],
         ['process-proof', '.vnext-process-proof'],
         ['land-vision', '.vnext-vision'],
+        ['offers', '.vnext-offers'],
+        ['client-journey', '.vnext-process'],
         ['acacia-property', '.vnext-abundance'],
         ['pilots-partnerships', '.vnext-pilots'],
         ['learning-community', '.vnext-learning'],
