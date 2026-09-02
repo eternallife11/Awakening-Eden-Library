@@ -14,7 +14,7 @@ body.page-library {
 }
 .skip:focus { transform: translateY(0); }
 
-/* ---------- Hero ---------- */
+/* ---------- Legacy hero ---------- */
 .page-library .hero {
   position: relative; overflow: clip;
   min-height: min(72vh, 46rem);
@@ -25,6 +25,76 @@ body.page-library {
     linear-gradient(115deg, rgb(24 38 27 / 0.93), rgb(24 38 27 / 0.72) 45%, rgb(35 49 38 / 0.5)),
     url("eden-hero-sanctuary-v19.webp") center 40% / cover no-repeat;
 }
+
+/* ---------- v23.12 — one illustrated threshold, then a human welcome ---------- */
+.library-art-hero {
+  position: relative;
+  color: var(--paper-light);
+  background: var(--forest-deep);
+}
+.library-art-hero > img {
+  display: block;
+  width: min(100%, 112rem);
+  height: auto;
+  margin-inline: auto;
+}
+.library-art-hero__welcome {
+  position: relative;
+  margin-top: clamp(-2.5rem, -3vw, -1.2rem);
+  padding: clamp(2.8rem, 6vw, 4.8rem) 0 clamp(2.5rem, 5vw, 4rem);
+  background:
+    radial-gradient(circle at 86% 0%, rgb(184 148 75 / 0.2), transparent 35rem),
+    linear-gradient(135deg, #173323, #294b36);
+}
+.library-art-hero__welcome::before {
+  content: "";
+  position: absolute;
+  inset: -2.5rem 0 auto;
+  height: 3rem;
+  background: linear-gradient(transparent, #173323);
+}
+.library-art-hero__welcome .wrap { position: relative; }
+.library-art-hero h1 {
+  max-width: 13ch;
+  margin: 1rem 0 0.75rem;
+  color: var(--paper-light);
+  font-size: clamp(2.7rem, 7vw, 5.5rem);
+}
+.library-art-hero__welcome p { max-width: 48rem; color: rgb(255 253 247 / 0.88); font-size: clamp(1.05rem, 1.8vw, 1.28rem); line-height: 1.65; }
+.library-art-hero .hero-actions { margin-top: 1.5rem; }
+
+.library-founders { padding: clamp(3rem, 7vw, 6rem) 0; background: var(--paper-light); }
+.library-founders__grid { display: grid; grid-template-columns: minmax(15rem, 0.62fr) minmax(0, 1.38fr); gap: clamp(2rem, 7vw, 6rem); align-items: center; }
+.library-founders figure { width: min(100%, 22rem); margin: 0 auto; }
+.library-founders figure img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 38%; border: 0.55rem solid var(--paper-light); border-radius: 48% 48% 1.4rem 1.4rem; box-shadow: 0 22px 50px rgb(35 49 38 / 0.15); }
+.library-founders h2 { max-width: 15ch; font-size: clamp(2.2rem, 5vw, 4rem); }
+.library-founders p { max-width: 47rem; color: var(--umber); font-size: 1.03rem; line-height: 1.7; }
+
+.library-top-paths { padding: clamp(2.8rem, 6vw, 5rem) 0; color: var(--paper-light); background: var(--forest-deep); }
+.library-top-paths__heading { max-width: 48rem; margin-bottom: 1.6rem; }
+.library-top-paths__heading h2 { color: var(--paper-light); font-size: clamp(2rem, 4.7vw, 3.8rem); }
+.library-top-paths__grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 1rem; }
+.top-path { display: grid; grid-template-columns: auto 1fr; gap: 1rem; min-height: 14rem; padding: clamp(1.5rem, 4vw, 2.25rem); border: 1px solid rgb(255 253 247 / 0.18); border-radius: 1.6rem; color: var(--paper-light); text-decoration: none; transition: transform 180ms ease, border-color 180ms ease; }
+.top-path:hover { transform: translateY(-3px); border-color: rgb(240 207 134 / 0.65); }
+.top-path--cinema { background: radial-gradient(circle at 86% 12%, rgb(240 207 134 / 0.26), transparent 38%), linear-gradient(135deg, #783f34, #294b36); }
+.top-path--guides { background: linear-gradient(145deg, rgb(184 148 75 / 0.2), rgb(255 253 247 / 0.06)); }
+.top-path__icon { display: grid; place-items: center; width: 4.2rem; height: 4.2rem; border: 1px solid rgb(255 253 247 / 0.25); border-radius: 50%; background: rgb(255 253 247 / 0.1); }
+.top-path__icon img { width: 2.7rem; height: 2.7rem; }
+.top-path > span:last-child { display: grid; align-content: start; gap: 0.55rem; }
+.top-path small { color: #f0cf86; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.top-path strong { font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.55rem); line-height: 1; }
+.top-path em { color: rgb(255 253 247 / 0.76); font-style: normal; line-height: 1.55; }
+
+.chapter-divider--living-codes { width: 100%; overflow: hidden; background: var(--paper); }
+.chapter-divider--living-codes img { display: block; width: 100%; height: auto; min-height: 10rem; object-fit: cover; }
+.page-library .botanical-wide-divider { display: none; }
+
+.core-guides { display: grid; gap: 0.85rem; margin-top: 1.1rem; }
+.core-guide { display: grid; gap: 0.35rem; padding: 1.05rem 1.1rem; border: 1px solid rgb(105 112 82 / 0.28); border-radius: 1rem; background: rgb(255 253 247 / 0.72); }
+.core-guide b { color: var(--forest); font-family: var(--display); font-size: 1.25rem; }
+.core-guide span { color: var(--umber); line-height: 1.5; }
+.core-guide__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.3rem; }
+.core-guide__links a { color: var(--forest); font-weight: 800; text-underline-offset: 0.22rem; }
 .page-library .hero::after {
   content: ""; position: absolute; inset: auto 0 0 0; height: 9rem;
   background: linear-gradient(transparent, var(--paper));
@@ -224,6 +294,9 @@ body.page-library {
   .quicknav a { flex: 0 0 auto; }
   .intro-grid { grid-template-columns: 1fr; }
   .path-grid { grid-template-columns: 1fr; }
+  .library-founders__grid, .library-top-paths__grid { grid-template-columns: 1fr; }
+  .library-founders__grid { text-align: center; }
+  .library-founders h2, .library-founders p { margin-inline: auto; }
 }
 @media (max-width: 44rem) {
   .cards { grid-template-columns: 1fr; }
@@ -231,6 +304,10 @@ body.page-library {
   .section-icon { width: 3.4rem; height: 3.4rem; }
   .hero-actions { display: grid; width: 100%; }
   .growth { font-size: 0.74rem; }
+  .library-art-hero__welcome { margin-top: -0.6rem; }
+  .library-art-hero > img { min-height: 19rem; object-fit: cover; object-position: 50% 52%; }
+  .top-path { grid-template-columns: 1fr; min-height: 0; }
+  .chapter-divider--living-codes img { width: 180%; max-width: none; margin-left: -40%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .resource-card:hover, .quicknav a:hover, .hero-actions .btn:hover, .path-card:hover { transform: none; }
