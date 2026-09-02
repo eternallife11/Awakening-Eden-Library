@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Temporary public Workers.dev launch. Custom domain cutover remains a separate approved step.
+  "name": "awakening-eden-library-staging",
+  "compatibility_date": "2026-08-13",
+  "workers_dev": true,
+  "preview_urls": true,
+  "main": "./workers/enquiry.mjs",
+  "vars": {
+    // Allow enquiry submissions only from the temporary public Workers.dev site.
+    "ENQUIRY_ALLOWED_ORIGIN": "https://awakening-eden-library-staging.holisticmission8.workers.dev"
+  },
+  "send_email": [
+    {
+      "name": "ENQUIRY_EMAIL",
+      // Cloudflare will refuse any recipient other than the account-verified address.
+      "destination_address": "regenerativeeden@gmail.com"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "ENQUIRY_IP_RATE_LIMIT",
+      // Account-unique namespace reserved for the staging enquiry route.
+      "namespace_id": "2026081301",
+      "simple": { "limit": 5, "period": 60 }
+    },
+    {
+      "name": "ENQUIRY_EMAIL_RATE_LIMIT",
+      // Kept distinct from the IP limiter so their counters never overlap.
+      "namespace_id": "2026081302",
+      "simple": { "limit": 2, "period": 60 }
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    // Static assets remain asset-first. Only this API endpoint reaches Worker code first.
+    "run_worker_first": ["/api/enquiry"]
+  }
+}

@@ -178,6 +178,9 @@
 .land-form input:focus, .land-form select:focus, .land-form textarea:focus { border-color: var(--terracotta); outline: 2px solid rgb(167 101 79 / .15); }
 .form-consent { display: flex !important; grid-template-columns: auto 1fr; align-items: flex-start; font-weight: 600 !important; }
 .form-consent input { width: 1.2rem; height: 1.2rem; margin-top: .18rem; accent-color: var(--forest); }
+.enquiry-turnstile { min-height: 65px; }
+.enquiry-status { margin: 0; color: var(--forest); font-size: .86rem; font-weight: 700; }
+.enquiry-status[data-status="error"] { color: #8a3327; }
 .form-submit { width: 100%; border: 0; }
 .form-privacy { margin: 0; color: var(--umber); font-size: .72rem; text-align: center; }
 .optional { color: var(--olive); font-size: .7rem; font-weight: 600; }
@@ -647,3 +650,7 @@
 @media (prefers-reduced-motion: reduce) {
   .pg-open, .pg-open:hover { transform: none; transition: none; }
 }
+
+/* Benjy's own land-and-water dividers: quieter and wider than the painted
+   botanicals, so they mark a change of ground without becoming a garland. */
+.ae-earth-divider--land { max-width: min(100%, 1180px); opacity: 0.9; }
