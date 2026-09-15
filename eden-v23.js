@@ -12,6 +12,13 @@
       try { sessionStorage.setItem(`awakening_eden_${key}`, value); } catch (_) { /* storage is optional */ }
     });
 
+    // Final visual lock: use the approved painted Tree-Heart roundel in compact brand positions.
+    // Older flat/vector marks remain only as archival fallbacks in source documents.
+    document.querySelectorAll(".brand img, .footer-brand img").forEach((mark) => {
+      mark.src = "/assets/brand/awakening-eden-mark-painted-192.webp";
+      mark.removeAttribute("srcset");
+    });
+
     // Reveal-on-load for pages using the .reveal pattern (Living Library cards)
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
 
