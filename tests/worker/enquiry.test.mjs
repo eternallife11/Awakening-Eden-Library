@@ -15,7 +15,7 @@ function validPayload(overrides = {}) {
     'property-type': 'Home garden',
     'property-size': '800 square metres',
     'start-timeframe': 'Within 1–3 months',
-    'service-interest': 'Regenerative clarity session',
+    'service-interest': 'Land Clarity & Action Session — €111',
     'vision-and-challenge': 'I would like to restore water, soil life and food abundance in our garden.',
     'photos-or-map-link': 'https://example.test/map',
     'contact-consent': 'yes',

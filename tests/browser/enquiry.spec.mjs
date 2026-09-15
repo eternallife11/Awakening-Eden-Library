@@ -17,7 +17,7 @@ async function fillRequiredFields(page) {
       location: 'Coimbra, Portugal',
       'property-type': 'Home garden',
       'start-timeframe': 'Within 1–3 months',
-      'service-interest': 'Regenerative clarity session',
+      'service-interest': 'Land Clarity & Action Session — €111',
       'vision-and-challenge': 'I would like to restore water, soil life and food abundance in our garden.'
     };
     Object.entries(values).forEach(([name, value]) => {
