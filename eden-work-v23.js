@@ -21,7 +21,7 @@
     // Keep the page focused on regenerative land work: one accessible front door,
     // one whole-property pathway, then implementation support.
     document.querySelectorAll(".brand img, .footer-brand img").forEach((mark) => {
-      mark.src = "assets/brand/awakening-eden-mark-primary.svg";
+      mark.src = "/assets/brand/awakening-eden-mark-painted-192.webp";
       mark.removeAttribute("srcset");
     });
 
