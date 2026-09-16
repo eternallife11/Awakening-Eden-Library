@@ -27,7 +27,7 @@
       if (!document.querySelector('link[href^="/eden-home-final.css"]')) {
         const stylesheet = document.createElement("link");
         stylesheet.rel = "stylesheet";
-        stylesheet.href = "/eden-home-final.css?v=2026-09-16.1";
+        stylesheet.href = "/eden-home-final.css?v=2026-09-16.2";
         document.head.appendChild(stylesheet);
       }
 
@@ -78,9 +78,10 @@
         thresholdContainer.appendChild(actions);
       }
 
-      // One opening image is enough: remove the duplicate founders portrait while
-      // keeping the warm introduction immediately below the Tree artwork.
+      // The Tree of Life threshold is the one Benjy + Sofia image on the homepage.
+      // Keep the human introduction and journey story, but remove duplicate pair portraits.
       document.querySelector(".founders-welcome__portrait")?.remove();
+      document.querySelector(".story-section .story-photos")?.remove();
 
       const foundersLead = document.querySelector(".founders-welcome__copy .lead");
       if (foundersLead) {
