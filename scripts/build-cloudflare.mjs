@@ -104,6 +104,19 @@ async function copyTree(srcDir, dstDir, relBase = '') {
   }
 }
 
+async function versionFinalHomepageRuntime() {
+  const indexPath = path.join(OUT, 'index.html');
+  const source = await readFile(indexPath, 'utf8');
+  const currentNeedle = 'eden-v23.js?v=23.4';
+  const versionedRuntime = 'eden-v23.js?v=2026-09-16.2';
+
+  if (!source.includes(currentNeedle) && !source.includes(versionedRuntime)) {
+    throw new Error('Could not safely version the final homepage runtime.');
+  }
+
+  await writeFile(indexPath, source.replace(currentNeedle, versionedRuntime));
+}
+
 async function writeCloudflareRedirects() {
   const sourceRules = await readRedirectRules();
   const rules = [];
@@ -231,6 +244,7 @@ async function prepareCloudflareEnquiryForm() {
 
 await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
+await versionFinalHomepageRuntime();
 await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
