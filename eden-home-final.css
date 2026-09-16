@@ -23,7 +23,7 @@ body.final-home-polish .hero--welcome .hero-intro {
   max-width: 42rem;
 }
 
-/* The approved Benjy + Sofia Tree of Life artwork is the only opening portrait. */
+/* The approved Benjy + Sofia Tree of Life artwork is the one founders image on the homepage. */
 body.final-home-polish .threshold-section {
   padding-top: clamp(0.4rem, 1.5vw, 1rem);
   padding-bottom: clamp(2rem, 5vw, 4rem);
@@ -51,7 +51,7 @@ body.final-home-polish .home-hero-actions a {
   align-content: center;
 }
 
-/* Remove the duplicate portrait visually and let the human welcome breathe. */
+/* Let the founders welcome breathe without repeating the portrait. */
 body.final-home-polish .founders-welcome {
   padding-top: clamp(2.4rem, 6vw, 5rem);
   padding-bottom: clamp(1.5rem, 4vw, 3rem);
@@ -89,6 +89,18 @@ body.final-home-polish .founders-welcome__divider {
   max-width: 30rem !important;
   margin: clamp(1.8rem, 4vw, 2.8rem) auto 0 !important;
   opacity: 0.95;
+}
+
+/* Keep the later founders story as text, without repeating Benjy + Sofia imagery. */
+body.final-home-polish .story-section .story-grid {
+  display: block;
+  width: min(100%, 50rem);
+  margin-inline: auto;
+}
+
+body.final-home-polish .story-section .story-copy {
+  max-width: 48rem;
+  margin-inline: auto;
 }
 
 /* Circle of Belonging: premium framed portal, with image doing the emotional work. */
