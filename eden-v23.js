@@ -1,10 +1,11 @@
 (() => {
   "use strict";
+
   const ready = (fn) => document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", fn, { once: true }) : fn();
+    ? document.addEventListener("DOMContentLoaded", fn, { once: true })
+    : fn();
 
   ready(() => {
-    // Keep campaign attribution while a visitor moves from the welcome page to the enquiry page.
     const campaignParams = new URLSearchParams(window.location.search);
     ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach((key) => {
       const value = campaignParams.get(key);
@@ -12,39 +13,146 @@
       try { sessionStorage.setItem(`awakening_eden_${key}`, value); } catch (_) { /* storage is optional */ }
     });
 
-    // Final visual lock: use the approved painted Tree-Heart roundel in compact brand positions.
-    // Older flat/vector marks remain only as archival fallbacks in source documents.
+    // Compact identity: the approved painted Tree-Heart roundel.
     document.querySelectorAll(".brand img, .footer-brand img").forEach((mark) => {
       mark.src = "/assets/brand/awakening-eden-mark-painted-192.webp";
       mark.removeAttribute("srcset");
     });
 
-    // Final community vision lock. The approved artwork keeps the intergenerational
-    // people-circle while placing the exact twelve-fold Lotus organically in the
-    // lower root/vine medallion, rather than as a large central overlay.
-    const communityVision = document.querySelector(".invitation-section--opening-vision .invitation-film--vision picture");
-    if (communityVision) {
-      const source = communityVision.querySelector("source");
-      const image = communityVision.querySelector("img");
-      if (source) {
-        source.type = "image/webp";
-        source.srcset = "/assets/hero/awakening-eden-regenerative-future-community-v1-960.webp 960w, /assets/hero/awakening-eden-regenerative-future-community-v1.webp 1448w";
-        source.sizes = "(min-width: 60rem) 48vw, 92vw";
+    const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
+
+    if (isHomepage) {
+      document.body.classList.add("final-home-polish");
+
+      if (!document.querySelector('link[href^="/eden-home-final.css"]')) {
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = "/eden-home-final.css?v=2026-09-16.1";
+        document.head.appendChild(stylesheet);
       }
-      if (image) {
-        image.src = "/assets/hero/awakening-eden-regenerative-future-community-v1.webp";
-        image.srcset = "/assets/hero/awakening-eden-regenerative-future-community-v1-960.webp 960w, /assets/hero/awakening-eden-regenerative-future-community-v1.webp 1448w";
-        image.sizes = "(min-width: 60rem) 48vw, 92vw";
-        image.width = 1448;
-        image.height = 1086;
-        image.alt = "Painted intergenerational community circle in a flourishing regenerative landscape, joined by living roots and vines with the exact twelve-fold Lotus of Life organically anchored at the bottom";
+
+      // Opening promise: concise, hopeful and exactly aligned with the final wording.
+      const heroPromise = document.querySelector(".hero--welcome .hero-promise");
+      if (heroPromise) {
+        heroPromise.textContent = "A Living Library for Positive Change, Regeneration, Remembering & Thriving as One.";
       }
+
+      // Keep the opening calm. The full soundtrack remains further down the page.
+      document.querySelector(".hero--welcome .hero-soundtrack")?.remove();
+
+      // Lock the approved Benjy + Sofia Tree of Life image directly beneath the welcome.
+      const thresholdPicture = document.querySelector(".threshold-section .hero-portal--welcome picture");
+      if (thresholdPicture) {
+        const source = thresholdPicture.querySelector("source");
+        if (source) source.remove();
+        const image = thresholdPicture.querySelector("img");
+        if (image) {
+          image.src = "/assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp";
+          image.srcset = "/assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-768.webp 768w, /assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp 1536w";
+          image.sizes = "(min-width: 60rem) 46rem, 92vw";
+          image.width = 1536;
+          image.height = 1024;
+          image.alt = "Benjy and Sofia seated beneath the Awakening Eden Tree of Life, surrounded by living water, roots, plants and hummingbirds";
+        }
+      }
+
+      // Restore the three primary actions immediately after the Tree image.
+      const thresholdContainer = document.querySelector(".threshold-section .container");
+      if (thresholdContainer && !thresholdContainer.querySelector(".home-hero-actions")) {
+        const actions = document.createElement("nav");
+        actions.className = "hero-pathways home-hero-actions";
+        actions.setAttribute("aria-label", "Begin exploring Awakening Eden");
+        actions.innerHTML = `
+          <a class="hero-pathways__primary" href="/start-here">
+            <strong>Begin Here</strong>
+            <span>Awakening Regeneration</span>
+          </a>
+          <a href="/living-library">
+            <strong>Explore the Living Library</strong>
+            <span>Guides · films · books · teachers</span>
+          </a>
+          <a href="/work-with-benjy">
+            <strong>Work with Benjy</strong>
+            <span>Regenerate your land</span>
+          </a>`;
+        thresholdContainer.appendChild(actions);
+      }
+
+      // One opening image is enough: remove the duplicate founders portrait while
+      // keeping the warm introduction immediately below the Tree artwork.
+      document.querySelector(".founders-welcome__portrait")?.remove();
+
+      const foundersLead = document.querySelector(".founders-welcome__copy .lead");
+      if (foundersLead) {
+        foundersLead.textContent = "Earth lovers, regenerative educators and lifelong students of life. Awakening Eden is a living home for practical knowledge, regenerative land design, inner renewal and community, created to help inspiration become grounded action.";
+      }
+
+      const foundersDivider = document.querySelector(".founders-welcome__divider");
+      if (foundersDivider) {
+        foundersDivider.src = "/assets/dividers/02-benji-celtic-living-land-hummingbird-720.webp";
+        foundersDivider.width = 720;
+        foundersDivider.height = 225;
+      }
+
+      // Circle of Belonging: use the approved garden-of-harmony composition rather
+      // than the later central-disc variant. This is the rooted, organic portal.
+      const circleFigure = document.querySelector(".invitation-section--opening-vision .invitation-film--vision");
+      if (circleFigure) {
+        const picture = circleFigure.querySelector("picture");
+        if (picture) {
+          const source = picture.querySelector("source");
+          if (source) {
+            source.type = "image/webp";
+            source.srcset = "/assets/hero/garden-of-harmony-community-lotus-vnext-960.webp 960w, /assets/hero/garden-of-harmony-community-lotus-vnext.webp 1672w";
+            source.sizes = "(min-width: 60rem) 48vw, 92vw";
+          }
+          const image = picture.querySelector("img");
+          if (image) {
+            image.src = "/assets/hero/garden-of-harmony-community-lotus-vnext.webp";
+            image.srcset = "/assets/hero/garden-of-harmony-community-lotus-vnext-960.webp 960w, /assets/hero/garden-of-harmony-community-lotus-vnext.webp 1672w";
+            image.sizes = "(min-width: 60rem) 48vw, 92vw";
+            image.width = 1672;
+            image.height = 941;
+            image.alt = "An intergenerational community gathered in a flourishing living landscape, with roots and mycelium-like connections meeting the exact twelve-fold Lotus of Life in the ground";
+          }
+        }
+        const captionTitle = circleFigure.querySelector("figcaption strong");
+        const captionText = circleFigure.querySelector("figcaption span");
+        if (captionTitle) captionTitle.textContent = "A Circle of Belonging";
+        if (captionText) {
+          captionText.textContent = "People, roots, mycelium and living Earth woven into one field of relationship, with the exact Lotus of Life resting organically in the ground.";
+        }
+      }
+
+      // Bring back the richer hand-drawn library-card language. The routes and
+      // accessible text stay current; these artworks are decorative visual anchors.
+      const libraryCards = Array.from(document.querySelectorAll(".library-grid .library-room"));
+      const illustratedCards = [
+        { index: 0, src: "/library-guide-v19.webp", position: "center 42%" },
+        { index: 1, src: "/library-films-v19.webp", position: "center" },
+        { index: 7, src: "/library-books-v19.webp", position: "center" }
+      ];
+
+      illustratedCards.forEach(({ index, src, position }) => {
+        const card = libraryCards[index];
+        if (!card || card.querySelector(".library-room__art")) return;
+        card.classList.add("library-room--illustrated");
+        const art = document.createElement("img");
+        art.className = "library-room__art";
+        art.src = src;
+        art.alt = "";
+        art.setAttribute("aria-hidden", "true");
+        art.loading = "lazy";
+        art.decoding = "async";
+        art.style.objectPosition = position;
+        card.prepend(art);
+      });
     }
 
-    // Reveal-on-load for pages using the .reveal pattern (Living Library cards)
+    // Reveal-on-load for pages using the .reveal pattern.
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
 
-    // Accessible mobile navigation
+    // Accessible mobile navigation.
     const button = document.querySelector("[data-menu-button]");
     const nav = document.querySelector("[data-navigation]");
     if (button && nav) {
@@ -55,22 +163,25 @@
       setOpen(false);
       button.addEventListener("click", () => setOpen(nav.dataset.open !== "true"));
       nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && nav.dataset.open === "true") { setOpen(false); button.focus(); }
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && nav.dataset.open === "true") {
+          setOpen(false);
+          button.focus();
+        }
       });
-      document.addEventListener("click", (e) => {
-        if (nav.dataset.open === "true" && !nav.contains(e.target) && !button.contains(e.target)) setOpen(false);
+      document.addEventListener("click", (event) => {
+        if (nav.dataset.open === "true" && !nav.contains(event.target) && !button.contains(event.target)) {
+          setOpen(false);
+        }
       });
     }
 
-    // Harden external links
     document.querySelectorAll('a[target="_blank"]').forEach((link) => {
       link.rel = "noopener noreferrer";
     });
 
-    // Clean up service workers registered by older site versions
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.getRegistrations().then((regs) => regs.forEach((r) => r.unregister()));
+      navigator.serviceWorker.getRegistrations().then((registrations) => registrations.forEach((registration) => registration.unregister()));
     }
   });
 })();
