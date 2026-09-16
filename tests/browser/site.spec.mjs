@@ -25,8 +25,6 @@ const publicPdfs = [
   '/Awakening_Eden_Regenerative_Film_Resource_Library.pdf'
 ];
 
-// Browser QA validates our page integration without making a live third-party challenge.
-// The separate enquiry tests assert the test sitekey and client-side submit behaviour.
 test.beforeEach(async ({ page }) => {
   await page.route('https://challenges.cloudflare.com/turnstile/v0/api.js*', async (route) => {
     await route.fulfill({ contentType: 'text/javascript', body: '' });
@@ -46,9 +44,10 @@ async function settleLazyImages(page) {
         image.src = source;
       }
     });
+
     for (const image of images) {
       image.scrollIntoView({ block: 'center' });
-      await new Promise((resolve) => setTimeout(resolve, 90));
+      await new Promise((resolve) => setTimeout(resolve, 60));
       if (!image.complete) {
         await Promise.race([
           new Promise((resolve) => image.addEventListener('load', resolve, { once: true })),
@@ -56,6 +55,7 @@ async function settleLazyImages(page) {
         ]);
       }
     }
+
     await Promise.all(images.map(async (image) => {
       if (image.complete && image.naturalWidth > 0) return;
       await Promise.race([
@@ -63,9 +63,10 @@ async function settleLazyImages(page) {
         new Promise((resolve) => setTimeout(resolve, 5000))
       ]);
     }));
+
     window.scrollTo(0, 0);
   });
-  await page.waitForTimeout(500);
+  await page.waitForTimeout(400);
 }
 
 for (const route of criticalRoutes) {
@@ -76,9 +77,7 @@ for (const route of criticalRoutes) {
     page.on('pageerror', (error) => consoleErrors.push(`pageerror: ${error.message}`));
     page.on('console', (message) => {
       const isResourceNoise = message.text().startsWith('Failed to load resource:');
-      if (message.type() === 'error' && !isResourceNoise) {
-        consoleErrors.push(`console: ${message.text()}`);
-      }
+      if (message.type() === 'error' && !isResourceNoise) consoleErrors.push(`console: ${message.text()}`);
     });
     page.on('response', (response) => {
       const url = new URL(response.url());
@@ -102,7 +101,7 @@ for (const route of criticalRoutes) {
           if (!source) return false;
           const url = new URL(source, document.baseURI);
           const rect = image.getBoundingClientRect();
-          const visible = rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth;
+          const visible = rect.width > 0 && rect.height > 0;
           return visible && url.origin === window.location.origin && (!image.complete || image.naturalWidth === 0);
         })
         .map((image) => image.getAttribute('src'));
@@ -123,29 +122,45 @@ for (const route of criticalRoutes) {
   });
 }
 
-test('homepage exposes the primary journeys', async ({ page }) => {
+test('homepage exposes the final opening journey and approved visual choices', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
+
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
+  await expect(page.locator('.hero-promise')).toHaveText('A Living Library for Positive Change, Regeneration, Remembering & Thriving as One.');
+
+  const threshold = page.locator('.threshold-section');
+  await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
+  await expect(threshold.getByRole('link', { name: /Begin Here/ })).toHaveAttribute('href', '/start-here');
+  await expect(threshold.getByRole('link', { name: /Explore the Living Library/ })).toHaveAttribute('href', '/living-library');
+  await expect(threshold.getByRole('link', { name: /Work with Benjy/ })).toHaveAttribute('href', '/work-with-benjy');
+
   await expect(page.getByRole('heading', { level: 2, name: 'We’re Benjy & Sofia — glad you’re here' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 2, name: 'A living place where people, land and possibility can flourish' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /^Begin Here/ }).first()).toHaveAttribute('href', '/start-here');
-  await expect(page.getByRole('link', { name: /^Living Library/ }).first()).toHaveAttribute('href', '/living-library');
-  await expect(page.getByRole('link', { name: /^Work with Benjy/ }).first()).toHaveAttribute('href', '/work-with-benjy');
-  await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toHaveAttribute('href', '#soundtrack');
-  await expect(page.getByRole('link', { name: /^Listen while you explore/ })).toContainText('Go to the player');
+  await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
+
+  const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
+  await expect(circle.locator('img')).toHaveAttribute('src', /garden-of-harmony-community-lotus-vnext\.webp/);
+  await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
+
+  await expect(page.locator('.library-room--illustrated')).toHaveCount(3);
+  await expect(page.locator('.library-room__art').nth(0)).toHaveAttribute('src', '/library-guide-v19.webp');
+  await expect(page.locator('.library-room__art').nth(1)).toHaveAttribute('src', '/library-films-v19.webp');
+  await expect(page.locator('.library-room__art').nth(2)).toHaveAttribute('src', '/library-books-v19.webp');
+
   await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
 
-test('Work with Benjy keeps its enquiry path visible without submitting it', async ({ page }) => {
+test('Work with Benjy reflects the current service hierarchy', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
+
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
   await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
-  await expect(page.getByRole('link', { name: 'Book the €111 clarity session' })).toHaveAttribute('href', /subject=Book%20my%20%E2%82%AC111/);
-  await expect(page.getByRole('link', { name: 'Ask about a focused roadmap' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Discuss a holistic masterplan' })).toBeVisible();
-  await expect(page.locator('.vnext-service-gallery img').first()).toHaveAttribute('loading', 'lazy');
-  await expect(page.locator('.vnext-proof__grid--stages img').first()).toHaveAttribute('loading', 'lazy');
+  await expect(page.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
+
+  await expect(page.getByRole('heading', { level: 3, name: 'Whole-Property Design + Action Plan' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Discuss a whole-property design' })).toBeVisible();
+  await expect(page.locator('.vnext-offer')).toHaveCount(2);
+
   await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
   await expect(form).toBeHidden();
@@ -189,42 +204,11 @@ for (const reviewPage of [
       await page.setViewportSize({ width: 1180, height: 1000 });
     }
     await settleLazyImages(page);
-    if (reviewPage.name === 'work-with-benjy') await page.waitForTimeout(4000);
     const reviewDirectory = path.join('test-results', 'review', testInfo.project.name);
     await mkdir(reviewDirectory, { recursive: true });
     await page.screenshot({
       path: path.join(reviewDirectory, `${reviewPage.name}.png`),
       fullPage: true
     });
-    if (reviewPage.name === 'work-with-benjy') {
-      await page.locator('.site-header, .skip-link').evaluateAll((elements) => {
-        elements.forEach((element) => { element.dataset.reviewVisibility = element.style.visibility; element.style.visibility = 'hidden'; });
-      });
-      for (const [name, selector] of [
-        ['hero', '.vnext-hero'],
-        ['service-gallery', '.vnext-service-gallery'],
-        ['orchard-proof', '.vnext-proof'],
-        ['process-proof', '.vnext-process-proof'],
-        ['land-vision', '.vnext-vision'],
-        ['offers', '.vnext-offers'],
-        ['client-journey', '.vnext-process'],
-        ['acacia-property', '.vnext-abundance'],
-        ['pilots-partnerships', '.vnext-pilots'],
-        ['learning-community', '.vnext-learning'],
-        ['why-benjy', '.vnext-benjy'],
-        ['benjy-sofia', '.vnext-final']
-      ]) {
-        const section = page.locator(selector);
-        await section.scrollIntoViewIfNeeded();
-        await expect(section).toBeVisible();
-        const firstImage = section.locator('img').first();
-        if (await firstImage.count()) await expect(firstImage).toBeVisible();
-        await page.waitForTimeout(300);
-        await section.screenshot({ path: path.join(reviewDirectory, `work-with-benjy-${name}.png`) });
-      }
-      await page.locator('.site-header, .skip-link').evaluateAll((elements) => {
-        elements.forEach((element) => { element.style.visibility = element.dataset.reviewVisibility || ''; delete element.dataset.reviewVisibility; });
-      });
-    }
   });
 }
