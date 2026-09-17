@@ -15,6 +15,16 @@
 /orchard-before-dry-monoculture.webp  /404.html  404!
 /orchard-after-abundant-green.webp    /404.html  404!
 
+# Final visual migration aliases. Older public pages still point at a few
+# retired or superseded artwork filenames. Keep those source masters private,
+# but route live requests onto the approved painted/botanical family so the
+# Cloudflare artifact has no broken images while the canonical HTML is cleaned.
+/assets/dividers/flowing-suns-living-codes-divider-1600.webp /assets/dividers/botanical-divider-04.webp 302
+/assets/film-previews/inner-worlds-outer-worlds.webp /assets/portals/links-moonlit-lotus-portal.svg 302
+/assets/portals/awakening-eden-heartwood-living-codes-v35-480.webp /assets/portals/solar-tree-heart-lotus-portal-480.webp 302
+/assets/portals/awakening-eden-heartwood-living-codes-v35-800.webp /assets/portals/solar-tree-heart-lotus-portal-800.webp 302
+/assets/portals/awakening-eden-heartwood-living-codes-v35-1120.webp /assets/portals/solar-tree-heart-lotus-portal-1120.webp 302
+
 /living-library  /awakening_eden_regenerative_film_resource_library_updated.html  200
 /start-here      /Awakening-Regeneration.html                                      200
 /thriving-in-these-times /Thriving-in-These-Times.html                             200
