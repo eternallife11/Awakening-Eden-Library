@@ -1,0 +1,37 @@
+name: Temporary Cloudflare live verification
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-cloudflare-live.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Confirm the merged cache version is live
+        env:
+          SITE: https://awakening-eden-library-staging.holisticmission8.workers.dev
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            if curl -fsS --max-time 30 "$SITE/" -o index.html \
+              && curl -fsS --max-time 30 "$SITE/eden-v23.js?v=2026-09-17.1" -o eden-v23.js \
+              && curl -fsS --max-time 30 "$SITE/eden-home-final.css?v=2026-09-17.1" -o eden-home-final.css \
+              && grep -Fq 'eden-v23.js?v=2026-09-17.1' index.html \
+              && grep -Fq 'stylesheet.href = "/eden-home-final.css?v=2026-09-17.1";' eden-v23.js \
+              && grep -Fq 'body.final-home-polish .library-room--illustrated > span:last-child strong' eden-home-final.css \
+              && grep -Fq 'color: var(--home-forest-deep);' eden-home-final.css; then
+              echo "Cloudflare is serving the merged 2026-09-17.1 release."
+              exit 0
+            fi
+            echo "Release not visible yet (attempt $attempt/30)."
+            sleep 10
+          done
+          echo "Cloudflare did not expose the merged release within five minutes." >&2
+          exit 1
