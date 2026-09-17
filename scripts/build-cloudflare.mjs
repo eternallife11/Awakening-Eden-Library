@@ -108,7 +108,7 @@ async function versionFinalHomepageRuntime() {
   const indexPath = path.join(OUT, 'index.html');
   const source = await readFile(indexPath, 'utf8');
   const currentNeedle = 'eden-v23.js?v=23.4';
-  const versionedRuntime = 'eden-v23.js?v=2026-09-16.2';
+  const versionedRuntime = 'eden-v23.js?v=2026-09-17.1';
 
   if (!source.includes(currentNeedle) && !source.includes(versionedRuntime)) {
     throw new Error('Could not safely version the final homepage runtime.');

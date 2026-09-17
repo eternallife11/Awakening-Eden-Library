@@ -205,6 +205,15 @@ body.final-home-polish .library-room--illustrated > .room-icon {
 body.final-home-polish .library-room--illustrated > span:last-child {
   margin-top: 0.6rem;
   margin-bottom: 1rem;
+  color: var(--home-forest-deep);
+}
+
+body.final-home-polish .library-room--illustrated > span:last-child strong {
+  color: var(--home-forest-deep);
+}
+
+body.final-home-polish .library-room--illustrated > span:last-child small {
+  color: var(--olive);
 }
 
 body.final-home-polish .library-room .room-icon {

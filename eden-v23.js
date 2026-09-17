@@ -27,7 +27,7 @@
       if (!document.querySelector('link[href^="/eden-home-final.css"]')) {
         const stylesheet = document.createElement("link");
         stylesheet.rel = "stylesheet";
-        stylesheet.href = "/eden-home-final.css?v=2026-09-16.2";
+        stylesheet.href = "/eden-home-final.css?v=2026-09-17.1";
         document.head.appendChild(stylesheet);
       }
 
