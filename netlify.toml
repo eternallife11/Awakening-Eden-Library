@@ -1,2 +1,4 @@
 [build]
   publish = "."
+  # Cloudflare Workers is canonical. Preserve the last Netlify deploy as a rollback snapshot.
+  ignore = "exit 0"
