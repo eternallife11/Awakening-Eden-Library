@@ -425,3 +425,38 @@
     width: 100%;
   }
 }
+
+
+/* Work with Benjy final 2026-09-21: recent concepts + partner pathway */
+.vnext-recent-work { background: linear-gradient(180deg, #f7f0df, var(--paper-light)); }
+.vnext-recent-work .vnext-section-heading { max-width: 68rem; }
+.vnext-recent-work .vnext-section-heading h2 { max-width: 19ch; }
+.vnext-recent-work__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.vnext-case-card { padding: clamp(1.4rem, 3vw, 2.2rem); border: 1px solid rgb(105 112 82 / .28); border-radius: 1.35rem; background: linear-gradient(150deg, rgb(255 253 247 / .96), rgb(240 234 216 / .8)); box-shadow: 0 12px 28px rgb(35 49 38 / .07); }
+.vnext-case-card h3 { margin: .5rem 0 .8rem; color: var(--forest); font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.vnext-case-card .lead { color: var(--umber); font-family: var(--display); font-size: 1.15rem; line-height: 1.45; }
+.vnext-case-card__note { margin-top: 1.2rem; padding: 1rem 1.1rem; border-left: 3px solid var(--honey); color: var(--umber); background: rgb(229 196 125 / .12); }
+.vnext-recent-work__cta { display: flex; gap: 1rem 2rem; align-items: center; justify-content: space-between; margin-top: 1.2rem; padding: 1.25rem 1.4rem; border-radius: 1rem; color: var(--paper-light); background: var(--forest); }
+.vnext-recent-work__cta p { max-width: 48rem; margin: 0; color: rgb(255 253 247 / .92); }
+.vnext-recent-work__cta .button { flex: 0 0 auto; }
+
+.vnext-collaboration { background: linear-gradient(145deg, var(--vnext-water), var(--paper-light)); }
+.vnext-collaboration__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(20rem, .95fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+.vnext-collaboration__grid h2 { max-width: 18ch; }
+.vnext-collaboration__grid .lead { color: var(--forest); font-family: var(--display); font-size: 1.25rem; }
+.vnext-collaboration__offer { padding: clamp(1.35rem, 3vw, 2rem); border: 1px solid rgb(105 112 82 / .3); border-radius: 1.35rem; background: rgb(255 253 247 / .9); box-shadow: var(--shadow); }
+.vnext-collaboration__offer .handwritten { color: var(--terracotta); font-size: 1.55rem; }
+.vnext-collaboration__offer ol { display: grid; gap: .75rem; margin: 1rem 0 1.35rem; padding: 0; list-style: none; }
+.vnext-collaboration__offer li { display: grid; gap: .15rem; padding: .9rem 1rem; border-radius: .85rem; background: rgb(221 228 208 / .48); }
+.vnext-collaboration__offer li strong { color: var(--forest); }
+.vnext-collaboration__offer li span { color: var(--umber); font-size: .9rem; }
+.vnext-offer__action { flex-wrap: wrap; }
+.vnext-offer__action .button { margin-right: .45rem; margin-bottom: .45rem; }
+
+@media (max-width: 760px) {
+  .vnext-recent-work__grid,
+  .vnext-collaboration__grid { grid-template-columns: 1fr; }
+  .vnext-recent-work__cta { align-items: stretch; flex-direction: column; }
+  .vnext-recent-work__cta .button { width: 100%; text-align: center; }
+  .vnext-offer__action .button { width: 100%; margin-right: 0; text-align: center; }
+}
