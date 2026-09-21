@@ -179,7 +179,7 @@ test('Work with Benjy reflects the current service hierarchy and recent proof', 
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
   await page.goto('/work-with-benjy#implementation', { waitUntil: 'domcontentloaded' });
   const implementation = page.locator('#implementation');
-  await expect(implementation.getByRole('heading', { name: 'Bringing it to life' })).toBeVisible();
+  await expect(implementation.getByRole('heading', { name: 'Implementation + regenerative project management' })).toBeVisible();
   await expect(implementation.getByText('Monthly guidance as questions come up', { exact: true })).toBeVisible();
 });
 
