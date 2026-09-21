@@ -149,17 +149,23 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
 
-test('Work with Benjy reflects the current service hierarchy', async ({ page }) => {
+test('Work with Benjy reflects the current service hierarchy and recent proof', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Before the Rain Land Clarity' })).toBeVisible();
   await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
-  await expect(page.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Book €111 Land Clarity' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Whole-Property Design + Action Plan' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Regenerative Land Diagnostic' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Whole-Property Concept Design' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Discuss a whole-property design' })).toBeVisible();
-  await expect(page.locator('.vnext-offer')).toHaveCount(2);
+  await expect(page.locator('.vnext-offer')).toHaveCount(3);
+
+  await expect(page.getByRole('heading', { level: 2, name: 'From the land as it is to a regenerative direction you can act on' })).toBeVisible();
+  await expect(page.locator('.vnext-case-card')).toHaveCount(2);
+  await expect(page.locator('.vnext-case-card img').nth(0)).toHaveAttribute('src', /^data:image\/webp;base64,/);
+  await expect(page.locator('.vnext-case-card img').nth(1)).toHaveAttribute('src', /^data:image\/webp;base64,/);
 
   await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
