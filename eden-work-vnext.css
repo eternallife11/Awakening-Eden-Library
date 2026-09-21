@@ -291,3 +291,137 @@
   .vnext-pathways__grid a { transition: none; }
   .vnext-pathways__grid a:hover { transform: none; }
 }
+
+
+/* Work with Benjy final case-study + partnership polish, 2026-09-21 */
+.vnext-recent-design {
+  background:
+    radial-gradient(circle at 10% 12%, rgb(221 228 208 / .62), transparent 24rem),
+    linear-gradient(180deg, #fffdf7, #f3ead8);
+}
+.vnext-recent-design .vnext-section-heading { max-width: 66rem; }
+.vnext-recent-design .vnext-section-heading h2 { max-width: 17ch; }
+
+.vnext-case-study {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(1.4rem, 4vw, 3.5rem);
+  align-items: center;
+  margin-top: clamp(1.6rem, 4vw, 3rem);
+  padding: clamp(1.1rem, 2.6vw, 2rem);
+  border: 1px solid rgb(105 112 82 / .24);
+  border-radius: 1.45rem;
+  background: rgb(255 253 247 / .92);
+  box-shadow: 0 16px 40px rgb(35 49 38 / .08);
+}
+.vnext-case-study--reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  background: linear-gradient(145deg, rgb(219 236 235 / .34), rgb(255 253 247 / .96));
+}
+.vnext-case-study__copy h3 {
+  margin: .35rem 0 .8rem;
+  color: var(--forest);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1;
+}
+.vnext-case-study__copy > p:not(.vnext-card-kicker):not(.vnext-caution) {
+  color: var(--umber);
+}
+.vnext-case-study__list {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  color: var(--umber);
+}
+.vnext-case-study__list li { margin: .55rem 0; }
+.vnext-case-study__pair {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  gap: .85rem;
+  align-items: start;
+}
+.vnext-case-study figure {
+  position: relative;
+  margin: 0;
+  padding: .45rem;
+  border: 1px solid rgb(105 112 82 / .2);
+  border-radius: 1rem;
+  background: var(--paper-light);
+  box-shadow: 0 10px 24px rgb(35 49 38 / .08);
+}
+.vnext-case-study figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .72rem;
+}
+.vnext-case-study figure figcaption {
+  padding: .75rem .45rem .25rem;
+  color: var(--umber);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+.vnext-case-study__label {
+  position: absolute;
+  z-index: 1;
+  top: .8rem;
+  left: .8rem;
+  padding: .32rem .55rem;
+  border-radius: 999px;
+  color: var(--forest);
+  background: rgb(255 253 247 / .94);
+  box-shadow: 0 4px 12px rgb(35 49 38 / .1);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.vnext-case-study__wide img { width: 100%; }
+
+.vnext-collab-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.2rem, 3vw, 2.4rem);
+  align-items: center;
+  max-width: 72rem;
+  margin: 1.4rem auto 0;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  border: 1px solid rgb(184 148 75 / .45);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, rgb(229 196 125 / .15), rgb(255 253 247 / .95));
+  box-shadow: 0 12px 28px rgb(35 49 38 / .06);
+}
+.vnext-collab-strip .handwritten {
+  margin: 0 0 .35rem;
+  color: var(--terracotta);
+}
+.vnext-collab-strip h3 {
+  margin: 0 0 .55rem;
+  color: var(--forest);
+  font-size: clamp(1.65rem, 2.8vw, 2.45rem);
+  line-height: 1.08;
+}
+.vnext-collab-strip p:last-child {
+  margin-bottom: 0;
+  color: var(--umber);
+}
+
+.vnext-offer__action .button--whatsapp,
+.vnext-collab-strip .button--whatsapp {
+  min-width: min(100%, 18rem);
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .vnext-case-study,
+  .vnext-case-study--reverse,
+  .vnext-collab-strip {
+    grid-template-columns: 1fr;
+  }
+  .vnext-case-study__pair {
+    grid-template-columns: 1fr;
+  }
+  .vnext-case-study__copy .button,
+  .vnext-collab-strip .button {
+    width: 100%;
+  }
+}
