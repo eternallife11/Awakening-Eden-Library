@@ -153,13 +153,25 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
-  await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
-  await expect(page.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
+  await expect(page.getByText('From overwhelmed landowner to regenerative clarity.', { exact: true })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Whole-Property Design + Action Plan' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Discuss a whole-property design' })).toBeVisible();
-  await expect(page.locator('.vnext-offer')).toHaveCount(2);
+  await expect(page.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
+  await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
+  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Book the €111 Clarity Call' })).toBeVisible();
+
+  await expect(page.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Focused Roadmap' })).toBeVisible();
+
+  await expect(page.getByRole('heading', { level: 3, name: 'Holistic Regenerative Concept Masterplan' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Whole-Property Masterplan' })).toBeVisible();
+  await expect(page.locator('.vnext-offer')).toHaveCount(3);
+
+  const recentDesign = page.locator('#recent-design');
+  await expect(recentDesign.getByRole('heading', { name: 'Contour Food Forest Ideas' })).toBeVisible();
+  await expect(recentDesign.getByRole('heading', { name: /Syntropifying: Abundant Food Forest Berrylicious Terrace Gardens/ })).toBeVisible();
+  await expect(recentDesign.locator('img[src*="contour-before-v2.webp"]')).toHaveCount(1);
+  await expect(recentDesign.locator('img[src*="contour-food-forest-concept-v2.webp"]')).toHaveCount(1);
+  await expect(recentDesign.locator('img[src*="luisa-sim-berrylicious-terrace-concept-v2.webp"]')).toHaveCount(1);
 
   await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
   const form = page.locator('form[data-land-enquiry-form]');
@@ -168,6 +180,7 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
 });
 
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
