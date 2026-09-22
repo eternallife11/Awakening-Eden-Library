@@ -82,8 +82,34 @@ jobs:
             const page = await browser.newPage({ viewport: { width: view.width, height: view.height } });
             await page.route('https://challenges.cloudflare.com/**', route => route.abort());
             const response = await page.goto(site, { waitUntil: 'domcontentloaded', timeout: 60000 });
-            await page.waitForTimeout(1800);
+            await page.waitForTimeout(1200);
             if (!response || response.status() !== 200) throw new Error(`${view.name}: unexpected status ${response?.status()}`);
+
+            await page.evaluate(async () => {
+              const images = Array.from(document.images).filter((image) => !image.closest('[hidden]'));
+              for (const image of images) {
+                image.loading = 'eager';
+                image.removeAttribute('loading');
+                image.scrollIntoView({ block: 'center' });
+                if (!image.complete) {
+                  await Promise.race([
+                    new Promise((resolve) => image.addEventListener('load', resolve, { once: true })),
+                    new Promise((resolve) => setTimeout(resolve, 2500))
+                  ]);
+                }
+              }
+              window.scrollTo(0, 0);
+            });
+            await page.waitForTimeout(800);
+
+            const brokenImages = await page.evaluate(() => Array.from(document.images)
+              .filter((image) => {
+                const rect = image.getBoundingClientRect();
+                const visible = rect.width > 0 && rect.height > 0;
+                return visible && (!image.complete || image.naturalWidth === 0);
+              })
+              .map((image) => image.getAttribute('src')));
+            if (brokenImages.length) throw new Error(`${view.name}: broken images ${JSON.stringify(brokenImages)}`);
 
             for (const expected of [
               'Land Clarity & Action Session',
