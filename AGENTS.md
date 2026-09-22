@@ -103,3 +103,18 @@ Before editing:
 9. Ask for human approval before production-impacting actions.
 
 Prefer subtraction and coherence over adding another decorative layer. The site should feel calm enough to trust, alive enough to explore, practical enough to use, and beautiful enough to slow people down.
+
+## Session handoff protocol
+
+At the start of substantial work, read `docs/awakening-eden/handoffs/CURRENT.md` after this file and confirm that its recorded branch / PR state still matches GitHub.
+
+At the end of every substantial work session:
+
+1. Update `docs/awakening-eden/handoffs/CURRENT.md` with the exact stopping point.
+2. Leave a concise handoff comment on the active or just-merged PR.
+3. Record the PR number, commit SHA, tests / screenshots reviewed, live deployment state, unresolved questions and the next 3–5 actions.
+4. If a live deployment is expected, verify the public Cloudflare page after merge rather than assuming the merge equals publication.
+5. If a temporary verification workflow was added only for release checking, remove it before merging documentation-only handoff changes.
+
+This protocol exists so a fresh chat or a different agent can resume safely from GitHub without depending on conversational memory.
+
