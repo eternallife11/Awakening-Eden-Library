@@ -68,7 +68,35 @@ GitHub `main` is the canonical source.
 
 Cloudflare Workers Static Assets is the active staging / publishing path. Netlify remains frozen as a rollback snapshot and should not be revived as the working source.
 
-A fresh live Cloudflare verification is being run from this handoff branch. Update this section with the result before merging this documentation handoff.
+### Live verification completed — 22 September 2026
+
+The merged PR #19 release is live on:
+
+`https://awakening-eden-library-staging.holisticmission8.workers.dev/work-with-benjy`
+
+GitHub Actions verified the actual live Cloudflare response, not only the repository build. The live page contains:
+
+- `eden-work-vnext.css?v=2026-09-21.1`
+- `eden-work-v23.js?v=2026-09-21.1`
+- Land Clarity & Action Session
+- Focused Regenerative Roadmap
+- Holistic Regenerative Concept Masterplan
+- Contour Food Forest Ideas
+- Syntropifying: Abundant Food Forest Berrylicious Terrace Gardens
+- the primary WhatsApp Benjy clarity CTA
+
+A second live-browser check used Chromium against the workers.dev page at desktop and mobile widths. It passed:
+
+- HTTP 200
+- all three current package headings visible
+- both recent design studies visible
+- multiple WhatsApp pathways present
+- no horizontal overflow
+- live local images loaded successfully
+- desktop and mobile full-page screenshots captured
+- dedicated screenshots reviewed for recent designs, packages and buyer / partner pathway
+
+Visual review result: the page is coherent and readable on both desktop and mobile. The recent concept graphics render on mobile when reviewed in their actual section, and the package / partner hierarchy remains clear.
 
 ## What should happen next
 
