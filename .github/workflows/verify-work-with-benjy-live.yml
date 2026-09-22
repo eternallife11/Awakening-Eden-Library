@@ -139,6 +139,20 @@ jobs:
               path: `test-results/live-review/work-with-benjy-${view.name}.png`,
               fullPage: true
             });
+
+            for (const [label, selector] of [
+              ['recent-design', '#recent-design'],
+              ['packages', '#services'],
+              ['buyers-partners', '#buyers']
+            ]) {
+              const section = page.locator(selector);
+              await section.scrollIntoViewIfNeeded();
+              await page.waitForTimeout(350);
+              await section.screenshot({
+                path: `test-results/live-review/work-with-benjy-${label}-${view.name}.png`
+              });
+            }
+
             await page.close();
           }
 
