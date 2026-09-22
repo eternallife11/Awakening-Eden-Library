@@ -39,3 +39,89 @@ jobs:
           done
           echo "Cloudflare did not expose the merged Work with Benjy release within five minutes." >&2
           exit 1
+
+
+  visual-live-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: pnpm
+
+      - name: Install pinned QA dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Check live page and capture desktop + mobile
+        shell: bash
+        run: |
+          mkdir -p test-results/live-review
+          node --input-type=module <<'NODE'
+          import { chromium } from '@playwright/test';
+
+          const site = 'https://awakening-eden-library-staging.holisticmission8.workers.dev/work-with-benjy';
+          const browser = await chromium.launch();
+
+          for (const view of [
+            { name: 'desktop', width: 1440, height: 1000 },
+            { name: 'mobile', width: 390, height: 844 }
+          ]) {
+            const page = await browser.newPage({ viewport: { width: view.width, height: view.height } });
+            const response = await page.goto(site, { waitUntil: 'networkidle', timeout: 60000 });
+            if (!response || response.status() !== 200) throw new Error(`${view.name}: unexpected status ${response?.status()}`);
+
+            for (const expected of [
+              'Land Clarity & Action Session',
+              'Focused Regenerative Roadmap',
+              'Holistic Regenerative Concept Masterplan',
+              'Contour Food Forest Ideas',
+              'Syntropifying: Abundant Food Forest Berrylicious Terrace Gardens'
+            ]) {
+              if (!(await page.getByText(expected, { exact: false }).first().isVisible())) {
+                throw new Error(`${view.name}: missing visible text: ${expected}`);
+              }
+            }
+
+            const whatsappCount = await page.locator('a[href^="https://wa.me/351920067347"]').count();
+            if (whatsappCount < 5) throw new Error(`${view.name}: expected multiple WhatsApp pathways, found ${whatsappCount}`);
+
+            const widths = await page.evaluate(() => ({
+              viewport: window.innerWidth,
+              document: document.documentElement.scrollWidth,
+              body: document.body.scrollWidth
+            }));
+            if (widths.document > widths.viewport + 1 || widths.body > widths.viewport + 1) {
+              throw new Error(`${view.name}: horizontal overflow ${JSON.stringify(widths)}`);
+            }
+
+            await page.screenshot({
+              path: `test-results/live-review/work-with-benjy-${view.name}.png`,
+              fullPage: true
+            });
+            await page.close();
+          }
+
+          await browser.close();
+          NODE
+
+      - name: Upload live review screenshots
+        uses: actions/upload-artifact@v6
+        with:
+          name: work-with-benjy-live-review
+          path: test-results/live-review/
+          if-no-files-found: error
+          retention-days: 5
+          compression-level: 9
