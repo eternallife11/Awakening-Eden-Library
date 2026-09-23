@@ -19,11 +19,8 @@
 
     // Final 2026-09 service hierarchy and visual lock.
     // Keep the page focused on regenerative land work: one accessible front door,
-    // one whole-property pathway, then implementation support.
-    document.querySelectorAll(".brand img, .footer-brand img").forEach((mark) => {
-      mark.src = "/assets/brand/awakening-eden-mark-painted-192.webp";
-      mark.removeAttribute("srcset");
-    });
+    // one whole-property pathway, then implementation support. Brand assets live
+    // in the HTML source of truth and must not be replaced at runtime.
 
     // Service copy, package hierarchy, prices and CTAs now live in the HTML source of truth.
     // Do not rewrite them at runtime: this keeps desktop/mobile QA, search metadata and
