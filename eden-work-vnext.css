@@ -404,6 +404,10 @@
   margin-bottom: 0;
   color: var(--umber);
 }
+.vnext-collab-strip > .button-row {
+  display: grid;
+  width: min(21rem, 100%);
+}
 
 .vnext-offer__action .button--whatsapp,
 .vnext-collab-strip .button--whatsapp {
