@@ -221,6 +221,15 @@ test('partnership page exposes the referral pathway and current service ladder',
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy' })).toBeVisible();
+
+  await settleLazyImages(page);
+  const editorialImages = page.locator('.partners-work-card > img, .partners-final__photo');
+  await expect(editorialImages).toHaveCount(4);
+  const editorialImageBoxes = await editorialImages.evaluateAll((images) => images.map((image) => {
+    const bounds = image.getBoundingClientRect();
+    return { width: bounds.width, height: bounds.height, naturalWidth: image.naturalWidth };
+  }));
+  expect(editorialImageBoxes.every(({ width, height, naturalWidth }) => width > 250 && height > 250 && naturalWidth > 0), 'Partnership editorial imagery must occupy a visible frame').toBe(true);
 });
 
 test('partnership and Work with Benjy pages do not repeat meaningful imagery', async ({ page }) => {
