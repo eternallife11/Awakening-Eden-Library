@@ -8,6 +8,7 @@ const criticalRoutes = [
   '/living-library',
   '/journey',
   '/work-with-benjy',
+  '/partners',
   '/heart',
   '/links'
 ];
@@ -181,6 +182,8 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
+  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
+  await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
 });
 
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
@@ -188,6 +191,53 @@ test('Work with Benjy exposes implementation guidance at its direct anchor', asy
   const implementation = page.locator('#implementation');
   await expect(implementation.getByRole('heading', { name: 'Bringing it to life' })).toBeVisible();
   await expect(implementation.getByText('Monthly guidance as questions come up', { exact: true })).toBeVisible();
+});
+
+test('partnership page exposes the referral pathway and current service ladder', async ({ page }) => {
+  await page.goto('/partners', { waitUntil: 'domcontentloaded' });
+
+  await expect(page.getByRole('heading', { level: 1, name: 'Add the regenerative land layer.' })).toBeVisible();
+  await expect(page.getByText('You help people find or create the right rural property. I help them understand what the land can become—and what to do first.', { exact: true })).toBeVisible();
+
+  const pathway = page.locator('#pathway');
+  await expect(pathway.getByRole('heading', { name: 'A human referral pathway, without the pressure.' })).toBeVisible();
+  await expect(pathway.getByText('Introduce us—with permission', { exact: true })).toBeVisible();
+  await expect(pathway.getByText('Start with clarity', { exact: true })).toBeVisible();
+
+  const services = page.locator('#services');
+  await expect(services.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
+  await expect(services.locator('.vnext-offer__price')).toContainText('€111');
+  await expect(services.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
+  await expect(services.getByText('From €450', { exact: false })).toBeVisible();
+  await expect(services.getByRole('heading', { level: 3, name: 'Holistic Regenerative Concept Masterplan' })).toBeVisible();
+  await expect(services.getByText('From €1,500', { exact: false })).toBeVisible();
+
+  await expect(page.getByRole('heading', { name: 'Natural fences + timber details' })).toBeVisible();
+  await expect(page.getByText('Illustrative learning board · not a surveyed site plan', { exact: true })).toBeVisible();
+  await expect(page.locator('.partners-photo-sprig')).toHaveAttribute('src', 'assets/ornaments/photo-sprig-olive-rosemary.svg');
+  await expect(page.locator('.partners-pathway__roots')).toHaveAttribute('src', 'assets/ornaments/photo-root-fungi-water.svg');
+  await expect(page.locator('.partners-final__divider')).toHaveAttribute('src', 'assets/dividers/heart-hummingbird-vine-divider.svg');
+  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
+  await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
+  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Email Benjy' })).toBeVisible();
+});
+
+test('partnership and Work with Benjy pages do not repeat meaningful imagery', async ({ page }) => {
+  const collectMeaningfulImages = async (route) => {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    return page.locator('main img[src]').evaluateAll((images) => images
+      .map((image) => image.getAttribute('src'))
+      .filter((source) => source && !source.includes('/brand/') && !source.includes('/ornaments/') && !source.includes('/dividers/')));
+  };
+
+  const workImages = await collectMeaningfulImages('/work-with-benjy');
+  const partnerImages = await collectMeaningfulImages('/partners');
+  const repeatedOnPartnerPage = partnerImages.filter((source, index) => partnerImages.indexOf(source) !== index);
+  const sharedAcrossWorkPages = partnerImages.filter((source) => workImages.includes(source));
+
+  expect(repeatedOnPartnerPage, 'Partnership page repeats a meaningful image').toEqual([]);
+  expect(sharedAcrossWorkPages, 'Partnership and Work with Benjy reuse meaningful imagery').toEqual([]);
 });
 
 test('public PDFs remain reachable', async ({ request }) => {
@@ -208,7 +258,8 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
-  { route: '/work-with-benjy', name: 'work-with-benjy' }
+  { route: '/work-with-benjy', name: 'work-with-benjy' },
+  { route: '/partners', name: 'partners' }
 ]) {
   test(`capture ${reviewPage.name} review screenshot`, async ({ page }, testInfo) => {
     test.setTimeout(120_000);
