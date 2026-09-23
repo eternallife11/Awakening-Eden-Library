@@ -57,13 +57,10 @@ async function settleLazyImages(page) {
       }
     }
 
-    await Promise.all(images.map(async (image) => {
-      if (image.complete && image.naturalWidth > 0) return;
-      await Promise.race([
-        image.decode().catch(() => {}),
-        new Promise((resolve) => setTimeout(resolve, 5000))
-      ]);
-    }));
+    await Promise.all(images.map((image) => Promise.race([
+      image.decode().catch(() => {}),
+      new Promise((resolve) => setTimeout(resolve, 5000))
+    ])));
 
     window.scrollTo(0, 0);
   });
