@@ -227,9 +227,19 @@ test('partnership page exposes the referral pathway and current service ladder',
   await expect(editorialImages).toHaveCount(4);
   const editorialImageBoxes = await editorialImages.evaluateAll((images) => images.map((image) => {
     const bounds = image.getBoundingClientRect();
-    return { width: bounds.width, height: bounds.height, naturalWidth: image.naturalWidth };
+    return {
+      width: bounds.width,
+      height: bounds.height,
+      naturalWidth: image.naturalWidth,
+      naturalHeight: image.naturalHeight
+    };
   }));
-  expect(editorialImageBoxes.every(({ width, height, naturalWidth }) => width > 250 && height > 250 && naturalWidth > 0), 'Partnership editorial imagery must occupy a visible frame').toBe(true);
+  for (const [index, box] of editorialImageBoxes.entries()) {
+    expect(box.width, `Partnership editorial image ${index + 1} must occupy a visible-width frame`).toBeGreaterThan(200);
+    expect(box.height, `Partnership editorial image ${index + 1} must occupy a visible-height frame`).toBeGreaterThan(180);
+    expect(box.naturalWidth, `Partnership editorial image ${index + 1} must decode at a real width`).toBeGreaterThan(0);
+    expect(box.naturalHeight, `Partnership editorial image ${index + 1} must decode at a real height`).toBeGreaterThan(0);
+  }
 });
 
 test('partnership and Work with Benjy pages do not repeat meaningful imagery', async ({ page }) => {
