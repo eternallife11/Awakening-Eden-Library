@@ -583,6 +583,7 @@
 
 .partners-work-card {
   position: relative;
+  isolation: isolate;
   min-height: 38rem;
   margin: 0;
   border: .45rem solid var(--paper-light);
@@ -602,19 +603,23 @@
   min-height: 38rem;
 }
 
-.partners-work-card img {
+.partners-work-card > img {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.partners-work-card--tall img {
+.partners-work-card--tall > img {
   object-position: center 36%;
 }
 
 .partners-work-card figcaption {
   position: absolute;
+  z-index: 1;
   right: 0;
   bottom: 0;
   left: 0;
@@ -723,20 +728,20 @@
 
 .partners-final__card {
   position: relative;
+  isolation: isolate;
   min-height: 39rem;
   display: grid;
   align-items: end;
   border-radius: 1.7rem;
   overflow: hidden;
+  background: var(--forest-deep);
   box-shadow: var(--shadow);
 }
 
-.partners-final__card > picture {
+.partners-final__card > .partners-final__photo {
   position: absolute;
+  z-index: 0;
   inset: 0;
-}
-
-.partners-final__card > picture img {
   display: block;
   width: 100%;
   height: 100%;
@@ -746,6 +751,7 @@
 
 .partners-final__card::after {
   position: absolute;
+  z-index: 1;
   inset: 0;
   background: linear-gradient(90deg, rgb(18 30 21 / .93) 0%, rgb(18 30 21 / .76) 46%, rgb(18 30 21 / .08) 82%);
   content: "";
@@ -753,7 +759,7 @@
 
 .partners-final__card > div {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 52rem;
   padding: clamp(2rem, 6vw, 5rem);
   color: var(--paper-light);
