@@ -1,8 +1,53 @@
 # Awakening Eden — Current Work Handoff
 
-_Last updated: 22 September 2026_
+_Last updated: 26 September 2026_
 
 This is the durable handoff point for the next ChatGPT / Codex / Claude work session. Read this file before starting substantial website work, then confirm the current `main` branch and latest pull request state in GitHub.
+
+## Active review — Eden Designer + regenerative village pathways
+
+Branch: `codex/eden-designer-village-pathways`
+
+Baseline before this work:
+
+- GitHub `main`: `04adbe3082fa92ddc4681d8b0b72f94a69de0ccc`
+- latest verified deploy commit: `83be8be4dc6913eaf2e0520f5a7cff6b4eaf3a16` (merged via PR #21)
+- active staging URL: `https://awakening-eden-library-staging.holisticmission8.workers.dev/`
+- Netlify remains a frozen rollback snapshot
+
+This branch is intentionally **not merged or deployed**. It adds:
+
+- `/eden-designer` — an honest, human-reviewed doorway to the current external prototype
+- `/village-vision` — the affordable regenerative village vision, clearly labelled as future work
+- `/village-research` — the evidence / precedents / Portugal-feasibility research scaffold
+- compact links from the homepage and Living Library rather than adding more primary navigation
+- sitemap and clean-route support for all three pages
+- a Cloudflare build safeguard that does not inject or load the Turnstile widget/script while the enquiry form remains hidden (the inactive CSP permission remains for the existing CI safeguard)
+- a cross-platform build fix for mixed-case source aliases on case-insensitive filesystems
+
+The current canonical design system and approved painted/botanical assets are preserved. No new or substitute sacred geometry was introduced; the exact twelve-fold Lotus of Life remains the only approved geometry. The new pages explicitly preserve human approval gates around earthworks, professional advice, village claims and future publication.
+
+Local verification completed on 26 September 2026:
+
+- Cloudflare public artifact build: **passed** — 366 files / 77.7 MiB
+- Worker tests: **13 / 13 passed**
+- Playwright desktop + mobile: **150 / 150 passed** (144 full-suite checks plus 6 direct-page audits added for the new HTML routes)
+- full-page desktop and mobile screenshots generated and visually reviewed for all three new routes
+- no broken local assets, horizontal overflow, console errors or unresolved internal links
+- protected source files and rights-unconfirmed images remain unavailable
+- hidden form makes no Turnstile network request and loads no Turnstile script/widget
+
+Before merge:
+
+1. Review the active PR and its GitHub Actions run.
+2. Review the generated desktop/mobile screenshots, especially copy density and future-status wording.
+3. Confirm whether the external Eden Designer preview is ready to be linked publicly.
+4. Keep the PR unmerged until Benjy/Sofia give the human approval.
+5. Do not change canonical URLs, deploy, attach a custom domain or activate the enquiry form in this PR.
+
+Domain note: `awakeningeden.com` is registered by another party. `awakeningeden.org`, `.earth`, `.life`, `.co`, `.pt`, `.world` and `awakening-eden.com` returned no public RDAP registration record when checked on 26 September 2026; availability and final pricing still require an authoritative registrar check immediately before purchase.
+
+## Previous completed handoff — Work with Benjy
 
 ## Where we stopped
 

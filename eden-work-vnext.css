@@ -293,6 +293,136 @@
 }
 
 
+/* Work with Benjy premium selected-work opening, 2026-09-26 */
+.vnext-opening-portfolio {
+  background:
+    radial-gradient(circle at 88% 14%, rgb(229 196 125 / .2), transparent 24rem),
+    linear-gradient(180deg, var(--paper-light), #f3ead8);
+}
+.vnext-opening-portfolio__action {
+  margin-top: clamp(-1.2rem, -1vw, -.4rem);
+  text-align: right;
+}
+.vnext-opening-portfolio__action .text-link {
+  color: var(--forest);
+  font-weight: 800;
+  text-underline-offset: .22rem;
+}
+@media (max-width: 42rem) {
+  .vnext-opening-portfolio__action {
+    margin-top: -.4rem;
+    text-align: left;
+  }
+}
+
+.vnext-section-heading--portfolio {
+  max-width: 68rem;
+  margin-bottom: clamp(1.8rem, 4vw, 3rem);
+}
+.vnext-section-heading--portfolio h2 {
+  max-width: 16ch;
+}
+.vnext-portfolio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(14rem, .72fr) minmax(14rem, .9fr);
+  grid-template-rows: repeat(2, minmax(14rem, 1fr));
+  gap: .9rem;
+  margin: 0 0 clamp(2.5rem, 6vw, 5rem);
+}
+.vnext-portfolio-card {
+  position: relative;
+  min-height: 14rem;
+  margin: 0;
+  border: .42rem solid rgb(255 253 247 / .96);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--paper-light);
+  box-shadow: 0 16px 38px rgb(35 49 38 / .11);
+}
+.vnext-portfolio-card:first-child {
+  grid-row: 1 / 3;
+}
+.vnext-portfolio-card--portrait {
+  grid-row: 1 / 3;
+  grid-column: 2;
+}
+.vnext-portfolio-card:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.vnext-portfolio-card:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+.vnext-portfolio-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vnext-portfolio-card--design img {
+  object-fit: contain;
+  padding: clamp(.4rem, 1.2vw, .8rem);
+  background: #f4ead8;
+}
+.vnext-portfolio-card--portrait img {
+  object-position: center 38%;
+}
+.vnext-portfolio-card figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: .18rem;
+  padding: 3.5rem 1rem 1rem;
+  color: var(--paper-light);
+  background: linear-gradient(transparent, rgb(18 30 21 / .92));
+}
+.vnext-portfolio-card--design figcaption {
+  background: linear-gradient(transparent, rgb(18 30 21 / .9));
+}
+.vnext-portfolio-card figcaption strong {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.05;
+}
+.vnext-portfolio-card figcaption span {
+  color: rgb(255 253 247 / .84);
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 66rem) {
+  .vnext-portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+  .vnext-portfolio-card:first-child,
+  .vnext-portfolio-card--portrait,
+  .vnext-portfolio-card:nth-child(3),
+  .vnext-portfolio-card:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .vnext-portfolio-card {
+    min-height: 23rem;
+  }
+}
+@media (max-width: 42rem) {
+  .vnext-portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+  .vnext-portfolio-card {
+    min-height: 19rem;
+    border-width: .32rem;
+  }
+  .vnext-portfolio-card--design {
+    min-height: 22rem;
+  }
+}
+
 /* Work with Benjy final case-study + partnership polish, 2026-09-21 */
 .vnext-recent-design {
   background:
