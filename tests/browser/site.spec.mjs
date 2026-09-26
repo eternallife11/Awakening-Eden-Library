@@ -127,7 +127,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.locator('.hero-promise')).toHaveText('A Living Library for Positive Change, Regeneration, Remembering & Thriving as One.');
+  await expect(page.locator('.hero-promise')).toHaveText('The antidote to hopelessness and overwhelm.');
 
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
@@ -154,17 +154,25 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByText('From overwhelmed landowner to regenerative clarity.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Bring the dream in your heart down to Earth — and turn it into a thriving living system.', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Chat with Benjy about your project' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
+  const quickServices = page.locator('#how-i-can-help');
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Land + Project Clarity' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Whole-Property Design' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Water + Living Soil' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Food Forests + Orchards' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Implementation + Project Guidance' })).toBeVisible();
+
+  await expect(page.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
   await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Book the €111 Clarity Call' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
 
   await expect(page.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Focused Roadmap' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Holistic Regenerative Concept Masterplan' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Whole-Property Masterplan' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Whole-Property Regenerative Design & Action Plan' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Chat about a Whole-Property Design' })).toBeVisible();
   await expect(page.locator('.vnext-offer')).toHaveCount(3);
 
   const recentDesign = page.locator('#recent-design');
@@ -174,7 +182,9 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(recentDesign.locator('img[src*="contour-food-forest-concept-v2.webp"]')).toHaveCount(1);
   await expect(recentDesign.locator('img[src*="luisa-sim-berrylicious-terrace-concept-v2.webp"]')).toHaveCount(1);
 
-  await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
+  await expect(page.locator('#selected-work img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(1);
+  await expect(page.locator('.vnext-final__card img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(0);
+
   const form = page.locator('form[data-land-enquiry-form]');
   await expect(form).toBeHidden();
   await expect(form).toHaveAttribute('data-netlify', 'true');
