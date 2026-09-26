@@ -17,6 +17,31 @@ html { scroll-padding-top: 6rem; }
 .ec-header .ec-brand img { width: 4.25rem; height: 4.25rem; }
 
 .site-footer { padding-block: 4rem; }
+
+.future-paths {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.7rem 0 1.2rem;
+}
+.future-paths a {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px solid rgb(105 112 82 / 0.28);
+  border-radius: 1rem;
+  color: var(--forest);
+  background: rgb(255 253 247 / 0.72);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.future-paths a:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgb(35 49 38 / 0.09); }
+.future-paths strong { font-family: var(--display); font-size: 1.28rem; line-height: 1.05; }
+.future-paths span { color: var(--umber); font-size: 0.84rem; line-height: 1.45; }
+
+@media (max-width: 46rem) {
+  .future-paths { grid-template-columns: 1fr; }
+}
 .site-footer .footer-brand img,
 footer .footer-mark,
 .ec-footer .ec-footer-mark { width: 5.25rem !important; height: 5.25rem !important; }

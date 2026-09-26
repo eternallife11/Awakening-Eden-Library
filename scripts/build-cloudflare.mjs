@@ -169,22 +169,29 @@ async function writeCloudflareRouteAliases() {
     if (sourceFile === aliasFile) continue;
 
     const info = await stat(sourceFile);
+    const existingAlias = await stat(aliasFile).catch(() => null);
+    // macOS commonly uses a case-insensitive filesystem. A lower-case clean
+    // route can therefore resolve to the mixed-case source file already copied
+    // into dist; copying a file onto its own inode fails with ERR_FS_CP_EINVAL.
+    if (existingAlias?.dev === info.dev && existingAlias?.ino === info.ino) continue;
     await cp(sourceFile, aliasFile);
     filesCopied += 1;
     bytesCopied += info.size;
   }
 }
 
-async function writeCloudflareHeaders() {
+async function writeCloudflareHeaders({ enquiryFormActive }) {
   const sourceHeaders = await readFile(path.join(ROOT, '_headers'), 'utf8');
   const sourceRules = await readRedirectRules();
   const cleanHtmlRoutes = sourceRules
     .filter((line) => /\s200!?\s*$/.test(line))
     .map((line) => line.split(/\s+/)[0]);
 
-  const headersWithTurnstile = sourceHeaders
-    .replace("script-src 'self';", "script-src 'self' https://challenges.cloudflare.com;")
-    .replace("frame-src https://open.spotify.com;", "frame-src https://open.spotify.com https://challenges.cloudflare.com;");
+  const deploymentHeaders = enquiryFormActive
+    ? sourceHeaders
+      .replace("script-src 'self';", "script-src 'self' https://challenges.cloudflare.com;")
+      .replace("frame-src https://open.spotify.com;", "frame-src https://open.spotify.com https://challenges.cloudflare.com;")
+    : sourceHeaders;
 
   const additions = [
     '',
@@ -207,7 +214,7 @@ async function writeCloudflareHeaders() {
     ''
   ].join('\n');
 
-  await writeFile(path.join(OUT, '_headers'), `${headersWithTurnstile.trimEnd()}\n${additions}`);
+  await writeFile(path.join(OUT, '_headers'), `${deploymentHeaders.trimEnd()}\n${additions}`);
 }
 
 async function prepareCloudflareEnquiryForm() {
@@ -219,6 +226,13 @@ async function prepareCloudflareEnquiryForm() {
 
   if (!source.includes(formNeedle) || !source.includes(consentNeedle) || !source.includes(bodyNeedle)) {
     throw new Error('Could not safely prepare the Cloudflare-only enquiry form.');
+  }
+
+  // The public page currently keeps this future form inside a hidden aside and
+  // offers WhatsApp/email instead. Do not load Turnstile until a human review
+  // explicitly activates the form and its production hostname is authorised.
+  if (source.includes('<aside hidden aria-hidden="true">')) {
+    return false;
   }
 
   const turnstileMarkup = [
@@ -240,15 +254,16 @@ async function prepareCloudflareEnquiryForm() {
     );
 
   await writeFile(formPath, prepared);
+  return true;
 }
 
 await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
 await versionFinalHomepageRuntime();
-await prepareCloudflareEnquiryForm();
+const enquiryFormActive = await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
-await writeCloudflareHeaders();
+await writeCloudflareHeaders({ enquiryFormActive });
 
 const indexPath = path.join(OUT, 'index.html');
 const notFoundPath = path.join(OUT, '404.html');

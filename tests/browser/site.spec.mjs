@@ -9,6 +9,9 @@ const criticalRoutes = [
   '/journey',
   '/work-with-benjy',
   '/partners',
+  '/eden-designer',
+  '/village-vision',
+  '/village-research',
   '/heart',
   '/links'
 ];
@@ -176,11 +179,34 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(form).toBeHidden();
   await expect(form).toHaveAttribute('data-netlify', 'true');
   await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(0);
+  await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
   await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
+});
+
+test('future pathways are honest, connected and lightly surfaced', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  const paths = page.locator('.future-paths');
+  await expect(paths.getByRole('link', { name: /Eden Designer/ })).toHaveAttribute('href', '/eden-designer');
+  await expect(paths.getByRole('link', { name: /Affordable regenerative village vision/ })).toHaveAttribute('href', '/village-vision');
+  await expect(paths.getByRole('link', { name: /Village research garden/ })).toHaveAttribute('href', '/village-research');
+
+  await page.goto('/eden-designer', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Prototype pathway · human-reviewed', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Explore the current prototype' })).toHaveAttribute('target', '_blank');
+  await expect(page.getByText('Clarity without false certainty.', { exact: true })).toBeVisible();
+
+  await page.goto('/village-vision', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Future vision · not yet a physical village', { exact: true })).toBeVisible();
+  await expect(page.getByText(/No final village site, legal structure, planning permission/)).toBeVisible();
+
+  await page.goto('/village-research', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Research scaffold · growing openly', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Seven shelves before a site or offer.' })).toBeVisible();
 });
 
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
@@ -275,7 +301,10 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
   { route: '/work-with-benjy', name: 'work-with-benjy' },
-  { route: '/partners', name: 'partners' }
+  { route: '/partners', name: 'partners' },
+  { route: '/eden-designer', name: 'eden-designer' },
+  { route: '/village-vision', name: 'village-vision' },
+  { route: '/village-research', name: 'village-research' }
 ]) {
   test(`capture ${reviewPage.name} review screenshot`, async ({ page }, testInfo) => {
     test.setTimeout(120_000);
