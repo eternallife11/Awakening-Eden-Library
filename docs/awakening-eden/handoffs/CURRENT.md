@@ -22,7 +22,7 @@ This branch is intentionally **not merged or deployed**. It adds:
 - `/village-research` — the evidence / precedents / Portugal-feasibility research scaffold
 - compact links from the homepage and Living Library rather than adding more primary navigation
 - sitemap and clean-route support for all three pages
-- a Cloudflare build safeguard that does not inject or load Turnstile while the enquiry form remains hidden
+- a Cloudflare build safeguard that does not inject or load the Turnstile widget/script while the enquiry form remains hidden (the inactive CSP permission remains for the existing CI safeguard)
 - a cross-platform build fix for mixed-case source aliases on case-insensitive filesystems
 
 The current canonical design system and approved painted/botanical assets are preserved. No new or substitute sacred geometry was introduced; the exact twelve-fold Lotus of Life remains the only approved geometry. The new pages explicitly preserve human approval gates around earthworks, professional advice, village claims and future publication.

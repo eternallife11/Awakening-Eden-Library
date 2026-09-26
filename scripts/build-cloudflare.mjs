@@ -180,18 +180,18 @@ async function writeCloudflareRouteAliases() {
   }
 }
 
-async function writeCloudflareHeaders({ enquiryFormActive }) {
+async function writeCloudflareHeaders() {
   const sourceHeaders = await readFile(path.join(ROOT, '_headers'), 'utf8');
   const sourceRules = await readRedirectRules();
   const cleanHtmlRoutes = sourceRules
     .filter((line) => /\s200!?\s*$/.test(line))
     .map((line) => line.split(/\s+/)[0]);
 
-  const deploymentHeaders = enquiryFormActive
-    ? sourceHeaders
-      .replace("script-src 'self';", "script-src 'self' https://challenges.cloudflare.com;")
-      .replace("frame-src https://open.spotify.com;", "frame-src https://open.spotify.com https://challenges.cloudflare.com;")
-    : sourceHeaders;
+  // Keep the future form origin permitted so activation remains a deliberate
+  // content change. A CSP allowance does not load Turnstile by itself.
+  const deploymentHeaders = sourceHeaders
+    .replace("script-src 'self';", "script-src 'self' https://challenges.cloudflare.com;")
+    .replace("frame-src https://open.spotify.com;", "frame-src https://open.spotify.com https://challenges.cloudflare.com;");
 
   const additions = [
     '',
@@ -260,10 +260,10 @@ async function prepareCloudflareEnquiryForm() {
 await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
 await versionFinalHomepageRuntime();
-const enquiryFormActive = await prepareCloudflareEnquiryForm();
+await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
-await writeCloudflareHeaders({ enquiryFormActive });
+await writeCloudflareHeaders();
 
 const indexPath = path.join(OUT, 'index.html');
 const notFoundPath = path.join(OUT, '404.html');
