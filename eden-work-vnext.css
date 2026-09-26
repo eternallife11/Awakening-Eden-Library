@@ -294,6 +294,27 @@
 
 
 /* Work with Benjy premium selected-work opening, 2026-09-26 */
+.vnext-opening-portfolio {
+  background:
+    radial-gradient(circle at 88% 14%, rgb(229 196 125 / .2), transparent 24rem),
+    linear-gradient(180deg, var(--paper-light), #f3ead8);
+}
+.vnext-opening-portfolio__action {
+  margin-top: clamp(-1.2rem, -1vw, -.4rem);
+  text-align: right;
+}
+.vnext-opening-portfolio__action .text-link {
+  color: var(--forest);
+  font-weight: 800;
+  text-underline-offset: .22rem;
+}
+@media (max-width: 42rem) {
+  .vnext-opening-portfolio__action {
+    margin-top: -.4rem;
+    text-align: left;
+  }
+}
+
 .vnext-section-heading--portfolio {
   max-width: 68rem;
   margin-bottom: clamp(1.8rem, 4vw, 3rem);
