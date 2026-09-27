@@ -4,15 +4,23 @@ _Last updated: 27 September 2026_
 
 This is the durable handoff point for the next ChatGPT / Codex / Claude work session. Read this file before starting substantial website work, then confirm the current `main` branch and latest pull request state in GitHub.
 
-## Latest work — Work with Benjy mission, 27 September 2026
+## Current status — domain release, 27 September 2026
+
+- PR #23 (Work with Benjy regenerative mission and independent action network) merged into `main` as `625e0c31ffa3339749d532be638455b1aee2d651`. Desktop/mobile browser QA and public build passed before merge. It has **not** been verified as deployed on Cloudflare.
+- PR #24 (production-domain build and separate `awakening-eden` Worker config) merged into `main` as `9729a9c625d3694fcc9c07747aec75a28250331a`. Production and staging builds, Wrangler production dry run and desktop/mobile CI passed before merge.
+- Benjy confirmed registering `awakeningeden.org`. The account's active zone and DNS remain unverified here. The Cloudflare dashboard shows a persistent security verification in this browser; local Wrangler reports no authentication. **Do not claim the custom domain is live.**
+- Next: authenticate to the Cloudflare account that owns the staging Worker, confirm `awakeningeden.org` is Active and no existing apex CNAME conflicts; build production from current `main`, deploy with `wrangler.production.jsonc`, verify real HTTPS/routes/metadata/404s, then set up a path-preserving `www` redirect. Follow `docs/AWAKENINGEDEN_ORG_CUTOVER_2026-09-27.md`. Preserve the existing Netlify fallback while historical PDF links still point there.
+- The contact/enquiry form remains hidden. Do not activate it during this domain transfer.
+
+## Historical review — Work with Benjy mission, 27 September 2026
 
 PR #22 was merged into `main` at `efd6a19d313bdbef942c7481dd1bcd4a43048d74` before this session. Its new pathways and approved visual system are the starting point for this edit.
 
 Branch `codex/benjy-regenerative-mission-2026-09-27` adds a mission section after the four service pathways and an independently labelled directory of Portugal, Europe and film/learning organisations after the partnership invitation. Scave.World uses its verified current spelling. The existing service offers and imagery are unchanged. No formal partnership with a listed organisation is claimed.
 
-Verification: Cloudflare public build passed (371 files); 13/13 Worker tests passed; generated HTML has unique anchors, valid in-page links and no additional duplicate hero image. Desktop/mobile Playwright could not run because Chromium was absent and the browser download returned an invalid archive in this environment. The two new sections still need visual review before merge or deployment. The live staging site was not changed by this branch.
+Verification at the time: Cloudflare public build and 13/13 Worker tests passed. GitHub Actions then installed Chromium, passed desktop/mobile browser QA, and screenshots were reviewed. PR #23 was merged; the live staging page still needs a post-deployment check.
 
-Next actions: review desktop and mobile appearance; confirm copy and selected organisations; run browser QA in CI or an environment with Chromium; merge after approval; deploy to Cloudflare staging and verify the live route.
+See the current status at the top for the remaining deployment actions.
 
 ## Previous review — Eden Designer + regenerative village pathways (merged as PR #22)
 
