@@ -14,6 +14,11 @@ if (!ROOT) {
 
 const OUT = path.join(ROOT, 'dist');
 const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Workers Static Assets per-file limit: 25 MiB.
+const LEGACY_ORIGIN = 'https://awakening-eden-library.netlify.app';
+const PUBLIC_ORIGIN = BUILD_ENV.AWAKENING_EDEN_PUBLIC_ORIGIN || '';
+if (PUBLIC_ORIGIN && PUBLIC_ORIGIN !== 'https://awakeningeden.org') {
+  throw new Error('Production origin must be exactly https://awakeningeden.org.');
+}
 // CI supplies Cloudflare's official test key. Staging otherwise embeds the
 // public key of the isolated enquiry widget (the secret stays in Workers).
 const TURNSTILE_SITE_KEY = BUILD_ENV.ENQUIRY_TURNSTILE_SITE_KEY || '0x4AAAAAAEPRpGQHyAWttNLs';
@@ -34,7 +39,7 @@ const excludedDirs = new Set([
 
 const excludedNames = new Set([
   '.gitignore', '.DS_Store',
-  'netlify.toml', 'wrangler.toml', 'wrangler.jsonc',
+  'netlify.toml', 'wrangler.toml', 'wrangler.jsonc', 'wrangler.production.jsonc',
   'package.json', 'package-lock.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'yarn.lock',
   'playwright.config.mjs',
   'AGENTS.md'
@@ -257,6 +262,23 @@ async function prepareCloudflareEnquiryForm() {
   return true;
 }
 
+async function rewriteProductionOrigins(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await rewriteProductionOrigins(file);
+      continue;
+    }
+    // PDFs and images are binary. Historic PDF links continue to work through
+    // the Netlify fallback until those guides receive their next editorial pass.
+    if (!/\.(?:html|xml|txt|css|js|json|webmanifest)$/i.test(entry.name)) continue;
+    const source = await readFile(file, 'utf8');
+    if (source.includes(LEGACY_ORIGIN)) {
+      await writeFile(file, source.replaceAll(LEGACY_ORIGIN, PUBLIC_ORIGIN));
+    }
+  }
+}
+
 await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
 await versionFinalHomepageRuntime();
@@ -264,6 +286,7 @@ await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
 await writeCloudflareHeaders();
+if (PUBLIC_ORIGIN) await rewriteProductionOrigins(OUT);
 
 const indexPath = path.join(OUT, 'index.html');
 const notFoundPath = path.join(OUT, '404.html');
@@ -272,3 +295,4 @@ await stat(notFoundPath);
 
 console.log(`Cloudflare public build complete: ${filesCopied} files, ${(bytesCopied / 1024 / 1024).toFixed(1)} MiB`);
 console.log('Excluded from deployment: docs/, deliverables/, source ZIPs, markdown/internal prompts, repository/build tooling.');
+console.log(`Public origin: ${PUBLIC_ORIGIN || 'staging preview (legacy canonical until domain cutover)'}`);

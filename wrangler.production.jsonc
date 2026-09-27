@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Production is separate from the existing workers.dev staging Worker.
+  // Deploy only after domain ownership, DNS and human review are confirmed.
+  "name": "awakening-eden",
+  "compatibility_date": "2026-08-13",
+  "workers_dev": false,
+  "preview_urls": true,
+  "routes": [{ "pattern": "awakeningeden.org", "custom_domain": true }],
+  "main": "./workers/enquiry.mjs",
+  "vars": {
+    "ENQUIRY_ALLOWED_ORIGIN": "https://awakeningeden.org"
+  },
+  "send_email": [{
+    "name": "ENQUIRY_EMAIL",
+    "destination_address": "regenerativeeden@gmail.com"
+  }],
+  "ratelimits": [
+    {
+      "name": "ENQUIRY_IP_RATE_LIMIT",
+      "namespace_id": "2026081301",
+      "simple": { "limit": 5, "period": 60 }
+    },
+    {
+      "name": "ENQUIRY_EMAIL_RATE_LIMIT",
+      "namespace_id": "2026081302",
+      "simple": { "limit": 2, "period": 60 }
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/enquiry"]
+  }
+}

@@ -47,6 +47,7 @@ jobs:
           test ! -e dist/netlify.toml
           test ! -e dist/wrangler.toml
           test ! -e dist/wrangler.jsonc
+          test ! -e dist/wrangler.production.jsonc
           test ! -e dist/package.json
           test ! -e dist/pnpm-lock.yaml
           test ! -e dist/pnpm-workspace.yaml
@@ -95,6 +96,22 @@ jobs:
 
       - name: Validate Workers Static Assets configuration
         run: npx --yes wrangler@4.122.0 deploy --dry-run
+
+      - name: Verify production-domain artifact without deploying
+        shell: bash
+        run: |
+          set -euo pipefail
+          AWAKENING_EDEN_PUBLIC_ORIGIN=https://awakeningeden.org node scripts/build-cloudflare.mjs
+          grep -q 'https://awakeningeden.org/' dist/index.html
+          grep -q 'Sitemap: https://awakeningeden.org/sitemap.xml' dist/robots.txt
+          grep -q '<loc>https://awakeningeden.org/work-with-benjy</loc>' dist/sitemap.xml
+          if grep -RIl 'https://awakening-eden-library.netlify.app' dist --include='*.html' --include='*.xml' --include='*.txt' --include='*.js' --include='*.css' --include='*.json' --include='*.webmanifest' | grep -q .; then
+            echo 'Legacy origin remains in production text assets.' >&2
+            exit 1
+          fi
+          grep -q 'workers.dev/\*' dist/_headers
+          test ! -e dist/wrangler.production.jsonc
+          npx --yes wrangler@4.122.0 deploy --dry-run --config wrangler.production.jsonc
 
       - name: Verify Cloudflare static asset size ceiling
         shell: bash
