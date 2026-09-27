@@ -154,15 +154,17 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByText('Bring the dream in your heart down to Earth — and turn it into a thriving living system.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Regenerative land design, clear action plans and project guidance for people who want their place to become healthier, more abundant and more alive.', { exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Chat with Benjy about your project' })).toBeVisible();
 
   const quickServices = page.locator('#how-i-can-help');
-  await expect(quickServices.getByRole('heading', { level: 3, name: 'Land + Project Clarity' })).toBeVisible();
-  await expect(quickServices.getByRole('heading', { level: 3, name: 'Whole-Property Design' })).toBeVisible();
-  await expect(quickServices.getByRole('heading', { level: 3, name: 'Water + Living Soil' })).toBeVisible();
-  await expect(quickServices.getByRole('heading', { level: 3, name: 'Food Forests + Orchards' })).toBeVisible();
-  await expect(quickServices.getByRole('heading', { level: 3, name: 'Implementation + Project Guidance' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 2, name: 'Four clear ways we can work together.' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Land + Project Clarity Session' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Whole-Property Design + Action Plan' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Implementation + Workshops' })).toBeVisible();
+  await expect(quickServices.getByText('Water retention', { exact: true })).toBeVisible();
+  await expect(quickServices.getByText('Workshops + events', { exact: true })).toBeVisible();
 
   await expect(page.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
   await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
@@ -198,6 +200,31 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
 });
 
+test('Living Library search turns a large collection into a calm, useful doorway', async ({ page }) => {
+  await page.goto('/living-library', { waitUntil: 'domcontentloaded' });
+
+  const search = page.getByRole('searchbox', { name: 'Search Living Library resources' });
+  const status = page.locator('.library-search__status');
+  const cards = page.locator('.resource-card');
+
+  await expect(search).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Popular Living Library pathways' })).toBeVisible();
+
+  const total = await cards.count();
+  expect(total).toBeGreaterThan(50);
+
+  await search.fill('Fukuoka');
+  await expect(page.getByRole('heading', { level: 3, name: 'The One-Straw Revolution' })).toBeVisible();
+  await expect(status).toContainText('Showing');
+
+  await search.fill('a-resource-that-does-not-exist-eden');
+  await expect(status).toContainText('No direct match yet');
+
+  await search.press('Escape');
+  await expect(search).toHaveValue('');
+  await expect(status).toContainText(`Browse ${total} curated resources`);
+});
+
 test('future pathways are honest, connected and lightly surfaced', async ({ page }) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   const paths = page.locator('.future-paths');
@@ -222,7 +249,7 @@ test('future pathways are honest, connected and lightly surfaced', async ({ page
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
   await page.goto('/work-with-benjy#implementation', { waitUntil: 'domcontentloaded' });
   const implementation = page.locator('#implementation');
-  await expect(implementation.getByRole('heading', { name: 'Bringing it to life' })).toBeVisible();
+  await expect(implementation.getByRole('heading', { name: 'Implementation + Project Guidance' })).toBeVisible();
   await expect(implementation.getByText('Monthly guidance as questions come up', { exact: true })).toBeVisible();
 });
 
