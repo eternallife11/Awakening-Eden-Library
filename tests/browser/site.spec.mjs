@@ -166,16 +166,17 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(quickServices.getByText('Water retention', { exact: true })).toBeVisible();
   await expect(quickServices.getByText('Workshops + events', { exact: true })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
-  await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
-  await expect(page.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
+  const offers = page.locator('#services');
+  await expect(offers.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
+  await expect(offers.locator('.vnext-offer__price').first()).toContainText('€111');
+  await expect(offers.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Focused Roadmap' })).toBeVisible();
+  await expect(offers.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
+  await expect(offers.getByRole('link', { name: 'WhatsApp Benjy · Focused Roadmap' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Whole-Property Regenerative Design & Action Plan' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Chat about a Whole-Property Design' })).toBeVisible();
-  await expect(page.locator('.vnext-offer')).toHaveCount(3);
+  await expect(offers.getByRole('heading', { level: 3, name: 'Whole-Property Regenerative Design & Action Plan' })).toBeVisible();
+  await expect(offers.getByRole('link', { name: 'Chat about a Whole-Property Design' })).toBeVisible();
+  await expect(offers.locator('.vnext-offer')).toHaveCount(3);
 
   const recentDesign = page.locator('#recent-design');
   await expect(recentDesign.getByRole('heading', { name: 'Contour Food Forest Ideas' })).toBeVisible();
