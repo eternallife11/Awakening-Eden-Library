@@ -663,3 +663,54 @@
   .vnext-quick-services__grid a:hover,
   .vnext-quick-services__grid a:focus-visible { transform: none; }
 }
+
+
+/* Final service clarity + botanical polish — 2026-09-27 */
+.vnext-quick-services__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.vnext-quick-services__grid a {
+  min-height: 18rem;
+}
+.vnext-service-price {
+  display: block;
+  margin-top: .85rem;
+  color: var(--terracotta);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.vnext-capability-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  justify-content: center;
+  max-width: 72rem;
+  margin: 1.5rem auto 0;
+}
+.vnext-capability-strip span {
+  padding: .48rem .8rem;
+  border: 1px solid rgb(105 112 82 / .3);
+  border-radius: 999px;
+  color: var(--forest);
+  background: rgb(255 253 247 / .72);
+  font-size: .78rem;
+  font-weight: 700;
+}
+.vnext-botanical-transition {
+  width: min(72rem, calc(100% - 2rem));
+  margin: clamp(.5rem, 2vw, 1.5rem) auto;
+}
+.vnext-botanical-transition img {
+  display: block;
+  width: 100%;
+  max-height: 11rem;
+  object-fit: contain;
+}
+@media (max-width: 74rem) {
+  .vnext-quick-services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 42rem) {
+  .vnext-quick-services__grid { grid-template-columns: 1fr; }
+  .vnext-quick-services__grid a { min-height: 0; }
+}
