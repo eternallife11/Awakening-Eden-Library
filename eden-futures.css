@@ -1,0 +1,35 @@
+/* Awakening Eden future pathways — small, honest doorways beyond the current library */
+.future-hero { padding-block: clamp(3.5rem, 8vw, 7rem); }
+.future-hero__grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(22rem, 1.08fr); gap: clamp(2rem, 7vw, 6rem); align-items: center; }
+.future-hero h1 { max-width: 9ch; font-size: clamp(3.5rem, 8vw, 7.5rem); }
+.future-hero__art { margin: 0; overflow: hidden; border: 1px solid rgb(105 112 82 / .25); border-radius: 2rem; background: var(--paper-light); box-shadow: var(--shadow); }
+.future-hero__art img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.future-hero__art figcaption { padding: 1rem 1.25rem; color: var(--umber); font-size: .82rem; }
+.status-line { display: inline-flex; margin: 0 0 1rem; padding: .45rem .75rem; border: 1px solid rgb(105 112 82 / .35); border-radius: 999px; color: var(--forest); background: rgb(255 253 247 / .72); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.truth-panel { padding-block: clamp(2.5rem, 6vw, 5rem); color: var(--paper-light); background: var(--forest-deep); }
+.truth-panel h2 { color: var(--paper-light); }
+.truth-panel p { color: rgb(255 253 247 / .8); }
+.future-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.future-card { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid rgb(105 112 82 / .26); border-radius: 1.35rem; background: rgb(255 253 247 / .78); box-shadow: 0 12px 30px rgb(35 49 38 / .06); }
+.future-card h3 { font-size: clamp(1.75rem, 3vw, 2.65rem); }
+.future-card p:last-child { margin-bottom: 0; }
+.future-card__label { margin-bottom: .65rem; color: var(--terracotta); font-size: .72rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.principle-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem 2rem; padding: 0; list-style: none; }
+.principle-list li { padding: 1rem 0 1rem 1rem; border-left: 3px solid var(--gold); }
+.principle-list strong { display: block; color: var(--forest); font-family: var(--display); font-size: 1.45rem; }
+.research-map { counter-reset: research; display: grid; gap: .9rem; padding: 0; list-style: none; }
+.research-map li { position: relative; padding: 1.2rem 1.2rem 1.2rem 4rem; border: 1px solid rgb(105 112 82 / .25); border-radius: 1rem; background: rgb(255 253 247 / .7); }
+.research-map li::before { counter-increment: research; content: counter(research); position: absolute; top: 1rem; left: 1rem; display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: 50%; color: var(--paper-light); background: var(--forest); font-weight: 800; }
+.research-map strong { display: block; color: var(--forest); font-family: var(--display); font-size: 1.4rem; }
+.evidence-key { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.2rem; }
+.evidence-key span { padding: .45rem .75rem; border-radius: 999px; background: var(--linen); font-size: .78rem; font-weight: 700; }
+.future-cta { text-align: center; background: linear-gradient(180deg, var(--paper), var(--paper-light)); }
+.future-cta .narrow { display: grid; justify-items: center; }
+.future-note { color: var(--umber); font-size: .88rem; }
+@media (max-width: 58rem) {
+  .future-hero__grid, .future-grid { grid-template-columns: 1fr; }
+  .future-hero h1 { max-width: none; }
+}
+@media (max-width: 42rem) {
+  .principle-list { grid-template-columns: 1fr; }
+}

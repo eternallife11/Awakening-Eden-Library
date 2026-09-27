@@ -293,6 +293,136 @@
 }
 
 
+/* Work with Benjy premium selected-work opening, 2026-09-26 */
+.vnext-opening-portfolio {
+  background:
+    radial-gradient(circle at 88% 14%, rgb(229 196 125 / .2), transparent 24rem),
+    linear-gradient(180deg, var(--paper-light), #f3ead8);
+}
+.vnext-opening-portfolio__action {
+  margin-top: clamp(-1.2rem, -1vw, -.4rem);
+  text-align: right;
+}
+.vnext-opening-portfolio__action .text-link {
+  color: var(--forest);
+  font-weight: 800;
+  text-underline-offset: .22rem;
+}
+@media (max-width: 42rem) {
+  .vnext-opening-portfolio__action {
+    margin-top: -.4rem;
+    text-align: left;
+  }
+}
+
+.vnext-section-heading--portfolio {
+  max-width: 68rem;
+  margin-bottom: clamp(1.8rem, 4vw, 3rem);
+}
+.vnext-section-heading--portfolio h2 {
+  max-width: 16ch;
+}
+.vnext-portfolio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(14rem, .72fr) minmax(14rem, .9fr);
+  grid-template-rows: repeat(2, minmax(14rem, 1fr));
+  gap: .9rem;
+  margin: 0 0 clamp(2.5rem, 6vw, 5rem);
+}
+.vnext-portfolio-card {
+  position: relative;
+  min-height: 14rem;
+  margin: 0;
+  border: .42rem solid rgb(255 253 247 / .96);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--paper-light);
+  box-shadow: 0 16px 38px rgb(35 49 38 / .11);
+}
+.vnext-portfolio-card:first-child {
+  grid-row: 1 / 3;
+}
+.vnext-portfolio-card--portrait {
+  grid-row: 1 / 3;
+  grid-column: 2;
+}
+.vnext-portfolio-card:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.vnext-portfolio-card:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+.vnext-portfolio-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vnext-portfolio-card--design img {
+  object-fit: contain;
+  padding: clamp(.4rem, 1.2vw, .8rem);
+  background: #f4ead8;
+}
+.vnext-portfolio-card--portrait img {
+  object-position: center 38%;
+}
+.vnext-portfolio-card figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: .18rem;
+  padding: 3.5rem 1rem 1rem;
+  color: var(--paper-light);
+  background: linear-gradient(transparent, rgb(18 30 21 / .92));
+}
+.vnext-portfolio-card--design figcaption {
+  background: linear-gradient(transparent, rgb(18 30 21 / .9));
+}
+.vnext-portfolio-card figcaption strong {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.05;
+}
+.vnext-portfolio-card figcaption span {
+  color: rgb(255 253 247 / .84);
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 66rem) {
+  .vnext-portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+  .vnext-portfolio-card:first-child,
+  .vnext-portfolio-card--portrait,
+  .vnext-portfolio-card:nth-child(3),
+  .vnext-portfolio-card:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .vnext-portfolio-card {
+    min-height: 23rem;
+  }
+}
+@media (max-width: 42rem) {
+  .vnext-portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+  .vnext-portfolio-card {
+    min-height: 19rem;
+    border-width: .32rem;
+  }
+  .vnext-portfolio-card--design {
+    min-height: 22rem;
+  }
+}
+
 /* Work with Benjy final case-study + partnership polish, 2026-09-21 */
 .vnext-recent-design {
   background:
@@ -428,4 +558,159 @@
   .vnext-collab-strip .button {
     width: 100%;
   }
+}
+
+
+/* Final business-clarity + premium visual pass, 2026-09-26 */
+.vnext-quick-services {
+  padding-block: clamp(3.4rem, 7vw, 6rem) !important;
+  background:
+    radial-gradient(circle at 8% 18%, rgb(219 236 235 / .48), transparent 24rem),
+    var(--paper-light);
+}
+.vnext-quick-services .vnext-section-heading {
+  max-width: 68rem;
+  margin-bottom: clamp(1.6rem, 4vw, 2.6rem);
+}
+.vnext-quick-services .vnext-section-heading h2 { max-width: 17ch; }
+.vnext-quick-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+}
+.vnext-quick-services__grid a {
+  display: flex;
+  min-height: 16.5rem;
+  flex-direction: column;
+  padding: clamp(1.25rem, 2.8vw, 1.9rem);
+  border: 1px solid rgb(105 112 82 / .25);
+  border-radius: 1.25rem;
+  color: var(--forest);
+  background: linear-gradient(145deg, rgb(255 253 247 / .96), rgb(245 238 220 / .9));
+  box-shadow: 0 10px 24px rgb(35 49 38 / .055);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.vnext-quick-services__grid a:hover,
+.vnext-quick-services__grid a:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgb(184 148 75 / .65);
+  box-shadow: 0 17px 34px rgb(35 49 38 / .11);
+}
+.vnext-quick-services__grid span {
+  color: var(--terracotta);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.vnext-quick-services__grid h3 {
+  margin: .8rem 0 .65rem;
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  line-height: 1.04;
+}
+.vnext-quick-services__grid p {
+  margin: 0;
+  color: var(--umber);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.vnext-quick-services__grid em {
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--forest);
+  font-size: .83rem;
+  font-style: normal;
+  font-weight: 800;
+}
+.vnext-quick-services__chat {
+  margin: 1.25rem 0 0;
+  color: var(--umber);
+  text-align: center;
+}
+.vnext-quick-services__chat a {
+  color: var(--forest);
+  font-weight: 800;
+  text-underline-offset: .2rem;
+}
+.vnext-celtic-divider {
+  width: min(74rem, 96vw);
+  margin: clamp(1rem, 3vw, 2.6rem) auto;
+}
+.vnext-celtic-divider picture,
+.vnext-celtic-divider img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.vnext-portfolio-card--human {
+  grid-column: 1 / -1;
+  min-height: clamp(18rem, 30vw, 27rem);
+}
+.vnext-portfolio-card--human img { object-position: center 55%; }
+.vnext-offers { padding-top: clamp(4rem, 7vw, 6.5rem); }
+@media (max-width: 66rem) {
+  .vnext-quick-services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vnext-portfolio-card--human { grid-column: auto; grid-row: auto; }
+}
+@media (max-width: 42rem) {
+  .vnext-quick-services__grid { grid-template-columns: 1fr; }
+  .vnext-quick-services__grid a { min-height: 0; }
+  .vnext-quick-services__chat { text-align: left; }
+  .vnext-portfolio-card--human { min-height: 18rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vnext-quick-services__grid a { transition: none; }
+  .vnext-quick-services__grid a:hover,
+  .vnext-quick-services__grid a:focus-visible { transform: none; }
+}
+
+
+/* Final service clarity + botanical polish — 2026-09-27 */
+.vnext-quick-services__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.vnext-quick-services__grid a {
+  min-height: 18rem;
+}
+.vnext-service-price {
+  display: block;
+  margin-top: .85rem;
+  color: var(--terracotta);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.vnext-capability-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  justify-content: center;
+  max-width: 72rem;
+  margin: 1.5rem auto 0;
+}
+.vnext-capability-strip span {
+  padding: .48rem .8rem;
+  border: 1px solid rgb(105 112 82 / .3);
+  border-radius: 999px;
+  color: var(--forest);
+  background: rgb(255 253 247 / .72);
+  font-size: .78rem;
+  font-weight: 700;
+}
+.vnext-botanical-transition {
+  width: min(72rem, calc(100% - 2rem));
+  margin: clamp(.5rem, 2vw, 1.5rem) auto;
+}
+.vnext-botanical-transition img {
+  display: block;
+  width: 100%;
+  max-height: 11rem;
+  object-fit: contain;
+}
+@media (max-width: 74rem) {
+  .vnext-quick-services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 42rem) {
+  .vnext-quick-services__grid { grid-template-columns: 1fr; }
+  .vnext-quick-services__grid a { min-height: 0; }
 }

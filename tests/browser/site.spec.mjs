@@ -9,6 +9,9 @@ const criticalRoutes = [
   '/journey',
   '/work-with-benjy',
   '/partners',
+  '/eden-designer',
+  '/village-vision',
+  '/village-research',
   '/heart',
   '/links'
 ];
@@ -124,7 +127,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.locator('.hero-promise')).toHaveText('A Living Library for Positive Change, Regeneration, Remembering & Thriving as One.');
+  await expect(page.locator('.hero-promise')).toHaveText('The antidote to hopelessness and overwhelm.');
 
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
@@ -151,18 +154,29 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByText('From overwhelmed landowner to regenerative clarity.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Regenerative land design, clear action plans and project guidance for people who want their place to become healthier, more abundant and more alive.', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Chat with Benjy about your project' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Land Clarity & Action Session' })).toBeVisible();
-  await expect(page.locator('.vnext-offer__price').first()).toContainText('€111');
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Book the €111 Clarity Call' })).toBeVisible();
+  const quickServices = page.locator('#how-i-can-help');
+  await expect(quickServices.getByRole('heading', { level: 2, name: 'Four clear ways we can work together.' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Land + Project Clarity Session' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Whole-Property Design + Action Plan' })).toBeVisible();
+  await expect(quickServices.getByRole('heading', { level: 3, name: 'Implementation + Workshops' })).toBeVisible();
+  await expect(quickServices.getByText('Water retention', { exact: true })).toBeVisible();
+  await expect(quickServices.getByText('Workshops + events', { exact: true })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Focused Roadmap' })).toBeVisible();
+  const offers = page.locator('#services');
+  await expect(offers.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
+  await expect(offers.locator('.vnext-offer__price').first()).toContainText('€111');
+  await expect(offers.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
 
-  await expect(page.getByRole('heading', { level: 3, name: 'Holistic Regenerative Concept Masterplan' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Whole-Property Masterplan' })).toBeVisible();
-  await expect(page.locator('.vnext-offer')).toHaveCount(3);
+  await expect(offers.getByRole('heading', { level: 3, name: 'Focused Regenerative Roadmap' })).toBeVisible();
+  await expect(offers.getByRole('link', { name: 'WhatsApp Benjy · Focused Roadmap' })).toBeVisible();
+
+  await expect(offers.getByRole('heading', { level: 3, name: 'Whole-Property Regenerative Design & Action Plan' })).toBeVisible();
+  await expect(offers.getByRole('link', { name: 'Chat about a Whole-Property Design' })).toBeVisible();
+  await expect(offers.locator('.vnext-offer')).toHaveCount(3);
 
   const recentDesign = page.locator('#recent-design');
   await expect(recentDesign.getByRole('heading', { name: 'Contour Food Forest Ideas' })).toBeVisible();
@@ -171,11 +185,15 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(recentDesign.locator('img[src*="contour-food-forest-concept-v2.webp"]')).toHaveCount(1);
   await expect(recentDesign.locator('img[src*="luisa-sim-berrylicious-terrace-concept-v2.webp"]')).toHaveCount(1);
 
-  await expect(page.getByRole('link', { name: /Tell me about your land or project/ }).first()).toHaveAttribute('href', '#land-vision');
+  await expect(page.locator('#selected-work img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(1);
+  await expect(page.locator('.vnext-final__card img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(0);
+
   const form = page.locator('form[data-land-enquiry-form]');
   await expect(form).toBeHidden();
   await expect(form).toHaveAttribute('data-netlify', 'true');
   await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(0);
+  await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
@@ -183,10 +201,56 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
 });
 
+test('Living Library search turns a large collection into a calm, useful doorway', async ({ page }) => {
+  await page.goto('/living-library', { waitUntil: 'domcontentloaded' });
+
+  const search = page.getByRole('searchbox', { name: 'Search Living Library resources' });
+  const status = page.locator('.library-search__status');
+  const cards = page.locator('.resource-card');
+
+  await expect(search).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Popular Living Library pathways' })).toBeVisible();
+
+  const total = await cards.count();
+  expect(total).toBeGreaterThan(50);
+
+  await search.fill('Fukuoka');
+  await expect(page.getByRole('heading', { level: 3, name: 'The One-Straw Revolution' })).toBeVisible();
+  await expect(status).toContainText('Showing');
+
+  await search.fill('a-resource-that-does-not-exist-eden');
+  await expect(status).toContainText('No direct match yet');
+
+  await search.press('Escape');
+  await expect(search).toHaveValue('');
+  await expect(status).toContainText(`Browse ${total} curated resources`);
+});
+
+test('future pathways are honest, connected and lightly surfaced', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  const paths = page.locator('.future-paths');
+  await expect(paths.getByRole('link', { name: /Eden Designer/ })).toHaveAttribute('href', '/eden-designer');
+  await expect(paths.getByRole('link', { name: /Affordable regenerative village vision/ })).toHaveAttribute('href', '/village-vision');
+  await expect(paths.getByRole('link', { name: /Village research garden/ })).toHaveAttribute('href', '/village-research');
+
+  await page.goto('/eden-designer', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Prototype pathway · human-reviewed', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Explore the current prototype' })).toHaveAttribute('target', '_blank');
+  await expect(page.getByText('Clarity without false certainty.', { exact: true })).toBeVisible();
+
+  await page.goto('/village-vision', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Future vision · not yet a physical village', { exact: true })).toBeVisible();
+  await expect(page.getByText(/No final village site, legal structure, planning permission/)).toBeVisible();
+
+  await page.goto('/village-research', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Research scaffold · growing openly', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Seven shelves before a site or offer.' })).toBeVisible();
+});
+
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
   await page.goto('/work-with-benjy#implementation', { waitUntil: 'domcontentloaded' });
   const implementation = page.locator('#implementation');
-  await expect(implementation.getByRole('heading', { name: 'Bringing it to life' })).toBeVisible();
+  await expect(implementation.getByRole('heading', { name: 'Implementation + Project Guidance' })).toBeVisible();
   await expect(implementation.getByText('Monthly guidance as questions come up', { exact: true })).toBeVisible();
 });
 
@@ -275,7 +339,10 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
   { route: '/work-with-benjy', name: 'work-with-benjy' },
-  { route: '/partners', name: 'partners' }
+  { route: '/partners', name: 'partners' },
+  { route: '/eden-designer', name: 'eden-designer' },
+  { route: '/village-vision', name: 'village-vision' },
+  { route: '/village-research', name: 'village-research' }
 ]) {
   test(`capture ${reviewPage.name} review screenshot`, async ({ page }, testInfo) => {
     test.setTimeout(120_000);

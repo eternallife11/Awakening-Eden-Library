@@ -554,3 +554,36 @@
   .library-section::before, .library-section::after { width: 8rem; opacity: .1; }
   .begin-exploring { grid-template-columns: 1fr; }
 }
+
+
+/* Trusted Living Library gateways, 2026-09-26 */
+.library-gateways {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+.library-gateways > span {
+  width: 100%;
+  color: var(--terracotta, #875840);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.library-gateways a {
+  padding: .55rem .78rem;
+  border: 1px solid rgb(105 112 82 / .28);
+  border-radius: 999px;
+  color: var(--forest, #294b36);
+  background: rgb(255 253 247 / .78);
+  font-size: .8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.library-gateways a:hover,
+.library-gateways a:focus-visible {
+  border-color: rgb(184 148 75 / .7);
+  background: #fffdf7;
+}

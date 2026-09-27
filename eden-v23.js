@@ -31,7 +31,7 @@
       // Opening promise: concise, hopeful and exactly aligned with the final wording.
       const heroPromise = document.querySelector(".hero--welcome .hero-promise");
       if (heroPromise) {
-        heroPromise.textContent = "A Living Library for Positive Change, Regeneration, Remembering & Thriving as One.";
+        heroPromise.textContent = "The antidote to hopelessness and overwhelm.";
       }
 
       // Keep the opening calm. The full soundtrack remains further down the page.

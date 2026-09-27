@@ -685,3 +685,135 @@ body.page-library {
   .lib-welcome__steps li { text-align: left; }
   .lib-community__links { justify-content: center; }
 }
+
+
+/* Final Living Library experience pass — 2026-09-27
+   Curated front door + lightweight search + unique botanical chapter markers. */
+.library-finder {
+  padding: clamp(1.25rem, 4vw, 2.5rem) 0;
+  background:
+    radial-gradient(circle at 10% 10%, rgb(229 196 125 / .17), transparent 20rem),
+    radial-gradient(circle at 90% 90%, rgb(75 111 107 / .12), transparent 24rem),
+    var(--paper);
+}
+.library-finder__card {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(22rem, 1.15fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.4rem, 4vw, 2.5rem);
+  border: 1px solid rgb(105 112 82 / .26);
+  border-radius: 1.6rem;
+  background: rgb(255 253 247 / .82);
+  box-shadow: 0 18px 44px rgb(35 49 38 / .08);
+}
+.library-finder__intro h2 {
+  margin: .25rem 0 .55rem;
+  color: var(--forest);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1;
+}
+.library-finder__intro p {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--umber);
+  line-height: 1.65;
+}
+.library-search { min-width: 0; }
+.library-search__field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .65rem;
+  align-items: center;
+  min-height: 3.6rem;
+  padding: .45rem .55rem .45rem 1rem;
+  border: 1px solid rgb(52 71 52 / .34);
+  border-radius: 999px;
+  background: var(--paper-light);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .7);
+}
+.library-search__field > span {
+  color: var(--terracotta);
+  font-size: 1.35rem;
+}
+.library-search__input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--forest);
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+}
+.library-search__input::placeholder { color: rgb(80 72 60 / .66); }
+.library-search__clear {
+  min-height: 2.7rem;
+  padding: .45rem .9rem;
+  border: 0;
+  border-radius: 999px;
+  color: var(--paper-light);
+  background: var(--forest);
+  font: inherit;
+  font-size: .84rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.library-search__status {
+  min-height: 1.4em;
+  margin: .55rem 1rem 0;
+  color: var(--umber);
+  font-size: .82rem;
+}
+.library-finder__paths {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: .65rem;
+}
+.library-finder__paths a {
+  display: grid;
+  gap: .15rem;
+  padding: .9rem 1rem;
+  border-top: 1px solid rgb(105 112 82 / .3);
+  color: var(--forest);
+  text-decoration: none;
+}
+.library-finder__paths a:hover,
+.library-finder__paths a:focus-visible {
+  border-color: var(--terracotta);
+  background: rgb(167 101 79 / .045);
+}
+.library-finder__paths strong {
+  font-family: var(--display);
+  font-size: 1.08rem;
+}
+.library-finder__paths span {
+  color: var(--umber);
+  font-size: .75rem;
+  line-height: 1.35;
+}
+.library-botanical-transition {
+  width: min(72rem, calc(100% - 2rem));
+  margin: clamp(1.5rem, 4vw, 3rem) auto;
+}
+.library-botanical-transition img {
+  display: block;
+  width: 100%;
+  max-height: 12rem;
+  object-fit: contain;
+}
+.library-section[hidden] { display: none !important; }
+
+@media (max-width: 64rem) {
+  .library-finder__card { grid-template-columns: 1fr; }
+  .library-finder__paths { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 46rem) {
+  .library-finder__card { border-radius: 1.2rem; }
+  .library-finder__paths { grid-template-columns: 1fr 1fr; }
+  .library-search__field { border-radius: 1rem; }
+}
+@media (max-width: 30rem) {
+  .library-finder__paths { grid-template-columns: 1fr; }
+}

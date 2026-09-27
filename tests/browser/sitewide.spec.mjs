@@ -16,6 +16,7 @@ const publicHtmlRoutes = [
   '/abundant-edge-index.html',
   '/acacia_dealbata_magic_manual_regenerative_eden.html',
   '/awakening_eden_regenerative_film_resource_library_updated.html',
+  '/eden-designer.html',
   '/events.html',
   '/heart.html',
   '/journal.html',
@@ -30,6 +31,8 @@ const publicHtmlRoutes = [
   '/start-here.html',
   '/thank-you.html',
   '/thriving-in-these-times.html',
+  '/village-research.html',
+  '/village-vision.html',
   '/work-with-benjy.html'
 ];
 

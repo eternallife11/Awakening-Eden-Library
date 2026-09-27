@@ -299,3 +299,10 @@
   .source-card:hover,
   .source-card:focus-visible { transform: none; }
 }
+
+
+/* Painted divider rhythm, 2026-09-26 */
+.page-about .botanical-wide-divider--celtic {
+  margin-top: clamp(1.2rem, 3vw, 2.4rem);
+  margin-bottom: clamp(-1.4rem, -1vw, -.6rem);
+}
