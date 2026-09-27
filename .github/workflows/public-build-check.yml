@@ -107,7 +107,11 @@ jobs:
           AWAKENING_EDEN_PUBLIC_ORIGIN=https://awakeningeden.org node scripts/build-cloudflare.mjs
           grep -q 'https://awakeningeden.org/' dist/index.html
           grep -q 'Sitemap: https://awakeningeden.org/sitemap.xml' dist/robots.txt
+          test -f dist/google4ea90192379dfce2.html
           grep -q '<loc>https://awakeningeden.org/work-with-benjy</loc>' dist/sitemap.xml
+          grep -q '<loc>https://awakeningeden.org/partners</loc>' dist/sitemap.xml
+          grep -q '<loc>https://awakeningeden.org/journey</loc>' dist/sitemap.xml
+          grep -q '<loc>https://awakeningeden.org/heart</loc>' dist/sitemap.xml
           if grep -RIl 'https://awakening-eden-library.netlify.app' dist --include='*.html' --include='*.xml' --include='*.txt' --include='*.js' --include='*.css' --include='*.json' --include='*.webmanifest' | grep -q .; then
             echo 'Legacy origin remains in production text assets.' >&2
             exit 1
