@@ -714,3 +714,52 @@
   .vnext-quick-services__grid { grid-template-columns: 1fr; }
   .vnext-quick-services__grid a { min-height: 0; }
 }
+
+/* Regenerative mission and independent learning network */
+.vnext-mission {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+  background: #f3f0e5;
+  border-block: 1px solid rgb(66 80 56 / .15);
+}
+.vnext-mission__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(17rem, .8fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.vnext-mission h2,
+.vnext-network h2 { max-width: 18ch; }
+.vnext-mission__lead { font-size: clamp(1.18rem, 2vw, 1.45rem); line-height: 1.48; color: var(--forest); }
+.vnext-mission__grid > div > p:not(.eyebrow) { max-width: 68ch; }
+.vnext-mission__actions { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1.7rem; }
+.vnext-mission__aside {
+  padding: clamp(1.4rem, 3vw, 2.6rem);
+  background: rgb(255 253 247 / .82);
+  border: 1px solid rgb(78 94 64 / .27);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 40px rgb(45 60 39 / .07);
+}
+.vnext-mission__aside .handwritten { margin-top: 0; color: var(--terracotta); }
+.vnext-mission__aside ul { list-style: none; padding: 0; margin: 1rem 0; }
+.vnext-mission__aside li { padding: .8rem 0; border-bottom: 1px solid rgb(78 94 64 / .18); line-height: 1.5; }
+.vnext-mission__aside li strong { color: var(--forest); }
+.vnext-mission__note { margin-bottom: 0; font-size: .95rem; line-height: 1.55; }
+.vnext-network { padding-block: clamp(3rem, 6vw, 5.5rem); background: #f8f6ef; }
+.vnext-network__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.2rem, 3vw, 3rem); }
+.vnext-network__group { padding: clamp(1.3rem, 2.5vw, 2rem); background: #fffdf8; border: 1px solid rgb(78 94 64 / .19); border-radius: 1.3rem; }
+.vnext-network__group h3 { margin: 0 0 .8rem; color: var(--forest); }
+.vnext-network__group h3:not(:first-child) { margin-top: 1.8rem; }
+.vnext-network__group ul { padding: 0; margin: 0; list-style: none; }
+.vnext-network__group li + li { border-top: 1px solid rgb(78 94 64 / .15); }
+.vnext-network__group a { display: block; padding: .8rem .1rem; color: var(--forest); text-decoration: none; border-radius: .35rem; }
+.vnext-network__group a strong { display: block; font-size: 1.08rem; text-decoration: underline; text-decoration-color: rgb(78 94 64 / .35); text-underline-offset: .22rem; }
+.vnext-network__group a span { display: block; margin-top: .18rem; color: var(--umber); line-height: 1.45; }
+.vnext-network__group a:hover strong,
+.vnext-network__group a:focus-visible strong { text-decoration-color: currentColor; }
+.vnext-network__group a:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+.vnext-network__closing { margin: 1.6rem 0 0; font-weight: 600; }
+.vnext-network__closing a { color: var(--forest); text-underline-offset: .2rem; }
+@media (max-width: 48rem) {
+  .vnext-mission__grid,
+  .vnext-network__grid { grid-template-columns: 1fr; }
+}
