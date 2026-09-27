@@ -281,7 +281,7 @@ test('partnership page exposes the referral pathway and current service ladder',
   await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Email Benjy' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Email Awakening Eden' })).toBeVisible();
 
   await settleLazyImages(page);
   const editorialImages = page.locator('.partners-work-card > img, .partners-final__photo');
