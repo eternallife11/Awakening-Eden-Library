@@ -1,10 +1,20 @@
 # Awakening Eden — Current Work Handoff
 
-_Last updated: 26 September 2026_
+_Last updated: 27 September 2026_
 
 This is the durable handoff point for the next ChatGPT / Codex / Claude work session. Read this file before starting substantial website work, then confirm the current `main` branch and latest pull request state in GitHub.
 
-## Active review — Eden Designer + regenerative village pathways
+## Latest work — Work with Benjy mission, 27 September 2026
+
+PR #22 was merged into `main` at `efd6a19d313bdbef942c7481dd1bcd4a43048d74` before this session. Its new pathways and approved visual system are the starting point for this edit.
+
+Branch `codex/benjy-regenerative-mission-2026-09-27` adds a mission section after the four service pathways and an independently labelled directory of Portugal, Europe and film/learning organisations after the partnership invitation. Scave.World uses its verified current spelling. The existing service offers and imagery are unchanged. No formal partnership with a listed organisation is claimed.
+
+Verification: Cloudflare public build passed (371 files); 13/13 Worker tests passed; generated HTML has unique anchors, valid in-page links and no additional duplicate hero image. Desktop/mobile Playwright could not run because Chromium was absent and the browser download returned an invalid archive in this environment. The two new sections still need visual review before merge or deployment. The live staging site was not changed by this branch.
+
+Next actions: review desktop and mobile appearance; confirm copy and selected organisations; run browser QA in CI or an environment with Chromium; merge after approval; deploy to Cloudflare staging and verify the live route.
+
+## Previous review — Eden Designer + regenerative village pathways (merged as PR #22)
 
 Branch: `codex/eden-designer-village-pathways`
 
@@ -15,7 +25,7 @@ Baseline before this work:
 - active staging URL: `https://awakening-eden-library-staging.holisticmission8.workers.dev/`
 - Netlify remains a frozen rollback snapshot
 
-This branch is intentionally **not merged or deployed**. It adds:
+At the time of that review, this branch had not yet been merged or deployed. It added:
 
 - `/eden-designer` — an honest, human-reviewed doorway to the current external prototype
 - `/village-vision` — the affordable regenerative village vision, clearly labelled as future work
