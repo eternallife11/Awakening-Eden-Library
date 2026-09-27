@@ -19,6 +19,9 @@ jobs:
           node-version: '24'
           package-manager-cache: false
 
+      - name: Enforce zero-cost hosting policy
+        run: node scripts/check-zero-cost.mjs
+
       - name: Build Cloudflare public artifact
         env:
           ENQUIRY_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
