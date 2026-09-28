@@ -684,19 +684,38 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+/* The approved mission painting predates the final geometry lock. Cover its
+   approximate central rosette with the deterministic 12-fold Lotus master,
+   and soften the tiny crown mandala into a simple sun so no substitute sacred
+   geometry is presented as Awakening Eden's mark. */
+.mission-vision-art::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 2.2%;
+  left: 50%;
+  width: clamp(2.6rem, 6vw, 4.25rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3c2 0 30%, #dca844 31% 48%, rgb(239 207 132 / .95) 49% 62%, rgb(255 248 231 / .82) 63% 100%);
+  box-shadow: 0 0 24px rgb(222 170 65 / .48);
+  transform: translateX(-50%);
+}
 .mission-vision-lotus {
   position: absolute;
-  right: clamp(.8rem, 2vw, 1.35rem);
-  bottom: clamp(4.2rem, 8vw, 5.4rem);
+  z-index: 3;
+  top: 40.5%;
+  left: 50%;
   display: grid;
-  width: clamp(4.8rem, 10vw, 7rem);
+  width: clamp(5.8rem, 14vw, 9.25rem);
   aspect-ratio: 1;
   place-items: center;
   padding: .55rem;
-  border: 1px solid rgb(213 166 74 / .5);
+  border: 1px solid rgb(213 166 74 / .62);
   border-radius: 50%;
-  background: rgb(255 248 231 / .78);
-  box-shadow: 0 12px 26px rgb(35 49 38 / .16);
+  background: rgb(255 248 231 / .94);
+  box-shadow: 0 0 34px rgb(225 176 78 / .46), 0 12px 26px rgb(35 49 38 / .14);
+  transform: translate(-50%, -50%);
   backdrop-filter: blur(4px);
 }
 .mission-vision-lotus img {
