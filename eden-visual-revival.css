@@ -677,11 +677,34 @@
   background: #ead7ac;
   box-shadow: 0 24px 60px rgb(35 49 38 / 0.16);
 }
-.mission-vision-art img {
+.mission-vision-art { position: relative; }
+.mission-vision-art > img:first-child {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+.mission-vision-lotus {
+  position: absolute;
+  right: clamp(.8rem, 2vw, 1.35rem);
+  bottom: clamp(4.2rem, 8vw, 5.4rem);
+  display: grid;
+  width: clamp(4.8rem, 10vw, 7rem);
+  aspect-ratio: 1;
+  place-items: center;
+  padding: .55rem;
+  border: 1px solid rgb(213 166 74 / .5);
+  border-radius: 50%;
+  background: rgb(255 248 231 / .78);
+  box-shadow: 0 12px 26px rgb(35 49 38 / .16);
+  backdrop-filter: blur(4px);
+}
+.mission-vision-lotus img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: sepia(.14) saturate(.9);
 }
 .mission-vision-art figcaption {
   padding: .85rem 1rem 1rem;
