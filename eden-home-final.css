@@ -291,6 +291,8 @@ body.final-home-polish .mission-declaration {
   line-height: 1.34;
 }
 body.final-home-polish .mission-art {
+  width: min(100%, 20rem);
+  justify-self: end;
   overflow: hidden;
   margin: 0;
   border: 1px solid rgb(105 112 82 / 0.28);
@@ -326,5 +328,5 @@ body.final-home-polish .story-section .story-copy { text-align: left; }
 @media (max-width: 50rem) {
   body.final-home-polish .home-hero-actions { grid-template-columns: 1fr; }
   body.final-home-polish .mission-grid { grid-template-columns: 1fr; }
-  body.final-home-polish .mission-art { width: min(100%, 32rem); margin-inline: auto; }
+  body.final-home-polish .mission-art { width: min(100%, 20rem); justify-self: center; margin-inline: auto; }
 }
