@@ -149,10 +149,10 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(mission.locator('.mission-vision-art > img').first()).toHaveAttribute('src', /awakening-eden-mission-earth-mama-community-v1\.jpg/);
   await expect(mission.locator('.mission-vision-lotus img')).toHaveAttribute('src', 'assets/geometry/lotus-of-life-12-exact.svg');
 
-  await expect(page.locator('.library-room--illustrated')).toHaveCount(3);
-  await expect(page.locator('.library-room__art').nth(0)).toHaveAttribute('src', '/library-guide-v19.webp');
-  await expect(page.locator('.library-room__art').nth(1)).toHaveAttribute('src', '/library-films-v19.webp');
-  await expect(page.locator('.library-room__art').nth(2)).toHaveAttribute('src', '/library-books-v19.webp');
+  const library = page.locator('#library');
+  await expect(library.getByRole('heading', { level: 2, name: 'The Living Library' })).toBeVisible();
+  await expect(library.locator('.library-doorway img')).toHaveAttribute('src', /awakening-eden-living-library-1672\.webp/);
+  expect(await library.locator('.library-room').count()).toBeGreaterThanOrEqual(8);
 
   await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
