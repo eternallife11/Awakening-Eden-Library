@@ -15,7 +15,7 @@ for (const file of required) {
 }
 const excluded = new Set(['.git','node_modules','dist','docs','deliverables','test-results','playwright-report']);
 const extensions = new Set(['.html','.css','.js','.mjs','.json','.webmanifest']);
-const forbidden = ['tree-heart-portal-01.webp','tree-heart-portal-02.webp'];
+const forbidden = ['assets/brand/awakening-eden-mark-primary.svg','tree-heart-portal-01.webp','tree-heart-portal-02.webp'];
 async function walk(dir) {
   for (const entry of await readdir(dir,{withFileTypes:true})) {
     if (entry.isDirectory() && excluded.has(entry.name)) continue;
