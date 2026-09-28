@@ -240,3 +240,91 @@ body.final-home-polish .library-room:focus-visible {
     height: 7rem;
   }
 }
+
+
+/* Highest-version homepage alignment · 28 September 2026 */
+body.final-home-polish .home-hero-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 48rem);
+  margin: 1.6rem auto 1.2rem;
+}
+body.final-home-polish .home-hero-actions .button {
+  min-height: 3.25rem;
+  justify-content: center;
+  text-align: center;
+}
+body.final-home-polish .mission-section {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 85% 20%, rgb(184 138 56 / 0.09), transparent 32rem), linear-gradient(180deg, rgb(255 250 240 / 0.96), rgb(246 237 220 / 0.72));
+}
+body.final-home-polish .mission-section::before {
+  position: absolute;
+  top: 1.25rem;
+  left: -1.5rem;
+  width: clamp(5rem, 10vw, 8rem);
+  aspect-ratio: 1;
+  background: url('/assets/corners/botanical-corner-02.webp') center / contain no-repeat;
+  content: "";
+  opacity: 0.6;
+  pointer-events: none;
+}
+body.final-home-polish .mission-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(16rem, 0.82fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+body.final-home-polish .mission-copy { max-width: 46rem; }
+body.final-home-polish .mission-copy h2 { max-width: 15ch; }
+body.final-home-polish .mission-declaration {
+  margin-top: 1.35rem;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--home-gold);
+  color: var(--home-forest-deep);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.28rem, 2.3vw, 1.72rem);
+  line-height: 1.34;
+}
+body.final-home-polish .mission-art {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgb(105 112 82 / 0.28);
+  border-radius: clamp(1rem, 2.4vw, 1.6rem);
+  background: var(--home-forest-deep);
+  box-shadow: 0 20px 50px rgb(35 49 38 / 0.13);
+}
+body.final-home-polish .mission-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+body.final-home-polish .mission-art figcaption {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.15rem 1.15rem;
+  color: #fffaf0;
+}
+body.final-home-polish .mission-art figcaption strong {
+  color: #e2bd72;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+body.final-home-polish .mission-art figcaption span {
+  color: rgb(255 250 240 / 0.86);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+body.final-home-polish .story-section .story-grid { max-width: 52rem; }
+body.final-home-polish .story-section .story-copy { text-align: left; }
+@media (max-width: 50rem) {
+  body.final-home-polish .home-hero-actions { grid-template-columns: 1fr; }
+  body.final-home-polish .mission-grid { grid-template-columns: 1fr; }
+  body.final-home-polish .mission-art { width: min(100%, 32rem); margin-inline: auto; }
+}

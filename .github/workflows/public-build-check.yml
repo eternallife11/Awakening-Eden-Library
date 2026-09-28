@@ -22,6 +22,9 @@ jobs:
       - name: Enforce zero-cost hosting policy
         run: node scripts/check-zero-cost.mjs
 
+      - name: Enforce Awakening Eden visual lock
+        run: node scripts/check-visual-lock.mjs
+
       - name: Build Cloudflare public artifact
         env:
           ENQUIRY_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
