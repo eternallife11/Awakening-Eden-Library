@@ -129,18 +129,25 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
   await expect(page.locator('.hero-promise')).toHaveText('The antidote to hopelessness and overwhelm.');
 
+  const hero = page.locator('.hero--welcome');
+  await expect(hero.getByRole('link', { name: 'Begin here' })).toHaveAttribute('href', '/start-here');
+  await expect(hero.getByRole('link', { name: 'Explore the Living Library' })).toHaveAttribute('href', '/living-library');
+  await expect(hero.getByRole('link', { name: 'Work with Benjy' })).toHaveAttribute('href', '/work-with-benjy');
+
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
-  await expect(threshold.getByRole('link', { name: /Begin Here/ })).toHaveAttribute('href', '/start-here');
-  await expect(threshold.getByRole('link', { name: /Explore the Living Library/ })).toHaveAttribute('href', '/living-library');
-  await expect(threshold.getByRole('link', { name: /Work with Benjy/ })).toHaveAttribute('href', '/work-with-benjy');
 
-  await expect(page.getByRole('heading', { level: 2, name: 'We’re Benjy & Sofia — glad you’re here' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Earth lovers, regenerative guides and practical dreamers.' })).toBeVisible();
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
-  await expect(circle.locator('img')).toHaveAttribute('src', /garden-of-harmony-community-lotus-vnext\.webp/);
-  await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
+  await expect(circle.locator('img')).toHaveAttribute('src', /awakening-eden-community-circle-v35-1536\.webp/);
+  await expect(circle.getByText('A circle of belonging, learning and action', { exact: true })).toBeVisible();
+
+  const mission = page.locator('#mission');
+  await expect(mission.getByRole('heading', { level: 2, name: 'Regenerate life at every level.' })).toBeVisible();
+  await expect(mission.locator('.mission-vision-art > img').first()).toHaveAttribute('src', /awakening-eden-mission-earth-mama-community-v1\.jpg/);
+  await expect(mission.locator('.mission-vision-lotus img')).toHaveAttribute('src', 'assets/geometry/lotus-of-life-12-exact.svg');
 
   await expect(page.locator('.library-room--illustrated')).toHaveCount(3);
   await expect(page.locator('.library-room__art').nth(0)).toHaveAttribute('src', '/library-guide-v19.webp');
@@ -154,8 +161,9 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Work with Benjy' })).toBeVisible();
-  await expect(page.getByText('Regenerative land design, clear action plans and project guidance for people who want their place to become healthier, more abundant and more alive.', { exact: true })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Chat with Benjy about your project' })).toBeVisible();
+  await expect(page.getByText('Regenerative land clarity, whole-property design and practical implementation support for people who want to restore water cycles, build living soil, revive orchards and grow abundance without losing sight of the whole system.', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Tell me about your land' }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Chat on WhatsApp' })).toBeVisible();
 
   const quickServices = page.locator('#how-i-can-help');
   await expect(quickServices.getByRole('heading', { level: 2, name: 'Four clear ways we can work together.' })).toBeVisible();
@@ -196,8 +204,8 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
-  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
+  await expect(page.getByRole('link', { name: 'Start a collaboration conversation' }).first()).toBeVisible();
+  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-painted-192.webp');
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
 });
 
@@ -257,8 +265,8 @@ test('Work with Benjy exposes implementation guidance at its direct anchor', asy
 test('partnership page exposes the referral pathway and current service ladder', async ({ page }) => {
   await page.goto('/partners', { waitUntil: 'domcontentloaded' });
 
-  await expect(page.getByRole('heading', { level: 1, name: 'Add the regenerative land layer.' })).toBeVisible();
-  await expect(page.getByText('You help people find or create the right rural property. I help them understand what the land can become—and what to do first.', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Bring a place, a project, a network or an idea.' })).toBeVisible();
+  await expect(page.getByText('Awakening Eden connects practical regeneration with people who can help it take root — on land, through education, in communities and across wider positive-impact projects.', { exact: true })).toBeVisible();
 
   const pathway = page.locator('#pathway');
   await expect(pathway.getByRole('heading', { name: 'A human referral pathway, without the pressure.' })).toBeVisible();
