@@ -587,3 +587,153 @@
   border-color: rgb(184 148 75 / .7);
   background: #fffdf7;
 }
+
+
+/* ---------- 2026-09-28 premium homepage lock ----------
+   Aligns the homepage with the approved painted Tree-Heart identity, removes
+   duplicate founder imagery, and gives the regenerative mission one clear,
+   human-scale visual threshold. */
+.site-header .brand-mark--painted {
+  width: clamp(3.75rem, 5vw, 4.75rem);
+  height: clamp(3.75rem, 5vw, 4.75rem);
+  object-fit: contain;
+  filter: drop-shadow(0 5px 10px rgb(35 49 38 / 0.12));
+}
+.hero-actions {
+  justify-content: center;
+  margin: clamp(1.35rem, 3vw, 2rem) auto 1rem;
+}
+.hero-actions .button { min-width: min(100%, 12.5rem); }
+
+.founders-welcome--story {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+}
+.founders-welcome__story {
+  width: min(100%, 54rem);
+  margin-inline: auto;
+}
+.founders-welcome__story h2 {
+  max-width: 18ch;
+  margin-inline: auto;
+}
+.founders-welcome__story .lead {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+.founders-welcome__story > p:not(.handwritten):not(.lead) {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+.founders-welcome__actions { justify-content: center; margin-top: 1.5rem; }
+.founders-welcome__divider--current {
+  width: min(94vw, 70rem);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: clamp(-1rem, -1vw, -0.35rem);
+  opacity: 0.92;
+}
+
+.mission-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgb(197 151 73 / 0.11), transparent 23rem),
+    linear-gradient(180deg, #fffaf0, #f1e4cf);
+}
+.mission-section::before,
+.mission-section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: clamp(9rem, 16vw, 15rem);
+  aspect-ratio: 1;
+  opacity: 0.12;
+  background: center / contain no-repeat;
+}
+.mission-section::before {
+  top: 2rem;
+  left: -4rem;
+  background-image: url("assets/corners/botanical-corner-01.webp");
+}
+.mission-section::after {
+  right: -4rem;
+  bottom: 1rem;
+  background-image: url("assets/corners/botanical-corner-06.webp");
+  transform: rotate(180deg);
+}
+.mission-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(18rem, .92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+.mission-vision-art {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgb(105 112 82 / 0.28);
+  border-radius: clamp(1.1rem, 2.4vw, 1.8rem);
+  background: #ead7ac;
+  box-shadow: 0 24px 60px rgb(35 49 38 / 0.16);
+}
+.mission-vision-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.mission-vision-art figcaption {
+  padding: .85rem 1rem 1rem;
+  color: var(--umber);
+  background: rgb(255 253 247 / .9);
+  font-size: .86rem;
+  line-height: 1.45;
+  text-align: center;
+}
+.mission-copy {
+  max-width: 43rem;
+}
+.mission-copy h2 {
+  max-width: 13ch;
+  margin-bottom: .8rem;
+}
+.mission-copy .lead {
+  color: var(--forest);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+.mission-callout {
+  margin: 1.35rem 0 1.5rem;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 .8rem .8rem 0;
+  background: rgb(255 253 247 / .68);
+}
+.mission-copy .button-row {
+  justify-content: flex-start;
+}
+
+@media (max-width: 58rem) {
+  .mission-grid { grid-template-columns: 1fr; }
+  .mission-vision-art { width: min(100%, 42rem); margin-inline: auto; }
+  .mission-copy { margin-inline: auto; text-align: center; }
+  .mission-copy h2 { margin-inline: auto; }
+  .mission-copy .button-row { justify-content: center; }
+  .mission-callout { border-left: 0; border-top: 3px solid var(--gold); border-radius: .8rem; }
+}
+
+@media (max-width: 42rem) {
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100%, 24rem);
+  }
+  .hero-actions .button { width: 100%; min-width: 0; }
+  .founders-welcome--story { padding-top: 2.25rem; }
+  .founders-welcome__story h2 { max-width: 12ch; }
+  .founders-welcome__divider--current { width: calc(100% - 1rem); margin-bottom: 0; }
+  .mission-section::before,
+  .mission-section::after { width: 8rem; opacity: .08; }
+  .mission-grid { gap: 1.75rem; }
+  .mission-copy h2 { max-width: 12ch; }
+}
