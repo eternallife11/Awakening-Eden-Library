@@ -2,13 +2,14 @@
   "name": "awakening-eden-library",
   "private": true,
   "scripts": {
-    "build:cloudflare": "pnpm run check:zero-cost && node scripts/build-cloudflare.mjs",
-    "build:production": "pnpm run check:zero-cost && AWAKENING_EDEN_PUBLIC_ORIGIN=https://awakeningeden.org node scripts/build-cloudflare.mjs",
+    "build:cloudflare": "pnpm run check:zero-cost && pnpm run check:visual-lock && node scripts/build-cloudflare.mjs",
+    "build:production": "pnpm run check:zero-cost && pnpm run check:visual-lock && AWAKENING_EDEN_PUBLIC_ORIGIN=https://awakeningeden.org node scripts/build-cloudflare.mjs",
     "serve:preview": "node scripts/serve-cloudflare-preview.mjs",
     "test:worker": "node --test tests/worker/enquiry.test.mjs",
     "test:browser": "ENQUIRY_TURNSTILE_SITE_KEY=1x00000000000000000000AA node scripts/build-cloudflare.mjs && playwright test",
     "test": "pnpm run test:worker && pnpm run test:browser",
-    "check:zero-cost": "node scripts/check-zero-cost.mjs"
+    "check:zero-cost": "node scripts/check-zero-cost.mjs",
+    "check:visual-lock": "node scripts/check-visual-lock.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",

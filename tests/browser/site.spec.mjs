@@ -135,7 +135,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(threshold.getByRole('link', { name: /Explore the Living Library/ })).toHaveAttribute('href', '/living-library');
   await expect(threshold.getByRole('link', { name: /Work with Benjy/ })).toHaveAttribute('href', '/work-with-benjy');
 
-  await expect(page.getByRole('heading', { level: 2, name: 'We’re Benjy & Sofia — glad you’re here' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Earth lovers, practical dreamers & lifelong students of life.' })).toBeVisible();
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
@@ -197,7 +197,7 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
-  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
+  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-painted-192.webp');
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
 });
 
@@ -278,7 +278,7 @@ test('partnership page exposes the referral pathway and current service ladder',
   await expect(page.locator('.partners-photo-sprig')).toHaveAttribute('src', 'assets/ornaments/photo-sprig-olive-rosemary.svg');
   await expect(page.locator('.partners-pathway__roots')).toHaveAttribute('src', 'assets/ornaments/photo-root-fungi-water.svg');
   await expect(page.locator('.partners-final__divider')).toHaveAttribute('src', 'assets/dividers/heart-hummingbird-vine-divider.svg');
-  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-primary.svg');
+  await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-painted-192.webp');
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Awakening Eden' })).toBeVisible();
