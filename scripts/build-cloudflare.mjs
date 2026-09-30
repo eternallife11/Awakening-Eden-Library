@@ -16,6 +16,14 @@ const OUT = path.join(ROOT, 'dist');
 const MAX_FILE = 25 * 1024 * 1024; // Cloudflare Workers Static Assets per-file limit: 25 MiB.
 const LEGACY_ORIGIN = 'https://awakening-eden-library.netlify.app';
 const PUBLIC_ORIGIN = BUILD_ENV.AWAKENING_EDEN_PUBLIC_ORIGIN || '';
+const PREMIUM_MARK = 'assets/brand/awakening-eden-mark-painted-192.webp';
+const PREMIUM_LOGO = 'assets/brand/awakening-eden-logo-primary-700.webp';
+const LEGACY_PUBLIC_IDENTITY = [
+  'assets/brand/awakening-eden-mark-reversed.svg',
+  'assets/brand/awakening-eden-mark-one-colour.svg',
+  'assets/brand/awakening-eden-mark-primary.svg',
+  'assets/illustrations/ae-logo-tree-heart.svg'
+];
 if (PUBLIC_ORIGIN && PUBLIC_ORIGIN !== 'https://awakeningeden.org') {
   throw new Error('Production origin must be exactly https://awakeningeden.org.');
 }
@@ -55,7 +63,13 @@ const excludedPublicAssets = new Set([
   'assets/dividers/flowing-suns-living-codes-divider-1280.avif',
   'assets/dividers/flowing-suns-living-codes-divider-1280.webp',
   'assets/dividers/flowing-suns-living-codes-divider-1600.avif',
-  'assets/dividers/flowing-suns-living-codes-divider-1600.webp'
+  'assets/dividers/flowing-suns-living-codes-divider-1600.webp',
+  // Legacy line-art identity files are kept in git for provenance only. Public
+  // HTML is normalized to the premium painted mark below, and old URLs redirect.
+  'assets/brand/awakening-eden-mark-reversed.svg',
+  'assets/brand/awakening-eden-mark-one-colour.svg',
+  'assets/brand/awakening-eden-mark-primary.svg',
+  'assets/illustrations/ae-logo-tree-heart.svg'
 ]);
 
 function shouldExclude(rel, isDir) {
@@ -262,6 +276,64 @@ async function prepareCloudflareEnquiryForm() {
   return true;
 }
 
+function withOrganizationLogo(html) {
+  const logoOrigin = PUBLIC_ORIGIN || LEGACY_ORIGIN;
+  const logoUrl = `${logoOrigin}/${PREMIUM_LOGO}`;
+  const scriptPattern = /<script([^>]*)type=["']application\/ld\+json["']([^>]*)>([\s\S]*?)<\/script>/gi;
+
+  return html.replace(scriptPattern, (match, before, after, jsonText) => {
+    try {
+      const data = JSON.parse(jsonText);
+      let changed = false;
+      const visit = (node) => {
+        if (Array.isArray(node)) {
+          for (const item of node) visit(item);
+          return;
+        }
+        if (!node || typeof node !== 'object') return;
+        const rawType = node['@type'];
+        const types = Array.isArray(rawType) ? rawType : [rawType];
+        if (types.includes('Organization') && !node.logo) {
+          node.logo = logoUrl;
+          changed = true;
+        }
+        for (const value of Object.values(node)) visit(value);
+      };
+      visit(data);
+      if (!changed) return match;
+      return `<script${before}type="application/ld+json"${after}>\n${JSON.stringify(data, null, 2)}\n  </script>`;
+    } catch {
+      return match;
+    }
+  });
+}
+
+async function normalizePremiumBrandIdentity(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await normalizePremiumBrandIdentity(file);
+      continue;
+    }
+    if (!/\.(?:html|xml|txt|css|js|json|webmanifest)$/i.test(entry.name)) continue;
+
+    const source = await readFile(file, 'utf8');
+    let normalized = source;
+    for (const legacy of LEGACY_PUBLIC_IDENTITY) {
+      normalized = normalized.replaceAll(legacy, PREMIUM_MARK);
+    }
+    if (/\.html$/i.test(entry.name)) {
+      normalized = withOrganizationLogo(normalized);
+      for (const legacy of LEGACY_PUBLIC_IDENTITY) {
+        if (normalized.includes(legacy)) {
+          throw new Error(`Legacy line-art identity survived public build normalization in ${path.relative(OUT, file)}: ${legacy}`);
+        }
+      }
+    }
+    if (normalized !== source) await writeFile(file, normalized);
+  }
+}
+
 async function rewriteProductionOrigins(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const file = path.join(dir, entry.name);
@@ -286,6 +358,7 @@ await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
 await writeCloudflareHeaders();
+await normalizePremiumBrandIdentity(OUT);
 if (PUBLIC_ORIGIN) await rewriteProductionOrigins(OUT);
 
 const indexPath = path.join(OUT, 'index.html');
@@ -294,5 +367,5 @@ await stat(indexPath);
 await stat(notFoundPath);
 
 console.log(`Cloudflare public build complete: ${filesCopied} files, ${(bytesCopied / 1024 / 1024).toFixed(1)} MiB`);
-console.log('Excluded from deployment: docs/, deliverables/, source ZIPs, markdown/internal prompts, repository/build tooling.');
+console.log('Excluded from deployment: docs/, deliverables/, legacy line-art identity assets, source ZIPs, markdown/internal prompts, repository/build tooling.');
 console.log(`Public origin: ${PUBLIC_ORIGIN || 'staging preview (legacy canonical until domain cutover)'}`);
