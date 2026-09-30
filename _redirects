@@ -25,6 +25,15 @@
 /assets/portals/awakening-eden-heartwood-living-codes-v35-800.webp /assets/portals/solar-tree-heart-lotus-portal-800.webp 302
 /assets/portals/awakening-eden-heartwood-living-codes-v35-1120.webp /assets/portals/solar-tree-heart-lotus-portal-1120.webp 302
 
+# Premium identity migration. These legacy line-art logo URLs may still appear
+# in older source templates, but public requests must always resolve to the
+# approved painted Tree + Heart mark. Force the rule on Netlify too because
+# the legacy files still exist in git; Cloudflare's build strips the force '!'.
+/assets/brand/awakening-eden-mark-reversed.svg /assets/brand/awakening-eden-mark-painted-192.webp 302!
+/assets/brand/awakening-eden-mark-one-colour.svg /assets/brand/awakening-eden-mark-painted-192.webp 302!
+/assets/brand/awakening-eden-mark-primary.svg /assets/brand/awakening-eden-mark-painted-192.webp 302!
+/assets/illustrations/ae-logo-tree-heart.svg /assets/brand/awakening-eden-mark-painted-192.webp 302!
+
 /living-library  /awakening_eden_regenerative_film_resource_library_updated.html  200
 /start-here      /Awakening-Regeneration.html                                      200
 /thriving-in-these-times /Thriving-in-These-Times.html                             200
