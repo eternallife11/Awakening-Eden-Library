@@ -17,11 +17,17 @@ for (const file of required) {
 const excluded = new Set(['.git','node_modules','dist','docs','deliverables','tests','scripts','test-results','playwright-report']);
 const extensions = new Set(['.html','.css','.js','.mjs','.json','.webmanifest']);
 const forbidden = ['assets/brand/awakening-eden-mark-primary.svg','tree-heart-portal-01.webp','tree-heart-portal-02.webp','awakening-eden-regenerative-future-community-v1'];
-const retiredPublicIdentity = [
+const premiumMark = 'assets/brand/awakening-eden-mark-painted-192.webp';
+const migratedPublicIdentity = [
   'assets/brand/awakening-eden-mark-one-colour.svg',
   'assets/brand/awakening-eden-mark-reversed.svg',
   'assets/illustrations/ae-logo-tree-heart.svg'
 ];
+const redirects = await readFile(path.join(root, '_redirects'), 'utf8');
+for (const ref of [...migratedPublicIdentity, 'assets/brand/awakening-eden-mark-primary.svg']) {
+  const rule = `/${ref} /${premiumMark} 302!`;
+  if (!redirects.includes(rule)) errors.push(`Missing premium identity migration alias: ${rule}`);
+}
 async function walk(dir) {
   for (const entry of await readdir(dir,{withFileTypes:true})) {
     if (entry.isDirectory() && excluded.has(entry.name)) continue;
@@ -32,7 +38,11 @@ async function walk(dir) {
     const rel=path.relative(root,full);
     for (const ref of forbidden) if (source.includes(ref)) errors.push(`${rel}: retired visual reference ${ref}`);
     if (path.extname(entry.name) === '.html') {
-      for (const ref of retiredPublicIdentity) if (source.includes(ref)) errors.push(`${rel}: retired line-mark public identity reference ${ref}`);
+      for (const ref of migratedPublicIdentity) {
+        if (!source.includes(ref)) continue;
+        const rule = `/${ref} /${premiumMark} 302!`;
+        if (!redirects.includes(rule)) errors.push(`${rel}: legacy line-mark reference is not protected by the premium identity migration: ${ref}`);
+      }
     }
     for (const line of source.split(/\r?\n/)) {
       if (!/(src\s*=|href\s*=|url\s*\(|image\s*:)/i.test(line)) continue;
@@ -45,4 +55,4 @@ if (errors.length) {
   console.error('Awakening Eden visual lock failed:\n'+[...new Set(errors)].map(x=>'- '+x).join('\n'));
   process.exit(1);
 }
-console.log('Awakening Eden visual lock passed: canonical painted identity, premium logo family and exact-Lotus visual system are protected.');
+console.log('Awakening Eden visual lock passed: canonical painted identity, premium logo migrations and exact-Lotus visual system are protected.');
