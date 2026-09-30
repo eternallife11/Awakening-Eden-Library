@@ -64,8 +64,8 @@ const excludedPublicAssets = new Set([
   'assets/dividers/flowing-suns-living-codes-divider-1280.webp',
   'assets/dividers/flowing-suns-living-codes-divider-1600.avif',
   'assets/dividers/flowing-suns-living-codes-divider-1600.webp',
-  // Legacy line-art identity files are kept in git for provenance only. Public
-  // HTML is normalized to the premium painted mark below, and old URLs redirect.
+  // Legacy line-art identity files are kept in git for provenance only. Their
+  // old public URLs are forced through _redirects to the premium painted mark.
   'assets/brand/awakening-eden-mark-reversed.svg',
   'assets/brand/awakening-eden-mark-one-colour.svg',
   'assets/brand/awakening-eden-mark-primary.svg',
@@ -308,29 +308,28 @@ function withOrganizationLogo(html) {
   });
 }
 
-async function normalizePremiumBrandIdentity(dir) {
+async function normalizePremiumBrandMetadata(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     const file = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      await normalizePremiumBrandIdentity(file);
+      await normalizePremiumBrandMetadata(file);
       continue;
     }
-    if (!/\.(?:html|xml|txt|css|js|json|webmanifest)$/i.test(entry.name)) continue;
+    if (!/\.html$/i.test(entry.name)) continue;
 
     const source = await readFile(file, 'utf8');
-    let normalized = source;
-    for (const legacy of LEGACY_PUBLIC_IDENTITY) {
-      normalized = normalized.replaceAll(legacy, PREMIUM_MARK);
-    }
-    if (/\.html$/i.test(entry.name)) {
-      normalized = withOrganizationLogo(normalized);
-      for (const legacy of LEGACY_PUBLIC_IDENTITY) {
-        if (normalized.includes(legacy)) {
-          throw new Error(`Legacy line-art identity survived public build normalization in ${path.relative(OUT, file)}: ${legacy}`);
-        }
-      }
-    }
+    const normalized = withOrganizationLogo(source);
     if (normalized !== source) await writeFile(file, normalized);
+  }
+
+  const redirectRules = await readFile(path.join(OUT, '_redirects'), 'utf8');
+  for (const legacy of LEGACY_PUBLIC_IDENTITY) {
+    const expected = `/${legacy} /${PREMIUM_MARK} 302`;
+    if (!redirectRules.includes(expected)) {
+      throw new Error(`Public build is missing premium identity redirect: ${expected}`);
+    }
+    const leaked = await stat(path.join(OUT, legacy)).catch(() => null);
+    if (leaked) throw new Error(`Legacy line-art identity leaked into public build: ${legacy}`);
   }
 }
 
@@ -358,7 +357,7 @@ await prepareCloudflareEnquiryForm();
 await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
 await writeCloudflareHeaders();
-await normalizePremiumBrandIdentity(OUT);
+await normalizePremiumBrandMetadata(OUT);
 if (PUBLIC_ORIGIN) await rewriteProductionOrigins(OUT);
 
 const indexPath = path.join(OUT, 'index.html');
