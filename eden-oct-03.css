@@ -1,0 +1,155 @@
+/* 3 October visual layer: botanical portals and deterministic Lotus overlays. */
+.exact-lotus-art { position: relative; display: block; }
+.exact-lotus-art > picture,
+.exact-lotus-art > picture > img,
+.exact-lotus-art > img:first-child { display: block; width: 100%; height: auto; }
+.exact-lotus-art > picture > img { aspect-ratio: 4 / 3; object-fit: cover; }
+.exact-lotus-art .exact-lotus-art__lotus {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 82%;
+  width: 21%;
+  height: auto;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 3px #39260f) drop-shadow(0 0 8px #fff0bc);
+  pointer-events: none;
+}
+body.final-home-polish .invitation-section--opening-vision .invitation-film .exact-lotus-art__lotus {
+  width: 21%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.grow-section--oct03 .grow-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+.grow-section--oct03 .door-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 2px solid #a77d45;
+  border-radius: 1.35rem;
+  background: #f3e3c2;
+  box-shadow: inset 0 0 0 5px #f7e9cf, inset 0 0 0 7px rgb(126 94 52 / 0.38), 0 9px 28px rgb(54 42 24 / 0.12);
+  text-align: center;
+}
+.grow-section--oct03 .door-card__art {
+  display: block;
+  overflow: hidden;
+  margin: -1.3rem -1.3rem 1.1rem;
+  border-bottom: 1px solid rgb(126 94 52 / 0.35);
+}
+.grow-section--oct03 .door-card__art img {
+  display: block;
+  width: 100%;
+  height: clamp(10rem, 15vw, 13rem);
+  object-fit: cover;
+}
+.grow-section--oct03 .door-card__glyph { display: none; }
+.grow-section--oct03 .door-card h3 { font-size: clamp(1.7rem, 2.2vw, 2.35rem); }
+.grow-section--oct03 .door-card__lead { color: #65442d; font-style: normal; }
+.grow-section--oct03 .door-card__cta {
+  display: inline-block;
+  align-self: center;
+  min-width: 8rem;
+  padding: .45rem 1.15rem;
+  border: 2px solid #8c6b3f;
+  border-radius: .85rem;
+  background: #f8ebd2;
+  color: #352e20;
+  box-shadow: inset 0 0 0 3px #e6d3ad;
+  font-family: var(--display);
+  font-size: 1.28rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.grow-section--oct03 .door-card:hover .door-card__cta,
+.grow-section--oct03 .door-card:focus-visible .door-card__cta { background: #fff6df; }
+.library-art-frame { position: relative; display: block; width: 100%; }
+.library-art-hero > .library-art-frame { max-width: 112rem; margin-inline: auto; }
+.library-art-frame > img:first-child { display: block; width: 100%; height: auto; }
+.library-art-frame .library-exact-lotus {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 52%;
+  width: 13.5%;
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0 3px #fff3c8) drop-shadow(0 0 9px #765025);
+  pointer-events: none;
+}
+.library-art-hero { position: relative; }
+.village-oct03 { background: #f5eddd; }
+.village-oct03__grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+}
+.village-oct03__art { position: relative; margin: 0; }
+.village-oct03__art > img:first-child { display: block; width: 100%; height: auto; border-radius: 1rem; }
+.village-oct03__lotus {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  width: 27%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 2px #593719) drop-shadow(0 0 7px #fff2bd);
+  pointer-events: none;
+}
+.village-oct03__art figcaption { margin-top: .65rem; font-size: .9rem; }
+.field-banner { padding-block: clamp(2.5rem, 6vw, 5rem); background: #e9ddc5; }
+.field-banner__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(15rem, .65fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+  padding: clamp(1.6rem, 4vw, 3.2rem);
+  border: 1px solid rgb(122 91 48 / .42);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgb(255 247 226 / .94), rgb(239 218 178 / .92));
+  box-shadow: inset 0 0 0 5px rgb(255 250 235 / .5), 0 14px 35px rgb(74 53 29 / .12);
+}
+.field-banner__card h2 { max-width: 21ch; }
+.field-banner__card p:not(.eyebrow) { max-width: 70ch; }
+.field-banner__actions { display: flex; flex-direction: column; align-items: stretch; gap: .75rem; }
+.field-banner__actions .button { text-align: center; }
+.field-banner__actions .text-link { align-self: center; }
+.community-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem .7rem;
+  align-items: center;
+  margin-block: 1rem;
+}
+.community-socials span { flex-basis: 100%; color: #5f513d; font-weight: 700; }
+.community-socials a {
+  padding: .42rem .7rem;
+  border: 1px solid rgb(107 82 47 / .35);
+  border-radius: 999px;
+  background: rgb(255 250 237 / .78);
+  color: #4d3925;
+  font-weight: 700;
+  text-decoration: none;
+}
+.community-socials a:hover,
+.community-socials a:focus-visible { background: #fff8e8; text-decoration: underline; }
+@media (max-width: 75rem) {
+  .grow-section--oct03 .grow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 42rem) {
+  .grow-section--oct03 .grow-grid,
+  .village-oct03__grid,
+  .field-banner__card { grid-template-columns: 1fr; }
+  .grow-section--oct03 .door-card__art img { height: 12rem; }
+  .library-art-frame .library-exact-lotus { top: 53%; width: 16%; }
+  .library-art-hero .library-art-frame > img:first-child {
+    min-height: 19rem;
+    object-fit: cover;
+    object-position: center;
+  }
+}

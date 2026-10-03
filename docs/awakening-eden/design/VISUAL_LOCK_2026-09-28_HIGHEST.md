@@ -1,5 +1,7 @@
 # Awakening Eden Visual Lock — Highest Approved System — 2026-09-28
 
+Historical lock: superseded where newer Sofia decisions in `VISUAL_DECISION_2026-10-01.md` and `VISUAL_LOCK_2026-10-03.md` differ. Do not restore its older v35 circle or Library header over the 3 October decision.
+
 Human approval: Benjy, 2026-09-28
 
 This document records the newest approved Awakening Eden website visual decisions and supersedes older visual guidance where there is a conflict. Older files remain historical reference only unless explicitly retained below.

@@ -5,9 +5,11 @@ const required = [
   'assets/brand/awakening-eden-mark-painted-192.webp',
   'assets/brand/awakening-eden-logo-primary-700.webp',
   'assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp',
-  'assets/hero/awakening-eden-community-circle-rooted-lotus-v36-1448.png',
-  'assets/hero/awakening-eden-community-circle-rooted-lotus-v36-960.png',
-  'assets/library/awakening-eden-living-library-1672.webp',
+  'assets/hero/awakening-eden-community-circle-oct03-clean-1448.png',
+  'assets/hero/awakening-eden-community-circle-oct03-clean-960.png',
+  'assets/library/awakening-eden-living-library-oct03-no-geometry.png',
+  'assets/vision/community-roots-oct03-no-geometry.png',
+  'assets/geometry/lotus-of-life-12-exact.svg',
   'docs/awakening-eden/design/lotus-of-life-12-exact.svg'
 ];
 const errors = [];
@@ -17,7 +19,7 @@ for (const file of required) {
 }
 const excluded = new Set(['.git','node_modules','dist','docs','deliverables','tests','scripts','test-results','playwright-report']);
 const extensions = new Set(['.html','.css','.js','.mjs','.json','.webmanifest']);
-const forbidden = ['assets/brand/awakening-eden-mark-primary.svg','tree-heart-portal-01.webp','tree-heart-portal-02.webp','awakening-eden-regenerative-future-community-v1'];
+const forbidden = ['assets/brand/awakening-eden-mark-primary.svg','tree-heart-portal-01.webp','tree-heart-portal-02.webp','awakening-eden-regenerative-future-community-v1','awakening-eden-community-circle-rooted-lotus-v36-'];
 const premiumMark = 'assets/brand/awakening-eden-mark-painted-192.webp';
 const migratedPublicIdentity = [
   'assets/brand/awakening-eden-mark-one-colour.svg',

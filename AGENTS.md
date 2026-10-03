@@ -11,9 +11,9 @@ Read `docs/AI_AGENT_TEAM_WORKFLOW_2026-08-13.md` before substantial work. Codex 
 When instructions conflict, use this order:
 
 1. Benjy and Sofia's newest explicit decisions.
-2. `docs/awakening-eden/LOCKED_DECISIONS_2026-08-11.md` and newer dated locked decisions.
-3. `docs/awakening-eden/design/Awakening_Eden_Design_Bible_v3.1_Lotus_of_Life_2026-08-11.pdf`.
-4. `docs/awakening-eden/design/Awakening_Eden_Illustration_Bible_v1.2_Lotus_of_Life_2026-08-11.pdf`.
+2. `docs/awakening-eden/design/VISUAL_LOCK_2026-10-03.md` and newer dated locked decisions.
+3. `docs/awakening-eden/LOCKED_DECISIONS_2026-08-11.md`, the Design Bible v3.1 PDF and its `Design_Bible_ADDENDUM_2026-10-03.md`.
+4. The Illustration Bible v1.2 PDF and its `Illustration_Bible_ADDENDUM_2026-10-03.md`.
 5. `docs/awakening-eden/design/ASSET_DECISION_REGISTER_v3.2.md` and `PAGE_BY_PAGE_VISUAL_COVERAGE_MATRIX_v3.2.md`.
 6. Current production code on `main` and the latest approved branch changes.
 7. Older handoffs/prompts only when they do not conflict with the above.
@@ -117,4 +117,3 @@ At the end of every substantial work session:
 5. If a temporary verification workflow was added only for release checking, remove it before merging documentation-only handoff changes.
 
 This protocol exists so a fresh chat or a different agent can resume safely from GitHub without depending on conversational memory.
-

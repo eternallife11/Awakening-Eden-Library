@@ -141,8 +141,25 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
-  await expect(circle.locator('img')).toHaveAttribute('src', /awakening-eden-community-circle-rooted-lotus-v36-1448\.png/);
+  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /awakening-eden-community-circle-oct03-clean-1448\.png/);
+  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-12-exact\.svg/);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
+
+  const fourDoors = page.locator('.grow-section--oct03 .door-card');
+  await expect(fourDoors).toHaveCount(4);
+  await expect(fourDoors.nth(0)).toHaveAttribute('href', '/start-here');
+  await expect(fourDoors.nth(1)).toHaveAttribute('href', '/living-library');
+  await expect(page.locator('.library-doorway .library-exact-lotus')).toHaveAttribute('src', /lotus-of-life-12-exact\.svg/);
+
+  const fieldBanner = page.locator('.field-banner');
+  await expect(fieldBanner.getByRole('heading', { name: /Co-creating a more beautiful Earth/ })).toBeVisible();
+  await expect(fieldBanner.getByRole('link', { name: 'Explore ORIGIN' })).toHaveAttribute('href', 'https://ourorigin.earth/');
+  await expect(fieldBanner.getByRole('link', { name: 'Explore the Biological Renaissance' })).toHaveAttribute('href', 'https://zachbushmd.com/pages/explore');
+
+  const community = page.locator('#community');
+  await expect(community.getByRole('link', { name: '@awakening_eden' })).toHaveAttribute('href', 'https://www.instagram.com/awakening_eden/');
+  await expect(community.getByRole('link', { name: '@benjy_inspirit' })).toHaveAttribute('href', 'https://www.instagram.com/benjy_inspirit/');
+  await expect(community.getByRole('link', { name: '@sofia_wildflower' })).toHaveAttribute('href', 'https://www.instagram.com/sofia_wildflower/');
 
   await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
@@ -347,6 +364,7 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
+  { route: '/living-library', name: 'living-library' },
   { route: '/work-with-benjy', name: 'work-with-benjy' },
   { route: '/work-with-us', name: 'work-with-us' },
   { route: '/partners', name: 'partners' },
@@ -371,10 +389,24 @@ for (const reviewPage of [
       await page.locator('.invitation-section--opening-vision .invitation-film--vision').screenshot({
         path: path.join(reviewDirectory, 'homepage-circle-of-belonging.png')
       });
+      await page.locator('.grow-section--oct03').screenshot({
+        path: path.join(reviewDirectory, 'homepage-botanical-doors.png')
+      });
+      await page.locator('.library-doorway').screenshot({
+        path: path.join(reviewDirectory, 'homepage-living-library-doorway.png')
+      });
+    }
+    if (reviewPage.name === 'living-library') {
+      await page.locator('.library-art-hero').screenshot({
+        path: path.join(reviewDirectory, 'living-library-header.png')
+      });
     }
     if (reviewPage.name === 'village-vision') {
       await page.locator('.future-hero__art').screenshot({
         path: path.join(reviewDirectory, 'village-vision-artwork.png')
+      });
+      await page.locator('.village-oct03').screenshot({
+        path: path.join(reviewDirectory, 'village-vision-community-roots.png')
       });
     }
   });

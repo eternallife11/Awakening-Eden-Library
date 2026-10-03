@@ -1,5 +1,7 @@
 # Page-by-Page Visual Coverage Matrix v3.2
 
+Historical matrix. The current homepage, Living Library and Village Vision placements are recorded in `VISUAL_LOCK_2026-10-03.md`; use that newer lock wherever it differs from this table.
+
 This matrix covers the current public HTML pages and canonical routes. It specifies the intended visual role, not a requirement to add every possible decoration.
 
 | Page / route | Dominant threshold | Dividers and photo treatment | Required correction |
@@ -36,4 +38,3 @@ This matrix covers the current public HTML pages and canonical routes. It specif
 - No decorative asset creates horizontal overflow at 360, 390, 768, 1024 or 1440 px.
 - Decorative images use `alt=""` and `aria-hidden="true"`; meaningful art has honest concise alt text.
 - Respect `prefers-reduced-motion` and never rotate the primary logo continuously.
-
