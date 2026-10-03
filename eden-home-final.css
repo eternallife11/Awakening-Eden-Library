@@ -125,7 +125,11 @@ body.final-home-polish .invitation-section--opening-vision .invitation-film img 
 }
 
 body.final-home-polish .invitation-section--opening-vision .invitation-film figcaption {
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: clamp(1rem, 3vw, 1.55rem) clamp(1rem, 3vw, 1.75rem);
+  text-align: left;
 }
 
 /* Drawn / colourful library cards return as visual anchors, while keeping current routes. */

@@ -5,7 +5,8 @@ const required = [
   'assets/brand/awakening-eden-mark-painted-192.webp',
   'assets/brand/awakening-eden-logo-primary-700.webp',
   'assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp',
-  'assets/hero/awakening-eden-community-circle-v35-1536.webp',
+  'assets/hero/awakening-eden-community-circle-rooted-lotus-v36-1448.png',
+  'assets/hero/awakening-eden-community-circle-rooted-lotus-v36-960.png',
   'assets/library/awakening-eden-living-library-1672.webp',
   'docs/awakening-eden/design/lotus-of-life-12-exact.svg'
 ];
