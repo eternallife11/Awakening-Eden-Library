@@ -7,6 +7,7 @@ const criticalRoutes = [
   '/start-here',
   '/living-library',
   '/journey',
+  '/work-with-us',
   '/work-with-benjy',
   '/partners',
   '/eden-designer',
@@ -201,6 +202,18 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-reversed.svg');
 });
 
+test('Work With Us keeps professional collaboration and the future village vision distinct', async ({ page }) => {
+  await page.goto('/work-with-us', { waitUntil: 'domcontentloaded' });
+
+  await expect(page.getByRole('heading', { level: 1, name: 'Work with us to create more life.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Tell us about your project' })).toHaveAttribute('href', '#conversation');
+  await expect(page.getByRole('heading', { level: 2, name: 'Four ways we can work together.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'See direct land services →' })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByText('It is not yet a built village, a confirmed site or a finished offer.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Explore the future village vision' })).toHaveAttribute('href', '/village-vision');
+  await expect(page.getByRole('link', { name: 'WhatsApp us about a project' })).toHaveAttribute('href', /wa\.me\/351920067347/);
+});
+
 test('Living Library search turns a large collection into a calm, useful doorway', async ({ page }) => {
   await page.goto('/living-library', { waitUntil: 'domcontentloaded' });
 
@@ -339,6 +352,7 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
   { route: '/work-with-benjy', name: 'work-with-benjy' },
+  { route: '/work-with-us', name: 'work-with-us' },
   { route: '/partners', name: 'partners' },
   { route: '/eden-designer', name: 'eden-designer' },
   { route: '/village-vision', name: 'village-vision' },

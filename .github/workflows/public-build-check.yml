@@ -112,6 +112,7 @@ jobs:
           grep -q 'Sitemap: https://awakeningeden.org/sitemap.xml' dist/robots.txt
           test -f dist/google4ea90192379dfce2.html
           grep -q '<loc>https://awakeningeden.org/work-with-benjy</loc>' dist/sitemap.xml
+          grep -q '<loc>https://awakeningeden.org/work-with-us</loc>' dist/sitemap.xml
           grep -q '<loc>https://awakeningeden.org/partners</loc>' dist/sitemap.xml
           grep -q '<loc>https://awakeningeden.org/journey</loc>' dist/sitemap.xml
           grep -q '<loc>https://awakeningeden.org/heart</loc>' dist/sitemap.xml
@@ -159,14 +160,17 @@ jobs:
       - name: Install pinned QA dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install Chromium
-        run: pnpm exec playwright install --with-deps chromium
+      - name: Install browser engines
+        run: pnpm exec playwright install --with-deps chromium firefox webkit
 
       - name: Run desktop and mobile browser QA
         run: pnpm test:browser
 
       - name: Run enquiry Worker unit tests
         run: pnpm test:worker
+
+      - name: Collect local performance reports
+        run: pnpm run test:performance
 
       - name: Upload compact review screenshots
         if: success()
@@ -176,6 +180,8 @@ jobs:
           path: |
             test-results/review/desktop-chromium/
             test-results/review/mobile-chromium/
+            playwright-report/
+            lhci-reports/
           if-no-files-found: warn
           retention-days: 5
           compression-level: 9
@@ -190,8 +196,10 @@ jobs:
             test-results/**/trace.zip
             test-results/**/test-failed-*.png
             test-results/**/error-context.md
+            test-results/**/video.webm
             test-results/review/desktop-chromium/
             test-results/review/mobile-chromium/
+            lhci-reports/
           if-no-files-found: warn
           retention-days: 3
           compression-level: 9
