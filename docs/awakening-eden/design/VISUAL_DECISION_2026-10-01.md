@@ -1,5 +1,7 @@
 # Awakening Eden visual decision — 1 October 2026
 
+Superseded for public image references by `VISUAL_LOCK_2026-10-03.md`: the bright v36 village-circle composition remains the choice, with its uncertain painted disc removed and the exact SVG Lotus layered into the roots.
+
 This supplements the 28 September visual lock with Sofia's newer explicit homepage and community-vision decisions.
 
 - Keep `assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp` as the homepage header image. Its softer, naturally rooted Lotus is the visual reference for the community artwork.

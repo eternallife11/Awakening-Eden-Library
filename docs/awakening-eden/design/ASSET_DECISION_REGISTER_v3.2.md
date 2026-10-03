@@ -1,5 +1,7 @@
 # Asset Decision Register v3.2
 
+Historical register. For the current homepage circle, Living Library header, village supporting art and portal-card treatment, follow `VISUAL_LOCK_2026-10-03.md`; it overrides older asset assignments here. Older masters remain for rollback only.
+
 ## Retain as canonical
 
 - `solar-tree-heart-lotus-portal-*`: flagship threshold; maximum once per page.
@@ -46,4 +48,3 @@
 - Decorative botanical art behind body copy when it reduces contrast.
 - PNG masters in production HTML/CSS.
 - Multiple portal illustrations on one short page.
-
