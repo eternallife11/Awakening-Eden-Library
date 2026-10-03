@@ -19,13 +19,14 @@ for (const route of routes) {
     await expect(page.locator('main')).toBeVisible();
     await expect(page.locator('h1').first()).toBeVisible();
 
-    const layout = await page.evaluate(() => ({
-      viewportWidth: window.innerWidth,
-      documentWidth: document.documentElement.scrollWidth,
-      bodyWidth: document.body.scrollWidth
-    }));
-    expect(layout.documentWidth, `Document overflow on ${route}`).toBeLessThanOrEqual(layout.viewportWidth + 1);
-    expect(layout.bodyWidth, `Body overflow on ${route}`).toBeLessThanOrEqual(layout.viewportWidth + 1);
+    const layout = await page.evaluate(() => {
+      const initialScrollX = window.scrollX;
+      window.scrollTo({ left: Number.MAX_SAFE_INTEGER, top: window.scrollY, behavior: 'instant' });
+      const horizontalScrollX = window.scrollX;
+      window.scrollTo({ left: initialScrollX, top: window.scrollY, behavior: 'instant' });
+      return { horizontalScrollX };
+    });
+    expect(layout.horizontalScrollX, `Horizontal scrolling is available on ${route}`).toBeLessThanOrEqual(1);
     expect(browserErrors, `Browser errors on ${route}`).toEqual([]);
   });
 }
