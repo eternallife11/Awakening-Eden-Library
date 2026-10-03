@@ -4,12 +4,19 @@ _Last updated: 3 October 2026_
 
 This is the durable current-status handoff for the next ChatGPT / Codex / Claude website session. Git history retains the longer historical handoff that preceded this concise version.
 
+## Current review — approved Circle of Belonging correction
+
+- Draft PR #35 on `codex/approved-community-circle-v36-2026-10-03` carries Sofia's 1 October selected brighter community-circle image and its responsive companion. This branch incorporates `main` through `fe0857d`, including the merged Village Vision copy from PR #34. The separate Sanctuary Clarity worktree remains untouched.
+- The homepage, Village Vision, About and Work With Us use the v36 artwork. The old homepage `eden-v23.js` rewrite had replaced the Circle of Belonging after load with an earlier two-person image; its stale homepage mutations were removed. The authored HTML now controls the image and opening actions. A stray literal `\\n` was removed from the homepage.
+- Verified locally: production-origin public build and zero-cost/visual-lock checks; Worker tests 13/13; homepage desktop/mobile assertions; 24/24 critical-route desktop/mobile browser checks without overflow, broken images or console errors. Close-up desktop/mobile screenshots of the circle and Village Vision were reviewed. The painted Lotus was visually inspected, but the static guard does not mathematically certify raster geometry.
+- Production state: draft review only. The public site still showed the old image at the pre-release check. Obtain the owners' production approval under the team workflow, confirm CI and the diff, then merge and verify the live DOM, image URL and screenshots. Preserve the v35 files for rollback. Keep broader village copy and new photography in separate work.
+
 ## Canonical source
 
 - Repository: `eternallife11/Awakening-Eden-Library`
 - Canonical branch: `main`
 - Latest approved website merge before this handoff: `72595937f44903e9a64451ca90e838d023c7564f`
-- No open pull requests remain after the 3 October 2026 cleanup.
+- Draft PR #35 is open for the Circle of Belonging correction; the earlier cleanup closed superseded PRs.
 - Old superseded PRs #10, #11 and #29 were closed without merging over newer work. Their branches remain recoverable in GitHub history.
 - Netlify is a frozen rollback / legacy public snapshot, not the working source of truth.
 

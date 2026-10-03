@@ -132,21 +132,17 @@ test('homepage exposes the final opening journey and approved visual choices', a
 
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
-  await expect(threshold.getByRole('link', { name: /Begin Here/ })).toHaveAttribute('href', '/start-here');
-  await expect(threshold.getByRole('link', { name: /Explore the Living Library/ })).toHaveAttribute('href', '/living-library');
-  await expect(threshold.getByRole('link', { name: /Work with Benjy/ })).toHaveAttribute('href', '/work-with-benjy');
+  const openingActions = page.locator('.home-hero-actions');
+  await expect(openingActions.locator('a.button[href="/start-here"]')).toBeVisible();
+  await expect(openingActions.locator('a.button[href="/living-library"]')).toBeVisible();
+  await expect(openingActions.locator('a.button[href="/work-with-benjy"]')).toBeVisible();
 
   await expect(page.getByRole('heading', { level: 2, name: 'Earth lovers, practical dreamers & lifelong students of life.' })).toBeVisible();
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
-  await expect(circle.locator('img')).toHaveAttribute('src', /garden-of-harmony-community-lotus-vnext\.webp/);
+  await expect(circle.locator('img')).toHaveAttribute('src', /awakening-eden-community-circle-rooted-lotus-v36-1448\.png/);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
-
-  await expect(page.locator('.library-room--illustrated')).toHaveCount(3);
-  await expect(page.locator('.library-room__art').nth(0)).toHaveAttribute('src', '/library-guide-v19.webp');
-  await expect(page.locator('.library-room__art').nth(1)).toHaveAttribute('src', '/library-films-v19.webp');
-  await expect(page.locator('.library-room__art').nth(2)).toHaveAttribute('src', '/library-books-v19.webp');
 
   await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
 });
@@ -371,5 +367,15 @@ for (const reviewPage of [
       path: path.join(reviewDirectory, `${reviewPage.name}.png`),
       fullPage: true
     });
+    if (reviewPage.name === 'homepage') {
+      await page.locator('.invitation-section--opening-vision .invitation-film--vision').screenshot({
+        path: path.join(reviewDirectory, 'homepage-circle-of-belonging.png')
+      });
+    }
+    if (reviewPage.name === 'village-vision') {
+      await page.locator('.future-hero__art').screenshot({
+        path: path.join(reviewDirectory, 'village-vision-artwork.png')
+      });
+    }
   });
 }
