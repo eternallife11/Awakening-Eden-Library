@@ -33,6 +33,7 @@ const publicHtmlRoutes = [
   '/thriving-in-these-times.html',
   '/village-research.html',
   '/village-vision.html',
+  '/work-with-us.html',
   '/work-with-benjy.html'
 ];
 
@@ -42,6 +43,7 @@ const primaryReviewRoutes = [
   ['living-library', '/living-library'],
   ['thriving-in-these-times', '/thriving-in-these-times'],
   ['work-with-benjy', '/work-with-benjy'],
+  ['work-with-us', '/work-with-us'],
   ['partners', '/partners'],
   ['about', '/about'],
   ['heart', '/heart'],

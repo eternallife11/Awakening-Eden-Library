@@ -41,6 +41,22 @@ export default defineConfig({
         ...devices['iPhone 13'],
         browserName: 'chromium'
       }
+    },
+    {
+      name: 'desktop-firefox',
+      testMatch: /cross-browser\.spec\.mjs/,
+      use: {
+        ...devices['Desktop Firefox'],
+        viewport: { width: 1440, height: 1000 }
+      }
+    },
+    {
+      name: 'desktop-webkit',
+      testMatch: /cross-browser\.spec\.mjs/,
+      use: {
+        ...devices['Desktop Safari'],
+        viewport: { width: 1440, height: 1000 }
+      }
     }
   ]
 });

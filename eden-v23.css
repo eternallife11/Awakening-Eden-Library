@@ -24,7 +24,10 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   color: var(--forest-deep);

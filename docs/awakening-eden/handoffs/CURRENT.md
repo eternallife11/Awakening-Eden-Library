@@ -1,8 +1,17 @@
 # Awakening Eden — Current Work Handoff
 
-_Last updated: 27 September 2026_
+_Last updated: 3 October 2026_
 
 This is the durable handoff point for the next ChatGPT / Codex / Claude work session. Read this file before starting substantial website work, then confirm the current `main` branch and latest pull request state in GitHub.
+
+## Current status — Work With Us professional pathway, 3 October 2026
+
+- The original local-only commit `520ed4f` could not be recovered from its unavailable former workspace. Its reviewed scope has been rebuilt cleanly on `codex/work-with-us-professional-pathway-2026-10-02` as `4739855` (browser QA foundation) and `6ce1688` (Work With Us page and routing).
+- `/work-with-us` is a professional umbrella pathway for regenerative projects, workshops and field learning, direct Work with Benjy services, and the Living Library/network. It includes clear outcomes across landscape, people, projects and community.
+- The village material is deliberately framed as a future vision: it is not presented as a built village, confirmed site or finished offer. The page links to the existing `/village-vision` route.
+- Local validation passed: production Cloudflare artifact build; focused desktop/mobile Chromium browser route, accessibility and no-overflow checks (14/14); Worker unit tests (13/13); and local Lighthouse reports. The existing site-wide colour-contrast findings remain recorded for a deliberate visual pass rather than being hidden by this route work.
+- Existing laptop worktrees were left untouched. Review screenshots are local evidence only and are ignored by Git.
+- Publication and live deployment status must be recorded here after the GitHub change and Cloudflare verification are complete. Never claim `awakeningeden.org` is live without a direct HTTPS check.
 
 ## Current status — domain release, 27 September 2026
 
