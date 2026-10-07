@@ -122,6 +122,7 @@ jobs:
           fi
           grep -q 'workers.dev/\*' dist/_headers
           test ! -e dist/wrangler.production.jsonc
+          node scripts/check-seo.mjs
           npx --yes wrangler@4.122.0 deploy --dry-run --config wrangler.production.jsonc
 
       - name: Verify Cloudflare static asset size ceiling
