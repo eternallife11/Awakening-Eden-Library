@@ -9,6 +9,8 @@
 .wu-hero h1 { max-width:10ch; font-size:clamp(3.35rem,7.6vw,7.4rem); letter-spacing:-.035em; line-height:.9; }
 .wu-hero__lead { max-width:39rem; margin:1.35rem 0 1rem; color:var(--wu-forest); font-family:var(--display); font-size:clamp(1.35rem,2.25vw,1.9rem); line-height:1.3; }
 .wu-hero__copy>p:not(.eyebrow,.wu-hero__lead,.wu-hero__note) { max-width:40rem; color:var(--umber); }
+.wu-hero__services { max-width:46rem; margin:1.35rem 0 0; color:var(--wu-forest); font-size:.82rem; font-weight:800; letter-spacing:.035em; line-height:1.7; text-transform:uppercase; }
+.wu-hero__services span { padding-inline:.28rem; color:#b97854; }
 .wu-hero__note { margin-top:1.1rem; color:#52613f; font-size:.82rem; font-weight:700; }
 .wu-hero__photo { position:relative; margin:0; padding:.6rem; border:1px solid rgb(105 112 82 / .3); border-radius:48% 48% 1.5rem 1.5rem; background:var(--paper-light); box-shadow:0 24px 54px rgb(35 49 38 / .16); }
 .wu-hero__photo img { display:block; width:100%; aspect-ratio:4/5; border-radius:48% 48% 1.05rem 1.05rem; object-fit:cover; object-position:center; }

@@ -2,6 +2,8 @@
 
 Owner direction: Benjy and Sofia, 7 October 2026. Plan only for new generated artwork; the real-photo service-page and copy improvements are implemented separately. Preserve the 3 October visual lock and exact Lotus.
 
+Use the [Living Systems Field Atlas style](../design/LIVING_SYSTEMS_FIELD_ATLAS_STYLE_2026-10-07.md) for every new educational or concept visual in this plan. It defines the painted look, teaching grammar, concept-status labels, mobile layout and review gate.
+
 ## Vision
 A welcoming illustrated field guide: a visitor understands one relationship, sees a real example and leaves with one doable action. Parchment, forest green, water teal and restrained terracotta. Keep technical labels as editable HTML or SVG; generous type and one lesson per visual. Mystery and beauty belong in the invitation; ecological explanations stay precise.
 
