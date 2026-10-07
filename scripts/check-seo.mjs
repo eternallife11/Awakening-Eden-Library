@@ -10,6 +10,10 @@ const KEY_ROUTES = [
   ['/living-library', 'living-library.html'],
   ['/work-with-benjy', 'work-with-benjy.html'],
   ['/work-with-us', 'work-with-us.html'],
+  ['/partners', 'partners.html'],
+  ['/journey', 'journey.html'],
+  ['/heart', 'heart.html'],
+  ['/start-here', 'start-here.html'],
   ['/about', 'about.html'],
   ['/village-vision', 'village-vision.html']
 ];
@@ -61,6 +65,8 @@ for (const [route, file] of KEY_ROUTES) {
 
 const robots = await text('robots.txt');
 if (!robots.includes('User-agent: OAI-SearchBot') || !robots.includes('Allow: /')) fail('robots.txt must explicitly allow OAI-SearchBot');
+if (!robots.includes('User-agent: Googlebot')) fail('robots.txt must explicitly allow Googlebot');
+if (!robots.includes('User-agent: Bingbot')) fail('robots.txt must explicitly allow Bingbot');
 if (!robots.includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) fail('robots.txt sitemap must use production origin');
 if (robots.includes(LEGACY)) fail('robots.txt contains legacy origin');
 
