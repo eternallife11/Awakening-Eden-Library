@@ -10,6 +10,20 @@
 .vnext-section-heading--compact { margin-bottom: 1.5rem; }
 .vnext-section-heading p:last-child { color: var(--umber); font-size: clamp(1rem, 1.5vw, 1.12rem); }
 
+/* Eden Sanctuary Gardens: clear scale guidance shared by the two service pages. */
+.eden-garden-collection { padding-block: clamp(4rem, 7vw, 7rem); background: linear-gradient(145deg, #eaf1e4, #fff9eb 58%, #f2e3c4); }
+.eden-garden-collection__heading { max-width: 55rem; }
+.eden-garden-collection__heading h2 { margin-bottom: .85rem; color: var(--forest); }
+.eden-garden-collection__heading > p:last-child { max-width: 48rem; color: var(--umber); font-size: clamp(1.05rem, 1.7vw, 1.22rem); }
+.eden-garden-collection__scales { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.eden-garden-collection__scales article { display: flex; min-height: 15rem; flex-direction: column; padding: 1.45rem; border: 1px solid rgb(78 94 64 / .25); border-radius: 1.15rem; background: rgb(255 253 247 / .82); box-shadow: 0 12px 28px rgb(45 67 50 / .08); }
+.eden-garden-collection__scales h3 { margin: 0; color: var(--forest); }
+.eden-garden-collection__scales p { color: var(--umber); }
+.eden-garden-collection__scales strong { margin-top: auto; color: var(--terracotta); font-family: var(--display); font-size: clamp(1.75rem, 3vw, 2.3rem); }
+.eden-garden-collection__scales small { margin-top: .3rem; color: var(--olive); font-weight: 700; line-height: 1.35; }
+.eden-garden-collection__note { max-width: 62rem; margin: 1.15rem 0 1.45rem; color: var(--umber); font-size: .87rem; line-height: 1.55; }
+@media (max-width: 48rem) { .eden-garden-collection__scales { grid-template-columns: 1fr; } .eden-garden-collection__scales article { min-height: 0; } }
+
 .vnext-hero { min-height: calc(100svh - 5rem); display: grid; align-items: center; background: radial-gradient(circle at 83% 28%, rgb(229 196 125 / .22), transparent 28%), linear-gradient(145deg, var(--vnext-cream), var(--paper)); }
 .vnext-hero__grid { display: grid; grid-template-areas: "copy photo" "cta photo"; grid-template-columns: minmax(0, 1.15fr) minmax(20rem, .85fr); gap: 1.2rem clamp(2rem, 6vw, 6rem); align-items: center; }
 .vnext-hero__copy { grid-area: copy; }
@@ -762,4 +776,31 @@
 @media (max-width: 48rem) {
   .vnext-mission__grid,
   .vnext-network__grid { grid-template-columns: 1fr; }
+}
+
+/* Photo-led service arrival, 7 October. */
+.benjy-gallery { background:#faf5e9; }
+.benjy-gallery .vnext-section-heading { max-width:58rem; }
+.benjy-gallery h2,.benjy-principles h2 { max-width:19ch; }
+.benjy-gallery__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.benjy-gallery__grid figure { margin:0; overflow:hidden; border-radius:1.2rem; background:#dce5d3; }
+.benjy-gallery__grid img { display:block; width:100%; height:100%; aspect-ratio:4/3; object-fit:cover; }
+.benjy-gallery__grid figure:nth-child(2) img { object-position:center 35%; }
+.benjy-gallery__hint { display:none; }
+.benjy-gallery__context { margin:1rem 0 2rem; font-size:.9rem; color:var(--umber); }
+.benjy-gallery__context summary { cursor:pointer; text-decoration:underline; text-underline-offset:.25em; }
+.benjy-gallery__context p { max-width:80ch; }
+.benjy-deliverables { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; margin-block:2rem; }
+.benjy-deliverables article { padding:1.5rem; border:1px solid #c6cfb9; border-radius:1rem; background:#fffdf6; }
+.benjy-deliverables h3 { margin-top:0; color:#344734; }
+.benjy-deliverables p { color:#4b503e; }
+.benjy-principles { background:#e8eedf; }
+.benjy-principles__note { max-width:75ch; color:#4b503e; }
+.benjy-gallery__grid:focus-visible { outline:3px solid #987328; outline-offset:6px; }
+@media(max-width:48rem) {
+ .benjy-gallery__grid { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:1rem; }
+ .benjy-gallery__grid figure { flex:0 0 85%; scroll-snap-align:start; }
+ .benjy-gallery__grid img { aspect-ratio:4/5; }
+ .benjy-gallery__hint { display:block; color:var(--umber); font-size:.85rem; }
+ .benjy-deliverables { grid-template-columns:1fr; }
 }

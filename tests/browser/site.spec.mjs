@@ -128,7 +128,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.locator('.hero-promise')).toHaveText('The antidote to hopelessness and overwhelm.');
+  await expect(page.locator('.hero-promise')).toHaveText('Hope grows when we put it into practice.');
 
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
@@ -136,6 +136,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(openingActions.locator('a.button[href="/start-here"]')).toBeVisible();
   await expect(openingActions.locator('a.button[href="/living-library"]')).toBeVisible();
   await expect(openingActions.locator('a.button[href="/work-with-benjy"]')).toBeVisible();
+  await expect(openingActions.locator('a.button[href="/work-with-us"]')).toBeVisible();
 
   await expect(page.getByRole('heading', { level: 2, name: 'Earth lovers, practical dreamers & lifelong students of life.' })).toBeVisible();
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
@@ -181,7 +182,7 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(quickServices.getByText('Workshops + events', { exact: true })).toBeVisible();
 
   const offers = page.locator('#services');
-  await expect(offers.getByRole('heading', { level: 3, name: 'Land & Project Clarity Session' })).toBeVisible();
+  await expect(offers.getByRole('heading', { level: 3, name: 'Land + Project Clarity Session' })).toBeVisible();
   await expect(offers.locator('.vnext-offer__price').first()).toContainText('€111');
   await expect(offers.getByRole('link', { name: 'Book the €111 Clarity Session' })).toBeVisible();
 
@@ -194,7 +195,7 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
 
   const recentDesign = page.locator('#recent-design');
   await expect(recentDesign.getByRole('heading', { name: 'Contour Food Forest Ideas' })).toBeVisible();
-  await expect(recentDesign.getByRole('heading', { name: /Syntropifying: Abundant Food Forest Berrylicious Terrace Gardens/ })).toBeVisible();
+  await expect(recentDesign.getByRole('heading', { name: 'Food-forest edge beside the levada' })).toBeVisible();
   await expect(recentDesign.locator('img[src*="contour-before-v2.webp"]')).toHaveCount(1);
   await expect(recentDesign.locator('img[src*="contour-food-forest-concept-v2.webp"]')).toHaveCount(1);
   await expect(recentDesign.locator('img[src*="luisa-sim-berrylicious-terrace-concept-v2.webp"]')).toHaveCount(1);
@@ -221,10 +222,18 @@ test('Work With Us keeps professional collaboration and the future village visio
   await expect(page.getByRole('heading', { level: 1, name: 'Work with us to create more life.' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Tell us about your project' })).toHaveAttribute('href', '#conversation');
   await expect(page.getByRole('heading', { level: 2, name: 'Four ways we can work together.' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'See direct land services →' })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: 'See direct land services + starting prices →' })).toHaveAttribute('href', '/work-with-benjy');
   await expect(page.getByText('It is not yet a built village, a confirmed site or a finished offer.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Explore the future village vision' })).toHaveAttribute('href', '/village-vision');
   await expect(page.getByRole('link', { name: 'WhatsApp us about a project' })).toHaveAttribute('href', /wa\.me\/351920067347/);
+
+  const stories = page.locator('.wu-stories');
+  await expect(stories.getByRole('heading', { level: 2, name: 'A living place comes first. A good next step follows.' })).toBeVisible();
+  await expect(stories.getByRole('heading', { level: 3, name: 'A real olive garden, ready for its next chapter' })).toBeVisible();
+  await expect(stories.getByRole('heading', { level: 3, name: 'Food-forest edge beside the levada' })).toBeVisible();
+  await expect(stories.getByRole('heading', { level: 3, name: 'Benjy, working with the land' })).toBeVisible();
+  await expect(stories.getByText('Concept visual · not a completed after photo.')).toBeVisible();
+  await expect(stories.locator('img')).toHaveCount(3);
 });
 
 test('Living Library search turns a large collection into a calm, useful doorway', async ({ page }) => {
@@ -243,13 +252,35 @@ test('Living Library search turns a large collection into a calm, useful doorway
   await search.fill('Fukuoka');
   await expect(page.getByRole('heading', { level: 3, name: 'The One-Straw Revolution' })).toBeVisible();
   await expect(status).toContainText('Showing');
+  await expect(page.locator('.resource-card:not([hidden])')).toHaveCount(1);
 
   await search.fill('a-resource-that-does-not-exist-eden');
   await expect(status).toContainText('No direct match yet');
+  await expect(page.locator('.resource-card:not([hidden])')).toHaveCount(0);
 
+  await page.getByRole('link', { name: 'Watch something' }).click();
+  await expect(search).toHaveValue('');
+  await expect(page.locator('#films')).toBeVisible();
+
+  await search.fill('Fukuoka');
   await search.press('Escape');
   await expect(search).toHaveValue('');
   await expect(status).toContainText(`Browse ${total} curated resources`);
+});
+
+test('Living Library field-guide routes open their intended guide pages', async ({ page }) => {
+  const guides = [
+    ['/thriving-in-these-times', 'Thriving in These Times'],
+    ['/7-first-steps-regenerate-your-land', 'Regenerate Your'],
+    ['/abundant-edge-index', 'The Abundant Edge'],
+    ['/small-scale-regenerative-farm-playbook', 'Small-Scale Regenerative Farm Playbook']
+  ];
+
+  for (const [route, expectedText] of guides) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' });
+    await expect(page).toHaveURL(new RegExp(`${route}$`));
+    await expect(page.locator('h1')).toContainText(expectedText);
+  }
 });
 
 test('future pathways are honest, connected and lightly surfaced', async ({ page }) => {

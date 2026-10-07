@@ -223,6 +223,9 @@ body.page-library {
   transition: transform 180ms ease, box-shadow 180ms ease;
   overflow: clip;
 }
+/* The card's flex display would otherwise override the browser's default
+   [hidden] rule, so search results looked unchanged despite an updated count. */
+.resource-card[hidden] { display: none !important; }
 .resource-card::after {
   content: ""; position: absolute; right: -1.6rem; bottom: -1.6rem;
   width: 5rem; height: 5rem;

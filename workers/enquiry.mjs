@@ -23,10 +23,10 @@ const startTimeframes = new Set([
 ]);
 
 const serviceInterests = new Set([
-  'Land Clarity & Action Session — €111',
+  'Land + Project Clarity Session — €111',
   'Focused Regenerative Roadmap',
-  'Holistic Regenerative Concept Masterplan',
-  'Ongoing project or implementation guidance',
+  'Whole-Property Regenerative Design + Action Plan',
+  'Implementation + project guidance',
   'Workshop or team training',
   'I’m not sure yet'
 ]);

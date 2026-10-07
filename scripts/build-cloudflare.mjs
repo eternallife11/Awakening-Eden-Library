@@ -42,7 +42,7 @@ if (!/^[A-Za-z0-9_-]{8,200}$/.test(TURNSTILE_SITE_KEY)) {
 const excludedDirs = new Set([
   '.git', '.github', '.idea', '.vscode', '.wrangler',
   'node_modules', 'dist', 'docs', 'deliverables', 'scripts', 'tests', 'workers',
-  'playwright-report', 'test-results'
+  'playwright-report', 'test-results', '.lighthouseci', 'lhci-reports'
 ]);
 
 const excludedNames = new Set([
@@ -50,6 +50,7 @@ const excludedNames = new Set([
   'netlify.toml', 'wrangler.toml', 'wrangler.jsonc', 'wrangler.production.jsonc',
   'package.json', 'package-lock.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'yarn.lock',
   'playwright.config.mjs',
+  '.lighthouserc.cjs',
   'AGENTS.md'
 ]);
 
@@ -192,7 +193,12 @@ async function writeCloudflareRouteAliases() {
     // macOS commonly uses a case-insensitive filesystem. A lower-case clean
     // route can therefore resolve to the mixed-case source file already copied
     // into dist; copying a file onto its own inode fails with ERR_FS_CP_EINVAL.
-    if (existingAlias?.dev === info.dev && existingAlias?.ino === info.ino) continue;
+    if (existingAlias?.dev === info.dev && existingAlias?.ino === info.ino) {
+      // The live host is case-sensitive even when the build filesystem is not.
+      // Preserve the lower-case public route with a redirect to the real asset.
+      await writeFile(path.join(OUT, '_redirects'), `${sourceRoute} ${destination.slice(0, -5)} 301\n`, { flag: 'a' });
+      continue;
+    }
     await cp(sourceFile, aliasFile);
     filesCopied += 1;
     bytesCopied += info.size;
@@ -354,8 +360,8 @@ await rm(OUT, { recursive: true, force: true });
 await copyTree(ROOT, OUT);
 await versionFinalHomepageRuntime();
 await prepareCloudflareEnquiryForm();
-await writeCloudflareRouteAliases();
 await writeCloudflareRedirects();
+await writeCloudflareRouteAliases();
 await writeCloudflareHeaders();
 await normalizePremiumBrandMetadata(OUT);
 if (PUBLIC_ORIGIN) await rewriteProductionOrigins(OUT);

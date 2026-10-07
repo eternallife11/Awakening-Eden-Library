@@ -48,5 +48,16 @@
     input.focus();
   });
 
+  // A path such as “Watch something” should open its shelf, even when a
+  // previous search has hidden it. Treat every on-page shelf link as a fresh
+  // browse action so the Library never lands somebody in an empty section.
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!input.value) return;
+      input.value = '';
+      apply();
+    });
+  });
+
   apply();
 })();
