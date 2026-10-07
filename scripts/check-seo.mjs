@@ -30,8 +30,21 @@ function one(html, regex, label, file) {
 for (const [route, file] of KEY_ROUTES) {
   const html = await text(file);
   const title = one(html, /<title[^>]*>([\s\S]*?)<\/title>/gi, 'title', file);
-  const description = one(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["'][^>]*>/gi, 'meta description', file);
-  const canonical = one(html, /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["'][^>]*>/gi, 'canonical', file);
+  const descriptionTags = [...html.matchAll(/<meta\b[^>]*>/gi)]
+    .map((m) => m[0])
+    .filter((tag) => /\bname=["']description["']/i.test(tag));
+  if (descriptionTags.length !== 1) fail(`${file}: expected exactly one meta description, found ${descriptionTags.length}`);
+  const descriptionMatch = descriptionTags[0].match(/\bcontent=["']([^"']+)["']/i);
+  if (!descriptionMatch) fail(`${file}: meta description has no content attribute`);
+  const description = decode(descriptionMatch[1]);
+
+  const canonicalTags = [...html.matchAll(/<link\b[^>]*>/gi)]
+    .map((m) => m[0])
+    .filter((tag) => /\brel=["']canonical["']/i.test(tag));
+  if (canonicalTags.length !== 1) fail(`${file}: expected exactly one canonical, found ${canonicalTags.length}`);
+  const canonicalMatch = canonicalTags[0].match(/\bhref=["']([^"']+)["']/i);
+  if (!canonicalMatch) fail(`${file}: canonical has no href attribute`);
+  const canonical = decode(canonicalMatch[1]);
   const expected = route === '/' ? `${ORIGIN}/` : `${ORIGIN}${route}`;
 
   if (!title || title.length < 20 || title.length > 70) fail(`${file}: title length ${title.length} is outside 20–70 characters`);
