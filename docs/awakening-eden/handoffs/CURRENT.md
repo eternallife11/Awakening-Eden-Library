@@ -2,7 +2,7 @@
 
 - Published to https://awakeningeden.org with Cloudflare version `d2f0da1f-c2e6-469b-bc1b-2a4271f270a3`. Implementation commit `6bf0799`; subsequent build fix handles case-only guide aliases on macOS with explicit redirects.
 - Live Home, Work With Benjy, Work With Us, Village, Library, Library script and both new gallery assets matched the tested build byte-for-byte. Clean main/service/Library routes return 200. Final live checks confirm Thriving, 7 First Steps, Abundant Edge and Small Scale Farm guide shortcuts return 200 after redirect repair.
-- GitHub synchronization remains outstanding: HTTPS push failed because no GitHub credentials are available (`could not read Username`). Source is committed locally. Remote main remains `52af6ee`; do NOT deploy that older source over this release. Next session: restore GitHub authentication, fetch/check ancestry, push the local release without force.
+- GitHub source synchronized through the connected GitHub account on 7 October as commit `6e9647012f632ed442930462bad0b3ce215a3cf3`. Its tree `fe0dd4c1800ff8e8879b6447433e57bdaa78e862` exactly matched the locally verified release. The local Git command still lacks an HTTPS credential, but the repository is current.
 - Next content batch: use `EDUCATIONAL_VISUALS_AND_GUIDES_2026-10-07.md` for three guide visuals/video briefs, then review each small Terra implementation. No new AI artwork was generated. Exact six painted navigation card reproductions remain a separate visual refinement.
 
 ## Current release preparation — 7 October 2026
