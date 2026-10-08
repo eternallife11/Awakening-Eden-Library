@@ -28,8 +28,10 @@ Owner direction: Sofia, 7 October 2026. Apply this before and after every websit
    - waiting for owner context, permission or a source asset.
 5. Do not describe a plan, local preview or pushed source as live until the public-domain check passes.
 
-## Current release status — 7 October 2026
+## Current release status — 8 October 2026
 
-Live and verified: homepage Library/film gateways; Living Library painted header, search and featured platforms; Work With Us offer, contact actions and concise three-part visual story; Work With Benjy offer, contact actions, truthful seven-image gallery and deliverable outcomes; repaired core guide routes.
+Live and verified: homepage Library/film gateways; Living Library painted header, search and featured platforms; repaired core guide routes; Work With Us offer, contact actions, concise three-part visual story and clarified whole-property/project-management scope; Work With Benjy offer, contact actions, truthful selected-work gallery and deliverable outcomes; Luisa and Sim proposed levada-edge food-forest client sample with plan, planting, phasing and care sheets; orchard, food-forest, mandala and community inspiration gallery with clear status labels; confirmed Moinhos guest-workshop image; tropical field-learning image with accurate context; larger-project management and irrigation coordination. Public release: GitHub production commit `59a27a43cd26d2a670bfc8992befb5aeb7b190cc`; Cloudflare version `924c41a3-e287-4123-9c85-558e36055fb2`.
 
-Still planned: the first new Living Systems Field Atlas teaching illustrations; an anonymised sample client plan/deliverable; the fuller concepts/inspirations/educational portfolio after rights and context review; workshop imagery after role and participant permission are confirmed.
+Still planned: the first new Living Systems Field Atlas teaching illustrations and their staged addition to the priority guides. Add further project galleries only when a new image contributes evidence or teaching value beyond the verified portfolio now live.
+
+Waiting for owner context, permission or source assets: nothing in the 8 October service-page release. Sofia confirmed permission for the photographs and clarified the project contexts used here.
