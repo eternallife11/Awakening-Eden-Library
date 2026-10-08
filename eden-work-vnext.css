@@ -808,3 +808,156 @@
  .benjy-gallery__hint { display:block; color:var(--umber); font-size:.85rem; }
  .benjy-deliverables { grid-template-columns:1fr; }
 }
+
+/* Client sample and inspiration atlas, 8 October 2026. */
+.vnext-client-example {
+  background:
+    radial-gradient(circle at 88% 8%, rgb(229 196 125 / .22), transparent 24rem),
+    linear-gradient(145deg, #f8f2e4, #edf2e7);
+}
+.vnext-client-example .vnext-section-heading { max-width: 62rem; }
+.vnext-client-example .vnext-section-heading h2 { max-width: 17ch; }
+.vnext-client-example__project {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(24rem, 1.05fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+.vnext-client-example__copy h3 {
+  max-width: 18ch;
+  margin: .35rem 0 1rem;
+  color: var(--forest);
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1;
+}
+.vnext-client-example__copy p:not(.vnext-card-kicker) { max-width: 65ch; }
+.vnext-client-example__project figure {
+  position: relative;
+  margin: 0;
+  padding: .55rem;
+  border: 1px solid rgb(105 112 82 / .3);
+  border-radius: 1.45rem;
+  background: #fffdf7;
+  box-shadow: 0 22px 50px rgb(45 60 39 / .13);
+}
+.vnext-client-example__project figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.vnext-client-example__project figcaption {
+  padding: .85rem .65rem .3rem;
+  color: var(--umber);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+.vnext-client-example__status {
+  position: absolute;
+  z-index: 1;
+  top: 1.15rem;
+  left: 1.15rem;
+  padding: .45rem .65rem;
+  border-radius: 999px;
+  color: #fffdf7;
+  background: rgb(52 71 52 / .94);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.vnext-sample-plan {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.vnext-sample-plan article {
+  min-height: 15rem;
+  padding: 1.4rem;
+  border: 1px solid rgb(105 112 82 / .28);
+  border-radius: .9rem .9rem 1.45rem .9rem;
+  background:
+    linear-gradient(90deg, transparent 2.2rem, rgb(167 101 79 / .12) 2.25rem, transparent 2.3rem),
+    #fffdf7;
+  box-shadow: 0 14px 30px rgb(45 60 39 / .07);
+}
+.vnext-sample-plan span {
+  color: #8d543e;
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.vnext-sample-plan h3 { margin: .65rem 0 .55rem; color: var(--forest); font-size: 1.55rem; }
+.vnext-sample-plan p { margin: 0; color: #4b503e; font-size: .9rem; line-height: 1.55; }
+.vnext-client-example__note {
+  max-width: 75ch;
+  margin: 1.35rem 0 1.6rem;
+  color: var(--umber);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+.vnext-inspiration { background: #fffaf0; }
+.vnext-inspiration .vnext-section-heading { max-width: 58rem; }
+.vnext-inspiration .vnext-section-heading h2 { max-width: 16ch; }
+.vnext-inspiration__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.vnext-inspiration__grid figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgb(105 112 82 / .2);
+  border-radius: 1.15rem;
+  background: #f3ead8;
+  box-shadow: 0 14px 30px rgb(45 60 39 / .08);
+}
+.vnext-inspiration__grid figure > span {
+  position: absolute;
+  z-index: 1;
+  top: .7rem;
+  left: .7rem;
+  max-width: calc(100% - 1.4rem);
+  padding: .38rem .55rem;
+  border-radius: 999px;
+  color: #fffdf7;
+  background: rgb(52 71 52 / .92);
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.vnext-inspiration__grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.vnext-inspiration__grid figure:nth-child(4) img,
+.vnext-inspiration__grid figure:nth-child(6) img { object-position: center 36%; }
+.vnext-inspiration__grid figcaption { display: grid; gap: .25rem; padding: 1rem; }
+.vnext-inspiration__grid figcaption strong { color: var(--forest); font-family: var(--display); font-size: 1.2rem; }
+.vnext-inspiration__grid figcaption small { color: var(--umber); font-size: .78rem; line-height: 1.45; }
+.vnext-inspiration__grid:focus-visible { outline: 3px solid #987328; outline-offset: 6px; }
+@media (max-width: 64rem) {
+  .vnext-client-example__project { grid-template-columns: 1fr; }
+  .vnext-client-example__project figure { max-width: 48rem; }
+  .vnext-sample-plan,
+  .vnext-inspiration__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 48rem) {
+  .vnext-client-example__project { gap: 1.5rem; }
+  .vnext-client-example__project figure { order: -1; }
+  .vnext-client-example__project figure img { aspect-ratio: 4 / 3; }
+  .vnext-sample-plan { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
+  .vnext-sample-plan article { flex: 0 0 84%; min-height: 13rem; scroll-snap-align: start; }
+  .vnext-inspiration__grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
+  .vnext-inspiration__grid figure { flex: 0 0 85%; scroll-snap-align: start; }
+  .vnext-inspiration__grid img { aspect-ratio: 4 / 3; }
+  .vnext-client-example .button-row .button { width: 100%; }
+}
