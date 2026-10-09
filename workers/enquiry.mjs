@@ -1,6 +1,6 @@
 const API_PATH = '/api/enquiry';
 const DELIVERY_ADDRESS = 'regenerativeeden@gmail.com';
-const SUCCESS_REDIRECT = '/project-enquiry-thank-you.html';
+const SUCCESS_REDIRECT = '/work-with-benjy/thank-you';
 const MAX_BODY_BYTES = 16 * 1024;
 const RETRY_AFTER_SECONDS = '60';
 
@@ -20,6 +20,17 @@ const startTimeframes = new Set([
   'Within 1–3 months',
   'Later this year',
   'I am exploring for the future'
+]);
+
+const primaryChallenges = new Set([
+  'Water, drought or erosion',
+  'Soil, fertility or biomass',
+  'Existing orchard or monoculture',
+  'Food forest or productive planting',
+  'Garden, raised beds or growing space',
+  'Whole-property design and priorities',
+  'Implementation or project support',
+  'Still exploring / not sure'
 ]);
 
 const serviceInterests = new Set([
@@ -101,6 +112,7 @@ function validateEnquiry(payload) {
     location: requiredText(payload, 'location', 180, issues),
     propertyType: requiredText(payload, 'property-type', 80, issues),
     propertySize: optionalText(payload, 'property-size', 120, issues),
+    primaryChallenge: requiredText(payload, 'primary-challenge', 120, issues),
     startTimeframe: requiredText(payload, 'start-timeframe', 80, issues),
     serviceInterest: requiredText(payload, 'service-interest', 100, issues),
     vision: requiredText(payload, 'vision-and-challenge', 4_000, issues),
@@ -120,6 +132,7 @@ function validateEnquiry(payload) {
   if (!validHttpUrl(enquiry.photosOrMapLink)) issues.push('photos-or-map-link');
   allowedValue(enquiry.preferredContact, preferredContacts, 'preferred-contact', issues);
   allowedValue(enquiry.propertyType, propertyTypes, 'property-type', issues);
+  allowedValue(enquiry.primaryChallenge, primaryChallenges, 'primary-challenge', issues);
   allowedValue(enquiry.startTimeframe, startTimeframes, 'start-timeframe', issues);
   allowedValue(enquiry.serviceInterest, serviceInterests, 'service-interest', issues);
 
@@ -219,6 +232,7 @@ function deliveryFields(enquiry) {
     ['Location', enquiry.location],
     ['Property type', enquiry.propertyType],
     ['Approximate size', enquiry.propertySize || 'Not provided'],
+    ['Primary challenge', enquiry.primaryChallenge],
     ['Start timeframe', enquiry.startTimeframe],
     ['Service interest', enquiry.serviceInterest],
     ['Vision and challenge', enquiry.vision],

@@ -14,6 +14,7 @@ function validPayload(overrides = {}) {
     location: 'Coimbra, Portugal',
     'property-type': 'Home garden',
     'property-size': '800 square metres',
+    'primary-challenge': 'Water, drought or erosion',
     'start-timeframe': 'Within 1–3 months',
     'service-interest': 'Land + Project Clarity Session — €111',
     'vision-and-challenge': 'I would like to restore water, soil life and food abundance in our garden.',
@@ -95,7 +96,7 @@ test('accepts a complete, verified enquiry and sends only to the fixed destinati
   const response = await worker.fetch(requestFor(validPayload()), env);
 
   assert.equal(response.status, 202);
-  assert.deepEqual(await responseBody(response), { ok: true, redirect: '/project-enquiry-thank-you.html' });
+  assert.deepEqual(await responseBody(response), { ok: true, redirect: '/work-with-benjy/thank-you' });
   assert.equal(sent.length, 1);
   assert.equal(sent[0].to, 'regenerativeeden@gmail.com');
   assert.equal(sent[0].from, 'enquiries@example.test');

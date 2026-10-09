@@ -135,7 +135,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   const openingActions = page.locator('.home-hero-actions');
   await expect(openingActions.locator('a.button[href="/start-here"]')).toBeVisible();
   await expect(openingActions.locator('a.button[href="/living-library"]')).toBeVisible();
-  await expect(openingActions.locator('a.button[href="/work-with-benjy"]')).toBeVisible();
+  await expect(openingActions.locator('a.button[href="/work-with-benjy#land-vision"]')).toBeVisible();
   await expect(openingActions.locator('a.button[href="/work-with-us"]')).toBeVisible();
 
   await expect(page.getByRole('heading', { level: 2, name: 'Earth lovers, practical dreamers & lifelong students of life.' })).toBeVisible();
@@ -210,11 +210,12 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(page.locator('.vnext-final__card img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(0);
 
   const form = page.locator('form[data-land-enquiry-form]');
-  await expect(form).toBeHidden();
+  await expect(form).toBeVisible();
   await expect(form).toHaveAttribute('data-netlify', 'true');
-  await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
-  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(0);
-  await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(0);
+  await expect(form).toHaveAttribute('action', '/work-with-benjy/thank-you');
+  await expect(form).toHaveAttribute('data-cloudflare-enquiry-endpoint', '/api/enquiry');
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(1);
+  await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(1);
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
