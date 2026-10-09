@@ -694,5 +694,8 @@
 .land-form:not(.js-funnel) .form-step:last-of-type{border-bottom:0}
 .thank-you-gift{margin:1.7rem auto;padding:1.25rem;border:1px solid rgb(105 112 82 / .24);border-radius:1.2rem;background:rgb(240 232 205 / .55)}
 .thank-you-gift h2{margin:.15rem 0 .45rem;font-size:clamp(1.5rem,4vw,2.2rem)}
+.thank-you-reciprocity{margin:1.35rem auto;padding:1.25rem;border:1px solid rgb(105 112 82 / .18);border-radius:1.2rem;background:rgb(255 253 247 / .72)}
+.thank-you-reciprocity h2{margin:.15rem 0 .45rem;font-size:clamp(1.35rem,3.4vw,1.9rem)}
+.thank-you-reciprocity .button-row{gap:.8rem;align-items:center}
 @media(max-width:58rem){.eden-funnel-entry__card{grid-template-columns:1fr}.eden-enquiry__guide{order:2}.land-form{order:1}}
 @media(max-width:42rem){.form-step__nav,.form-step__nav--final{display:grid;grid-template-columns:1fr}.form-step__nav .button{width:100%}}
