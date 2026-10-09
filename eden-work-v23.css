@@ -654,3 +654,45 @@
 /* Benjy's own land-and-water dividers: quieter and wider than the painted
    botanicals, so they mark a change of ground without becoming a garland. */
 .ae-earth-divider--land { max-width: min(100%, 1180px); opacity: 0.9; }
+
+
+/* Awakening Eden regenerative funnel · 2026-10-09 */
+.vnext-hero__micro{margin:.8rem 0 0;color:var(--umber);font-size:.8rem;font-weight:700}
+.eden-funnel-entry{padding-block:clamp(1.5rem,4vw,3rem)}
+.eden-funnel-entry__card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,5vw,4rem);align-items:center;padding:clamp(1.5rem,4vw,3rem);border:1px solid rgb(105 112 82 / .25);border-radius:1.8rem;background:linear-gradient(135deg,rgb(255 253 247 / .96),rgb(236 232 211 / .76));box-shadow:var(--shadow)}
+.eden-funnel-entry__card h2{max-width:12ch;margin:.25rem 0 .7rem}
+.eden-funnel-entry__paths{display:grid;gap:.8rem}
+.eden-funnel-path{display:grid;grid-template-columns:auto 1fr;gap:.15rem .85rem;align-items:center;padding:1rem 1.1rem;border:1px solid rgb(105 112 82 / .24);border-radius:1rem;background:#fffefa;color:var(--forest-deep);text-decoration:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.eden-funnel-path:hover,.eden-funnel-path:focus-visible{transform:translateY(-2px);border-color:var(--terracotta);box-shadow:0 12px 28px rgb(35 49 38 / .08)}
+.eden-funnel-path--primary{background:var(--forest);color:#fffdf7}
+.eden-funnel-path__number{grid-row:1 / 3;font-family:var(--font-display,Georgia,serif);font-size:1.5rem;opacity:.68}
+.eden-funnel-path strong{font-size:1rem}
+.eden-funnel-path small{font-size:.78rem;opacity:.78}
+.eden-enquiry{background:linear-gradient(180deg,rgb(242 238 218 / .7),rgb(255 253 247 / .96))}
+.eden-enquiry__trust{font-size:.86rem;font-weight:700;color:var(--olive)}
+.eden-enquiry__guide{padding:clamp(1.4rem,3vw,2.3rem);border-radius:1.6rem;background:var(--forest);color:#fffdf7;box-shadow:var(--shadow)}
+.eden-enquiry__guide h3{color:#fffdf7;margin:.2rem 0 1rem}
+.eden-enquiry__guide ol{display:grid;gap:1rem;padding:0;list-style:none;counter-reset:edensteps}
+.eden-enquiry__guide li{display:grid;gap:.22rem;padding-left:2.2rem;position:relative;counter-increment:edensteps}
+.eden-enquiry__guide li::before{content:counter(edensteps);position:absolute;left:0;top:.05rem;width:1.55rem;height:1.55rem;display:grid;place-items:center;border:1px solid rgb(255 255 255 / .4);border-radius:50%;font-size:.72rem}
+.eden-enquiry__guide li span{font-size:.84rem;opacity:.8}
+.eden-enquiry__guide .button{margin-top:1rem}
+.eden-form-progress{display:grid;gap:.55rem;margin-bottom:.2rem}
+.eden-form-progress p{margin:0;color:var(--forest);font-size:.82rem;font-weight:800}
+.eden-form-progress>div{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.eden-form-progress span{height:.32rem;border-radius:999px;background:rgb(105 112 82 / .18)}
+.eden-form-progress span[data-active="true"]{background:var(--terracotta)}
+.form-step{display:grid;gap:1rem;margin:0;padding:0;border:0;min-width:0}
+.form-step[hidden]{display:none!important}
+.form-step legend{padding:0;color:var(--forest-deep);font-family:var(--font-display,Georgia,serif);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:600}
+.form-step__intro{margin:-.45rem 0 .2rem;color:var(--umber);font-size:.9rem}
+.form-step__nav{display:flex;gap:.7rem;align-items:center;justify-content:flex-end;margin-top:.25rem}
+.form-step__nav .button{border:0}
+.form-step__nav--final{justify-content:space-between}
+.land-form:not(.js-funnel) [data-form-next],.land-form:not(.js-funnel) [data-form-back]{display:none}
+.land-form:not(.js-funnel) .form-step{padding-bottom:1.2rem;border-bottom:1px solid rgb(105 112 82 / .18)}
+.land-form:not(.js-funnel) .form-step:last-of-type{border-bottom:0}
+.thank-you-gift{margin:1.7rem auto;padding:1.25rem;border:1px solid rgb(105 112 82 / .24);border-radius:1.2rem;background:rgb(240 232 205 / .55)}
+.thank-you-gift h2{margin:.15rem 0 .45rem;font-size:clamp(1.5rem,4vw,2.2rem)}
+@media(max-width:58rem){.eden-funnel-entry__card{grid-template-columns:1fr}.eden-enquiry__guide{order:2}.land-form{order:1}}
+@media(max-width:42rem){.form-step__nav,.form-step__nav--final{display:grid;grid-template-columns:1fr}.form-step__nav .button{width:100%}}
