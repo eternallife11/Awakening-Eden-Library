@@ -75,3 +75,49 @@ Updated 2026-10-12 after mobile review.
 - The compact capability strip includes food forests, orchard renewal, raised beds, permaculture gardens, swales/ponds, natural pools, whole-property design and project management.
 - Real work, collaboration, design concepts and inspiration remain visibly labelled so no outcome is implied where it has not been built.
 - Do not add another portfolio/gallery section during final polish. Improve the one showcase instead.
+
+
+## Laptop visual research pass
+Before final visual sign-off, do one focused research-and-selection pass for the **single Projects + Possibilities showcase** on Work With Benjy and Work With Us.
+
+### Goal
+Find the strongest, most beautiful and most useful visual examples that help a visitor immediately imagine what their own land could become, while keeping the page simple, credible and distinctly Awakening Eden.
+
+### Gather and compare
+- strongest **real Benjy / Sofia / Awakening Eden project photographs**
+- strongest images from projects Benjy helped implement, steward, teach on or collaborate in
+- strongest **existing Awakening Eden design concepts and educational visuals**
+- best examples of **possible future project types** we genuinely want to offer
+- beautiful external regenerative / permaculture / syntropic / agroforestry / natural-landscape references that can inspire layout and project possibilities
+- excellent visual examples from respected regenerative businesses, landscape studios, food-forest designers and leading land educators
+- Mediterranean / Portugal-relevant examples wherever possible
+
+### Prioritise visual examples for
+- syntropic food forests and agroforestry rows
+- orchard regeneration / monoculture retrofit
+- fertility islands and companion planting
+- raised beds, no-dig gardens and productive permaculture gardens
+- living soil, biomass and chop-and-drop systems
+- swales, contour systems, ponds and water-retention landscapes
+- Abundant Edge / woody fertility systems
+- natural paths, trellises, fences and useful landscape structures
+- biopools / natural swimming systems with appropriate specialist delivery
+- compost-toilet integration where appropriate
+- whole-property regenerative plans and phased land designs
+- retreat, community and shared growing landscapes
+- before / during / later-stage sequences where we genuinely have the evidence
+
+### Selection rules
+- **Do not create another gallery.** Improve the one unified showcase.
+- Prefer authentic project photography first.
+- Use our own visual concepts where they explain a system better than a photograph.
+- External projects are for inspiration unless we have permission / a reusable licence; credit and link creators clearly when used.
+- Never imply an external inspiration project was designed or built by Awakening Eden.
+- Keep visible status labels where useful: Real project · Collaboration · Design concept · Inspiration · Teaching concept.
+- Avoid duplicate-feeling images.
+- Choose fewer, stronger visuals rather than filling every possible slot.
+- Favour images that communicate the system in 2–3 seconds on mobile.
+- Keep the final visual rhythm premium, human, warm, regenerative and uncluttered.
+
+### Laptop action
+Create one temporary shortlist folder / board with roughly **20–30 candidate visuals**, compare them side by side, then choose only the strongest final images for the two showcase categories. Record source, creator, permission/licence and project context for any external image before publication.
