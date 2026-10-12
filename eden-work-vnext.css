@@ -977,7 +977,7 @@
 .eden-showcase__category-head{display:grid;gap:.1rem;margin-bottom:1.1rem}
 .eden-showcase__category-head .handwritten{margin:0;color:#a45d43;font-size:clamp(1.2rem,2.5vw,1.7rem)}
 .eden-showcase__category-head h3{max-width:21ch;margin:0;color:var(--forest);font-family:var(--display);font-size:clamp(2rem,4vw,3.35rem);line-height:1}
-.eden-showcase .vnext-inspiration__grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:.85rem}
+.eden-showcase .vnext-inspiration__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
 .eden-showcase .vnext-inspiration__grid figure{background:#fffdf7;transition:transform .22s ease,box-shadow .22s ease}
 .eden-showcase .vnext-inspiration__grid figure:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgb(45 60 39 / .11)}
 .eden-showcase .vnext-inspiration__grid figcaption{min-height:7.6rem}
