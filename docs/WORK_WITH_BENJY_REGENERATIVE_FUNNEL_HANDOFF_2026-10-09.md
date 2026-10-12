@@ -59,3 +59,19 @@ Do not use the generic `/thank-you.html` page for this conversion, because it is
 
 ## Optional phase 2
 When Benjy wants real-time scheduling, connect a calendar only after qualification. For the €111 Clarity Session, a successful questionnaire can reveal a booking link; larger projects can remain a personal fit conversation first. Avoid adding a scheduling tool until the calendar and availability rules are ready.
+
+
+## Projects + Possibilities gallery
+Updated 2026-10-12 after mobile review.
+
+- Keep **one** inspiring project/examples gallery per page.
+- On Work With Benjy it sits immediately after the opening/funnel invitation.
+- On Work With Us it sits immediately after the introduction.
+- Removed the older duplicate photo/project galleries.
+- Two simple visual groups:
+  1. Food forests, orchards, raised beds and regenerative gardens
+  2. Water, soil and whole-property landscape systems
+- Copy now leads with the practical promise: transforming tired land, poor soil and monocultures toward thriving, water-wise, biodiverse places.
+- The compact capability strip includes food forests, orchard renewal, raised beds, permaculture gardens, swales/ponds, natural pools, whole-property design and project management.
+- Real work, collaboration, design concepts and inspiration remain visibly labelled so no outcome is implied where it has not been built.
+- Do not add another portfolio/gallery section during final polish. Improve the one showcase instead.
