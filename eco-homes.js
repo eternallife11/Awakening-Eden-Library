@@ -6,7 +6,7 @@ function showHomes(filter='all'){
   homes.forEach(card=>{
     card.hidden=!(filter==='all'||card.dataset.tier===filter||card.dataset.audience===filter||(filter==='couple'&&card.dataset.audience==='cats'));
   });
-  for(const id of ['curated','wood']){
+  for(const id of ['curated','wood','domes']){
     const heading=document.getElementById(id);
     const group=heading?.nextElementSibling;
     if(heading&&group?.classList.contains('cards')){
