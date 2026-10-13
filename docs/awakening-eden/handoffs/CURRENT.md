@@ -1,3 +1,13 @@
+## Eco-homes independent guide — 13 October 2026 (DRAFT PR #39)
+
+- New isolated review branch: `agent/eco-homes-guide-2026-10-13`; draft PR https://github.com/eternallife11/Awakening-Eden-Library/pull/39 . **Not merged or deployed to awakeningeden.org.**
+- Standalone `eco-homes.html`, independent `eco-homes.js`, clean `/eco-homes` rewrite, OG/social metadata, sitemap entry and single link from `village-research.html`. No homepage/nav redesign, no changes to services or official Tree+Heart visual geometry.
+- The guide compares 11 researched natural/wooden homes and 3 separate dome pathways; distinguishes advertised kit price from preliminary completed-project costs, porches/decks, pets and Portugal planning needs. Share + print button included.
+- Static checks on the proposed GitHub files: 14 product cards, 11 external supplier preview images, 41 external model/gallery links, scoped CSP allowlist for 5 supplier media hosts, script externalised for CSP, route and sitemap entry present. **These checks do not replace production build, live supplier validation or browser visual QA.**
+- **Blocking before production merge:** confirm rights/permissions for manufacturer photo embeds; confirm current promotional prices and features; perform mobile/desktop/browser QA including network image failures, content security and print. Replace remote photo embeds with licensed assets or clear gallery-link placeholders where needed.
+- For future resources use `docs/awakening-eden/proposals/MODULAR_RESEARCH_GUIDES_2026-10-13.md`.
+- Next: request owners' review of the brochure and staged page; run CI/build/preview; inspect desktop/phone; approve and merge; verify final public /eco-homes route and WhatsApp OG preview after deployment.
+
 ## Live release verified — 7 October 2026
 
 - Published to https://awakeningeden.org with Cloudflare version `d2f0da1f-c2e6-469b-bc1b-2a4271f270a3`. Implementation commit `6bf0799`; subsequent build fix handles case-only guide aliases on macOS with explicit redirects.
