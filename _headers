@@ -81,3 +81,11 @@
 /docs/*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: public, max-age=604800
+
+# Product catalogue: remote manufacturer previews only. The images remain with
+# their source sites; publication requires rights review before merge.
+/eco-homes
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://static.wixstatic.com https://www.pineca.pt https://www.pineca.nl https://senmar.pt https://ecococon.eu; connect-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src https://open.spotify.com; upgrade-insecure-requests
+
+/eco-homes.html
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://static.wixstatic.com https://www.pineca.pt https://www.pineca.nl https://senmar.pt https://ecococon.eu; connect-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src https://open.spotify.com; upgrade-insecure-requests
