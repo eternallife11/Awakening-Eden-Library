@@ -133,14 +133,20 @@ test('homepage exposes the final opening journey and approved visual choices', a
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
   const openingActions = page.locator('.home-hero-actions');
-  await expect(openingActions.locator('a.button[href="/work-with-benjy"]')).toHaveText('Regenerate your land');
+  await expect(openingActions.locator('a.button[href="/work-with-benjy"]')).toHaveText('Regenerate your land with Benjy');
   await expect(openingActions.locator('a.button[href="/living-library"]')).toBeVisible();
-  await expect(openingActions.locator('a.button[href="/living-library#films"]')).toBeVisible();
+  await expect(openingActions.locator('a.button[href="/living-library"]')).toContainText('Inspiring films, documentaries, books & hopeful resources');
   await expect(openingActions.locator('a.button[href="/work-with-us"]')).toBeVisible();
-  await expect(openingActions.locator('a.button')).toHaveCount(4);
+  await expect(openingActions.locator('a.button')).toHaveCount(3);
 
   await expect(page.getByRole('heading', { level: 2, name: 'Hi, we’re Benjy & Sofia, the founders of Awakening Eden.' })).toBeVisible();
-  await expect(page.getByText('We are the architects of the New Earth—conduits for sacred activism, miraculous regeneration and magical creations.')).toBeVisible();
+  await expect(page.locator('.hero-manifesto')).toContainText('We are the architects of the New Earth—conduits for sacred activism, miraculous regeneration and magical co-creations.');
+  const openingOrder = await page.evaluate(() => {
+    const selectors = ['.hero-copy__title', '.welcome-home-art', '.hero-manifesto', '.home-hero-actions'];
+    return selectors.map(selector => document.querySelector(selector).getBoundingClientRect().top + scrollY);
+  });
+  expect(openingOrder).toEqual([...openingOrder].sort((a, b) => a - b));
+  await expect(page.getByRole('link', {name:'Explore our services at Work With Us →'})).toHaveAttribute('href','/work-with-us');
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');

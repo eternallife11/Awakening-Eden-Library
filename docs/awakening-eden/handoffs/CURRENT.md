@@ -1,5 +1,6 @@
 # Awakening Eden — current handoff
 ## Latest owner decision and GitHub recovery · 15 October
+- Later owner correction implemented: title + regeneration/blueprint subtitle, then founders image, then New Earth co-creations quote, then three clear Library/Benjy/Work With Us actions. Property invitation links Work With Us; listening invitation says “our digital home.” Work With Us opens with explicit Village Homes, biopools, fencing and food-forest scope. Desktop/phone checks passed (4/4), build and visual guard passed. This replaces the older four-action ordering below; all unrelated approved style/copy remains locked.
 - Homepage wording/style explicitly approved and locked in [homepage owner lock](../design/HOMEPAGE_OWNER_LOCK_2026-10-15.md). Preserve it. Only the requested service invitations were added beneath the four opening actions.
 - New copy explains land clarity/design/implementation/management, the owner's confirmed experience, and Village Homes/services. Desktop/phone homepage checks and screenshot captures passed (4/4).
 - GitHub CLI installed at `/Users/sofiabonnett/.local/bin/gh`; authenticated as `eternallife11`, credentials confirmed in keyring; Git configured to reuse it. Earlier notes about missing credentials are historical.

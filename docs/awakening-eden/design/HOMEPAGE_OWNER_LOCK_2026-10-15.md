@@ -9,3 +9,6 @@ The only requested addition in this approval is clearer service context for “R
 Newest explicit owner changes remain authoritative. Exact twelve-fold Lotus and prior geometry/source protections remain in force.
 
 Owner's subsequent small addition: the “Listen while you explore” invitation uses the existing painted moon/tree/heart/butterfly garden artwork, says “Inspiring songs for the soil, soul & regenerative empowerment,” and identifies the destination as the Spotify playlist. Preserve the existing in-page player link.
+
+## Newer owner-directed structure
+The owner's later explicit correction changes the opening order: Welcome/title/Library → regeneration subtitle and original-blueprint invitation → founders tree image → New Earth manifesto with “magical co-creations” → clear Library / Benjy / Work With Us actions. The Library action explains films, documentaries, books and hopeful resources. The property invitation explicitly links Work With Us; the listening label is “Listen while you explore our digital home.” Preserve the approved visual language and all unrelated copy. This supersedes the previous four-button ordering.

@@ -1,5 +1,15 @@
 /* Awakening Eden heartfelt finish · 13 October 2026 */
 body.final-home-polish .hero-copy__body{max-width:45rem}
+/* Owner's revised opening order: title, subtitle, founders art, manifesto, actions. */
+body.final-home-polish .hero--welcome .hero-copy{display:block!important;opacity:1;transform:none}
+body.final-home-polish .hero--welcome .hero-copy__body{display:block!important;max-width:54rem;margin-inline:auto}
+body.final-home-polish .hero-copy__title .hero-promise{max-width:34ch;margin:1.5rem auto .7rem;font-size:clamp(1.35rem,2.5vw,2rem)}
+body.final-home-polish .hero-blueprint{max-width:55ch;margin:0 auto 1.5rem;font-size:1rem;line-height:1.6;color:var(--umber)}
+body.final-home-polish .hero--welcome .threshold-section{padding:1.2rem 0 .5rem}
+body.final-home-polish .hero-manifesto{max-width:38ch;margin:1.3rem auto 1.8rem;font-size:clamp(1.65rem,3vw,2.5rem)}
+body.final-home-polish .home-hero-actions .button span{display:block}
+body.final-home-polish .home-hero-actions .button strong{font:inherit;display:block}
+body.final-home-polish .home-hero-actions .button small{display:block;margin-top:.35rem;font-size:.78rem;font-weight:400;line-height:1.4}
 body.final-home-polish .hero-promise{max-width:21ch;color:var(--forest);font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.08}
 body.final-home-polish .hero-intro{max-width:64ch;font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7}
 .founders-manifesto{max-width:30ch;margin:1.8rem auto;padding:1.2rem 1.4rem;border-block:1px solid rgb(164 93 67/.28);color:var(--forest);font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.65rem);font-style:italic;line-height:1.08;text-align:center}
