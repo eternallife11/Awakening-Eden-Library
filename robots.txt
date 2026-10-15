@@ -1,3 +1,12 @@
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
@@ -5,4 +14,4 @@ Disallow: /project-enquiry-thank-you.html
 Disallow: /links.html
 Disallow: /docs/
 Disallow: /deliverables/
-Sitemap: https://awakening-eden-library.netlify.app/sitemap.xml
+Sitemap: https://awakeningeden.org/sitemap.xml

@@ -10,7 +10,8 @@
     "test:performance": "pnpm run build:production && lhci autorun",
     "test": "pnpm run test:worker && pnpm run test:browser",
     "check:zero-cost": "node scripts/check-zero-cost.mjs",
-    "check:visual-lock": "node scripts/check-visual-lock.mjs"
+    "check:visual-lock": "node scripts/check-visual-lock.mjs",
+    "check:seo": "pnpm run build:production && node scripts/check-seo.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
