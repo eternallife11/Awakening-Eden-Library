@@ -8,6 +8,9 @@ body.final-home-polish .home-service-invitations h2{font-family:var(--display);f
 .home-service-invitations p{font-size:.95rem;line-height:1.6;margin:.6rem 0}
 .home-service-invitations a{font-weight:700;text-underline-offset:3px}
 .home-service-invitations .home-service-invitations__experience{font-size:.82rem;color:var(--olive)}
+body.final-home-polish .hero-soundtrack__icon--painted{width:7.5rem;height:3.4rem;border:0;border-radius:0}
+body.final-home-polish .hero-soundtrack__icon--painted img{width:100%;height:100%;object-fit:contain}
+@media(max-width:42rem){body.final-home-polish .hero-soundtrack__icon--painted{width:5.5rem;height:3rem;grid-row:span 2}}
 @media(max-width:38rem){.home-service-invitations{grid-template-columns:1fr;gap:1rem}}
 body.final-home-polish .founders-welcome__divider--botanical{width:min(64rem,94vw);margin-top:1.2rem;object-fit:contain}
 body.final-home-polish .grow-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,1.8vw,1.4rem)}
