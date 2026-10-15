@@ -1,4 +1,6 @@
 # Awakening Eden — current handoff
+Latest addition: Village Homes options-and-services page is implemented locally and connected to Work With Us and Village Vision. See [Village Homes handoff](../proposals/VILLAGE_HOMES_HANDOFF_2026-10-15.md) for exact scope and the supplier-catalogue export still required. Previous finishing commit is `8549a00`; references below to `5bffc5e` predate its amendment. Nothing from this new homes batch is live yet.
+
 Updated 15 October 2026 after implementing and verifying the local release candidate.
 
 ## Start here
