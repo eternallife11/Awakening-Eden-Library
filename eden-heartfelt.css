@@ -1,0 +1,18 @@
+/* Awakening Eden heartfelt finish · 13 October 2026 */
+body.final-home-polish .hero-copy__body{max-width:45rem}
+body.final-home-polish .hero-promise{max-width:21ch;color:var(--forest);font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.08}
+body.final-home-polish .hero-intro{max-width:64ch;font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.7}
+.founders-manifesto{max-width:30ch;margin:1.8rem auto;padding:1.2rem 1.4rem;border-block:1px solid rgb(164 93 67/.28);color:var(--forest);font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.65rem);font-style:italic;line-height:1.08;text-align:center}
+body.final-home-polish .founders-welcome__divider--botanical{width:min(64rem,94vw);margin-top:1.2rem;object-fit:contain}
+body.final-home-polish .grow-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,1.8vw,1.4rem)}
+body.final-home-polish .door-card{display:flex;min-height:100%;flex-direction:column;padding:.72rem;overflow:hidden;border-radius:1.6rem;background:#fffaf0}
+body.final-home-polish .door-card__art{position:relative;display:block;width:100%;min-width:0;aspect-ratio:4/5;margin:0 0 1.1rem;overflow:hidden;border-radius:1.2rem 1.2rem 5rem 5rem;background:#e9dfc8}
+body.final-home-polish .door-card__art>img:first-child{display:block;width:100%;height:100%;object-fit:cover;transform:none}
+body.final-home-polish .door-card__lotus{position:absolute;z-index:1;width:auto!important;height:auto!important;filter:drop-shadow(0 .08rem .18rem rgb(44 66 42 / .3));pointer-events:none}
+body.final-home-polish .door-card__lotus--begin{left:40.2%;top:9.9%;width:22.1%!important}
+body.final-home-polish .door-card__lotus--library{left:21.8%;top:45.5%;width:27.2%!important}
+body.final-home-polish .door-card__glyph{display:none}
+body.final-home-polish .door-card h3,body.final-home-polish .door-card p,body.final-home-polish .door-card__cta{margin-inline:.55rem}
+body.final-home-polish .door-card__cta{margin-top:auto;padding-bottom:.7rem}
+@media(max-width:64rem){body.final-home-polish .grow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:38rem){body.final-home-polish .grow-grid{grid-template-columns:1fr 1fr;gap:.65rem}body.final-home-polish .door-card{padding:.45rem;border-radius:1rem}body.final-home-polish .door-card__art{margin-bottom:.7rem;border-radius:.8rem .8rem 2.5rem 2.5rem}body.final-home-polish .door-card h3{font-size:1.55rem}body.final-home-polish .door-card__lead{font-size:1rem}body.final-home-polish .door-card__cta{font-size:.78rem}.founders-manifesto{font-size:1.65rem}}

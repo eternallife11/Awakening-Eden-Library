@@ -16,7 +16,7 @@
 .eden-garden-collection__heading h2 { margin-bottom: .85rem; color: var(--forest); }
 .eden-garden-collection__heading > p:last-child { max-width: 48rem; color: var(--umber); font-size: clamp(1.05rem, 1.7vw, 1.22rem); }
 .eden-garden-collection__scales { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-.eden-garden-collection__scales article { display: flex; min-height: 15rem; flex-direction: column; padding: 1.45rem; border: 1px solid rgb(78 94 64 / .25); border-radius: 1.15rem; background: rgb(255 253 247 / .82); box-shadow: 0 12px 28px rgb(45 67 50 / .08); }
+.eden-garden-collection__scales article { display: flex; min-height: 14.25rem; flex-direction: column; padding: 1.45rem; border: 1px solid rgb(78 94 64 / .25); border-radius: 1.15rem; background: rgb(255 253 247 / .82); box-shadow: 0 12px 28px rgb(45 67 50 / .08); }
 .eden-garden-collection__scales h3 { margin: 0; color: var(--forest); }
 .eden-garden-collection__scales p { color: var(--umber); }
 .eden-garden-collection__scales strong { margin-top: auto; color: var(--terracotta); font-family: var(--display); font-size: clamp(1.75rem, 3vw, 2.3rem); }
