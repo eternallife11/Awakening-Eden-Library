@@ -1,4 +1,11 @@
 # Awakening Eden — current handoff
+## Latest owner decision and GitHub recovery · 15 October
+- Homepage wording/style explicitly approved and locked in [homepage owner lock](../design/HOMEPAGE_OWNER_LOCK_2026-10-15.md). Preserve it. Only the requested service invitations were added beneath the four opening actions.
+- New copy explains land clarity/design/implementation/management, the owner's confirmed experience, and Village Homes/services. Desktop/phone homepage checks and screenshot captures passed (4/4).
+- GitHub CLI installed at `/Users/sofiabonnett/.local/bin/gh`; authenticated as `eternallife11`, credentials confirmed in keyring; Git configured to reuse it. Earlier notes about missing credentials are historical.
+- PR38 was confirmed OPEN at `d88c855` before this push. Push this finishing candidate to both its local-name remote branch and the existing PR38 source branch; use normal fast-forward pushes only. No production merge/deployment is part of this backup step.
+- Village Homes and Lemuria integration notes below remain relevant; the actual exported catalogue and final image still need attachment.
+
 Latest addition: Village Homes options-and-services page is implemented locally and connected to Work With Us and Village Vision. See [Village Homes handoff](../proposals/VILLAGE_HOMES_HANDOFF_2026-10-15.md) for exact scope and the supplier-catalogue export still required. Previous finishing commit is `8549a00`; references below to `5bffc5e` predate its amendment. Nothing from this new homes batch is live yet.
 
 Updated 15 October 2026 after implementing and verifying the local release candidate.
