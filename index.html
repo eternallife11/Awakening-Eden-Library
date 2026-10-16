@@ -93,7 +93,8 @@
   <link rel="stylesheet" href="eden-visual-revival.css?v=4.7">
   <link rel="stylesheet" href="eden-home-final.css?v=2026-10-03.1">
   <link rel="stylesheet" href="eden-oct-03.css?v=2026-10-03">
-  <link rel="stylesheet" href="eden-heartfelt.css?v=2026-10-16.1">
+  <link rel="stylesheet" href="eden-heartfelt.css?v=2026-10-16.2">
+  <link rel="stylesheet" href="eden-harmonics.css?v=2026-10-16.1">
 </head>
 <body class="final-home-polish">
   <a class="skip-link" href="#main">Skip to the living story</a>
@@ -108,6 +109,7 @@
         </span>
       </a>
 
+      <button class="harmonics-toggle harmonics-toggle--header" type="button" data-harmonics-toggle aria-pressed="false" aria-label="Play Lemuria Harmonics, 432 and 528 hertz"><span data-harmonics-icon aria-hidden="true">▶</span><span class="harmonics-toggle__label">Sound</span></button>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
         <span class="menu-button__lines" aria-hidden="true"></span>
         <span class="menu-button__label">Menu</span>
@@ -199,6 +201,11 @@
             <span><strong>Listen while you explore our digital home</strong><small>Inspiring songs for the soil, soul &amp; regenerative empowerment.</small></span>
             <span class="hero-soundtrack__action">Spotify playlist <span aria-hidden="true">↓</span></span>
           </a>
+          <div class="harmonics-card" aria-labelledby="harmonics-title">
+            <div><p class="handwritten" id="harmonics-title">Lemuria Harmonics · New Earth</p><p>A gentle 432 + 528 Hz soundscape for your wander through our digital home.</p><small>Original ambient tones · choose your own atmosphere.</small></div>
+            <div class="harmonics-card__controls"><button class="harmonics-toggle" type="button" data-harmonics-toggle aria-pressed="false" aria-label="Play Lemuria Harmonics, 432 and 528 hertz"><span data-harmonics-icon aria-hidden="true">▶</span><span data-harmonics-label>Play harmonics</span></button><label for="harmonics-volume">Volume <input id="harmonics-volume" type="range" min="0" max="45" value="18" step="1" aria-label="Harmonics volume"></label></div>
+            <p class="harmonics-card__status" data-harmonics-status role="status" aria-live="polite">Play to begin · pause whenever you like.</p>
+          </div>
           </div>
         </div>
       </div>
@@ -700,5 +707,6 @@
   </footer>
 
   <script src="eden-v23.js?v=2026-10-03.1" defer></script>
+  <script src="eden-harmonics.js?v=2026-10-16.1" defer></script>
 </body>
 </html>

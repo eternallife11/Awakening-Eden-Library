@@ -1,4 +1,6 @@
 # Awakening Eden — current handoff
+16 October listening addition: Lemuria Harmonics 432 + 528 Hz with octave support, gentle initial volume, header and listening-card toggles, volume slider, remembered sound preference, browser-policy-aware start, and pause when choosing Spotify. No external audio service/dependency. Real Web Audio interaction and unsupported-browser fallback tests passed on desktop/phone (4/4); public build, visual-lock and zero-cost guards pass. Screenshots: `test-results/review/harmonics-{desktop,mobile}-chromium.png` and matching header files. Source: `eden-harmonics.js` / `eden-harmonics.css`. No production deployment performed.
+
 Latest change, 16 October: painted doorway group moved into the hero as the primary first choices (“Choose the doorway that calls you”), replacing the plain action row. Portrait art now uses its uncropped ratio; exact Lotus overlays are centred in the sun and book circle. Build, visual-lock guard and desktop/phone homepage checks passed (2/2); screenshots in `test-results/review/doorways-centered-{390,1440}.png`. This supersedes the three-plain-action ordering below. No live deployment performed.
 
 ## Latest owner decision and GitHub recovery · 15 October
