@@ -25,11 +25,16 @@ body.final-home-polish .hero-soundtrack__icon--painted img{width:100%;height:100
 body.final-home-polish .founders-welcome__divider--botanical{width:min(64rem,94vw);margin-top:1.2rem;object-fit:contain}
 body.final-home-polish .grow-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.8rem,1.8vw,1.4rem)}
 body.final-home-polish .door-card{display:flex;min-height:100%;flex-direction:column;padding:.72rem;overflow:hidden;border-radius:1.6rem;background:#fffaf0}
-body.final-home-polish .door-card__art{position:relative;display:block;width:100%;min-width:0;aspect-ratio:4/5;margin:0 0 1.1rem;overflow:hidden;border-radius:1.2rem 1.2rem 5rem 5rem;background:#e9dfc8}
+body.final-home-polish .door-card__art{position:relative;display:block;width:100%;min-width:0;aspect-ratio:632/1160;margin:0 0 1.1rem;overflow:hidden;border-radius:1.2rem 1.2rem 5rem 5rem;background:#e9dfc8}
 body.final-home-polish .door-card__art>img:first-child{display:block;width:100%;height:100%;object-fit:cover;transform:none}
-body.final-home-polish .door-card__lotus{position:absolute;z-index:1;width:auto!important;height:auto!important;filter:drop-shadow(0 .08rem .18rem rgb(44 66 42 / .3));pointer-events:none}
-body.final-home-polish .door-card__lotus--begin{left:40.2%;top:9.9%;width:22.1%!important}
-body.final-home-polish .door-card__lotus--library{left:21.8%;top:45.5%;width:27.2%!important}
+body.final-home-polish .door-card__lotus{position:absolute;z-index:1;width:auto!important;height:auto!important;transform:translate(-50%,-50%);object-fit:contain;filter:drop-shadow(0 .08rem .18rem rgb(44 66 42 / .3));pointer-events:none}
+body.final-home-polish .door-card__lotus--begin{left:51.27%;top:26.72%;width:22.1%!important}
+body.final-home-polish .door-card__lotus--library{left:35.6%;top:71.03%;width:27.2%!important}
+body.final-home-polish .door-card[href="#community"] .door-card__art>img:first-child{object-fit:contain}
+body.final-home-polish .home-hero-doorways{width:min(72rem,calc(100vw - 2rem));margin-inline:calc(50% - min(36rem,calc(50vw - 1rem)));padding-block:2rem 1.4rem}
+body.final-home-polish .home-hero-doorways>.container{width:100%;padding-inline:0}
+body.final-home-polish .home-hero-doorways .grow-heading h2{max-width:24ch;margin-inline:auto;font-size:clamp(2rem,4vw,3.4rem)}
+body.final-home-polish .home-hero-doorways .grow-heading__lead{max-width:57ch;margin-inline:auto}
 body.final-home-polish .door-card__glyph{display:none}
 body.final-home-polish .door-card h3,body.final-home-polish .door-card p,body.final-home-polish .door-card__cta{margin-inline:.55rem}
 body.final-home-polish .door-card__cta{margin-top:auto;padding-bottom:.7rem}

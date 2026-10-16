@@ -1,4 +1,6 @@
 # Awakening Eden — current handoff
+Latest change, 16 October: painted doorway group moved into the hero as the primary first choices (“Choose the doorway that calls you”), replacing the plain action row. Portrait art now uses its uncropped ratio; exact Lotus overlays are centred in the sun and book circle. Build, visual-lock guard and desktop/phone homepage checks passed (2/2); screenshots in `test-results/review/doorways-centered-{390,1440}.png`. This supersedes the three-plain-action ordering below. No live deployment performed.
+
 ## Latest owner decision and GitHub recovery · 15 October
 - Later owner correction implemented: title + regeneration/blueprint subtitle, then founders image, then New Earth co-creations quote, then three clear Library/Benjy/Work With Us actions. Property invitation links Work With Us; listening invitation says “our digital home.” Work With Us opens with explicit Village Homes, biopools, fencing and food-forest scope. Desktop/phone checks passed (4/4), build and visual guard passed. This replaces the older four-action ordering below; all unrelated approved style/copy remains locked.
 - Homepage wording/style explicitly approved and locked in [homepage owner lock](../design/HOMEPAGE_OWNER_LOCK_2026-10-15.md). Preserve it. Only the requested service invitations were added beneath the four opening actions.
