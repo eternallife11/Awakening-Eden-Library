@@ -34,7 +34,8 @@ test('Village Homes offers clear options and connected services on every screen'
   page.on('pageerror', error => errors.push(error.message));
   const response = await page.goto('/village-homes');
   expect(response.status()).toBe(200);
-  await expect(page.getByRole('heading', {level:1})).toHaveText('Beautiful homes.Living landscapes.');
+  await expect(page.getByRole('heading', {level:1})).toHaveText('From a simple natural home to a thriving village.');
+  await expect(page.getByText('Awakening Eden Village Homes & Services', {exact:true})).toBeVisible();
   await expect(page.locator('.homes-option')).toHaveCount(4);
   await expect(page.getByRole('link', {name:'WhatsApp us your home vision'})).toHaveAttribute('href', /wa.me\/351920067347/);
   await expect(page.getByRole('link', {name:'Email Benjy & Sofia'})).toHaveAttribute('href', /^mailto:holisticmission8@gmail.com/);

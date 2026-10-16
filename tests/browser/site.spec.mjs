@@ -131,11 +131,11 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.locator('.hero-promise')).toHaveText('Awakening Eden within us. Regenerating the living Earth around us.');
 
   const threshold = page.locator('.threshold-section');
-  await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
+  await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /benjy-sofia-tree-planting-1280\.webp/);
   const openingActions = page.locator('.home-hero-doorways');
   await expect(openingActions.getByRole('heading', {name:'Choose the doorway that calls you.'})).toBeVisible();
   await expect(openingActions.locator('a[href="/living-library"]')).toContainText('Inspiring films, documentaries, books and hopeful resources.');
-  await expect(openingActions.locator('a[href="/work-with-benjy"]')).toContainText('Regenerate your land');
+  await expect(openingActions.locator('a[href="/work-with-us"]')).toContainText('Our Projects & Services');
   await expect(openingActions.locator('a.door-card')).toHaveCount(4);
 
   await expect(page.getByRole('heading', { level: 2, name: 'Hi, we’re Benjy & Sofia, the founders of Awakening Eden.' })).toBeVisible();
@@ -155,7 +155,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
 
   const fourDoors = page.locator('.grow-section--oct03 .door-card');
   await expect(fourDoors).toHaveCount(4);
-  await expect(fourDoors.nth(0)).toHaveAttribute('href', '/start-here');
+  await expect(fourDoors.nth(0)).toHaveAttribute('href', '/about');
   await expect(fourDoors.nth(1)).toHaveAttribute('href', '/living-library');
   const lotusPositions = await page.locator('.door-card__lotus').evaluateAll(images => images.map(image => {
     const art = image.parentElement.getBoundingClientRect();

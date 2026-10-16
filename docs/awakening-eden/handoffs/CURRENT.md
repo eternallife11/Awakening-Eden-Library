@@ -4,6 +4,8 @@ Updated 16 October 2026. This status supersedes the historical commit/push notes
 
 ## Resume here
 
+Latest finishing pass, 16 October: Homepage Living Story core is implemented. Authentic founders portrait, short intro, remapped painted doorways, four-path overview, four-image project/teaching gallery and concise homes introduction. Tree of Life art is retained later in the page. Previous contrast fixes, Village Homes headline and main Regeneration guide's Zones 0–5 panel are also included. See `../proposals/HOMEPAGE_LIVING_STORY_PLAN_2026-10-16.md` for scope and remaining image selections. Local review remains http://127.0.0.1:8787/ (rebuild `dist/` after editing). No production deployment. Next: review desktop/phone; select optional Sofia/festival/Lemuria images; run full release checks and verify enquiry delivery before release. Focused homepage route/image/overflow/accessibility checks accompany this pass; do not describe them as the full browser suite.
+
 Durable checkout: **awakening-eden-finish-2026-10-13** at project root. Local branch: `codex/awakening-eden-finish-2026-10-13`.
 
 GitHub CLI is authenticated as `eternallife11`, credential stored in keyring, Git credential helper configured. Do not repeat sign-in unless authentication actually fails.

@@ -1,5 +1,9 @@
 # Homepage owner approval · 15 October 2026
 
+## 16 October · Living Story approval
+
+The owner approved proceeding with the Homepage Living Story plan. This supersedes the opening portrait and doorway mapping below: use the authentic planting portrait once near the top, followed by the human founder introduction; retain the painted Tree of Life further down. Doorways now lead to About, Living Library, Work With Us and Village Vision. Preserve exact Lotus overlays and uncropped artwork. Add the concise four-path overview, authentic project gallery and homes introduction. Production still awaits desktop/phone review. See `../proposals/HOMEPAGE_LIVING_STORY_PLAN_2026-10-16.md`.
+
 Sofia explicitly approved the local homepage preview: “i love the homepage preview. lock all the wording and style in like this its amazing.”
 
 The homepage at commit `8549a00` is the approved wording/style baseline: hero, founder introduction, manifesto quote, paintings, botanical divider, doorway cards, palette, typography and section flow. Preserve these in future changes. No general rewrite or redesign without a new owner request. This approval covers the homepage, not an unreviewed supplier catalogue or future artwork.
