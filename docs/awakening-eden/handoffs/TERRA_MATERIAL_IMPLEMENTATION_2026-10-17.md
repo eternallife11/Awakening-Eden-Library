@@ -148,4 +148,4 @@ All new public image assets are in `assets/photos/living-story/` as `-640.webp` 
 
 ## Planning-pass verification and handover status
 
-Local branch/HEAD and clean baseline inspected; current source/gallery and earlier handoff read; 61-image contact sheets reviewed; originals archived with hashes; requested three video files located. Cloud collections, nested folders and video content remain unreviewed. The selected still-photo implementation is now complete locally; commit/push details belong in the current handoff after the final branch backup. No production deployment has occurred.
+Local branch/HEAD and clean baseline inspected; current source/gallery and earlier handoff read; 61-image contact sheets reviewed; originals archived with hashes; requested three video files located. Cloud collections, nested folders and video content remain unreviewed. The selected still-photo implementation is complete and commit `075c4a8` is pushed to both safeguarded branches for existing draft PR38 review. No production deployment has occurred.
