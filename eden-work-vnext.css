@@ -938,6 +938,7 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+.vnext-inspiration__grid picture { display: block; }
 .vnext-inspiration__grid figure:nth-child(4) img,
 .vnext-inspiration__grid figure:nth-child(6) img { object-position: center 36%; }
 .vnext-inspiration__grid figcaption { display: grid; gap: .25rem; padding: 1rem; }

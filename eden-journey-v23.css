@@ -115,6 +115,20 @@
 }
 .forest-band img.chapter-divider { filter: brightness(0) invert(1); opacity: 0.5; }
 
+/* ---------- Shared moments ---------- */
+.journey-moments { background: linear-gradient(180deg, rgb(232 222 200 / 0.5), var(--paper-light)); }
+.journey-moments__head { max-width: 43rem; }
+.journey-moments__head h2 { margin: 0.3rem 0 0.75rem; }
+.journey-moments__head p:last-child { color: var(--umber); }
+.journey-moments__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.3vw, 1.6rem); margin-top: 2.25rem; }
+.journey-moments__grid figure { margin: 0; overflow: hidden; border-radius: 1rem; background: var(--paper); box-shadow: 0 13px 32px rgb(35 49 38 / 0.1); }
+.journey-moments__grid picture { display: block; }
+.journey-moments__grid img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.journey-moments__grid figure:nth-child(3) img { object-position: center 45%; }
+.journey-moments__grid figcaption { display: grid; gap: 0.25rem; padding: 1rem 1.05rem 1.1rem; }
+.journey-moments__grid figcaption span { color: var(--olive); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.journey-moments__grid figcaption strong { color: var(--forest); font-family: var(--display); font-size: 1.2rem; line-height: 1.15; }
+
 /* ---------- Timeline: the shape of the road ---------- */
 .road-note { margin: 0.4rem 0 0; color: var(--umber); font-size: 0.92rem; }
 .journey-timeline {
@@ -184,6 +198,7 @@
   .journey-hero-grid .journal-photo { max-width: 26rem; margin-inline: auto; }
   .chapter-grid--photo-first .journal-photo, .chapter-grid .journal-pair { order: 2; }
   .walk-grid { grid-template-columns: repeat(2, 1fr); }
+  .journey-moments__grid { grid-template-columns: 1fr; max-width: 32rem; }
   .honest-notes { grid-template-columns: 1fr; }
   .honest-notes .journey-field-note { margin-inline: auto; }
   .journey-timeline { flex-direction: column; gap: 1.5rem; margin-top: 2.2rem; }

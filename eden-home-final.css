@@ -373,7 +373,8 @@ body.final-home-polish .threshold-section{padding-bottom:1rem}
 .home-story-card{display:block;color:#294334;text-decoration:none;border:1px solid #b8b59b;border-radius:1.25rem;overflow:hidden;background:#fffaf0;scroll-snap-align:start}
 .home-story-card figure{margin:0}
 .home-story-card img{width:100%;height:17rem;object-fit:cover;display:block}
-.home-story-card:last-child img{object-fit:contain;background:#eee3cd}
+.home-story-card--concept img{object-fit:contain;background:#eee3cd}
+.home-story-card--portrait img{object-position:center 38%}
 .home-story-card figcaption{padding:1.4rem;font-size:1rem;line-height:1.6}
 .home-story-card small{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#805039}
 .home-story-card h3{font-size:1.9rem;line-height:1.15;margin:.6rem 0}

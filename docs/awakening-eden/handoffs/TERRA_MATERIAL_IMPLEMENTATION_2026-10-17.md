@@ -1,6 +1,6 @@
 # Terra Work — curated material implementation handoff
 
-Prepared 17 October 2026. **Planning and curation complete; implementation deliberately stopped at the owner's request.**
+Prepared 17 October 2026. **Planning, curation and the selected Terra implementation are complete locally; production release remains intentionally pending owner review.**
 
 ## Owner direction and outcome
 
@@ -107,6 +107,45 @@ Use existing gallery interaction if it works well: horizontal scroll, keyboard f
 
 Expected implementation files: `index.html`, `eden-home-final.css`, `sofia.html`, `about.html`, `journey.html`, `work-with-benjy.html`, `work-with-us.html`, selected existing Library/vision pages as justified, responsive image assets and provenance notes. Avoid a new site architecture, generic stock photography, speculative supplier claims, prices or medical promises.
 
+## 17 October Terra implementation record
+
+The selected material is implemented in the finishing candidate. This completes the owner-directed photo pass without adding the held poster, logo, village-concept or video material.
+
+- Homepage: `index.html` now presents the selected eight-card authentic story. The existing founders photograph, Casa Oasis image and labelled whole-property illustration remain in place; the new five authentic images are responsive WebP derivatives. The concept card has an explicit `home-story-card--concept` containment rule so it never inherits a photographic crop.
+- Sofia: `sofia.html` now opens with the selected yoga portrait and includes a supportive studio-circle photograph beside concise, non-medical practice copy.
+- Journey: `journey.html` has a compact, unclaimed moments section using the forest, cherry and cork-oak gathering photographs. It makes no organiser, event or location assertion.
+- Work With Benjy: `work-with-benjy.html` adds field-observation and olive-pruning cards to the existing showcase.
+- Work With Us: `work-with-us.html` adds two young-orchard establishment cards plus two existing-pool garden-process/context cards. Copy explicitly says the pool already exists and that water treatment needs its own site-specific technical assessment.
+- No changes were made to pricing, enquiries, exact Lotus geometry, identity art, the approved four doorways, soundtrack, or unverified project claims.
+
+### Public derivative provenance
+
+All new public image assets are in `assets/photos/living-story/` as `-640.webp` and `-1280.webp` responsive derivatives. They were orientation-normalised and resized without upscaling from the originals below; originals and their SHA-256 file index remain outside the repository in the durable material pack described above.
+
+| Public asset stem | Owner original |
+|---|---|
+| `sofia-yoga-laughter` | `FB_IMG_1790432893933.jpg` |
+| `sofia-studio-circle` | `20250703_205953.jpg` |
+| `benjy-teaching-hugelkultur` | `benjy_teaching_hugelkultur.jpg` |
+| `benjy-in-garden` | `IMG-20260802-WA0037.jpg` |
+| `cork-oak-gathering` | `20250620_114404.jpg` |
+| `benjy-olive-pruning` | `20260411_103250.jpg` |
+| `benjy-field-portrait` | `FB_IMG_1788716390768.jpg` |
+| `benjy-sofia-forest` | `20260420_122833.jpg` |
+| `benjy-sofia-cherry-picking` | `20260601_105609.jpg` |
+| `pool-garden-process` | `20260114_132837.jpg` |
+| `pool-garden-context` | `20260114_164205.jpg` |
+| `young-orchard-establishment` | `20260302_130930.jpg` |
+| `young-orchard-planting` | `20260317_175935.jpg` |
+
+### Implementation verification
+
+- Public build: passed with `scripts/build-cloudflare.mjs` (413 files, 108.2 MiB), with internal documentation and the original archive excluded.
+- Guards: `scripts/check-visual-lock.mjs` and `scripts/check-zero-cost.mjs` passed.
+- Browser review: local build reviewed at 1440px and 390px in a headless Chromium browser. The homepage, Sofia, Journey, Work With Benjy and Work With Us had no page-level horizontal overflow. All in-view selected images loaded. New cards retain the existing horizontal-scroll behaviour on phone where intended.
+- Local screenshots: `/private/tmp/eden-home-review.png`, `/private/tmp/eden-sofia-review.png`, `/private/tmp/eden-journey-review.png`, `/private/tmp/eden-benjy-review.png`, `/private/tmp/eden-work-review.png`, `/private/tmp/eden-water-review.png` and phone equivalents are ephemeral review artefacts, not source material.
+- No production build was deployed. Owner review remains the release gate.
+
 ## Planning-pass verification and handover status
 
-Local branch/HEAD and clean baseline inspected; current source/gallery and earlier handoff read; 61-image contact sheets reviewed; originals archived with hashes; requested three video files located. Cloud collections, nested folders and video content remain unreviewed. This handoff and CURRENT update are local documentation changes, not a new implementation commit or deployment. Terra has not been messaged or started automatically.
+Local branch/HEAD and clean baseline inspected; current source/gallery and earlier handoff read; 61-image contact sheets reviewed; originals archived with hashes; requested three video files located. Cloud collections, nested folders and video content remain unreviewed. The selected still-photo implementation is now complete locally; commit/push details belong in the current handoff after the final branch backup. No production deployment has occurred.
