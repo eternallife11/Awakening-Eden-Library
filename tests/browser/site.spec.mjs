@@ -128,17 +128,24 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.locator('.hero-promise')).toHaveText('Hope grows when we put it into practice.');
+  await expect(page.locator('.hero-promise')).toHaveText('Awakening Eden within us. Regenerating the living Earth around us.');
 
   const threshold = page.locator('.threshold-section');
-  await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
-  const openingActions = page.locator('.home-hero-actions');
-  await expect(openingActions.locator('a.button[href="/start-here"]')).toBeVisible();
-  await expect(openingActions.locator('a.button[href="/living-library"]')).toBeVisible();
-  await expect(openingActions.locator('a.button[href="/work-with-benjy"]')).toBeVisible();
-  await expect(openingActions.locator('a.button[href="/work-with-us"]')).toBeVisible();
+  await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /benjy-sofia-tree-planting-1280\.webp/);
+  const openingActions = page.locator('.home-hero-doorways');
+  await expect(openingActions.getByRole('heading', {name:'Choose the doorway that calls you.'})).toBeVisible();
+  await expect(openingActions.locator('a[href="/living-library"]')).toContainText('Inspiring films, documentaries, books and hopeful resources.');
+  await expect(openingActions.locator('a[href="/work-with-us"]')).toContainText('Our Projects & Services');
+  await expect(openingActions.locator('a.door-card')).toHaveCount(4);
 
-  await expect(page.getByRole('heading', { level: 2, name: 'Earth lovers, practical dreamers & lifelong students of life.' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Hi, we’re Benjy & Sofia, the founders of Awakening Eden.' })).toBeVisible();
+  await expect(page.locator('.hero-manifesto')).toContainText('We are the architects of the New Earth—conduits for sacred activism, miraculous regeneration and magical co-creations.');
+  const openingOrder = await page.evaluate(() => {
+    const selectors = ['.hero-copy__title', '.welcome-home-art', '.hero-manifesto', '.home-hero-doorways'];
+    return selectors.map(selector => document.querySelector(selector).getBoundingClientRect().top + scrollY);
+  });
+  expect(openingOrder).toEqual([...openingOrder].sort((a, b) => a - b));
+  await expect(page.getByRole('link', {name:'Explore our services at Work With Us →'})).toHaveAttribute('href','/work-with-us');
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
@@ -148,8 +155,18 @@ test('homepage exposes the final opening journey and approved visual choices', a
 
   const fourDoors = page.locator('.grow-section--oct03 .door-card');
   await expect(fourDoors).toHaveCount(4);
-  await expect(fourDoors.nth(0)).toHaveAttribute('href', '/start-here');
+  await expect(fourDoors.nth(0)).toHaveAttribute('href', '/about');
   await expect(fourDoors.nth(1)).toHaveAttribute('href', '/living-library');
+  const lotusPositions = await page.locator('.door-card__lotus').evaluateAll(images => images.map(image => {
+    const art = image.parentElement.getBoundingClientRect();
+    const lotus = image.getBoundingClientRect();
+    return {x:(lotus.x+lotus.width/2-art.x)/art.width,y:(lotus.y+lotus.height/2-art.y)/art.height,aspect:art.width/art.height};
+  }));
+  expect(lotusPositions[0].x).toBeCloseTo(.5127,2);
+  expect(lotusPositions[0].y).toBeCloseTo(.2672,2);
+  expect(lotusPositions[1].x).toBeCloseTo(.356,2);
+  expect(lotusPositions[1].y).toBeCloseTo(.7103,2);
+  expect(lotusPositions[0].aspect).toBeCloseTo(632/1160,2);
   await expect(page.locator('.library-doorway .library-exact-lotus')).toHaveAttribute('src', /lotus-of-life-12-exact\.svg/);
 
   const fieldBanner = page.locator('.field-banner');
@@ -202,19 +219,25 @@ test('Work with Benjy reflects the current service hierarchy', async ({ page }) 
   await expect(recentDesign.getByRole('heading', { name: 'Care through the seasons' })).toBeVisible();
   await expect(recentDesign.locator('img[src*="luisa-sim-berrylicious-terrace-concept-v2.webp"]')).toHaveCount(1);
 
-  const inspiration = page.locator('#inspiration-gallery');
-  await expect(inspiration.getByRole('heading', { name: 'Inspiration for what your place could become.' })).toBeVisible();
-  await expect(inspiration.getByText('The orchard photographs are different examples, not a paired transformation.')).toHaveCount(1);
+  const inspiration = page.locator('#selected-work');
+  await expect(inspiration.getByRole('heading', { name: 'We love turning tired land into thriving oases of life.' })).toBeVisible();
+  await expect(inspiration.getByRole('heading', { name: 'Food forests, orchards & regenerative gardens' })).toBeVisible();
+  await expect(inspiration.getByRole('heading', { name: 'Water, soil & landscape systems' })).toBeVisible();
+  await expect(inspiration.locator('figure')).toHaveCount(12);
+  await expect(inspiration.getByText('A contour food forest, imagined', { exact: true })).toBeVisible();
 
-  await expect(page.locator('#selected-work img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(1);
-  await expect(page.locator('.vnext-final__card img[src*="benjy-sofia-tree-planting.webp"]')).toHaveCount(0);
+  const gardenCollection = page.locator('section.eden-garden-collection');
+  await expect(gardenCollection.getByRole('heading', { name: 'Choose a garden pathway. Then make it your own.' })).toBeVisible();
+  await expect(gardenCollection.locator('article')).toHaveCount(7);
+  await expect(gardenCollection.getByText('Syntropic Eden', { exact: true })).toBeVisible();
 
   const form = page.locator('form[data-land-enquiry-form]');
-  await expect(form).toBeHidden();
+  await expect(form).toBeVisible();
   await expect(form).toHaveAttribute('data-netlify', 'true');
-  await expect(form).toHaveAttribute('action', '/project-enquiry-thank-you.html');
-  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(0);
-  await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(0);
+  await expect(form).toHaveAttribute('action', '/work-with-benjy/thank-you');
+  await expect(form).toHaveAttribute('data-cloudflare-enquiry-endpoint', '/api/enquiry');
+  await expect(page.locator('script[src*="challenges.cloudflare.com/turnstile"]')).toHaveCount(1);
+  await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(1);
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Email Benjy About Your Land' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'WhatsApp Benjy · Explore a Partnership' }).first()).toBeVisible();
@@ -234,14 +257,19 @@ test('Work With Us keeps professional collaboration and the future village visio
   await expect(page.getByRole('link', { name: 'Explore the future village vision' })).toHaveAttribute('href', '/village-vision');
   await expect(page.getByRole('link', { name: 'WhatsApp us about a project' })).toHaveAttribute('href', /wa\.me\/351920067347/);
 
-  const stories = page.locator('.wu-stories');
-  await expect(stories.getByRole('heading', { level: 2, name: 'See what can take root.' })).toBeVisible();
-  await expect(stories.getByRole('heading', { level: 3, name: 'Orchard gardens in care' })).toBeVisible();
-  await expect(stories.getByRole('heading', { level: 3, name: 'Food-forest edge beside the levada' })).toBeVisible();
-  await expect(stories.getByRole('heading', { level: 3, name: 'Building fertility, one phase at a time' })).toBeVisible();
-  await expect(stories.getByText('Concept visual · not a completed after photo.')).toBeVisible();
-  await expect(stories.locator('img')).toHaveCount(3);
+  const showcase = page.locator('#projects-and-possibilities');
+  await expect(showcase.getByRole('heading', { level: 2, name: 'We love transforming landscapes into places full of life.' })).toBeVisible();
+  await expect(showcase.getByRole('heading', { level: 3, name: 'Food forests, raised beds & regenerative gardens' })).toBeVisible();
+  await expect(showcase.getByRole('heading', { level: 3, name: 'Water, soil & other regenerative elements' })).toBeVisible();
+  await expect(showcase.locator('figure')).toHaveCount(12);
+  await expect(showcase.getByText('A contour food forest, imagined', { exact: true })).toBeVisible();
 });
+
+// Count what a visitor can actually see. A stale immutable stylesheet once
+// displayed hidden cards, so DOM attributes alone are not enough here.
+const renderedLibraryCards = (page) => page.locator('.resource-card').evaluateAll(
+  (cards) => cards.filter((card) => getComputedStyle(card).display !== 'none').length
+);
 
 test('Living Library search turns a large collection into a calm, useful doorway', async ({ page }) => {
   await page.goto('/living-library', { waitUntil: 'domcontentloaded' });
@@ -260,10 +288,12 @@ test('Living Library search turns a large collection into a calm, useful doorway
   await expect(page.getByRole('heading', { level: 3, name: 'The One-Straw Revolution' })).toBeVisible();
   await expect(status).toContainText('Showing');
   await expect(page.locator('.resource-card:not([hidden])')).toHaveCount(1);
+  expect(await renderedLibraryCards(page)).toBe(1);
 
   await search.fill('a-resource-that-does-not-exist-eden');
   await expect(status).toContainText('No direct match yet');
   await expect(page.locator('.resource-card:not([hidden])')).toHaveCount(0);
+  expect(await renderedLibraryCards(page)).toBe(0);
 
   await page.getByRole('link', { name: 'Watch something' }).click();
   await expect(search).toHaveValue('');
@@ -273,6 +303,7 @@ test('Living Library search turns a large collection into a calm, useful doorway
   await search.press('Escape');
   await expect(search).toHaveValue('');
   await expect(status).toContainText(`Browse ${total} curated resources`);
+  expect(await renderedLibraryCards(page)).toBe(total);
 });
 
 test('Living Library field-guide routes open their intended guide pages', async ({ page }) => {

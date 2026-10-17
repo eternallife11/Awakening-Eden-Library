@@ -820,3 +820,14 @@ body.page-library {
 @media (max-width: 30rem) {
   .library-finder__paths { grid-template-columns: 1fr; }
 }
+
+/* Readability and contrast finish · 16 October 2026 */
+.section-heading>.kicker{color:#85442f}
+.library-top-paths__heading>.kicker,
+.library-section .section-heading>.kicker{color:#f0c98d}
+.panel:nth-child(2)>.kicker,
+.library-founders__grid>div>.kicker{color:#85442f}
+.growth{max-width:min(18rem,calc(100vw - 2rem));white-space:normal;text-align:center}
+@media(max-width:46rem){
+  .growth{position:static;width:max-content;margin:1.2rem auto 0;font-size:.78rem}
+}
