@@ -1,8 +1,10 @@
 # Awakening Eden — current handoff
 
-Updated 16 October 2026. This status supersedes the historical commit/push notes in older handoffs.
+Updated 17 October 2026. This status supersedes the historical commit/push notes in older handoffs.
 
 ## Resume here
+
+**17 October: owner requested planning/selection only, then a stop for Terra Work implementation.** Read [Terra material implementation handoff](TERRA_MATERIAL_IMPLEMENTATION_2026-10-17.md) first. It selects an eight-card authentic homepage story and page-specific founder/yoga/community/project/concept material. 61 originals, a filename/hash index and three reviewed contact sheets are preserved outside the repo in `../terra-material-handoff-2026-10-17/` relative to the checkout root. No website code or public assets changed in this planning pass. Verified implementation baseline remains **f5edf08**; the handoff documentation commit is the current resume point. New selections supersede the older pending-image notes below. No Terra chat started or messaged; no production deployment. Next: Terra implements the selected material, reviews desktop/phone, completes applicable release checks and records a fresh handoff.
 
 Latest finishing pass, 16 October: Homepage Living Story core is implemented. Authentic founders portrait, short intro, remapped painted doorways, four-path overview, four-image project/teaching gallery and concise homes introduction. Tree of Life art is retained later in the page. Previous contrast fixes, Village Homes headline and main Regeneration guide's Zones 0–5 panel are also included. See `../proposals/HOMEPAGE_LIVING_STORY_PLAN_2026-10-16.md` for scope and remaining image selections. Local review remains http://127.0.0.1:8787/ (rebuild `dist/` after editing). No production deployment. Next: review desktop/phone; select optional Sofia/festival/Lemuria images; run full release checks and verify enquiry delivery before release. Focused homepage route/image/overflow/accessibility checks accompany this pass; do not describe them as the full browser suite.
 
