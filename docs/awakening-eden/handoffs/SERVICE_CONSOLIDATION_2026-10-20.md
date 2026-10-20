@@ -19,6 +19,7 @@ The owner chose one clear land-services destination. `/work-with-benjy` now carr
 - Full browser run: 218 checks passed on desktop and phone Chromium plus desktop WebKit. Six Firefox checks initially could not start because Playwright’s Firefox binary was missing. After installing it, all six Firefox layout checks passed. Together, all 224 distinct browser checks passed.
 - Checked Benjy’s final phone hero and footer visually. On phone, the primary actions appear before the tall photograph. Project images, deep links, disclosure panels, route redirects, offer-to-form selection, page width and automated accessibility checks passed.
 - Local tests stub Turnstile. They do **not** prove live enquiry email delivery or production hostname configuration.
+- The PR public-build workflow's old requirement to list `/work-with-us` in the production sitemap was updated to require its removal and the three permanent redirects instead. This matches the one-destination decision.
 
 ## Release boundary
 
