@@ -16,6 +16,56 @@
     const form = document.querySelector('[data-land-enquiry-form][data-cloudflare-enquiry-endpoint]');
     if (!form) return;
 
+    form.classList.add('js-funnel');
+
+    const steps = Array.from(form.querySelectorAll('[data-form-step]'));
+    const progressText = form.querySelector('[data-form-progress-text]');
+    const progressDots = Array.from(form.querySelectorAll('[data-progress-dot]'));
+    let stepIndex = 0;
+
+    const stepLabels = ['Your land', 'Your vision', 'Contact'];
+
+    const showStep = (index, focus = false) => {
+      stepIndex = Math.max(0, Math.min(index, steps.length - 1));
+      steps.forEach((step, i) => {
+        step.hidden = i !== stepIndex;
+        step.setAttribute('aria-hidden', String(i !== stepIndex));
+      });
+      progressDots.forEach((dot, i) => dot.dataset.active = String(i <= stepIndex));
+      if (progressText) progressText.textContent = `Step ${stepIndex + 1} of ${steps.length} · ${stepLabels[stepIndex] || ''}`;
+      if (focus) {
+        const target = steps[stepIndex]?.querySelector('legend, input, select, textarea');
+        if (target instanceof HTMLElement) target.focus({ preventScroll: true });
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    const validateCurrentStep = () => {
+      const current = steps[stepIndex];
+      if (!current) return true;
+      const controls = Array.from(current.querySelectorAll('input, select, textarea'));
+      const invalid = controls.find((control) => typeof control.checkValidity === 'function' && !control.checkValidity());
+      if (invalid instanceof HTMLElement) {
+        invalid.reportValidity?.();
+        invalid.focus();
+        return false;
+      }
+      return true;
+    };
+
+    form.querySelectorAll('[data-form-next]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!validateCurrentStep()) return;
+        showStep(stepIndex + 1, true);
+      });
+    });
+
+    form.querySelectorAll('[data-form-back]').forEach((button) => {
+      button.addEventListener('click', () => showStep(stepIndex - 1, true));
+    });
+
+    if (steps.length) showStep(0);
+
     const endpoint = form.dataset.cloudflareEnquiryEndpoint;
     const status = form.querySelector('[data-enquiry-status]');
     const submit = form.querySelector('[type="submit"]');
@@ -48,7 +98,7 @@
         });
         const result = await response.json().catch(() => null);
 
-        if (response.ok && result?.ok === true && result.redirect === '/project-enquiry-thank-you.html') {
+        if (response.ok && result?.ok === true && result.redirect === '/work-with-benjy/thank-you') {
           window.location.assign(result.redirect);
           return;
         }

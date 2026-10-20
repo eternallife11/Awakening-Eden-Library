@@ -7,11 +7,17 @@
 
   ready(() => {
     const revealHashTarget = () => {
-      if (window.location.hash !== "#implementation") return;
-      const implementation = document.getElementById("implementation");
-      if (!implementation) return;
-      implementation.open = true;
-      window.requestAnimationFrame(() => implementation.scrollIntoView({ block: "start" }));
+      const id = window.location.hash.slice(1);
+      let decoded;
+      try { decoded = decodeURIComponent(id); } catch { return; }
+      const target = document.getElementById(decoded);
+      if (!target) return;
+      let node = target;
+      while (node) {
+        if (node.tagName === "DETAILS") node.open = true;
+        node = node.parentElement;
+      }
+      window.requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
     };
 
     revealHashTarget();
@@ -26,10 +32,7 @@
     // Do not rewrite them at runtime: this keeps desktop/mobile QA, search metadata and
     // what visitors actually see aligned with the approved Work with Benjy page.
 
-    // The older healthy-home / detox block diluted the land-design page.
-    // Keep health and low-EMF material for the wider Living Library instead.
-    const supportPanels = document.querySelectorAll(".vnext-support-panels .vnext-support-panel");
-    if (supportPanels.length > 1) supportPanels[1].remove();
+
 
     const form = document.querySelector("[data-land-enquiry-form]");
     if (!form) return;

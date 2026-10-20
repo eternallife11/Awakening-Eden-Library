@@ -26,6 +26,7 @@ const publicHtmlRoutes = [
   '/offline.html',
   '/partners.html',
   '/project-enquiry-thank-you.html',
+  '/work-with-benjy/thank-you',
   '/small-scale-regenerative-farm-playbook.html',
   '/sofia.html',
   '/start-here.html',

@@ -21,11 +21,6 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://awakening-eden-library.netlify.app/work-with-us</loc>
-    <lastmod>2026-10-03</lastmod>
-    <priority>0.88</priority>
-  </url>
-  <url>
     <loc>https://awakening-eden-library.netlify.app/partners</loc>
     <lastmod>2026-09-27</lastmod>
     <priority>0.86</priority>
@@ -124,5 +119,10 @@
     <loc>https://awakening-eden-library.netlify.app/village-research</loc>
     <lastmod>2026-09-26</lastmod>
     <priority>0.68</priority>
+  </url>
+  <url>
+    <loc>https://awakening-eden-library.netlify.app/village-homes</loc>
+    <lastmod>2026-10-15</lastmod>
+    <priority>0.75</priority>
   </url>
 </urlset>

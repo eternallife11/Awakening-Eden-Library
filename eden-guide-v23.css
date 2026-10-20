@@ -233,6 +233,14 @@ body.guide-one {
 .pause-outside p { font-family: var(--display); font-size: clamp(1.35rem, 2.7vw, 2rem); }
 .pause-outside .handwritten { color: var(--gold); }
 
+/* Teaching-image readability · 16 October 2026 */
+.guide-board figcaption{font-size:1rem;line-height:1.65}
+.guide-board figcaption strong{font-size:1.05rem}
+.guide-board--whole-place{width:min(calc(100% - 2 * var(--gutter)),var(--guide-wide));margin:2rem auto}
+.guide-board--whole-place>a{display:block}
+.guide-board--whole-place img{display:block;width:100%;height:auto}
+.author-photo figcaption{font-size:1rem;line-height:1.55}
+
 .quick-grid { width: min(calc(100% - 2 * var(--gutter)), var(--guide-wide)); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.5rem auto 0; }
 .quick-card { padding: 1.7rem; border: 1px solid var(--guide-line); border-radius: 1.2rem; background: rgb(255 253 247 / 0.78); }
 .quick-card strong { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; margin-bottom: 1rem; border-radius: 50%; color: var(--paper-light); background: var(--olive); font-family: var(--display); font-size: 1.25rem; }
@@ -328,3 +336,8 @@ body.guide-one {
 .button--gift { background: #95513e; }
 /* Gold numerals read as body-size text on cream: 2.48–2.80:1. */
 .principle-number { color: #846628; }
+
+/* Keep essential captions readable after the legacy guide rules above. */
+.guide-board figcaption,
+.author-photo figcaption { font-size: 1rem; line-height: 1.65; }
+.guide-board figcaption strong { font-size: 1.05rem; }

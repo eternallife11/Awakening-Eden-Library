@@ -199,6 +199,7 @@ async function writeCloudflareRouteAliases() {
       await writeFile(path.join(OUT, '_redirects'), `${sourceRoute} ${destination.slice(0, -5)} 301\n`, { flag: 'a' });
       continue;
     }
+    await mkdir(path.dirname(aliasFile), { recursive: true });
     await cp(sourceFile, aliasFile);
     filesCopied += 1;
     bytesCopied += info.size;
