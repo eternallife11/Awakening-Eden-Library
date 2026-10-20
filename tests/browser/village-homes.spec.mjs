@@ -3,7 +3,7 @@ import { mkdir } from 'node:fs/promises';
 
 test('Whole-property zoning is readable, uncropped and connected across service pages', async ({ page }, testInfo) => {
   await mkdir('test-results/zoning', {recursive:true});
-  for (const route of ['/village-homes', '/work-with-us', '/eden-designer']) {
+  for (const route of ['/village-homes', '/eden-designer']) {
     const response = await page.goto(route);
     expect(response.status()).toBe(200);
     const art = page.locator('.zone-art-link');
@@ -34,8 +34,8 @@ test('Village Homes offers clear options and connected services on every screen'
   page.on('pageerror', error => errors.push(error.message));
   const response = await page.goto('/village-homes');
   expect(response.status()).toBe(200);
-  await expect(page.getByRole('heading', {level:1})).toHaveText('From a simple natural home to a thriving village.');
-  await expect(page.getByText('Awakening Eden Village Homes & Services', {exact:true})).toBeVisible();
+  await expect(page.getByRole('heading', {level:1})).toHaveText('A home connected to the life around it.');
+  await expect(page.getByText('Awakening Eden Homes & Living Places', {exact:true})).toBeVisible();
   await expect(page.locator('.homes-option')).toHaveCount(4);
   await expect(page.getByRole('link', {name:'WhatsApp us your home vision'})).toHaveAttribute('href', /wa.me\/351920067347/);
   await expect(page.getByRole('link', {name:'Email Benjy & Sofia'})).toHaveAttribute('href', /^mailto:holisticmission8@gmail.com/);
@@ -56,6 +56,6 @@ test('Village Homes offers clear options and connected services on every screen'
   await page.locator('body').press('ControlOrMeta+Home');
   await mkdir('test-results/village-homes', {recursive:true});
   await page.screenshot({path:`test-results/village-homes/${testInfo.project.name}.png`,fullPage:true});
-  await page.goto('/work-with-us');
-  await expect(page.getByRole('link', {name:'Explore Village Homes + services'})).toHaveAttribute('href','/village-homes');
+  await page.goto('/work-with-benjy');
+  await expect(page.getByRole('link', {name:/Discover Homes & Living Places/})).toHaveAttribute('href','/village-homes');
 });

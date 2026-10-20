@@ -45,7 +45,9 @@
 /sofia           /sofia.html                                                       200
 /work-with-benjy /work-with-benjy.html                                             200
 /work-with-benjy/thank-you /project-enquiry-thank-you.html                                  200
-/work-with-us    /work-with-us.html                                                200
+/work-with-us /work-with-benjy 301!
+/work-with-us/ /work-with-benjy 301!
+/work-with-us.html /work-with-benjy 301!
 /partners        /partners.html                                                    200
 /events          /events.html                                                      200
 /eden-designer   /eden-designer.html                                               200
