@@ -60,6 +60,12 @@
 .eden-service-steps strong { display:block; margin-bottom:.6rem; }
 .eden-library-invitation { margin-top:2rem; padding:2rem; background:#f4ecd8; border-radius:1rem; max-width:52rem; }
 .eden-library-invitation h3 { font-family:var(--display); font-size:2.1rem; margin:.5rem 0; }
+.eden-village-invitation { background:#e8ecdf; }
+.eden-village-invitation__inner { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(15rem,.7fr); gap:clamp(1.5rem,5vw,5rem); align-items:center; }
+.eden-village-invitation h2 { max-width:45rem; margin:.4rem 0 1rem; color:var(--forest); font-family:var(--display); font-size:clamp(2rem,4vw,3.4rem); line-height:1.12; }
+.eden-village-invitation p:last-child { max-width:53rem; }
+.eden-village-invitation .button-row { display:grid; gap:.8rem; }
+.eden-village-invitation .button { width:100%; white-space:normal; text-align:center; }
 .vnext-benjy__grid img { width:100%; max-height:34rem; object-fit:cover; object-position:center; }
 [id] { scroll-margin-top:6rem; }
 @media(min-width:70rem) { .eden-photo-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
@@ -72,4 +78,5 @@
   .eden-service-jump { gap:.8rem 1.2rem; }
   .eden-detail { padding-inline:1rem; }
   .eden-library-invitation { padding:1.4rem; }
+  .eden-village-invitation__inner { grid-template-columns:1fr; }
 }

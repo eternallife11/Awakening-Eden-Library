@@ -187,10 +187,13 @@ test('homepage exposes the final opening journey and approved visual choices', a
 test('Work with Benjy makes the practical offer and evidence clear', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
-  await expect(page.getByRole('heading', { level: 1, name: 'Bring your land to life.' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Bring your project vision to life.' })).toBeVisible();
+  await expect(page.locator('.vnext-hero')).toContainText('biopools and water filtration with qualified specialists');
   await expect(page.locator('#selected-work .eden-project-story')).toHaveCount(4);
   await expect(page.locator('#selected-work .eden-project-story').first()).toContainText('Moinhos');
   await expect(page.locator('#how-i-can-help')).toContainText('Paths, fences & beautiful outdoor spaces');
+  await expect(page.locator('#village-invitation')).toContainText('future vision, not a built place');
+  await expect(page.getByRole('link', { name: 'Message us about the village' })).toHaveAttribute('href', /^https:\/\/wa\.me\/351920067347/);
   await expect(page.locator('#services .vnext-offer')).toHaveCount(4);
   await expect(page.locator('#services')).toContainText('75-minute video call');
   await expect(page.locator('#services')).toContainText('€111');
