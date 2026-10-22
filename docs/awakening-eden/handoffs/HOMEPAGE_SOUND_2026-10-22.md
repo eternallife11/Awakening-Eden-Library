@@ -1,5 +1,7 @@
 # Homepage opening and original Lemuria Harmonics — 22 October 2026
 
+**Later owner direction, implemented in `a1d980a`:** the Circle of Belonging is now the wide header directly beneath the title and subtitle, replacing the Mother Tree in the opening. The circle was moved from its later position so it appears only once, with the exact Lotus overlay and a future-village caption. The painted Library book/hummingbird remains with the Library. Mother Tree assets are preserved. The authentic founders photo and sound engine are unchanged. Eight focused desktop/phone checks passed after this move; see CURRENT.md for the latest state. The notes below describe the earlier implementation and original sound work.
+
 ## Scope and stopping point
 
 Owner requested homepage implementation, preserving the authentic Benjy & Sofia intro photograph and deferring Work with Benjy changes. The follow-up authorized an original soundscape with nature atmospheres and soft instruments. Homepage implementation is ready for owner review at http://127.0.0.1:8787/ after the public build. Open this HTTP preview for working routes rather than the source file URL.
