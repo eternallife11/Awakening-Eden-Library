@@ -130,7 +130,10 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
   await expect(page.locator('.hero-promise')).toHaveText('Practical wisdom for people and places ready to grow more life.');
   await expect(page.locator('.home-opening .hero-library')).toContainText('A regenerative home & living library for the New Earth.');
-  await expect(page.locator('.home-mother-tree img')).toHaveAttribute('src', /mother-tree-regenerative-home-20261021\.webp/);
+  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /awakening-eden-community-circle-oct03-clean-1448\.png/);
+  await expect(page.locator('img[src$="awakening-eden-community-circle-oct03-clean-1448.png"]')).toHaveCount(1);
+  const headerOrder = await page.locator('#hero-title, .home-circle-header, .home-opening__content').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top + scrollY));
+  expect(headerOrder).toEqual([...headerOrder].sort((a,b)=>a-b));
 
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /benjy-sofia-tree-planting-1280\.webp/);
@@ -150,7 +153,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('link', {name:'Explore regenerative services with Benjy →'})).toHaveAttribute('href','/work-with-benjy');
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
-  const circle = page.locator('.invitation-section--opening-vision .invitation-film--vision');
+  const circle = page.locator('.home-circle-header');
   await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /awakening-eden-community-circle-oct03-clean-1448\.png/);
   await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-12-exact\.svg/);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
@@ -420,7 +423,7 @@ for (const reviewPage of [
       fullPage: true
     });
     if (reviewPage.name === 'homepage') {
-      await page.locator('.invitation-section--opening-vision .invitation-film--vision').screenshot({
+      await page.locator('.home-circle-header').screenshot({
         path: path.join(reviewDirectory, 'homepage-circle-of-belonging.png')
       });
       await page.locator('.grow-section--oct03').screenshot({
