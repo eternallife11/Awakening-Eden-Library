@@ -6,7 +6,7 @@ Owner requested homepage implementation, preserving the authentic Benjy & Sofia 
 
 The opening reads “A regenerative home & living library for the New Earth.” The new Mother Tree sits on the right on desktop and follows the introductory copy on phones. The authentic tree-planting photograph is unchanged. Revised intro copy names regeneration, syntropy, wellbeing and community, and distinguishes existing resources from future media/gatherings. The four painted doors follow the founders intro and keep the exact Lotus overlays and current destinations. Existing deeper homepage sections remain.
 
-No Work with Benjy, Library or other destination page was changed in this session. No production merge or deployment was performed. Previous rollback point: `7c1f555f2d7cbaba5df362145cdc77b614bb9fd9`. The existing draft PR38 remains the review vehicle.
+No Work with Benjy, Library or other destination page was changed in this session. No production merge or deployment was performed. Previous rollback point: `7c1f555f2d7cbaba5df362145cdc77b614bb9fd9`. Implementation commit: `d4cbc41`, backed up on the homepage finishing branch. The separate service PR38 source branch remains at `7c1f555`; this homepage-only pass was not pushed there.
 
 ## Soundscape
 

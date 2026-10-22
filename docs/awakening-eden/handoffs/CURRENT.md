@@ -18,7 +18,7 @@ Durable checkout: **awakening-eden-finish-2026-10-13** at project root. Local br
 
 GitHub CLI is authenticated as `eternallife11`, credential stored in keyring, Git credential helper configured. Do not repeat sign-in unless authentication actually fails.
 
-The finishing candidate is backed up on two GitHub branches: `codex/awakening-eden-finish-2026-10-13` and PR38's source, `codex/work-with-benjy-regenerative-funnel-2026-10-09`. Push normal fast-forward updates to both. [PR38](https://github.com/eternallife11/Awakening-Eden-Library/pull/38) is the existing draft review; do not create a duplicate.
+The 22 October homepage/sound candidate is backed up on `codex/awakening-eden-finish-2026-10-13` (implementation `d4cbc41`, handoff `9717c1e`). PR38's separate source, `codex/work-with-benjy-regenerative-funnel-2026-10-09`, remains at `7c1f555` and has not received the homepage-only commits. Keep the owner's homepage-only scope: do not automatically synchronize the separate service branch. [PR38](https://github.com/eternallife11/Awakening-Eden-Library/pull/38) remains the existing service draft; the homepage changes can be reviewed from the finishing-branch commits and local preview.
 
 **No production merge/deployment has been performed.** Local preview: http://127.0.0.1:8787/ serves `dist/`; rebuild after source edits. Visual changes require desktop/phone review before release. The user has approved the general homepage wording/style; preserve it except for newer explicit corrections.
 
