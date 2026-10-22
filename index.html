@@ -87,14 +87,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600;700;800&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero/mother-tree-regenerative-home-20261021.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="eden-v23.css?v=23.15">
   <link rel="stylesheet" href="eden-v33.css?v=33.5">
   <link rel="stylesheet" href="eden-visual-revival.css?v=4.7">
   <link rel="stylesheet" href="eden-home-final.css?v=2026-10-16.1">
   <link rel="stylesheet" href="eden-oct-03.css?v=2026-10-03">
   <link rel="stylesheet" href="eden-heartfelt.css?v=2026-10-16.2">
-  <link rel="stylesheet" href="eden-harmonics.css?v=2026-10-16.1">
+  <link rel="stylesheet" href="eden-harmonics.css?v=2026-10-22.1">
+  <link rel="stylesheet" href="eden-home-opening.css?v=2026-10-22.1">
 </head>
 <body class="final-home-polish">
   <a class="skip-link" href="#main">Skip to the living story</a>
@@ -105,11 +106,11 @@
         <img src="assets/brand/awakening-eden-mark-painted-192.webp" width="48" height="48" alt="" loading="eager" decoding="async">
         <span class="brand-words">
           <strong>Awakening Eden</strong>
-          <small>The Living Library</small>
+          <small>Regenerative home &amp; living library</small>
         </span>
       </a>
 
-      <button class="harmonics-toggle harmonics-toggle--header" type="button" data-harmonics-toggle aria-pressed="false" aria-label="Play Lemuria Harmonics, 432 and 528 hertz"><span data-harmonics-icon aria-hidden="true">▶</span><span class="harmonics-toggle__label">Sound</span></button>
+      <button class="harmonics-toggle harmonics-toggle--header" type="button" data-harmonics-toggle aria-pressed="false" aria-label="Play Lemuria Harmonics"><span data-harmonics-icon aria-hidden="true">▶</span><span class="harmonics-toggle__label">Sound</span></button>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-button>
         <span class="menu-button__lines" aria-hidden="true"></span>
         <span class="menu-button__label">Menu</span>
@@ -121,36 +122,64 @@
 
   <main id="main">
     <section class="hero section hero--welcome" id="home" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="hero-copy__title">
+      <div class="container">
+        <div class="home-opening reveal">
+          <div class="home-opening__copy">
             <p class="handwritten hero-welcome">Welcome home to</p>
             <h1 id="hero-title">Awakening Eden</h1>
-            <p class="hero-library">The Living Library</p>
-            <p class="handwritten home-together">Regenerating Land &amp; Life. Together.</p>
-            <p class="hero-promise">Awakening Eden within us. Regenerating the living Earth around us.</p>
-            <p class="hero-blueprint">Remembering our original blueprint: diversity, collaboration and life creating more life.</p>
+            <p class="hero-library">A regenerative home &amp; living library for the New Earth.</p>
+            <p class="handwritten home-together">Regenerating land, life &amp; relationship.</p>
+            <p class="hero-promise">Practical wisdom for people and places ready to grow more life.</p>
+            <p class="hero-blueprint">Free guides, inspiring media, living landscapes, real services and a place to connect—rooted in diversity, collaboration and care for the wider living world.</p>
+            <div class="harmonics-card home-opening__harmonics" aria-labelledby="harmonics-title">
+              <div class="harmonics-card__intro"><p class="handwritten" id="harmonics-title">Lemuria Harmonics · New Earth</p><p>432 or 528 Hz tones, soft nature atmospheres and slow bowls &amp; chimes.</p><small>An original soundscape for your wander. Quiet until you press Play.</small></div>
+              <div class="harmonics-card__controls"><button class="harmonics-toggle" type="button" data-harmonics-toggle aria-pressed="false" aria-label="Play Lemuria Harmonics"><span data-harmonics-icon aria-hidden="true">▶</span><span data-harmonics-label>Play soundscape</span></button><label for="harmonics-volume">Volume <input id="harmonics-volume" type="range" min="0" max="45" value="18" step="1" aria-label="Soundscape volume"></label></div>
+              <details class="harmonics-mix">
+                <summary>Shape your sound <span aria-hidden="true">＋</span></summary>
+                <div class="harmonics-mix__grid">
+                  <label for="harmonics-frequency">Tone <select id="harmonics-frequency"><option value="432">432 Hz</option><option value="528">528 Hz</option></select></label>
+                  <label for="harmonics-nature">Nature <select id="harmonics-nature"><option value="forest">Rainforest</option><option value="rain">Gentle rain</option><option value="ocean">Ocean waves</option><option value="off">Nature off</option></select></label>
+                  <label for="harmonics-nature-volume">Nature level <input id="harmonics-nature-volume" type="range" min="0" max="80" value="35" step="1"></label>
+                  <label class="harmonics-mix__check" for="harmonics-instruments"><input id="harmonics-instruments" type="checkbox" checked> Soft bowls &amp; chimes</label>
+                </div>
+                <p class="harmonics-mix__note">Exact 432 or 528 Hz tones with an octave below. Nature and instruments are synthesized, not field recordings.</p>
+              </details>
+              <p class="harmonics-card__status" data-harmonics-status role="status" aria-live="polite">Play to begin · pause whenever you like.</p>
+            </div>
           </div>
+          <figure class="home-mother-tree">
+            <img src="assets/hero/mother-tree-regenerative-home-20261021.webp" width="1024" height="1536" alt="Painted ancient mother tree rooted in a lush living landscape" fetchpriority="high" decoding="async">
+            <figcaption>A painted invitation to grow deep roots and a more life-giving future.</figcaption>
+          </figure>
+        </div>
+
+        <div class="hero-copy reveal">
           <div class="hero-copy__body">
-          <div class="threshold-section" aria-label="Meet Benjy and Sofia">
-            <figure class="hero-portal hero-portal--welcome">
-              <picture><img class="welcome-home-art" src="assets/work-with-benjy/final-proof/benjy-sofia-tree-planting-1280.webp" srcset="assets/work-with-benjy/final-proof/benjy-sofia-tree-planting-640.webp 640w, assets/work-with-benjy/final-proof/benjy-sofia-tree-planting-1280.webp 1280w" sizes="(min-width: 60rem) 42rem, 92vw" width="1280" height="960" alt="Benjy and Sofia smiling beside a young tree at a food-forest planting and ecosystem restoration project" fetchpriority="high" decoding="async"></picture>
-              <figcaption>Benjy &amp; Sofia · Living, learning and growing regeneration together.</figcaption>
-            </figure>
+            <div class="threshold-section" aria-label="Meet Benjy and Sofia">
+              <figure class="hero-portal hero-portal--welcome">
+                <picture><img class="welcome-home-art" src="assets/work-with-benjy/final-proof/benjy-sofia-tree-planting-1280.webp" srcset="assets/work-with-benjy/final-proof/benjy-sofia-tree-planting-640.webp 640w, assets/work-with-benjy/final-proof/benjy-sofia-tree-planting-1280.webp 1280w" sizes="(min-width: 60rem) 42rem, 92vw" width="1280" height="960" alt="Benjy and Sofia smiling beside a young tree at a food-forest planting and ecosystem restoration project" loading="lazy" decoding="async"></picture>
+                <figcaption>Benjy &amp; Sofia · Living, learning and growing regeneration together.</figcaption>
+              </figure>
+            </div>
+            <div class="home-founders-intro">
+              <p class="handwritten">A little sacred. A little silly. Deeply devoted to life.</p>
+              <h2>We&rsquo;re Benjy &amp; Sofia. We learn by putting our hands—and hearts—into what matters.</h2>
+              <p>Over the past decade, our path has woven together regeneration, permaculture, syntropic agroforestry, yoga, holistic wellbeing and community: learning how landscapes, bodies, relationships and daily choices can become more resilient and alive.</p>
+              <p>We share what is useful as we go: practical guides and resources, honest land work, inspired conversations and ways to gather. Some things are ready now; future videos, online gatherings and village learning will grow in their own time.</p>
+            </div>
+            <blockquote class="founders-manifesto hero-manifesto">&ldquo;A more beautiful future begins when inner care becomes visible in the way we restore land, grow food and belong to one another.&rdquo;</blockquote>
+            <p class="hero-intro">Awakening Eden is a meeting place for practical regeneration, grounded wellbeing and courageous co-creation. Come for a useful next step, stay for the people, projects and possibilities that make life richer together.</p>
           </div>
-          <div class="home-founders-intro">
-            <p class="handwritten">A little sacred. A little silly. Deeply devoted to life.</p>
-            <h2>Hi, we&rsquo;re Benjy &amp; Sofia, the founders of Awakening Eden.</h2>
-            <p>From Australia to Portugal and beyond, our journey brings together regeneration, permaculture, syntropic agroforestry, yoga and community. We are practical dreamers, lifelong students and imperfect humans—co-creating living landscapes and a more beautiful world, one relationship at a time.</p>
-          </div>
-          <blockquote class="founders-manifesto hero-manifesto">&ldquo;We are the architects of the New Earth—conduits for sacred activism, miraculous regeneration and magical co-creations.&rdquo;</blockquote>
-          <p class="hero-intro">Welcome to a home for regenerative interbeing, practical hope and positive change. We share our passion for living soil and water, abundant food forests, beautiful landscapes, holistic living, inspiring films, events and circles—so love for life can become something we practise together.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section grow-section grow-section--oct03 home-hero-doorways" id="what-to-grow" aria-labelledby="grow-title">
       <div class="container">
         <div class="grow-heading center">
           <p class="handwritten">One living system, four clear doors</p>
           <h2 id="grow-title">Choose the doorway that calls you.</h2>
-          <p class="grow-heading__lead">Begin with one useful step. Explore deeper when curiosity calls. Awakening Eden is here to help turn overwhelm into possibility, learning into action and separate efforts into thriving systems.</p>
+          <p class="grow-heading__lead">Start with one useful step. Explore deeper when curiosity calls. These four paths bring practical support, learning and belonging into one living whole.</p>
         </div>
 
         <div class="grow-grid">
@@ -158,50 +187,46 @@
             <span class="door-card__art" aria-hidden="true"><img src="assets/doors/door-living-library.webp" width="632" height="1160" alt=""><img class="door-card__lotus door-card__lotus--library" src="assets/geometry/lotus-of-life-12-exact.svg" width="240" height="240" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="assets/illustrations/icon-book-leaf.svg" width="96" height="96" alt=""></span>
             <h3>Living Library</h3>
-            <p class="door-card__lead">Free films, books and practical guides for regenerating land, life and community.</p>
+            <p class="door-card__lead">Free guides, films, books and practical resources for regenerating land, life and community.</p>
             <span class="door-card__cta">Explore the Living Library</span>
           </a>
 <a class="door-card door-card--major" href="/work-with-benjy">
             <span class="door-card__art" aria-hidden="true"><img src="assets/doors/door-work-with-benjy.webp" width="632" height="1160" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="assets/illustrations/icon-hands-tree.svg" width="96" height="96" alt=""></span>
             <h3>Regenerative Services with Benjy</h3>
-            <p class="door-card__lead">Online clarity, food forests, whole-property design and practical project support.</p>
+            <p class="door-card__lead">Land clarity, food forests, whole-property design and practical project support.</p>
             <span class="door-card__cta">Work with Benjy</span>
           </a>
 <a class="door-card door-card--major" href="/village-homes">
             <span class="door-card__art" aria-hidden="true"><img src="assets/doors/door-community.webp" width="684" height="724" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="eden-icon-heart-star.svg" width="96" height="96" alt=""></span>
             <h3>Homes &amp; Living Places</h3>
-            <p class="door-card__lead">Explore natural homes, kits and domes, with guidance to connect your home and landscape.</p>
+            <p class="door-card__lead">Explore natural homes and living places designed in relationship with their landscapes.</p>
             <span class="door-card__cta">Explore homes &amp; possibilities</span>
           </a>
 <a class="door-card door-card--major" href="/sofia">
             <span class="door-card__art" aria-hidden="true"><img src="assets/doors/door-begin-here.webp" width="632" height="1160" alt=""><img class="door-card__lotus door-card__lotus--begin" src="assets/geometry/lotus-of-life-12-exact.svg" width="240" height="240" alt=""></span>
             <span class="door-card__glyph" aria-hidden="true"><img src="assets/illustrations/icon-seed.svg" width="96" height="96" alt=""></span>
             <h3>Wellbeing with Sofia</h3>
-            <p class="door-card__lead">Yoga, movement and nature connection, with space to slow down and come home to yourself.</p>
+            <p class="door-card__lead">Yoga, movement and nature connection, with space to slow down and feel more at home in yourself.</p>
             <span class="door-card__cta">Explore with Sofia</span>
           </a>
         </div>
       </div>
     </section>
-          <div class="story-links home-quiet-links"><a class="text-link" href="/start-here">Begin with our free Awakening Regeneration Guide →</a><a class="text-link" href="/partners">Co-create with us →</a></div>
-          <div class="home-service-invitations" aria-label="Bring your vision to life">
-            <div id="hero-land-invitation"><h2>Bring your property vision to life.</h2><p>Start with an online clarity session or bring us a whole property to plan. Benjy helps turn your vision into food forests, abundant gardens and beautiful landscapes—with practical support for pathways, fences, planting and project management.</p><p class="home-service-invitations__experience">Over seven years of experience across Australia, Colombia and Portugal, including more than two years working in Portugal.</p><a class="text-link" href="/work-with-benjy">Explore regenerative services with Benjy →</a></div>
-            <div id="hero-services-invitation"><h2>Beautiful homes. Living landscapes. Let’s make it happen.</h2><p>Explore our regenerative services and <a href="/village-homes">Awakening Eden Village Homes</a>: natural homes, affordable kits, prefabs and domes, with gardens, whole-property planning and project coordination to bring your vision into life with the right builders and specialists.</p></div>
-          </div>
-          <a class="hero-soundtrack" href="#soundtrack">
-            <span class="hero-soundtrack__icon hero-soundtrack__icon--painted" aria-hidden="true"><img src="assets/dividers/03-sofia-moon-garden-butterfly-720.webp" width="720" height="225" alt=""></span>
-            <span><strong>Listen while you explore our digital home</strong><small>Inspiring songs for the soil, soul &amp; regenerative empowerment.</small></span>
-            <span class="hero-soundtrack__action">Spotify playlist <span aria-hidden="true">↓</span></span>
-          </a>
-          <div class="harmonics-card" aria-labelledby="harmonics-title">
-            <div><p class="handwritten" id="harmonics-title">Lemuria Harmonics · New Earth</p><p>A gentle 432 + 528 Hz soundscape for your wander through our digital home.</p><small>Original ambient tones · choose your own atmosphere.</small></div>
-            <div class="harmonics-card__controls"><button class="harmonics-toggle" type="button" data-harmonics-toggle aria-pressed="false" aria-label="Play Lemuria Harmonics, 432 and 528 hertz"><span data-harmonics-icon aria-hidden="true">▶</span><span data-harmonics-label>Play harmonics</span></button><label for="harmonics-volume">Volume <input id="harmonics-volume" type="range" min="0" max="45" value="18" step="1" aria-label="Harmonics volume"></label></div>
-            <p class="harmonics-card__status" data-harmonics-status role="status" aria-live="polite">Play to begin · pause whenever you like.</p>
-          </div>
-          </div>
+
+    <section class="section home-opening-followup" aria-label="Start here">
+      <div class="container">
+        <div class="story-links home-quiet-links"><a class="text-link" href="/start-here">Begin with our free Awakening Regeneration Guide →</a><a class="text-link" href="/partners">Co-create with us →</a></div>
+        <div class="home-service-invitations" aria-label="Bring your vision to life">
+          <div id="hero-land-invitation"><h2>Bring your property vision to life.</h2><p>Start with an online clarity session or bring us a whole property to plan. Benjy helps turn your vision into food forests, abundant gardens and beautiful landscapes—with practical support for pathways, fences, planting and project management.</p><p class="home-service-invitations__experience">Over seven years of experience across Australia, Colombia and Portugal, including more than two years working in Portugal.</p><a class="text-link" href="/work-with-benjy">Explore regenerative services with Benjy →</a></div>
+          <div id="hero-services-invitation"><h2>Beautiful homes. Living landscapes. Let&rsquo;s make it happen.</h2><p>Explore our regenerative services and <a href="/village-homes">Awakening Eden Village Homes</a>: natural homes, affordable kits, prefabs and domes, with gardens, whole-property planning and project coordination to bring your vision into life with the right builders and specialists.</p></div>
         </div>
+        <a class="hero-soundtrack" href="#soundtrack">
+          <span class="hero-soundtrack__icon hero-soundtrack__icon--painted" aria-hidden="true"><img src="assets/dividers/03-sofia-moon-garden-butterfly-720.webp" width="720" height="225" alt=""></span>
+          <span><strong>Listen while you explore our digital home</strong><small>Inspiring songs for the soil, soul &amp; regenerative empowerment.</small></span>
+          <span class="hero-soundtrack__action">Spotify playlist <span aria-hidden="true">↓</span></span>
+        </a>
       </div>
     </section>
 
@@ -727,6 +752,6 @@
   </footer>
 
   <script src="eden-v23.js?v=2026-10-03.1" defer></script>
-  <script src="eden-harmonics.js?v=2026-10-16.1" defer></script>
+  <script src="eden-harmonics.js?v=2026-10-22.1" defer></script>
 </body>
 </html>

@@ -44,7 +44,7 @@ export default defineConfig({
     },
     {
       name: 'desktop-firefox',
-      testMatch: /cross-browser\.spec\.mjs/,
+      testMatch: /(?:cross-browser|harmonics)\.spec\.mjs/,
       use: {
         ...devices['Desktop Firefox'],
         viewport: { width: 1440, height: 1000 }
@@ -52,7 +52,7 @@ export default defineConfig({
     },
     {
       name: 'desktop-webkit',
-      testMatch: /cross-browser\.spec\.mjs/,
+      testMatch: /(?:cross-browser|harmonics)\.spec\.mjs/,
       use: {
         ...devices['Desktop Safari'],
         viewport: { width: 1440, height: 1000 }

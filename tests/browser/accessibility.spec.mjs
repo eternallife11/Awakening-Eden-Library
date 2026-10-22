@@ -21,6 +21,7 @@ for (const [name, route] of importantRoutes) {
     test.setTimeout(90_000);
     await page.goto(route, { waitUntil: 'networkidle' });
     await expect(page.locator('main')).toBeVisible();
+    if (name === 'homepage') await page.locator('.harmonics-mix summary').click();
 
     const results = await new AxeBuilder({ page })
       .include('main')

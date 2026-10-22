@@ -124,24 +124,26 @@ for (const route of criticalRoutes) {
   });
 }
 
-test('homepage exposes the final opening journey and approved visual choices', async ({ page }) => {
+test('homepage exposes the final opening journey and approved visual choices', async ({ page }, testInfo) => {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.locator('.hero-promise')).toHaveText('Awakening Eden within us. Regenerating the living Earth around us.');
+  await expect(page.locator('.hero-promise')).toHaveText('Practical wisdom for people and places ready to grow more life.');
+  await expect(page.locator('.home-opening .hero-library')).toContainText('A regenerative home & living library for the New Earth.');
+  await expect(page.locator('.home-mother-tree img')).toHaveAttribute('src', /mother-tree-regenerative-home-20261021\.webp/);
 
   const threshold = page.locator('.threshold-section');
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /benjy-sofia-tree-planting-1280\.webp/);
   const openingActions = page.locator('.home-hero-doorways');
   await expect(openingActions.getByRole('heading', {name:'Choose the doorway that calls you.'})).toBeVisible();
-  await expect(openingActions.locator('a[href="/living-library"]')).toContainText('Free films, books and practical guides');
-  await expect(openingActions.locator('a[href="/work-with-benjy"]')).toContainText('Online clarity, food forests, whole-property design');
+  await expect(openingActions.locator('a[href="/living-library"]')).toContainText('Free guides, films, books and practical resources');
+  await expect(openingActions.locator('a[href="/work-with-benjy"]')).toContainText('Land clarity, food forests, whole-property design');
   await expect(openingActions.locator('a.door-card')).toHaveCount(4);
 
-  await expect(page.getByRole('heading', { level: 2, name: 'Hi, we’re Benjy & Sofia, the founders of Awakening Eden.' })).toBeVisible();
-  await expect(page.locator('.hero-manifesto')).toContainText('We are the architects of the New Earth—conduits for sacred activism, miraculous regeneration and magical co-creations.');
+  await expect(page.getByRole('heading', { level: 2, name: /We’re Benjy & Sofia/ })).toBeVisible();
+  await expect(page.locator('.hero-manifesto')).toContainText('A more beautiful future begins when inner care becomes visible');
   const openingOrder = await page.evaluate(() => {
-    const selectors = ['.hero-copy__title', '.welcome-home-art', '.hero-manifesto', '.home-hero-doorways'];
+    const selectors = ['.home-opening', '.welcome-home-art', '.hero-manifesto', '.home-hero-doorways'];
     return selectors.map(selector => document.querySelector(selector).getBoundingClientRect().top + scrollY);
   });
   expect(openingOrder).toEqual([...openingOrder].sort((a, b) => a - b));
@@ -182,6 +184,13 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(community.getByRole('link', { name: '@sofia_wildflower' })).toHaveAttribute('href', 'https://www.instagram.com/sofia_wildflower/');
 
   await expect(page.locator('#soundtrack')).toContainText('Songs for the Soil, Soul & Regenerative Hope');
+  await mkdir('test-results/review', {recursive:true});
+  await page.locator('.home-opening').screenshot({path:`test-results/review/home-opening-${testInfo.project.name}.png`});
+  await page.locator('.hero-copy__body').screenshot({path:`test-results/review/home-intro-${testInfo.project.name}.png`});
+  await page.locator('.home-hero-doorways').screenshot({path:`test-results/review/home-doorways-${testInfo.project.name}.png`});
+  if (!testInfo.project.name.startsWith('mobile')) await page.setViewportSize({width:1440,height:1250});
+  await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
+  await page.screenshot({path:`test-results/review/home-top-${testInfo.project.name}.png`});
 });
 
 test('Work with Benjy makes the practical offer and evidence clear', async ({ page }) => {

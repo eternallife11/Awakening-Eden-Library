@@ -3,3 +3,20 @@
 @media(min-width:58.01rem){.harmonics-toggle--header{order:3}.harmonics-toggle--header .harmonics-toggle__label{display:none}.harmonics-toggle--header{padding:.5rem;min-width:44px}}
 @media(max-width:58rem){.harmonics-toggle--header .harmonics-toggle__label{display:none}.harmonics-toggle--header{margin-left:auto;padding:.5rem}.final-home-polish .header-inner{gap:.65rem}}
 @media(max-width:38rem){.harmonics-card{grid-template-columns:1fr}.harmonics-card__controls{grid-template-columns:1fr 1fr;align-items:center;gap:.7rem}.harmonics-card__controls label{flex-wrap:wrap}.harmonics-card input{width:100%}}
+
+/* Optional mix controls stay tucked away beneath the main invitation. */
+.harmonics-card small{color:#536047}
+.harmonics-card .harmonics-card__status{color:#4d5e41}
+.harmonics-mix{grid-column:1/-1;border-top:1px solid rgb(86 105 75/.22);padding-top:.75rem;min-width:0}
+.harmonics-mix summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:44px;color:#344734;font-size:.92rem;font-weight:700;cursor:pointer;list-style:none}
+.harmonics-mix summary::-webkit-details-marker{display:none}
+.harmonics-mix summary span{transition:transform .2s}
+.harmonics-mix[open] summary span{transform:rotate(45deg)}
+.harmonics-mix__grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem 1rem;margin:.6rem 0 .8rem}
+.harmonics-mix__grid label{display:flex;flex-direction:column;justify-content:center;gap:.3rem;min-width:0;color:#344734;font-size:.86rem;font-weight:600}
+.harmonics-mix select{width:100%;min-height:44px;padding:.45rem .6rem;border:1px solid #9ca98c;border-radius:.55rem;background:#fffaf0;color:#294334;font:inherit;font-size:1rem}
+.harmonics-mix__grid input[type=range]{width:100%;min-height:44px}
+.harmonics-mix__grid .harmonics-mix__check{flex-direction:row;align-items:center;justify-content:flex-start;min-height:44px;gap:.6rem}
+.harmonics-mix__check input{width:1.15rem;height:1.15rem;min-height:0;accent-color:#657b54;flex-shrink:0}
+.harmonics-card .harmonics-mix__note{color:#58634d;font-size:.78rem;line-height:1.5}
+.harmonics-mix summary:focus-visible,.harmonics-mix input:focus-visible,.harmonics-mix select:focus-visible,.harmonics-toggle:focus-visible{outline:3px solid #87602e;outline-offset:4px}
