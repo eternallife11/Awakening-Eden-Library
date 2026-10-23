@@ -139,8 +139,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(threshold.locator('.welcome-home-art')).toHaveAttribute('src', /benjy-sofia-tree-planting-1280\.webp/);
   const openingActions = page.locator('.home-hero-doorways');
   await expect(openingActions.getByRole('heading', {name:'Choose the doorway that calls you.'})).toBeVisible();
-  await expect(openingActions.locator('a[href="/living-library"]')).toContainText('Free guides, films, books and practical resources');
-  await expect(openingActions.locator('a[href="/work-with-benjy"]')).toContainText('Land clarity, food forests, whole-property design');
+  await expect(openingActions.locator('a[href="/living-library"]')).toContainText('Useful PDF guides, inspiring films, books and resources');
+  await expect(openingActions.locator('a[href="/work-with-benjy"]')).toContainText('thoughtful design and hands-on support');
   await expect(openingActions.locator('a.door-card')).toHaveCount(4);
 
   await expect(page.getByRole('heading', { level: 2, name: /We’re Benjy & Sofia/ })).toBeVisible();

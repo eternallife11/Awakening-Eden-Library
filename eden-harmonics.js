@@ -48,6 +48,8 @@
     buttons.forEach(button => {
       button.setAttribute('aria-pressed', String(playing));
       button.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} Lemuria Harmonics`);
+      const headerLabel = button.querySelector('[data-harmonics-header-label]');
+      if (headerLabel) headerLabel.textContent = playing ? 'Pause Lemuria' : 'Play Lemuria';
       const icon = button.querySelector('[data-harmonics-icon]');
       if (icon) icon.textContent = playing ? 'Ⅱ' : '▶';
       const label = button.querySelector('[data-harmonics-label]');

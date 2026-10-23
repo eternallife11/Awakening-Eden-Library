@@ -247,3 +247,30 @@ body.final-home-polish .home-opening-followup .hero-soundtrack {
 /* Doorways precede the optional soundscape. */
 body.final-home-polish .home-opening .home-hero-doorways { width: 100%; margin-inline: 0; padding-block: 2.5rem; }
 body.final-home-polish .home-opening .home-hero-doorways > .container { width: 100%; padding-inline: 0; }
+
+/* Small sound invitation, always available beside navigation. */
+body.final-home-polish .harmonics-toggle--header { padding:.45rem .7rem; gap:.45rem; }
+body.final-home-polish .harmonics-toggle--header .harmonics-toggle__label { display:grid; gap:.15rem; text-align:left; }
+body.final-home-polish .harmonics-toggle__label small { display:block; font-size:.65rem; font-weight:400; white-space:nowrap; }
+body.final-home-polish .home-opening__harmonics { max-width:32rem; padding:.85rem 1rem; gap:.5rem .8rem; }
+body.final-home-polish .home-opening__harmonics .handwritten { font-size:1.35rem; margin:0 0 .2rem; }
+body.final-home-polish .home-opening__harmonics .harmonics-card__intro p:not(.handwritten) { font-size:.85rem; margin:0; }
+body.final-home-polish .home-opening__harmonics .harmonics-mix { padding-top:.25rem; }
+body.final-home-polish .home-opening__harmonics .harmonics-mix summary { font-size:.85rem; }
+body.final-home-polish .home-opening__harmonics .harmonics-card__controls { gap:.3rem; }
+body.final-home-polish .doorway-first-step { max-width:44rem; margin:1.25rem auto 0; font-size:1rem; line-height:1.6; }
+body.final-home-polish .doorway-first-step a { color:var(--home-forest); font-weight:700; text-underline-offset:.2em; }
+@media (min-width:58.01rem) and (max-width:78rem) {
+ body.final-home-polish .header-inner { flex-wrap:wrap; gap:.7rem; padding-block:.7rem; }
+ body.final-home-polish .primary-nav { order:4; width:100%; justify-content:center; }
+}
+@media(max-width:38rem) {
+ body.final-home-polish .header-inner { gap:.4rem; }
+ body.final-home-polish .brand { gap:.4rem; min-width:0; flex:1; }
+ body.final-home-polish .brand img { width:2.4rem; height:2.4rem; }
+ body.final-home-polish .brand-words strong { font-size:1rem; }
+ body.final-home-polish .brand-words small { font-size:.48rem; letter-spacing:.04em; }
+ body.final-home-polish .harmonics-toggle--header { font-size:.72rem; padding:.45rem; }
+ body.final-home-polish .harmonics-toggle__label small { font-size:.52rem; }
+ body.final-home-polish .menu-button { padding:.5rem; min-width:44px; min-height:44px; }
+}
