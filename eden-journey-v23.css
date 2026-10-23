@@ -125,6 +125,8 @@
 .journey-moments__grid picture { display: block; }
 .journey-moments__grid img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .journey-moments__grid figure:nth-child(3) img { object-position: center 45%; }
+.journey-moments__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 70rem; margin-inline: auto; }
+.journey-moments__boat img { object-position: center 68%; }
 .journey-moments__grid figcaption { display: grid; gap: 0.25rem; padding: 1rem 1.05rem 1.1rem; }
 .journey-moments__grid figcaption span { color: var(--olive); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .journey-moments__grid figcaption strong { color: var(--forest); font-family: var(--display); font-size: 1.2rem; line-height: 1.15; }

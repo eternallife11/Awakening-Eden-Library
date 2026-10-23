@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+<title id="title">Awakening Eden earthy rooted Lotus of Life</title><desc id="desc">The exact twelve-fold Lotus of Life woven into transparent roots and mycelium.</desc>
+<defs><linearGradient id="earth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d6ba7a"/><stop offset=".53" stop-color="#798660"/><stop offset="1" stop-color="#614c32"/></linearGradient><filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+<g fill="none" stroke="#8b744f" stroke-width="8" stroke-linecap="round" opacity=".28" filter="url(#glow)"><path d="M320 490C305 535 260 557 201 555M320 490c15 45 60 67 119 65M319 490c-15 71-65 93-129 112M321 490c15 71 65 93 129 112"/></g>
+<g fill="none" stroke="url(#earth)" stroke-linecap="round" stroke-linejoin="round">
+<path stroke-width="8" opacity=".8" d="M320 493C305 540 262 555 218 554M320 493c15 47 58 62 102 61M309 505c-22 59-61 78-116 85M331 505c22 59 61 78 116 85"/>
+<path stroke-width="4" opacity=".7" d="M283 539c-43-8-63-29-82-49M357 539c43-8 63-29 82-49M259 558c-24 1-49-6-79-24M381 558c24 1 49-6 79-24M262 561c-15 24-34 40-64 48M378 561c15 24 34 40 64 48M318 510c-2 45-1 73 2 119M239 582c-14 5-27 16-36 36M401 582c14 5 27 16 36 36"/>
+<path stroke-width="2.5" opacity=".65" d="M211 552c-33 2-48 16-65 31M429 552c33 2 48 16 65 31M187 590c-19 0-33 12-47 27M453 590c19 0 33 12 47 27M246 572c-8 24-7 39-3 59M394 572c8 24 7 39 3 59"/>
+</g>
+    <!-- Canonical geometry: twelve equal circles plus the exact outer circle. -->
+    <g transform="translate(64 32)" fill="none" stroke="url(#earth)" stroke-width="3.5" stroke-linecap="round" opacity=".98">
+      <circle cx="256.000" cy="146.000" r="110"/>
+      <circle cx="311.000" cy="160.737" r="110"/>
+      <circle cx="351.263" cy="201.000" r="110"/>
+      <circle cx="366.000" cy="256.000" r="110"/>
+      <circle cx="351.263" cy="311.000" r="110"/>
+      <circle cx="311.000" cy="351.263" r="110"/>
+      <circle cx="256.000" cy="366.000" r="110"/>
+      <circle cx="201.000" cy="351.263" r="110"/>
+      <circle cx="160.737" cy="311.000" r="110"/>
+      <circle cx="146.000" cy="256.000" r="110"/>
+      <circle cx="160.737" cy="201.000" r="110"/>
+      <circle cx="201.000" cy="160.737" r="110"/>
+      <circle cx="256" cy="256" r="220"/>
+    </g>
+</svg>

@@ -14,6 +14,17 @@ body.guide-one {
     var(--paper);
 }
 
+.guide-starter-path { padding: clamp(3rem, 6vw, 5rem) 0; background: #f4eddd; }
+.guide-starter-path h2 { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 4rem); margin: .4rem 0 1.4rem; }
+.guide-starter-path__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.guide-starter-path__grid article { padding: 1.5rem; border: 1px solid rgb(68 85 57 / .2); border-radius: 1rem; background: #fffaf0; }
+.guide-starter-path__grid span { color: #805039; font-size: .8rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.guide-starter-path__grid h3 { font-family: var(--display); font-size: 1.75rem; line-height: 1.15; margin: .7rem 0; }
+.guide-starter-path__grid p { line-height: 1.65; }
+.guide-starter-path__grid a { font-weight: 700; color: #294334; }
+.guide-starter-path__note { margin: 1.2rem 0 0; }
+@media (max-width: 48rem) { .guide-starter-path__grid { grid-template-columns: 1fr; } }
+
 .guide-one .section { overflow: clip; }
 .guide-one .site-header { z-index: 200; }
 .guide-one .primary-nav a[aria-current="page"] { border-color: var(--olive); }

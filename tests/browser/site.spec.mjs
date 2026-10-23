@@ -155,7 +155,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
 
   const circle = page.locator('.home-circle-header');
   await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /circle-of-belonging-heart-torus-oct23-1448\.webp/);
-  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-root-woven-transparent\.svg/);
+  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-root-woven-earth\.svg/);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
 
   const fourDoors = page.locator('.grow-section--oct03 .door-card');
@@ -226,6 +226,23 @@ test('Work with Benjy makes the practical offer and evidence clear', async ({ pa
   await expect(page.locator('[data-enquiry-turnstile]')).toHaveCount(1);
   await expect(page.locator('header .brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-painted-192.webp');
   await expect(page.locator('footer .footer-brand img')).toHaveAttribute('src', 'assets/brand/awakening-eden-mark-painted-192.webp');
+});
+
+test('Tree of Life closing, boat memory and starter path are visible', async ({ page }, testInfo) => {
+  await page.goto('/');
+  const closing = page.locator('.final-blessing');
+  await expect(closing.getByRole('heading', { name: /Rooted in Love/ })).toBeVisible();
+  await closing.scrollIntoViewIfNeeded();
+  await expect.poll(() => closing.locator('.final-blessing__painting').evaluate(img => img.naturalWidth)).toBeGreaterThan(0);
+  await expect(closing.locator('.final-blessing__lotus')).toHaveAttribute('src', /lotus-of-life-root-woven-earth\.svg/);
+  await mkdir('test-results/review', { recursive: true });
+  await closing.screenshot({ path: `test-results/review/tree-of-life-closing-${testInfo.project.name}.png` });
+  await page.goto('/journey');
+  await page.locator('.journey-moments__boat').scrollIntoViewIfNeeded();
+  await expect.poll(() => page.locator('.journey-moments__boat img').evaluate(img => img.naturalWidth)).toBeGreaterThan(0);
+  await page.goto('/Awakening-Regeneration.html');
+  await expect(page.locator('.guide-starter-path__grid article')).toHaveCount(3);
+  await expect(page.locator('.guide-starter-path')).toContainText('In preparation');
 });
 
 test('Old collaboration route leads to one clear service page', async ({ page }) => {

@@ -149,6 +149,70 @@ body.final-home-polish .home-circle-header figcaption a {
   text-underline-offset: 0.2em;
 }
 
+body.final-home-polish .home-circle-header .home-lotus-belief {
+  margin-top: .55rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgb(215 192 136 / .3);
+  border-radius: 1rem;
+  background: rgb(255 249 236 / .08);
+  font-size: .96rem;
+}
+body.final-home-polish .home-circle-header .home-lotus-belief strong {
+  display: block;
+  margin-bottom: .2rem;
+  font-size: 1.35rem;
+}
+body.final-home-polish .final-blessing {
+  background: #f4edde;
+}
+body.final-home-polish .final-blessing .narrow {
+  max-width: 70rem;
+}
+body.final-home-polish .final-blessing h2 {
+  max-width: 16ch;
+  margin-inline: auto;
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  line-height: 1.05;
+}
+body.final-home-polish .final-blessing__art {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
+  border-radius: 1.4rem;
+  box-shadow: 0 18px 44px rgb(36 54 39 / .16);
+}
+body.final-home-polish .final-blessing__painting {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+body.final-home-polish .final-blessing__lotus {
+  position: absolute;
+  z-index: 1;
+  top: 66%;
+  left: 50%;
+  width: 25%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 1px 3px rgb(18 33 21 / .45));
+}
+body.final-home-polish .final-blessing__art figcaption {
+  position: relative;
+  z-index: 2;
+  padding: .8rem 1.2rem;
+  background: #263b2e;
+  color: #f9f1dd;
+  font-size: .95rem;
+}
+body.final-home-polish .final-blessing__actions {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
 body.final-home-polish .home-opening__content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

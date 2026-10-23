@@ -31,7 +31,7 @@ test('homepage doors and navigation provide four distinct destinations', async (
 test('gallery and budget deep links reveal their content without losing the enquiry', async ({ page }) => {
   await page.goto('/work-with-benjy#inspiration-gallery');
   await expect(page.locator('#inspiration-gallery')).toHaveAttribute('open', '');
-  await expect(page.locator('#inspiration-gallery img')).toHaveCount(16);
+  await expect(page.locator('#inspiration-gallery img')).toHaveCount(11);
   await page.evaluate(() => document.querySelectorAll('main img').forEach(img => { img.loading = 'eager'; }));
   await expect.poll(() => page.locator('main img').evaluateAll(images => images.filter(img => !img.complete || !img.naturalWidth).map(img => img.getAttribute('src'))), { timeout: 15000 }).toEqual([]);
   await expect(page.locator('form[data-land-enquiry-form]')).toHaveCount(1);
@@ -40,11 +40,11 @@ test('gallery and budget deep links reveal their content without losing the enqu
   await expect(page.getByText('Backyard Eden', { exact: true })).toBeVisible();
 });
 
-test('all four service choices reach the existing form with the right service selected', async ({ page }) => {
+test('all five service choices reach the existing form with the right service selected', async ({ page }) => {
   await page.goto('/work-with-benjy');
   const choices = page.locator('[data-enquiry-service]');
-  await expect(choices).toHaveCount(4);
-  for (let i = 0; i < 4; i++) {
+  await expect(choices).toHaveCount(5);
+  for (let i = 0; i < 5; i++) {
     const value = await choices.nth(i).getAttribute('data-enquiry-service');
     await choices.nth(i).click();
     await expect(page.locator('[name="service-interest"]')).toHaveValue(value);
