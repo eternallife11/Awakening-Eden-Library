@@ -115,12 +115,6 @@ body.final-home-polish .home-circle-header picture > img {
   height: auto;
 }
 
-body.final-home-polish .home-circle-header .exact-lotus-art__lotus {
-  top: 82%;
-  width: 25%;
-  filter: drop-shadow(0 1px 5px rgb(235 192 107 / 0.45));
-}
-
 body.final-home-polish .home-circle-header figcaption {
   display: grid;
   gap: 0.65rem;
@@ -187,18 +181,6 @@ body.final-home-polish .final-blessing__painting {
   max-width: none;
   height: auto;
   margin: 0;
-}
-body.final-home-polish .final-blessing__lotus {
-  position: absolute;
-  z-index: 1;
-  top: 66%;
-  left: 50%;
-  width: 25%;
-  max-width: none;
-  height: auto;
-  margin: 0;
-  transform: translateX(-50%);
-  filter: drop-shadow(0 1px 3px rgb(18 33 21 / .45));
 }
 body.final-home-polish .final-blessing__art figcaption {
   position: relative;

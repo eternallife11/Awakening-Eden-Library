@@ -19,7 +19,7 @@ for (const file of required) {
 }
 const excluded = new Set(['.git','node_modules','dist','docs','deliverables','tests','scripts','test-results','playwright-report']);
 const extensions = new Set(['.html','.css','.js','.mjs','.json','.webmanifest']);
-const forbidden = ['assets/brand/awakening-eden-mark-primary.svg','tree-heart-portal-01.webp','tree-heart-portal-02.webp','awakening-eden-regenerative-future-community-v1','awakening-eden-community-circle-rooted-lotus-v36-'];
+const forbidden = ['assets/brand/awakening-eden-mark-primary.svg','tree-heart-portal-01.webp','tree-heart-portal-02.webp','awakening-eden-regenerative-future-community-v1'];
 const premiumMark = 'assets/brand/awakening-eden-mark-painted-192.webp';
 const migratedPublicIdentity = [
   'assets/brand/awakening-eden-mark-one-colour.svg',
@@ -47,10 +47,6 @@ async function walk(dir) {
         if (!redirects.includes(rule)) errors.push(`${rel}: legacy line-mark reference is not protected by the premium identity migration: ${ref}`);
       }
     }
-    for (const line of source.split(/\r?\n/)) {
-      if (!/(src\s*=|href\s*=|url\s*\(|image\s*:)/i.test(line)) continue;
-      if (/seed[-_ ]of[-_ ]life|flower[-_ ]of[-_ ]life/i.test(line)) errors.push(`${rel}: forbidden Seed/Flower-of-Life asset reference`);
-    }
   }
 }
 await walk(root);
@@ -58,4 +54,4 @@ if (errors.length) {
   console.error('Awakening Eden visual lock failed:\n'+[...new Set(errors)].map(x=>'- '+x).join('\n'));
   process.exit(1);
 }
-console.log('Awakening Eden visual lock passed: canonical painted identity, premium logo migrations and exact-Lotus visual system are protected.');
+console.log('Awakening Eden visual lock passed: approved painted identity and premium logo migrations are protected. Sacred geometry follows the latest owner approvals.');

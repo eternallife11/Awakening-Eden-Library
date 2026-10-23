@@ -14,8 +14,7 @@ Date: 2026-08-11
 
 ## Locked rules
 
-- The exact twelve-fold Lotus of Life is the only approved sacred geometry.
-- Do not substitute Flower of Life, Seed of Life, hexagonal circle lattices or approximate generated geometry.
+- Sacred geometry follows the [23 October 2026 owner direction](../design/SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md). Benjy and Sofia may approve any sacred geometry; the exclusive exact-twelve-fold rule is removed. Use their selected natural root-woven Lotus within the two homepage paintings.
 - Preserve the Tree + Heart identity.
 - Preserve the Solar Tree–Heart–Lotus flagship portal and Rooted Human portal.
 - The detailed portals are threshold art, not small logos.

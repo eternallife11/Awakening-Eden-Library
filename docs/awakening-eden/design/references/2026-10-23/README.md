@@ -1,3 +1,7 @@
+# Latest owner correction — natural root-woven Lotus
+
+The owner removed the exclusive exact-twelve-fold requirement and asked for the earlier natural Lotus in both homepage paintings. Restored the unchanged `assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-{768,1536}.webp`. For the Circle, the built-in image editing tool used `circle-of-belonging-heart-torus-oct23-1448.webp` as the edit target and the original v34 founders image as the rooted Lotus reference. Final prompt: weave the recognizable radial Lotus from the reference into the bare foreground soil as slender living woody roots, earthy brown and moss/forest green with restrained honey highlights; preserve people, faces, tree, village, water, heart-linked torus and fine mycelium; no text or labels. Master: `circle-of-belonging-natural-rooted-lotus-master.png`. Public derivatives: `assets/hero/circle-of-belonging-natural-rooted-lotus-oct23-{960,1448}.webp`. Both two-image overlays were removed. Earlier exact-vector notes below record historical work and are superseded by `../../SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md`.
+
 # Circle of Belonging — rooted Lotus and heart connection
 
 The 23 October owner request asked for the original rooted Lotus visual and a subtle energy torus connecting the people’s hearts, using the earlier Lemuria circle as a reference.

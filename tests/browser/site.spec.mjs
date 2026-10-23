@@ -130,8 +130,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
   await expect(page.locator('.hero-promise')).toHaveText('Practical wisdom for people and places ready to grow more life.');
   await expect(page.locator('.home-opening .hero-library')).toContainText('A regenerative home & living library for the New Earth.');
-  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /circle-of-belonging-heart-torus-oct23-1448\.webp/);
-  await expect(page.locator('img[src$="circle-of-belonging-heart-torus-oct23-1448.webp"]')).toHaveCount(1);
+  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /circle-of-belonging-natural-rooted-lotus-oct23-1448\.webp/);
+  await expect(page.locator('img[src$="circle-of-belonging-natural-rooted-lotus-oct23-1448.webp"]')).toHaveCount(1);
   const headerOrder = await page.locator('#hero-title, .home-circle-header, .home-opening__content').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top + scrollY));
   expect(headerOrder).toEqual([...headerOrder].sort((a,b)=>a-b));
 
@@ -154,8 +154,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.home-circle-header');
-  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /circle-of-belonging-heart-torus-oct23-1448\.webp/);
-  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-root-woven-earth\.svg/);
+  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /circle-of-belonging-natural-rooted-lotus-oct23-1448\.webp/);
+  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveCount(0);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
 
   const fourDoors = page.locator('.grow-section--oct03 .door-card');
@@ -234,7 +234,8 @@ test('Tree of Life closing, boat memory and starter path are visible', async ({ 
   await expect(closing.getByRole('heading', { name: /Rooted in Love/ })).toBeVisible();
   await closing.scrollIntoViewIfNeeded();
   await expect.poll(() => closing.locator('.final-blessing__painting').evaluate(img => img.naturalWidth)).toBeGreaterThan(0);
-  await expect(closing.locator('.final-blessing__lotus')).toHaveAttribute('src', /lotus-of-life-root-woven-earth\.svg/);
+  await expect(closing.locator('.final-blessing__painting')).toHaveAttribute('src', /welcome-home-benjy-sofia-rooted-lotus-v34-1536\.webp/);
+  await expect(closing.locator('.final-blessing__lotus')).toHaveCount(0);
   await mkdir('test-results/review', { recursive: true });
   await closing.screenshot({ path: `test-results/review/tree-of-life-closing-${testInfo.project.name}.png` });
   await page.goto('/journey');

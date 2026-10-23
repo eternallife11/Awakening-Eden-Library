@@ -1,5 +1,7 @@
 # Awakening Eden visual lock — 3 October 2026
 
+**23 October 2026 owner update:** [Sacred geometry direction](SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md) supersedes this document's geometry restrictions and older SVG placement requirements. Any sacred geometry approved by Benjy and Sofia may be used. The latest two homepage paintings use the natural root-woven Lotus directly in the artwork.
+
 Human direction: Sofia, 3 October 2026, including six supplied illustrations and the linked village-property conversation. This is the newest website visual decision. It supplements the 1 October circle decision and supersedes earlier visual choices only where stated here. The original Design Bible v3.1 and Illustration Bible v1.2 remain historical foundations, with the dated addenda beside this file.
 
 ## Page hierarchy
@@ -17,9 +19,9 @@ The illustrated card sheets are an approved **style and composition direction**,
 
 Do not present future village concept art as an existing physical village. The Work With Us hero, four collaboration cards and process-story images await Sofia's real land, teaching and project photographs; choose from those when supplied. Keep `/living-library` and Our Journey Home content intact.
 
-## Exact Lotus rule
+## Sacred geometry approval
 
-The public symbol must come from `docs/awakening-eden/design/lotus-of-life-12-exact.svg` and its identical public copy. Do not accept an AI-painted or approximate circle as the geometry source, even when the surrounding illustration is approved. The user-supplied portal/card, Sofia and ornament sheets include motifs whose geometry has not been certified. They live only under `docs/awakening-eden/design/references/2026-10-03/` as visual references, outside the public artifact. Do not use a Seed or Flower of Life substitute. Retired public references must be removed before deleting files; preserve rollback masters until an asset audit proves they are unused.
+Use sacred geometries approved by Benjy and Sofia. The exact SVG is an available asset, not a universal requirement. Natural painterly geometry may remain within approved artwork. The founders and Circle of Belonging paintings follow the owner's 23 October direction for a root-woven Lotus. Other sheets remain visual references until approved for publication. Preserve rollback masters until an asset audit proves they are unused.
 
 ## Style and placement
 
