@@ -130,8 +130,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
   await expect(page.locator('.hero-promise')).toHaveText('Practical wisdom for people and places ready to grow more life.');
   await expect(page.locator('.home-opening .hero-library')).toContainText('A regenerative home & living library for the New Earth.');
-  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /circle-of-belonging-mycelium-oct22-1448\.webp/);
-  await expect(page.locator('img[src$="circle-of-belonging-mycelium-oct22-1448.webp"]')).toHaveCount(1);
+  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /circle-of-belonging-heart-torus-oct23-1448\.webp/);
+  await expect(page.locator('img[src$="circle-of-belonging-heart-torus-oct23-1448.webp"]')).toHaveCount(1);
   const headerOrder = await page.locator('#hero-title, .home-circle-header, .home-opening__content').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top + scrollY));
   expect(headerOrder).toEqual([...headerOrder].sort((a,b)=>a-b));
 
@@ -154,8 +154,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.home-circle-header');
-  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /circle-of-belonging-mycelium-oct22-1448\.webp/);
-  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-organic-rooted\.svg/);
+  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /circle-of-belonging-heart-torus-oct23-1448\.webp/);
+  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-root-woven-transparent\.svg/);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
 
   const fourDoors = page.locator('.grow-section--oct03 .door-card');

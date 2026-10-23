@@ -1,0 +1,7 @@
+# Circle of Belonging — rooted Lotus and heart connection
+
+The 23 October owner request asked for the original rooted Lotus visual and a subtle energy torus connecting the people’s hearts, using the earlier Lemuria circle as a reference.
+
+The edited painting uses the 22 October Circle of Belonging master as its target. The original rooted Lotus visual reference is `assets/hero/welcome-home-benjy-sofia-rooted-lotus-v34-1536.webp`; the earlier luminous circle reference is `assets/hero/awakening-eden-community-circle-rooted-lotus-v36-1448.png`. The built-in image generation tool edited the painting. Prompt: preserve the current people, tree, village, water, gardens, roots and mycelium; add a few restrained honey and ivory watercolor arcs around the seated circle, connecting hearts and returning through roots; leave the foreground clear; paint no sacred geometry, text or logos. Master: `circle-of-belonging-heart-torus-master.png`. Public sizes: `assets/hero/circle-of-belonging-heart-torus-oct23-{960,1448}.webp`.
+
+The transparent rooted Lotus is a separate SVG: `assets/geometry/lotus-of-life-root-woven-transparent.svg`. It copies the canonical thirteen circle elements (twelve petals plus outer circle) exactly from `assets/geometry/lotus-of-life-12-exact.svg` and adds only organic root paths. This replaces the pale badge treatment while retaining the required exact geometry. The energy flow is illustrative symbolism, not a claim of a measurable field.
