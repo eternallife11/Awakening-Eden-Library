@@ -130,8 +130,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
   await expect(page.locator('.hero-promise')).toHaveText('Practical wisdom for people and places ready to grow more life.');
   await expect(page.locator('.home-opening .hero-library')).toContainText('A regenerative home & living library for the New Earth.');
-  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /awakening-eden-community-circle-oct03-clean-1448\.png/);
-  await expect(page.locator('img[src$="awakening-eden-community-circle-oct03-clean-1448.png"]')).toHaveCount(1);
+  await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /circle-of-belonging-mycelium-oct22-1448\.webp/);
+  await expect(page.locator('img[src$="circle-of-belonging-mycelium-oct22-1448.webp"]')).toHaveCount(1);
   const headerOrder = await page.locator('#hero-title, .home-circle-header, .home-opening__content').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top + scrollY));
   expect(headerOrder).toEqual([...headerOrder].sort((a,b)=>a-b));
 
@@ -146,7 +146,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 2, name: /We’re Benjy & Sofia/ })).toBeVisible();
   await expect(page.locator('.hero-manifesto')).toContainText('A more beautiful future begins when inner care becomes visible');
   const openingOrder = await page.evaluate(() => {
-    const selectors = ['.home-opening', '.welcome-home-art', '.hero-manifesto', '.home-hero-doorways'];
+    const selectors = ['.home-opening', '.home-hero-doorways', '.home-opening__harmonics', '.welcome-home-art', '.hero-manifesto'];
     return selectors.map(selector => document.querySelector(selector).getBoundingClientRect().top + scrollY);
   });
   expect(openingOrder).toEqual([...openingOrder].sort((a, b) => a - b));
@@ -154,8 +154,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.locator('.founders-welcome__portrait')).toHaveCount(0);
 
   const circle = page.locator('.home-circle-header');
-  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /awakening-eden-community-circle-oct03-clean-1448\.png/);
-  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-12-exact\.svg/);
+  await expect(circle.locator('.exact-lotus-art > picture > img')).toHaveAttribute('src', /circle-of-belonging-mycelium-oct22-1448\.webp/);
+  await expect(circle.locator('.exact-lotus-art__lotus')).toHaveAttribute('src', /lotus-of-life-organic-rooted\.svg/);
   await expect(circle.getByText('A Circle of Belonging', { exact: true })).toBeVisible();
 
   const fourDoors = page.locator('.grow-section--oct03 .door-card');
@@ -206,9 +206,14 @@ test('Work with Benjy makes the practical offer and evidence clear', async ({ pa
   await expect(page.locator('#how-i-can-help')).toContainText('Paths, fences & beautiful outdoor spaces');
   await expect(page.locator('#village-invitation')).toContainText('future vision, not a built place');
   await expect(page.getByRole('link', { name: 'Message us about the village' })).toHaveAttribute('href', /^https:\/\/wa\.me\/351920067347/);
-  await expect(page.locator('#services .vnext-offer')).toHaveCount(4);
+  await expect(page.locator('#services .vnext-offer')).toHaveCount(5);
   await expect(page.locator('#services')).toContainText('75-minute video call');
   await expect(page.locator('#services')).toContainText('€111');
+  await expect(page.locator('.eden-offer-outcomes')).toHaveCount(5);
+  await page.locator('[data-enquiry-service="Property Vision + Concept Plan"]').click();
+  await expect(page.locator('#enquiry-service')).toHaveValue('Property Vision + Concept Plan');
+  const photos = await page.locator('main figure img').evaluateAll(nodes => nodes.map(n => n.getAttribute('src')));
+  expect(new Set(photos).size).toBe(photos.length);
   await expect(page.locator('#recent-design')).toContainText('Proposed food-forest gardens beside the levada');
   await expect(page.locator('#workshops')).toContainText('Learn it with your hands in the soil');
   await expect(page.getByRole('link', { name: 'Explore the Living Library' })).toHaveAttribute('href', '/living-library');
@@ -227,7 +232,7 @@ test('Old collaboration route leads to one clear service page', async ({ page })
   const response = await page.goto('/work-with-us', { waitUntil: 'domcontentloaded' });
   expect(response.status()).toBe(200);
   await expect(page).toHaveURL(/\/work-with-benjy\/?$/);
-  await expect(page.getByRole('heading', { level: 1, name: 'Bring your land to life.' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Bring your project vision to life.' })).toBeVisible();
   await page.goto('/village-homes', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('body')).toContainText('future village');
 });

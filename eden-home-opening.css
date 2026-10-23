@@ -115,21 +115,38 @@ body.final-home-polish .home-circle-header picture > img {
   height: auto;
 }
 
+body.final-home-polish .home-circle-header .exact-lotus-art__lotus {
+  top: 83%;
+  width: 24%;
+  filter: drop-shadow(0 2px 4px rgb(48 32 17 / 0.25));
+}
+
 body.final-home-polish .home-circle-header figcaption {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.65rem;
   margin: 0;
-  padding: 0.9rem 1.2rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
   color: #fff9ec;
-  font-size: 0.84rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body.final-home-polish .home-circle-header figcaption > * {
+  max-width: 66ch;
+  margin-inline: auto;
 }
 
 body.final-home-polish .home-circle-header figcaption strong {
   color: #ecda9e;
   font-family: var(--display);
-  font-size: 1.3rem;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
   font-weight: 600;
+}
+
+body.final-home-polish .home-circle-header figcaption a {
+  color: #ecda9e;
+  font-weight: 600;
+  text-underline-offset: 0.2em;
 }
 
 body.final-home-polish .home-opening__content {
@@ -218,11 +235,15 @@ body.final-home-polish .home-opening-followup .hero-soundtrack {
   }
 
   body.final-home-polish .home-circle-header figcaption {
-    padding: 0.75rem;
-    font-size: 0.78rem;
+    padding: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body.final-home-polish.harmonics-playing .home-opening__harmonics::after { animation: none; }
 }
+
+/* Doorways precede the optional soundscape. */
+body.final-home-polish .home-opening .home-hero-doorways { width: 100%; margin-inline: 0; padding-block: 2.5rem; }
+body.final-home-polish .home-opening .home-hero-doorways > .container { width: 100%; padding-inline: 0; }

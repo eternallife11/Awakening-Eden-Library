@@ -1,8 +1,15 @@
 # Awakening Eden — current handoff
 
-Updated 22 October 2026. This status supersedes the historical commit/push notes in older handoffs.
+Updated 23 October 2026. This status supersedes the historical commit/push notes in older handoffs.
 
 ## Resume here
+
+**23 October completed homepage + Benjy pass:** updated the Circle of Belonging to the owner-requested earthy mycelium illustration with symbolic human/root connections and the existing exact rooted twelve-fold Lotus overlay. Caption clearly describes the future community vision and regenerative interbeing. Moved the four existing doorways above the optional harmonics player; preserved the founders photograph, expanded intro and architects quote. Improved small-screen caption readability.
+
+Benjy now has a welcoming real garden portrait, a four-photo project/services opening, the whole-property concept illustration and an earlier biography. Removed repeated orchard/portrait shots and moved photographs rather than duplicating them. All five offers show deliverables without expanding details. Added the owner-described Property Vision + Concept Plan as a separately quoted online option (overview/zoning, coloured sketch with notes/legend, initial action plan), with enquiry preselection verified. Existing prices retained; the Fiona-specific €150–250 was not made a public price. Concept imagery and existing-pool gardening remain clearly identified; no fabricated biopool delivery or completed-village claim.
+
+Validation: public build, zero-cost/visual-lock guards and diff checks passed. 38 focused desktop/phone checks passed across 12 routes, service content/prefill, redirects, image loading, overflow and harmonics; six relevant checks passed again after final layout polish. Desktop artwork/gallery and phone doorways visually reviewed. Sound remains opt-in, exact 432/528 Hz synthesis with synthesized nature/instruments, not field recordings. No real enquiry sent. Local preview rebuilt at http://127.0.0.1:8787/. No production deployment or service-branch merge. Artwork generation/edit prompt and provenance: `docs/awakening-eden/design/references/2026-10-22/README.md`. Previous rollback commit: `d6a27c5`.
+
 
 **22 October quote restoration:** restored the owner's “We are the architects of the New Earth—weaving our hearts and minds together for magical co-creation” at the beginning of the founders quotation, preserving the newer “A more beautiful future begins…” passage and the expanded personal introduction. Direct preview: http://127.0.0.1:8787/#our-new-earth-invitation. Public build and both existing focused desktop/phone opening checks passed; refreshed intro screenshots reviewed. Homepage only; no production release. Rollback: `08f68fa`.
 
