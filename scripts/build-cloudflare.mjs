@@ -261,6 +261,19 @@ async function prepareCloudflareEnquiryForm() {
     return false;
   }
 
+  // Production email delivery has not been configured or verified. Preserve the
+  // questionnaire as a visitor-controlled draft until server delivery is enabled.
+  if (PUBLIC_ORIGIN && BUILD_ENV.ENQUIRY_SERVER_DELIVERY !== 'verified') {
+    const prepared = source
+      .replace(formNeedle, 'data-netlify="true" netlify-honeypot="bot-field" data-land-enquiry-form data-enquiry-draft="regenerativeeden@gmail.com">')
+      .replace('action="/work-with-benjy/thank-you"', 'action="/work-with-benjy#land-vision"')
+      .replace(consentNeedle, '          <p class="enquiry-status" data-enquiry-status role="status" aria-live="polite" hidden></p>\n          <button class="button button--primary form-submit" type="submit">Prepare my enquiry <span aria-hidden="true">→</span></button>')
+      .replace('Take 2–3 minutes. You do not need', 'Take 2–3 minutes to prepare an email you can review and send from your own email app. Nothing is sent automatically. You do not need')
+      .replace(bodyNeedle, '  <script src="eden-enquiry.js?v=2026-10-25" defer></script>\n</body>');
+    await writeFile(formPath, prepared);
+    return false;
+  }
+
   const turnstileMarkup = [
     '          <div class="enquiry-turnstile cf-turnstile" data-enquiry-turnstile',
     `               data-sitekey="${TURNSTILE_SITE_KEY}" data-action="enquiry" data-theme="light"`,

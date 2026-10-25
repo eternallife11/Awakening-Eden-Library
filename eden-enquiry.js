@@ -13,7 +13,7 @@
   }
 
   ready(() => {
-    const form = document.querySelector('[data-land-enquiry-form][data-cloudflare-enquiry-endpoint]');
+    const form = document.querySelector('[data-land-enquiry-form][data-cloudflare-enquiry-endpoint], [data-land-enquiry-form][data-enquiry-draft]');
     if (!form) return;
 
     form.classList.add('js-funnel');
@@ -69,11 +69,62 @@
     const endpoint = form.dataset.cloudflareEnquiryEndpoint;
     const status = form.querySelector('[data-enquiry-status]');
     const submit = form.querySelector('[type="submit"]');
-    if (!endpoint || !submit) return;
+    const draftRecipient = form.dataset.enquiryDraft;
+    if ((!endpoint && !draftRecipient) || !submit) return;
 
     form.addEventListener('submit', async (event) => {
       if (!form.checkValidity()) return;
       event.preventDefault();
+
+      if (draftRecipient) {
+        const fields = [
+          ['name', 'Name'], ['email', 'Email'], ['whatsapp-or-phone', 'Phone'],
+          ['preferred-contact', 'Preferred reply'], ['location', 'Location'],
+          ['property-type', 'Property'], ['property-size', 'Size'],
+          ['primary-challenge', 'Main priority'], ['service-interest', 'Support requested'],
+          ['start-timeframe', 'Timeframe'], ['vision-and-challenge', 'Vision and challenges'],
+          ['photos-or-map-link', 'Photos or map']
+        ];
+        const data = new FormData(form);
+        const body = fields.map(([key, label]) => `${label}: ${data.get(key) || 'Not provided'}`).join('\n\n');
+        form.querySelector('[data-enquiry-draft-preview]')?.remove();
+        const panel = document.createElement('div');
+        panel.dataset.enquiryDraftPreview = '';
+        const label = document.createElement('label');
+        label.htmlFor = 'enquiry-email-draft';
+        label.textContent = 'Your enquiry — ready to copy or send';
+        const draft = document.createElement('textarea');
+        draft.id = 'enquiry-email-draft';
+        draft.readOnly = true;
+        draft.rows = 12;
+        draft.value = body;
+        const guidance = document.createElement('p');
+        guidance.textContent = `Nothing has been sent yet. Open your email app, review the draft and press Send. You can also copy the text into an email to ${draftRecipient}.`;
+        const link = document.createElement('a');
+        link.className = 'button button--primary';
+        link.textContent = 'Open email draft';
+        link.href = `mailto:${draftRecipient}?subject=${encodeURIComponent('My Awakening Eden land story')}&body=${encodeURIComponent(body)}`;
+        const copy = document.createElement('button');
+        copy.type = 'button';
+        copy.className = 'button button--secondary';
+        copy.textContent = 'Copy enquiry';
+        copy.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(body);
+            showStatus(status, 'Copied. Paste your enquiry into an email and send it to Benjy.', 'ready');
+          } catch {
+            draft.focus();
+            draft.select();
+            showStatus(status, 'Your enquiry is selected. Copy it and paste it into your email.', 'ready');
+          }
+        });
+        panel.append(label, draft, guidance, link, copy);
+        submit.closest('fieldset').append(panel);
+        showStatus(status, 'Your email draft is ready. It has not been sent.', 'ready');
+        draft.focus({ preventScroll: true });
+        panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
 
       const verification = form.elements.namedItem('turnstile-token');
       if (!(verification instanceof HTMLInputElement) || !verification.value) {

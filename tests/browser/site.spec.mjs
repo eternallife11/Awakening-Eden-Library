@@ -146,7 +146,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await expect(page.getByRole('heading', { level: 2, name: /We’re Benjy & Sofia/ })).toBeVisible();
   await expect(page.locator('.hero-manifesto')).toContainText('A more beautiful future begins when inner care becomes visible');
   const openingOrder = await page.evaluate(() => {
-    const selectors = ['.home-opening', '.home-hero-doorways', '.home-opening__harmonics', '.welcome-home-art', '.hero-manifesto'];
+    const selectors = ['.home-opening', '.home-opening__harmonics', '.welcome-home-art', '.home-founders-intro', '.hero-manifesto', '.home-hero-doorways'];
     return selectors.map(selector => document.querySelector(selector).getBoundingClientRect().top + scrollY);
   });
   expect(openingOrder).toEqual([...openingOrder].sort((a, b) => a - b));
