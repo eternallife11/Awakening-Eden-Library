@@ -166,6 +166,16 @@ jobs:
       - name: Install browser engines
         run: pnpm exec playwright install --with-deps chromium firefox webkit
 
+      # Firefox needs a real audio backend to exercise Web Audio on a headless runner.
+      # A silent sink renders the signal without replacing or mocking the player.
+      - name: Start silent audio output for browser sound checks
+        run: |
+          sudo apt-get install -y pulseaudio
+          pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=eden_qa
+          pactl set-default-sink eden_qa
+          pactl info
+
       - name: Run desktop and mobile browser QA
         run: pnpm test:browser
 

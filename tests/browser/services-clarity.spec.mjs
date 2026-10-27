@@ -15,7 +15,7 @@ test('former collective service URLs redirect to the single land-services destin
 test('homepage doors and navigation provide four distinct destinations', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('.home-hero-doorways .door-card')).toHaveCount(4);
-  expect(await page.locator('.home-hero-doorways .door-card').evaluateAll(nodes => nodes.map(n => n.getAttribute('href')))).toEqual(['/living-library', '/work-with-benjy', '/village-homes', '/sofia']);
+  expect(await page.locator('.home-hero-doorways .door-card').evaluateAll(nodes => nodes.map(n => n.getAttribute('href')))).toEqual(['/start-here', '/work-with-benjy', '/village-homes', '/sofia']);
   await expect(page.locator('.primary-nav a[href="/work-with-us"]')).toHaveCount(0);
   await expect(page.locator('.primary-nav a[href="/work-with-benjy"]')).toHaveText('Land & Gardens');
   const menu = page.locator('[data-menu-button]');
