@@ -112,7 +112,10 @@ jobs:
           grep -q 'Sitemap: https://awakeningeden.org/sitemap.xml' dist/robots.txt
           test -f dist/google4ea90192379dfce2.html
           grep -q '<loc>https://awakeningeden.org/work-with-benjy</loc>' dist/sitemap.xml
-          grep -q '<loc>https://awakeningeden.org/work-with-us</loc>' dist/sitemap.xml
+          ! grep -q '<loc>https://awakeningeden.org/work-with-us</loc>' dist/sitemap.xml
+          grep -q '^/work-with-us /work-with-benjy 301$' dist/_redirects
+          grep -q '^/work-with-us/ /work-with-benjy 301$' dist/_redirects
+          grep -q '^/work-with-us.html /work-with-benjy 301$' dist/_redirects
           grep -q '<loc>https://awakeningeden.org/partners</loc>' dist/sitemap.xml
           grep -q '<loc>https://awakeningeden.org/journey</loc>' dist/sitemap.xml
           grep -q '<loc>https://awakeningeden.org/heart</loc>' dist/sitemap.xml
@@ -162,6 +165,16 @@ jobs:
 
       - name: Install browser engines
         run: pnpm exec playwright install --with-deps chromium firefox webkit
+
+      # Firefox needs a real audio backend to exercise Web Audio on a headless runner.
+      # A silent sink renders the signal without replacing or mocking the player.
+      - name: Start silent audio output for browser sound checks
+        run: |
+          sudo apt-get install -y pulseaudio
+          pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=eden_qa
+          pactl set-default-sink eden_qa
+          pactl info
 
       - name: Run desktop and mobile browser QA
         run: pnpm test:browser

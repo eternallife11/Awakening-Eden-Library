@@ -66,6 +66,12 @@
 
 .sofia-pillar h3 { margin: 0 0 0.45rem; font-size: 1.55rem; }
 .sofia-pillar p { margin: 0; color: #6b5539; }
+.sofia-practice-gallery { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(18rem,.9fr); gap:clamp(1.6rem,5vw,4rem); align-items:center; margin-top:clamp(2.5rem,6vw,5rem); }
+.sofia-practice-gallery figure { margin:0; overflow:hidden; border-radius:1.2rem; background:#ece3d0; box-shadow:0 16px 36px rgb(60 49 31 / .13); }
+.sofia-practice-gallery img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+.sofia-practice-gallery figcaption { padding:.9rem 1rem 1rem; color:#6b5539; font-size:.92rem; line-height:1.5; }
+.sofia-practice-gallery h3 { margin:.35rem 0 .7rem; color:#344734; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.05; }
+.sofia-practice-gallery p { color:#6b5539; line-height:1.65; }
 
 .sofia-dark {
   color: #fffdf7;
@@ -96,5 +102,5 @@
 @media (max-width: 58rem) {
   .sofia-hero__grid, .sofia-split { grid-template-columns: 1fr; }
   .sofia-portrait { width: min(100%, 28rem); margin-inline: auto; }
-  .sofia-pillars, .sofia-proof { grid-template-columns: 1fr; }
+  .sofia-pillars, .sofia-proof, .sofia-practice-gallery { grid-template-columns: 1fr; }
 }

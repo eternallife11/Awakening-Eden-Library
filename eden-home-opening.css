@@ -1,0 +1,322 @@
+/* Homepage opening · 22 October 2026
+   The Circle of Belonging opens the wider vision beneath the title. */
+
+body.final-home-polish .hero--welcome {
+  padding-top: clamp(2.3rem, 5vw, 5.2rem);
+  padding-bottom: clamp(2.4rem, 5vw, 4.5rem);
+}
+
+body.final-home-polish .home-opening {
+  display: block;
+  width: min(100%, 75rem);
+  margin: 0 auto clamp(3.4rem, 7vw, 6.5rem);
+}
+
+body.final-home-polish .home-opening__copy {
+  text-align: center;
+}
+
+body.final-home-polish .home-opening__copy .hero-welcome {
+  margin: 0 0 0.15rem;
+}
+
+body.final-home-polish .home-opening__copy h1 {
+  max-width: none;
+  margin: 0 auto;
+  color: var(--home-forest-deep);
+  font-size: clamp(3.5rem, 7vw, 6.4rem);
+  line-height: 0.88;
+}
+
+body.final-home-polish .home-opening__copy .hero-library {
+  max-width: 40ch;
+  margin: 1.1rem auto 0;
+  color: #5c604b;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2.5vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.12;
+  text-transform: none;
+}
+
+body.final-home-polish .home-opening__copy .home-together {
+  margin: 0 0 0.7rem;
+  color: var(--home-clay);
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+}
+
+body.final-home-polish .home-opening__copy .hero-promise {
+  max-width: 25ch;
+  margin: 0;
+  color: var(--home-forest);
+  font-size: clamp(1.55rem, 2.6vw, 2.3rem);
+  line-height: 1.08;
+}
+
+body.final-home-polish .home-opening__copy .hero-blueprint {
+  max-width: 60ch;
+  margin: 1rem 0 0;
+  color: #4e5741;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+body.final-home-polish .home-opening__harmonics {
+  position: relative;
+  max-width: 40rem;
+  margin: 0;
+  overflow: hidden;
+  border-color: rgb(86 105 75 / 0.34);
+  background: linear-gradient(135deg, #f5efdc, #e9eedc);
+  box-shadow: 0 14px 38px rgb(43 60 42 / 0.09);
+}
+
+body.final-home-polish .home-opening__harmonics::after {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.1rem;
+  width: 5.2rem;
+  height: 1.4rem;
+  background: repeating-linear-gradient(90deg, #8d9b73 0 0.16rem, transparent 0.16rem 0.42rem);
+  clip-path: polygon(0 43%, 9% 43%, 14% 12%, 20% 84%, 27% 31%, 34% 56%, 41% 6%, 48% 94%, 55% 42%, 61% 67%, 69% 20%, 76% 78%, 85% 36%, 100% 36%, 100% 64%, 85% 64%, 76% 22%, 69% 80%, 61% 33%, 55% 58%, 48% 6%, 41% 94%, 34% 44%, 27% 69%, 20% 16%, 14% 88%, 9% 57%, 0 57%);
+  content: "";
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+body.final-home-polish .home-opening__harmonics .harmonics-card__status {
+  padding-right: 5.5rem;
+  min-height: 1.4rem;
+}
+
+body.final-home-polish.harmonics-playing .home-opening__harmonics::after {
+  animation: eden-harmonics-wave 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes eden-harmonics-wave {
+  from { transform: scaleY(0.6); opacity: 0.36; }
+  to { transform: scaleY(1.12); opacity: 0.78; }
+}
+
+body.final-home-polish .home-circle-header {
+  width: min(100%, 62rem);
+  margin: clamp(1.5rem, 3vw, 2.3rem) auto 0;
+  overflow: hidden;
+  border: 1px solid rgb(89 105 73 / 0.24);
+  border-radius: clamp(1.4rem, 3vw, 2.3rem);
+  background: var(--home-forest-deep);
+  box-shadow: 0 22px 60px rgb(44 61 45 / 0.16);
+}
+
+body.final-home-polish .home-circle-header picture > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.final-home-polish .home-circle-header figcaption {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  color: #fff9ec;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body.final-home-polish .home-circle-header figcaption > * {
+  max-width: 66ch;
+  margin-inline: auto;
+}
+
+body.final-home-polish .home-circle-header figcaption strong {
+  color: #ecda9e;
+  font-family: var(--display);
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+  font-weight: 600;
+}
+
+body.final-home-polish .home-circle-header figcaption a {
+  color: #ecda9e;
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+body.final-home-polish .home-circle-header .home-lotus-belief {
+  margin-top: .55rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgb(215 192 136 / .3);
+  border-radius: 1rem;
+  background: rgb(255 249 236 / .08);
+  font-size: .96rem;
+}
+body.final-home-polish .home-circle-header .home-lotus-belief strong {
+  display: block;
+  margin-bottom: .2rem;
+  font-size: 1.35rem;
+}
+body.final-home-polish .final-blessing {
+  background: #f4edde;
+}
+body.final-home-polish .final-blessing .narrow {
+  max-width: 70rem;
+}
+body.final-home-polish .final-blessing h2 {
+  max-width: 16ch;
+  margin-inline: auto;
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  line-height: 1.05;
+}
+body.final-home-polish .final-blessing__art {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
+  border-radius: 1.4rem;
+  box-shadow: 0 18px 44px rgb(36 54 39 / .16);
+}
+body.final-home-polish .final-blessing__painting {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+body.final-home-polish .final-blessing__art figcaption {
+  position: relative;
+  z-index: 2;
+  padding: .8rem 1.2rem;
+  background: #263b2e;
+  color: #f9f1dd;
+  font-size: .95rem;
+}
+body.final-home-polish .final-blessing__actions {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+body.final-home-polish .home-opening__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  max-width: 65rem;
+  margin: clamp(1.8rem, 4vw, 3.2rem) auto 0;
+  text-align: left;
+}
+
+body.final-home-polish .invitation-section--opening-vision .invitation-grid {
+  display: block;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+body.final-home-polish .hero--welcome .hero-copy {
+  padding: 0;
+  text-align: center;
+}
+
+body.final-home-polish .hero--welcome .threshold-section {
+  padding: 0 0 0.55rem;
+}
+
+body.final-home-polish .hero--welcome .hero-portal--welcome {
+  width: min(100%, 48rem);
+}
+
+body.final-home-polish .home-founders-intro p + p {
+  margin-top: 0.95rem;
+}
+
+body.final-home-polish .home-opening-followup {
+  padding-top: clamp(0.5rem, 2vw, 1.4rem);
+  padding-bottom: clamp(2.8rem, 6vw, 5.5rem);
+  background: #f7f0e1;
+}
+
+body.final-home-polish .home-opening-followup .hero-soundtrack {
+  margin: 1.6rem auto 0;
+}
+
+@media (max-width: 58rem) {
+  body.final-home-polish .home-opening {
+    margin-bottom: 3.4rem;
+  }
+
+  body.final-home-polish .home-opening__copy {
+    max-width: none;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  body.final-home-polish .home-opening__copy h1,
+  body.final-home-polish .home-opening__copy .hero-library,
+  body.final-home-polish .home-opening__copy .hero-promise,
+  body.final-home-polish .home-opening__copy .hero-blueprint,
+  body.final-home-polish .home-opening__harmonics {
+    margin-inline: auto;
+  }
+
+  body.final-home-polish .home-opening__content {
+    grid-template-columns: 1fr;
+    max-width: 43rem;
+    gap: 1.6rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 38rem) {
+  body.final-home-polish .brand-words small {
+    max-width: 12rem;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+  }
+
+  body.final-home-polish .home-opening__copy h1 {
+    font-size: clamp(3.1rem, 16vw, 4.4rem);
+  }
+
+  body.final-home-polish .home-opening__harmonics {
+    text-align: left;
+  }
+
+  body.final-home-polish .home-circle-header figcaption {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.final-home-polish.harmonics-playing .home-opening__harmonics::after { animation: none; }
+}
+
+/* Doorways precede the optional soundscape. */
+body.final-home-polish .home-opening .home-hero-doorways { width: 100%; margin-inline: 0; padding-block: 2.5rem; }
+body.final-home-polish .home-opening .home-hero-doorways > .container { width: 100%; padding-inline: 0; }
+
+/* Small sound invitation, always available beside navigation. */
+body.final-home-polish .harmonics-toggle--header { padding:.45rem .7rem; gap:.45rem; }
+body.final-home-polish .harmonics-toggle--header .harmonics-toggle__label { display:grid; gap:.15rem; text-align:left; }
+body.final-home-polish .harmonics-toggle__label small { display:block; font-size:.65rem; font-weight:400; white-space:nowrap; }
+body.final-home-polish .home-opening__harmonics { max-width:32rem; padding:.85rem 1rem; gap:.5rem .8rem; }
+body.final-home-polish .home-opening__harmonics .handwritten { font-size:1.35rem; margin:0 0 .2rem; }
+body.final-home-polish .home-opening__harmonics .harmonics-card__intro p:not(.handwritten) { font-size:.85rem; margin:0; }
+body.final-home-polish .home-opening__harmonics .harmonics-mix { padding-top:.25rem; }
+body.final-home-polish .home-opening__harmonics .harmonics-mix summary { font-size:.85rem; }
+body.final-home-polish .home-opening__harmonics .harmonics-card__controls { gap:.3rem; }
+body.final-home-polish .doorway-first-step { max-width:44rem; margin:1.25rem auto 0; font-size:1rem; line-height:1.6; }
+body.final-home-polish .doorway-first-step a { color:var(--home-forest); font-weight:700; text-underline-offset:.2em; }
+@media (min-width:58.01rem) and (max-width:78rem) {
+ body.final-home-polish .header-inner { flex-wrap:wrap; gap:.7rem; padding-block:.7rem; }
+ body.final-home-polish .primary-nav { order:4; width:100%; justify-content:center; }
+}
+@media(max-width:38rem) {
+ body.final-home-polish .header-inner { gap:.4rem; }
+ body.final-home-polish .brand { gap:.4rem; min-width:0; flex:1; }
+ body.final-home-polish .brand img { width:2.4rem; height:2.4rem; }
+ body.final-home-polish .brand-words strong { font-size:1rem; }
+ body.final-home-polish .brand-words small { font-size:.48rem; letter-spacing:.04em; }
+ body.final-home-polish .harmonics-toggle--header { font-size:.72rem; padding:.45rem; }
+ body.final-home-polish .harmonics-toggle__label small { font-size:.52rem; }
+ body.final-home-polish .menu-button { padding:.5rem; min-width:44px; min-height:44px; }
+}

@@ -20,11 +20,11 @@ When instructions conflict, use this order:
 
 Do not revive an older visual generation simply because its asset still exists.
 
-## Non-negotiable visual identity
+## Approved visual identity
 
-- Use only the exact twelve-fold **Lotus of Life**. Never substitute Seed of Life or Flower of Life.
-- Canonical geometry source: `docs/awakening-eden/design/lotus-of-life-12-exact.svg`.
-- The flagship portal language is sun + living tree + heartwood heart + roots + exact Lotus of Life + botanical lotus + water + one hummingbird.
+- Benjy and Sofia may approve any sacred geometry. Their 23 October 2026 instruction removes the exclusive exact-twelve-fold requirement and chooses the earlier natural root-woven **Lotus of Life** for the founders-under-the-tree and Circle of Belonging artworks. See `docs/awakening-eden/design/SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md`; this supersedes contrary older locks, handoffs and Bible rules.
+- `docs/awakening-eden/design/lotus-of-life-12-exact.svg` remains an available approved vector, not a mandatory source for every artwork. Preserve owner-approved painterly geometry and natural root integration rather than automatically replacing it with an overlay.
+- The flagship portal language is sun + living tree + heartwood heart + roots + owner-approved Lotus of Life + botanical lotus + water + one hummingbird.
 - Primary small identity is tree + heart + roots. Major portal art is rare and should not wallpaper the site.
 - Palette: forest, teal, moss, parchment, terracotta, honey, restrained rose and lavender.
 - Pigment should feel grown, not sprayed: warm paper, forest/soil line, translucent pigment, imperfect human detail. Avoid glossy gradients, metallic 3D, synthetic bloom, galaxy styling, clip-art botanicals and generic AI fantasy gloss.
@@ -69,7 +69,7 @@ A public candidate must pass `.github/workflows/public-build-check.yml`.
 Minimum checks before merge:
 
 - no broken internal routes/assets;
-- exact Lotus remains correct and legible;
+- chosen owner-approved geometry remains legible and naturally integrated;
 - no `docs/` or `deliverables/` content in `dist/`;
 - no rights-unconfirmed orchard masters in `dist/`;
 - no public asset above 25 MiB;

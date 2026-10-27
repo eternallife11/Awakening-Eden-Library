@@ -8,7 +8,7 @@ Owner direction: Sofia, 7 October 2026. Apply this before and after every websit
 2. Compare three states: the actual public pages at `https://awakeningeden.org`, the current GitHub `main` production source, and the local working tree.
 3. Preserve newer approved work and unrelated local files. Resolve divergence before editing or publishing.
 4. Classify each requested item as already live, a genuine upgrade, blocked by missing context/permission, or no longer needed. Implement only the genuine upgrade.
-5. Keep real projects, process photographs, concepts and general inspiration visibly distinct. Preserve the exact twelve-fold Lotus rule.
+5. Keep real projects, process photographs, concepts and general inspiration visibly distinct. Preserve the newest owner-approved sacred geometry and natural rooted Lotus direction; the 23 October correction supersedes the earlier exclusive-vector rule.
 
 ## Before publishing
 

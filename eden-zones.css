@@ -1,0 +1,13 @@
+/* Educational copy remains readable outside the illustration, including on phones. */
+body .zone-caption{display:block;margin-top:1rem;padding:1.1rem 1.2rem;border-left:3px solid #b8944b;background:#f6efdf;color:#344734;font:400 1.075rem/1.65 'Source Sans 3',sans-serif;text-align:left}
+.zone-caption strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.65rem;line-height:1.15;margin-bottom:.5rem}
+.zone-caption a{display:inline-block;margin-top:.6rem;font-size:1rem;font-weight:700;text-underline-offset:3px}
+.zone-art-link{display:block;border-radius:1rem;overflow:hidden}.zone-art-link:focus-visible{outline:3px solid #a7654f;outline-offset:4px}
+.zone-art-link img{display:block;width:100%;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important}
+.homes-page .homes-hero__art img{aspect-ratio:auto;object-fit:contain;border-radius:1rem!important}
+.homes-page figcaption{font-size:1rem;line-height:1.65}
+.zone-reading{background:#edf0e3}.zone-reading__intro{max-width:68ch;font-size:1.1rem;line-height:1.7}.zone-reading__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:2rem 0}
+.zone-reading__grid article{padding:1.4rem;border:1px solid #c6cdb7;border-radius:1rem;background:#fffaf0}.zone-reading__grid h3{font-size:1.65rem!important;line-height:1.15!important}.zone-reading__grid p{font-size:1.05rem;line-height:1.65;margin-bottom:0}
+.zone-reading__note{max-width:74ch;font-size:1.05rem;line-height:1.7}.zone-reading__sources{font-size:1rem;line-height:1.6}
+@media(max-width:56rem){.zone-reading__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:38rem){.zone-reading__grid{grid-template-columns:1fr}body .zone-caption{padding:1rem;font-size:1.05rem}}

@@ -1,223 +1,91 @@
-## Live release verified — 7 October 2026
+# Awakening Eden — current handoff
 
-- Published to https://awakeningeden.org with Cloudflare version `d2f0da1f-c2e6-469b-bc1b-2a4271f270a3`. Implementation commit `6bf0799`; subsequent build fix handles case-only guide aliases on macOS with explicit redirects.
-- Live Home, Work With Benjy, Work With Us, Village, Library, Library script and both new gallery assets matched the tested build byte-for-byte. Clean main/service/Library routes return 200. Final live checks confirm Thriving, 7 First Steps, Abundant Edge and Small Scale Farm guide shortcuts return 200 after redirect repair.
-- GitHub source synchronized through the connected GitHub account on 7 October as commit `6e9647012f632ed442930462bad0b3ce215a3cf3`. Its tree `fe0dd4c1800ff8e8879b6447433e57bdaa78e862` exactly matched the locally verified release. The local Git command still lacks an HTTPS credential, but the repository is current.
-- Next content batch: use `EDUCATIONAL_VISUALS_AND_GUIDES_2026-10-07.md` for three guide visuals/video briefs, then review each small Terra implementation. No new AI artwork was generated. Exact six painted navigation card reproductions remain a separate visual refinement.
+Updated 23 October 2026. This status supersedes the historical commit/push notes in older handoffs.
 
-## Current release preparation — 7 October 2026
+## Resume here
 
-Newest owner request authorizes implementation and publication. Branch `codex/work-with-benjy-real-projects-2026-10-05` incorporates production `52af6ee` through merge `20e59ac`. Older preview-only notes below are historical.
+**25 October release preparation:** Owner approved the painted Circle and requested completion, live-site verification and painted doorways after the founders introduction. Confirmed awakeningeden.org was still serving the 8 October release (Cloudflare `062a7b82-abae-4bbb-a65f-c223a1f7407e`), while this finishing branch contained all newer approved work. Fresh remote main is an ancestor of this branch; the PR38 source is also an ancestor, so no newer remote edits need overwriting. Moved the existing four painted doorways immediately after the founders photo, full intro and quote. Corrected the hero preload to the selected painted-tree-home asset. ORIGIN now points readers to the replay/ongoing movement after its 17 October event (organiser checked 25 October).
 
-- Benjy page now leads with six real project/gallery images, three outcomes, clear packages and detailed planting-plan deliverables. Regeneration, permaculture and syntropic principles follow services. Includes specialist biopool coordination and natural fencing.
-- Library founder story, sanctuary why and gift invitation reflect the owners' compassionate, practical hope language.
-- Educational image/guide plan: `docs/awakening-eden/proposals/EDUCATIONAL_VISUALS_AND_GUIDES_2026-10-07.md`. No new generated artwork in this pass.
-- Production build and visual-lock/zero-cost checks passed. 12 focused browser checks and 8 page/internal-link checks passed across desktop/phone. Desktop/phone Benjy gallery screenshots reviewed under `test-results/review/benjy-gallery-{1440,390}.png`; no missing images or page overflow. Earlier full suite passed 102/102 and Worker tests 13/13.
-- Release pending: commit, fast-forward production source, deploy Cloudflare production and verify public pages. Do not infer live status from this preparation record.
+**Enquiry release finding:** Production Worker secret list is empty and the existing Turnstile widget only allows the isolated staging hostname. The production build therefore retains the three-step questionnaire as an explicit email-draft flow, with editable source answers, full copyable draft and an Open email draft link. Nothing is sent automatically; no thank-you redirect or false success claim. Existing WhatsApp contact remains. Server delivery can be enabled with `ENQUIRY_SERVER_DELIVERY=verified` only after hostname, sender, secrets and actual delivery have been verified. No email was sent during testing. Staging/CI retains the tested Worker path.
 
-# Awakening Eden — Current Work Handoff
+Validation and publication are in progress; do not treat this note as evidence of deployment. Rollback: Cloudflare version above and source `a16c339` before this pass.
 
-_Last updated: 5 October 2026_
 
-## Homepage, Library and invitation review — latest pass
+**Latest — painted Circle with Lemuria-inspired tree home, 23 October:** Owner requested a more painted Library-card style, less shine, and a large tree home in the background. The Circle header now uses `circle-of-belonging-painted-tree-home-oct23-{960,1448}.webp`: matte watercolor/gouache and ink texture, forest/moss/brown pigment, softened energy threads, and a great living tree home with rounded windows, balconies and a welcoming doorway behind the seated circle. Preserved the natural rooted Lotus and mycelium. The original founders-under-tree painting at the ending stays as selected. Prior Circle variants are preserved. Built-in image editing used the latest natural-Lotus Circle as target and the six Library cards plus Library header as style references. Provenance and prompt are in `../design/references/2026-10-23/README.md`.
 
-- Added homepage opening actions for Work With Us and regenerative design/consulting; changed the promise to “Hope grows when we put it into practice.” Strengthened Library copy around inspiring films, documentaries, books, platforms and one useful action.
-- Added direct WhatsApp invitations on the homepage and Village Vision page for aligned collaborators, partners and possible funding support. The village remains clearly presented as future work.
-- Corrected the Work With Us gallery: replaced a phone screenshot inadvertently used as a garden image with the clean Casa Oasis hillside photograph.
-- The supplied painted Library header is active. The four homepage cards are accessible botanical adaptations, NOT exact reproductions of the supplied four-card sheet. The six-card sheet remains an unimplemented navigation direction under the visual lock. Do not claim exact visual matching.
-- The earlier package/gallery expansion is now implemented locally on both service pages; the older “not yet implemented” note below is superseded.
-- Latest build, zero-cost guard and visual-lock guard passed. Eight focused desktop/phone tests passed for homepage actions, service hierarchy and Library search. Sitewide audit finished: 102/102 passed across desktop and phone, including all public HTML routes, local assets, anchors, overflow, browser errors and internal link resolution. Screenshot captures were produced for 18 primary routes per viewport; close-up visual inspection covered the homepage doors, founders artwork and phone homepage/Library opening.
-- Inspected close-up desktop doorway and founders artwork plus phone homepage and Library opening. Evidence in test-results/review/. These are local changes, not a verified live deployment.
+Validation: public build, visual identity guard, zero-cost guard and diff check passed; both focused desktop/phone opening checks passed. The refreshed phone screenshot was visually reviewed, with the full tree home and Lotus visible. Local preview only; no production release. Rollback point: `6ab9f82`.
 
-## Latest owner direction — packages, gallery and Terra execution
+**Latest owner correction, 23 October — natural rooted Lotus:** The exclusive exact-twelve-fold requirement is removed. Any sacred geometry approved by Benjy and Sofia may be used; see `../design/SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md`. This overrides contrary rules throughout older documents and historical notes below. Restored the original `welcome-home-benjy-sofia-rooted-lotus-v34` painting with its natural root-woven Lotus. Edited the latest heart-torus Circle painting using that original as the visual reference, weaving a matching earthy Lotus into the foreground soil while preserving the community, heart arcs and mycelium. Both homepage images now contain their Lotus within the painting; removed their thin SVG overlays. The closing caption no longer claims exact twelve-fold certification. Root project instructions, repository AGENTS, active design/knowledge guidance and the automated blanket geometry ban were updated. Other approved geometry elsewhere stays as chosen.
 
-- Sofia supplied the Syntropic Food Forests & Abundance Gardens collection with seven examples and indicative establishment budgets; requested it near the top of both service pages, direct WhatsApp after the Work With Us introduction, and a stronger mostly caption-free real-photo gallery.
-- Exact specification: `docs/awakening-eden/proposals/EDEN_SANCTUARY_GARDENS_TERRA_EXECUTION_2026-10-05.md`. This addendum is saved and linked into the consolidated queue. Package/gallery expansion is not yet implemented. Current preference is GPT Terra for the execution pass; no background Terra job was started in this planning turn.
-- The latest request authorizes implementation and pushing the reviewed work. It supersedes older pending-approval handoff notes for that same scope; verify the implementation, preview, CI and actual deployed pages through the existing release workflow.
+Validation: public build, updated visual identity guard, zero-cost guard and diff check passed. Four focused desktop/phone homepage and closing-story browser checks passed. Reviewed the refreshed phone opening and desktop Tree closing screenshots; both Lotus forms are fully visible within the paintings. The original failed homepage expectations referenced the superseded image filename and were updated; no remaining test failures. Local preview only; no production release. Rollback point: `a7f1cd9`.
 
-## Service-page implementation — 5 October 2026
+**23 October website finish pass:** Reworked the homepage ending into a single Tree of Life closing invitation using the newly shared Benjy–Sofia artwork. The painted approximate geometry was carefully removed from a new derivative image; an earthy green/brown overlay retains the canonical twelve equal circles plus outer circle. The original approved raster is preserved. The Circle of Belonging uses the same exact earthy overlay and now explains the Lotus as the founders’ spiritual interpretation, clearly separating fruitarian/prana/4D–5D curiosity from claims about human nourishment. The repeated Tree painting in the founders section was removed so it appears once at the ending. Work With Benjy now leads with the full design-to-delivery scope and adds owner-supplied practical experience in project management, machinery, construction, restoration and workshops while retaining the five offers, budgets and authentic gallery. The Our Journey moments collection adds the owner-shared boat photograph. Awakening Regeneration connects the existing free Living Guide to a future Land Starter workbook and intro video/webinar, both plainly labelled “in preparation” because no finished assets exist. This is local preview work, not a production deployment. The requested compost-toilet photograph has not yet been found in the available local image set; do not substitute another image or imply it is present.
 
-- Branch: `codex/work-with-benjy-real-projects-2026-10-05`, based on `9ef91b9`. Work With Benjy now leads with **Eden Sanctuary Gardens** and the existing public starting prices: €111, from €450 / €650 on site, from €1,500, and custom implementation scope. No new price points were invented.
-- Owner-confirmed project context is now public in the selected-work and workshop sections: **Moinhos, Algarve** retreat permaculture gardens managed and improved by Benjy; **Casa Oasis** bean trellises beside raised beds; **Luisa + Sim, Tabua / Oliveira do Hospital** curved food-forest rows beside the levada, permanently marked as a concept; **Moinhos guest workshop** on regenerative and degenerative industrial systems, permaculture and syntropic agroforestry. Cairns collaboration is recorded in the internal caption register and remains out of the service-page proof gallery for now.
-- Work With Us now names the direct Eden Sanctuary Garden pathway and sends people to the clear four-offer service page. Its opening three-image story now follows a truthful sequence: an existing olive garden in Tabua / Oliveira do Hospital, the clearly labelled Luisa + Sim food-forest-edge concept beside the levada, and Benjy working at Moinhos in the Algarve. Caption records and the consolidated plan were updated with the corrected source identity and the new public-offer architecture.
-- Living Library reliability is now repaired too: all four lower-case field-guide routes are exercised in browser tests; search cards visibly match the result count; a Library shelf link clears an old search before navigating; and Lighthouse reports/configuration are excluded from the public artifact. The Abundant Edge guide now names itself consistently in the visible heading.
-- Verification passed: production build, zero-cost guard and visual-lock guard; 13 Worker tests; focused desktop/mobile browser suite 12/12 covering service pages, guide routes, search, enquiry choices, implementation guidance and imagery; and the latest Work With Us desktop/mobile check after the opening-gallery revision. Local desktop and 390px phone visual inspection found no broken assets or horizontal overflow. This is a local branch preview only: no commit, push, PR merge or production deployment has happened.
-- Next: owner review of the completed service-page preview. The Living Library already has four hopeful/practical arrival paths; its next content pass should validate and feature individual sources without adding unverified claims. The current implementation should be committed after the owner confirms it is ready.
+Validation for this pass: Cloudflare build, visual-lock and zero-cost checks passed; 72 focused desktop/phone browser checks passed across site routes, links, images, layout, Benjy enquiry paths and gallery; two added desktop/phone closing-story checks passed after verifying lazy-loaded images; 13 worker enquiry checks passed. The exact Lotus circle coordinates match the prior canonical vector. The desktop ending was visually reviewed in the local browser. No real enquiry was submitted; production delivery and release remain unverified.
 
-## Archive and consolidated gallery queue — 5 October 2026
+**23 October rooted Lotus and heart connection:** owner requested a subtler heart-linked torus and the original root-woven Lotus look. Edited the Circle painting with the earlier founders rooted Lotus and Lemuria circle as references, retaining the community, tree and foreground mycelium. Added a transparent root-woven SVG overlay whose twelve petals and outer circle match the canonical SVG exactly. Desktop and phone compositions visually reviewed. Public preview rebuilt; no production release. Asset provenance: `docs/awakening-eden/design/references/2026-10-23/README.md`.
 
-- Latest owner order: Work With Benjy first, Living Library second, Work With Us next; guides/phone/content work follows. Service-page implementation is now ready for owner review in the local branch.
-- Saved all 148 supplied file references as 135 unique originals (128 still images / seven videos), 13 byte-identical duplicates, no missing files; verified ZIP integrity. Archive and index are under the project workspace `awakening-eden-image-library/`, outside the website repository/public build. Six contact sheets reviewed; videos archived but not viewed.
-- New consolidated proposal: `docs/awakening-eden/proposals/CONSOLIDATED_GALLERY_AND_TERRA_PLAN_2026-10-05.md`. Found teaching photo and two plan-sample candidates; confirm event/project/authorship and anonymise names before public use. Benjy/Sofia portrait, property-overview and garden/process shortlist recorded.
-- No merge or deployment in this pass. Next large folder can be appended as another dated archive/index snapshot. Next: owners review the completed service pages; then curate individual Library sources and continue the guide/phone pass.
+**23 October compact player and doorway copy:** made the homepage player smaller; header now visibly says “Play Lemuria” with “432 / 528 Hz harmonics”, synchronized to “Pause Lemuria” while playing. Header label remains visible beside the mobile menu. Refreshed doorway invitation with “Follow your curiosity. Bring your whole heart.” and a direct free Awakening Regeneration PDF-guide entry. Cards now describe useful PDF resources/films, Benjy’s practical support, kit homes/off-grid community possibilities, and Sofia’s wellbeing invitation. Build and diff checks passed; four desktop/phone opening and audio-interaction checks passed; header screenshots reviewed at both sizes.
 
-## Photo intake — 5 October 2026
+**23 October completed homepage + Benjy pass:** updated the Circle of Belonging to the owner-requested earthy mycelium illustration with symbolic human/root connections and the existing exact rooted twelve-fold Lotus overlay. Caption clearly describes the future community vision and regenerative interbeing. Moved the four existing doorways above the optional harmonics player; preserved the founders photograph, expanded intro and architects quote. Improved small-screen caption readability.
 
-- First owner upload reviewed: 19 named files / 20 inline images (one duplicate). Register: `docs/awakening-eden/proposals/IMAGE_BATCH_01_2026-10-05.md`. No public edits or deployment.
-- Owner confirms the first two Amba terrace photographs are **Melides**, with food-forest and green-manure restoration planting. They visually match the older olive-terrace sequence labelled Moinhos; confirm the full sequence and correct project captions before publication. Keep the separate citrus/Moinhos garden story distinct.
-- Strong new candidates: Melides mulched terraces, Moinhos bottom-garden view, Benjy at Carole's garden, and wood/biomass process detail. Generated/concept and outside-reference status remains pending for other images. A source-context question was sent in chat.
-- Next: finish image intake; confirm roles/dates/concept sources; revise placement proposal; prepare Terra preview with accurate project labels. Teaching photo and real plan sample are still useful optional additions.
+Benjy now has a welcoming real garden portrait, a four-photo project/services opening, the whole-property concept illustration and an earlier biography. Removed repeated orchard/portrait shots and moved photographs rather than duplicating them. All five offers show deliverables without expanding details. Added the owner-described Property Vision + Concept Plan as a separately quoted online option (overview/zoning, coloured sketch with notes/legend, initial action plan), with enquiry preselection verified. Existing prices retained; the Fiona-specific €150–250 was not made a public price. Concept imagery and existing-pool gardening remain clearly identified; no fabricated biopool delivery or completed-village claim.
 
-## Planning review — 4 October 2026
+Validation: public build, zero-cost/visual-lock guards and diff checks passed. 38 focused desktop/phone checks passed across 12 routes, service content/prefill, redirects, image loading, overflow and harmonics; six relevant checks passed again after final layout polish. Desktop artwork/gallery and phone doorways visually reviewed. Sound remains opt-in, exact 432/528 Hz synthesis with synthesized nature/instruments, not field recordings. No real enquiry sent. Local preview rebuilt at http://127.0.0.1:8787/. No production deployment or service-branch merge. Artwork generation/edit prompt and provenance: `docs/awakening-eden/design/references/2026-10-22/README.md`. Previous rollback commit: `d6a27c5`.
 
-- Latest request is proposal-only: improve Work With Us / Work With Benjy image selection, teaching visuals, property clarity and service presentation; implementation remains for a later Terra pass.
-- Proposal: `docs/awakening-eden/proposals/SERVICE_PAGES_IMAGE_PROPOSAL_2026-10-04.md`, with three visual contact sheets and filename keys beside it. Reviewed 48 candidate entries (including duplicates) and the previous live desktop/mobile screenshots. Local checkout: `codex/oct-03-botanical-portals`, HEAD `9ef91b9`. No site code, prices or public assets changed; no commit, PR, merge or deployment in this pass. Documentation remains local/uncommitted.
-- Today's fresh live browser retrieval timed out. Do not describe this as a new production verification. The earlier 3 October audit recorded the published main pages loading; the old pre-release sections below are historical and their draft/unpublished claims must be reconciled against GitHub before implementation.
-- Next: review the proposed placements; collect a whole-property original, a current dated progress photo, a teaching photo and an anonymised real deliverable; implement a small preview from current production source; verify desktop/mobile and accurate captions; request owners' visual review before publication.
 
+**22 October quote restoration:** restored the owner's “We are the architects of the New Earth—weaving our hearts and minds together for magical co-creation” at the beginning of the founders quotation, preserving the newer “A more beautiful future begins…” passage and the expanded personal introduction. Direct preview: http://127.0.0.1:8787/#our-new-earth-invitation. Public build and both existing focused desktop/phone opening checks passed; refreshed intro screenshots reviewed. Homepage only; no production release. Rollback: `08f68fa`.
 
+**22 October intro copy follow-up:** owner supplied a richer personal narrative. The homepage founders intro now begins “For more than a decade” and includes organic living, lived syntropy, agroforestry, yoga, wellbeing and thriving in these times; volunteering/immersion across Australia, Colombia and Portugal; retreat operations and facilitation; events/food forests; challenging seasons; and first-person Australian rainforest/cassowary/birdsong memories. Four short paragraphs end with the journeys of two souls woven into existing offerings and future media/gatherings/village life. The photo, circle header, sound engine and other pages are unchanged. Build and diff checks passed; both focused desktop/phone opening checks passed and intro screenshots were reviewed. Direct preview: http://127.0.0.1:8787/#meet-benjy-sofia. Homepage branch only; no production release. Rollback point for this copy: `debb7e9`.
 
-This is the durable current-status handoff for the next ChatGPT / Codex / Claude website session. Git history retains the longer historical handoff that preceded this concise version.
+**22 October header follow-up: Circle of Belonging now sits beneath the Awakening Eden title/subtitle.** Owner asked to choose between the community/village illustration and the painted Library book. Commit `a1d980a` moves the canonical Circle of Belonging to a wide, centred header, preserving the full scene and exact twelve-fold Lotus overlay. It appears once on the homepage; its later duplicate placement was removed while the shared-vision text remains. The Library book/hummingbird artwork stays in its existing Library section. Mother Tree artwork is preserved as an asset but no longer appears in the opening. Harmonics follows the header, the authentic Benjy & Sofia intro photo is unchanged, and Work with Benjy is untouched. Public build, visual-lock and diff checks passed; eight focused desktop/phone checks passed (layout/assets, opening/unique circle placement, expanded player accessibility and sound controls). Reviewed updated `test-results/review/home-top-{desktop,mobile}-chromium.png`. Homepage branch only; separate PR38 source and production remain unchanged. Next: owner reviews this header at http://127.0.0.1:8787/, then the established release gates.
 
-## Current review — 3 October botanical visual lock
+**22 October: homepage opening and original Lemuria soundscape are ready for owner review.** Read [the homepage and sound handoff](HOMEPAGE_SOUND_2026-10-22.md) first. Implementation commit `d4cbc41` adds the Mother Tree to the right of the clarified regenerative-home/Living Library opening, preserves the authentic Benjy & Sofia tree-planting photograph, improves their intro, and places the four painted doors directly after it. The new original player offers selectable 432 or 528 Hz tones with an octave below, soft synthesized rainforest/rain/ocean layers, and optional bowl/chime sounds. The compact “Shape your sound” panel controls the mix; sound always waits for a click, even on return visits. Nature and instruments are explicitly described as synthesized; no medical claims or borrowed audio. The 3.5 MiB Mother Tree master is internal; the public WebP is 0.56 MB. **Work with Benjy and all other destination pages are unchanged in this pass.** Build, zero-cost, visual-lock and diff checks passed. All 12 final audio tests passed across desktop/phone Chromium, Firefox and WebKit, including measured spectral peaks and silent suspension. Six focused homepage structure/asset/overflow/accessibility checks passed on desktop/phone; two final visual captures also passed after the last refinements. Reviewed screenshots: `test-results/review/home-top-*`, `home-intro-*`, `home-doorways-*`, `harmonics-*`. PR38 was verified open and draft before this pass; no production merge/deployment or live enquiry test has occurred. Next: owner listens/reviews at http://127.0.0.1:8787/, then the established release gates. Prefer this HTTP preview over opening the source HTML as a file.
 
-- Draft stacked PR [#36](https://github.com/eternallife11/Awakening-Eden-Library/pull/36), branch `codex/oct-03-botanical-portals`, implementation commit `34a51652afcbaeea21af1059eb155aa9f2288b65` with tree `b9d682dd2c70daf7aae3559877e8c19474f5d3b8`, is based on draft PR #35 at `0adeda6068573d0c79630a2408eb02de0e5a2af9`. A handoff-only commit follows the implementation commit. The PR is mergeable and remains draft; GitHub Actions run `37146547871` was in progress at this handoff.
-- Sofia's 3 October six-image package is preserved under `docs/awakening-eden/design/references/2026-10-03/`, outside the public build. `VISUAL_LOCK_2026-10-03.md` and the Design/Illustration Bible addenda are the new dated visual authority. Earlier locks/registers point to it. The cards and ornament originals contain uncertain geometry; they are design references, not public image assets.
-- The brighter many-person circle remains the homepage Circle of Belonging. Its unverified painted root disc was removed; the canonical exact twelve-fold SVG is layered in the roots on Home, About, Work With Us and Village Vision. The new book/tree/hummingbird art is the Library header and a smaller homepage image, also with the exact SVG overlay. The earthier six-person art sits beside the Village Vision text with a rooted exact SVG. Four concise botanical HTML link cards follow the opening vision.
-- Verification: production-origin Cloudflare build (383 files, 109.1 MiB), zero-cost and visual-lock guards passed. The full desktop/mobile site suite passed 58/58, with no broken local assets, overflow or console errors. After visual correction of an oversized Lotus and shortening the card text, focused screenshot checks passed 8/8 and final homepage checks 4/4. Desktop/mobile close-ups of the circle, cards, Library and second village illustration were reviewed. This is a preview, not a live release.
-- Next: (1) confirm PR #36 CI; (2) review both draft PRs' desktop/mobile previews with Benjy and Sofia; (3) incorporate real Work With Us photos when supplied, without guessing project proof; (4) merge #35 then #36 only after visual approval; (5) deploy and verify the custom-domain pages and actual image URLs. Do not claim the live site has the new 3 October artwork until that final check.
+**20 October follow-up: Benjy page opening and village invitation refined.** Commit `7ce7d01` changes the hero to “Bring your project vision to life,” names the full land/project scope, explains the online or on-site first conversation, adds biopools and water filtration with qualified specialists, and invites messages about the future village without presenting it as built. The village paragraph uses the owners' six-to-eight-year learning timeframe. The existing authentic project gallery, four offers, pricing and enquiry flow remain. Cloudflare build plus zero-cost and visual-lock guards passed; 14 focused desktop/phone browser checks passed on the first copy pass and six final checks passed after the last wording refinement, including accessibility and screenshots. Desktop/phone hero images were inspected at `test-results/review/`. Draft PR38 remains the review vehicle; no production release or live enquiry delivery check has occurred. Next: owner review of the updated page, verify production enquiry delivery before release, then merge/deploy only with owner approval and verify the public result.
 
-## Base review — Circle of Belonging correction
+**20 October: the owner-approved service consolidation is ready for draft review.** Read [the service and logo handoff](SERVICE_CONSOLIDATION_2026-10-20.md) first. `/work-with-benjy` is the single land-services destination, backed by real project photographs and four clear ways to work together. The old Work With Us URLs redirect there; homepage doors and navigation point to Library, Benjy, Homes and Sofia. Public footer logos now use the approved painted mark directly. All 224 browser checks passed across Chromium, WebKit and Firefox after installing the missing Firefox test binary; build, visual-lock, zero-cost and worker-enquiry checks also passed. Draft [PR38](https://github.com/eternallife11/Awakening-Eden-Library/pull/38) is the review vehicle. **No production release or live enquiry delivery check has occurred.**
 
-- Draft PR #35 on `codex/approved-community-circle-v36-2026-10-03` carries Sofia's 1 October selected brighter community-circle image and its responsive companion. This branch incorporates `main` through `fe0857d`, including the merged Village Vision copy from PR #34. The separate Sanctuary Clarity worktree remains untouched.
-- The homepage, Village Vision, About and Work With Us use the v36 artwork. The old homepage `eden-v23.js` rewrite had replaced the Circle of Belonging after load with an earlier two-person image; its stale homepage mutations were removed. The authored HTML now controls the image and opening actions. A stray literal `\\n` was removed from the homepage.
-- Verified locally: production-origin public build and zero-cost/visual-lock checks; Worker tests 13/13; homepage desktop/mobile assertions; 24/24 critical-route desktop/mobile browser checks without overflow, broken images or console errors. Close-up desktop/mobile screenshots of the circle and Village Vision were reviewed. The painted Lotus was visually inspected, but the static guard does not mathematically certify raster geometry.
-- Production state: draft review only. The public site still showed the old image at the pre-release check. Obtain the owners' production approval under the team workflow, confirm CI and the diff, then merge and verify the live DOM, image URL and screenshots. Preserve the v35 files for rollback. Keep broader village copy and new photography in separate work.
+**17 October: Terra material implementation committed and backed up for review.** Read [Terra material implementation handoff](TERRA_MATERIAL_IMPLEMENTATION_2026-10-17.md) first. The eight-card authentic homepage story is now live in the candidate, alongside Sofia practice imagery, a compact Journey moments section, Benjy’s field/orchard practice, and carefully described pool/orchard establishment process material. 61 originals, a filename/hash index and three reviewed contact sheets remain preserved outside the repo in `../terra-material-handoff-2026-10-17/` relative to the checkout root. Public derivatives are responsive WebP files in `assets/photos/living-story/`; their provenance is recorded in the Terra handoff. Build, visual-lock and zero-cost checks passed; focused desktop/phone browser review found no page-level horizontal overflow and all in-view selected images loaded. Commit `075c4a8` is pushed to both safeguarded branches and reflected in draft [PR38](https://github.com/eternallife11/Awakening-Eden-Library/pull/38). The work is not deployed. Next: obtain owner review before any production release.
 
-## Canonical source
+Latest finishing pass, 16 October: Homepage Living Story core is implemented. Authentic founders portrait, short intro, remapped painted doorways, four-path overview, four-image project/teaching gallery and concise homes introduction. Tree of Life art is retained later in the page. Previous contrast fixes, Village Homes headline and main Regeneration guide's Zones 0–5 panel are also included. See `../proposals/HOMEPAGE_LIVING_STORY_PLAN_2026-10-16.md` for scope and remaining image selections. Local review remains http://127.0.0.1:8787/ (rebuild `dist/` after editing). No production deployment. Next: review desktop/phone; select optional Sofia/festival/Lemuria images; run full release checks and verify enquiry delivery before release. Focused homepage route/image/overflow/accessibility checks accompany this pass; do not describe them as the full browser suite.
 
-- Repository: `eternallife11/Awakening-Eden-Library`
-- Canonical branch: `main`
-- Latest approved website merge before this handoff: `72595937f44903e9a64451ca90e838d023c7564f`
-- Draft PR #35 is open for the Circle of Belonging correction; the earlier cleanup closed superseded PRs.
-- Old superseded PRs #10, #11 and #29 were closed without merging over newer work. Their branches remain recoverable in GitHub history.
-- Netlify is a frozen rollback / legacy public snapshot, not the working source of truth.
+Durable checkout: **awakening-eden-finish-2026-10-13** at project root. Local branch: `codex/awakening-eden-finish-2026-10-13`.
 
-## What is merged now
+GitHub CLI is authenticated as `eternallife11`, credential stored in keyring, Git credential helper configured. Do not repeat sign-in unless authentication actually fails.
 
-### Work With Us
+The 22 October homepage/sound candidate is backed up on `codex/awakening-eden-finish-2026-10-13` (implementation `d4cbc41`, handoff `9717c1e`). PR38's separate source, `codex/work-with-benjy-regenerative-funnel-2026-10-09`, remains at `7c1f555` and has not received the homepage-only commits. Keep the owner's homepage-only scope: do not automatically synchronize the separate service branch. [PR38](https://github.com/eternallife11/Awakening-Eden-Library/pull/38) remains the existing service draft; the homepage changes can be reviewed from the finishing-branch commits and local preview.
 
-PR #33 was merged into `main` as `42710aa3bd5858f1d3463a81a66b4c2339f0df30`.
+**No production merge/deployment has been performed.** Local preview: http://127.0.0.1:8787/ serves `dist/`; rebuild after source edits. Visual changes require desktop/phone review before release. The user has approved the general homepage wording/style; preserve it except for newer explicit corrections.
 
-`/work-with-us` is the professional umbrella pathway for:
+## Latest: whole-property teaching illustration
 
-- regenerative projects and collaborations
-- workshops and field learning
-- direct Work with Benjy land services
-- the Living Library and wider regenerative network
-- future village / sanctuary vision, clearly framed as future work rather than an existing built village
+Owner requested an immediate logical zoning redraw. Original painted Zones 0–5 artwork now replaces the old confusing bubbles on Village Homes, Work With Us and Eden Designer. Captions are large/selectable; full-size art opens on click; Village Homes has a readable six-zone guide. Zones follow care frequency, with a contextual note on daily market gardening and site-dependent placement.
 
-Its review included production Cloudflare artifact build, focused desktop/mobile browser QA, accessibility/no-overflow checks, Worker tests and local performance review.
+[Asset, prompt, sources and QA record](../proposals/WHOLE_PROPERTY_ZONES_V2_2026-10-16.md). Public build, visual-lock and zero-cost guards passed; desktop/phone checks 4/4. Local screenshots: `test-results/zoning/`. Keep future educational descriptions at least 16px and available outside the bitmap.
 
-### Village Vision
+## Already implemented in the candidate
 
-PR #34, **Village vision: living lineage, lived learning, purpose lock and thriving economy**, was merged into `main` on 3 October 2026 as `72595937f44903e9a64451ca90e838d023c7564f`.
+- Homepage: the newest 22 October opening centres the title and regenerative home/Living Library promise above the Circle of Belonging header, followed by the introduction and optional sound, authentic founders photo, four painted doors and the existing deeper page. The older [owner lock](../design/HOMEPAGE_OWNER_LOCK_2026-10-15.md) remains historical where newer explicit decisions supersede it.
+- Painted doors use the full portrait ratio. Canonical exact twelve-fold Lotus overlays are centred in the sun and book circle; never substitute Seed/Flower geometry.
+- Spotify and original Web Audio Lemuria Harmonics: selectable 432/528 Hz plus octave support, synthesized nature environments and bowl/chime textures, gentle volume, synchronized header/card controls, remembered mix, full pause and Spotify coordination. Always opt-in; no autoplay or medical claims. Final audio checks 12/12 across four browser/device targets.
+- Work With Benjy: the single land-services destination, with authentic image-led proof, approved service offers, clear WhatsApp/email paths and the existing enquiry form. Preserve outcome-first ordering and factual concept labels. Work With Us is a redirect/fallback, not a competing service page.
+- Village Homes: options, connected services, whole-property support and an explicitly future village vision. [Homes handoff](../proposals/VILLAGE_HOMES_HANDOFF_2026-10-15.md).
+- Earlier candidate includes Library presentation/search fix, botanical divider, questionnaire/thank-you/free-guide pathway and the nested thank-you asset fix. These must not be described as live without verifying production.
 
-The merged `/village-vision` now includes:
+## Remaining release work
 
-- the founders' lived learning across roughly a decade, including parts of Asia, 6–7 years in Australia, Colombia and around two years in Portugal
-- a Living Lineage of Learning: Indigenous / ancestral wisdom, Portuguese / Mediterranean / Celtic land traditions, regenerative practice and ecovillage learning
-- explicit attribution, permission, reciprocity and learning-back principles: **we learn with, not take from**
-- Zach Bush's Biological Renaissance, Roots Rural and ORIGIN as inspirations, not claimed affiliations
-- a careful emerging-science / quantum-biology boundary: frontier research is not used as proof for spiritual claims
-- a concise regenerative values compass: regeneration, interbeing, compassion for all beings, freedom with responsibility, organic/place-based living, co-creation, purposeful abundance and progress over purity
-- concrete regenerative living-economy pathways
-- practical purpose-lock and decentralisation / subsidiarity language
-- independent Portuguese legal, property, planning, tax, accounting, insurance and cooperative/community-law review before major commitments
-- the correction from “Seven relationships” to “Eight relationships”
+1. Review the current desktop/phone candidate with Sofia and Benjy, including the newest zoning illustration. Use existing test screenshots/local preview; do not rebuild approved sections unnecessarily.
+2. On final release approval, complete the public build checks and verify production Turnstile hostname and actual enquiry delivery. Local tests stub Turnstile; no real delivery test has been performed.
+3. Recheck the organizer's ORIGIN event date/status at release; historical 17 October wording is time-sensitive.
+4. Merge/deploy through the established release path, check the actual public URLs, then record deployment and rollback details here. Do not claim GitHub push equals production release.
+5. The final exported Village Homes supplier catalogue and Lemuria vision artwork from the other chat still need attachment. Do not invent supplier agreements or claim those exports were integrated.
+6. Six additional painted Library resource cards remain a separate optional visual batch after release.
 
-PR #34 changed only `village-vision.html`. Its Public build safety check completed successfully before merge.
+## Supporting plans
 
-## Visual and truth lock
+- [Final resume and release plan](../proposals/FINAL_RESUME_AND_RELEASE_PLAN_2026-10-14.md).
+- [13 October consolidated brief](../proposals/CONSOLIDATED_TERRA_FINISH_PLAN_2026-10-13.md).
+- [Owner-confirmed image register](../proposals/IMAGE_SHORTLIST_2026-10-13.csv).
 
-Preserve the approved Awakening Eden visual language:
-
-- rich painted / botanical artwork
-- real photography as the trust layer
-- the exact deterministic twelve-fold Lotus of Life only
-- never substitute Seed of Life / Flower of Life geometry
-- no duplicate imagery unless intentionally designed
-
-Truth boundaries remain essential:
-
-- future village language must remain future-facing until land, permissions and structures are real
-- concept imagery must not be presented as completed work
-- no claimed partnerships unless formally established
-- spiritual / poetic language must remain distinct from scientific claims
-- medical / detox language must remain appropriately bounded
-
-## Cloudflare production status — still the release gate
-
-**Do not claim `awakeningeden.org` is live until it has been directly verified over HTTPS.**
-
-The repository is production-ready in code, but GitHub does not currently contain an automatic production-deploy workflow. `.github/workflows/public-build-check.yml` is triggered by pull requests and performs builds, dry-runs and QA; it does not deploy to the custom domain.
-
-Production configuration exists in `wrangler.production.jsonc`:
-
-- Worker: `awakening-eden`
-- `workers_dev: false`
-- custom-domain route: `awakeningeden.org`
-- production public origin: `https://awakeningeden.org`
-- static assets: `./dist`
-
-The last durable domain note recorded that Cloudflare authentication / human verification blocked the production cutover. The account zone and DNS therefore still need direct confirmation.
-
-### Remaining production cutover
-
-1. Authenticate to the Cloudflare account that owns the Awakening Eden Worker / zone.
-2. Confirm `awakeningeden.org` is Active and inspect apex / `www` DNS for conflicts.
-3. Build from current `main` using the production build path.
-4. Deploy using `wrangler.production.jsonc`.
-5. Verify live HTTPS for at least:
-   - `/`
-   - `/work-with-benjy`
-   - `/work-with-us`
-   - `/living-library`
-   - `/about`
-   - `/village-vision`
-   - `/village-research`
-   - `/sitemap.xml`
-   - `/robots.txt`
-   - a deliberate 404
-6. Verify redirects, canonical metadata, desktop/mobile rendering and assets.
-7. Set a path-preserving `www` redirect if required.
-8. Keep the enquiry form hidden unless its production mail / anti-abuse configuration is explicitly reviewed and approved.
-
-Follow `docs/AWAKENINGEDEN_ORG_CUTOVER_2026-09-27.md` for the domain-cutover checklist.
-
-## Known staging / fallback state
-
-The previously verified Cloudflare staging route is:
-
-`https://awakening-eden-library-staging.holisticmission8.workers.dev/`
-
-Earlier releases, including Work with Benjy, were verified there. Do not assume the newest `main` merge is deployed to staging without a fresh live check.
-
-The legacy Netlify copy may still be discoverable publicly. Treat it only as rollback / historical fallback and do not use it as the editing source.
-
-## Next website action
-
-The major remaining release action is **Cloudflare production deployment + live verification of current `main`**. Do not redesign or add more website features merely to avoid that cutover step.
-
-After production is genuinely live, the next useful work is operational rather than another redesign:
-
-1. verify Search Console / sitemap indexing for `awakeningeden.org`
-2. verify the Work With Us and Work With Benjy lead pathways
-3. keep adding real case-study proof as it exists
-4. connect outreach, content and the new Village Sanctuary business plan to the existing pages
-5. keep future website changes incremental and evidence-led
-
-## Working protocol
-
-Before substantial future edits:
-
-1. Read `AGENTS.md` and this handoff.
-2. Confirm current `main`, open PRs and recent CI before editing.
-3. Read the relevant locked design / content source.
-4. Make the smallest coherent change on an isolated branch.
-5. Keep HTML, CSS and runtime JS aligned.
-6. Run public-build and browser QA before merge.
-7. Inspect visual changes on desktop and mobile, not only test status.
-8. Merge only after green checks and human visual sanity review.
-9. Verify the live Cloudflare route after any production deployment.
-10. Update this handoff with exact commit, tests, live status and unresolved release gates.
+The older QA-tooling checkout is reference/history only. Do not overwrite the newer service pages with it. Keep unconfirmed orchard masters out of public builds. All archived status notes remain in [archive](archive/CURRENT_before_zoning_2026-10-16.md); newest owner decisions prevail.

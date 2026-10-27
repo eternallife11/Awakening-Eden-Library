@@ -3,8 +3,7 @@
 ## Identity and geometry
 
 - Preserve the Tree + Heart identity.
-- The exact twelve-fold Lotus of Life vector is the only approved sacred geometry.
-- No Seed of Life, Flower of Life, hexagonal lattice, generic rosette or generated approximation.
+- Sacred geometry follows the [23 October 2026 owner direction](design/SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md): any geometry approved by Benjy and Sofia may be used. The former exact-twelve-fold-only rule is removed; natural root-woven Lotus artwork is approved for the two homepage paintings.
 - Solar Tree–Heart–Lotus is the flagship threshold portal.
 - Rooted Human is the inner–outer / Heart portal.
 - Flowing Suns is the principal long-form chapter divider.

@@ -66,7 +66,7 @@ Preferred host architecture: **Cloudflare Workers with Static Assets**, preservi
 
 ## Visual locks
 
-- Exact twelve-fold Lotus of Life only.
+- Sacred geometries approved by Benjy and Sofia are welcome. Their [23 October 2026 direction](awakening-eden/design/SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md) supersedes the former exact-twelve-fold-only rule; preserve their chosen natural root-woven Lotus in the two homepage paintings.
 - Newest Design Bible + Illustration Bible override older assets.
 - Earthy Mediterranean palette; handcrafted watercolor/gouache/ink character.
 - Celtic/sacred woven tree language where appropriate.
@@ -83,7 +83,7 @@ Do not perform without explicit owner approval:
 - public pricing change;
 - deletion of Netlify fallback;
 - removal of rights/source protections;
-- replacement of exact Lotus geometry;
+- introduction of a sacred geometry the owners have not approved;
 - mass deletion of legacy assets without reference/rollback audit.
 
 ## Engineering improvements to phase in
