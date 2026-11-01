@@ -1070,3 +1070,11 @@
   .work-vnext .benjy-identity-art { max-width: 27rem; }
   .work-vnext .benjy-identity-art figcaption { padding: .65rem .8rem .8rem; font-size: .94rem; }
 }
+
+/* The approved phone crop includes a narrow strip of truncated desktop lettering.
+   Enlarge it within its frame so the painted tree stays whole and the stray
+   letters remain outside the visible area. The source image is unchanged. */
+@media (max-width: 44rem) {
+  .work-vnext .benjy-identity-art picture { overflow: hidden; }
+  .work-vnext .benjy-identity-art picture img { width: 120%; max-width: none; }
+}

@@ -20,22 +20,24 @@ Downloaded `Awakening_Eden_Ready_To_Launch_Handoff_Nov_2026.zip` contains ONLY t
 
 No generated substitute artwork was used. Preserved the existing Circle, founders artwork, favicon, portraits, service offers and prices. The owner's October 23 geometry decision supersedes the old exclusive twelve-fold statement in the downloaded package.
 
-## Still inaccessible / missing
+## Four consulting assets recovered in the later user-supplied ZIP
 
-The originating ChatGPT read returned no downloadable attachments. Its `sandbox:/mnt/data/Work_With_Benjy_Identity_Handoff.zip` link is not a local laptop file available to this session. Searches of accessible Downloads, Desktop, Documents and project files did not locate that ZIP, the Complete Website LinkedIn Explee launch ZIP, or the four required binaries:
+The initial search below was accurate for the earlier ZIP but is superseded: `Awakening_Eden_Complete_Website_LinkedIn_Explee_Launch_Kit_Nov2026.zip` was then supplied at an explicit Downloads path. It contains all four previously missing consulting images, the two unchanged homepage images, and design previews. The four files were extracted without alteration:
 
-- `assets/work-with-benjy/brand/work-with-benjy-painted-banner-1536.webp`
-- `assets/work-with-benjy/brand/work-with-benjy-painted-banner-960.webp`
-- `assets/work-with-benjy/brand/work-with-benjy-painted-emblem-mobile.webp`
-- `assets/work-with-benjy/brand/work-with-benjy-social-preview-1200x630.jpg`
+| File | SHA-256 |
+| --- | --- |
+| `assets/work-with-benjy/brand/work-with-benjy-painted-banner-1536.webp` | `e7aa9469552e81296554deb9162b8fcb90d7a8a6c747f185d6b72ea78f2040a9` |
+| `assets/work-with-benjy/brand/work-with-benjy-painted-banner-960.webp` | `07e1794560a540fc5b66d8b384f0b0e296cb7666b545448f545171c84d747ebb` |
+| `assets/work-with-benjy/brand/work-with-benjy-painted-emblem-mobile.webp` | `6e6e9dd6fbce07e6bea6e40ef8dadfc56d652ff6a0efd90df05eb9d0c350f2c1` |
+| `assets/work-with-benjy/brand/work-with-benjy-social-preview-1200x630.jpg` | `c65499a387006d2dc3888e83481b8f58447325f42a53def63a1c2431b963408a` |
 
-This is a bounded search, not proof no other copy exists elsewhere. Do not substitute the homepage painting or a regenerated illustration for these files.
+The originating chat's `sandbox:/mnt/data/Work_With_Benjy_Identity_Handoff.zip` itself remains inaccessible, but the complete ZIP supplies the exact named public files. All six release artwork paths now resolve in the local public build. The rendered mobile image needed a CSS-only crop to hide a narrow sliver of truncated desktop text. The selected source binary remains exact.
 
 ## Review and fixes
 
 The new homepage artwork loads uncropped at all four reviewed widths. Fixed an inherited `left: -8rem` rule that overrode the intended right placement of the Mama Tree watermark; explicitly reset left, bottom and aspect ratio and updated stylesheet cache version. The background remains static, faint, behind content and absent on mobile.
 
-Work with Benjy retains the real portrait and has the new consulting SEO title/description, visible service keywords, four honestly labelled portfolio cards, WhatsApp primary CTA and email-draft secondary path. Its identity banner and social image cannot be approved visually until the exact files arrive.
+Work with Benjy retains the real portrait and has the new consulting SEO title/description, visible service keywords, four honestly labelled portfolio cards, WhatsApp primary CTA and email-draft secondary path. The exact identity banner and social image are now present. Desktop and phone rendering were reviewed; a CSS-only crop hides the mobile image’s stray right-edge lettering.
 
 ## Verification
 
@@ -43,11 +45,12 @@ Work with Benjy retains the real portrait and has the new consulting SEO title/d
 - Zero-cost and visual-identity guards passed.
 - 13/13 enquiry-worker tests passed.
 - 12/12 focused desktop/mobile browser tests passed: enquiry draft, no POST submission, five service choices, navigation, redirects and expanded-page usability.
-- Additional rendered inspection at 360, 390, 768 and 1440 px: no horizontal overflow or JavaScript exceptions on home or consulting page. Homepage has no broken images. Consulting page reports the expected missing identity crop/banner.
+- Additional rendered inspection at 360, 390, 768 and 1440 px: no horizontal overflow or JavaScript exceptions on home or consulting page. Homepage has no broken images. Consulting page initially reported the missing crop/banner; after the complete ZIP was supplied, all image paths resolved at the same four widths.
 - Exact primary WhatsApp URL and prefilled message inspected; no message sent.
-- New `scripts/check-launch-artwork.mjs` fails with precisely the four missing files, including the social image. CI now executes this gate. A successful artifact build alone is not release approval.
-- Local evidence: `test-results/reconciliation/` contains full screenshots, readable homepage openings, portfolio screenshots and `results.json`. The corrected desktop opening is refreshed after the CSS fix.
-- No production merge or deployment performed. Do not describe this branch as ready to publish.
+- New `scripts/check-launch-artwork.mjs` initially identified the four missing files; it now passes with all six images in the public build. CI executes this gate. A successful artifact build alone is not release approval.
+- Final local verification after all six assets: production build, artwork gate, visual and zero-cost checks pass; 13 Worker checks pass; 12 focused desktop/phone browser checks pass. The harmonics test timed out in an attempted broad run and passed when rerun alone (1/1). The broad run was stopped after 20 passes because it is lengthy; do not report it as fully passed.
+- Local evidence: `test-results/reconciliation/` contains four-width page screenshots, close-up desktop/mobile identity views, portfolio views, and `results.json`. Final mobile crop: `identity-final-390.png`. All image URLs load, including the page-specific social image.
+- PR #43 remains a draft until the GitHub checks and final review are complete. No production merge or deployment was performed during this local pass.
 
 ## Make / Explee continuity
 
@@ -55,7 +58,6 @@ Recovered the local `outreach/Make_Explee_Hot_Leads_Free_Setup_Guide.md`. Preser
 
 ## Next steps
 
-1. Recover the four exact consulting identity/social files from the originating chat or their actual download location.
-2. Add them to PR #43 and pass the explicit artwork gate plus full release checks.
-3. Review complete desktop/mobile layouts and social image with Benjy/Sofia.
-4. Merge and deploy only after the final release approval; retain main `607e995` as the source rollback reference.
+1. Add the recovered four files to PR #43 and complete CI/release checks.
+2. Review the finished desktop/mobile layouts and social image with Benjy/Sofia.
+3. Merge and deploy only once the release checks and owner review are complete; retain main `607e995` as the source rollback reference.
