@@ -343,3 +343,33 @@ body.final-home-polish .home-circle-header { margin-top: clamp(2rem,4vw,3.2rem);
   body.final-home-polish .home-new-earth-art { border-radius:.7rem; }
   body.final-home-polish .home-new-earth-art figcaption { font-size:.74rem; padding:.45rem .7rem; }
 }
+
+
+/* Mama Tree right-side identity: a restrained, still layer from the selected New Earth artwork.
+   Uses the exact user-approved painting after assets are installed. Never overprints content. */
+@media (min-width: 68rem) {
+  body.final-home-polish .hero--welcome { position: relative; isolation: isolate; }
+  body.final-home-polish .hero--welcome::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: clamp(20rem, 37vw, 35rem);
+    width: min(29vw, 25rem);
+    height: min(75rem, 110vh);
+    pointer-events: none;
+    z-index: 0;
+    opacity: .105;
+    background-image: url("assets/hero/eden-new-earth-dotwork-sun-1536.webp");
+    background-size: auto 100%;
+    background-position: left center;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 17%, #000 72%, transparent 99%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 17%, #000 72%, transparent 99%);
+  }
+  body.final-home-polish .hero--welcome > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+/* On narrow screens the detailed artwork remains fully visible in its hero; the watermark stays off. */
