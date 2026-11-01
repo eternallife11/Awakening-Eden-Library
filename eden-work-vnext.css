@@ -1017,3 +1017,24 @@
 @media(max-width:48rem){
   .eden-showcase__capabilities span{font-size:.88rem}
 }
+
+
+/* Compact project proof strip · 1 November 2026. Scoped, no change to existing galleries. */
+.ae-project-portfolio{padding-block:clamp(2.5rem,5vw,4rem);background:#f4f1e7;color:#293b2d}
+.ae-project-portfolio .eyebrow{color:#586e50}
+.ae-project-portfolio h2{max-width:28ch;margin:.35rem 0 .65rem;font-family:"Cormorant Garamond",serif;font-size:clamp(2.15rem,4vw,3.45rem);line-height:1.04;color:#273f30}
+.ae-project-portfolio__intro{max-width:70ch;margin:0 0 1.6rem;font-size:1.08rem;line-height:1.65}
+.ae-project-portfolio__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.ae-project-portfolio__card{overflow:hidden;border-radius:17px;border:1px solid #d5d5c8;background:#fffdf7;box-shadow:0 5px 18px rgba(32,48,28,.07)}
+.ae-project-portfolio__card>a{display:block;overflow:hidden;aspect-ratio:5/4}
+.ae-project-portfolio__card img{display:block;width:100%;height:100%;object-fit:cover}
+.ae-project-portfolio__card:nth-child(n+2) img{object-fit:contain;background:#ebe8db}
+.ae-project-portfolio__copy{padding:1rem 1.05rem 1.2rem}
+.ae-project-portfolio__type{font-size:.75rem;font-weight:700;letter-spacing:.045em;color:#577157;text-transform:uppercase;margin:0 0 .42rem}
+.ae-project-portfolio__copy h3{font-family:"Cormorant Garamond",serif;font-size:1.65rem;line-height:1.1;color:#263f2e;margin:0 0 .5rem}
+.ae-project-portfolio__copy>p:not(.ae-project-portfolio__type){font-size:.95rem;line-height:1.5;margin:0 0 .85rem}
+.ae-project-portfolio__copy>a{display:inline-block;font-weight:700;color:#1e5138;text-decoration:underline;text-underline-offset:.2em}
+.ae-project-portfolio__copy>a:focus-visible,.ae-project-portfolio__card>a:focus-visible{outline:3px solid #9c5c2e;outline-offset:2px}
+.ae-project-portfolio__disclosure{max-width:84ch;margin:1rem 0 0;font-size:.84rem;line-height:1.5;color:#4d5b50}
+@media(max-width:70rem){.ae-project-portfolio__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:44rem){.ae-project-portfolio__grid{display:flex;overflow-x:auto;gap:.85rem;scroll-snap-type:x mandatory;scroll-padding-inline:.3rem;padding:.2rem .25rem .75rem;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}.ae-project-portfolio__card{flex:0 0 min(83vw,320px);scroll-snap-align:start}.ae-project-portfolio__intro{font-size:1rem}}
