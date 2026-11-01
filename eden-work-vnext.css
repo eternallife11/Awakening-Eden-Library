@@ -1038,3 +1038,35 @@
 .ae-project-portfolio__disclosure{max-width:84ch;margin:1rem 0 0;font-size:.84rem;line-height:1.5;color:#4d5b50}
 @media(max-width:70rem){.ae-project-portfolio__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:44rem){.ae-project-portfolio__grid{display:flex;overflow-x:auto;gap:.85rem;scroll-snap-type:x mandatory;scroll-padding-inline:.3rem;padding:.2rem .25rem .75rem;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}.ae-project-portfolio__card{flex:0 0 min(83vw,320px);scroll-snap-align:start}.ae-project-portfolio__intro{font-size:1rem}}
+
+
+/* Work with Benjy · premium painted identity immediately after the real-person hero. */
+.work-vnext .benjy-identity-section {
+  padding-block: clamp(1rem, 2.5vw, 2rem);
+  background: #f7f2e6;
+}
+.work-vnext .benjy-identity-art {
+  width: min(100%, 68rem);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(88, 104, 73, .20);
+  border-radius: clamp(.8rem, 2vw, 1.3rem);
+  background: #f8efd9;
+  box-shadow: 0 14px 36px rgba(39, 58, 41, .07);
+}
+.work-vnext .benjy-identity-art picture,
+.work-vnext .benjy-identity-art img { display: block; width: 100%; height: auto; }
+.work-vnext .benjy-identity-art figcaption {
+  padding: .75rem 1rem 1rem;
+  font-family: var(--display, Georgia, serif);
+  color: #355337;
+  text-align: center;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+@media (max-width:44rem) {
+  .work-vnext .benjy-identity-section { padding-block: .9rem; }
+  .work-vnext .benjy-identity-art { max-width: 27rem; }
+  .work-vnext .benjy-identity-art figcaption { padding: .65rem .8rem .8rem; font-size: .94rem; }
+}
