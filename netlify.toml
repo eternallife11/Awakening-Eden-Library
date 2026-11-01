@@ -1,4 +1,4 @@
 [build]
-  publish = "."
-  # Cloudflare Workers is canonical. Preserve the last Netlify deploy as a rollback snapshot.
-  ignore = "exit 0"
+  # Cloudflare Workers serves the official site. This tiny Netlify artifact
+  # preserves old links by redirecting visitors to the matching official path.
+  publish = "docs/awakening-eden/netlify-redirect"
