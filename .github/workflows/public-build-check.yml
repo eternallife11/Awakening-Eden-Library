@@ -41,6 +41,10 @@ jobs:
             echo 'A public page still points to the retired Netlify address.' >&2
             exit 1
           fi
+          if grep -a -R -n --include='*.pdf' 'awakening-eden-library.netlify.app' dist; then
+            echo 'A public PDF still points to the retired Netlify address.' >&2
+            exit 1
+          fi
 
       - name: Verify required public files
         shell: bash
