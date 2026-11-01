@@ -58,6 +58,41 @@
     if (referrer) referrer.value = document.referrer || "Direct / unknown";
     if (landingPage) landingPage.value = window.location.href;
 
+    // Email-draft delivery on the free static website. The Cloudflare worker
+    // exists in this repo, but a full Turnstile + API submission flow has not
+    // been configured/verified for production. Never suggest this form has
+    // successfully sent a message merely because the submit button was clicked.
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const fields = [
+        ["Name", "name"],
+        ["Email", "email"],
+        ["WhatsApp / phone", "whatsapp-or-phone"],
+        ["Preferred reply", "preferred-contact"],
+        ["Location", "location"],
+        ["Property type", "property-type"],
+        ["Approximate size", "property-size"],
+        ["Primary challenge", "primary-challenge"],
+        ["Service interest", "service-interest"],
+        ["Start timeframe", "start-timeframe"],
+        ["Vision and challenge", "vision-and-challenge"],
+        ["Photos / map / video", "photos-or-map-link"]
+      ];
+      const values = fields.map(([label, name]) => {
+        const input = form.elements.namedItem(name);
+        return label + ": " + (input && "value" in input ? input.value.trim() : "");
+      });
+      const subject = "Awakening Eden land project enquiry";
+      const body = "Hi Benjy! I'd love to tell you about my project.\\n\\n"
+        + values.join("\\n\\n") + "\\n\\nThank you!";
+      const url = "mailto:regenerativeeden@gmail.com?subject="
+        + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      const hint = document.getElementById("land-enquiry-delivery-hint");
+      if (hint) hint.textContent = "Your email app should open with the message ready. Please press Send there. If nothing opens, contact regenerativeeden@gmail.com or use WhatsApp.";
+      window.location.href = url;
+    });
+
     const serviceSelect = form.elements.namedItem("service-interest");
     document.querySelectorAll("[data-enquiry-service]").forEach((link) => {
       link.addEventListener("click", () => {
