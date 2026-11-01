@@ -320,3 +320,26 @@ body.final-home-polish .doorway-first-step a { color:var(--home-forest); font-we
  body.final-home-polish .harmonics-toggle__label small { font-size:.52rem; }
  body.final-home-polish .menu-button { padding:.5rem; min-width:44px; min-height:44px; }
 }
+
+
+/* Homepage New Earth vision, user-selected 1 Nov 2026 image; native 1536x768, no crop. */
+body.final-home-polish .home-new-earth-art {
+  width: min(100%,74rem);
+  margin: clamp(1.3rem,3.2vw,2.4rem) auto 0;
+  border: 1px solid rgb(89 105 73 / .23);
+  border-radius: clamp(.9rem,2.3vw,1.5rem);
+  overflow: hidden;
+  background: #eae5d5;
+  box-shadow: 0 14px 42px rgb(44 61 45 / .12);
+}
+body.final-home-polish .home-new-earth-art picture,
+body.final-home-polish .home-new-earth-art img { display:block; width:100%; height:auto; }
+body.final-home-polish .home-new-earth-art figcaption {
+  padding:.6rem 1rem; color:#516049; background:#f7f1e2;
+  font-size:.81rem; line-height:1.45;
+}
+body.final-home-polish .home-circle-header { margin-top: clamp(2rem,4vw,3.2rem); width: min(100%,51rem); }
+@media(max-width:38rem){
+  body.final-home-polish .home-new-earth-art { border-radius:.7rem; }
+  body.final-home-polish .home-new-earth-art figcaption { font-size:.74rem; padding:.45rem .7rem; }
+}
