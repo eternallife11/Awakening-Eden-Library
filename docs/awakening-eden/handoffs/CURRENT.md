@@ -4,6 +4,13 @@ Updated 23 October 2026. This status supersedes the historical commit/push notes
 
 ## Resume here
 
+**1 November reconciliation:** PR #43 (`agent/nov-2026-launch-final-integration`, inspected at `558a610`) is the latest integration candidate. Current approved main is `607e995`, the PR #38 merge; laptop finishing commit `e0da6fb` is an ancestor of both. The pinned laptop chat is “AW.E Page final touches laptop sofia”. Its actual final turn records PR #38 merge and production deployment, superseding stale sidebar summaries and older notes below.
+
+Recovered the exact two New Earth homepage WebPs from the downloaded November launch ZIP; hashes and QA are in [RECONCILIATION_2026-11-01.md](RECONCILIATION_2026-11-01.md). Corrected inherited left positioning on the Mama Tree background so it sits on the right. Four Work with Benjy identity/social binaries remain unavailable. Added an explicit CI artwork gate; **release remains blocked and unmerged**. No production deployment or outreach activation occurred in this reconciliation.
+
+Next: recover the four exact files, upload to their specified paths, rerun the artwork gate and full browser/CI checks, review complete desktop/mobile previews, then obtain final release approval. Preserve the older QA checkout's uncommitted work; do not reset it.
+
+
 **25 October release preparation:** Owner approved the painted Circle and requested completion, live-site verification and painted doorways after the founders introduction. Confirmed awakeningeden.org was still serving the 8 October release (Cloudflare `062a7b82-abae-4bbb-a65f-c223a1f7407e`), while this finishing branch contained all newer approved work. Fresh remote main is an ancestor of this branch; the PR38 source is also an ancestor, so no newer remote edits need overwriting. Moved the existing four painted doorways immediately after the founders photo, full intro and quote. Corrected the hero preload to the selected painted-tree-home asset. ORIGIN now points readers to the replay/ongoing movement after its 17 October event (organiser checked 25 October).
 
 **Enquiry release finding:** Production Worker secret list is empty and the existing Turnstile widget only allows the isolated staging hostname. The production build therefore retains the three-step questionnaire as an explicit email-draft flow, with editable source answers, full copyable draft and an Open email draft link. Nothing is sent automatically; no thank-you redirect or false success claim. Existing WhatsApp contact remains. Server delivery can be enabled with `ENQUIRY_SERVER_DELIVERY=verified` only after hostname, sender, secrets and actual delivery have been verified. No email was sent during testing. Staging/CI retains the tested Worker path.
