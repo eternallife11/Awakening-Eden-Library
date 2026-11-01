@@ -297,7 +297,7 @@ async function prepareCloudflareEnquiryForm() {
 }
 
 function withOrganizationLogo(html) {
-  const logoOrigin = PUBLIC_ORIGIN || LEGACY_ORIGIN;
+  const logoOrigin = 'https://awakeningeden.org';
   const logoUrl = `${logoOrigin}/${PREMIUM_LOGO}`;
   const scriptPattern = /<script([^>]*)type=["']application\/ld\+json["']([^>]*)>([\s\S]*?)<\/script>/gi;
 
