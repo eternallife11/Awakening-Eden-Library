@@ -200,7 +200,7 @@ test('Work with Benjy makes the practical offer and evidence clear', async ({ pa
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Bring your project vision to life.' })).toBeVisible();
-  await expect(page.locator('.vnext-hero')).toContainText('biopools and water filtration with qualified specialists');
+  await expect(page.locator('.vnext-hero')).toContainText('water, soil, trees, access, habitat and the people who care for it');
   await expect(page.locator('#selected-work .eden-project-story')).toHaveCount(4);
   await expect(page.locator('#selected-work .eden-project-story').first()).toContainText('Moinhos');
   await expect(page.locator('#how-i-can-help')).toContainText('Paths, fences & beautiful outdoor spaces');

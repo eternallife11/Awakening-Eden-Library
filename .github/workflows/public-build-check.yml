@@ -30,6 +30,22 @@ jobs:
           ENQUIRY_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
         run: node scripts/build-cloudflare.mjs
 
+      - name: Verify November launch artwork is complete
+        run: node scripts/check-launch-artwork.mjs
+
+      - name: Verify official-domain page links
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -R -n --include='*.html' 'awakening-eden-library.netlify.app' dist; then
+            echo 'A public page still points to the retired Netlify address.' >&2
+            exit 1
+          fi
+          if grep -a -R -n --include='*.pdf' 'awakening-eden-library.netlify.app' dist; then
+            echo 'A public PDF still points to the retired Netlify address.' >&2
+            exit 1
+          fi
+
       - name: Verify required public files
         shell: bash
         run: |

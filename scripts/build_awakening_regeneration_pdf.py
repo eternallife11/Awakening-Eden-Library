@@ -2,6 +2,7 @@
 """Build the printable Awakening Regeneration Living Guide."""
 
 from pathlib import Path
+import os
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
@@ -39,10 +40,11 @@ PAPER = colors.HexColor("#F6F0E2")
 LIGHT = colors.HexColor("#FFFDF7")
 LINEN = colors.HexColor("#E8DEC8")
 
-pdfmetrics.registerFont(TTFont("AESans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
-pdfmetrics.registerFont(TTFont("AESansBold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"))
-pdfmetrics.registerFont(TTFont("AESerif", "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"))
-pdfmetrics.registerFont(TTFont("AESerifItalic", "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"))
+FONT_ROOT = Path(os.environ.get("AE_PDF_FONT_DIR", "/usr/share/fonts/truetype/dejavu"))
+pdfmetrics.registerFont(TTFont("AESans", str(FONT_ROOT / "DejaVuSans.ttf")))
+pdfmetrics.registerFont(TTFont("AESansBold", str(FONT_ROOT / "DejaVuSans-Bold.ttf")))
+pdfmetrics.registerFont(TTFont("AESerif", str(FONT_ROOT / "DejaVuSerif.ttf")))
+pdfmetrics.registerFont(TTFont("AESerifItalic", str(FONT_ROOT / "DejaVuSerif.ttf")))
 pdfmetrics.registerFontFamily("AESans", normal="AESans", bold="AESansBold")
 pdfmetrics.registerFontFamily("AESerif", normal="AESerif", italic="AESerifItalic")
 
@@ -372,7 +374,7 @@ story.extend([
     p("May your inner garden flourish. May the gardens you create nourish others. May we leave this Earth, together, a little more alive than we found it.", "GuideSubtitle"),
     Spacer(1, 6 * mm),
     p("CONTINUE THE JOURNEY", "GuideEyebrow"),
-    p("Read Guide 02 - Thriving in These Times<br/><link href='https://awakening-eden-library.netlify.app/Thriving-in-These-Times.html' color='#A7654F'>awakening-eden-library.netlify.app/Thriving-in-These-Times.html</link>", "BodyAE"),
+    p("Read Guide 02 - Thriving in These Times<br/><link href='https://awakeningeden.org/thriving-in-these-times' color='#A7654F'>awakeningeden.org/thriving-in-these-times</link>", "BodyAE"),
     p("Join our WhatsApp circle<br/><link href='https://chat.whatsapp.com/EOQFxcKGSeaAFIvCWNHeDk?s=cl&amp;p=a&amp;ilr=0' color='#A7654F'>Awakening Eden community</link>", "BodyAE"),
     p("Gift back to keep the library growing<br/><link href='https://www.paypal.me/BSauber' color='#A7654F'>paypal.me/BSauber</link>", "BodyAE"),
     Spacer(1, 5 * mm),

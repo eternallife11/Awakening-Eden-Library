@@ -35,6 +35,7 @@ const primaryChallenges = new Set([
 
 const serviceInterests = new Set([
   'Land + Project Clarity Session — €111',
+  'Property Vision + Concept Plan',
   'Focused Regenerative Roadmap',
   'Whole-Property Regenerative Design + Action Plan',
   'Implementation + project guidance',

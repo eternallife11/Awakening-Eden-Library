@@ -46,7 +46,7 @@ const excludedDirs = new Set([
 ]);
 
 const excludedNames = new Set([
-  '.gitignore', '.DS_Store',
+  '.gitignore', '.gitattributes', '.DS_Store',
   'netlify.toml', 'wrangler.toml', 'wrangler.jsonc', 'wrangler.production.jsonc',
   'package.json', 'package-lock.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'yarn.lock',
   'playwright.config.mjs',
@@ -297,7 +297,7 @@ async function prepareCloudflareEnquiryForm() {
 }
 
 function withOrganizationLogo(html) {
-  const logoOrigin = PUBLIC_ORIGIN || LEGACY_ORIGIN;
+  const logoOrigin = 'https://awakeningeden.org';
   const logoUrl = `${logoOrigin}/${PREMIUM_LOGO}`;
   const scriptPattern = /<script([^>]*)type=["']application\/ld\+json["']([^>]*)>([\s\S]*?)<\/script>/gi;
 
