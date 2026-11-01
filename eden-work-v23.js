@@ -84,8 +84,8 @@
         return label + ": " + (input && "value" in input ? input.value.trim() : "");
       });
       const subject = "Awakening Eden land project enquiry";
-      const body = "Hi Benjy! I'd love to tell you about my project.\\n\\n"
-        + values.join("\\n\\n") + "\\n\\nThank you!";
+      const body = "Hi Benjy! I'd love to tell you about my project.\n\n"
+        + values.join("\n\n") + "\n\nThank you!";
       const url = "mailto:regenerativeeden@gmail.com?subject="
         + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       const hint = document.getElementById("land-enquiry-delivery-hint");
