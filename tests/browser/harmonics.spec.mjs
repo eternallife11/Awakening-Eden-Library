@@ -97,7 +97,8 @@ test('rendered sound has the selected frequency and becomes silent when paused',
     return { hz:best*context.sampleRate/analyser.fftSize, db:bins[best] };
   });
   await expect.poll(async () => Math.abs((await peak()).hz-432)).toBeLessThan(2);
-  await expect.poll(async () => (await peak()).db).toBeGreaterThan(-65);
+  // The owner-selected mix places the tone well below the nature recording.
+  await expect.poll(async () => (await peak()).db).toBeGreaterThan(-85);
   await page.locator('.harmonics-card > summary').click();
   await page.locator('.harmonics-mix summary').click();
   await page.locator('#harmonics-frequency').selectOption('528');
