@@ -798,3 +798,4 @@ h3 { margin-bottom: 0.85rem; font-size: clamp(2rem, 3.5vw, 3.4rem); line-height:
   margin: clamp(2rem, 6vw, 4.5rem) auto;
   aspect-ratio: 1600 / 533;
 }
+.primary-nav a .nav-description{display:block;font-size:.75rem;font-weight:400;line-height:1.4;max-width:13rem;color:#526249}.primary-nav a{white-space:normal}

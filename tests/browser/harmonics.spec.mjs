@@ -15,17 +15,18 @@ test('harmonics play, pause, volume and remembered quiet remain under visitor co
   page.on('pageerror', error=>errors.push(error.message));
   await page.goto('/');
   const header=page.locator('header [data-harmonics-toggle]');
-  const player=page.locator('.harmonics-card [data-harmonics-toggle]');
+  const player=header;
   await expect(header).toHaveAttribute('aria-pressed','false');
   expect(await page.evaluate(()=>window.edenAudio.contexts.length)).toBe(0);
   await header.click();
   await expect(header).toHaveAttribute('aria-pressed','true');
   await expect(player).toHaveAttribute('aria-pressed','true');
   await expect.poll(()=>page.evaluate(()=>window.edenAudio.voices.slice(0,2).map(voice=>voice.frequency.value))).toEqual([432,216]);
+  await page.locator('.harmonics-card > summary').click();
   await page.locator('.harmonics-mix summary').click();
   for (const choice of ['rain', 'ocean', 'forest', 'off']) {
     await page.locator('#harmonics-nature').selectOption(choice);
-    await expect(page.locator('[data-harmonics-status]')).toContainText(choice === 'off' ? 'Nature off' : choice === 'forest' ? 'Rainforest' : choice === 'rain' ? 'Gentle rain' : 'Ocean waves');
+    await expect(page.locator('[data-harmonics-status]')).toContainText(choice === 'off' ? 'Nature off' : choice === 'forest' ? 'Tropical birds & kookaburra' : choice === 'rain' ? 'Gentle rain' : 'Ocean waves');
   }
   await page.locator('#harmonics-nature-volume').fill('20');
   await page.locator('#harmonics-instruments').uncheck();
@@ -49,6 +50,7 @@ test('harmonics play, pause, volume and remembered quiet remain under visitor co
   await expect(page.locator('#harmonics-nature')).toHaveValue('off');
   await expect(page.locator('#harmonics-nature-volume')).toHaveValue('20');
   await expect(page.locator('#harmonics-instruments')).not.toBeChecked();
+  await page.locator('.harmonics-card > summary').click();
   await page.locator('.harmonics-mix summary').click();
   expect(await page.evaluate(()=>window.edenAudio.contexts.length)).toBe(0);
   const layout=await page.evaluate(()=>({width:innerWidth,page:document.documentElement.scrollWidth}));
@@ -83,7 +85,7 @@ test('rendered sound has the selected frequency and becomes silent when paused',
     };
   });
   await page.goto('/');
-  const player=page.locator('.harmonics-card [data-harmonics-toggle]');
+  const player=page.locator('header [data-harmonics-toggle]');
   await player.click();
   await expect(player).toHaveAttribute('aria-pressed','true');
   const peak = () => page.evaluate(() => {
@@ -95,7 +97,9 @@ test('rendered sound has the selected frequency and becomes silent when paused',
     return { hz:best*context.sampleRate/analyser.fftSize, db:bins[best] };
   });
   await expect.poll(async () => Math.abs((await peak()).hz-432)).toBeLessThan(2);
-  await expect.poll(async () => (await peak()).db).toBeGreaterThan(-65);
+  // The owner-selected mix places the tone well below the nature recording.
+  await expect.poll(async () => (await peak()).db).toBeGreaterThan(-85);
+  await page.locator('.harmonics-card > summary').click();
   await page.locator('.harmonics-mix summary').click();
   await page.locator('#harmonics-frequency').selectOption('528');
   await expect.poll(async () => Math.abs((await peak()).hz-528)).toBeLessThan(2);
