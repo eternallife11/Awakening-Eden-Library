@@ -21,7 +21,7 @@ test('harmonics play, pause, volume and remembered quiet remain under visitor co
   await header.click();
   await expect(header).toHaveAttribute('aria-pressed','true');
   await expect(player).toHaveAttribute('aria-pressed','true');
-  await expect.poll(()=>page.evaluate(()=>window.edenAudio.voices.slice(0,2).map(voice=>voice.frequency.value))).toEqual([432,216]);
+  await expect.poll(()=>page.evaluate(()=>window.edenAudio.voices.some(voice=>voice.frequency.value === 432))).toBe(true);
   await page.locator('.harmonics-card > summary').click();
   await page.locator('.harmonics-mix summary').click();
   for (const choice of ['rain', 'ocean', 'forest', 'off']) {
@@ -31,8 +31,10 @@ test('harmonics play, pause, volume and remembered quiet remain under visitor co
   await page.locator('#harmonics-nature-volume').fill('20');
   await page.locator('#harmonics-instruments').uncheck();
   await page.locator('#harmonics-frequency').selectOption('528');
-  await expect.poll(()=>page.evaluate(()=>window.edenAudio.voices[0].frequency.value)).toBeCloseTo(528, 2);
+  await page.locator('#harmonics-instruments').check();
+  await expect.poll(()=>page.evaluate(()=>window.edenAudio.voices.some(voice=>voice.frequency.value === 528))).toBe(true);
   await expect(page.locator('[data-harmonics-status]')).toContainText('528 Hz');
+  await page.locator('#harmonics-instruments').uncheck();
   expect(await page.evaluate(()=>localStorage.getItem('eden-harmonics-enabled'))).toBe('on');
   await page.locator('#harmonics-volume').fill('12');
   expect(await page.evaluate(()=>localStorage.getItem('eden-harmonics-volume'))).toBe('12');
@@ -61,10 +63,10 @@ test('harmonics play, pause, volume and remembered quiet remain under visitor co
   await page.locator('header').screenshot({path:`test-results/review/harmonics-header-${testInfo.project.name}.png`});
 });
 
-test('rendered sound has the selected frequency and becomes silent when paused', async ({page}) => {
+test('bowl notes have the selected fundamental and instruments-off leaves no continuous tone', async ({page}) => {
   await page.addInitScript(() => {
     localStorage.setItem('eden-harmonics-nature', 'off');
-    localStorage.setItem('eden-harmonics-instruments', 'off');
+    localStorage.setItem('eden-harmonics-instruments', 'on');
     localStorage.setItem('eden-harmonics-frequency', '432');
     const Original = window.AudioContext;
     window.edenSignal = {};
@@ -97,12 +99,14 @@ test('rendered sound has the selected frequency and becomes silent when paused',
     return { hz:best*context.sampleRate/analyser.fftSize, db:bins[best] };
   });
   await expect.poll(async () => Math.abs((await peak()).hz-432)).toBeLessThan(2);
-  // The owner-selected mix places the tone well below the nature recording.
+  // A softly struck note is present, without a sustained drone underneath it.
   await expect.poll(async () => (await peak()).db).toBeGreaterThan(-85);
   await page.locator('.harmonics-card > summary').click();
   await page.locator('.harmonics-mix summary').click();
   await page.locator('#harmonics-frequency').selectOption('528');
   await expect.poll(async () => Math.abs((await peak()).hz-528)).toBeLessThan(2);
+  await page.locator('#harmonics-instruments').uncheck();
+  await expect.poll(async () => (await peak()).db).toBeLessThan(-90);
   await player.click();
   await expect.poll(()=>page.evaluate(()=>window.edenSignal.context.state)).toBe('suspended');
   expect(await page.evaluate(()=>window.edenSignal.master.gain.value)).toBeLessThan(0.002);

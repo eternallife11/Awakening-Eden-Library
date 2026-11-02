@@ -1,0 +1,28 @@
+.design-journey { background: #eeeadd; scroll-margin-top: 7rem; padding-block: 4rem; }
+.design-journey h2 { max-width: none; font-size: clamp(2.4rem, 4.2vw, 3.8rem); }
+.design-journey__intro .lead { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+.design-journey__intro { max-width: 48rem; margin-bottom: 2rem; }
+.design-journey__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: start; }
+.design-journey__card { min-width: 0; background: #faf7ee; border: 1px solid #c5c9b5; border-radius: 1.2rem; overflow: hidden; }
+.design-journey__copy { padding: 1.5rem; }
+.design-journey__copy h3 { margin: .25rem 0 1rem; }
+.design-journey__copy p { margin-bottom: 1rem; }
+.design-journey figure { margin: 0; }
+.design-journey__image { display: block; padding: 1rem; background: #e7e5d6; }
+.design-journey__image img { display: block; width: 100%; height: 28rem; object-fit: contain; }
+.design-journey figcaption { padding: .8rem 1.5rem; font-size: 1rem; line-height: 1.5; }
+.design-journey__steps { padding-left: 1.25rem; line-height: 1.6; }
+.design-journey__steps li { padding: .3rem 0 .3rem .3rem; }
+.design-journey details { margin-top: 1rem; border-top: 1px solid #c5c9b5; padding-top: 1rem; }
+.design-journey summary { cursor: pointer; font-weight: 700; padding: .5rem 0; }
+.design-journey__details { display: grid; gap: 1rem; padding-top: 1rem; }
+.design-journey__details img { width: 100%; height: auto; }
+.design-journey__details figcaption { padding: .5rem 0; }
+.design-journey__note { font-size: 1rem; line-height: 1.6; }
+.design-journey__cta { margin-top: 2rem; }
+.design-journey a:focus-visible, .design-journey summary:focus-visible { outline: 3px solid #7c532d; outline-offset: 5px; }
+@media (max-width: 48rem) {
+  .design-journey__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .design-journey__image img { height: auto; max-height: 29rem; }
+  .design-journey__copy { padding: 1.2rem; }
+}
