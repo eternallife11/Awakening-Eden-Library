@@ -1,5 +1,24 @@
 # Awakening Eden — current handoff
 
+## 2 November 2026 · Follow-on cross-page mission and Living Library pass (same draft PR #46)
+
+- Updated `index.html` to succinctly connect a regenerative systems lens (interbeing, Indigenous knowledge, syntropic thinking, ecological restoration, regeneration of rivers and food forests) to the existing homepage mission. Cultural teachings are distinguished by origin; no generic rainbow-serpent/universal Aluna claims.
+- Updated both `about.html` and the actual navigation's `journey.html` About Us entry with a concise whole-systems / industrial-to-regenerative explanation and a manifesto link. Updated `village-vision.html` to separate the wider landscape-regeneration mission from the specific future village project.
+- Expanded `awakening_eden_regenerative_film_resource_library_updated.html` with **21 checked official-source pathways** grouped as Indigenous voices, unity/media platforms and regenerative landscape organizations. Includes Kogi Aluna, Kogi Knowledge talk, Nia Tero Promise/library, Hawaiian KUA, Australian Museum Barkandji Ngatyi, World UNITY Week 2026 archive, ORIGIN replay, Films For Action, WaterBear, Water Is Love direct free film, Regen Waves, Scave World Stewards, Seeds of Syntropy / Water Stories, Syntropic World (leadership, distinct from agriculture), Commonland, Ecosystem Restoration Communities, Navdanya and more. Existing films and teachers retained.
+- `regenerate-together.html` distinguishes distinct Aboriginal Rainbow Serpent creation traditions from Kogi/Hawaiian cultural knowledge.
+- **Verification:** 18/18 static assertions passed (cross-page navigation, unique route/sitemap, core films and networks, respectful distinctions). GitHub Actions public-build check is in progress for `9cfa91ca...` at the time of this note; it may be superseded by this documentation-only commit. **Desktop/mobile preview, route/link clickthrough and human approval are still required before merge/deploy.**
+- **Next:** (1) confirm latest CI; (2) desktop/phone visual review of index, About/Our Journey, Village Vision, Library and manifesto; (3) reconcile any QA issues; (4) Benjy/Sofia explicitly approve; (5) merge/deploy and check live paths. Do not add unrelated page redesign or claim these external movements as partners.
+
+## 2 November 2026 · Regenerate Together manifesto (draft PR #46)
+
+- **Source branch:** `agent/regenerate-together-manifesto-home-nov02` based on `main` at `4fe44b3bf24a6b76dfd512ae6fff29fea5c1cd6a` (latest PR #45 merge at task start).
+- **Review:** https://github.com/eternallife11/Awakening-Eden-Library/pull/46 · **draft**, not merged or published.
+- **Changed:** `index.html` (short regenerative homepage invitation and main CTA), `regenerate-together.html` (full manifesto/mission), `eden-regenerate-together.css` (self-contained page styling), `_redirects` (clean route), `sitemap.xml`.
+- **Preserved:** existing approved hero, botanical artwork, real photography, navigation pathways, prices, consultation offers, Library content and village vision. No new or implied external partnerships.
+- **Verified so far:** 9 source consistency assertions pass (mission anchor, working href syntax, route, sitemap, photo reference, responsive CSS). Production build, CI, desktop/mobile visual previews and live-link testing are **not yet confirmed**.
+- **Next:** (1) run GitHub Actions public-build/visual/zero-cost checks; (2) review route, links, typography, accessibility and photos on mobile + desktop; (3) Benjy/Sofia approve; (4) merge and publish only with explicit approval; (5) smoke-test https://awakeningeden.org/regenerate-together after deployment. Keep current public site intact until then.
+
+
 Updated 1 November 2026. The first Resume here entries supersede historical notes below.
 
 ## Resume here
