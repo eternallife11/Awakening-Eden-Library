@@ -1,5 +1,15 @@
 # Awakening Eden — current handoff
 
+## 2 November 2026 · Regenerate Together manifesto (draft PR #46)
+
+- **Source branch:** `agent/regenerate-together-manifesto-home-nov02` based on `main` at `4fe44b3bf24a6b76dfd512ae6fff29fea5c1cd6a` (latest PR #45 merge at task start).
+- **Review:** https://github.com/eternallife11/Awakening-Eden-Library/pull/46 · **draft**, not merged or published.
+- **Changed:** `index.html` (short regenerative homepage invitation and main CTA), `regenerate-together.html` (full manifesto/mission), `eden-regenerate-together.css` (self-contained page styling), `_redirects` (clean route), `sitemap.xml`.
+- **Preserved:** existing approved hero, botanical artwork, real photography, navigation pathways, prices, consultation offers, Library content and village vision. No new or implied external partnerships.
+- **Verified so far:** 9 source consistency assertions pass (mission anchor, working href syntax, route, sitemap, photo reference, responsive CSS). Production build, CI, desktop/mobile visual previews and live-link testing are **not yet confirmed**.
+- **Next:** (1) run GitHub Actions public-build/visual/zero-cost checks; (2) review route, links, typography, accessibility and photos on mobile + desktop; (3) Benjy/Sofia approve; (4) merge and publish only with explicit approval; (5) smoke-test https://awakeningeden.org/regenerate-together after deployment. Keep current public site intact until then.
+
+
 Updated 1 November 2026. The first Resume here entries supersede historical notes below.
 
 ## Resume here
