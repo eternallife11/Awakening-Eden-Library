@@ -33,14 +33,45 @@
   const droneVoices = [];
   const natureBuses = {};
   const transientVoices = new Set();
+  const fieldSources = new Set();
+  let recordingsPromise, tropicalBirds, kookaburra;
+  let nextForest = 0, nextKookaburra = 0;
   let wanted = false;
   let requestId = 0;
   let pauseTimer, scheduler;
-  let nextBowl = 0, nextChime = 0, nextBird = 0;
+  let nextBowl = 0, nextChime = 0;
   const root = () => Number(frequency?.value || 432);
   const scene = () => nature?.value || 'off';
   const instrumentsOn = () => instruments?.checked ?? false;
-  const sceneNames = { forest: 'Rainforest', rain: 'Gentle rain', ocean: 'Ocean waves', off: 'Nature off' };
+  const sceneNames = { forest: 'Tropical birds & kookaburra', rain: 'Gentle rain', ocean: 'Ocean waves', off: 'Nature off' };
+
+  function loadRecordings() {
+    if (recordingsPromise) return recordingsPromise;
+    recordingsPromise = Promise.allSettled([
+      ['tropical-birds-dubminister.mp3', buffer => { tropicalBirds = buffer; }],
+      ['kookaburra-soundofsong.mp3', buffer => { kookaburra = buffer; }]
+    ].map(async ([file, assign]) => {
+      const response = await fetch(`assets/audio/lemuria/${file}`);
+      if (!response.ok) throw new Error('Recording unavailable');
+      assign(await context.decodeAudioData(await response.arrayBuffer()));
+    }));
+    return recordingsPromise;
+  }
+
+  function fieldRecording(buffer, start, level, overlap = 1) {
+    const source = context.createBufferSource();
+    source.buffer = buffer;
+    const envelope = gain(0, natureBuses.forest);
+    envelope.gain.setValueAtTime(0, start);
+    envelope.gain.linearRampToValueAtTime(level, start + overlap);
+    envelope.gain.setValueAtTime(level, start + buffer.duration - overlap);
+    envelope.gain.linearRampToValueAtTime(0, start + buffer.duration);
+    source.connect(envelope);
+    source.onended = () => { transientVoices.delete(source); fieldSources.delete(source); source.disconnect(); envelope.disconnect(); };
+    transientVoices.add(source);
+    fieldSources.add(source);
+    source.start(start);
+  }
 
   function update(message) {
     const playing = Boolean(wanted && context?.state === 'running');
@@ -107,7 +138,7 @@
     if (!context) return;
     const natureLevel = Number(natureVolume?.value ?? 35) / 100;
     for (const [name, bus] of Object.entries(natureBuses)) fade(bus, scene() === name ? natureLevel : 0);
-    fade(instrumentBus, instrumentsOn() ? 0.65 : 0, 0.3);
+    fade(instrumentBus, instrumentsOn() ? 0.3 : 0, 0.3);
     if (toneRoot !== root()) {
       toneRoot = root();
       droneVoices.forEach((voice, i) => {
@@ -124,7 +155,7 @@
     toneRoot = root();
     // Unmodulated sine oscillators: exactly 432 or 528 Hz, with one quiet
     // octave below. This is not a pitch-shifted music track.
-    [0.115, 0.07].forEach((level, i) => {
+    [0.012, 0.007].forEach((level, i) => {
       const oscillator = context.createOscillator();
       oscillator.type = 'sine';
       oscillator.frequency.setValueAtTime(toneRoot / (i === 0 ? 1 : 2), context.currentTime);
@@ -134,8 +165,6 @@
     });
     noiseBuffer = makeNoise();
     for (const name of ['forest', 'rain', 'ocean']) natureBuses[name] = gain(0, master);
-    noiseLayer(natureBuses.forest, 'lowpass', 1400, 0.40, 0.065, 0.08);
-    noiseLayer(natureBuses.forest, 'bandpass', 4300, 0.08, 0.12, 0.02);
     noiseLayer(natureBuses.rain, 'lowpass', 7600, 0.68, 0.07, 0.06);
     noiseLayer(natureBuses.rain, 'bandpass', 1500, 0.17, 0.11, 0.035);
     noiseLayer(natureBuses.ocean, 'lowpass', 1700, 0.43, 0.082, 0.34);
@@ -187,19 +216,23 @@
       voice(pitch * 2, start, 2.8, 0.008, instrumentBus, pan);
       nextChime = start + 5 + Math.random() * 6;
     }
-    if (scene() === 'forest' && nextBird < now + 1.2) {
-      const start = Math.max(now + 0.08, nextBird);
-      const pitch = 1500 + Math.random() * 1400;
-      const pan = Math.random() * 1.2 - 0.6;
-      for (let i = 0; i < 3; i++) voice(pitch * (1 + i * 0.04), start + i * 0.19, 0.22, 0.021, natureBuses.forest, pan, pitch * 0.78);
-      nextBird = start + 3 + Math.random() * 5;
+    if (scene() === 'forest' && tropicalBirds && nextForest < now + 1.2) {
+      const start = Math.max(now + 0.08, nextForest);
+      fieldRecording(tropicalBirds, start, 0.8, 3);
+      nextForest = start + tropicalBirds.duration - 3;
+    }
+    if (scene() === 'forest' && kookaburra && nextKookaburra < now + 1.2) {
+      const start = Math.max(now + 8, nextKookaburra);
+      fieldRecording(kookaburra, start, 0.16, 0.5);
+      nextKookaburra = start + 75 + Math.random() * 75;
     }
   }
   function startScheduler() {
     if (scheduler) return;
     nextBowl = context.currentTime + 0.4;
     nextChime = context.currentTime + 3;
-    nextBird = context.currentTime + 1;
+    nextForest = context.currentTime;
+    nextKookaburra = context.currentTime + 25;
     schedule();
     scheduler = setInterval(schedule, 600);
   }
@@ -214,6 +247,10 @@
     clearTimeout(pauseTimer);
     if (!next) {
       stopScheduler();
+      for (const source of fieldSources) {
+        try { source.stop(context.currentTime + 0.35); } catch { /* Already ended. */ }
+      }
+      fieldSources.clear();
       if (context?.state === 'running') {
         fade(master, 0, 0.08);
         pauseTimer = setTimeout(() => {
@@ -229,11 +266,12 @@
       prepare();
       update('Starting softly…');
       await context.resume();
+      await loadRecordings();
       if (currentRequest !== requestId || !wanted) return;
       applyMix();
       fade(master, Number(volume.value) / 100, 0.7);
       startScheduler();
-      update();
+      update(scene() === 'forest' && !tropicalBirds ? 'Bird recording unavailable · gentle instruments and tones are playing.' : undefined);
     } catch {
       wanted = false;
       stopScheduler();
@@ -261,7 +299,7 @@
       if (wanted) update();
     });
   });
-  document.querySelectorAll('a.hero-soundtrack, a[href*="open.spotify.com"]').forEach(link => link.addEventListener('click', () => play(false)));
+  document.querySelectorAll('a.hero-soundtrack, a[href*="open.spotify.com"], a[data-lemuria-external]').forEach(link => link.addEventListener('click', () => play(false)));
   window.addEventListener('pagehide', () => { wanted = false; stopScheduler(); if (context?.state === 'running') context.suspend().catch(() => {}); });
   window.addEventListener('pageshow', event => { if (event.persisted) update('Welcome back · press Play to continue the soundscape.'); });
   // Remember the mix, never permission to autoplay on a later visit.
