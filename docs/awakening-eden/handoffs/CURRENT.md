@@ -1,5 +1,17 @@
 # Awakening Eden — current handoff
 
+## 2 November 2026 · Local portfolio + Lemuria review candidate (not pushed or published)
+
+- **Implementation commit:** `89a164f` on `codex/manifesto-integration-preview-2026-11-02`, checkout `/private/tmp/eden-home-polish-nov2`.
+- **PR coordination:** connector rechecked PR #46: open, draft, unmerged, head `85290d748a7c24bea955e905e5882fc8c2057921`. This local commit builds on that reconciled draft and has not been pushed. No production merge/deployment took place. Current live source remains the PR #45 release.
+- Added an image-first **How a design takes shape** section to Work with Benjy: **Fiona’s Oasis · near Pedrógão Grande**, a human-led/AI-assisted design journey, plus Adam’s future orchard/water concept and two optional detail boards. Existing services, pricing, projects, enquiry and approved homepage imagery retained.
+- Owner confirmed public use of all supplied client material **without street names and map coordinates**. Chosen Adam boards omit N236; new web derivatives verified free of EXIF/XMP. The seven-panel Fiona overview is available, but the **seven separate originals have not been retrieved or inspected**. Need originals and aerial basemap licence/attribution check before publication, or omit aerial imagery. HEIC inspected: Benjy in a vegetable garden, not an Adam site photo; not misassigned.
+- Lemuria removes the continuous drone, uses sparse finite 432/528 Hz bowl notes and soft handpan-style synthesis, substantially quiets rain, and preserves real tropical/kookaburra recordings. UI accurately labels synthesized instruments. Real magpie, bowl and handpan source links are recorded, not yet downloaded/integrated.
+- **Verification:** build, visual-lock and zero-cost guards passed; 12 audio tests across desktop/mobile Chromium, Firefox and WebKit; 2 desktop/mobile portfolio tests including image links, existing enquiry CTA, overflow, console and Axe; desktop/mobile screenshots reviewed.
+- **Preview:** http://127.0.0.1:8792/work-with-benjy#design-journey · homepage sound: http://127.0.0.1:8792/ . Exported review images: task visualizations directory `eden-design-journey-desktop.png`, `eden-design-journey-mobile.png`; full section captures in `/private/tmp/eden-design-previews/`.
+- **Next:** review local visuals/listen; supply Fiona’s original seven-image pack and check aerial rights; optional real instrument/bird downloads; reconcile/push to the current PR head only after review; remain draft until explicit merge/publication approval.
+- [Full source, permission, audio and QA record](../proposals/DESIGN_JOURNEYS_AND_LEMURIA_DRAFT_2026-11-02.md).
+
 ## 2 November 2026 · Follow-on cross-page mission and Living Library pass (same draft PR #46)
 
 - Updated `index.html` to succinctly connect a regenerative systems lens (interbeing, Indigenous knowledge, syntropic thinking, ecological restoration, regeneration of rivers and food forests) to the existing homepage mission. Cultural teachings are distinguished by origin; no generic rainbow-serpent/universal Aluna claims.
