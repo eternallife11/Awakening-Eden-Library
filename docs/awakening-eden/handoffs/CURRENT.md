@@ -1,5 +1,15 @@
 # Awakening Eden — current handoff
 
+## 3 November 2026 · Owner-authorized combined draft push
+
+- Owner requested “just push it all” and a fun, poetic, sacred/silly Benjy-and-Sofia voice connecting mission, manifesto, regenerative interbeing, syntropy, oneness, current field practice and the village vision. This authorizes pushing the combined work to existing draft PR #46; no production merge/deployment was requested in this turn.
+- **Copy implementation:** `bb5870c`. Homepage opening, founders introduction and concise “mission, in a coco-nutshell”; manifesto opening and grounded definitions; About/Journey introduction; village mission connection. The New Earth is described as already practised through actual care and land work, with the physical village still seeking land and aligned partners. Existing photographs, painted doors, offers and cultural distinctions are preserved.
+- Includes prior local implementation `89a164f` (Fiona/Adam concepts and gentler Lemuria) and handoff `ef1f53d`, built on reconciled PR head `85290d7`. Remote main/PR were refreshed and unchanged at the start of this pass; normal fast-forward push only.
+- **Validation:** build 444 files / 121.7 MiB; visual-lock, zero-cost and six-artwork guards passed; 9 focused desktop/mobile checks passed across homepage, portfolio, future pathways, unique imagery and all internal HTML links. The stale homepage copy assertion was updated to the new approved direction, then both homepage checks passed. The unchanged audio implementation already passed 12 checks across desktop/mobile Chromium, Firefox and WebKit in the prior pass. Manifesto inspected at desktop/390px phone width, with no horizontal overflow.
+- **Previews:** http://127.0.0.1:8792/ · http://127.0.0.1:8792/regenerate-together · http://127.0.0.1:8792/work-with-benjy#design-journey . Manifesto desktop/mobile captures saved in the task visualizations directory.
+- **Before production:** Fiona’s seven separate originals remain unavailable; the supplied overview is used accurately. Confirm aerial basemap attribution/licence or omit that panel when originals arrive. Additional real magpie/bowl/handpan downloads are optional future audio work, not part of the current sound bundle. Keep PR draft until final publication review.
+- Push/remote CI outcome must be verified after this handoff commit; do not equate a source push with production deployment.
+
 ## 2 November 2026 · Local portfolio + Lemuria review candidate (not pushed or published)
 
 - **Implementation commit:** `89a164f` on `codex/manifesto-integration-preview-2026-11-02`, checkout `/private/tmp/eden-home-polish-nov2`.
