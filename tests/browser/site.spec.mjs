@@ -128,7 +128,7 @@ test('homepage exposes the final opening journey and approved visual choices', a
   await page.goto('/', { waitUntil: 'domcontentloaded' });
 
   await expect(page.getByRole('heading', { level: 1, name: 'Awakening Eden' })).toBeVisible();
-  await expect(page.locator('.hero-promise')).toHaveText('Practical wisdom for people and places ready to grow more life.');
+  await expect(page.locator('.hero-promise')).toHaveText('Practical regeneration. Living wisdom. A more beautiful world, already taking root.');
   await expect(page.locator('.home-opening .hero-library')).toContainText('A regenerative home & living library for the New Earth.');
   await expect(page.locator('.home-circle-header picture img')).toHaveAttribute('src', /circle-of-belonging-painted-tree-home-oct23-1448\.webp/);
   await expect(page.locator('img[src$="circle-of-belonging-painted-tree-home-oct23-1448.webp"]')).toHaveCount(1);
