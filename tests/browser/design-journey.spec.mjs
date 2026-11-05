@@ -8,15 +8,17 @@ test('design journeys load once, enlarge and lead to the existing enquiry', asyn
   const section = page.locator('#design-journey');
   await expect(section.getByRole('heading', {name: 'How a design takes shape.'})).toBeVisible();
   await expect(section.getByText('Fiona’s Oasis · near Pedrógão Grande')).toBeVisible();
-  await section.locator('summary').click();
+  await section.getByText('Explore the water strategy & orchard detail', {exact: true}).click();
+  await section.getByText('Follow the design story', {exact: true}).click();
+  await expect(section.getByText('This is an initial concept.', {exact: false})).toBeVisible();
   const images = section.locator('img');
-  await expect(images).toHaveCount(3);
+  await expect(images).toHaveCount(4);
   for (const img of await images.all()) {
     await expect.poll(() => img.evaluate(node => node.complete && node.naturalWidth > 0)).toBe(true);
   }
   const sources = await images.evaluateAll(nodes => nodes.map(node => node.src));
   expect(new Set(sources).size).toBe(sources.length);
-  await section.locator('summary').click();
+  await section.getByText('Explore the water strategy & orchard detail', {exact: true}).click();
   await section.screenshot({path: testInfo.outputPath('design-journeys.png')});
   const withheld = await page.request.get('/assets/work-with-benjy/design-journeys/fionas-oasis-journey-overview.webp');
   expect(withheld.status()).toBe(404);
