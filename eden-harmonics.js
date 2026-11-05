@@ -29,10 +29,9 @@
   restore(instruments, 'eden-harmonics-instruments');
 
   let context, master, instrumentBus, noiseBuffer;
-  let toneRoot = 0;
-  const droneVoices = [];
   const natureBuses = {};
   const transientVoices = new Set();
+  const instrumentVoices = new Set();
   const fieldSources = new Set();
   let recordingsPromise, tropicalBirds, kookaburra;
   let nextForest = 0, nextKookaburra = 0;
@@ -87,7 +86,7 @@
       if (label) label.textContent = playing ? 'Pause soundscape' : 'Play soundscape';
     });
     status.textContent = message || (playing
-      ? `Playing · ${root()} Hz · ${sceneNames[scene()]}${instrumentsOn() ? ' · bowls & chimes' : ''}`
+      ? `Playing · ${instrumentsOn() ? `${root()} Hz bowls · ` : ''}${sceneNames[scene()]}${instrumentsOn() ? ' · soft handpan-style notes' : ''}`
       : 'Sound paused · press Play whenever you like.');
   }
   function gain(value, destination) {
@@ -137,36 +136,18 @@
   function applyMix() {
     if (!context) return;
     const natureLevel = Number(natureVolume?.value ?? 35) / 100;
-    for (const [name, bus] of Object.entries(natureBuses)) fade(bus, scene() === name ? natureLevel : 0);
+    for (const [name, bus] of Object.entries(natureBuses)) fade(bus, scene() === name ? natureLevel * (name === 'rain' ? 0.22 : 1) : 0);
     fade(instrumentBus, instrumentsOn() ? 0.3 : 0, 0.3);
-    if (toneRoot !== root()) {
-      toneRoot = root();
-      droneVoices.forEach((voice, i) => {
-        voice.frequency.cancelScheduledValues(context.currentTime);
-        voice.frequency.setTargetAtTime(toneRoot / (i === 0 ? 1 : 2), context.currentTime, 0.15);
-      });
-    }
   }
   function prepare() {
     if (context) return;
     context = new AudioEngine();
     master = gain(0, context.destination);
     instrumentBus = gain(0, master);
-    toneRoot = root();
-    // Unmodulated sine oscillators: exactly 432 or 528 Hz, with one quiet
-    // octave below. This is not a pitch-shifted music track.
-    [0.012, 0.007].forEach((level, i) => {
-      const oscillator = context.createOscillator();
-      oscillator.type = 'sine';
-      oscillator.frequency.setValueAtTime(toneRoot / (i === 0 ? 1 : 2), context.currentTime);
-      oscillator.connect(gain(level, master));
-      oscillator.start();
-      droneVoices.push(oscillator);
-    });
     noiseBuffer = makeNoise();
     for (const name of ['forest', 'rain', 'ocean']) natureBuses[name] = gain(0, master);
-    noiseLayer(natureBuses.rain, 'lowpass', 7600, 0.68, 0.07, 0.06);
-    noiseLayer(natureBuses.rain, 'bandpass', 1500, 0.17, 0.11, 0.035);
+    noiseLayer(natureBuses.rain, 'lowpass', 3200, 0.35, 0.04, 0.02);
+    noiseLayer(natureBuses.rain, 'bandpass', 1200, 0.04, 0.07, 0.008);
     noiseLayer(natureBuses.ocean, 'lowpass', 1700, 0.43, 0.082, 0.34);
     noiseLayer(natureBuses.ocean, 'bandpass', 3100, 0.10, 0.083, 0.085);
     applyMix();
@@ -187,12 +168,14 @@
     oscillator.frequency.setValueAtTime(hertz, start);
     if (endPitch !== hertz) oscillator.frequency.exponentialRampToValueAtTime(endPitch, start + duration * 0.7);
     envelope.gain.setValueAtTime(0, start);
-    envelope.gain.linearRampToValueAtTime(level, start + Math.min(0.08, duration * 0.1));
+    envelope.gain.linearRampToValueAtTime(level, start + Math.min(0.22, duration * 0.1));
     envelope.gain.exponentialRampToValueAtTime(0.00001, start + duration);
     oscillator.connect(envelope).connect(panner).connect(destination);
     transientVoices.add(oscillator);
+    instrumentVoices.add(oscillator);
     oscillator.onended = () => {
       transientVoices.delete(oscillator);
+      instrumentVoices.delete(oscillator);
       oscillator.disconnect(); envelope.disconnect(); panner.disconnect();
     };
     oscillator.start(start);
@@ -204,17 +187,18 @@
     if (instrumentsOn() && nextBowl < now + 1.2) {
       const start = Math.max(now + 0.08, nextBowl);
       // Bowl-like strike with integer partials and individual decays.
-      [1, 2, 3, 4].forEach((partial, i) => voice(root() / 2 * partial, start, 13 - i * 2.2, 0.11 / (i + 1) ** 1.8, instrumentBus, -0.12));
-      nextBowl = start + 15 + Math.random() * 7;
+      [1, 2, 3, 4].forEach((partial, i) => voice(root() * partial, start, 10 - i * 1.8, 0.065 / (i + 1) ** 2, instrumentBus, -0.12));
+      nextBowl = start + 24 + Math.random() * 14;
     }
     if (instrumentsOn() && nextChime < now + 1.2) {
       const start = Math.max(now + 0.08, nextChime);
       const ratio = [1, 1.125, 1.25, 1.5, 5 / 3, 2][Math.floor(Math.random() * 6)];
-      const pitch = root() * ratio;
+      const pitch = root() / 2 * ratio;
       const pan = Math.random() * 0.6 - 0.3;
-      voice(pitch, start, 5, 0.045, instrumentBus, pan);
-      voice(pitch * 2, start, 2.8, 0.008, instrumentBus, pan);
-      nextChime = start + 5 + Math.random() * 6;
+      voice(pitch, start, 3.8, 0.04, instrumentBus, pan);
+      voice(pitch * 2, start, 2.2, 0.009, instrumentBus, pan);
+      voice(pitch * 3, start, 1.2, 0.002, instrumentBus, pan);
+      nextChime = start + 10 + Math.random() * 12;
     }
     if (scene() === 'forest' && tropicalBirds && nextForest < now + 1.2) {
       const start = Math.max(now + 0.08, nextForest);
@@ -295,6 +279,14 @@
     if (!control) return;
     control.addEventListener(control.type === 'range' ? 'input' : 'change', () => {
       save(`eden-harmonics-${key}`, control.type === 'checkbox' ? (control.checked ? 'on' : 'off') : control.value);
+      if (context && (control === frequency || control === instruments)) {
+        if (control === frequency) {
+          for (const voice of instrumentVoices) { try { voice.stop(context.currentTime + 0.03); } catch { /* Already ended. */ } }
+          instrumentVoices.clear();
+        }
+        nextBowl = context.currentTime + 0.4;
+        nextChime = context.currentTime + 3;
+      }
       applyMix();
       if (wanted) update();
     });

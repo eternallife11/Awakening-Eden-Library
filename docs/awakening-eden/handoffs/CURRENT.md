@@ -1,5 +1,58 @@
 # Awakening Eden — current handoff
 
+## 5 November 2026 · Owner-approved publication in progress
+
+- Owner explicitly requested all ready work go live for introductions to Regen Waves and other potential collaborators. This supersedes the earlier draft-only release restriction; do not imply Regen Waves is an established partner or send outreach messages.
+- Remote main and PR #46 were refreshed: main `4fe44b3`, draft head `3371eaf`; no overlapping remote updates. Production rollback is Cloudflare `e8a58123-eeaf-410b-8da2-ee513ee4aecc` (2 November PR #45 release).
+- Previous PR CI: public artifact check passed; browser QA had 230 passes and 6 failures. Fixed three causes: Mac-specific screenshot output path, service-count tests scoped too broadly after adding the portfolio CTA, and ambiguous duplicate CTA locator. Corrected six tests passed on desktop/mobile. All 13 enquiry Worker unit tests pass.
+- Fiona’s newly supplied finished “From First Sketch to Living Landscape” WebP board is included once, byte-for-byte, with the owner’s story and an expandable detail. Owner confirmed public-use permission without streets/coordinates. Display name remains Fiona’s Oasis · near Pedrógão Grande. The superseded overview remains excluded. Seven separate originals were not retrieved; no claim otherwise. Adam’s three identifier-free boards remain; alternatives A/B containing N236 remain out. Source originals were not edited.
+- Partners hero now includes restoration networks, educators, land stewards and community projects; existing property referral pathway and prices are preserved. Added a direct collaboration anchor and made the location signal consistent with the rest of the site.
+- Regenerate Together now has explicit large-image social metadata. Included its route in full sitewide and accessibility checks.
+- Expert guidance consulted: W3C audio-control guidance (opt-in sound and independent pause/volume), NN/g homepage purpose/task clarity (https://www.nngroup.com/articles/top-ten-guidelines-for-homepage-usability/), Google Core Web Vitals targets (https://developers.google.com/search/docs/appearance/core-web-vitals). No outside expert has personally reviewed this site.
+- Current source still contains the gentler Lemuria implementation: no continuous drone, sparse finite 432/528 Hz bowl fundamentals, handpan-style synthesis, quieter rain and real tropical/kookaburra recordings. Additional real instrument/magpie recordings remain optional future work, not integrated.
+- Next: finish fresh CI and targeted partner/manifesto preview; build production with visitor-controlled email-draft enquiry flow; mark PR ready and merge exact passing head; deploy through the existing Cloudflare configuration; verify the actual public routes, served JS and desktop/phone navigation; record final release/rollback evidence. No production publication is claimed by this note.
+
+## 3 November 2026 · Owner-authorized combined draft push
+
+- Owner requested “just push it all” and a fun, poetic, sacred/silly Benjy-and-Sofia voice connecting mission, manifesto, regenerative interbeing, syntropy, oneness, current field practice and the village vision. This authorizes pushing the combined work to existing draft PR #46; no production merge/deployment was requested in this turn.
+- **Copy implementation:** `bb5870c`. Homepage opening, founders introduction and concise “mission, in a coco-nutshell”; manifesto opening and grounded definitions; About/Journey introduction; village mission connection. The New Earth is described as already practised through actual care and land work, with the physical village still seeking land and aligned partners. Existing photographs, painted doors, offers and cultural distinctions are preserved.
+- Includes prior local implementation `89a164f` (Fiona/Adam concepts and gentler Lemuria) and handoff `ef1f53d`, built on reconciled PR head `85290d7`. Remote main/PR were refreshed and unchanged at the start of this pass; normal fast-forward push only.
+- **Validation:** build 444 files / 121.7 MiB; visual-lock, zero-cost and six-artwork guards passed; 9 focused desktop/mobile checks passed across homepage, portfolio, future pathways, unique imagery and all internal HTML links. The stale homepage copy assertion was updated to the new approved direction, then both homepage checks passed. The unchanged audio implementation already passed 12 checks across desktop/mobile Chromium, Firefox and WebKit in the prior pass. Manifesto inspected at desktop/390px phone width, with no horizontal overflow.
+- **Previews:** http://127.0.0.1:8792/ · http://127.0.0.1:8792/regenerate-together · http://127.0.0.1:8792/work-with-benjy#design-journey . Manifesto desktop/mobile captures saved in the task visualizations directory.
+- **Before production:** Fiona’s seven separate originals remain unavailable; the supplied overview is used accurately. Confirm aerial basemap attribution/licence or omit that panel when originals arrive. Additional real magpie/bowl/handpan downloads are optional future audio work, not part of the current sound bundle. Keep PR draft until final publication review.
+- Push/remote CI outcome must be verified after this handoff commit; do not equate a source push with production deployment.
+
+## 2 November 2026 · Local portfolio + Lemuria review candidate (not pushed or published)
+
+- **Implementation commit:** `89a164f` on `codex/manifesto-integration-preview-2026-11-02`, checkout `/private/tmp/eden-home-polish-nov2`.
+- **PR coordination:** connector rechecked PR #46: open, draft, unmerged, head `85290d748a7c24bea955e905e5882fc8c2057921`. This local commit builds on that reconciled draft and has not been pushed. No production merge/deployment took place. Current live source remains the PR #45 release.
+- Added an image-first **How a design takes shape** section to Work with Benjy: **Fiona’s Oasis · near Pedrógão Grande**, a human-led/AI-assisted design journey, plus Adam’s future orchard/water concept and two optional detail boards. Existing services, pricing, projects, enquiry and approved homepage imagery retained.
+- Owner confirmed public use of all supplied client material **without street names and map coordinates**. Chosen Adam boards omit N236; new web derivatives verified free of EXIF/XMP. The seven-panel Fiona overview is available, but the **seven separate originals have not been retrieved or inspected**. Need originals and aerial basemap licence/attribution check before publication, or omit aerial imagery. HEIC inspected: Benjy in a vegetable garden, not an Adam site photo; not misassigned.
+- Lemuria removes the continuous drone, uses sparse finite 432/528 Hz bowl notes and soft handpan-style synthesis, substantially quiets rain, and preserves real tropical/kookaburra recordings. UI accurately labels synthesized instruments. Real magpie, bowl and handpan source links are recorded, not yet downloaded/integrated.
+- **Verification:** build, visual-lock and zero-cost guards passed; 12 audio tests across desktop/mobile Chromium, Firefox and WebKit; 2 desktop/mobile portfolio tests including image links, existing enquiry CTA, overflow, console and Axe; desktop/mobile screenshots reviewed.
+- **Preview:** http://127.0.0.1:8792/work-with-benjy#design-journey · homepage sound: http://127.0.0.1:8792/ . Exported review images: task visualizations directory `eden-design-journey-desktop.png`, `eden-design-journey-mobile.png`; full section captures in `/private/tmp/eden-design-previews/`.
+- **Next:** review local visuals/listen; supply Fiona’s original seven-image pack and check aerial rights; optional real instrument/bird downloads; reconcile/push to the current PR head only after review; remain draft until explicit merge/publication approval.
+- [Full source, permission, audio and QA record](../proposals/DESIGN_JOURNEYS_AND_LEMURIA_DRAFT_2026-11-02.md).
+
+## 2 November 2026 · Follow-on cross-page mission and Living Library pass (same draft PR #46)
+
+- Updated `index.html` to succinctly connect a regenerative systems lens (interbeing, Indigenous knowledge, syntropic thinking, ecological restoration, regeneration of rivers and food forests) to the existing homepage mission. Cultural teachings are distinguished by origin; no generic rainbow-serpent/universal Aluna claims.
+- Updated both `about.html` and the actual navigation's `journey.html` About Us entry with a concise whole-systems / industrial-to-regenerative explanation and a manifesto link. Updated `village-vision.html` to separate the wider landscape-regeneration mission from the specific future village project.
+- Expanded `awakening_eden_regenerative_film_resource_library_updated.html` with **21 checked official-source pathways** grouped as Indigenous voices, unity/media platforms and regenerative landscape organizations. Includes Kogi Aluna, Kogi Knowledge talk, Nia Tero Promise/library, Hawaiian KUA, Australian Museum Barkandji Ngatyi, World UNITY Week 2026 archive, ORIGIN replay, Films For Action, WaterBear, Water Is Love direct free film, Regen Waves, Scave World Stewards, Seeds of Syntropy / Water Stories, Syntropic World (leadership, distinct from agriculture), Commonland, Ecosystem Restoration Communities, Navdanya and more. Existing films and teachers retained.
+- `regenerate-together.html` distinguishes distinct Aboriginal Rainbow Serpent creation traditions from Kogi/Hawaiian cultural knowledge.
+- **Verification:** 18/18 static assertions passed (cross-page navigation, unique route/sitemap, core films and networks, respectful distinctions). GitHub Actions public-build check is in progress for `9cfa91ca...` at the time of this note; it may be superseded by this documentation-only commit. **Desktop/mobile preview, route/link clickthrough and human approval are still required before merge/deploy.**
+- **Next:** (1) confirm latest CI; (2) desktop/phone visual review of index, About/Our Journey, Village Vision, Library and manifesto; (3) reconcile any QA issues; (4) Benjy/Sofia explicitly approve; (5) merge/deploy and check live paths. Do not add unrelated page redesign or claim these external movements as partners.
+
+## 2 November 2026 · Regenerate Together manifesto (draft PR #46)
+
+- **Source branch:** `agent/regenerate-together-manifesto-home-nov02` based on `main` at `4fe44b3bf24a6b76dfd512ae6fff29fea5c1cd6a` (latest PR #45 merge at task start).
+- **Review:** https://github.com/eternallife11/Awakening-Eden-Library/pull/46 · **draft**, not merged or published.
+- **Changed:** `index.html` (short regenerative homepage invitation and main CTA), `regenerate-together.html` (full manifesto/mission), `eden-regenerate-together.css` (self-contained page styling), `_redirects` (clean route), `sitemap.xml`.
+- **Preserved:** existing approved hero, botanical artwork, real photography, navigation pathways, prices, consultation offers, Library content and village vision. No new or implied external partnerships.
+- **Verified so far:** 9 source consistency assertions pass (mission anchor, working href syntax, route, sitemap, photo reference, responsive CSS). Production build, CI, desktop/mobile visual previews and live-link testing are **not yet confirmed**.
+- **Next:** (1) run GitHub Actions public-build/visual/zero-cost checks; (2) review route, links, typography, accessibility and photos on mobile + desktop; (3) Benjy/Sofia approve; (4) merge and publish only with explicit approval; (5) smoke-test https://awakeningeden.org/regenerate-together after deployment. Keep current public site intact until then.
+
+
 Updated 1 November 2026. The first Resume here entries supersede historical notes below.
 
 ## Resume here

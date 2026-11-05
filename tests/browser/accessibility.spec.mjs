@@ -7,7 +7,8 @@ const importantRoutes = [
   ['living-library', '/living-library'],
   ['work-with-us', '/work-with-us'],
   ['work-with-benjy', '/work-with-benjy'],
-  ['partners', '/partners']
+  ['partners', '/partners'],
+  ['regenerate-together', '/regenerate-together']
 ];
 
 test.beforeEach(async ({ page }) => {

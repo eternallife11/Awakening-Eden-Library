@@ -1,0 +1,46 @@
+/* Awakening Eden · Regenerate Together · single-purpose editorial page */
+.rt-page{background:#f9f6ed;color:#26352b;font-family:"Source Sans 3",sans-serif}
+.rt-page *, .rt-page *::before,.rt-page *::after{box-sizing:border-box}
+.rt-container{max-width:1000px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+.rt-narrow{max-width:800px;margin:0 auto}
+.rt-header{background:#fffaf0;border-bottom:1px solid #d4d8c9}
+.rt-header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:12px;padding-bottom:12px}
+.rt-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#244733}
+.rt-brand strong{display:block;font-size:1.15rem;line-height:1.1}
+.rt-brand small{font-size:.78rem;color:#637b68}
+.rt-nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rt-nav a{color:#355a47;text-decoration:none;font-weight:650}
+.rt-nav a:hover,.rt-footer a:hover{text-decoration:underline}
+.rt-hero{padding:clamp(50px,8vw,94px) 0 46px;background:#f5f0df}
+.rt-eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;font-weight:750;color:#776849}
+.rt-hero h1,.rt-section h2,.rt-finale h2{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.06;color:#254633}
+.rt-hero h1{font-size:clamp(3rem,7vw,5.5rem);margin:10px 0}
+.rt-subtitle{font-size:clamp(1.2rem,2.7vw,1.65rem);line-height:1.3;color:#456350}
+.rt-hero p,.rt-section p,.rt-finale p{line-height:1.75}
+.rt-hero-lead{font-size:1.18rem;max-width:740px}
+.rt-hero-figure{margin:32px 0 0}
+.rt-hero-figure img{width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:17px;display:block}
+.rt-hero-figure figcaption{font-size:.9rem;color:#667264;margin-top:8px}
+.rt-section{padding:clamp(40px,6vw,68px) 0;border-top:1px solid #dce0d3}
+.rt-section:nth-of-type(odd){background:#fffdf7}
+.rt-section h2{font-size:clamp(2.2rem,4vw,3.3rem);margin:0 0 16px}
+.rt-section p{font-size:1.07rem;margin:0 0 16px}
+.rt-section strong,.rt-finale strong{color:#254633}
+.rt-quote{margin:28px 0;padding:12px 22px;border-left:4px solid #a8874f;font-family:"Cormorant Garamond",serif;font-weight:600;color:#2b503a;font-size:clamp(1.55rem,3vw,2.2rem);line-height:1.3}
+.rt-verse{font-size:1.15rem;line-height:1.85;color:#355443}
+.rt-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.rt-link{display:inline-flex;align-items:center;justify-content:center;min-height:46px;text-align:center;padding:10px 20px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid #2b513a;background:#285139;color:white}
+.rt-link:hover{background:#163d2a;color:#fff}
+.rt-link--light{background:transparent;color:#285139}
+.rt-link--light:hover{background:#e6eddf;color:#1b3825}
+.rt-finale{padding:58px 0;background:#234431;color:#f9f5e9;text-align:center}
+.rt-finale h2,.rt-finale p,.rt-finale strong{color:inherit}
+.rt-finale h2{font-size:clamp(2.3rem,4.4vw,3.6rem)}
+.rt-finale .rt-link{background:#f9f5e9;color:#244431;border-color:#f9f5e9}
+.rt-finale .rt-link--light{background:transparent;color:#fff;border-color:#e9e9d5}
+.rt-footer{padding:24px 0;background:#f0ecde;color:#38513c;text-align:center;font-size:.92rem}
+.rt-footer a{color:inherit}
+.rt-skip{position:absolute;left:-9999px}
+.rt-skip:focus{position:fixed;left:12px;top:12px;z-index:100;padding:12px;background:#fff;color:#243f2d}
+@media(max-width:650px){.rt-header-inner{align-items:flex-start;flex-direction:column}.rt-nav{gap:8px 15px}.rt-actions .rt-link{width:100%}.rt-hero{padding-top:42px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
