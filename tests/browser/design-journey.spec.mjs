@@ -7,7 +7,7 @@ test('design journeys load once, enlarge and lead to the existing enquiry', asyn
   await page.goto('/work-with-benjy#design-journey');
   const section = page.locator('#design-journey');
   await expect(section.getByRole('heading', {name: 'How a design takes shape.'})).toBeVisible();
-  await expect(section.getByText('Fiona’s Oasis · regenerative garden concept')).toBeVisible();
+  await expect(section.getByText('Fiona’s Oasis · a garden vision taking shape')).toBeVisible();
   await section.getByText('Explore the water strategy & orchard detail', {exact: true}).click();
   await section.getByText('Follow the design story', {exact: true}).click();
   await expect(section.getByText('This is an initial concept.', {exact: false})).toBeVisible();

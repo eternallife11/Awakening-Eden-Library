@@ -1,11 +1,12 @@
 # Awakening Eden — current handoff
 
-## 5 November · Finished Fiona design, anonymized
+## 5 November · Owner-selected Fiona web design journey, anonymized
 
-- Owner requested the finished Fiona design without address. Found the complete source pack in Downloads and selected `03_Concept_Map.png`; the story remains intact. Public title and caption use Fiona’s Oasis, with no locality in the card heading.
-- Image generation produced the replacement title. Only that title strip is used; the rest of the finished source diagram and every annotation remain from the original PNG to prevent unintended redraw changes. The publication derivative has no EXIF/XMP. Source originals remain untouched.
-- Both superseded Fiona overview/process boards are excluded from the public artifact, including direct image URLs. The new lead is the complete landscape-format final concept, not the process collage.
-- Publication follow-up to merged PR #46; verify desktop/mobile image display and existing enquiry CTA, public exclusions and visual guards before release.
+- Newest owner direction chooses the complete web design-journey board, including sketches, questions and final map, instead of the standalone concept. Public name is Fiona’s Oasis; no locality in the card heading.
+- The owner-supplied WebP remains the source. Image generation supplied three privacy patches: the two handwritten property names are removed and the large map title becomes Fiona’s Oasis. Only those small patches are composited; all remaining source imagery, annotations and text remain original. Source files remain unchanged. Public WebP has no EXIF/XMP.
+- Superseded process/overview and standalone boards stay out of the public build. One lead journey board appears with no duplicated final map. Story and enquiry CTA retained.
+- Owner explicitly rejects “real in the field.” Removed the phrase from the manifesto subtitle and social description; replacement: “Rooted in love. Growing in connection. Regenerating life together.” Portfolio intro/caption now warmer, clear and welcoming.
+- Follow-up to PR #46. Check desktop/mobile portfolio, public asset exclusions and manifesto copy before publishing.
 
 ## 5 November 2026 · Owner-approved publication in progress
 
