@@ -1,5 +1,16 @@
 # Awakening Eden — current handoff
 
+## 5 November 2026 · Published release and verification stopping point
+
+- Owner-approved PR #46 merged as `a0f1469fd974f428f420d0619c0c8d116fadaa74`. Deployed from that exact source to `https://awakeningeden.org/`, Cloudflare version `70638b75-be28-4e25-9d13-b5eac8f3cb76`. Rollback: `e8a58123-eeaf-410b-8da2-ee513ee4aecc`.
+- Final candidate `49af187` passed full CI: 242 browser checks, 13 Worker tests, public build safety and performance-report collection. Focused Fiona desktop/mobile checks passed; the finished supplied WebP is used once, unchanged, with full story in an expandable detail and accurately labelled preliminary design status. Adam alternatives carrying N236 stay out of public assets.
+- Actual live homepage DOM verified after deployment: new mission/intro, navigation, founders, painted doorways and Lemuria controls. Final live playback/route screenshot checks could not complete: the browser became unresponsive. Independent HTTP check first returned 403; a later header check was not executed because automatic approval review routing timed out (not an unsafe-action finding). Web search returned stale indexed pages and was not accepted as live verification.
+- Sound implementation is included: no continuous drone, quiet rain, finite 432/528 Hz bowl fundamentals, handpan-style synthesis, real tropical/kookaburra recordings. Additional recorded magpie/bowls/handpan are optional and not integrated. Production enquiries remain explicitly labelled visitor-controlled email drafts; no test messages sent.
+- Final local throttled mobile Lighthouse: performance 25, accessibility 100, SEO 100, LCP 16s, CLS 0. Previous run scored 32 before lazy-loading doorways; these noisy lab runs do not establish improvement or real-user performance. Prioritize a focused mobile rendering/loading pass; do not call this fully optimized.
+- Desktop/mobile design previews: `eden-final-design-desktop.png` and `eden-final-design-mobile.png` in the task visualization folder. The screenshot labelled live-desktop was not successfully captured; do not present a local preview as live evidence.
+- Canonical post-deployment PR comment: https://github.com/eternallife11/Awakening-Eden-Library/pull/46#issuecomment-6670797781 . This documentation-only follow-up does not alter the deployed artifact.
+- Next: finish live playback/portfolio/partners verification when the browser recovers; mobile performance; verified case outcomes and client voices; concise collaborator brief; then workbook/workshop production. No outreach has been sent and Regen Waves is not represented as an established partner.
+
 ## 5 November 2026 · Owner-approved publication in progress
 
 - Owner explicitly requested all ready work go live for introductions to Regen Waves and other potential collaborators. This supersedes the earlier draft-only release restriction; do not imply Regen Waves is an established partner or send outreach messages.
