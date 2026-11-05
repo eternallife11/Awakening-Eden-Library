@@ -58,6 +58,7 @@ const excludedPublicAssets = new Set([
   // Client permission is confirmed; aerial basemap attribution is still being
   // checked. Retain the draft overview in source, never in the public artifact.
   'assets/work-with-benjy/design-journeys/fionas-oasis-journey-overview.webp',
+  'assets/work-with-benjy/design-journeys/fionas-oasis-design-process.webp',
   // Superseded generated geometry: keep the repository masters for provenance,
   // but never copy them into a public Cloudflare artifact.
   'assets/film-previews/inner-worlds-outer-worlds.webp',

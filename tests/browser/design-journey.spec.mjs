@@ -7,7 +7,7 @@ test('design journeys load once, enlarge and lead to the existing enquiry', asyn
   await page.goto('/work-with-benjy#design-journey');
   const section = page.locator('#design-journey');
   await expect(section.getByRole('heading', {name: 'How a design takes shape.'})).toBeVisible();
-  await expect(section.getByText('Fiona’s Oasis · near Pedrógão Grande')).toBeVisible();
+  await expect(section.getByText('Fiona’s Oasis · regenerative garden concept')).toBeVisible();
   await section.getByText('Explore the water strategy & orchard detail', {exact: true}).click();
   await section.getByText('Follow the design story', {exact: true}).click();
   await expect(section.getByText('This is an initial concept.', {exact: false})).toBeVisible();
@@ -22,6 +22,8 @@ test('design journeys load once, enlarge and lead to the existing enquiry', asyn
   await section.screenshot({path: testInfo.outputPath('design-journeys.png')});
   const withheld = await page.request.get('/assets/work-with-benjy/design-journeys/fionas-oasis-journey-overview.webp');
   expect(withheld.status()).toBe(404);
+  const oldProcess = await page.request.get('/assets/work-with-benjy/design-journeys/fionas-oasis-design-process.webp');
+  expect(oldProcess.status()).toBe(404);
   for (const link of await section.locator('figure a').all()) {
     const response = await page.request.get(await link.getAttribute('href'));
     expect(response.status()).toBe(200);

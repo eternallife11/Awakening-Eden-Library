@@ -1,5 +1,12 @@
 # Awakening Eden — current handoff
 
+## 5 November · Finished Fiona design, anonymized
+
+- Owner requested the finished Fiona design without address. Found the complete source pack in Downloads and selected `03_Concept_Map.png`; the story remains intact. Public title and caption use Fiona’s Oasis, with no locality in the card heading.
+- Image generation produced the replacement title. Only that title strip is used; the rest of the finished source diagram and every annotation remain from the original PNG to prevent unintended redraw changes. The publication derivative has no EXIF/XMP. Source originals remain untouched.
+- Both superseded Fiona overview/process boards are excluded from the public artifact, including direct image URLs. The new lead is the complete landscape-format final concept, not the process collage.
+- Publication follow-up to merged PR #46; verify desktop/mobile image display and existing enquiry CTA, public exclusions and visual guards before release.
+
 ## 5 November 2026 · Owner-approved publication in progress
 
 - Owner explicitly requested all ready work go live for introductions to Regen Waves and other potential collaborators. This supersedes the earlier draft-only release restriction; do not imply Regen Waves is an established partner or send outreach messages.
