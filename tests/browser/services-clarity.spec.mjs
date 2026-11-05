@@ -44,7 +44,7 @@ test('gallery and budget deep links reveal their content without losing the enqu
 
 test('all five service choices reach the existing form with the right service selected', async ({ page }) => {
   await page.goto('/work-with-benjy');
-  const choices = page.locator('[data-enquiry-service]');
+  const choices = page.locator('#services [data-enquiry-service]');
   await expect(choices).toHaveCount(5);
   for (let i = 0; i < 5; i++) {
     const value = await choices.nth(i).getAttribute('data-enquiry-service');

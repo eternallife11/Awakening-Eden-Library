@@ -1,5 +1,17 @@
 # Awakening Eden — current handoff
 
+## 5 November 2026 · Owner-approved publication in progress
+
+- Owner explicitly requested all ready work go live for introductions to Regen Waves and other potential collaborators. This supersedes the earlier draft-only release restriction; do not imply Regen Waves is an established partner or send outreach messages.
+- Remote main and PR #46 were refreshed: main `4fe44b3`, draft head `3371eaf`; no overlapping remote updates. Production rollback is Cloudflare `e8a58123-eeaf-410b-8da2-ee513ee4aecc` (2 November PR #45 release).
+- Previous PR CI: public artifact check passed; browser QA had 230 passes and 6 failures. Fixed three causes: Mac-specific screenshot output path, service-count tests scoped too broadly after adding the portfolio CTA, and ambiguous duplicate CTA locator. Corrected six tests passed on desktop/mobile. All 13 enquiry Worker unit tests pass.
+- Fiona's story and four-stage process stay on Work with Benjy; the aerial-containing overview has been removed from visible markup and is excluded from public build output pending map-source attribution/licence. The seven separate originals are still unavailable. Adam’s three approved, identifier-free concept boards remain. No source originals were edited.
+- Partners hero now includes restoration networks, educators, land stewards and community projects; existing property referral pathway and prices are preserved. Added a direct collaboration anchor and made the location signal consistent with the rest of the site.
+- Regenerate Together now has explicit large-image social metadata. Included its route in full sitewide and accessibility checks.
+- Expert guidance consulted: W3C audio-control guidance (opt-in sound and independent pause/volume), NN/g homepage purpose/task clarity (https://www.nngroup.com/articles/top-ten-guidelines-for-homepage-usability/), Google Core Web Vitals targets (https://developers.google.com/search/docs/appearance/core-web-vitals). No outside expert has personally reviewed this site.
+- Current source still contains the gentler Lemuria implementation: no continuous drone, sparse finite 432/528 Hz bowl fundamentals, handpan-style synthesis, quieter rain and real tropical/kookaburra recordings. Additional real instrument/magpie recordings remain optional future work, not integrated.
+- Next: finish fresh CI and targeted partner/manifesto preview; build production with visitor-controlled email-draft enquiry flow; mark PR ready and merge exact passing head; deploy through the existing Cloudflare configuration; verify the actual public routes, served JS and desktop/phone navigation; record final release/rollback evidence. No production publication is claimed by this note.
+
 ## 3 November 2026 · Owner-authorized combined draft push
 
 - Owner requested “just push it all” and a fun, poetic, sacred/silly Benjy-and-Sofia voice connecting mission, manifesto, regenerative interbeing, syntropy, oneness, current field practice and the village vision. This authorizes pushing the combined work to existing draft PR #46; no production merge/deployment was requested in this turn.

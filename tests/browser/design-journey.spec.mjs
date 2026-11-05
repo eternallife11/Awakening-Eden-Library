@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { mkdir } from 'node:fs/promises';
 
 test('design journeys load once, enlarge and lead to the existing enquiry', async ({ page }, testInfo) => {
   const errors = [];
@@ -11,15 +10,16 @@ test('design journeys load once, enlarge and lead to the existing enquiry', asyn
   await expect(section.getByText('Fiona’s Oasis · near Pedrógão Grande')).toBeVisible();
   await section.locator('summary').click();
   const images = section.locator('img');
-  await expect(images).toHaveCount(4);
+  await expect(images).toHaveCount(3);
   for (const img of await images.all()) {
     await expect.poll(() => img.evaluate(node => node.complete && node.naturalWidth > 0)).toBe(true);
   }
   const sources = await images.evaluateAll(nodes => nodes.map(node => node.src));
   expect(new Set(sources).size).toBe(sources.length);
   await section.locator('summary').click();
-  await mkdir('/private/tmp/eden-design-previews', { recursive: true });
-  await section.screenshot({path: `/private/tmp/eden-design-previews/${testInfo.project.name}.png`});
+  await section.screenshot({path: testInfo.outputPath('design-journeys.png')});
+  const withheld = await page.request.get('/assets/work-with-benjy/design-journeys/fionas-oasis-journey-overview.webp');
+  expect(withheld.status()).toBe(404);
   for (const link of await section.locator('figure a').all()) {
     const response = await page.request.get(await link.getAttribute('href'));
     expect(response.status()).toBe(200);

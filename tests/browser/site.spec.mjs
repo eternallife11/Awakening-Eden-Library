@@ -210,7 +210,7 @@ test('Work with Benjy makes the practical offer and evidence clear', async ({ pa
   await expect(page.locator('#services')).toContainText('75-minute video call');
   await expect(page.locator('#services')).toContainText('€111');
   await expect(page.locator('.eden-offer-outcomes')).toHaveCount(5);
-  await page.locator('[data-enquiry-service="Property Vision + Concept Plan"]').click();
+  await page.locator('#services [data-enquiry-service="Property Vision + Concept Plan"]').click();
   await expect(page.locator('#enquiry-service')).toHaveValue('Property Vision + Concept Plan');
   const photos = await page.locator('main figure img').evaluateAll(nodes => nodes.map(n => n.getAttribute('src')));
   expect(new Set(photos).size).toBe(photos.length);
@@ -343,7 +343,7 @@ test('Work with Benjy exposes implementation guidance at its direct anchor', asy
 test('partnership page exposes the referral pathway and current service ladder', async ({ page }) => {
   await page.goto('/partners', { waitUntil: 'domcontentloaded' });
 
-  await expect(page.getByRole('heading', { level: 1, name: 'Add the regenerative land layer.' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Regenerative projects. Stronger together.' })).toBeVisible();
   await expect(page.getByText('You help people find or create the right rural property. I help them understand what the land can become—and what to do first.', { exact: true })).toBeVisible();
 
   const pathway = page.locator('#pathway');
