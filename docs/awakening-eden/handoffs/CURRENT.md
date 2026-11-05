@@ -1,5 +1,13 @@
 # Awakening Eden — current handoff
 
+## 5 November · Owner-selected Fiona web design journey, anonymized
+
+- Newest owner direction chooses the complete web design-journey board, including sketches, questions and final map, instead of the standalone concept. Public name is Fiona’s Oasis; no locality in the card heading.
+- The owner-supplied WebP remains the source. Image generation supplied three privacy patches: the two handwritten property names are removed and the large map title becomes Fiona’s Oasis. Only those small patches are composited; all remaining source imagery, annotations and text remain original. Source files remain unchanged. Public WebP has no EXIF/XMP.
+- Superseded process/overview and standalone boards stay out of the public build. One lead journey board appears with no duplicated final map. Story and enquiry CTA retained.
+- Owner explicitly rejects “real in the field.” Removed the phrase from the manifesto subtitle and social description; replacement: “Rooted in love. Growing in connection. Regenerating life together.” Portfolio intro/caption now warmer, clear and welcoming.
+- Follow-up to PR #46. Check desktop/mobile portfolio, public asset exclusions and manifesto copy before publishing.
+
 ## 5 November 2026 · Owner-approved publication in progress
 
 - Owner explicitly requested all ready work go live for introductions to Regen Waves and other potential collaborators. This supersedes the earlier draft-only release restriction; do not imply Regen Waves is an established partner or send outreach messages.
