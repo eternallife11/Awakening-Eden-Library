@@ -376,3 +376,39 @@ body.final-home-polish .home-circle-header { margin-top: clamp(2rem,4vw,3.2rem);
   }
 }
 /* On narrow screens the detailed artwork remains fully visible in its hero; the watermark stays off. */
+
+/* Render long-form sections as they approach the visitor. Content stays in
+   the HTML and accessibility tree; anchors, find-in-page and focus reveal it. */
+@supports (content-visibility: auto) {
+  body.final-home-polish main > section:not(#home) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 1000px;
+  }
+  body.final-home-polish .home-circle-header,
+  body.final-home-polish .hero-copy .threshold-section,
+  body.final-home-polish #meet-benjy-sofia {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 1000px;
+  }
+  body.final-home-polish #what-to-grow { contain-intrinsic-block-size: auto 1600px; }
+  @media (max-width: 48rem) {
+    body.final-home-polish main > section:not(#home) { contain-intrinsic-block-size: auto 1500px; }
+    body.final-home-polish #what-to-grow { contain-intrinsic-block-size: auto 2600px; }
+  }
+  html:has(body.final-home-polish :target) { scroll-behavior: auto; }
+  /* Resolve fragment destinations using their real layout, including when
+     visitors arrive directly from search or another page. */
+  body.final-home-polish:has(:target) main > section:not(#home),
+  body.final-home-polish:has(:target) .home-circle-header,
+  body.final-home-polish:has(:target) .hero-copy .threshold-section,
+  body.final-home-polish:has(:target) #meet-benjy-sofia { content-visibility: visible; }
+  @media print {
+    body.final-home-polish main > section:not(#home),
+    body.final-home-polish .home-circle-header,
+    body.final-home-polish .hero-copy .threshold-section,
+    body.final-home-polish #meet-benjy-sofia { content-visibility: visible; }
+  }
+}
+
+/* Make the welcome immediately readable rather than fading in its largest image. */
+body.final-home-polish .home-opening.reveal { animation: none; }
