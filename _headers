@@ -81,3 +81,14 @@
 /docs/*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: public, max-age=604800
+
+/ea56777892f87d87153dea0fbaf304ef.txt
+  Content-Type: text/plain; charset=UTF-8
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=3600
+
+/eden-home-bundle-*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/eden-fonts.css
+  Cache-Control: public, max-age=31536000, immutable

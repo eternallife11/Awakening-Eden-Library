@@ -1,5 +1,15 @@
 # Awakening Eden — current handoff
 
+## 6 November · Search readiness and mobile rendering (release candidate)
+
+- Branch `codex/search-performance-nov6`, based on published PR #47 main `260967d`. Owner requested SEO/site optimization across Google, Bing, Ecosia and AI-assisted discovery; prior publication authorization remains in force. No new outreach, paid service, analytics or business profile activated.
+- Distinct titles/descriptions and matching social metadata on 13 meaningful entry pages. Consistent Organization/Person/WebPage/Service graphs describe actual published offers; Portugal and worldwide online land consulting are clear. Sofia now explains holistic/wholistic practices and everyday renewal without medical detoxification claims or invented availability/pricing.
+- Sitemap lastmod updated only for meaningfully changed pages. Crawlable source HTML/canonicals preserved. IndexNow public verification key prepared; no URL notification submitted pending exact-URL confirmation required by the indexing workflow.
+- Original typography is self-hosted with all three OFL licences. Homepage styles combine into a content-hashed asset; distant sections render on approach. Fragment/print layout remains full and section links are immediate. Actual Work with Benjy hero preload corrected. Approved artwork, Fiona privacy edits, prices and gentle Lemuria unchanged.
+- Zero-cost, visual-lock and six-artwork guards, all 13 Worker tests, focused search/font/anchor checks and 14 main-route desktop/phone Axe checks pass locally. Desktop/mobile visual previews reviewed, and new checks also pass in Firefox and WebKit. Full GitHub CI and public verification are the remaining release gates. GSC Wizard subscription errors prevent live Search Console/Bing report verification; do not claim indexing/rankings checked.
+- [Search focus map, evidence, sources and next actions](../search/SEARCH_READINESS_2026-11-06.md).
+- Current public rollback: Cloudflare `d882ecd9-ea6e-48d1-9596-0fb078a87a08`. This note does not claim production deployment.
+
 ## 5 November · Owner-selected Fiona web design journey, anonymized
 
 - Newest owner direction chooses the complete web design-journey board, including sketches, questions and final map, instead of the standalone concept. Public name is Fiona’s Oasis; no locality in the card heading.

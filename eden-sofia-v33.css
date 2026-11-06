@@ -104,3 +104,6 @@
   .sofia-portrait { width: min(100%, 28rem); margin-inline: auto; }
   .sofia-pillars, .sofia-proof, .sofia-practice-gallery { grid-template-columns: 1fr; }
 }
+
+/* Keep the new reading section comfortably inset on phones. */
+.page-sofia #holistic-wellbeing .container { width: min(calc(100% - 2 * var(--gutter)), var(--reading)); }

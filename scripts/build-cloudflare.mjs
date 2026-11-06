@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = typeof process !== 'undefined'
   ? process.cwd()
@@ -86,7 +87,7 @@ function shouldExclude(rel, isDir) {
   if (!isDir && excludedNames.has(name)) return true;
   if (!isDir && /^CLAUDE/i.test(name)) return true;
   if (!isDir && /\.(md|markdown|zip|psd|xcf|ai|sketch)$/i.test(name)) return true;
-  if (!isDir && /\.txt$/i.test(name) && name !== 'robots.txt') return true;
+  if (!isDir && /\.txt$/i.test(name) && name !== 'robots.txt' && name !== 'ea56777892f87d87153dea0fbaf304ef.txt' && !/^assets\/fonts\/(caveat|cormorantgaramond|sourcesans3)-OFL\.txt$/.test(rel)) return true;
   return false;
 }
 
@@ -140,6 +141,29 @@ async function versionFinalHomepageRuntime() {
   }
 
   await writeFile(indexPath, source.replace(currentNeedle, versionedRuntime));
+}
+
+async function bundleHomepageStyles() {
+  const page = path.join(OUT, 'index.html');
+  let html = await readFile(page, 'utf8');
+  const links = [...html.matchAll(/<link\s+rel="stylesheet"\s+href="([^"?]+\.css)(?:\?[^" ]*)?"\s*>/g)];
+  if (links.length < 2) throw new Error('Homepage stylesheet list changed; review bundling.');
+  const sheets = [];
+  for (const match of links) {
+    const name = match[1];
+    if (!/^eden-[a-z0-9-]+\.css$/.test(name)) throw new Error(`Unexpected homepage stylesheet: ${name}`);
+    sheets.push(`/* ${name} */\n${await readFile(path.join(OUT, name), 'utf8')}`);
+  }
+  // Keep source order and root-relative asset resolution. A content hash prevents
+  // an older immutable stylesheet from masking a released style change.
+  const css = sheets.join('\n');
+  const file = `eden-home-bundle-${createHash('sha256').update(css).digest('hex').slice(0, 12)}.css`;
+  await writeFile(path.join(OUT, file), css);
+  html = html.replace(links[0][0], `<link rel="stylesheet" href="${file}">`);
+  for (const match of links.slice(1)) html = html.replace(match[0], '');
+  await writeFile(page, html);
+  filesCopied += 1;
+  bytesCopied += Buffer.byteLength(css);
 }
 
 async function writeCloudflareRedirects() {
@@ -384,6 +408,7 @@ await writeCloudflareRouteAliases();
 await writeCloudflareHeaders();
 await normalizePremiumBrandMetadata(OUT);
 if (PUBLIC_ORIGIN) await rewriteProductionOrigins(OUT);
+await bundleHomepageStyles();
 
 const indexPath = path.join(OUT, 'index.html');
 const notFoundPath = path.join(OUT, '404.html');
