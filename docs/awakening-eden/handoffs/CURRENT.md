@@ -1,5 +1,18 @@
 # Awakening Eden — current handoff
 
+## 11 November 2026 · Benjy's personal why and mission update
+
+- Owner requested strengthening the existing manifesto on the website; retained /regenerate-together, its layout, artwork and existing mission. Added a first-person note about illness and loss around Benjy, his father's illness, over a decade of learning and land work, and the invitation to protect, serve and co-create life. No medical cause is asserted and no claim that his father died is added.
+- Linked the personal why from About and Living Library; homepage already links to manifesto. No new page, imagery, dependencies or language-switch UI.
+- Branch: codex/manifesto-personal-why-2026-11-11; source base: 260967d1e55ee613c312acb85ba8a8b731798892.
+- Passed: production build (448 files, 122.3 MiB), zero-cost, visual-lock, launch-artwork guards; diff whitespace check; 77 internal link/anchor checks, unique IDs and single h1 across changed pages; internal docs excluded.
+- Live /regenerate-together returned HTTP 200 and contains the existing English manifesto. Repo scan found no pt-PT locale, language switch or Portuguese translated-page system. Full Portuguese work remains separate; no native-speaker review claimed.
+- Browser visual QA attempted but blocked: installed Playwright browser absent; system Chromium fails at process singleton socket creation with Operation not permitted. No new visual screenshots or browser success claimed.
+- No Cloudflare credentials configured in this runtime. No production deployment or merge performed. This is a prepared website change, not a claim of live publication.
+- Next: run desktop/phone browser review and CI on PR; fix any demonstrated issues; use the existing authenticated Cloudflare release environment to publish the owner-requested copy; verify live /regenerate-together#our-why, About and Library; then plan full EN/pt-PT.
+- Designer sprint is documented separately at docs/30_BILINGUAL_WELCOME_AND_JOURNEY_SPRINT_2026-11-11.md in eden-designer.
+- Historical handoff entries below remain history, not current release status.
+
 ## 5 November · Owner-selected Fiona web design journey, anonymized
 
 - Newest owner direction chooses the complete web design-journey board, including sketches, questions and final map, instead of the standalone concept. Public name is Fiona’s Oasis; no locality in the card heading.
