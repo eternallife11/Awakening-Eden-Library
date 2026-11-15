@@ -199,8 +199,8 @@ test('homepage exposes the final opening journey and approved visual choices', a
 test('Work with Benjy makes the practical offer and evidence clear', async ({ page }) => {
   await page.goto('/work-with-benjy', { waitUntil: 'domcontentloaded' });
 
-  await expect(page.getByRole('heading', { level: 1, name: 'Bring your project vision to life.' })).toBeVisible();
-  await expect(page.locator('.vnext-hero')).toContainText('water, soil, trees, access, habitat and the people who care for it');
+  await expect(page.getByRole('heading', { level: 1, name: 'Your land doesn’t need everything at once.' })).toBeVisible();
+  await expect(page.locator('.vnext-hero')).toContainText('understanding where water goes, what the soil needs');
   await expect(page.locator('#selected-work .eden-project-story')).toHaveCount(4);
   await expect(page.locator('#selected-work .eden-project-story').first()).toContainText('Moinhos');
   await expect(page.locator('#how-i-can-help')).toContainText('Paths, fences & beautiful outdoor spaces');
@@ -210,8 +210,8 @@ test('Work with Benjy makes the practical offer and evidence clear', async ({ pa
   await expect(page.locator('#services')).toContainText('75-minute video call');
   await expect(page.locator('#services')).toContainText('€111');
   await expect(page.locator('.eden-offer-outcomes')).toHaveCount(5);
-  await page.locator('#services [data-enquiry-service="Property Vision + Concept Plan"]').click();
-  await expect(page.locator('#enquiry-service')).toHaveValue('Property Vision + Concept Plan');
+  await page.locator('#services [data-enquiry-service="Whole-Property Regenerative Design + Action Plan"]').click();
+  await expect(page.locator('#enquiry-service')).toHaveValue('Whole-Property Regenerative Design + Action Plan');
   const photos = await page.locator('main figure img').evaluateAll(nodes => nodes.map(n => n.getAttribute('src')));
   expect(new Set(photos).size).toBe(photos.length);
   await expect(page.locator('#recent-design')).toContainText('Proposed food-forest gardens beside the levada');
@@ -250,7 +250,7 @@ test('Old collaboration route leads to one clear service page', async ({ page })
   const response = await page.goto('/work-with-us', { waitUntil: 'domcontentloaded' });
   expect(response.status()).toBe(200);
   await expect(page).toHaveURL(/\/work-with-benjy\/?$/);
-  await expect(page.getByRole('heading', { level: 1, name: 'Bring your project vision to life.' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Your land doesn’t need everything at once.' })).toBeVisible();
   await page.goto('/village-homes', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('body')).toContainText('future village');
 });
@@ -335,9 +335,9 @@ test('future pathways are honest, connected and lightly surfaced', async ({ page
 test('Work with Benjy exposes implementation guidance at its direct anchor', async ({ page }) => {
   await page.goto('/work-with-benjy#implementation', { waitUntil: 'domcontentloaded' });
   const implementation = page.locator('#implementation');
-  await expect(implementation.getByRole('heading', { name: 'Bring the plan into life' })).toBeVisible();
+  await expect(implementation.getByRole('heading', { name: 'Hands in the soil, together' })).toBeVisible();
   await implementation.locator('summary').click();
-  await expect(implementation).toContainText('project management');
+  await expect(implementation).toContainText('Project coordination, talking with contractors');
 });
 
 test('partnership page exposes the referral pathway and current service ladder', async ({ page }) => {
