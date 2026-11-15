@@ -35,7 +35,7 @@ test('Eden Land Questionnaire gives visitors a clear, protected three-step path'
   await form.getByLabel('What would you love this place to become—and what feels challenging right now?').fill('A cool, productive, water-wise garden that supports birds, people and soil life.');
   await form.getByRole('button', { name: 'Almost there' }).click();
   await expect(form.getByRole('group', { name: 'How should Benjy reach you?' })).toBeVisible();
-  await expect(form.getByRole('button', { name: draftMode ? 'Prepare my enquiry' : 'Send my land story' })).toBeVisible();
+  await expect(form.getByRole('button', { name: draftMode ? 'Prepare my enquiry' : 'Send to Benjy' })).toBeVisible();
   if (draftMode) {
     const submissions = [];
     page.on('request', request => { if (request.method() === 'POST') submissions.push(request.url()); });
