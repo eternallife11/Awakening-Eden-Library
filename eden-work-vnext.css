@@ -1079,3 +1079,11 @@
 .work-vnext .eden-step-guide ul { padding-left: 1.1rem; }
 .work-vnext .eden-step-guide li { margin-bottom: .6rem; line-height: 1.6; }
 .work-vnext .eden-step-guide__fair { margin-bottom: 0; font-weight: 600; color: #355337; }
+
+/* Painted package illustrations: small, calm, always captioned. */
+.work-vnext .eden-offer-illus { margin: 0 0 .9rem; max-width: 15rem; }
+.work-vnext .eden-offer-illus img { display: block; width: 100%; height: auto; border-radius: .7rem; }
+.work-vnext .vnext-offer__columns .eden-offer-illus { max-width: 13rem; }
+.work-vnext .eden-offer-illus .eden-illustrative-caption { text-align: left; }
+.work-vnext .eden-field-book { max-width: 44rem; margin: clamp(1.4rem, 4vw, 2.4rem) auto 1rem; }
+.work-vnext .eden-field-book img { display: block; width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 14px 36px rgba(39, 58, 41, .10); }
