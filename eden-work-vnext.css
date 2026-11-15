@@ -1049,3 +1049,33 @@
 
 /* Editorial notebook art: always carries a small "Illustrative sketch" caption. */
 .work-vnext .eden-illustrative-caption { margin-top: .4rem; font-size: .82rem; color: #5d6656; text-align: center; letter-spacing: .01em; }
+
+/* A first land walk: real photo beside field-notebook notes. */
+.work-vnext .eden-land-walk { background: #f7f2e6; }
+.work-vnext .eden-land-walk__grid { display: grid; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+@media (min-width: 60rem) { .work-vnext .eden-land-walk__grid { grid-template-columns: 5fr 6fr; } }
+.work-vnext .eden-land-walk__photo { margin: 0; }
+.work-vnext .eden-land-walk__photo img { display: block; width: 100%; height: auto; border-radius: 1.1rem; box-shadow: 0 14px 36px rgba(39, 58, 41, .10); }
+.work-vnext .eden-land-walk__photo figcaption { margin-top: .55rem; font-size: .86rem; color: #5d6656; text-align: center; }
+.work-vnext .eden-land-walk__notes {
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(88, 104, 73, .18);
+  border-radius: 1.1rem;
+  background: #fffaf0 repeating-linear-gradient(to bottom, transparent 0, transparent 1.95rem, rgba(88, 104, 73, .07) 1.95rem, rgba(88, 104, 73, .07) 2rem);
+}
+.work-vnext .eden-land-walk__list { padding-left: 1.1rem; margin: 1rem 0; }
+.work-vnext .eden-land-walk__list li { margin-bottom: .55rem; line-height: 1.6; }
+.work-vnext .eden-land-walk__list li::marker { color: #3d7a8a; }
+.work-vnext .eden-land-walk__note { font-size: .92rem; color: #5d6656; border-top: 1px dashed rgba(88, 104, 73, .3); padding-top: .8rem; }
+
+/* Which step is right for you: a calm, non-pushy guide after the offers. */
+.work-vnext .eden-step-guide {
+  max-width: 48rem;
+  margin: clamp(1.5rem, 4vw, 2.5rem) auto;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border-radius: 1.1rem;
+  background: #f1ebdc;
+}
+.work-vnext .eden-step-guide ul { padding-left: 1.1rem; }
+.work-vnext .eden-step-guide li { margin-bottom: .6rem; line-height: 1.6; }
+.work-vnext .eden-step-guide__fair { margin-bottom: 0; font-weight: 600; color: #355337; }
