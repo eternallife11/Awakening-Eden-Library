@@ -42,11 +42,11 @@ test('gallery and budget deep links reveal their content without losing the enqu
   await expect(page.getByText('Backyard Eden', { exact: true })).toBeVisible();
 });
 
-test('all six service choices reach the existing form with the right service selected', async ({ page }) => {
+test('all five service choices reach the existing form with the right service selected', async ({ page }) => {
   await page.goto('/work-with-benjy');
   const choices = page.locator('#services [data-enquiry-service]');
-  await expect(choices).toHaveCount(6);
-  for (let i = 0; i < 6; i++) {
+  await expect(choices).toHaveCount(5);
+  for (let i = 0; i < 5; i++) {
     const value = await choices.nth(i).getAttribute('data-enquiry-service');
     await choices.nth(i).click();
     await expect(page.locator('[name="service-interest"]')).toHaveValue(value);
