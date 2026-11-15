@@ -3,6 +3,9 @@
 You are helping Benjy and Sofia create videos and mini courses. Read
 `EDEN_CREATION_STUDIO_PLAN_2026-11-14.md` first.
 
+## Current land-service marketing decisions
+Before creating Regenerative Eden land-service graphics, videos, posts or brochures, read `REGENERATIVE_LAND_OFFERS_HEART_AND_SCOPE_2026-11-15.md` **and newer [draft PR #51](https://github.com/eternallife11/Awakening-Eden-Library/pull/51)**. PR #51 sets the current four-door pricing structure. A separate €1,100 property concept is **not** approved for publication. Use real photography and qualified illustrative maps; only the exact approved 12-fold Lotus may appear in the art. No publishing or merging without Benjy/Sofia approval.
+
 ## Knowledge and voice
 - Meaning comes from `../knowledge/` (Canonical Knowledge Map, Regenerative Source of Truth, System Instruction
   Patch v2) and `../LOCKED_DECISIONS_2026-08-11.md`. These are the same files the Awakening Eden Oracle uses.
