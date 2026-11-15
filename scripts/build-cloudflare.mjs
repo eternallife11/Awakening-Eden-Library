@@ -252,7 +252,7 @@ async function prepareCloudflareEnquiryForm() {
   const formPath = path.join(OUT, 'work-with-benjy.html');
   const source = await readFile(formPath, 'utf8');
   const formNeedle = 'data-netlify="true" netlify-honeypot="bot-field" data-land-enquiry-form>';
-  const consentNeedle = '          <button class="button button--primary form-submit" type="submit">Send my land story <span aria-hidden="true">→</span></button>';
+  const consentNeedle = '          <button class="button button--primary form-submit" type="submit">Send to Benjy <span aria-hidden="true">→</span></button>';
   const bodyNeedle = '</body>';
 
   if (!source.includes(formNeedle) || !source.includes(consentNeedle) || !source.includes(bodyNeedle)) {
