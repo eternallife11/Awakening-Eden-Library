@@ -4,7 +4,9 @@
 **This file is INTERNAL. No change to the live public website is authorized by this note.**
 
 ## Priority & truth
-These are Benjy and Sofia's newest directions. Respect latest direct decisions over older studio drafts. Check the *actual live website offer language* before publishing, especially the existing €1,500 whole-property design. A €1,100 **preliminary whole-property concept** is a NEW, lighter proposed tier, NOT a replacement for the deeper €1,500 whole-property design. Prices below are proposed/approved in conversation for promotional preparation, not evidence of a published checkout.
+> **LATEST DRAFT DIRECTION (15 November 2026, supersedes older tiers):** Use [Work with Benjy draft PR #51](https://github.com/eternallife11/Awakening-Eden-Library/pull/51) as the current site implementation reference. Four main doors: €111 online; “Begin on the Land” as one card with €150 brief visit and €295 deeper assessment; from €450/€650 focused roadmap; from €1,500 whole-property design. **Do not add or advertise a separate €1,100 whole-property tier.** Keep €111 concept sketches conditional and €150 sketches simple. No poster publishing before page, prices and art match.
+
+These are Benjy and Sofia's newest directions. Respect latest direct decisions over older studio drafts. Check the *actual live website offer language* before publishing, especially the existing €1,500 whole-property design. A separate €1,100 preliminary whole-property concept has been dropped from the public tier list to keep the offer clear. Prices below are proposed/approved in conversation for promotional preparation, not evidence of a published checkout.
 
 Apply the Regenerative Source of Truth and newest Design/Illustration Bibles. Use only the exact 12-fold Lotus asset if sacred geometry appears, no approximate generated substitution. Visuals are illustrative until real client field observations and measurements substantiate them. No invented map scales, locations, fire bands or pond engineering. Use client photos/maps only with permission.
 
@@ -40,14 +42,14 @@ We bring curiosity, optimism, an open mind, practical care and a holistic worldv
 **Not included:** site visit, designed masterplan, detailed mapping, engineering, measured planting schedule.
 **Outcome:** know what matters first and what information to gather next.
 
-### €150 | Initial On-Land Visit
+### €150 | Initial On-Land Visit (grouped with €295 on public page)
 **For:** a first personal reading of a defined small property or problem area.
 **Includes:** on-site walkthrough and key observations; short written recommendations; a simple orientation sketch, optionally digitised as a *preliminary concept sketch* using Eden Designer when workable.
 **Not included:** whole-property conceptual masterplan; comprehensive report; measured/surveyed drawings; detailed water works design; plant-by-plant plan.
 **Boundary:** a simple Eden Designer sketch is not an engineered, measured or detailed concept design; it should not be presented that way. For a site visit without client attendance, agree communication method, access permissions and deliverables beforehand.
 **Outcome:** useful first observations and a short next-step direction.
 
-### €295 | On-Site Regenerative Land Assessment & Clarity Plan
+### €295 | On-Site Regenerative Land Assessment & Clarity Plan (grouped with €150 on public page)
 **For:** people who want more than an initial walk but do not yet require a full roadmap.
 **Includes:** review of client's vision and available site material; focused visit; more substantial observations of water movement, erosion, soil cover, trees, vegetation, access and opportunities; an annotated preliminary overview/concept map; written priority strategy and concise report; one follow-up call to explain the first actions.
 **Difference from €150:** more synthesis, clearer strategy, stronger map and report, follow-up discussion.
@@ -58,12 +60,6 @@ We bring curiosity, optimism, an open mind, practical care and a holistic worldv
 **For:** a defined garden, orchard, food-forest area, erosion challenge, water-wise planting system or first phase.
 **Includes (subject to individual scope):** deeper intake and area-specific concept drawings; appropriate species/functions and biomass options; water/soil/access reasoning; 90-day priority plan and first-year management direction; materials and implementation considerations; review conversation.
 **Outcome:** a more complete plan for *one agreed focus area*, not a whole property.
-
-### From €1,100 | Preliminary Whole-Property Concept (NEW PROPOSED TIER)
-**For:** joining the bigger picture without buying a full masterplan.
-**Includes (scope by quote):** site-wide vision, approximate functional relationships/zones, preliminary concept map and broad-phase priorities.
-**Excludes:** full detailed drawings, technical hydrology, detailed plant counts, surveyed measurements and extensive implementation specification.
-**Important:** label this clearly as *concept* and distinguish it from the live €1,500 offering. If public naming confuses customers, remove this tier rather than collapsing it into full design.
 
 ### From €1,500 | Detailed Whole-Property Regenerative Design & Action Plan
 **For:** interconnected whole-property water, soil, access, orchard, food systems, biodiversity and multiple phases.
@@ -85,7 +81,7 @@ Project management · implementation days · food-forest installation · trainin
 ## Campaign positioning and creative direction
 **Primary campaign headline:** From Land Overwhelm to Grounded Action.
 **Secondary line:** Your land. Your vision. A clear way forward.
-**First ad offers only:** €111 online clarity · €295 on-site land assessment. Also mention initial visit available from €150 when relevant.
+**First ad offers only:** €111 online clarity · €295 on-site land assessment. Mention €150 as the shorter first visit and do not imply a full design for either entry offer.
 **CTA:** Tell us about your land. Send photos, a map pin (privately), your hopes and your most important question. Website: https://awakeningeden.org/work-with-benjy
 **Other CTA:** Request a tailored quote for implementation, team training or a complete design.
 
@@ -107,7 +103,7 @@ Project management · implementation days · food-forest installation · trainin
 4. €111 Online Clarity — materials reviewed, 75-minute session, written priorities.
 5. €150 Initial On-Land Visit — observations, short recommendations, simple orientation/digitised sketch.
 6. €295 Regenerative Assessment — focused visit, annotated preliminary map, priority strategy, concise report, follow-up.
-7. Go deeper when ready — €450/€650 focused roadmap, from €1,100 preliminary whole-property concept, from €1,500 detailed whole-property design.
+7. Go deeper when ready — €450/€650 focused roadmap, from €1,500 whole-property design.
 8. Tailored support — project management, implementation, workshops, team learning. Closing invitation to connect.
 
 ## Claude Code handoff
