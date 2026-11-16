@@ -34,6 +34,8 @@ footer, favicon and any other small logo placement — both already contain the 
 Painted/detailed portals (e.g. `assets/logo/tree-heart-portal-01.webp`) are threshold art for page content with
 descriptive alt text, never a header/footer/favicon logo.
 
+**Owner decision 16 Nov 2026 (sacred geometry):** use only the exact approved 12-fold Lotus of Life when the brand identity calls for it. Other precise geometric designs only when Benjy or Sofia explicitly approve them. No sacred geometry in technical consulting maps, ecological diagrams or ordinary client illustrations by default.
+
 ## Working on this site
 
 - Verify a deploy by fetching a route that only exists in the new version, not by timestamp.
@@ -47,6 +49,6 @@ descriptive alt text, never a header/footer/favicon logo.
 - **ONE STAGE ONLY:** Explore/plan, execute a single approved stage, verify and visually review artifacts, report PASS/FAIL and exact files changed, then STOP for Benjy's explicit approval before the next stage. No automatic stage chaining, publishing, sending, deployments or destructive changes.
 - For land consulting use `.claude/skills/eden-land-consulting/SKILL.md`. For video production use `.claude/skills/eden-video-production/SKILL.md`. Keep raw client source files unchanged; map overlays and videos editable and provenance-tracked.
 - Differentiate OBSERVED, PLAN/SURVEY, CLIENT VISION, BENJY PROPOSAL, EDUCATIONAL ILLUSTRATION and UNVERIFIED. No invented contours, runoff direction, feature positions, measurable dimensions, permissions, plant availability or client claims.
-- Service scope: €111 remote clarity and €150 local assessment include a **proportional preliminary concept map, 3–5 priorities and a concise written action plan** (on-site €150 may include separate observation/concept layers, as agreed). €295 focused diagnostic and optional €350 return-priority planning are not public; quote only when Benjy confirms for a specific client. From €450 remote/€650 on-site focused roadmap and from €1,500 whole-property design offer progressively deeper work. Verify current website and client agreement before displaying any price.
+- Service scope: €111 remote clarity and €150 local assessment include a **proportional preliminary concept map, 3–5 priorities and a concise written action plan** (on-site €150 may include separate observation/concept layers, as agreed). €295 is no longer an active offer. €350 is an optional, client-specific focused planning and staking proposal, never a default published price. €150–€250 budgets get a flexible tailored scope where appropriate. Never upgrade a client or promise extra deliverables without confirming the scope. From €450 remote/€650 on-site focused roadmap and from €1,500 whole-property design offer progressively deeper work. Verify current website and client agreement before displaying any price.
 - Before marking a stage complete: verify it technically, compare with source evidence, render/check at phone size and target output size, log uncertainties and complete the relevant QA checks. Automated tests do not prove hydrological safety or scientific truth.
 - Keep meaningful draft branches/checkpoints. Do not overwrite or publish source maps/photos/reports without explicit human approval.

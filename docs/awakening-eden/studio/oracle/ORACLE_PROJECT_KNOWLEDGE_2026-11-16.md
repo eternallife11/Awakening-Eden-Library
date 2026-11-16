@@ -30,7 +30,8 @@ The live site shows older wording until PR #51 is approved and published.
 | Implementation & project support | individually scoped | Project management, implementation days, food-forest installation, workshops, team training, contractor coordination. |
 
 - Garden establishment examples on the page are indicative ranges, separate from design fees (Backyard Eden €3,500–€6,000 up to Regenerative Acre €12,000–€30,000+).
-- **Not public:** €295 focused diagnostic and €350 return planning (only if Benjy confirms for a specific client). The €1,100 whole-property concept was dropped.
+- **Not active / not public:** €295 is no longer an active offer. €350 is an optional, client-specific focused planning and staking proposal, never a default published price. The €1,100 whole-property concept was dropped. Old draft prices €95 / €225 are historical only.
+- Never upgrade a client or promise extra deliverables without confirming the scope.
 - Going deeper later: we build on what we already observed and only quote the additional work.
 - **Who we love working with:** conscious stewards and earth guardians creating regenerative oases, homesteads, communities and eco-villages; beginners or thirty years in; curious, willing to observe, patient. Not for monocultures, finished-by-next-month gardens or rushed decisions.
 
@@ -50,6 +51,7 @@ Concise findings · three priorities · Map A observations · Map B their ideas 
 ## 7. Look and images
 - Painted Mediterranean field journal style: cream paper, olive, sage, forest, honey light, lavender. Olive, cork oak, fig, citrus, almond, lavender, rosemary. No bananas or palms.
 - Image prompts for GPT: no text, prices, logos, labels, map scales, measurements or people; Mediterranean plants only; PNG at least 2400 pixels wide.
+- Sacred geometry: only the exact approved 12-fold Lotus of Life when the brand identity calls for it; other precise geometry only with explicit approval; none in consulting maps, ecological diagrams or client illustrations.
 - Every painted notebook image on the website carries a small "Illustrative sketch" caption.
 - Real photos of Benjy, Sofia and clients are never regenerated. Client places only with permission and without street names or coordinates.
 
@@ -62,8 +64,7 @@ Concise findings · three priorities · Map A observations · Map B their ideas 
 ## 9. Open decisions
 1. Where Sofia's videos live.
 2. Whether Benjy appears on camera for teaching videos (recommended).
-3. Sacred geometry: repository CLAUDE.md still says exact twelve-fold Lotus only; the 23 October owner decision allows any approved geometry.
-4. Publishing PR #51 (Work with Benjy) after a full laptop review.
+3. Publishing PR #51 (Work with Benjy) after a full laptop review.
 
 ## 10. Files to upload as Project knowledge
 From the repository `eternallife11/Awakening-Eden-Library`:
