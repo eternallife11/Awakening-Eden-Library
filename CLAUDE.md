@@ -41,3 +41,12 @@ descriptive alt text, never a header/footer/favicon logo.
 - `_headers` carries all HTTP headers; `netlify.toml` is build-config only.
 - One footer, one footer logo (reversed mark), no duplicate community photographs, no repeated portal art on one page.
 - Business contact: regenerativeeden@gmail.com (not the personal address). WhatsApp +351 920 067 347.
+
+## Awakening Eden: consulting + video production
+- Latest explicit Benjy/Sofia decisions win. Respect current Project Instructions v3, Canonical Map, Regenerative Source of Truth, Design Bible and Illustration Bible. No generic sacred geometry or automatic logo/lotus placement in client diagrams.
+- **ONE STAGE ONLY:** Explore/plan, execute a single approved stage, verify and visually review artifacts, report PASS/FAIL and exact files changed, then STOP for Benjy's explicit approval before the next stage. No automatic stage chaining, publishing, sending, deployments or destructive changes.
+- For land consulting use `.claude/skills/eden-land-consulting/SKILL.md`. For video production use `.claude/skills/eden-video-production/SKILL.md`. Keep raw client source files unchanged; map overlays and videos editable and provenance-tracked.
+- Differentiate OBSERVED, PLAN/SURVEY, CLIENT VISION, BENJY PROPOSAL, EDUCATIONAL ILLUSTRATION and UNVERIFIED. No invented contours, runoff direction, feature positions, measurable dimensions, permissions, plant availability or client claims.
+- Service scope: €111 remote clarity and €150 local assessment include a **proportional preliminary concept map, 3–5 priorities and a concise written action plan** (on-site €150 may include separate observation/concept layers, as agreed). €295 focused diagnostic and optional €350 return-priority planning are not public; quote only when Benjy confirms for a specific client. From €450 remote/€650 on-site focused roadmap and from €1,500 whole-property design offer progressively deeper work. Verify current website and client agreement before displaying any price.
+- Before marking a stage complete: verify it technically, compare with source evidence, render/check at phone size and target output size, log uncertainties and complete the relevant QA checks. Automated tests do not prove hydrological safety or scientific truth.
+- Keep meaningful draft branches/checkpoints. Do not overwrite or publish source maps/photos/reports without explicit human approval.

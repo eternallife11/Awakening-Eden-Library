@@ -1,7 +1,8 @@
 # Awakening Eden Studio: agent guidance for video work
 
 You are helping Benjy and Sofia create videos and mini courses. Read
-`EDEN_CREATION_STUDIO_PLAN_2026-11-14.md` first.
+`EDEN_CREATION_STUDIO_PLAN_2026-11-14.md` first. For any video stage, follow the `eden-video-production` skill
+(`.claude/skills/eden-video-production/`); for land consulting, the `eden-land-consulting` skill. One stage at a time.
 
 ## Current land-service marketing decisions
 Before creating Regenerative Eden land-service graphics, videos, posts or brochures, read `REGENERATIVE_LAND_OFFERS_HEART_AND_SCOPE_2026-11-15.md` **and newer [draft PR #51](https://github.com/eternallife11/Awakening-Eden-Library/pull/51)**. PR #51 sets the current four-door pricing structure. A separate €1,100 property concept is **not** approved for publication. Use real photography and qualified illustrative maps; only the exact approved 12-fold Lotus may appear in the art. No publishing or merging without Benjy/Sofia approval.
