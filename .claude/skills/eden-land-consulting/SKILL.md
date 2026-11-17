@@ -17,5 +17,8 @@ Always read specific client agreement. €111 remote and €150 local packages i
 ## Sequence
 L0 inspect/plan → L1 client brief/scope → L2 evidence-ledger → L3 land/people/climate/water assessment → L4 existing-conditions map → L5 client vision map → L6 options/risk analysis → L7 preliminary concept map approved lines only → L8 diagrams and photo story → L9 phased actions/client manuscript → L10 layout/export → L11 independent QA → L12 client sign-off/release → L13 learn. ONE stage per approval, review each output.
 
+## Delivery
+For export, file sizes and handing files to Benjy (private Google Drive folder, clickable links), follow `references/CLIENT_DELIVERY_GUIDE.md`.
+
 ## End-of-stage response
 `STAGE L[number] — PASS / NEEDS REVISION / BLOCKED`; paths, actual tests, source accuracy, flags, preview, next stage only with a STOP statement. Do not merge/publish/send without explicit instruction.
