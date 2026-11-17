@@ -1,0 +1,1 @@
+feature_id,map_id,layer,geometry_type,source_image,source_sketch,source_coordinates_or_landmark,observed_or_proposed,certainty,flow_direction_basis,upstream_catchment,outlet_and_downstream_risk,needs_measurement,needs_permission,benjy_approved,review_note

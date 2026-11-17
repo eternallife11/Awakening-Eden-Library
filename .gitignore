@@ -1,4 +1,6 @@
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/agents/
 .wrangler/
 .lighthouseci/
 dist/

@@ -40,7 +40,7 @@ if (!/^[A-Za-z0-9_-]{8,200}$/.test(TURNSTILE_SITE_KEY)) {
 }
 
 const excludedDirs = new Set([
-  '.git', '.github', '.idea', '.vscode', '.wrangler',
+  '.git', '.github', '.claude', '.idea', '.vscode', '.wrangler',
   'node_modules', 'dist', 'docs', 'deliverables', 'scripts', 'tests', 'workers',
   'playwright-report', 'test-results', '.lighthouseci', 'lhci-reports'
 ]);

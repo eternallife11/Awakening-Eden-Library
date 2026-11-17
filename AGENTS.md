@@ -23,6 +23,7 @@ Do not revive an older visual generation simply because its asset still exists.
 ## Approved visual identity
 
 - Benjy and Sofia may approve any sacred geometry. Their 23 October 2026 instruction removes the exclusive exact-twelve-fold requirement and chooses the earlier natural root-woven **Lotus of Life** for the founders-under-the-tree and Circle of Belonging artworks. See `docs/awakening-eden/design/SACRED_GEOMETRY_OWNER_DIRECTION_2026-10-23.md`; this supersedes contrary older locks, handoffs and Bible rules.
+- **Owner decision 16 Nov 2026 (sacred geometry):** use only the exact approved 12-fold Lotus of Life when the brand identity calls for it. Other precise geometric designs only when Benjy or Sofia explicitly approve them. No sacred geometry in technical consulting maps, ecological diagrams or ordinary client illustrations by default. This narrows the 23 October note for new work; existing owner-approved artworks stay as they are.
 - `docs/awakening-eden/design/lotus-of-life-12-exact.svg` remains an available approved vector, not a mandatory source for every artwork. Preserve owner-approved painterly geometry and natural root integration rather than automatically replacing it with an overlay.
 - The flagship portal language is sun + living tree + heartwood heart + roots + owner-approved Lotus of Life + botanical lotus + water + one hummingbird.
 - Primary small identity is tree + heart + roots. Major portal art is rare and should not wallpaper the site.
@@ -40,7 +41,7 @@ Do not revive an older visual generation simply because its asset still exists.
 - Separate established evidence, practitioner observation, tradition and spiritual worldview when factual claims matter.
 - Avoid unsupported ecological, medical, frequency or sacred-geometry claims.
 - Work With Benjy should prioritize proof and outcomes before long process explanations.
-- Draft prices €95 / €225 remain private until Benjy explicitly approves publication.
+- Historical only: the old draft prices €95 / €225 are no longer active offers (owner decision 16 Nov 2026). Current offers: see the Work with Benjy page and `.claude/skills/eden-land-consulting/SKILL.md`.
 - Preserve the property-buyer referral funnel in the finish queue; do not invent new public offers without approval.
 
 ## Git and deployment safety
