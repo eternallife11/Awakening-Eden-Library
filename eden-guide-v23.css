@@ -402,3 +402,4 @@ body.guide-one {
   .growth-path__text { justify-items: center; text-align: center; }
 }
 @media print { .go-deeper { break-inside: avoid; } }
+.growth-path:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 6px; border-radius: .6rem; }

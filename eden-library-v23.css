@@ -873,7 +873,7 @@ body.page-library {
 .pathway__body { display: flex; flex-direction: column; gap: .45rem; flex-grow: 1; padding: 1.1rem 1.2rem 1.25rem; }
 .pathway h3 { margin: 0; font-size: clamp(1.45rem, 2.2vw, 1.75rem); line-height: 1.1; }
 .pathway h3 a { color: var(--forest); text-decoration: none; }
-.pathway h3 a::after { content: " →"; color: var(--terracotta); font-family: var(--body); font-size: .8em; }
+.pathway__arrow { color: var(--terracotta); font-family: var(--body); font-size: .8em; }
 .pathway h3 a:hover, .pathway h3 a:focus-visible { text-decoration: underline; text-underline-offset: .2em; }
 .pathway p { margin: 0; color: var(--umber); font-size: .95rem; line-height: 1.55; flex-grow: 1; }
 .pathway__more { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 0; padding: 0; list-style: none; }
