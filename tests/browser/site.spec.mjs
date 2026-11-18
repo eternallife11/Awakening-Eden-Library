@@ -285,7 +285,7 @@ test('Living Library search turns a large collection into a calm, useful doorway
   await expect(page.locator('.resource-card:not([hidden])')).toHaveCount(0);
   expect(await renderedLibraryCards(page)).toBe(0);
 
-  await page.getByRole('link', { name: 'Watch something' }).click();
+  await page.getByRole('link', { name: 'Expand Perspective', exact: true }).click();
   await expect(search).toHaveValue('');
   await expect(page.locator('#films')).toBeVisible();
 

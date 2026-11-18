@@ -352,3 +352,53 @@ body.guide-one {
 .guide-board figcaption,
 .author-photo figcaption { font-size: 1rem; line-height: 1.65; }
 .guide-board figcaption strong { font-size: 1.05rem; }
+
+/* ==========================================================================
+   Guide polish · 18 November 2026
+   ========================================================================== */
+/* Start block: the guide that exists now leads; work in preparation steps back. */
+.guide-starter-path__grid { grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 1fr)); align-items: stretch; }
+.guide-starter-path__now { border-color: rgb(68 85 57 / .35) !important; box-shadow: 0 18px 40px rgb(35 49 38 / .1); }
+.guide-starter-path__soon { background: transparent !important; border-style: dashed !important; }
+.guide-starter-path__soon h3 { font-size: 1.45rem !important; }
+.guide-starter-path__soon p { color: var(--umber); font-size: .95rem; }
+.guide-starter-path__links { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin: 1rem 0 0; }
+.guide-starter-path__links a:first-child {
+  padding: .7rem 1.25rem; border-radius: 999px; background: var(--gold); color: var(--forest-deep) !important; text-decoration: none;
+}
+.guide-starter-path__links a { align-self: center; text-underline-offset: .22rem; }
+
+/* Go deeper: practical next reads and original sources at the end of a chapter. */
+.go-deeper {
+  margin: 1.4rem 0 0; padding: 1.1rem 1.3rem 1.2rem;
+  border-top: 2px solid rgb(184 148 75 / .55); border-radius: 0 0 1rem 1rem;
+  background: rgb(255 253 247 / .55);
+}
+.go-deeper__title {
+  margin: 0 0 .5rem; color: #85442f;
+  font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+}
+.go-deeper ul { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+.go-deeper li { padding-left: 1.2rem; position: relative; color: var(--umber); line-height: 1.55; }
+.go-deeper li::before { content: "→"; position: absolute; left: 0; color: var(--terracotta); }
+.go-deeper a { color: var(--forest); font-weight: 700; text-underline-offset: .2rem; }
+
+@media (max-width: 48rem) {
+  .guide-starter-path__grid { grid-template-columns: 1fr; }
+  .guide-starter-path__soon { padding: 1rem 1.2rem !important; }
+  .guide-starter-path__soon p { display: none; }
+  .guide-starter-path__soon h3 { margin: .35rem 0 0 !important; font-size: 1.25rem !important; }
+}
+/* Phones: the six growth stages become one swipeable row instead of a tall list. */
+@media (max-width: 720px) {
+  .growth-path {
+    display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 42%;
+    gap: 1rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity;
+    padding-bottom: .8rem; scrollbar-width: thin;
+  }
+  .growth-path li { grid-template-columns: 1fr; justify-items: center; text-align: center; scroll-snap-align: start; gap: .5rem; }
+  .growth-path__art { height: 4.6rem; align-items: end; }
+  .growth-path__art img { max-height: 4.6rem; }
+  .growth-path__text { justify-items: center; text-align: center; }
+}
+@media print { .go-deeper { break-inside: avoid; } }
