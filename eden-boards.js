@@ -14,7 +14,9 @@
     : fn();
 
   ready(() => {
-    const boards = document.querySelectorAll(".board-figure > img, .become-card--board > img");
+    // A board may be a plain <img> or a <picture> with a portrait phone source;
+    // the whole <picture> moves into the trigger so its sources keep working.
+    const boards = document.querySelectorAll(".board-figure > img, .board-figure > picture, .become-card--board > img");
     if (!boards.length || typeof HTMLDialogElement !== "function") return;
 
     const dialog = document.createElement("dialog");
@@ -39,12 +41,14 @@
       const trigger = document.createElement("button");
       trigger.type = "button";
       trigger.className = "board-zoom";
-      trigger.setAttribute("aria-label", `Expand board: ${board.alt}`);
+      const image = board.tagName === "PICTURE" ? board.querySelector("img") : board;
+      if (!image) return;
+      trigger.setAttribute("aria-label", `Expand board: ${image.alt}`);
       board.parentNode.insertBefore(trigger, board);
       trigger.appendChild(board);
       trigger.addEventListener("click", () => {
-        full.src = board.currentSrc || board.src;
-        full.alt = board.alt;
+        full.src = image.currentSrc || image.src;
+        full.alt = image.alt;
         dialog.showModal();
       });
     });

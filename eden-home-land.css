@@ -1,0 +1,87 @@
+/* Awakening Eden · Homepage land-support invitation · 20 November 2026
+   A compact, clearly professional next step near the top of the homepage.
+   It sits between the opening artwork and the Circle of Belonging painting,
+   so it stays calm: paper card, one strong button, topics as a quiet line. */
+
+.home-opening .home-land-invite {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.1rem 2.2rem;
+  align-items: center;
+  width: min(100%, 62rem);
+  margin: clamp(1.6rem, 4vw, 2.4rem) auto clamp(1.2rem, 3vw, 2rem);
+  padding: clamp(1.3rem, 3vw, 1.9rem) clamp(1.3rem, 3.4vw, 2.3rem);
+  border: 1px solid rgb(68 85 57 / 0.22);
+  border-left: 5px solid #b8944b;
+  border-radius: 1.3rem;
+  background: rgb(255 252 244 / 0.94);
+  box-shadow: 0 16px 36px rgb(35 49 38 / 0.08);
+  text-align: left;
+}
+.home-opening .home-land-invite__copy { min-width: 0; }
+.home-opening .home-land-invite__kicker {
+  margin: 0 0 0.45rem;
+  color: #85442f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.home-opening .home-land-invite h2 {
+  margin: 0 0 0.5rem;
+  color: #2f4a33;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.08;
+}
+.home-opening .home-land-invite__copy > p:not(.home-land-invite__kicker) {
+  margin: 0;
+  max-width: 44rem;
+  color: #4a5649;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.home-opening .home-land-invite__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+/* A plain supporting line, not pills: these topics are not separate links. */
+.home-opening .home-land-invite__topics li {
+  color: #5b6146;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+.home-opening .home-land-invite__topics li:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.55rem;
+  color: #b8944b;
+}
+@media (max-width: 46rem) {
+  .home-opening .home-land-invite__copy > p:not(.home-land-invite__kicker) { font-size: 0.98rem; }
+}
+/* Distinct from the gold "Start here" button: this is the professional service. */
+.home-opening .home-land-invite__button {
+  min-height: 3.4rem;
+  padding-inline: 1.7rem;
+  border-color: #233126;
+  background: #2f4a33;
+  color: #fffdf7;
+  white-space: nowrap;
+}
+.home-opening .home-land-invite__button:hover { background: #233126; }
+.home-opening .home-land-invite__button:focus-visible { outline: 3px solid #a7654f; outline-offset: 4px; }
+
+@media (max-width: 46rem) {
+  .home-opening .home-land-invite { grid-template-columns: 1fr; }
+  .home-opening .home-land-invite__button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-opening .home-land-invite__button:hover { transform: none; }
+}

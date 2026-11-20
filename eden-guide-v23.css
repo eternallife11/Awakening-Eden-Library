@@ -531,17 +531,51 @@ body.guide-one {
   .guide-one .eden-grow-with-us__card { break-inside: avoid; box-shadow: none; }
 }
 
-/* Keep the vector-board labels legible on narrow phones; the accompanying
-   four textual lessons remain fully readable without scrolling. */
-@media (max-width: 760px) {
-  .guide-one .eden-orchard-comparison__board a {
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-  }
-  .guide-one .eden-orchard-comparison__board img {
-    min-width: 720px;
-    max-width: none;
-  }
+/* Boards now ship a portrait phone version (<picture>), so no sideways scroll is needed. */
+
+
+/* ==========================================================================
+   Final polish · 20 November 2026 (Claude Code)
+   ========================================================================== */
+/* Boards with a portrait phone version sit inside <picture>. */
+.board-figure picture, .board-zoom picture { display: block; }
+
+/* Only a chapter's opening paragraph is a lead. Wrapper blocks that hold just a
+   note or a follow-on paragraph were inheriting the large display type. */
+.chapter-copy:not(:has(> h2)) > p:first-of-type {
+  font-family: var(--body); font-size: 1.02rem; line-height: 1.7; color: rgb(35 49 38 / .86);
 }
+.chapter-copy > p.board-note,
+.chapter-copy > p.board-note:first-of-type {
+  font-family: var(--body); font-size: .84rem; font-weight: 600; line-height: 1.6;
+  letter-spacing: .01em; color: #5b6146;
+}
+
+/* Land-support invitation: compact, warm, unmistakably a next step. */
+.land-invite {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2rem; align-items: center;
+  margin-top: clamp(1.6rem, 4vw, 2.4rem); padding: clamp(1.2rem, 3vw, 1.7rem) clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgb(68 85 57 / .22); border-left: 5px solid var(--gold);
+  border-radius: 1.2rem; background: #fbf7ee; box-shadow: 0 12px 28px rgb(35 49 38 / .06);
+}
+.land-invite h2 {
+  margin: 0 0 .35rem; color: var(--forest); font-family: var(--display);
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem); line-height: 1.15; max-width: none;
+}
+.land-invite p { margin: 0; color: #4a5649; line-height: 1.6; max-width: 46rem; }
+.land-invite .button { white-space: nowrap; min-height: 3rem; }
+@media (max-width: 760px) {
+  .land-invite { grid-template-columns: 1fr; }
+  .land-invite .button { width: 100%; white-space: normal; text-align: center; }
+}
+
+/* Principles: six short ideas no longer need six screen-tall cards on phones. */
+@media (max-width: 720px) {
+  .principle { padding: 1.1rem 1.2rem 1.2rem; }
+  .principle h3 { font-size: 1.5rem; margin-bottom: .35rem; }
+  .principle-number { margin-bottom: .35rem; font-size: 1rem; }
+  .principle-grid { gap: .75rem; }
+}
+
+/* Founder invitations: comfortable tap targets, no awkward wrapping. */
+.guide-one .eden-grow-with-us__card .button { min-height: 3.1rem; padding-inline: 1.4rem; }

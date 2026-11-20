@@ -964,27 +964,38 @@ body.page-library {
   .pathway:hover, .pathway:focus-within { transform: none; }
 }
 
-/* Library founder action clarity · 20 November 2026.
-   Two grounded invitations, not another grid of marketing tiles. */
+/* Library founder invitations · 20 November 2026 (Codex #53, refined by Claude).
+   Two small, human invitations after Benjy & Sofia's note: land support first,
+   wellbeing beside it in restrained lilac and mist blue. Not a sales grid. */
 .library-founders__next {
-  display: flex; align-items: stretch; flex-wrap: wrap;
-  gap: .8rem; margin-top: 1.6rem;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem; margin-top: 1.8rem; text-align: left;
 }
-.library-founders__next .btn {
-  min-width: 0; max-width: 100%;
-  white-space: normal; line-height: 1.4;
-  text-align: center; text-decoration: none;
-  overflow-wrap: anywhere;
+.library-invite {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .45rem; min-width: 0;
+  padding: 1.15rem 1.25rem 1.25rem; border-radius: 1.15rem;
+  border: 1px solid rgb(105 112 82 / .28); border-left: 4px solid var(--gold);
+  background: #fbf7ee;
 }
-.library-founders__next .btn strong { display: block; }
-.library-founders__next .btn.cream {
-  border: 1px solid #c7b8d0;
-  background: #f2ecf5; color: #344b41;
+.library-invite--sofia { border-color: #d4c8dd; border-left-color: #a1c2d0; background: #f3eef7; }
+.library-invite__eyebrow {
+  margin: 0; color: #85442f !important; font-size: .74rem !important; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
 }
-.library-founders__next .btn:focus-visible {
-  outline: 3px solid #9b6144; outline-offset: 4px;
+.library-invite--sofia .library-invite__eyebrow { color: #5d5470 !important; }
+.library-invite h3 { margin: 0; color: var(--forest); font-size: clamp(1.35rem, 2.2vw, 1.6rem); line-height: 1.15; }
+.library-invite p:not(.library-invite__eyebrow) { margin: 0; font-size: .95rem !important; line-height: 1.55; }
+.library-invite .btn {
+  margin-top: auto; padding: .7rem 1.15rem; border-radius: 999px;
+  font-weight: 800; text-decoration: none; white-space: normal; text-align: center; line-height: 1.3;
 }
-@media (max-width: 42rem) {
-  .library-founders__next { flex-direction: column; }
-  .library-founders__next .btn { width: 100%; }
+.library-invite--sofia .btn.cream { border: 1px solid #bba9c9; background: #fbfaff; color: #2e483d; }
+.library-invite .btn:focus-visible { outline: 3px solid #9b6144; outline-offset: 4px; }
+.library-start__label {
+  margin: 0 0 .3rem; color: #f0c98d; font-size: .74rem; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+@media (max-width: 58rem) {
+  .library-founders__next { grid-template-columns: 1fr; }
+  .library-invite .btn { width: 100%; }
 }
