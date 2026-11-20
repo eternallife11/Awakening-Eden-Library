@@ -425,6 +425,7 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
   { route: '/living-library', name: 'living-library' },
+  { route: '/start-here', name: 'start-here' },
   { route: '/work-with-benjy', name: 'work-with-benjy' },
   { route: '/work-with-us', name: 'work-with-us' },
   { route: '/partners', name: 'partners' },
@@ -456,6 +457,11 @@ for (const reviewPage of [
         path: path.join(reviewDirectory, 'homepage-living-library-doorway.png')
       });
     }
+    if (reviewPage.name === 'start-here') {
+      await page.locator('.eden-field-proof').screenshot({ path: path.join(reviewDirectory, 'start-here-real-project-photos.png') });
+      await page.locator('.eden-orchard-comparison').screenshot({ path: path.join(reviewDirectory, 'start-here-regeneration-comparison.png') });
+      await page.locator('.eden-grow-with-us').screenshot({ path: path.join(reviewDirectory, 'start-here-founder-invitations.png') });
+    }
     if (reviewPage.name === 'living-library') {
       await page.locator('.library-art-hero').screenshot({
         path: path.join(reviewDirectory, 'living-library-header.png')
@@ -471,3 +477,27 @@ for (const reviewPage of [
     }
   });
 }
+
+test('Start Here keeps field evidence distinct from design concepts and exposes both founder pathways', async ({ page, request }) => {
+  await page.goto('/start-here', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'The land teaches us where to begin.' })).toBeVisible();
+  await expect(page.locator('.eden-field-proof__photo')).toHaveCount(2);
+  await expect(page.locator('.eden-field-proof__photo img')).toHaveCount(2);
+  await expect(page.locator('.eden-orchard-comparison__grid article')).toHaveCount(4);
+  await expect(page.locator('.eden-orchard-comparison img')).toBeVisible();
+  await expect(page.locator('.eden-field-proof')).toContainText('not matched before-and-after views');
+  await expect(page.locator('.eden-orchard-comparison')).toContainText('not a survey or engineering drawing');
+  await expect(page.getByRole('link', { name: /Work with Benjy · Explore land support/ })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: /Meet Sofia · Explore yoga/ })).toHaveAttribute('href', '/sofia');
+  const diagram = await request.get('/assets/educational-boards/13-living-orchard-relationships-v1.svg');
+  expect(diagram.status()).toBe(200);
+  expect(diagram.headers()['content-type']).toContain('image/svg+xml');
+  await expect(page.locator('.eden-grow-with-us__card')).toHaveCount(2);
+});
+
+test('Living Library has a direct, human invitation to work with Benjy', async ({ page }) => {
+  await page.goto('/living-library', { waitUntil: 'domcontentloaded' });
+  const pathways = page.locator('.library-founders__next');
+  await expect(pathways.getByRole('link', { name: /Work with Benjy/ })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(pathways.getByRole('link', { name: /Meet Sofia/ })).toHaveAttribute('href', '/sofia');
+});
