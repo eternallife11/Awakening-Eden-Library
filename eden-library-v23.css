@@ -831,3 +831,171 @@ body.page-library {
 @media(max-width:46rem){
   .growth{position:static;width:max-content;margin:1.2rem auto 0;font-size:.78rem}
 }
+
+/* ==========================================================================
+   Living Library front door · 18 November 2026
+   One calm way in: search + four photographic pathways, then the two free
+   guides and three first films, then Benjy & Sofia, then the wider networks.
+   Duplicated platform lists and repeated "ways in" were removed; every
+   resource that lived in them still appears once on the page.
+   ========================================================================== */
+
+/* The hero art now arrives as WebP inside <picture>; keep the original rules. */
+.library-art-frame > picture { display: block; }
+.library-art-frame > picture > img { display: block; width: 100%; height: auto; }
+@media (max-width: 42rem) {
+  .library-art-hero .library-art-frame > picture > img { min-height: 19rem; object-fit: cover; object-position: center; }
+}
+
+.library-front {
+  padding: clamp(2.8rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+  background:
+    radial-gradient(circle at 8% 0%, rgb(229 196 125 / .16), transparent 22rem),
+    var(--paper);
+}
+.library-front__head, .library-start__head { max-width: 46rem; margin-bottom: clamp(1.2rem, 3vw, 1.8rem); }
+.library-front__head h2, .library-start__head h2 {
+  margin: .2rem 0 .6rem; color: var(--forest);
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.02;
+}
+.library-front__head p, .library-start__head p { margin: 0; color: var(--umber); font-size: 1.06rem; line-height: 1.65; }
+.library-front .library-search { max-width: 46rem; margin-bottom: clamp(1.6rem, 4vw, 2.4rem); }
+
+.pathways { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.9rem, 2vw, 1.3rem); }
+.pathway {
+  position: relative; display: flex; flex-direction: column; overflow: clip;
+  border: 1px solid rgb(105 112 82 / .28); border-radius: 1.3rem;
+  background: var(--paper-light); box-shadow: 0 14px 34px rgb(35 49 38 / .08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.pathway:hover, .pathway:focus-within { transform: translateY(-3px); box-shadow: 0 20px 44px rgb(35 49 38 / .13); }
+.pathway > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 35%; background: var(--linen); }
+.pathway__body { display: flex; flex-direction: column; gap: .45rem; flex-grow: 1; padding: 1.1rem 1.2rem 1.25rem; }
+.pathway h3 { margin: 0; font-size: clamp(1.45rem, 2.2vw, 1.75rem); line-height: 1.1; }
+.pathway h3 a { color: var(--forest); text-decoration: none; }
+.pathway__arrow { color: var(--terracotta); font-family: var(--body); font-size: .8em; }
+.pathway h3 a:hover, .pathway h3 a:focus-visible { text-decoration: underline; text-underline-offset: .2em; }
+.pathway p { margin: 0; color: var(--umber); font-size: .95rem; line-height: 1.55; flex-grow: 1; }
+.pathway__more { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 0; padding: 0; list-style: none; }
+.pathway__more a {
+  display: inline-block; padding: .38rem .75rem; border: 1px solid rgb(105 112 82 / .32); border-radius: 999px;
+  color: var(--forest); font-size: .82rem; font-weight: 700; text-decoration: none; background: rgb(255 253 247 / .7);
+}
+.pathway__more a:hover, .pathway__more a:focus-visible { background: var(--linen); }
+.library-front .need-today__note { margin-top: 1.2rem; }
+
+/* Start here: two free guides + three first reads + three first films */
+.library-start {
+  padding: clamp(2.8rem, 6vw, 5rem) 0;
+  color: var(--paper-light);
+  background:
+    radial-gradient(circle at 88% 8%, rgb(240 207 134 / .18), transparent 26rem),
+    linear-gradient(160deg, var(--forest-deep), var(--forest));
+}
+.library-start__head h2 { color: var(--paper-light); }
+.library-start__head p { color: rgb(255 253 247 / .82); }
+.library-start .kicker { color: #f0c98d; }
+.library-start__guides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 1.5rem); }
+.guide-feature {
+  display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: clamp(1rem, 2.4vw, 1.6rem); align-items: center;
+  padding: clamp(1.2rem, 3vw, 1.8rem); border-radius: 1.4rem;
+  color: var(--forest-deep); background: var(--paper-light); box-shadow: 0 20px 50px rgb(0 0 0 / .18);
+}
+.guide-feature > img { width: 7.5rem; aspect-ratio: 2 / 3; object-fit: cover; border-radius: .9rem; background: var(--paper); }
+.guide-feature:first-child > img { object-fit: contain; padding: .5rem; }
+.guide-feature small { color: #85442f; font-size: .76rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.guide-feature h3 { margin: .3rem 0 .45rem; color: var(--forest); font-size: clamp(1.6rem, 2.8vw, 2.1rem); line-height: 1.05; }
+.guide-feature p { margin: 0; color: var(--umber); line-height: 1.6; }
+.guide-feature__links { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.1rem; margin-top: 1rem; }
+.guide-feature__links .btn { padding: .75rem 1.3rem; border-radius: 999px; font-weight: 800; text-decoration: none; }
+.guide-feature__pdf { color: var(--forest); font-weight: 800; text-underline-offset: .22rem; }
+
+.library-start__more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.4rem, 4vw, 3rem); margin-top: clamp(1.8rem, 4vw, 2.6rem); }
+.library-start__more h3 { margin: 0 0 .8rem; color: var(--paper-light); font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
+.library-start__more ul { display: grid; gap: .2rem; margin: 0; padding: 0; list-style: none; }
+.library-start__more li { display: grid; gap: .15rem; padding: .75rem 0; border-top: 1px solid rgb(255 253 247 / .18); }
+.library-start__more li > a { color: #f6dca5; font-weight: 800; font-size: 1.05rem; text-underline-offset: .22rem; }
+.library-start__more li > span { color: rgb(255 253 247 / .78); font-size: .93rem; line-height: 1.5; }
+.library-start__all { margin: 1rem 0 0; color: rgb(255 253 247 / .7); }
+.library-start__all a { color: var(--paper-light); font-weight: 800; text-underline-offset: .22rem; }
+
+/* Living networks: the 2-column search-card grid used to squeeze these
+   cards to one word per line. Give them the full width. */
+#change-platforms .library-finder__card { display: block; }
+#change-platforms h2 { max-width: 22ch; margin: .2rem 0 .8rem; color: var(--forest); font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.05; }
+#change-platforms .library-finder__card > p { max-width: 50rem; color: var(--umber); line-height: 1.65; }
+#change-platforms h3 { margin: clamp(1.6rem, 3vw, 2.2rem) 0 0; color: var(--forest); font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
+#change-platforms .path-grid { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); margin-top: .9rem; }
+
+@media (max-width: 64rem) {
+  .pathways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .library-start__guides, .library-start__more { grid-template-columns: 1fr; }
+}
+
+/* Shelves had no side padding (their markup has no .wrap), so cards and the
+   round section icons ran into the screen edges on every device. */
+.library-section { padding-inline: max(var(--gutter), calc((100% - var(--container)) / 2)); }
+
+/* Phones: long shelves become swipeable rows instead of 20-card towers.
+   A slice of the next card stays visible so the row reads as scrollable. */
+@media (max-width: 44rem) {
+  .pathways,
+  #change-platforms .path-grid,
+  .library-section .cards {
+    display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 82%;
+    align-items: stretch; gap: .85rem; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity; scroll-padding-inline: var(--gutter);
+    margin-inline: calc(-1 * var(--gutter)); padding: .3rem var(--gutter) 1rem;
+    scrollbar-width: thin;
+  }
+  /* Shelves sit in sections with narrower side padding than the gutter:
+     keep their rows inside the section so the page never scrolls sideways. */
+  #change-platforms .path-grid { margin-inline: 0; padding-inline: 0; scroll-padding-inline: 0; }
+  #change-platforms .path-grid { grid-auto-columns: 74%; }
+  .library-section .cards { grid-auto-columns: 86%; }
+  .pathways > .pathway,
+  #change-platforms .path-grid > .path-card,
+  .library-section .cards > .resource-card { scroll-snap-align: start; min-height: 0; }
+  #change-platforms .library-finder__card { overflow: clip; }
+  .guide-feature { grid-template-columns: 5.2rem minmax(0, 1fr); align-items: start; }
+  .guide-feature > img { width: 5.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pathway:hover, .pathway:focus-within { transform: none; }
+}
+
+/* Library founder invitations · 20 November 2026 (Codex #53, refined by Claude).
+   Two small, human invitations after Benjy & Sofia's note: land support first,
+   wellbeing beside it in restrained lilac and mist blue. Not a sales grid. */
+.library-founders__next {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem; margin-top: 1.8rem; text-align: left;
+}
+.library-invite {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .45rem; min-width: 0;
+  padding: 1.15rem 1.25rem 1.25rem; border-radius: 1.15rem;
+  border: 1px solid rgb(105 112 82 / .28); border-left: 4px solid var(--gold);
+  background: #fbf7ee;
+}
+.library-invite--sofia { border-color: #d4c8dd; border-left-color: #a1c2d0; background: #f3eef7; }
+.library-invite__eyebrow {
+  margin: 0; color: #85442f !important; font-size: .74rem !important; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.library-invite--sofia .library-invite__eyebrow { color: #5d5470 !important; }
+.library-invite h3 { margin: 0; color: var(--forest); font-size: clamp(1.35rem, 2.2vw, 1.6rem); line-height: 1.15; }
+.library-invite p:not(.library-invite__eyebrow) { margin: 0; font-size: .95rem !important; line-height: 1.55; }
+.library-invite .btn {
+  margin-top: auto; padding: .7rem 1.15rem; border-radius: 999px;
+  font-weight: 800; text-decoration: none; white-space: normal; text-align: center; line-height: 1.3;
+}
+.library-invite--sofia .btn.cream { border: 1px solid #bba9c9; background: #fbfaff; color: #2e483d; }
+.library-invite .btn:focus-visible { outline: 3px solid #9b6144; outline-offset: 4px; }
+.library-start__label {
+  margin: 0 0 .3rem; color: #f0c98d; font-size: .74rem; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+@media (max-width: 58rem) {
+  .library-founders__next { grid-template-columns: 1fr; }
+  .library-invite .btn { width: 100%; }
+}
