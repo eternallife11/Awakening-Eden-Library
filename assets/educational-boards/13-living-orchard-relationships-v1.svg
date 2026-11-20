@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
+<title id="title">From exposed ground toward a more living Mediterranean orchard</title>
+<desc id="desc">Illustrative side-by-side comparison: exposed orchard soil with concentrated runoff versus an orchard with protective soil cover, diverse planting and room for safe water movement. Conditions and outcomes vary by site. This is not a before-and-after photograph or an engineering plan.</desc>
+<defs>
+  <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#faf5e9"/><stop offset="1" stop-color="#eee4d1"/></linearGradient>
+  <linearGradient id="hillA" x2="0" y2="1"><stop stop-color="#cda783"/><stop offset="1" stop-color="#ad775c"/></linearGradient>
+  <linearGradient id="hillB" x2="0" y2="1"><stop stop-color="#8ca57b"/><stop offset="1" stop-color="#526e59"/></linearGradient>
+  <linearGradient id="leaf" x2="0" y2="1"><stop stop-color="#92ab7f"/><stop offset="1" stop-color="#516b54"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="1.2"/></filter>
+  <filter id="grain" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".032" numOctaves="3" seed="8" result="n"/><feColorMatrix in="n" type="saturate" values="0" result="gray"/><feComponentTransfer in="gray"><feFuncA type="linear" slope=".11"/></feComponentTransfer></filter>
+  <style>
+    text{font-family:Georgia,serif;fill:#2f493c} .head{font-size:34px;font-weight:700} .sub{font-size:18px}
+    .paneltitle{font-size:27px;font-weight:700} .small{font-size:18px} .label{font-size:18px;font-weight:700}
+    .note{font-size:15px;fill:#5b6254} .root{stroke:#967654;stroke-width:4;fill:none;stroke-linecap:round}
+    .water{fill:none;stroke:#6596a3;stroke-width:8;stroke-linecap:round;stroke-dasharray:16 10;opacity:.8}
+  </style>
+</defs>
+<rect width="1200" height="730" rx="24" fill="url(#paper)"/>
+<rect x="1" y="1" width="1198" height="728" rx="23" fill="none" stroke="#b9ab8f" stroke-width="2"/>
+<text class="head" x="60" y="65">From exposed ground toward a living orchard</text>
+<text class="sub" x="61" y="96">Different design conditions, not a guaranteed transformation</text>
+<rect x="43" y="128" width="540" height="509" rx="18" fill="#eee2ce" stroke="#d8c0a6" stroke-width="2"/>
+<rect x="617" y="128" width="540" height="509" rx="18" fill="#e5ebdd" stroke="#b6c8b0" stroke-width="2"/>
+<text class="paneltitle" x="69" y="176">Bare, exposed ground</text>
+<text class="paneltitle" x="644" y="176">Covered, planted, observed</text>
+<text class="small" x="69" y="205">A possible starting condition</text>
+<text class="small" x="644" y="205">One context-dependent direction</text>
+<!-- Bare orchard: earth washes, one established tree and exposed surface -->
+<path d="M61 417 Q212 352 359 412 T568 397 L568 595 L61 595Z" fill="url(#hillA)"/>
+<path d="M65 439 Q200 399 320 436 T566 424" fill="none" stroke="#d8b392" stroke-width="13" opacity=".55"/>
+<path d="M77 489 Q197 455 299 481 T547 470" fill="none" stroke="#c29175" stroke-width="4" opacity=".55"/>
+<path d="M286 411 Q285 345 284 296" stroke="#80664d" stroke-width="21" stroke-linecap="round"/>
+<path d="M281 320 Q237 298 236 268 M285 335 Q326 309 330 276" stroke="#80664d" stroke-width="10" stroke-linecap="round" fill="none"/>
+<g fill="#8c9870" opacity=".95"><ellipse cx="243" cy="273" rx="73" ry="39"/><ellipse cx="319" cy="268" rx="74" ry="46"/><ellipse cx="284" cy="240" rx="72" ry="54"/></g>
+<g fill="#aeb58a" opacity=".65"><ellipse cx="235" cy="256" rx="53" ry="24"/><ellipse cx="307" cy="248" rx="45" ry="27"/></g>
+<path class="water" d="M81 365 Q168 372 230 415 T424 474 T545 512"/>
+<path d="M473 502 L525 516 L495 545" fill="none" stroke="#6596a3" stroke-width="9" stroke-linecap="round"/>
+<text class="label" x="78" y="551">Exposed surface</text><text class="small" x="78" y="576">Runoff and erosion may increase</text>
+<!-- Groundcover orchard with similar established fruit tree -->
+<path d="M635 417 Q793 363 922 412 T1138 400 L1138 595 L635 595Z" fill="url(#hillB)"/>
+<path d="M651 432 Q825 395 933 428 T1120 417" fill="none" stroke="#b3c8a1" stroke-width="11" opacity=".7"/>
+<path d="M874 411 Q875 346 875 292" stroke="#745f47" stroke-width="22" stroke-linecap="round"/>
+<path d="M874 319 Q816 291 815 262 M879 337 Q931 301 929 269" stroke="#745f47" stroke-width="10" stroke-linecap="round" fill="none"/>
+<g fill="url(#leaf)"><ellipse cx="824" cy="270" rx="75" ry="43"/><ellipse cx="919" cy="267" rx="76" ry="44"/><ellipse cx="872" cy="242" rx="77" ry="58"/></g>
+<g fill="#a2b991" opacity=".7"><ellipse cx="841" cy="252" rx="45" ry="26"/><ellipse cx="909" cy="244" rx="44" ry="24"/></g>
+<g fill="#779664">
+<ellipse cx="718" cy="432" rx="46" ry="34"/><ellipse cx="764" cy="427" rx="37" ry="31"/><ellipse cx="1008" cy="425" rx="43" ry="31"/><ellipse cx="1075" cy="424" rx="39" ry="34"/>
+</g>
+<g fill="#a8ba81"><circle cx="688" cy="405" r="8"/><circle cx="745" cy="402" r="8"/><circle cx="1003" cy="401" r="9"/><circle cx="1090" cy="399" r="9"/></g>
+<g stroke="#d7be80" stroke-width="8" stroke-linecap="round" opacity=".8"><path d="M645 460 l65 -12 M735 472 l80 -13 M950 469 l71 -19 M1045 460 l70 -8"/></g>
+<g class="root"><path d="M876 411 q-28 54 -79 90 M876 411 q26 58 93 97 M876 411 q-5 77 -21 127 M876 411 q-20 91 -63 130"/></g>
+<path class="water" d="M661 359 Q709 381 751 403" stroke-width="6"/>
+<path d="M749 402 l-12 -17 m12 17 l-22 5" fill="none" stroke="#6596a3" stroke-width="6" stroke-linecap="round"/>
+<text class="label" x="647" y="551">Soil cover + living roots</text><text class="small" x="647" y="576">Support soil life and infiltration</text>
+<!-- Accessible annotations outside drawings -->
+<rect x="79" y="231" rx="11" width="140" height="34" fill="#fff5e5" opacity=".94"/><text class="note" x="93" y="253">Less ground cover</text>
+<rect x="648" y="231" rx="11" width="166" height="34" fill="#f7fbef" opacity=".96"/><text class="note" x="662" y="253">Layered vegetation</text>
+<text class="note" x="60" y="670">Observe soil, rainfall, slope, species and fire exposure before choosing interventions.</text>
+<text class="note" x="60" y="696">Illustrative concept · Not matched before/after imagery · Not a surveyed drainage or earthworks plan.</text>
+<rect x="0" y="0" width="1200" height="730" rx="24" filter="url(#grain)" opacity=".17"/>
+</svg>
