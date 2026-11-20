@@ -963,3 +963,28 @@ body.page-library {
 @media (prefers-reduced-motion: reduce) {
   .pathway:hover, .pathway:focus-within { transform: none; }
 }
+
+/* Library founder action clarity · 20 November 2026.
+   Two grounded invitations, not another grid of marketing tiles. */
+.library-founders__next {
+  display: flex; align-items: stretch; flex-wrap: wrap;
+  gap: .8rem; margin-top: 1.6rem;
+}
+.library-founders__next .btn {
+  min-width: 0; max-width: 100%;
+  white-space: normal; line-height: 1.4;
+  text-align: center; text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.library-founders__next .btn strong { display: block; }
+.library-founders__next .btn.cream {
+  border: 1px solid #c7b8d0;
+  background: #f2ecf5; color: #344b41;
+}
+.library-founders__next .btn:focus-visible {
+  outline: 3px solid #9b6144; outline-offset: 4px;
+}
+@media (max-width: 42rem) {
+  .library-founders__next { flex-direction: column; }
+  .library-founders__next .btn { width: 100%; }
+}
