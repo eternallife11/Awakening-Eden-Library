@@ -403,3 +403,130 @@ body.guide-one {
 }
 @media print { .go-deeper { break-inside: avoid; } }
 .growth-path:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 6px; border-radius: .6rem; }
+
+/* ==========================================================================
+   Start Here final refinement · 20 November 2026
+   Original field photographs, illustrated relationships and warm, clear next
+   steps. Additive styles keep Claude's November 18 guide polish intact.
+   ========================================================================== */
+.guide-one .eden-field-proof,
+.guide-one .eden-orchard-comparison,
+.guide-one .eden-grow-with-us { padding-block: clamp(3.5rem, 7vw, 6.5rem); }
+.guide-one .eden-field-proof__photos,
+.guide-one .eden-orchard-comparison__grid,
+.guide-one .eden-grow-with-us__grid {
+  width: min(calc(100% - 2 * var(--gutter)), 76rem);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.7rem);
+}
+.guide-one .eden-field-proof__photos { margin-block: 2rem 1.2rem; }
+.guide-one .eden-field-proof__photo {
+  min-width: 0; margin: 0;
+  border: 1px solid rgb(68 85 57 / .21);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: #fbf7ed;
+  box-shadow: 0 12px 28px rgb(35 49 38 / .07);
+}
+.guide-one .eden-field-proof__photo img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 16 / 9; object-fit: cover;
+}
+.guide-one .eden-field-proof__photo figcaption {
+  padding: 1.15rem clamp(1rem, 2vw, 1.45rem) 1.45rem;
+  color: #44554a; font-size: 1rem; line-height: 1.65;
+}
+.guide-one .eden-field-proof__photo figcaption strong {
+  display: block; color: #2d473a; font-size: 1.1rem;
+  margin: .35rem 0 .25rem;
+}
+.guide-one .eden-field-proof__photo-tag {
+  display: block; color: #885f45; font-family: var(--body);
+  font-size: .77rem; font-weight: 800; letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.guide-one .eden-orchard-comparison__board {
+  width: min(calc(100% - 2 * var(--gutter)), 76rem); margin: 2rem auto;
+}
+.guide-one .eden-orchard-comparison__board a {
+  display: block; overflow: hidden; border-radius: 1.2rem;
+  border: 1px solid rgb(81 107 84 / .23);
+}
+.guide-one .eden-orchard-comparison__board img {
+  display: block; width: 100%; height: auto;
+}
+.guide-one .eden-orchard-comparison__grid { margin-block: 2rem 1.4rem; }
+.guide-one .eden-orchard-comparison__grid article {
+  min-width: 0; padding: clamp(1.2rem, 2vw, 1.75rem);
+  border-radius: 1.25rem; background: #f6f2e8;
+  border: 1px solid #d6d8c6;
+}
+.guide-one .eden-orchard-comparison__grid h3 {
+  margin: .5rem 0 .55rem; font-family: var(--display);
+  color: #2d493e; font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+  line-height: 1.22; overflow-wrap: anywhere;
+}
+.guide-one .eden-orchard-comparison__grid p {
+  margin: 0; color: #46564c; line-height: 1.65;
+}
+.guide-one .eden-orchard-comparison__step {
+  color: #825b3e; font-size: .79rem; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.guide-one .eden-grow-with-us { background: #f5f1e7; }
+.guide-one .eden-grow-with-us__grid { margin-top: 2rem; }
+.guide-one .eden-grow-with-us__card {
+  min-width: 0; padding: clamp(1.35rem, 3vw, 2.4rem);
+  border-radius: 1.5rem; border: 1px solid #ccd4bf;
+  background: #e9ede0; display: flex;
+  flex-direction: column; align-items: flex-start;
+}
+.guide-one .eden-grow-with-us__card--wellbeing {
+  border-color: #d4c8dd;
+  background: #efe9f4; /* soft lilac */
+}
+.guide-one .eden-grow-with-us__card--wellbeing::before {
+  content: ""; display: block; width: 4rem; height: .25rem;
+  background: #a1c2d0; /* restrained mist blue */
+  border-radius: .5rem; margin-bottom: .8rem;
+}
+.guide-one .eden-grow-with-us__eyebrow {
+  color: #5d6b56; font-size: .79rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .07em;
+  margin: 0 0 .75rem;
+}
+.guide-one .eden-grow-with-us__card h3 {
+  color: #2e483d; font-family: var(--display);
+  line-height: 1.18; font-size: clamp(1.75rem, 3vw, 2.35rem);
+  margin: 0 0 .8rem; overflow-wrap: anywhere;
+}
+.guide-one .eden-grow-with-us__card p:not(.eden-grow-with-us__eyebrow) {
+  color: #435449; line-height: 1.7; margin: 0 0 1.6rem;
+}
+.guide-one .eden-grow-with-us__card .button {
+  max-width: 100%; white-space: normal;
+  overflow-wrap: anywhere; text-align: center;
+  line-height: 1.35; margin-top: auto;
+}
+.guide-one .eden-grow-with-us__card--wellbeing .button {
+  color: #2e483d; background: #fbfaff;
+  border-color: #bba9c9;
+}
+.guide-one .eden-grow-with-us__card .button:focus-visible,
+.guide-one .eden-orchard-comparison__board a:focus-visible {
+  outline: 3px solid #9b6144; outline-offset: 4px;
+}
+@media (max-width: 760px) {
+  .guide-one .eden-field-proof__photos,
+  .guide-one .eden-orchard-comparison__grid,
+  .guide-one .eden-grow-with-us__grid { grid-template-columns: 1fr; }
+  .guide-one .eden-field-proof__photo img { aspect-ratio: 16 / 10; }
+  .guide-one .eden-grow-with-us__card .button { width: 100%; }
+}
+@media print {
+  .guide-one .eden-field-proof__photo,
+  .guide-one .eden-orchard-comparison__grid article,
+  .guide-one .eden-grow-with-us__card { break-inside: avoid; box-shadow: none; }
+}
