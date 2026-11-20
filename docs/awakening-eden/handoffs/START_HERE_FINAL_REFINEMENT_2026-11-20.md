@@ -81,3 +81,11 @@ The screenshot test saves:
 - Does the guide feel like one calm field journal rather than stacked visual themes?
 
 Do not rewrite previously approved copy or start another broad redesign. Leave specific BLOCKER / IMPORTANT / OPTIONAL notes, then Codex can implement accepted small corrections on this same branch.
+
+## External film-link verification · 20 November 2026
+
+Independent searches of the original producers' pages found:
+- `https://kissthegroundmovie.com/` is still indexed and displayed as the **official film website** on 20 November 2026. Claude's earlier 503 likely reflected transient blocking or access trouble; direct delivery in all browsers remains a QA check, not a proven dead link.
+- `https://www.waterislovefilm.org/` explicitly names projects in **India, Kenya and Portugal**. Thus the library's "Portugal and beyond" summary is supported by the film's own official description.
+- Neither result authorizes reproducing trailers, images or films without permission.
+
