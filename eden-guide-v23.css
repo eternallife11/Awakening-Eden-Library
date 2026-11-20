@@ -530,3 +530,18 @@ body.guide-one {
   .guide-one .eden-orchard-comparison__grid article,
   .guide-one .eden-grow-with-us__card { break-inside: avoid; box-shadow: none; }
 }
+
+/* Keep the vector-board labels legible on narrow phones; the accompanying
+   four textual lessons remain fully readable without scrolling. */
+@media (max-width: 760px) {
+  .guide-one .eden-orchard-comparison__board a {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .guide-one .eden-orchard-comparison__board img {
+    min-width: 720px;
+    max-width: none;
+  }
+}
