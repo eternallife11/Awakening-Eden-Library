@@ -285,7 +285,7 @@ test('Living Library search turns a large collection into a calm, useful doorway
   await expect(page.locator('.resource-card:not([hidden])')).toHaveCount(0);
   expect(await renderedLibraryCards(page)).toBe(0);
 
-  await page.getByRole('link', { name: 'Watch something' }).click();
+  await page.getByRole('link', { name: 'Expand Perspective', exact: true }).click();
   await expect(search).toHaveValue('');
   await expect(page.locator('#films')).toBeVisible();
 
@@ -425,6 +425,7 @@ test('protected sources and rights-unconfirmed images stay unavailable', async (
 for (const reviewPage of [
   { route: '/', name: 'homepage' },
   { route: '/living-library', name: 'living-library' },
+  { route: '/start-here', name: 'start-here' },
   { route: '/work-with-benjy', name: 'work-with-benjy' },
   { route: '/work-with-us', name: 'work-with-us' },
   { route: '/partners', name: 'partners' },
@@ -456,6 +457,11 @@ for (const reviewPage of [
         path: path.join(reviewDirectory, 'homepage-living-library-doorway.png')
       });
     }
+    if (reviewPage.name === 'start-here') {
+      await page.locator('.eden-field-proof').screenshot({ path: path.join(reviewDirectory, 'start-here-real-project-photos.png') });
+      await page.locator('.eden-orchard-comparison').screenshot({ path: path.join(reviewDirectory, 'start-here-regeneration-comparison.png') });
+      await page.locator('.eden-grow-with-us').screenshot({ path: path.join(reviewDirectory, 'start-here-founder-invitations.png') });
+    }
     if (reviewPage.name === 'living-library') {
       await page.locator('.library-art-hero').screenshot({
         path: path.join(reviewDirectory, 'living-library-header.png')
@@ -471,3 +477,52 @@ for (const reviewPage of [
     }
   });
 }
+
+test('Start Here keeps field evidence distinct from design concepts and exposes both founder pathways', async ({ page, request }) => {
+  await page.goto('/start-here', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'The land teaches us where to begin.' })).toBeVisible();
+  await expect(page.locator('.eden-field-proof__photo')).toHaveCount(2);
+  await expect(page.locator('.eden-field-proof__photo img')).toHaveCount(2);
+  await expect(page.locator('.eden-orchard-comparison__grid article')).toHaveCount(4);
+  await expect(page.locator('.eden-orchard-comparison img')).toBeVisible();
+  await expect(page.locator('.eden-field-proof')).toContainText('not matched before-and-after views');
+  await expect(page.locator('.eden-orchard-comparison')).toContainText('not a survey or engineering drawing');
+  await expect(page.locator('.eden-grow-with-us').getByRole('link', { name: /Explore Regenerative Land Support/ })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.locator('.land-invite').getByRole('link', { name: /Explore Regenerative Land Support/ })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(page.getByRole('link', { name: /Meet Sofia · Yoga/ })).toHaveAttribute('href', '/sofia');
+  for (const board of ['13-living-orchard-relationships-v2', '12-biomass-loop-v2', '10-living-soil-sponge-water-v2']) {
+    for (const variant of ['', '-portrait']) {
+      const diagram = await request.get(`/assets/educational-boards/${board}${variant}.svg`);
+      expect(diagram.status()).toBe(200);
+      expect(diagram.headers()['content-type']).toContain('image/svg+xml');
+    }
+  }
+  // Phones receive the portrait board, so labels stay readable without sideways scrolling.
+  if ((page.viewportSize()?.width ?? 1440) <= 640) {
+    const board = page.locator('.eden-orchard-comparison img');
+    await board.scrollIntoViewIfNeeded(); // lazy-loaded: currentSrc is empty until it loads
+    await expect.poll(() => board.evaluate((img) => img.currentSrc)).toContain('-portrait.svg');
+  }
+  await expect(page.locator('.eden-grow-with-us__card')).toHaveCount(2);
+});
+
+test('Living Library has a direct, human invitation to work with Benjy', async ({ page }) => {
+  await page.goto('/living-library', { waitUntil: 'domcontentloaded' });
+  const pathways = page.locator('.library-founders__next');
+  await expect(pathways.getByRole('link', { name: /Explore Regenerative Land Support/ })).toHaveAttribute('href', '/work-with-benjy');
+  await expect(pathways.getByRole('link', { name: /Meet Sofia/ })).toHaveAttribute('href', '/sofia');
+});
+
+test('Homepage introduces Benjy’s land support near the beginning with one clear button', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+  const invite = page.locator('.home-land-invite');
+  await expect(invite.getByRole('heading', { name: 'Have land you’d love to bring to life?' })).toBeVisible();
+  await expect(invite.getByRole('link', { name: 'Work with Benjy', exact: true })).toHaveAttribute('href', '/work-with-benjy');
+  // The five topics are supporting text, not links to sections that do not exist.
+  await expect(invite.locator('.home-land-invite__topics li')).toHaveCount(5);
+  await expect(invite.locator('.home-land-invite__topics a')).toHaveCount(0);
+  // It sits before the Circle of Belonging painting, near the top of the page.
+  const inviteTop = await invite.evaluate((node) => node.getBoundingClientRect().top + window.scrollY);
+  const circleTop = await page.locator('.home-circle-header').evaluate((node) => node.getBoundingClientRect().top + window.scrollY);
+  expect(inviteTop).toBeLessThan(circleTop);
+});

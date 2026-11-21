@@ -66,6 +66,8 @@ test('harmonics play, pause, volume and remembered quiet remain under visitor co
 test('bowl notes have the selected fundamental and instruments-off leaves no continuous tone', async ({page}) => {
   await page.addInitScript(() => {
     localStorage.setItem('eden-harmonics-nature', 'off');
+    // "Pure tones" plays only the synthesized bowl, so its exact fundamental can be measured.
+    localStorage.setItem('eden-harmonics-mood', 'pure');
     localStorage.setItem('eden-harmonics-instruments', 'on');
     localStorage.setItem('eden-harmonics-frequency', '432');
     const Original = window.AudioContext;
@@ -110,6 +112,47 @@ test('bowl notes have the selected fundamental and instruments-off leaves no con
   await player.click();
   await expect.poll(()=>page.evaluate(()=>window.edenSignal.context.state)).toBe('suspended');
   expect(await page.evaluate(()=>window.edenSignal.master.gain.value)).toBeLessThan(0.002);
+});
+
+test('soundscapes load real CC0 recordings, retune them to the chosen tuning and credit every source', async ({page}) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('eden-harmonics-nature', 'dawn');
+    localStorage.setItem('eden-harmonics-mood', 'heart');
+    localStorage.setItem('eden-harmonics-frequency', '432');
+    localStorage.setItem('eden-harmonics-instruments', 'on');
+    const Original = window.AudioContext;
+    window.edenRates = [];
+    window.AudioContext = class extends Original {
+      createBufferSource() {
+        const source = super.createBufferSource();
+        const start = source.start.bind(source);
+        source.start = (...args) => { window.edenRates.push({ seconds: source.buffer?.duration ?? 0, rate: source.playbackRate.value }); return start(...args); };
+        return source;
+      }
+    };
+  });
+  const loaded = [];
+  page.on('response', response => { if (response.url().includes('/assets/audio/lemuria/') && response.ok()) loaded.push(response.url().split('/').pop()); });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/');
+  // Nothing is fetched before the visitor presses Play.
+  expect(loaded).toEqual([]);
+  await page.locator('header [data-harmonics-toggle]').click();
+  await expect(page.locator('[data-harmonics-status]')).toContainText('Empowering heart · 432 Hz · Rainforest dawn chorus & kookaburras');
+  await expect.poll(() => loaded.sort()).toEqual(expect.arrayContaining(['dawn-chorus-kookaburras-maccavictoria.mp3', 'singing-bowl-ryancacophony.mp3', 'handpan-melody-soundguy103.mp3', 'violin-note-poppy-crum.mp3']));
+  // The sung bowl (measured A = 449.4 Hz) is retuned to A = 432 Hz.
+  await expect.poll(() => page.evaluate(() => window.edenRates.some(({ seconds, rate }) => seconds > 30 && seconds < 45 && Math.abs(rate - 432 / 449.4) < 0.002))).toBe(true);
+  await page.locator('.harmonics-card > summary').click();
+  await page.locator('.harmonics-mix summary').click();
+  for (const [value, name] of [['rainforest', 'Rainforest dawn'], ['sunrise', 'Hopeful sunrise'], ['newearth', 'New Earth'], ['pure', 'Pure tones']]) {
+    await page.locator('#harmonics-mood').selectOption(value);
+    await expect(page.locator('[data-harmonics-status]')).toContainText(name);
+  }
+  for (const creator of ['dubminister', 'soundofsong', 'maccavictoria', 'EvilDavo', 'ryancacophony', 'RedwoodRunner', 'soundguy103', 'Kinoton', 'SamuelGremaud', 'batchku']) {
+    await expect(page.locator('.harmonics-mix a[href*="freesound.org/people/"]').filter({ hasText: creator })).toHaveCount(1);
+  }
+  expect(errors).toEqual([]);
 });
 
 test('sound gracefully offers Spotify when Web Audio is unavailable', async ({page}) => {
